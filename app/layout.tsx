@@ -1,13 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
+import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Suspense } from "react"
-import { CustomCursor } from "@/components/custom-cursor"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { MobileBottomNav } from "@/components/mobile-bottom-nav"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "ACE Educational Systems | Transforming Education in Africa",
@@ -23,8 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
-        <CustomCursor />
+      <body className={`${inter.variable} font-sans antialiased`}>
         <ScrollProgress />
         <Suspense fallback={<div>Loading...</div>}>
           {children}

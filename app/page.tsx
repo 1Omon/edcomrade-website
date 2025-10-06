@@ -1,11 +1,5 @@
 import { MinimalNav } from "@/components/minimal-nav"
-import { FadeIn } from "@/components/fade-in"
 import { AnimatedCounter } from "@/components/animated-counter"
-import { MagneticButton } from "@/components/magnetic-button"
-import { TiltCard } from "@/components/tilt-card"
-import { ParallaxSection } from "@/components/parallax-section"
-import { GlassmorphismCard } from "@/components/glassmorphism-card"
-import { SwipeableTestimonials } from "@/components/swipeable-testimonials"
 import Link from "next/link"
 import {
   ArrowRight,
@@ -31,1033 +25,892 @@ export default function HomePage() {
     <main className="min-h-screen bg-background">
       <MinimalNav />
 
-      {/* Hero Section */}
-      <ParallaxSection speed={0.3}>
-        <section className="pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24 md:pb-32 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto text-center">
-            <FadeIn>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-balance mb-4 sm:mb-6 md:mb-8">
-                Education.
-                <br />
-                <span className="text-primary">Transformed.</span>
-              </h1>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground text-balance mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed px-4">
-                Ghana's premier educational technology company, empowering schools to operate seamlessly, communicate
-                effectively, and thrive in the digital age.
-              </p>
-            </FadeIn>
-            <FadeIn delay={400}>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-                <MagneticButton>
-                  <Link
-                    href="#contact"
-                    className="w-full sm:w-auto bg-secondary text-secondary-foreground px-8 sm:px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-medium hover:scale-105 transition-transform inline-flex items-center justify-center gap-3 shadow-lg"
-                  >
-                    Start Your Journey
-                    <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </Link>
-                </MagneticButton>
-                <MagneticButton>
-                  <Link
-                    href="#how-it-works"
-                    className="w-full sm:w-auto text-foreground px-8 sm:px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-medium hover:bg-accent transition-colors"
-                  >
-                    See How It Works
-                  </Link>
-                </MagneticButton>
-              </div>
-            </FadeIn>
-          </div>
-        </section>
-      </ParallaxSection>
+      {/* Hero Section with Parallax */}
+      <section className="relative pt-32 sm:pt-40 md:pt-48 lg:pt-56 pb-20 sm:pb-28 md:pb-36 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            transform: "translateZ(0)",
+            willChange: "transform",
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+        </div>
 
-      {/* Results Bar - Social Proof */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 text-center">
-            <FadeIn delay={0}>
-              <div>
-                <AnimatedCounter
-                  end={500}
-                  suffix="+"
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-1 sm:mb-2"
-                />
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground">Schools Transformed</p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={100}>
-              <div>
-                <AnimatedCounter
-                  end={75}
-                  suffix="%"
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-1 sm:mb-2"
-                />
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground">Less Admin Work</p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div>
-                <AnimatedCounter
-                  end={90}
-                  suffix="%"
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-1 sm:mb-2"
-                />
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground">Parent Satisfaction</p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={300}>
-              <div>
-                <AnimatedCounter
-                  end={25}
-                  suffix="%"
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-1 sm:mb-2"
-                />
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground">Enrollment Growth</p>
-              </div>
-            </FadeIn>
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light tracking-tight text-balance mb-6 sm:mb-8 md:mb-10">
+            Education.
+            <br />
+            <span className="font-semibold text-primary">Transformed.</span>
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground text-balance mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto leading-relaxed font-light">
+            Ghana's premier educational technology company, empowering schools to operate seamlessly, communicate
+            effectively, and thrive in the digital age.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <Link
+              href="#contact"
+              className="w-full sm:w-auto bg-secondary text-secondary-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-full text-lg sm:text-xl font-medium hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-3"
+            >
+              Start Your Journey
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            </Link>
+            <Link
+              href="#how-it-works"
+              className="w-full sm:w-auto text-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-full text-lg sm:text-xl font-medium hover:bg-accent transition-colors"
+            >
+              See How It Works
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Problem Section - Relatable Pain Points */}
-      <section id="how-it-works" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+      {/* Results Bar - Social Proof */}
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 text-center">
+            <div>
+              <AnimatedCounter
+                end={500}
+                suffix="+"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-primary mb-2"
+              />
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground font-light">Schools Transformed</p>
+            </div>
+            <div>
+              <AnimatedCounter
+                end={75}
+                suffix="%"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-primary mb-2"
+              />
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground font-light">Less Admin Work</p>
+            </div>
+            <div>
+              <AnimatedCounter
+                end={90}
+                suffix="%"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-secondary mb-2"
+              />
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground font-light">Parent Satisfaction</p>
+            </div>
+            <div>
+              <AnimatedCounter
+                end={25}
+                suffix="%"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-secondary mb-2"
+              />
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground font-light">Enrollment Growth</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section id="how-it-works" className="py-20 sm:py-28 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <FadeIn>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance mb-4 sm:mb-6 text-center">
-              We understand your challenges
-            </h2>
-          </FadeIn>
-          <FadeIn delay={200}>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground text-balance mb-12 sm:mb-16 md:mb-20 text-center max-w-3xl mx-auto leading-relaxed">
-              Every day, brilliant educators spend hours on paperwork instead of teaching. Parents feel disconnected.
-              Schools lose students to competitors not because they lack quality, but because they lack visibility.
-            </p>
-          </FadeIn>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6 sm:mb-8 text-center">
+            We understand your challenges
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground text-balance mb-16 sm:mb-20 md:mb-24 text-center max-w-3xl mx-auto leading-relaxed font-light">
+            Every day, brilliant educators spend hours on paperwork instead of teaching. Parents feel disconnected.
+            Schools lose students to competitors not because they lack quality, but because they lack visibility.
+          </p>
 
-          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
-            <FadeIn delay={0}>
-              <GlassmorphismCard className="p-6 sm:p-8 hover:scale-105 transition-transform">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
-                    <Clock className="w-6 h-6 sm:w-7 sm:h-7 text-destructive" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold">Drowning in paperwork</h3>
-                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    Student records scattered across files. Hours spent on reports that should take minutes. Lost
-                    information and incomplete data holding you back.
-                  </p>
+          <div className="grid sm:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
+            <div className="p-8 sm:p-10 md:p-12 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
+              <div className="space-y-6">
+                <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
+                  <Clock className="w-7 h-7 text-destructive" />
                 </div>
-              </GlassmorphismCard>
-            </FadeIn>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium">Drowning in paperwork</h3>
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+                  Student records scattered across files. Hours spent on reports that should take minutes. Lost
+                  information and incomplete data holding you back.
+                </p>
+              </div>
+            </div>
 
-            <FadeIn delay={100}>
-              <GlassmorphismCard className="p-6 sm:p-8 hover:scale-105 transition-transform">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
-                    <Users className="w-6 h-6 sm:w-7 sm:h-7 text-destructive" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold">Communication breakdown</h3>
-                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    Parents complaining they don't know what's happening. Important announcements getting lost. No easy
-                    way to reach families during emergencies.
-                  </p>
+            <div className="p-8 sm:p-10 md:p-12 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
+              <div className="space-y-6">
+                <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
+                  <Users className="w-7 h-7 text-destructive" />
                 </div>
-              </GlassmorphismCard>
-            </FadeIn>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium">Communication breakdown</h3>
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+                  Parents complaining they don't know what's happening. Important announcements getting lost. No easy
+                  way to reach families during emergencies.
+                </p>
+              </div>
+            </div>
 
-            <FadeIn delay={200}>
-              <GlassmorphismCard className="p-6 sm:p-8 hover:scale-105 transition-transform">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
-                    <CreditCard className="w-6 h-6 sm:w-7 sm:h-7 text-destructive" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold">Financial chaos</h3>
-                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    Chasing parents for fees. Unclear records of payments. Difficulty planning budgets without clear
-                    financial data and transparency concerns.
-                  </p>
+            <div className="p-8 sm:p-10 md:p-12 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
+              <div className="space-y-6">
+                <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
+                  <CreditCard className="w-7 h-7 text-destructive" />
                 </div>
-              </GlassmorphismCard>
-            </FadeIn>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium">Financial chaos</h3>
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+                  Chasing parents for fees. Unclear records of payments. Difficulty planning budgets without clear
+                  financial data and transparency concerns.
+                </p>
+              </div>
+            </div>
 
-            <FadeIn delay={300}>
-              <GlassmorphismCard className="p-6 sm:p-8 hover:scale-105 transition-transform">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 text-destructive" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold">Losing to competitors</h3>
-                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    Parents choosing schools that "look more modern." Struggling to maintain enrollment. Feeling behind
-                    in the digital age despite excellent teaching.
-                  </p>
+            <div className="p-8 sm:p-10 md:p-12 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
+              <div className="space-y-6">
+                <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
+                  <TrendingUp className="w-7 h-7 text-destructive" />
                 </div>
-              </GlassmorphismCard>
-            </FadeIn>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium">Losing to competitors</h3>
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+                  Parents choosing schools that "look more modern." Struggling to maintain enrollment. Feeling behind in
+                  the digital age despite excellent teaching.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Solution - One Platform */}
-      <ParallaxSection speed={0.2}>
-        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-primary">
-          <div className="max-w-5xl mx-auto text-center">
-            <FadeIn>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground text-balance mb-4 sm:mb-6 md:mb-8">
-                One platform. Everything solved.
-              </h2>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-foreground/90 text-balance leading-relaxed px-4">
-                ACE Educational Systems brings together school management, learning platforms, finance, and
-                marketing—all integrated seamlessly to transform how your institution operates.
-              </p>
-            </FadeIn>
-          </div>
-        </section>
-      </ParallaxSection>
+      <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8 bg-primary">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-primary-foreground text-balance mb-6 sm:mb-8">
+            One platform. Everything solved.
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 text-balance leading-relaxed font-light">
+            ACE Educational Systems brings together school management, learning platforms, finance, and marketing—all
+            integrated seamlessly to transform how your institution operates.
+          </p>
+        </div>
+      </section>
 
       {/* Core Services */}
-      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-28 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <FadeIn>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance mb-12 sm:mb-16 md:mb-20 text-center">
-              Everything your school needs
-            </h2>
-          </FadeIn>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-20 sm:mb-24 md:mb-28 text-center">
+            Everything your school needs
+          </h2>
 
-          <div className="space-y-16 sm:space-y-24 md:space-y-32">
+          <div className="space-y-24 sm:space-y-32 md:space-y-40">
             {/* School Management */}
             <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <FadeIn direction="left">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
-                    <School className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
-                  </div>
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">School Management</h3>
-                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    End the paperwork nightmare. Manage students, staff, attendance, and records in one unified system.
-                    See everything about your school instantly from your phone or computer.
-                  </p>
-                  <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg">
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-1" />
-                      <span>Digital student information system</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-1" />
-                      <span>Automated attendance tracking</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-1" />
-                      <span>Staff management & payroll</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-1" />
-                      <span>Parent communication portal</span>
-                    </li>
-                  </ul>
+              <div className="space-y-6">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <School className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
                 </div>
-              </FadeIn>
-              <FadeIn direction="right" delay={200}>
-                <TiltCard className="bg-accent rounded-3xl p-10 sm:p-16 flex items-center justify-center min-h-[300px] sm:min-h-[400px]">
-                  <School className="w-32 h-32 sm:w-40 sm:h-40 text-primary/20" />
-                </TiltCard>
-              </FadeIn>
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight">School Management</h3>
+                <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
+                  End the paperwork nightmare. Manage students, staff, attendance, and records in one unified system.
+                  See everything about your school instantly from your phone or computer.
+                </p>
+                <ul className="space-y-4 text-base sm:text-lg">
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <span className="font-light">Digital student information system</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <span className="font-light">Automated attendance tracking</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <span className="font-light">Staff management & payroll</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <span className="font-light">Parent communication portal</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-accent rounded-3xl p-16 flex items-center justify-center min-h-[400px]">
+                <School className="w-40 h-40 text-primary/20" />
+              </div>
             </div>
 
             {/* Learning Platform */}
             <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <FadeIn direction="left" delay={200} className="order-2 lg:order-1">
-                <TiltCard className="bg-accent rounded-3xl p-10 sm:p-16 flex items-center justify-center min-h-[300px] sm:min-h-[400px]">
-                  <BookOpen className="w-32 h-32 sm:w-40 sm:h-40 text-primary/20" />
-                </TiltCard>
-              </FadeIn>
-              <FadeIn direction="right" className="order-1 lg:order-2">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
-                    <BookOpen className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
-                  </div>
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Learning Platform</h3>
-                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    Transform classrooms into dynamic digital learning environments. Deliver courses online, manage
-                    assignments, conduct assessments, and track progress—all integrated.
-                  </p>
-                  <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg">
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-1" />
-                      <span>Course content delivery & management</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-1" />
-                      <span>Assignment submission & grading</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-1" />
-                      <span>Online examination with auto-grading</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-1" />
-                      <span>Progress tracking & analytics</span>
-                    </li>
-                  </ul>
+              <div className="bg-accent rounded-3xl p-16 flex items-center justify-center min-h-[400px] order-2 lg:order-1">
+                <BookOpen className="w-40 h-40 text-primary/20" />
+              </div>
+              <div className="space-y-6 order-1 lg:order-2">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <BookOpen className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
                 </div>
-              </FadeIn>
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight">Learning Platform</h3>
+                <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
+                  Transform classrooms into dynamic digital learning environments. Deliver courses online, manage
+                  assignments, conduct assessments, and track progress—all integrated.
+                </p>
+                <ul className="space-y-4 text-base sm:text-lg">
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <span className="font-light">Course content delivery & management</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <span className="font-light">Assignment submission & grading</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <span className="font-light">Online examination with auto-grading</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <span className="font-light">Progress tracking & analytics</span>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Finance & Billing */}
             <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <FadeIn direction="left">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center">
-                    <CreditCard className="w-7 h-7 sm:w-8 sm:h-8 text-secondary" />
-                  </div>
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Finance & Billing</h3>
-                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    Take control of your finances. Automated billing with Mobile Money integration. Know exactly who has
-                    paid, send reminders, and plan budgets with confidence.
-                  </p>
-                  <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg">
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-1" />
-                      <span>Mobile Money integration (MTN, Vodafone, AirtelTigo)</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-1" />
-                      <span>Automated invoicing & payment reminders</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-1" />
-                      <span>Real-time payment tracking</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-1" />
-                      <span>Financial reports & budget planning</span>
-                    </li>
-                  </ul>
+              <div className="space-y-6">
+                <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center">
+                  <CreditCard className="w-7 h-7 sm:w-8 sm:h-8 text-secondary" />
                 </div>
-              </FadeIn>
-              <FadeIn direction="right" delay={200}>
-                <TiltCard className="bg-accent rounded-3xl p-10 sm:p-16 flex items-center justify-center min-h-[300px] sm:min-h-[400px]">
-                  <CreditCard className="w-32 h-32 sm:w-40 sm:h-40 text-secondary/20" />
-                </TiltCard>
-              </FadeIn>
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight">Finance & Billing</h3>
+                <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
+                  Take control of your finances. Automated billing with Mobile Money integration. Know exactly who has
+                  paid, send reminders, and plan budgets with confidence.
+                </p>
+                <ul className="space-y-4 text-base sm:text-lg">
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                    <span className="font-light">Mobile Money integration (MTN, Vodafone, AirtelTigo)</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                    <span className="font-light">Automated invoicing & payment reminders</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                    <span className="font-light">Real-time payment tracking</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                    <span className="font-light">Financial reports & budget planning</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-accent rounded-3xl p-16 flex items-center justify-center min-h-[400px]">
+                <CreditCard className="w-40 h-40 text-secondary/20" />
+              </div>
             </div>
 
             {/* Marketing & Branding */}
             <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <FadeIn direction="left" delay={200} className="order-2 lg:order-1">
-                <TiltCard className="bg-accent rounded-3xl p-10 sm:p-16 flex items-center justify-center min-h-[300px] sm:min-h-[400px]">
-                  <TrendingUp className="w-32 h-32 sm:w-40 sm:h-40 text-secondary/20" />
-                </TiltCard>
-              </FadeIn>
-              <FadeIn direction="right" className="order-1 lg:order-2">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center">
-                    <TrendingUp className="w-7 h-7 sm:w-8 sm:h-8 text-secondary" />
-                  </div>
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Marketing & Branding</h3>
-                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    Stand out in a competitive market. Professional branding, website design, social media management,
-                    and strategic campaigns that attract and retain students.
-                  </p>
-                  <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg">
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-1" />
-                      <span>Professional brand identity & logo design</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-1" />
-                      <span>Modern, mobile-responsive websites</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-1" />
-                      <span>Social media management & content creation</span>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-1" />
-                      <span>Event photography & videography</span>
-                    </li>
-                  </ul>
+              <div className="bg-accent rounded-3xl p-16 flex items-center justify-center min-h-[400px] order-2 lg:order-1">
+                <TrendingUp className="w-40 h-40 text-secondary/20" />
+              </div>
+              <div className="space-y-6 order-1 lg:order-2">
+                <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center">
+                  <TrendingUp className="w-7 h-7 sm:w-8 sm:h-8 text-secondary" />
                 </div>
-              </FadeIn>
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight">Marketing & Branding</h3>
+                <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
+                  Stand out in a competitive market. Professional branding, website design, social media management, and
+                  strategic campaigns that attract and retain students.
+                </p>
+                <ul className="space-y-4 text-base sm:text-lg">
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                    <span className="font-light">Professional brand identity & logo design</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                    <span className="font-light">Modern, mobile-responsive websites</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                    <span className="font-light">Social media management & content creation</span>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                    <span className="font-light">Event photography & videography</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Packages Overview */}
-      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
-          <FadeIn>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance mb-4 sm:mb-6 text-center">
-              Choose your path to excellence
-            </h2>
-          </FadeIn>
-          <FadeIn delay={200}>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground text-balance mb-12 sm:mb-16 md:mb-20 text-center max-w-3xl mx-auto leading-relaxed">
-              Flexible packages designed for schools at every stage of their digital journey
-            </p>
-          </FadeIn>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6 sm:mb-8 text-center">
+            Choose your path to excellence
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground text-balance mb-16 sm:mb-20 md:mb-24 text-center max-w-3xl mx-auto leading-relaxed font-light">
+            Flexible packages designed for schools at every stage of their digital journey
+          </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
             {/* Foundation Package */}
-            <FadeIn delay={0}>
-              <TiltCard className="bg-background border-2 border-border rounded-3xl p-8 sm:p-10 space-y-6 sm:space-y-8 hover:border-primary transition-colors hover:shadow-2xl">
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">Foundation</h3>
-                  <p className="text-base sm:text-lg text-muted-foreground">
-                    Perfect for schools ready to digitize core operations
-                  </p>
-                </div>
-                <div>
-                  <div className="text-4xl sm:text-5xl font-bold mb-1 sm:mb-2">GHS 2,000</div>
-                  <div className="text-base sm:text-lg text-muted-foreground">+ GHS 15 per student/year</div>
-                </div>
-                <ul className="space-y-3 sm:space-y-4">
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Student information system</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Attendance & grade management</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Parent SMS communication</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Professional school website</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Staff training & support</span>
-                  </li>
-                </ul>
-                <MagneticButton className="w-full">
-                  <Link
-                    href="#contact"
-                    className="block w-full text-center border-2 border-border px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium hover:bg-accent transition-colors"
-                  >
-                    Get Started
-                  </Link>
-                </MagneticButton>
-              </TiltCard>
-            </FadeIn>
+            <div className="bg-background border border-border rounded-3xl p-10 sm:p-12 space-y-8 hover:border-primary transition-colors hover:shadow-xl">
+              <div>
+                <h3 className="text-3xl sm:text-4xl font-medium mb-3">Foundation</h3>
+                <p className="text-lg text-muted-foreground font-light">
+                  Perfect for schools ready to digitize core operations
+                </p>
+              </div>
+              <div>
+                <div className="text-5xl sm:text-6xl font-light mb-2">GHS 2,000</div>
+                <div className="text-lg text-muted-foreground font-light">+ GHS 15 per student/year</div>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Student information system</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Attendance & grade management</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Parent SMS communication</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Professional school website</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Staff training & support</span>
+                </li>
+              </ul>
+              <Link
+                href="#contact"
+                className="block w-full text-center border border-border px-8 py-4 rounded-full text-lg font-medium hover:bg-accent transition-colors"
+              >
+                Get Started
+              </Link>
+            </div>
 
             {/* Growth Package */}
-            <FadeIn delay={100}>
-              <TiltCard className="bg-primary text-primary-foreground border-2 border-primary rounded-3xl p-8 sm:p-10 space-y-6 sm:space-y-8 relative hover:scale-105 transition-transform shadow-2xl">
-                <div className="absolute -top-4 sm:-top-5 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground px-4 sm:px-6 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-bold">
-                  MOST POPULAR
-                </div>
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">Growth</h3>
-                  <p className="text-base sm:text-lg text-primary-foreground/90">
-                    For schools seeking comprehensive transformation
-                  </p>
-                </div>
-                <div>
-                  <div className="text-4xl sm:text-5xl font-bold mb-1 sm:mb-2">GHS 3,500</div>
-                  <div className="text-base sm:text-lg text-primary-foreground/90">+ GHS 20 per student/year</div>
-                </div>
-                <ul className="space-y-3 sm:space-y-4">
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Everything in Foundation</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Advanced parent portal</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Mobile app (iOS & Android)</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Social media management</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Event photography (annual)</span>
-                  </li>
-                </ul>
-                <MagneticButton className="w-full">
-                  <Link
-                    href="#contact"
-                    className="block w-full text-center bg-secondary text-secondary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium hover:opacity-90 transition-opacity"
-                  >
-                    Get Started
-                  </Link>
-                </MagneticButton>
-              </TiltCard>
-            </FadeIn>
+            <div className="bg-primary text-primary-foreground border border-primary rounded-3xl p-10 sm:p-12 space-y-8 relative hover:scale-105 transition-transform shadow-2xl">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground px-6 py-2 rounded-full text-sm font-medium">
+                MOST POPULAR
+              </div>
+              <div>
+                <h3 className="text-3xl sm:text-4xl font-medium mb-3">Growth</h3>
+                <p className="text-lg text-primary-foreground/90 font-light">
+                  For schools seeking comprehensive transformation
+                </p>
+              </div>
+              <div>
+                <div className="text-5xl sm:text-6xl font-light mb-2">GHS 3,500</div>
+                <div className="text-lg text-primary-foreground/90 font-light">+ GHS 20 per student/year</div>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Everything in Foundation</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Advanced parent portal</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Mobile app (iOS & Android)</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Social media management</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Event photography (annual)</span>
+                </li>
+              </ul>
+              <Link
+                href="#contact"
+                className="block w-full text-center bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity"
+              >
+                Get Started
+              </Link>
+            </div>
 
             {/* Excellence Package */}
-            <FadeIn delay={200}>
-              <TiltCard className="bg-background border-2 border-border rounded-3xl p-8 sm:p-10 space-y-6 sm:space-y-8 hover:border-secondary transition-colors hover:shadow-2xl">
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">Excellence</h3>
-                  <p className="text-base sm:text-lg text-muted-foreground">
-                    For visionary institutions leading the future
-                  </p>
-                </div>
-                <div>
-                  <div className="text-4xl sm:text-5xl font-bold mb-1 sm:mb-2">GHS 8,000</div>
-                  <div className="text-base sm:text-lg text-muted-foreground">+ GHS 25 per student/year</div>
-                </div>
-                <ul className="space-y-3 sm:space-y-4">
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Everything in Growth</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">White-label customization</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Full LMS & exam platform</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">Dedicated account manager</span>
-                  </li>
-                  <li className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <span className="text-base sm:text-lg">24/7 priority support</span>
-                  </li>
-                </ul>
-                <MagneticButton className="w-full">
-                  <Link
-                    href="#contact"
-                    className="block w-full text-center border-2 border-border px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium hover:bg-accent transition-colors"
-                  >
-                    Contact Sales
-                  </Link>
-                </MagneticButton>
-              </TiltCard>
-            </FadeIn>
+            <div className="bg-background border border-border rounded-3xl p-10 sm:p-12 space-y-8 hover:border-secondary transition-colors hover:shadow-xl">
+              <div>
+                <h3 className="text-3xl sm:text-4xl font-medium mb-3">Excellence</h3>
+                <p className="text-lg text-muted-foreground font-light">
+                  For visionary institutions leading the future
+                </p>
+              </div>
+              <div>
+                <div className="text-5xl sm:text-6xl font-light mb-2">GHS 8,000</div>
+                <div className="text-lg text-muted-foreground font-light">+ GHS 25 per student/year</div>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Everything in Growth</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">White-label customization</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Full LMS & exam platform</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">Dedicated account manager</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-lg font-light">24/7 priority support</span>
+                </li>
+              </ul>
+              <Link
+                href="#contact"
+                className="block w-full text-center border border-border px-8 py-4 rounded-full text-lg font-medium hover:bg-accent transition-colors"
+              >
+                Contact Sales
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ACE Community Network */}
-      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <FadeIn>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance mb-4 sm:mb-6 text-center">
-              Join the ACE Community
-            </h2>
-          </FadeIn>
-          <FadeIn delay={200}>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground text-balance mb-12 sm:mb-16 md:mb-20 text-center max-w-3xl mx-auto leading-relaxed">
-              More than software—a network of innovative schools collaborating to elevate education across Africa
-            </p>
-          </FadeIn>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6 sm:mb-8 text-center">
+            Join the ACE Community
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground text-balance mb-16 sm:mb-20 md:mb-24 text-center max-w-3xl mx-auto leading-relaxed font-light">
+            More than software—a network of innovative schools collaborating to elevate education across Africa
+          </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
-            <FadeIn delay={0}>
-              <GlassmorphismCard className="text-center p-6 sm:p-8 hover:scale-105 transition-transform">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
-                    <Trophy className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold">Inter-School Competitions</h3>
-                  <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                    Academic olympiads, sports tournaments, science fairs, and innovation challenges. Give your students
-                    opportunities to compete and shine on a bigger stage.
-                  </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+            <div className="text-center p-8 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
+              <div className="space-y-6">
+                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
+                  <Trophy className="w-10 h-10 text-primary" />
                 </div>
-              </GlassmorphismCard>
-            </FadeIn>
+                <h3 className="text-2xl sm:text-3xl font-medium">Inter-School Competitions</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                  Academic olympiads, sports tournaments, science fairs, and innovation challenges. Give your students
+                  opportunities to compete and shine on a bigger stage.
+                </p>
+              </div>
+            </div>
 
-            <FadeIn delay={100}>
-              <GlassmorphismCard className="text-center p-6 sm:p-8 hover:scale-105 transition-transform">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
-                    <Users className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold">Teacher Development</h3>
-                  <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                    Professional training programs, best practices sharing, peer mentoring, and leadership development.
-                    Continuous learning for your educators.
-                  </p>
+            <div className="text-center p-8 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
+              <div className="space-y-6">
+                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
+                  <Users className="w-10 h-10 text-primary" />
                 </div>
-              </GlassmorphismCard>
-            </FadeIn>
+                <h3 className="text-2xl sm:text-3xl font-medium">Teacher Development</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                  Professional training programs, best practices sharing, peer mentoring, and leadership development.
+                  Continuous learning for your educators.
+                </p>
+              </div>
+            </div>
 
-            <FadeIn delay={200}>
-              <GlassmorphismCard className="text-center p-6 sm:p-8 hover:scale-105 transition-transform">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto">
-                    <Globe className="w-8 h-8 sm:w-10 sm:h-10 text-secondary" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold">Student Exchange Programs</h3>
-                  <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                    Sister school partnerships, virtual cultural exchanges, and international pen pal programs. Build
-                    global awareness and connections.
-                  </p>
+            <div className="text-center p-8 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
+              <div className="space-y-6">
+                <div className="w-20 h-20 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto">
+                  <Globe className="w-10 h-10 text-secondary" />
                 </div>
-              </GlassmorphismCard>
-            </FadeIn>
+                <h3 className="text-2xl sm:text-3xl font-medium">Student Exchange Programs</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                  Sister school partnerships, virtual cultural exchanges, and international pen pal programs. Build
+                  global awareness and connections.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <FadeIn delay={300}>
-            <div className="mt-12 sm:mt-16 text-center">
-              <MagneticButton>
-                <Link
-                  href="/community"
-                  className="inline-flex items-center gap-2 sm:gap-3 text-lg sm:text-xl font-medium text-primary hover:underline"
-                >
-                  Explore the Community
-                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                </Link>
-              </MagneticButton>
-            </div>
-          </FadeIn>
+          <div className="mt-16 text-center">
+            <Link
+              href="/community"
+              className="inline-flex items-center gap-3 text-xl font-medium text-primary hover:underline"
+            >
+              Explore the Community
+              <ArrowRight className="w-6 h-6" />
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Built for Africa */}
-      <ParallaxSection speed={0.2}>
-        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-secondary">
-          <div className="max-w-6xl mx-auto">
-            <FadeIn>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground text-balance mb-12 sm:mb-16 md:mb-20 text-center">
-                Built for Africa, by Africans
-              </h2>
-            </FadeIn>
+      <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8 bg-secondary">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-secondary-foreground text-balance mb-16 sm:mb-20 md:mb-24 text-center">
+            Built for Africa, by Africans
+          </h2>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
-              <FadeIn delay={0}>
-                <div className="text-center space-y-4 sm:space-y-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-secondary-foreground/10 flex items-center justify-center mx-auto">
-                    <Smartphone className="w-8 h-8 sm:w-10 sm:h-10 text-secondary-foreground" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-secondary-foreground">Mobile Money Integration</h3>
-                  <p className="text-base sm:text-lg text-secondary-foreground/90 leading-relaxed">
-                    Native support for MTN Mobile Money, Vodafone Cash, and AirtelTigo Money. Parents pay fees easily
-                    from their phones.
-                  </p>
-                </div>
-              </FadeIn>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+            <div className="text-center space-y-6">
+              <div className="w-20 h-20 rounded-2xl bg-secondary-foreground/10 flex items-center justify-center mx-auto">
+                <Smartphone className="w-10 h-10 text-secondary-foreground" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-medium text-secondary-foreground">Mobile Money Integration</h3>
+              <p className="text-lg text-secondary-foreground/90 leading-relaxed font-light">
+                Native support for MTN Mobile Money, Vodafone Cash, and AirtelTigo Money. Parents pay fees easily from
+                their phones.
+              </p>
+            </div>
 
-              <FadeIn delay={100}>
-                <div className="text-center space-y-4 sm:space-y-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-secondary-foreground/10 flex items-center justify-center mx-auto">
-                    <Zap className="w-8 h-8 sm:w-10 sm:h-10 text-secondary-foreground" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-secondary-foreground">Offline-First Design</h3>
-                  <p className="text-base sm:text-lg text-secondary-foreground/90 leading-relaxed">
-                    Works even with unstable internet. Data syncs automatically when connection is restored. Never lose
-                    progress.
-                  </p>
-                </div>
-              </FadeIn>
+            <div className="text-center space-y-6">
+              <div className="w-20 h-20 rounded-2xl bg-secondary-foreground/10 flex items-center justify-center mx-auto">
+                <Zap className="w-10 h-10 text-secondary-foreground" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-medium text-secondary-foreground">Offline-First Design</h3>
+              <p className="text-lg text-secondary-foreground/90 leading-relaxed font-light">
+                Works even with unstable internet. Data syncs automatically when connection is restored. Never lose
+                progress.
+              </p>
+            </div>
 
-              <FadeIn delay={200}>
-                <div className="text-center space-y-4 sm:space-y-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-secondary-foreground/10 flex items-center justify-center mx-auto">
-                    <FileCheck className="w-8 h-8 sm:w-10 sm:h-10 text-secondary-foreground" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-secondary-foreground">GES Curriculum Aligned</h3>
-                  <p className="text-base sm:text-lg text-secondary-foreground/90 leading-relaxed">
-                    Designed specifically for Ghana Education Service requirements. Local languages, academic calendars,
-                    and reporting standards.
-                  </p>
-                </div>
-              </FadeIn>
+            <div className="text-center space-y-6">
+              <div className="w-20 h-20 rounded-2xl bg-secondary-foreground/10 flex items-center justify-center mx-auto">
+                <FileCheck className="w-10 h-10 text-secondary-foreground" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-medium text-secondary-foreground">GES Curriculum Aligned</h3>
+              <p className="text-lg text-secondary-foreground/90 leading-relaxed font-light">
+                Designed specifically for Ghana Education Service requirements. Local languages, academic calendars, and
+                reporting standards.
+              </p>
             </div>
           </div>
-        </section>
-      </ParallaxSection>
+        </div>
+      </section>
 
       {/* Testimonials */}
-      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <FadeIn>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance mb-12 sm:mb-16 md:mb-20 text-center">
-              Trusted by educators across Ghana
-            </h2>
-          </FadeIn>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-16 sm:mb-20 md:mb-24 text-center">
+            Trusted by educators across Ghana
+          </h2>
 
-          <div className="md:hidden">
-            <SwipeableTestimonials />
-          </div>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-accent rounded-3xl p-10 space-y-6">
+              <div className="flex gap-1 text-primary">
+                {[...Array(5)].map((_, i) => (
+                  <Heart key={i} className="w-6 h-6 fill-current" />
+                ))}
+              </div>
+              <p className="text-xl leading-relaxed font-light">
+                "We used to spend entire weekends preparing reports. Now it takes minutes. ACE has given us our time
+                back to focus on what matters—teaching our students."
+              </p>
+              <div>
+                <div className="font-medium text-lg">Dr. Kwame Mensah</div>
+                <div className="text-muted-foreground font-light">Headmaster, Accra</div>
+              </div>
+            </div>
 
-          {/* Desktop grid view */}
-          <div className="hidden md:grid md:grid-cols-2 gap-12">
-            <FadeIn delay={0}>
-              <TiltCard className="bg-accent rounded-3xl p-8 sm:p-10 space-y-6">
-                <div className="flex gap-1 text-primary">
-                  {[...Array(5)].map((_, i) => (
-                    <Heart key={i} className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
-                  ))}
-                </div>
-                <p className="text-base sm:text-xl leading-relaxed">
-                  "We used to spend entire weekends preparing reports. Now it takes minutes. ACE has given us our time
-                  back to focus on what matters—teaching our students."
-                </p>
-                <div>
-                  <div className="font-semibold text-base sm:text-lg">Dr. Kwame Mensah</div>
-                  <div className="text-muted-foreground">Headmaster, Accra</div>
-                </div>
-              </TiltCard>
-            </FadeIn>
+            <div className="bg-accent rounded-3xl p-10 space-y-6">
+              <div className="flex gap-1 text-primary">
+                {[...Array(5)].map((_, i) => (
+                  <Heart key={i} className="w-6 h-6 fill-current" />
+                ))}
+              </div>
+              <p className="text-xl leading-relaxed font-light">
+                "Our fee collection rate went from 60% to 95% in just six months. Parents love the Mobile Money
+                integration, and we finally have clear financial visibility."
+              </p>
+              <div>
+                <div className="font-medium text-lg">Mrs. Abena Osei</div>
+                <div className="text-muted-foreground font-light">School Administrator, Kumasi</div>
+              </div>
+            </div>
 
-            <FadeIn delay={100}>
-              <TiltCard className="bg-accent rounded-3xl p-8 sm:p-10 space-y-6">
-                <div className="flex gap-1 text-primary">
-                  {[...Array(5)].map((_, i) => (
-                    <Heart key={i} className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
-                  ))}
-                </div>
-                <p className="text-base sm:text-xl leading-relaxed">
-                  "Our fee collection rate went from 60% to 95% in just six months. Parents love the Mobile Money
-                  integration, and we finally have clear financial visibility."
-                </p>
-                <div>
-                  <div className="font-semibold text-base sm:text-lg">Mrs. Abena Osei</div>
-                  <div className="text-muted-foreground">School Administrator, Kumasi</div>
-                </div>
-              </TiltCard>
-            </FadeIn>
+            <div className="bg-accent rounded-3xl p-10 space-y-6">
+              <div className="flex gap-1 text-primary">
+                {[...Array(5)].map((_, i) => (
+                  <Heart key={i} className="w-6 h-6 fill-current" />
+                ))}
+              </div>
+              <p className="text-xl leading-relaxed font-light">
+                "Parents actually thank us now for keeping them informed. The communication portal has transformed our
+                relationship with families."
+              </p>
+              <div>
+                <div className="font-medium text-lg">Mr. Kofi Asante</div>
+                <div className="text-muted-foreground font-light">Deputy Head, Tema</div>
+              </div>
+            </div>
 
-            <FadeIn delay={200}>
-              <TiltCard className="bg-accent rounded-3xl p-8 sm:p-10 space-y-6">
-                <div className="flex gap-1 text-primary">
-                  {[...Array(5)].map((_, i) => (
-                    <Heart key={i} className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
-                  ))}
-                </div>
-                <p className="text-base sm:text-xl leading-relaxed">
-                  "Parents actually thank us now for keeping them informed. The communication portal has transformed our
-                  relationship with families."
-                </p>
-                <div>
-                  <div className="font-semibold text-base sm:text-lg">Mr. Kofi Asante</div>
-                  <div className="text-muted-foreground">Deputy Head, Tema</div>
-                </div>
-              </TiltCard>
-            </FadeIn>
-
-            <FadeIn delay={300}>
-              <TiltCard className="bg-accent rounded-3xl p-8 sm:p-10 space-y-6">
-                <div className="flex gap-1 text-primary">
-                  {[...Array(5)].map((_, i) => (
-                    <Heart key={i} className="w-5 h-5 sm:w-6 sm:h-6 fill-current" />
-                  ))}
-                </div>
-                <p className="text-base sm:text-xl leading-relaxed">
-                  "Our enrollment increased by 30% after launching our new website and social media presence. ACE helped
-                  us tell our story to the right families."
-                </p>
-                <div>
-                  <div className="font-semibold text-base sm:text-lg">Mrs. Ama Darko</div>
-                  <div className="text-muted-foreground">School Owner, Takoradi</div>
-                </div>
-              </TiltCard>
-            </FadeIn>
+            <div className="bg-accent rounded-3xl p-10 space-y-6">
+              <div className="flex gap-1 text-primary">
+                {[...Array(5)].map((_, i) => (
+                  <Heart key={i} className="w-6 h-6 fill-current" />
+                ))}
+              </div>
+              <p className="text-xl leading-relaxed font-light">
+                "Our enrollment increased by 30% after launching our new website and social media presence. ACE helped
+                us tell our story to the right families."
+              </p>
+              <div>
+                <div className="font-medium text-lg">Mrs. Ama Darko</div>
+                <div className="text-muted-foreground font-light">School Owner, Takoradi</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Mission Statement */}
-      <ParallaxSection speed={0.2}>
-        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-primary">
-          <div className="max-w-5xl mx-auto text-center">
-            <FadeIn>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground text-balance mb-4 sm:mb-6 md:mb-8">
-                Our mission is bigger than software
-              </h2>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-foreground/90 text-balance leading-relaxed mb-8 sm:mb-12">
-                To transform one million students' educational experiences by 2030 through innovative digital solutions
-                and become the trusted partner for educational institutions across Africa.
-              </p>
-            </FadeIn>
-            <FadeIn delay={400}>
-              <MagneticButton>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 sm:gap-3 text-lg sm:text-xl font-medium text-primary-foreground hover:underline"
-                >
-                  Read Our Story
-                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                </Link>
-              </MagneticButton>
-            </FadeIn>
-          </div>
-        </section>
-      </ParallaxSection>
+      <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8 bg-primary">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-primary-foreground text-balance mb-6 sm:mb-8">
+            Our mission is bigger than software
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 text-balance leading-relaxed mb-12 font-light">
+            To transform one million students' educational experiences by 2030 through innovative digital solutions and
+            become the trusted partner for educational institutions across Africa.
+          </p>
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-3 text-xl font-medium text-primary-foreground hover:underline"
+          >
+            Read Our Story
+            <ArrowRight className="w-6 h-6" />
+          </Link>
+        </div>
+      </section>
 
       {/* Why Choose ACE */}
-      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <FadeIn>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance mb-12 sm:mb-16 md:mb-20 text-center">
-              Why schools choose ACE
-            </h2>
-          </FadeIn>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-16 sm:mb-20 md:mb-24 text-center">
+            Why schools choose ACE
+          </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12">
-            <FadeIn delay={0}>
-              <GlassmorphismCard className="text-center p-6 hover:scale-105 transition-transform">
-                <div className="space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
-                    <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold">Secure & Reliable</h3>
-                  <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                    Bank-level encryption, automated backups, 99.9% uptime guarantee
-                  </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+            <div className="text-center p-6 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
+              <div className="space-y-4">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
+                  <Shield className="w-8 h-8 text-primary" />
                 </div>
-              </GlassmorphismCard>
-            </FadeIn>
+                <h3 className="text-xl font-medium">Secure & Reliable</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                  Bank-level encryption, automated backups, 99.9% uptime guarantee
+                </p>
+              </div>
+            </div>
 
-            <FadeIn delay={100}>
-              <GlassmorphismCard className="text-center p-6 hover:scale-105 transition-transform">
-                <div className="space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
-                    <Heart className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold">Local Support</h3>
-                  <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                    Based in Ghana, same-day support in your timezone
-                  </p>
+            <div className="text-center p-6 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
+              <div className="space-y-4">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
+                  <Heart className="w-8 h-8 text-primary" />
                 </div>
-              </GlassmorphismCard>
-            </FadeIn>
+                <h3 className="text-xl font-medium">Local Support</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                  Based in Ghana, same-day support in your timezone
+                </p>
+              </div>
+            </div>
 
-            <FadeIn delay={200}>
-              <GlassmorphismCard className="text-center p-6 hover:scale-105 transition-transform">
-                <div className="space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto">
-                    <BarChart3 className="w-7 h-7 sm:w-8 sm:h-8 text-secondary" />
-                  </div>
-                  <h3 className="text-xl font-bold">Proven Results</h3>
-                  <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                    500+ schools, measurable improvements in efficiency and enrollment
-                  </p>
+            <div className="text-center p-6 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
+              <div className="space-y-4">
+                <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto">
+                  <BarChart3 className="w-8 h-8 text-secondary" />
                 </div>
-              </GlassmorphismCard>
-            </FadeIn>
+                <h3 className="text-xl font-medium">Proven Results</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                  500+ schools, measurable improvements in efficiency and enrollment
+                </p>
+              </div>
+            </div>
 
-            <FadeIn delay={300}>
-              <GlassmorphismCard className="text-center p-6 hover:scale-105 transition-transform">
-                <div className="space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto">
-                    <Users className="w-7 h-7 sm:w-8 sm:h-8 text-secondary" />
-                  </div>
-                  <h3 className="text-xl font-bold">True Partnership</h3>
-                  <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                    We grow with you, providing training, support, and continuous innovation
-                  </p>
+            <div className="text-center p-6 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
+              <div className="space-y-4">
+                <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto">
+                  <Users className="w-8 h-8 text-secondary" />
                 </div>
-              </GlassmorphismCard>
-            </FadeIn>
+                <h3 className="text-xl font-medium">True Partnership</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                  We grow with you, providing training, support, and continuous innovation
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section id="contact" className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-3xl mx-auto">
-          <FadeIn>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance mb-4 sm:mb-6 text-center">
-              Ready to transform your school?
-            </h2>
-          </FadeIn>
-          <FadeIn delay={200}>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-12 sm:mb-16 leading-relaxed text-center">
-              Let's discuss how ACE can help your institution thrive in the digital age.
-            </p>
-          </FadeIn>
-          <FadeIn delay={400}>
-            <GlassmorphismCard className="p-6 sm:p-10">
-              <form className="space-y-4 sm:space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-                  <input
-                    type="text"
-                    placeholder="School Name"
-                    className="w-full px-4 sm:px-6 py-3 sm:py-5 rounded-2xl bg-background border-2 border-border text-base sm:text-lg focus:outline-none focus:border-primary transition-colors"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 sm:px-6 py-3 sm:py-5 rounded-2xl bg-background border-2 border-border text-base sm:text-lg focus:outline-none focus:border-primary transition-colors"
-                  />
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="w-full px-4 sm:px-6 py-3 sm:py-5 rounded-2xl bg-background border-2 border-border text-base sm:text-lg focus:outline-none focus:border-primary transition-colors"
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    className="w-full px-4 sm:px-6 py-3 sm:py-5 rounded-2xl bg-background border-2 border-border text-base sm:text-lg focus:outline-none focus:border-primary transition-colors"
-                  />
-                </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6 sm:mb-8 text-center">
+            Ready to transform your school?
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-16 sm:mb-20 leading-relaxed text-center font-light">
+            Let's discuss how ACE can help your institution thrive in the digital age.
+          </p>
+          <div className="bg-background rounded-3xl p-10 border border-border">
+            <form className="space-y-6">
+              <div className="grid sm:grid-cols-2 gap-6">
                 <input
-                  type="number"
-                  placeholder="Number of Students"
-                  className="w-full px-4 sm:px-6 py-3 sm:py-5 rounded-2xl bg-background border-2 border-border text-base sm:text-lg focus:outline-none focus:border-primary transition-colors"
+                  type="text"
+                  placeholder="School Name"
+                  className="w-full px-6 py-5 rounded-2xl bg-background border border-border text-lg focus:outline-none focus:border-primary transition-colors font-light"
                 />
-                <textarea
-                  placeholder="Tell us about your school and what you're looking for..."
-                  rows={4}
-                  className="w-full px-4 sm:px-6 py-3 sm:py-5 rounded-2xl bg-background border-2 border-border text-base sm:text-lg focus:outline-none focus:border-primary transition-colors resize-none"
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full px-6 py-5 rounded-2xl bg-background border border-border text-lg focus:outline-none focus:border-primary transition-colors font-light"
                 />
-                <MagneticButton className="w-full">
-                  <button
-                    type="submit"
-                    className="w-full bg-secondary text-secondary-foreground px-8 sm:px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-medium hover:scale-105 transition-transform shadow-lg"
-                  >
-                    Schedule Your Free Demo
-                  </button>
-                </MagneticButton>
-                <p className="text-center text-xs sm:text-sm text-muted-foreground">
-                  We'll respond within 24 hours to schedule your personalized demonstration
-                </p>
-              </form>
-            </GlassmorphismCard>
-          </FadeIn>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full px-6 py-5 rounded-2xl bg-background border border-border text-lg focus:outline-none focus:border-primary transition-colors font-light"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="w-full px-6 py-5 rounded-2xl bg-background border border-border text-lg focus:outline-none focus:border-primary transition-colors font-light"
+                />
+              </div>
+              <input
+                type="number"
+                placeholder="Number of Students"
+                className="w-full px-6 py-5 rounded-2xl bg-background border border-border text-lg focus:outline-none focus:border-primary transition-colors font-light"
+              />
+              <textarea
+                placeholder="Tell us about your school and what you're looking for..."
+                rows={4}
+                className="w-full px-6 py-5 rounded-2xl bg-background border border-border text-lg focus:outline-none focus:border-primary transition-colors resize-none font-light"
+              />
+              <button
+                type="submit"
+                className="w-full bg-secondary text-secondary-foreground px-10 py-5 rounded-full text-xl font-medium hover:opacity-90 transition-opacity"
+              >
+                Schedule Your Free Demo
+              </button>
+              <p className="text-center text-sm text-muted-foreground font-light">
+                We'll respond within 24 hours to schedule your personalized demonstration
+              </p>
+            </form>
+          </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <ParallaxSection speed={0.2}>
-        <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-secondary">
-          <div className="max-w-4xl mx-auto text-center">
-            <FadeIn>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-secondary-foreground text-balance mb-4 sm:mb-6">
-                The future of education is here
-              </h2>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <p className="text-base sm:text-lg md:text-xl text-secondary-foreground/90 mb-8 sm:mb-10 leading-relaxed">
-                Join 500+ forward-thinking schools already transforming education across Ghana
-              </p>
-            </FadeIn>
-            <FadeIn delay={400}>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-                <MagneticButton>
-                  <Link
-                    href="#contact"
-                    className="w-full sm:w-auto bg-background text-foreground px-8 sm:px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-medium hover:scale-105 transition-transform inline-flex items-center justify-center gap-3 shadow-lg"
-                  >
-                    Get Started Today
-                    <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </Link>
-                </MagneticButton>
-                <MagneticButton>
-                  <Link
-                    href="/technology"
-                    className="w-full sm:w-auto text-secondary-foreground px-8 sm:px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-medium hover:bg-secondary-foreground/10 transition-colors"
-                  >
-                    Explore Technology
-                  </Link>
-                </MagneticButton>
-              </div>
-            </FadeIn>
+      <section className="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-secondary-foreground text-balance mb-6">
+            The future of education is here
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-secondary-foreground/90 mb-10 leading-relaxed font-light">
+            Join 500+ forward-thinking schools already transforming education across Ghana
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <Link
+              href="#contact"
+              className="w-full sm:w-auto bg-background text-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-full text-lg sm:text-xl font-medium hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-3"
+            >
+              Get Started Today
+              <ArrowRight className="w-6 h-6" />
+            </Link>
+            <Link
+              href="/technology"
+              className="w-full sm:w-auto text-secondary-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-full text-lg sm:text-xl font-medium hover:bg-secondary-foreground/10 transition-colors"
+            >
+              Explore Technology
+            </Link>
           </div>
-        </section>
-      </ParallaxSection>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 border-t border-border mb-16 md:mb-0">
+      <footer className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-border mb-16 md:mb-0">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-5 gap-8 sm:gap-12 mb-12 sm:mb-16">
+          <div className="grid md:grid-cols-5 gap-12 mb-16">
             <div className="md:col-span-2">
-              <div className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">ACE</div>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
+              <div className="text-3xl font-medium mb-6">ACE</div>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6 font-light">
                 Ghana's premier educational technology company, transforming schools through innovative digital
                 solutions and strategic partnerships.
               </p>
-              <div className="space-y-2 text-sm sm:text-base text-muted-foreground">
+              <div className="space-y-2 text-base text-muted-foreground font-light">
                 <p>📍 Accra • Kumasi • Takoradi • Tamale</p>
                 <p>📧 hello@aceedu.com</p>
                 <p>📱 +233 XX XXX XXXX</p>
               </div>
             </div>
             <div>
-              <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">Product</h4>
-              <ul className="space-y-2 sm:space-y-3 text-muted-foreground">
+              <h4 className="font-medium text-lg mb-6">Product</h4>
+              <ul className="space-y-3 text-muted-foreground font-light">
                 <li>
-                  <Link href="/technology" className="hover:text-foreground transition-colors text-base sm:text-lg">
+                  <Link href="/technology" className="hover:text-foreground transition-colors text-lg">
                     Technology
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="hover:text-foreground transition-colors text-base sm:text-lg">
+                  <Link href="#contact" className="hover:text-foreground transition-colors text-lg">
                     Pricing
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="hover:text-foreground transition-colors text-base sm:text-lg">
+                  <Link href="#contact" className="hover:text-foreground transition-colors text-lg">
                     Demo
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">Company</h4>
-              <ul className="space-y-2 sm:space-y-3 text-muted-foreground">
+              <h4 className="font-medium text-lg mb-6">Company</h4>
+              <ul className="space-y-3 text-muted-foreground font-light">
                 <li>
-                  <Link href="/about" className="hover:text-foreground transition-colors text-base sm:text-lg">
+                  <Link href="/about" className="hover:text-foreground transition-colors text-lg">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/community" className="hover:text-foreground transition-colors text-base sm:text-lg">
+                  <Link href="/community" className="hover:text-foreground transition-colors text-lg">
                     Community
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-foreground transition-colors text-base sm:text-lg">
+                  <Link href="#" className="hover:text-foreground transition-colors text-lg">
                     Careers
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">Connect</h4>
-              <ul className="space-y-2 sm:space-y-3 text-muted-foreground">
+              <h4 className="font-medium text-lg mb-6">Connect</h4>
+              <ul className="space-y-3 text-muted-foreground font-light">
                 <li>
-                  <Link href="#" className="hover:text-foreground transition-colors text-base sm:text-lg">
+                  <Link href="#" className="hover:text-foreground transition-colors text-lg">
                     Twitter
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-foreground transition-colors text-base sm:text-lg">
+                  <Link href="#" className="hover:text-foreground transition-colors text-lg">
                     LinkedIn
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-foreground transition-colors text-base sm:text-lg">
+                  <Link href="#" className="hover:text-foreground transition-colors text-lg">
                     Facebook
                   </Link>
                 </li>
                 <li>
-                  <Link href="#contact" className="hover:text-foreground transition-colors text-base sm:text-lg">
+                  <Link href="#contact" className="hover:text-foreground transition-colors text-lg">
                     Contact
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="pt-6 sm:pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-muted-foreground">
+          <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground font-light">
             <p>© 2025 ACE Educational Systems. All rights reserved.</p>
-            <div className="flex gap-4 sm:gap-6">
+            <div className="flex gap-6">
               <Link href="#" className="hover:text-foreground transition-colors">
                 Privacy Policy
               </Link>

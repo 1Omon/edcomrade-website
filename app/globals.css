@@ -100,9 +100,9 @@
   --sidebar-ring: oklch(0.72 0.12 135);
 }
 
+/* Using Inter font for premium typography */
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -157,7 +157,7 @@
     scroll-behavior: smooth;
   }
 
-  /* Mobile-optimized scrollbar */
+  /* Simplified scrollbar styling */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -181,21 +181,6 @@
     background: var(--secondary);
   }
 
-  /* Only hide cursor on desktop, not mobile */
-  @media (min-width: 768px) {
-    * {
-      cursor: none !important;
-    }
-
-    a,
-    button,
-    input,
-    textarea,
-    select {
-      cursor: none !important;
-    }
-  }
-
   /* Ensure proper touch targets on mobile (minimum 44px) */
   @media (max-width: 767px) {
     button,
@@ -208,160 +193,12 @@
   }
 }
 
-/* Enhanced animations for Apple-like micro-interactions */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.animate-fade-in-down {
-  animation: fadeInDown 0.8s ease-out forwards;
-}
-
-.animate-fade-in-left {
-  animation: fadeInLeft 0.8s ease-out forwards;
-}
-
-.animate-fade-in-right {
-  animation: fadeInRight 0.8s ease-out forwards;
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.6s ease-out forwards;
-}
-
-.animate-slide-up {
-  animation: slideUp 0.6s ease-out forwards;
-}
-
-/* Smooth transitions for interactive elements */
+/* Simplified, elegant transitions */
 button,
 a,
 input,
 textarea {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Enhanced hover effects */
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* Additional custom styles */
-.custom-button {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-  border-radius: var(--radius);
-  padding: 0.5rem 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.custom-button:hover {
-  background-color: var(--accent);
-  color: var(--accent-foreground);
-}
-
-.custom-input {
-  background-color: var(--input);
-  color: var(--foreground);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.5rem;
-}
-
-.custom-input:focus {
-  outline: 2px solid var(--ring);
-}
-
-/* Mobile-specific optimizations */
-@media (max-width: 767px) {
-  /* Reduce animation intensity on mobile for performance */
-  .animate-fade-in-up,
-  .animate-fade-in-down,
-  .animate-fade-in-left,
-  .animate-fade-in-right {
-    animation-duration: 0.5s;
-  }
-
-  /* Disable parallax on mobile for better performance */
-  [data-parallax] {
-    transform: none !important;
-  }
-
-  /* Optimize hover effects for touch */
-  .hover-lift:active {
-    transform: translateY(-2px);
-  }
 }
 
 /* Prevent text overflow */
@@ -384,4 +221,11 @@ input:focus-visible,
 textarea:focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
+}
+
+/* Subtle parallax effect */
+@media (prefers-reduced-motion: no-preference) {
+  [data-parallax] {
+    will-change: transform;
+  }
 }
