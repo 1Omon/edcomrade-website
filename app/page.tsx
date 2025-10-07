@@ -22,6 +22,7 @@ import {
   Smartphone,
   AlertCircle,
 } from "lucide-react"
+import { FAQSection } from "@/components/faq-section"
 
 export const metadata: Metadata = {
   title: "Home | Your Partner in Educational Excellence",
@@ -243,7 +244,12 @@ export default function HomePage() {
               </p>
             </div>
             <div className="relative rounded-3xl overflow-hidden h-[400px] lg:h-[500px] order-1 lg:order-2">
-              <Image src="/african-parent-smiling-while-checking-child-s-grad.jpg" alt="Parent using ACE mobile app" fill className="object-cover" />
+              <Image
+                src="/african-parent-smiling-while-checking-child-s-grad.jpg"
+                alt="Parent using ACE mobile app"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
@@ -694,7 +700,12 @@ export default function HomePage() {
             <div className="bg-accent rounded-3xl p-10 space-y-6">
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
-                  <Image src="/professional-african-male-headmaster-portrait--con.jpg" alt="Dr. Kwame Mensah" fill className="object-cover" />
+                  <Image
+                    src="/professional-african-male-headmaster-portrait--con.jpg"
+                    alt="Dr. Kwame Mensah"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-medium text-lg">Dr. Kwame Mensah</div>
@@ -715,7 +726,12 @@ export default function HomePage() {
             <div className="bg-accent rounded-3xl p-10 space-y-6">
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
-                  <Image src="/professional-african-female-school-administrator-p.jpg" alt="Mrs. Abena Osei" fill className="object-cover" />
+                  <Image
+                    src="/professional-african-female-school-administrator-p.jpg"
+                    alt="Mrs. Abena Osei"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-medium text-lg">Mrs. Abena Osei</div>
@@ -736,7 +752,12 @@ export default function HomePage() {
             <div className="bg-accent rounded-3xl p-10 space-y-6">
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
-                  <Image src="/professional-african-male-deputy-head-portrait--fr.jpg" alt="Mr. Kofi Asante" fill className="object-cover" />
+                  <Image
+                    src="/professional-african-male-deputy-head-portrait--fr.jpg"
+                    alt="Mr. Kofi Asante"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-medium text-lg">Mr. Kofi Asante</div>
@@ -757,7 +778,12 @@ export default function HomePage() {
             <div className="bg-accent rounded-3xl p-10 space-y-6">
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
-                  <Image src="/professional-african-female-school-owner-portrait-.jpg" alt="Mrs. Ama Darko" fill className="object-cover" />
+                  <Image
+                    src="/professional-african-female-school-owner-portrait-.jpg"
+                    alt="Mrs. Ama Darko"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-medium text-lg">Mrs. Ama Darko</div>
@@ -856,6 +882,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <FAQSection />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8 bg-muted/30">

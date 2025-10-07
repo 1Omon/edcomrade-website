@@ -7,6 +7,10 @@ import { Suspense } from "react"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { MobileBottomNav } from "@/components/mobile-bottom-nav"
 import { CustomCursor } from "@/components/custom-cursor"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { BackToTop } from "@/components/back-to-top"
+import { ExitIntentModal } from "@/components/exit-intent-modal"
+import { LoadingSkeleton } from "@/components/loading-skeleton"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -138,11 +142,14 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <CustomCursor />
         <ScrollProgress />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<LoadingSkeleton />}>
           {children}
           <Analytics />
         </Suspense>
         <MobileBottomNav />
+        <WhatsAppButton />
+        <BackToTop />
+        <ExitIntentModal />
       </body>
     </html>
   )
