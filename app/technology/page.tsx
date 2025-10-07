@@ -1,6 +1,19 @@
 import { MinimalNav } from "@/components/minimal-nav"
 import Link from "next/link"
-import { ArrowRight, Database, GraduationCap, CreditCard, BarChart3, FileCheck, Shield, Zap, Globe } from "lucide-react"
+import Image from "next/image"
+import type { Metadata } from "next"
+import { ArrowRight } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Technology | Built for African Education",
+  description:
+    "Discover how ACE's technology gives you time back to teach. Offline-first design, Mobile Money integration, GES curriculum aligned. Built specifically for African schools.",
+  openGraph: {
+    title: "ACE Technology | Built for African Education",
+    description: "Technology that works when the internet doesn't. Built for African realities.",
+    images: ["/og-technology.jpg"],
+  },
+}
 
 export default function TechnologyPage() {
   return (
@@ -10,264 +23,319 @@ export default function TechnologyPage() {
       {/* Hero */}
       <section className="pt-32 pb-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-6xl lg:text-7xl font-bold tracking-tight text-balance mb-6">
-            Powerful technology.
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6">
+            Technology that gives you
             <br />
-            <span className="text-primary">Simple to use.</span>
+            <span className="text-primary font-medium">time to teach</span>
           </h1>
-          <p className="text-xl lg:text-2xl text-muted-foreground text-balance leading-relaxed max-w-3xl mx-auto">
-            Everything your school needs in one integrated platform—built for African contexts.
+          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-balance leading-relaxed max-w-3xl mx-auto font-light">
+            Because the best use of technology is making it invisible, so you can focus on what matters most.
           </p>
         </div>
       </section>
 
-      {/* Core Modules */}
-      <section className="py-24 px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto space-y-32">
-          {/* School Management */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                <Database className="w-6 h-6 text-primary" />
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">School Management System</h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Centralize student records, staff management, attendance tracking, and timetabling. Everything
-                administrators need in one place.
-              </p>
-              <ul className="space-y-3 text-lg text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Student enrollment & records</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Staff management & payroll</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Attendance & timetabling</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Parent communication portal</span>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-accent rounded-3xl p-12 lg:p-16 flex items-center justify-center min-h-[400px]">
-              <Database className="w-32 h-32 text-primary/20" />
-            </div>
+      {/* Story 1: The Headmaster's Sunday */}
+      <section className="py-24 md:py-32 px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto space-y-12">
+          <div className="space-y-6">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-balance">
+              It's Sunday evening. Mr. Osei, headmaster of a growing school in Kumasi, is at his desk. Again.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              He's been here since morning, manually compiling attendance records from five different notebooks. His
+              daughter's birthday party ended hours ago. He missed it. Not because he doesn't care—but because 847
+              students generate a mountain of paperwork that someone has to organize.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              This is the reality for thousands of school leaders across Ghana. Brilliant educators who became
+              administrators to shape young minds, now spending weekends wrestling with spreadsheets and filing
+              cabinets.
+            </p>
           </div>
 
-          {/* Learning Management */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="bg-accent rounded-3xl p-12 lg:p-16 flex items-center justify-center min-h-[400px] order-2 lg:order-1">
-              <GraduationCap className="w-32 h-32 text-primary/20" />
-            </div>
-            <div className="space-y-6 order-1 lg:order-2">
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                <GraduationCap className="w-6 h-6 text-primary" />
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">Learning Management Platform</h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Engage students with modern learning tools. Assignments, assessments, and collaboration—all in one
-                place.
-              </p>
-              <ul className="space-y-3 text-lg text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Course content delivery</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Assignment submission & grading</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Discussion forums & collaboration</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Progress tracking & analytics</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <div className="h-px bg-border my-16" />
 
-          {/* Finance & Billing */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center">
-                <CreditCard className="w-6 h-6 text-secondary" />
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">Finance & Billing</h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Automated fee collection with Mobile Money integration. Track payments, generate invoices, and manage
-                budgets effortlessly.
-              </p>
-              <ul className="space-y-3 text-lg text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Mobile Money integration (M-Pesa, MTN, etc.)</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Automated invoicing & reminders</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Payment tracking & reconciliation</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Financial reporting & budgeting</span>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-accent rounded-3xl p-12 lg:p-16 flex items-center justify-center min-h-[400px]">
-              <CreditCard className="w-32 h-32 text-secondary/20" />
-            </div>
-          </div>
-
-          {/* Examination Portal */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="bg-accent rounded-3xl p-12 lg:p-16 flex items-center justify-center min-h-[400px] order-2 lg:order-1">
-              <FileCheck className="w-32 h-32 text-primary/20" />
-            </div>
-            <div className="space-y-6 order-1 lg:order-2">
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                <FileCheck className="w-6 h-6 text-primary" />
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">Online Examination System</h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Create, distribute, and grade exams digitally. Reduce paper waste and get results instantly.
-              </p>
-              <ul className="space-y-3 text-lg text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Question bank management</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Automated grading & analytics</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Secure exam delivery</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Result publication & certificates</span>
-                </li>
-              </ul>
-            </div>
+          <div className="space-y-6">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-balance">
+              What if that Sunday looked different?
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Mr. Osei opens his laptop. Three clicks. The attendance report for the entire term—automatically compiled,
+              beautifully formatted, ready to share. Five minutes. He closes the laptop and heads home. His daughter is
+              still awake. They have cake together.
+            </p>
+            <p className="text-lg md:text-xl leading-relaxed">
+              This isn't a fantasy. This is what happens when technology works the way it should—quietly, efficiently,
+              invisibly. Giving you back the time that matters.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Integration Story */}
-      <section className="py-32 px-6 lg:px-8 bg-primary">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary-foreground text-balance mb-8">
-            Everything works together
-          </h2>
-          <p className="text-xl text-primary-foreground/90 text-balance leading-relaxed max-w-3xl mx-auto">
-            Our modules aren't separate tools—they're parts of one integrated ecosystem. Student data flows seamlessly
-            from enrollment to graduation, giving you a complete picture at every step.
-          </p>
-        </div>
-      </section>
+      {/* Story 2: The Teacher's Breakthrough */}
+      <section className="py-24 md:py-32 px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-4xl mx-auto space-y-12">
+          <div className="space-y-6">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-balance">
+              Miss Adjei noticed something about Kwame.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              He was falling behind in Mathematics. Not dramatically—just a slow, steady decline over three weeks. In a
+              class of 45 students, these patterns are easy to miss until it's too late. Until the term exam reveals
+              what should have been caught weeks earlier.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              But Miss Adjei's school uses ACE. Every quiz, every assignment, every small assessment feeds into a system
+              that watches for patterns. Not to replace her judgment—but to amplify it. To help her see what she might
+              miss in the daily chaos of teaching.
+            </p>
+          </div>
 
-      {/* Technical Excellence */}
-      <section className="py-32 px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-16 text-center">
-            Built for Africa
-          </h2>
+          <div className="h-px bg-border my-16" />
 
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="space-y-4 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
-                <Shield className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-2xl font-semibold">Secure & Reliable</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Bank-level encryption, automated backups, and 99.9% uptime guarantee. Your data is safe with us.
-              </p>
-            </div>
-
-            <div className="space-y-4 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto">
-                <Zap className="w-8 h-8 text-secondary" />
-              </div>
-              <h3 className="text-2xl font-semibold">Offline-First</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Works even with unstable internet. Data syncs automatically when connection is restored.
-              </p>
-            </div>
-
-            <div className="space-y-4 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
-                <Globe className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-2xl font-semibold">Local Payments</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Native support for M-Pesa, MTN Mobile Money, Airtel Money, and other local payment systems.
-              </p>
-            </div>
+          <div className="space-y-6">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-balance">
+              The system flagged Kwame's trend. Miss Adjei intervened early.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Two weeks of targeted support. Kwame caught up. By term's end, he was thriving. His mother sent a
+              thank-you note: "I don't know how you noticed so quickly. Thank you for caring."
+            </p>
+            <p className="text-lg md:text-xl leading-relaxed">
+              Miss Adjei didn't need to explain that it was the system. Because the system isn't the hero of this story.
+              She is. The technology just made sure she had the information she needed, when she needed it.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Architecture Diagram Placeholder */}
-      <section className="py-24 px-6 lg:px-8 bg-muted/30">
+      {/* Story 3: The Parent's Peace of Mind */}
+      <section className="py-24 md:py-32 px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto space-y-12">
+          <div className="space-y-6">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-balance">
+              Mrs. Mensah works two jobs to afford her daughter's education.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              She leaves home at 6 AM, returns at 8 PM. Parent-teacher meetings happen during work hours she can't
+              afford to miss. She wants to be involved in Ama's education—desperately. But the logistics of modern life
+              make it nearly impossible.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              She feels guilty. Disconnected. Like she's failing as a parent because she can't physically be present at
+              every school event.
+            </p>
+          </div>
+
+          <div className="h-px bg-border my-16" />
+
+          <div className="space-y-6">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-balance">
+              Then Ama's school adopted ACE.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Now, during her lunch break, Mrs. Mensah opens her phone. She sees Ama's latest test scores. Reads the
+              teacher's comment: "Excellent improvement in Science!" Views photos from yesterday's cultural day. Pays
+              next term's fees via Mobile Money. All in ten minutes.
+            </p>
+            <p className="text-lg md:text-xl leading-relaxed">
+              She doesn't feel disconnected anymore. She feels present. Involved. Like a partner in her daughter's
+              education, even when she can't physically be there. Technology didn't replace her presence—it extended it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Before and after ACE */}
+      <section className="py-24 md:py-32 px-6 lg:px-8 bg-muted/30">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-12 text-center">
-            Modular & Scalable
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance mb-16 text-center">
+            Before and after ACE
           </h2>
-          <div className="bg-background rounded-3xl p-12 lg:p-16 border border-border">
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="space-y-4">
-                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
-                  <Database className="w-10 h-10 text-primary" />
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-6">
+              <div className="relative rounded-3xl overflow-hidden h-[300px] border-4 border-destructive/20">
+                <Image
+                  src="/stressed-african-school-administrator-surrounded-b.jpg"
+                  alt="Before ACE: Overwhelmed with paperwork"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-destructive/90 text-destructive-foreground p-4">
+                  <p className="font-medium">Before: Drowning in paperwork</p>
                 </div>
-                <div className="font-semibold">Core Platform</div>
-                <p className="text-sm text-muted-foreground">Student & staff management</p>
               </div>
-              <div className="space-y-4">
-                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
-                  <GraduationCap className="w-10 h-10 text-primary" />
+              <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                15+ hours per week on manual tasks. Disconnected parents. Lost opportunities.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="relative rounded-3xl overflow-hidden h-[300px] border-4 border-primary/20">
+                <Image
+                  src="/happy-african-school-administrator-using-modern-la.jpg"
+                  alt="After ACE: Efficient and confident"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-primary/90 text-primary-foreground p-4">
+                  <p className="font-medium">After: Time to focus on teaching</p>
                 </div>
-                <div className="font-semibold">Learning Modules</div>
-                <p className="text-sm text-muted-foreground">LMS, exams, assessments</p>
               </div>
-              <div className="space-y-4">
-                <div className="w-20 h-20 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto">
-                  <BarChart3 className="w-10 h-10 text-secondary" />
-                </div>
-                <div className="font-semibold">Business Tools</div>
-                <p className="text-sm text-muted-foreground">Finance, marketing, analytics</p>
+              <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                75% less admin work. 90% parent satisfaction. 25% enrollment growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* See it in action */}
+      <section className="py-24 md:py-32 px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance mb-16 text-center">
+            See it in action
+          </h2>
+
+          <div className="space-y-12">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/modern-school-management-dashboard-interface--clea.jpg"
+                alt="ACE platform dashboard interface"
+                width={1200}
+                height={600}
+                className="w-full"
+              />
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl">
+                <Image
+                  src="/mobile-app-showing-student-grades-and-attendance--.jpg"
+                  alt="ACE mobile app for parents"
+                  width={600}
+                  height={400}
+                  className="w-full"
+                />
+              </div>
+              <div className="relative rounded-3xl overflow-hidden shadow-xl">
+                <Image
+                  src="/teacher-dashboard-with-class-management-and-assign.jpg"
+                  alt="ACE teacher dashboard"
+                  width={600}
+                  height={400}
+                  className="w-full"
+                />
               </div>
             </div>
-            <div className="mt-12 text-center text-muted-foreground">
-              Choose the modules you need. Add more as you grow.
+          </div>
+        </div>
+      </section>
+
+      {/* The Philosophy */}
+      <section className="py-24 md:py-32 px-6 lg:px-8 bg-primary">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-primary-foreground text-balance">
+            This is how we think about technology
+          </h2>
+          <p className="text-lg md:text-xl text-primary-foreground/90 text-balance leading-relaxed max-w-3xl mx-auto font-light">
+            It should be powerful enough to transform your school. Simple enough that you forget it's there. And
+            designed with such care that it feels like it was built specifically for you.
+          </p>
+          <p className="text-lg md:text-xl text-primary-foreground/90 text-balance leading-relaxed max-w-3xl mx-auto font-light">
+            Because it was.
+          </p>
+        </div>
+      </section>
+
+      {/* What Makes It Work */}
+      <section className="py-24 md:py-32 px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto space-y-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance text-center">
+            Built for African realities
+          </h2>
+
+          <div className="space-y-12">
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-medium">It works when the internet doesn't</h3>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                We know power cuts happen. Internet fails. Life is unpredictable. So we built a system that works
+                offline and syncs automatically when connectivity returns. Your work never stops because the internet
+                did.
+              </p>
             </div>
+
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-medium">It speaks your language</h3>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                Not just English—but the language of Ghanaian education. GES curriculum structures. Mobile Money
+                payments. Academic calendars that match your reality. We didn't adapt a foreign system. We built one
+                from the ground up for you.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-medium">It grows with you</h3>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                Start with student records. Add fee management when you're ready. Integrate online learning when it
+                makes sense. You don't need everything on day one. The system adapts to your pace, not the other way
+                around.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-medium">It protects what matters</h3>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                Student data is sacred. We use bank-level encryption, automated backups, and security protocols that
+                would make a cybersecurity expert proud. Your trust is earned through action, not promises.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Bigger Picture */}
+      <section className="py-24 md:py-32 px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-4xl mx-auto space-y-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance text-center">
+            This is about more than efficiency
+          </h2>
+
+          <div className="space-y-6">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Yes, ACE will save you 15 hours a week on administrative tasks. Yes, it will improve parent satisfaction
+              by 90%. Yes, schools using our platform see an average 25% increase in enrollment.
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              But those are just numbers. The real story is what happens with those 15 hours you get back. The mentoring
+              conversations. The curriculum innovations. The time to actually think about education instead of drowning
+              in administration.
+            </p>
+            <p className="text-lg md:text-xl leading-relaxed">
+              We're not building school management software. We're building a future where African educators have the
+              tools they deserve. Where technology serves education, not the other way around. Where brilliant teachers
+              can focus on teaching, and students can focus on learning.
+            </p>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">See it in action</h2>
-          <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            Schedule a personalized demo and discover how ACE can transform your school.
+      <section className="py-24 md:py-32 px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance">
+            See it in your school
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+            Let us show you how ACE can transform your daily operations. Not with a generic demo—but with a personalized
+            walkthrough using your school's actual context.
           </p>
           <Link
             href="/#contact"
             className="bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity inline-flex items-center gap-2"
           >
-            Request a Demo
+            Schedule Your Demo
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

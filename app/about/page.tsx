@@ -1,23 +1,50 @@
 import { MinimalNav } from "@/components/minimal-nav"
 import Link from "next/link"
+import Image from "next/image"
+import type { Metadata } from "next"
 import { ArrowRight } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "About Us | Our Story & Mission",
+  description:
+    "From a college project in 2019 to Ghana's premier edtech company. Learn how ACE Educational Systems is transforming education across Africa with technology and partnership.",
+  openGraph: {
+    title: "About ACE Educational Systems | Our Story & Mission",
+    description:
+      "From college project to transforming 500+ schools across Ghana. Our journey and vision for African education.",
+    images: ["/og-about.jpg"],
+  },
+}
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
       <MinimalNav />
 
-      {/* Hero */}
+      {/* Hero with Image */}
       <section className="pt-32 pb-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-6xl lg:text-7xl font-bold tracking-tight text-balance mb-6">
+          <h1 className="text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6">
             It started with a
             <br />
-            <span className="text-primary">simple idea</span>
+            <span className="text-primary font-medium">simple idea</span>
           </h1>
-          <p className="text-xl lg:text-2xl text-muted-foreground text-balance leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl lg:text-2xl text-muted-foreground text-balance leading-relaxed max-w-3xl mx-auto font-light">
             What if schools could focus on teaching, while technology handled everything else?
           </p>
+        </div>
+      </section>
+
+      <section className="py-12 px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px]">
+            <Image
+              src="/young-african-computer-science-students-working-on.jpg"
+              alt="ACE founding team working on the original project"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -150,6 +177,62 @@ export default function AboutPage() {
                 We succeed when schools succeed. Our pricing is transparent, our support is unlimited, and our
                 commitment is long-term.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-light tracking-tight text-balance mb-16 text-center">Our journey</h2>
+
+          <div className="space-y-12">
+            <div className="flex gap-8 items-start">
+              <div className="flex-shrink-0 w-32 text-right">
+                <div className="text-2xl font-medium text-primary">2019</div>
+              </div>
+              <div className="flex-1 border-l-2 border-primary pl-8 pb-12">
+                <h3 className="text-2xl font-medium mb-3">The Beginning</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                  Started as a college mini-project by computer science students who saw schools drowning in paperwork
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-8 items-start">
+              <div className="flex-shrink-0 w-32 text-right">
+                <div className="text-2xl font-medium text-primary">2020</div>
+              </div>
+              <div className="flex-1 border-l-2 border-primary pl-8 pb-12">
+                <h3 className="text-2xl font-medium mb-3">First Deployment</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                  Our first partner school reduced admin overhead by 60% within months. Word spread quickly.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-8 items-start">
+              <div className="flex-shrink-0 w-32 text-right">
+                <div className="text-2xl font-medium text-primary">2022</div>
+              </div>
+              <div className="flex-1 border-l-2 border-primary pl-8 pb-12">
+                <h3 className="text-2xl font-medium mb-3">Rapid Growth</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                  Reached 100+ schools across Ghana. Launched ACE Community Network for inter-school collaboration.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-8 items-start">
+              <div className="flex-shrink-0 w-32 text-right">
+                <div className="text-2xl font-medium text-secondary">2025</div>
+              </div>
+              <div className="flex-1 border-l-2 border-secondary pl-8">
+                <h3 className="text-2xl font-medium mb-3">Leading the Future</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed font-light">
+                  500+ schools transformed. Expanding across Africa. Building the future of education technology.
+                </p>
+              </div>
             </div>
           </div>
         </div>

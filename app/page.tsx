@@ -1,6 +1,8 @@
 import { MinimalNav } from "@/components/minimal-nav"
 import { AnimatedCounter } from "@/components/animated-counter"
 import Link from "next/link"
+import Image from "next/image"
+import type { Metadata } from "next"
 import {
   ArrowRight,
   School,
@@ -18,22 +20,42 @@ import {
   BarChart3,
   FileCheck,
   Smartphone,
+  AlertCircle,
 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Home | Your Partner in Educational Excellence",
+  description:
+    "Transform your school with ACE Educational Systems. Reduce admin work by 75%, improve parent satisfaction by 90%, and increase enrollment by 25%. Join 500+ schools across Ghana.",
+  openGraph: {
+    title: "ACE Educational Systems | Your Partner in Educational Excellence",
+    description: "Transform your school with integrated technology solutions built for African education.",
+    images: ["/og-home.jpg"],
+  },
+}
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
       <MinimalNav />
 
-      {/* Hero Section with Parallax */}
+      <div className="bg-secondary text-secondary-foreground py-3 px-4 text-center text-sm md:text-base font-medium sticky top-0 z-40">
+        <div className="flex items-center justify-center gap-2">
+          <AlertCircle className="w-4 h-4" />
+          <span>Limited spots available for Q1 2025 onboarding • Early adopters get 50% off setup fees</span>
+        </div>
+      </div>
+
+      {/* Hero Section with Parallax and Image */}
       <section className="relative pt-32 sm:pt-40 md:pt-48 lg:pt-56 pb-20 sm:pb-28 md:pb-36 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            transform: "translateZ(0)",
-            willChange: "transform",
-          }}
-        >
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/modern-african-classroom-with-students-using-table.jpg"
+            alt="Modern African classroom with technology"
+            fill
+            className="object-cover opacity-5"
+            priority
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
         </div>
 
@@ -44,8 +66,7 @@ export default function HomePage() {
             <span className="font-semibold text-primary">Transformed.</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground text-balance mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto leading-relaxed font-light">
-            Ghana's premier educational technology company, empowering schools to operate seamlessly, communicate
-            effectively, and thrive in the digital age.
+            Your Partner in Excellence
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
             <Link
@@ -223,8 +244,13 @@ export default function HomePage() {
                   </li>
                 </ul>
               </div>
-              <div className="bg-accent rounded-3xl p-16 flex items-center justify-center min-h-[400px]">
-                <School className="w-40 h-40 text-primary/20" />
+              <div className="relative rounded-3xl overflow-hidden min-h-[400px] bg-accent">
+                <Image
+                  src="/school-administrator-using-modern-dashboard-on-com.jpg"
+                  alt="School management dashboard interface"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
 
@@ -595,6 +621,15 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-accent rounded-3xl p-10 space-y-6">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
+                  <Image src="/professional-african-male-headmaster-portrait.jpg" alt="Dr. Kwame Mensah" fill className="object-cover" />
+                </div>
+                <div>
+                  <div className="font-medium text-lg">Dr. Kwame Mensah</div>
+                  <div className="text-muted-foreground font-light">Headmaster, Accra</div>
+                </div>
+              </div>
               <div className="flex gap-1 text-primary">
                 {[...Array(5)].map((_, i) => (
                   <Heart key={i} className="w-6 h-6 fill-current" />
@@ -604,13 +639,18 @@ export default function HomePage() {
                 "We used to spend entire weekends preparing reports. Now it takes minutes. ACE has given us our time
                 back to focus on what matters—teaching our students."
               </p>
-              <div>
-                <div className="font-medium text-lg">Dr. Kwame Mensah</div>
-                <div className="text-muted-foreground font-light">Headmaster, Accra</div>
-              </div>
             </div>
 
             <div className="bg-accent rounded-3xl p-10 space-y-6">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
+                  <Image src="/placeholder.svg?key=0zb5x" alt="Mrs. Abena Osei" fill className="object-cover" />
+                </div>
+                <div>
+                  <div className="font-medium text-lg">Mrs. Abena Osei</div>
+                  <div className="text-muted-foreground font-light">School Administrator, Kumasi</div>
+                </div>
+              </div>
               <div className="flex gap-1 text-primary">
                 {[...Array(5)].map((_, i) => (
                   <Heart key={i} className="w-6 h-6 fill-current" />
@@ -620,13 +660,18 @@ export default function HomePage() {
                 "Our fee collection rate went from 60% to 95% in just six months. Parents love the Mobile Money
                 integration, and we finally have clear financial visibility."
               </p>
-              <div>
-                <div className="font-medium text-lg">Mrs. Abena Osei</div>
-                <div className="text-muted-foreground font-light">School Administrator, Kumasi</div>
-              </div>
             </div>
 
             <div className="bg-accent rounded-3xl p-10 space-y-6">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
+                  <Image src="/placeholder.svg?key=h6f9a" alt="Mr. Kofi Asante" fill className="object-cover" />
+                </div>
+                <div>
+                  <div className="font-medium text-lg">Mr. Kofi Asante</div>
+                  <div className="text-muted-foreground font-light">Deputy Head, Tema</div>
+                </div>
+              </div>
               <div className="flex gap-1 text-primary">
                 {[...Array(5)].map((_, i) => (
                   <Heart key={i} className="w-6 h-6 fill-current" />
@@ -636,13 +681,18 @@ export default function HomePage() {
                 "Parents actually thank us now for keeping them informed. The communication portal has transformed our
                 relationship with families."
               </p>
-              <div>
-                <div className="font-medium text-lg">Mr. Kofi Asante</div>
-                <div className="text-muted-foreground font-light">Deputy Head, Tema</div>
-              </div>
             </div>
 
             <div className="bg-accent rounded-3xl p-10 space-y-6">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
+                  <Image src="/placeholder.svg?key=q3d7r" alt="Mrs. Ama Darko" fill className="object-cover" />
+                </div>
+                <div>
+                  <div className="font-medium text-lg">Mrs. Ama Darko</div>
+                  <div className="text-muted-foreground font-light">School Owner, Takoradi</div>
+                </div>
+              </div>
               <div className="flex gap-1 text-primary">
                 {[...Array(5)].map((_, i) => (
                   <Heart key={i} className="w-6 h-6 fill-current" />
@@ -652,10 +702,6 @@ export default function HomePage() {
                 "Our enrollment increased by 30% after launching our new website and social media presence. ACE helped
                 us tell our story to the right families."
               </p>
-              <div>
-                <div className="font-medium text-lg">Mrs. Ama Darko</div>
-                <div className="text-muted-foreground font-light">School Owner, Takoradi</div>
-              </div>
             </div>
           </div>
         </div>
