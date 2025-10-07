@@ -46,17 +46,17 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Hero Section with Parallax and Image */}
+      {/* Hero Section with Large Image */}
       <section className="relative pt-32 sm:pt-40 md:pt-48 lg:pt-56 pb-20 sm:pb-28 md:pb-36 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Image
             src="/modern-african-classroom-with-students-using-table.jpg"
             alt="Modern African classroom with technology"
             fill
-            className="object-cover opacity-5"
+            className="object-cover opacity-10"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
         </div>
 
         <div className="max-w-6xl mx-auto text-center">
@@ -206,6 +206,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24">
+            <div className="relative rounded-3xl overflow-hidden h-[400px] lg:h-[500px]">
+              <Image
+                src="/african-school-administrator-smiling-confidently-w.jpg"
+                alt="School administrator using ACE platform"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight">
+                From overwhelmed to <span className="text-primary font-medium">in control</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed font-light">
+                Every day, brilliant educators spend hours on paperwork instead of teaching. Parents feel disconnected.
+                Schools lose students to competitors not because they lack quality, but because they lack visibility.
+              </p>
+              <p className="text-lg sm:text-xl leading-relaxed">ACE changes that. One platform. Everything solved.</p>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="space-y-6 order-2 lg:order-1">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight">
+                Parents who feel <span className="text-secondary font-medium">connected</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed font-light">
+                Working parents no longer miss out on their children's education. With ACE's parent portal, they see
+                grades, attendance, and school updates from their phones—anytime, anywhere.
+              </p>
+              <p className="text-lg sm:text-xl leading-relaxed">
+                90% of parents report feeling more connected to their child's learning journey.
+              </p>
+            </div>
+            <div className="relative rounded-3xl overflow-hidden h-[400px] lg:h-[500px] order-1 lg:order-2">
+              <Image src="/african-parent-smiling-while-checking-child-s-grad.jpg" alt="Parent using ACE mobile app" fill className="object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Core Services */}
       <section className="py-20 sm:py-28 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -244,9 +287,9 @@ export default function HomePage() {
                   </li>
                 </ul>
               </div>
-              <div className="relative rounded-3xl overflow-hidden min-h-[400px] bg-accent">
+              <div className="relative rounded-3xl overflow-hidden min-h-[400px] shadow-2xl">
                 <Image
-                  src="/school-administrator-using-modern-dashboard-on-com.jpg"
+                  src="/modern-school-management-dashboard-on-computer-scr.jpg"
                   alt="School management dashboard interface"
                   fill
                   className="object-cover"
@@ -256,8 +299,13 @@ export default function HomePage() {
 
             {/* Learning Platform */}
             <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <div className="bg-accent rounded-3xl p-16 flex items-center justify-center min-h-[400px] order-2 lg:order-1">
-                <BookOpen className="w-40 h-40 text-primary/20" />
+              <div className="relative rounded-3xl overflow-hidden min-h-[400px] shadow-2xl order-2 lg:order-1">
+                <Image
+                  src="/african-students-engaged-with-tablets-in-classroom.jpg"
+                  alt="Students using ACE learning platform"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="space-y-6 order-1 lg:order-2">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
@@ -319,15 +367,25 @@ export default function HomePage() {
                   </li>
                 </ul>
               </div>
-              <div className="bg-accent rounded-3xl p-16 flex items-center justify-center min-h-[400px]">
-                <CreditCard className="w-40 h-40 text-secondary/20" />
+              <div className="relative rounded-3xl overflow-hidden min-h-[400px] shadow-2xl">
+                <Image
+                  src="/african-parent-using-mobile-phone-for-mobile-money.jpg"
+                  alt="Mobile Money payment integration"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
 
             {/* Marketing & Branding */}
             <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <div className="bg-accent rounded-3xl p-16 flex items-center justify-center min-h-[400px] order-2 lg:order-1">
-                <TrendingUp className="w-40 h-40 text-secondary/20" />
+              <div className="relative rounded-3xl overflow-hidden min-h-[400px] shadow-2xl order-2 lg:order-1">
+                <Image
+                  src="/professional-school-website-on-laptop-and-phone--m.jpg"
+                  alt="School branding and marketing materials"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="space-y-6 order-1 lg:order-2">
                 <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center">
@@ -515,6 +573,20 @@ export default function HomePage() {
             More than software—a network of innovative schools collaborating to elevate education across Africa
           </p>
 
+          <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px] mb-16 shadow-2xl">
+            <Image
+              src="/diverse-group-of-african-students-from-different-s.jpg"
+              alt="ACE Community students at inter-school competition"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+              <div className="p-8 md:p-12 text-white">
+                <p className="text-2xl md:text-3xl font-medium">500+ schools. One community. Endless possibilities.</p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
             <div className="text-center p-8 bg-accent/50 rounded-3xl hover:bg-accent transition-colors">
               <div className="space-y-6">
@@ -612,7 +684,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-16 sm:mb-20 md:mb-24 text-center">
@@ -623,7 +694,7 @@ export default function HomePage() {
             <div className="bg-accent rounded-3xl p-10 space-y-6">
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
-                  <Image src="/professional-african-male-headmaster-portrait.jpg" alt="Dr. Kwame Mensah" fill className="object-cover" />
+                  <Image src="/professional-african-male-headmaster-portrait--con.jpg" alt="Dr. Kwame Mensah" fill className="object-cover" />
                 </div>
                 <div>
                   <div className="font-medium text-lg">Dr. Kwame Mensah</div>
@@ -644,7 +715,7 @@ export default function HomePage() {
             <div className="bg-accent rounded-3xl p-10 space-y-6">
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
-                  <Image src="/placeholder.svg?key=0zb5x" alt="Mrs. Abena Osei" fill className="object-cover" />
+                  <Image src="/professional-african-female-school-administrator-p.jpg" alt="Mrs. Abena Osei" fill className="object-cover" />
                 </div>
                 <div>
                   <div className="font-medium text-lg">Mrs. Abena Osei</div>
@@ -665,7 +736,7 @@ export default function HomePage() {
             <div className="bg-accent rounded-3xl p-10 space-y-6">
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
-                  <Image src="/placeholder.svg?key=h6f9a" alt="Mr. Kofi Asante" fill className="object-cover" />
+                  <Image src="/professional-african-male-deputy-head-portrait--fr.jpg" alt="Mr. Kofi Asante" fill className="object-cover" />
                 </div>
                 <div>
                   <div className="font-medium text-lg">Mr. Kofi Asante</div>
@@ -686,7 +757,7 @@ export default function HomePage() {
             <div className="bg-accent rounded-3xl p-10 space-y-6">
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/10">
-                  <Image src="/placeholder.svg?key=q3d7r" alt="Mrs. Ama Darko" fill className="object-cover" />
+                  <Image src="/professional-african-female-school-owner-portrait-.jpg" alt="Mrs. Ama Darko" fill className="object-cover" />
                 </div>
                 <div>
                   <div className="font-medium text-lg">Mrs. Ama Darko</div>

@@ -37,9 +37,9 @@ export default function AboutPage() {
 
       <section className="py-12 px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px]">
+          <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px] shadow-2xl">
             <Image
-              src="/young-african-computer-science-students-working-on.jpg"
+              src="/young-african-computer-science-students-working-to.jpg"
               alt="ACE founding team working on the original project"
               fill
               className="object-cover"
@@ -71,6 +71,17 @@ export default function AboutPage() {
             <p className="text-lg text-muted-foreground mt-6">— Founding Team, ACE Educational Systems</p>
           </div>
 
+          <div className="relative rounded-3xl overflow-hidden h-[300px] md:h-[400px]">
+            <Image src="/african-school-administrator-overwhelmed-with-pape.jpg" alt="The problem ACE solves" fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+              <div className="p-8 text-white">
+                <p className="text-xl md:text-2xl font-medium">
+                  "School administrators spent more time wrestling with spreadsheets than supporting teachers."
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div>
             <div className="text-sm font-semibold text-primary mb-4">2020 — First Deployment</div>
             <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">
@@ -80,6 +91,24 @@ export default function AboutPage() {
               Our first partner school took a chance on us. Within months, they reduced administrative overhead by 60%,
               digitized their entire student records system, and launched online fee payments with Mobile Money
               integration. Word spread quickly.
+            </p>
+          </div>
+
+          <div>
+            <div className="text-sm font-semibold text-primary mb-4">2022 — Rapid Growth</div>
+            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">Scaling Up</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              We reached 100+ schools across Ghana and launched the ACE Community Network for inter-school
+              collaboration.
+            </p>
+          </div>
+
+          <div>
+            <div className="text-sm font-semibold text-secondary mb-4">2025 — Leading the Future</div>
+            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">Transforming Education</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              500+ schools have been transformed. We are expanding across Africa and building the future of education
+              technology.
             </p>
           </div>
         </div>
@@ -154,6 +183,38 @@ export default function AboutPage() {
             What we believe
           </h2>
 
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="relative rounded-3xl overflow-hidden h-[250px]">
+              <Image src="/african-students-engaged-in-learning-with-teacher-.jpg" alt="Education first" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h3 className="text-xl font-semibold">Education First</h3>
+                </div>
+              </div>
+            </div>
+            <div className="relative rounded-3xl overflow-hidden h-[250px]">
+              <Image src="/placeholder.svg?height=250&width=400" alt="Built for Africa" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h3 className="text-xl font-semibold">Built for Africa</h3>
+                </div>
+              </div>
+            </div>
+            <div className="relative rounded-3xl overflow-hidden h-[250px]">
+              <Image
+                src="/placeholder.svg?height=250&width=400"
+                alt="Partnership over profit"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                <div className="p-6 text-white">
+                  <h3 className="text-xl font-semibold">Partnership Over Profit</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-12">
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold">Education first</h3>
@@ -182,6 +243,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Journey */}
       <section className="py-24 px-6 lg:px-8 bg-muted/30">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl lg:text-5xl font-light tracking-tight text-balance mb-16 text-center">Our journey</h2>

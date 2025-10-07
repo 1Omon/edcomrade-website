@@ -155,9 +155,9 @@ export default function TechnologyPage() {
 
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-6">
-              <div className="relative rounded-3xl overflow-hidden h-[300px] border-4 border-destructive/20">
+              <div className="relative rounded-3xl overflow-hidden h-[300px] border-4 border-destructive/20 shadow-xl">
                 <Image
-                  src="/stressed-african-school-administrator-surrounded-b.jpg"
+                  src="/placeholder.svg?height=300&width=500"
                   alt="Before ACE: Overwhelmed with paperwork"
                   fill
                   className="object-cover"
@@ -172,9 +172,9 @@ export default function TechnologyPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="relative rounded-3xl overflow-hidden h-[300px] border-4 border-primary/20">
+              <div className="relative rounded-3xl overflow-hidden h-[300px] border-4 border-primary/20 shadow-xl">
                 <Image
-                  src="/happy-african-school-administrator-using-modern-la.jpg"
+                  src="/placeholder.svg?height=300&width=500"
                   alt="After ACE: Efficient and confident"
                   fill
                   className="object-cover"
@@ -201,7 +201,7 @@ export default function TechnologyPage() {
           <div className="space-y-12">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/modern-school-management-dashboard-interface--clea.jpg"
+                src="/placeholder.svg?height=600&width=1200"
                 alt="ACE platform dashboard interface"
                 width={1200}
                 height={600}
@@ -212,7 +212,7 @@ export default function TechnologyPage() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="relative rounded-3xl overflow-hidden shadow-xl">
                 <Image
-                  src="/mobile-app-showing-student-grades-and-attendance--.jpg"
+                  src="/placeholder.svg?height=400&width=600"
                   alt="ACE mobile app for parents"
                   width={600}
                   height={400}
@@ -221,7 +221,7 @@ export default function TechnologyPage() {
               </div>
               <div className="relative rounded-3xl overflow-hidden shadow-xl">
                 <Image
-                  src="/teacher-dashboard-with-class-management-and-assign.jpg"
+                  src="/placeholder.svg?height=400&width=600"
                   alt="ACE teacher dashboard"
                   width={600}
                   height={400}
