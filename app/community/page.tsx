@@ -38,7 +38,7 @@ export default function CommunityPage() {
         <div className="max-w-6xl mx-auto">
           <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px] shadow-2xl">
             <Image
-              src="/placeholder.svg?height=500&width=1200"
+              src="/diverse-group-of-african-school-leaders-networking.jpg?height=500&width=1200"
               alt="ACE Community members connecting"
               fill
               className="object-cover"
@@ -178,7 +178,7 @@ export default function CommunityPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="relative rounded-3xl overflow-hidden h-[300px] shadow-xl">
               <Image
-                src="/placeholder.svg?height=300&width=400"
+                src="/african-students-competing-in-academic-olympiad--f.jpg?height=300&width=400"
                 alt="Students competing in ACE inter-school competition"
                 fill
                 className="object-cover"
@@ -186,7 +186,7 @@ export default function CommunityPage() {
             </div>
             <div className="relative rounded-3xl overflow-hidden h-[300px] shadow-xl">
               <Image
-                src="/placeholder.svg?height=300&width=400"
+                src="/african-teachers-in-professional-development-works.jpg?height=300&width=400"
                 alt="Teachers in ACE professional development session"
                 fill
                 className="object-cover"

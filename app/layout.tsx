@@ -1,23 +1,23 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
-import { Suspense } from "react"
-import { ScrollProgress } from "@/components/scroll-progress"
-import { MobileBottomNav } from "@/components/mobile-bottom-nav"
-import { CustomCursor } from "@/components/custom-cursor"
-import { WhatsAppButton } from "@/components/whatsapp-button"
-import { BackToTop } from "@/components/back-to-top"
-import { ExitIntentModal } from "@/components/exit-intent-modal"
-import { LoadingSkeleton } from "@/components/loading-skeleton"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
+import { Suspense } from "react";
+import { ScrollProgress } from "@/components/scroll-progress";
+import { MobileBottomNav } from "@/components/mobile-bottom-nav";
+import { CustomCursor } from "@/components/custom-cursor";
+import { WhatsAppButton } from "@/components/whatsapp-button";
+import { BackToTop } from "@/components/back-to-top";
+import { ExitIntentModal } from "@/components/exit-intent-modal";
+import { LoadingSkeleton } from "@/components/loading-skeleton";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
   weight: ["300", "400", "500", "600"],
-})
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aceedu.com"),
@@ -67,7 +67,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ACE Educational Systems | Transform Your School with Technology",
-    description: "Ghana's premier educational technology company empowering 500+ schools with integrated solutions.",
+    description:
+      "Ghana's premier educational technology company empowering 500+ schools with integrated solutions.",
     images: ["/og-image.jpg"],
     creator: "@aceedu",
   },
@@ -85,13 +86,12 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-    generator: 'v0.app'
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -107,7 +107,7 @@ export default function RootLayout({
                 "Ghana's premier educational technology company providing integrated school management, learning platforms, and marketing solutions.",
               url: "https://aceedu.com",
               logo: "https://aceedu.com/logo.png",
-              foundingDate: "2019",
+              foundingDate: "2022",
               founders: [
                 {
                   "@type": "Person",
@@ -152,5 +152,5 @@ export default function RootLayout({
         <ExitIntentModal />
       </body>
     </html>
-  )
+  );
 }

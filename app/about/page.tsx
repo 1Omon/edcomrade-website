@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react"
 export const metadata: Metadata = {
   title: "About Us | Our Story & Mission",
   description:
-    "From a college project in 2019 to Ghana's premier edtech company. Learn how ACE Educational Systems is transforming education across Africa with technology and partnership.",
+    "From a college project in 2021 to Ghana's premier edtech company. Learn how ACE Educational Systems is transforming education across Africa with technology and partnership.",
   openGraph: {
     title: "About ACE Educational Systems | Our Story & Mission",
     description:
@@ -39,7 +39,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px] shadow-2xl">
             <Image
-              src="/young-african-computer-science-students-working-to.jpg"
+              src="/young-african-computer-science-students-working-on.jpg"
               alt="ACE founding team working on the original project"
               fill
               className="object-cover"
@@ -52,7 +52,7 @@ export default function AboutPage() {
       <section className="py-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-16">
           <div>
-            <div className="text-sm font-semibold text-primary mb-4">2019 — The Beginning</div>
+            <div className="text-sm font-semibold text-primary mb-4">2021 — The Beginning</div>
             <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">
               A college project that became a mission
             </h2>
@@ -83,7 +83,7 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <div className="text-sm font-semibold text-primary mb-4">2020 — First Deployment</div>
+            <div className="text-sm font-semibold text-primary mb-4">2022 — First Deployment</div>
             <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">
               From prototype to production
             </h2>
@@ -95,7 +95,7 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <div className="text-sm font-semibold text-primary mb-4">2022 — Rapid Growth</div>
+            <div className="text-sm font-semibold text-primary mb-4">2023 — Rapid Growth</div>
             <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">Scaling Up</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
               We reached 100+ schools across Ghana and launched the ACE Community Network for inter-school
@@ -193,7 +193,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative rounded-3xl overflow-hidden h-[250px]">
-              <Image src="/placeholder.svg?height=250&width=400" alt="Built for Africa" fill className="object-cover" />
+              <Image src="/african-students-engaged-with-tablets-in-classroom.jpg?height=250&width=400" alt="Built for Africa" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                 <div className="p-6 text-white">
                   <h3 className="text-xl font-semibold">Built for Africa</h3>
@@ -202,7 +202,7 @@ export default function AboutPage() {
             </div>
             <div className="relative rounded-3xl overflow-hidden h-[250px]">
               <Image
-                src="/placeholder.svg?height=250&width=400"
+                src="/happy-african-school-administrator-using-modern-la.jpg?height=250&width=400"
                 alt="Partnership over profit"
                 fill
                 className="object-cover"
@@ -251,7 +251,7 @@ export default function AboutPage() {
           <div className="space-y-12">
             <div className="flex gap-8 items-start">
               <div className="flex-shrink-0 w-32 text-right">
-                <div className="text-2xl font-medium text-primary">2019</div>
+                <div className="text-2xl font-medium text-primary">2021</div>
               </div>
               <div className="flex-1 border-l-2 border-primary pl-8 pb-12">
                 <h3 className="text-2xl font-medium mb-3">The Beginning</h3>
@@ -263,7 +263,7 @@ export default function AboutPage() {
 
             <div className="flex gap-8 items-start">
               <div className="flex-shrink-0 w-32 text-right">
-                <div className="text-2xl font-medium text-primary">2020</div>
+                <div className="text-2xl font-medium text-primary">2022</div>
               </div>
               <div className="flex-1 border-l-2 border-primary pl-8 pb-12">
                 <h3 className="text-2xl font-medium mb-3">First Deployment</h3>
@@ -275,7 +275,7 @@ export default function AboutPage() {
 
             <div className="flex gap-8 items-start">
               <div className="flex-shrink-0 w-32 text-right">
-                <div className="text-2xl font-medium text-primary">2022</div>
+                <div className="text-2xl font-medium text-primary">2023</div>
               </div>
               <div className="flex-1 border-l-2 border-primary pl-8 pb-12">
                 <h3 className="text-2xl font-medium mb-3">Rapid Growth</h3>
