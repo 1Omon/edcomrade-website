@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react"
 export const metadata: Metadata = {
   title: "Technology | Built for African Education",
   description:
-    "Discover how ACE's technology gives you time back to teach. Offline-first design, Mobile Money integration, GES curriculum aligned. Built specifically for African schools.",
+    "Discover how EdComrade's technology gives you time back to teach. Offline-first design, Mobile Money integration, GES curriculum aligned. Built specifically for African schools.",
   openGraph: {
-    title: "ACE Technology | Built for African Education",
+    title: "EdComrade Technology | Built for African Education",
     description: "Technology that works when the internet doesn't. Built for African realities.",
     images: ["/og-technology.jpg"],
   },
@@ -85,7 +85,7 @@ export default function TechnologyPage() {
               what should have been caught weeks earlier.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              But Miss Adjei's school uses ACE. Every quiz, every assignment, every small assessment feeds into a system
+              But Miss Adjei's school uses EdComrade. Every quiz, every assignment, every small assessment feeds into a system
               that watches for patterns. Not to replace her judgment—but to amplify it. To help her see what she might
               miss in the daily chaos of teaching.
             </p>
@@ -131,7 +131,7 @@ export default function TechnologyPage() {
 
           <div className="space-y-6">
             <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-balance">
-              Then Ama's school adopted ACE.
+              Then Ama's school adopted EdComrade.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Now, during her lunch break, Mrs. Mensah opens her phone. She sees Ama's latest test scores. Reads the
@@ -146,11 +146,11 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-      {/* Before and after ACE */}
+      {/* Before and after EdComrade */}
       <section className="py-24 md:py-32 px-6 lg:px-8 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance mb-16 text-center">
-            Before and after ACE
+            Before and after EdComrade
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -158,7 +158,7 @@ export default function TechnologyPage() {
               <div className="relative rounded-3xl overflow-hidden h-[300px] border-4 border-destructive/20 shadow-xl">
                 <Image
                   src="/stressed-african-school-administrator-surrounded-b.jpg?height=300&width=500"
-                  alt="Before ACE: Overwhelmed with paperwork"
+                  alt="Before EdComrade: Overwhelmed with paperwork"
                   fill
                   className="object-cover"
                 />
@@ -175,7 +175,7 @@ export default function TechnologyPage() {
               <div className="relative rounded-3xl overflow-hidden h-[300px] border-4 border-primary/20 shadow-xl">
                 <Image
                   src="/happy-african-school-administrator-using-modern-la.jpg?height=300&width=500"
-                  alt="After ACE: Efficient and confident"
+                  alt="After EdComrade: Efficient and confident"
                   fill
                   className="object-cover"
                 />
@@ -202,7 +202,7 @@ export default function TechnologyPage() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/modern-school-management-dashboard-interface--clea.jpg?height=600&width=1200"
-                alt="ACE platform dashboard interface"
+                alt="EdComrade platform dashboard interface"
                 width={1200}
                 height={600}
                 className="w-full"
@@ -213,7 +213,7 @@ export default function TechnologyPage() {
               <div className="relative rounded-3xl overflow-hidden shadow-xl">
                 <Image
                   src="/mobile-app-showing-student-grades-and-attendance--.jpg?height=400&width=600"
-                  alt="ACE mobile app for parents"
+                  alt="EdComrade mobile app for parents"
                   width={600}
                   height={400}
                   className="w-full"
@@ -222,7 +222,7 @@ export default function TechnologyPage() {
               <div className="relative rounded-3xl overflow-hidden shadow-xl">
                 <Image
                   src="/teacher-dashboard-with-class-management-and-assign.jpg?height=400&width=600"
-                  alt="ACE teacher dashboard"
+                  alt="EdComrade teacher dashboard"
                   width={600}
                   height={400}
                   className="w-full"
@@ -304,7 +304,7 @@ export default function TechnologyPage() {
 
           <div className="space-y-6">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Yes, ACE will save you 15 hours a week on administrative tasks. Yes, it will improve parent satisfaction
+              Yes, EdComrade will save you 15 hours a week on administrative tasks. Yes, it will improve parent satisfaction
               by 90%. Yes, schools using our platform see an average 25% increase in enrollment.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -328,7 +328,7 @@ export default function TechnologyPage() {
             See it in your school
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-            Let us show you how ACE can transform your daily operations. Not with a generic demo—but with a personalized
+            Let us show you how EdComrade can transform your daily operations. Not with a generic demo—but with a personalized
             walkthrough using your school's actual context.
           </p>
           <Link
@@ -346,7 +346,7 @@ export default function TechnologyPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <div className="text-2xl font-bold mb-4">ACE</div>
+              <div className="text-2xl font-bold mb-4">EdComrade</div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Transforming education through technology and partnership.
               </p>
@@ -413,7 +413,7 @@ export default function TechnologyPage() {
             </div>
           </div>
           <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            © 2025 ACE Educational Systems. All rights reserved.
+            © 2025 EdComrade. All rights reserved.
           </div>
         </div>
       </footer>

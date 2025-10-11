@@ -7,10 +7,10 @@ import { ArrowRight } from "lucide-react"
 export const metadata: Metadata = {
   title: "Community | Join the Movement",
   description:
-    "Join 500+ schools in the ACE Community Network. Free inter-school competitions, teacher development, student exchanges, and collaborative growth for all ACE users.",
+    "Join 500+ schools in the EdComrade Community Network. Free inter-school competitions, teacher development, student exchanges, and collaborative growth for all EdComrade users.",
   openGraph: {
-    title: "ACE Community | Join the Educational Movement",
-    description: "Connect with 500+ schools across Ghana. Free community benefits for all ACE users.",
+    title: "EdComrade Community | Join the Educational Movement",
+    description: "Connect with 500+ schools across Ghana. Free community benefits for all EdComrade users.",
     images: ["/og-community.jpg"],
   },
 }
@@ -29,7 +29,7 @@ export default function CommunityPage() {
             <span className="text-primary font-medium">You're joining a movement.</span>
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-balance leading-relaxed max-w-3xl mx-auto font-light">
-            The ACE Community is where ambitious schools connect, collaborate, and grow together.
+            The EdComrade Community is where ambitious schools connect, collaborate, and grow together.
           </p>
         </div>
       </section>
@@ -39,7 +39,7 @@ export default function CommunityPage() {
           <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px] shadow-2xl">
             <Image
               src="/diverse-group-of-african-school-leaders-networking.jpg?height=500&width=1200"
-              alt="ACE Community members connecting"
+              alt="EdComrade Community members connecting"
               fill
               className="object-cover"
             />
@@ -72,12 +72,12 @@ export default function CommunityPage() {
               What if you weren't alone?
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              The ACE Community is a network of over 500 schools across Ghana—from small rural institutions to large
+              The EdComrade Community is a network of over 500 schools across Ghana—from small rural institutions to large
               urban campuses. Schools that share your challenges, your ambitions, and your commitment to educational
               excellence.
             </p>
             <p className="text-lg md:text-xl leading-relaxed">
-              When you join ACE, you don't just get access to our platform. You get access to a community of peers who
+              When you join EdComrade, you don't just get access to our platform. You get access to a community of peers who
               understand exactly what you're going through. Because they're going through it too.
             </p>
           </div>
@@ -88,7 +88,7 @@ export default function CommunityPage() {
       <section className="py-24 md:py-32 px-6 lg:px-8 bg-muted/30">
         <div className="max-w-4xl mx-auto space-y-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance text-center">
-            What being part of ACE means
+            What being part of EdComrade means
           </h2>
 
           <div className="space-y-12">
@@ -97,7 +97,7 @@ export default function CommunityPage() {
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 A school in Accra figured out an innovative way to improve parent engagement. A school in Kumasi
                 developed a brilliant timetabling system. A school in Tamale created a scholarship program that
-                increased enrollment by 40%. In the ACE Community, these insights don't stay siloed—they're shared,
+                increased enrollment by 40%. In the EdComrade Community, these insights don't stay siloed—they're shared,
                 adapted, and implemented across the network.
               </p>
             </div>
@@ -106,9 +106,9 @@ export default function CommunityPage() {
               <h3 className="text-2xl md:text-3xl font-medium">Your students compete on bigger stages</h3>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Imagine your brightest Mathematics student competing against the best from 50 other schools in a
-                national ACE Mathematics Olympiad. Your debate team facing off against schools from across the region.
+                national EdComrade Mathematics Olympiad. Your debate team facing off against schools from across the region.
                 Your Science Club showcasing innovations at an inter-school fair. These aren't hypotheticals—they're
-                regular events in the ACE Community.
+                regular events in the EdComrade Community.
               </p>
             </div>
 
@@ -125,7 +125,7 @@ export default function CommunityPage() {
             <div className="space-y-4">
               <h3 className="text-2xl md:text-3xl font-medium">You build something bigger than your school</h3>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                The ACE Community isn't just about taking—it's about contributing. Your innovations become case studies
+                The EdComrade Community isn't just about taking—it's about contributing. Your innovations become case studies
                 for other schools. Your teachers mentor educators from other institutions. Your success stories inspire
                 schools just starting their journey. You're not just improving your school—you're helping transform
                 education across Africa.
@@ -145,7 +145,7 @@ export default function CommunityPage() {
           <div className="space-y-16">
             <div className="space-y-6">
               <p className="text-xl md:text-2xl font-medium leading-relaxed">
-                "We were struggling with student retention. I posted in the ACE Community forum, and within 24 hours,
+                "We were struggling with student retention. I posted in the EdComrade Community forum, and within 24 hours,
                 three headmasters shared their strategies. We implemented their ideas, adapted them to our context, and
                 our retention improved by 35% in one term."
               </p>
@@ -154,7 +154,7 @@ export default function CommunityPage() {
 
             <div className="space-y-6">
               <p className="text-xl md:text-2xl font-medium leading-relaxed">
-                "My daughter's school participates in ACE inter-school competitions. Last year, she competed in a
+                "My daughter's school participates in EdComrade inter-school competitions. Last year, she competed in a
                 national debate tournament and met students from 15 different schools. She's still in touch with them.
                 It's not just about academics—it's about building networks and confidence."
               </p>
@@ -163,7 +163,7 @@ export default function CommunityPage() {
 
             <div className="space-y-6">
               <p className="text-xl md:text-2xl font-medium leading-relaxed">
-                "I'm a new teacher, and I was overwhelmed. Through the ACE Community, I was paired with a mentor from
+                "I'm a new teacher, and I was overwhelmed. Through the EdComrade Community, I was paired with a mentor from
                 another school who's been teaching for 15 years. She's helped me navigate classroom management,
                 curriculum planning, and parent communication. I don't know what I would have done without her."
               </p>
@@ -179,7 +179,7 @@ export default function CommunityPage() {
             <div className="relative rounded-3xl overflow-hidden h-[300px] shadow-xl">
               <Image
                 src="/african-students-competing-in-academic-olympiad--f.jpg?height=300&width=400"
-                alt="Students competing in ACE inter-school competition"
+                alt="Students competing in EdComrade inter-school competition"
                 fill
                 className="object-cover"
               />
@@ -187,7 +187,7 @@ export default function CommunityPage() {
             <div className="relative rounded-3xl overflow-hidden h-[300px] shadow-xl">
               <Image
                 src="/african-teachers-in-professional-development-works.jpg?height=300&width=400"
-                alt="Teachers in ACE professional development session"
+                alt="Teachers in EdComrade professional development session"
                 fill
                 className="object-cover"
               />
@@ -195,7 +195,7 @@ export default function CommunityPage() {
             <div className="relative rounded-3xl overflow-hidden h-[300px] shadow-xl">
               <Image
                 src="/placeholder.svg?height=300&width=400"
-                alt="School leaders connecting at ACE community event"
+                alt="School leaders connecting at EdComrade community event"
                 fill
                 className="object-cover"
               />
@@ -208,10 +208,10 @@ export default function CommunityPage() {
       <section className="py-24 md:py-32 px-6 lg:px-8 bg-primary">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-primary-foreground text-balance">
-            Community benefits are free for ACE users
+            Community benefits are free for EdComrade users
           </h2>
           <p className="text-lg md:text-xl text-primary-foreground/90 text-balance leading-relaxed max-w-3xl mx-auto font-light">
-            When you use ACE's platform, you automatically become part of the community. No additional fees. No separate
+            When you use EdComrade's platform, you automatically become part of the community. No additional fees. No separate
             membership. It's part of who we are and what we believe—that schools grow faster together.
           </p>
         </div>
@@ -226,7 +226,7 @@ export default function CommunityPage() {
 
           <div className="space-y-6">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Some schools receive special treatment within the ACE Community—not because they pay more, but because of
+              Some schools receive special treatment within the EdComrade Community—not because they pay more, but because of
               their unique contributions or circumstances:
             </p>
 
@@ -234,7 +234,7 @@ export default function CommunityPage() {
               <div className="space-y-3">
                 <h3 className="text-xl md:text-2xl font-medium">Early Adopters</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Schools that joined ACE in our early days helped shape what we've become. They get priority access to
+                  Schools that joined EdComrade in our early days helped shape what we've become. They get priority access to
                   new features, dedicated support, and recognition as community leaders.
                 </p>
               </div>
@@ -250,7 +250,7 @@ export default function CommunityPage() {
               <div className="space-y-3">
                 <h3 className="text-xl md:text-2xl font-medium">Innovation Leaders</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Schools that develop innovative practices and share them with the community are recognized as ACE
+                  Schools that develop innovative practices and share them with the community are recognized as EdComrade
                   Innovation Partners. They get featured in case studies, speaking opportunities at community events,
                   and special collaboration opportunities.
                 </p>
@@ -278,7 +278,7 @@ export default function CommunityPage() {
 
           <div className="space-y-6">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              The ACE Community isn't just a network of schools using the same software. It's a movement of educators
+              The EdComrade Community isn't just a network of schools using the same software. It's a movement of educators
               who believe that African education can lead the world. That our students deserve the same opportunities as
               students anywhere. That collaboration beats competition. That we rise by lifting others.
             </p>
@@ -302,7 +302,7 @@ export default function CommunityPage() {
             Ready to be part of something bigger?
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-            Join the ACE Community and connect with hundreds of schools committed to educational excellence.
+            Join the EdComrade Community and connect with hundreds of schools committed to educational excellence.
           </p>
           <Link
             href="/#contact"
@@ -322,16 +322,16 @@ export default function CommunityPage() {
             Schools already in the network
           </h2>
           <p className="text-xl text-primary-foreground/90 leading-relaxed">
-            From small rural schools to large urban institutions, the ACE community is growing every day.
+            From small rural schools to large urban institutions, the EdComrade community is growing every day.
           </p>
         </div>
       </section>
 
-      {/* Schools in the ACE Community */}
+      {/* Schools in the EdComrade Community */}
       <section className="py-24 px-6 lg:px-8 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance mb-12 text-center">
-            Schools in the ACE Community
+            Schools in the EdComrade Community
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
@@ -348,7 +348,7 @@ export default function CommunityPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <div className="text-2xl font-bold mb-4">ACE</div>
+              <div className="text-2xl font-bold mb-4">EdComrade</div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Transforming education through technology and partnership.
               </p>
@@ -415,7 +415,7 @@ export default function CommunityPage() {
             </div>
           </div>
           <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            © 2025 ACE Educational Systems. All rights reserved.
+            © 2025 EdComrade. All rights reserved.
           </div>
         </div>
       </footer>

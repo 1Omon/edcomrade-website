@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react"
 export const metadata: Metadata = {
   title: "About Us | Our Story & Mission",
   description:
-    "From a college project in 2021 to Ghana's premier edtech company. Learn how ACE Educational Systems is transforming education across Africa with technology and partnership.",
+    "From a college project in 2021 to Ghana's premier edtech company. Learn how EdComrade is transforming education across Africa with technology and partnership.",
   openGraph: {
-    title: "About ACE Educational Systems | Our Story & Mission",
+    title: "About EdComrade | Our Story & Mission",
     description:
       "From college project to transforming 500+ schools across Ghana. Our journey and vision for African education.",
     images: ["/og-about.jpg"],
@@ -40,7 +40,7 @@ export default function AboutPage() {
           <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px] shadow-2xl">
             <Image
               src="/young-african-computer-science-students-working-on.jpg"
-              alt="ACE founding team working on the original project"
+              alt="EdComrade founding team working on the original project"
               fill
               className="object-cover"
             />
@@ -57,7 +57,7 @@ export default function AboutPage() {
               A college project that became a mission
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              ACE began as a mini-project by a group of computer science students who noticed something troubling:
+              EdComrade began as a mini-project by a group of computer science students who noticed something troubling:
               school administrators spent more time wrestling with spreadsheets than supporting teachers. Students
               waited weeks for exam results. Parents had no visibility into their children's progress.
             </p>
@@ -68,11 +68,11 @@ export default function AboutPage() {
               "We realized that the tools schools needed didn't exist—not in a way that was affordable, integrated, or
               built for African contexts."
             </p>
-            <p className="text-lg text-muted-foreground mt-6">— Founding Team, ACE Educational Systems</p>
+            <p className="text-lg text-muted-foreground mt-6">— Founding Team, EdComrade</p>
           </div>
 
           <div className="relative rounded-3xl overflow-hidden h-[300px] md:h-[400px]">
-            <Image src="/african-school-administrator-overwhelmed-with-pape.jpg" alt="The problem ACE solves" fill className="object-cover" />
+            <Image src="/african-school-administrator-overwhelmed-with-pape.jpg" alt="The problem EdComrade solves" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
               <div className="p-8 text-white">
                 <p className="text-xl md:text-2xl font-medium">
@@ -98,7 +98,7 @@ export default function AboutPage() {
             <div className="text-sm font-semibold text-primary mb-4">2023 — Rapid Growth</div>
             <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">Scaling Up</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We reached 100+ schools across Ghana and launched the ACE Community Network for inter-school
+              We reached 100+ schools across Ghana and launched the EdComrade Community Network for inter-school
               collaboration.
             </p>
           </div>
@@ -280,7 +280,7 @@ export default function AboutPage() {
               <div className="flex-1 border-l-2 border-primary pl-8 pb-12">
                 <h3 className="text-2xl font-medium mb-3">Rapid Growth</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed font-light">
-                  Reached 100+ schools across Ghana. Launched ACE Community Network for inter-school collaboration.
+                  Reached 100+ schools across Ghana. Launched EdComrade Community Network for inter-school collaboration.
                 </p>
               </div>
             </div>
@@ -307,7 +307,7 @@ export default function AboutPage() {
             Join us in transforming education
           </h2>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            Whether you're a school administrator, educator, or education advocate, there's a place for you in the ACE
+            Whether you're a school administrator, educator, or education advocate, there's a place for you in the EdComrade
             community.
           </p>
           <div className="flex items-center justify-center gap-4">
@@ -333,7 +333,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <div className="text-2xl font-bold mb-4">ACE</div>
+              <div className="text-2xl font-bold mb-4">EdComrade</div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Transforming education through technology and partnership.
               </p>
@@ -400,7 +400,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            © 2025 ACE Educational Systems. All rights reserved.
+            © 2025 EdComrade. All rights reserved.
           </div>
         </div>
       </footer>

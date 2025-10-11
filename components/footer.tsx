@@ -12,7 +12,7 @@ export function Footer() {
               <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-xl">A</span>
               </div>
-              <span className="text-lg font-semibold">ACE Educational Systems</span>
+              <span className="text-lg font-semibold">EdComrade</span>
             </div>
             <p className="text-background/70 text-sm leading-relaxed">
               Empowering African schools through seamless software and ecosystem partnerships.
@@ -93,7 +93,7 @@ export function Footer() {
 
         <div className="border-t border-background/20 pt-8">
           <p className="text-center text-background/60 text-sm">
-            © {new Date().getFullYear()} ACE Educational Systems. All rights reserved.
+            © {new Date().getFullYear()} EdComrade. All rights reserved.
           </p>
         </div>
       </div>

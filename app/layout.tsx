@@ -22,8 +22,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://aceedu.com"),
   title: {
-    default: "ACE Educational Systems | Transform Your School with Technology",
-    template: "%s | ACE Educational Systems",
+    default: "EdComrade | Transform Your School with Technology",
+    template: "%s | EdComrade",
   },
   description:
     "Ghana's premier educational technology company. Integrated school management, learning platforms, and marketing solutions that empower schools to operate seamlessly and grow confidently. Join 500+ schools transforming education across Africa.",
@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     "school marketing Ghana",
     "education software Africa",
     "school administration software",
-    "ACE Educational Systems",
+    "EdComrade",
   ],
-  authors: [{ name: "ACE Educational Systems" }],
-  creator: "ACE Educational Systems",
-  publisher: "ACE Educational Systems",
+  authors: [{ name: "EdComrade" }],
+  creator: "EdComrade",
+  publisher: "EdComrade",
   formatDetection: {
     email: false,
     address: false,
@@ -51,22 +51,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GH",
     url: "https://aceedu.com",
-    title: "ACE Educational Systems | Transform Your School with Technology",
+    title: "EdComrade | Transform Your School with Technology",
     description:
       "Ghana's premier educational technology company empowering 500+ schools with integrated management, learning, and marketing solutions.",
-    siteName: "ACE Educational Systems",
+    siteName: "EdComrade",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ACE Educational Systems - Transforming Education in Africa",
+        alt: "EdComrade - Transforming Education in Africa",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ACE Educational Systems | Transform Your School with Technology",
+    title: "EdComrade | Transform Your School with Technology",
     description:
       "Ghana's premier educational technology company empowering 500+ schools with integrated solutions.",
     images: ["/og-image.jpg"],
@@ -102,7 +102,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "ACE Educational Systems",
+              name: "EdComrade",
               description:
                 "Ghana's premier educational technology company providing integrated school management, learning platforms, and marketing solutions.",
               url: "https://aceedu.com",
@@ -111,7 +111,7 @@ export default function RootLayout({
               founders: [
                 {
                   "@type": "Person",
-                  name: "ACE Founding Team",
+                  name: "EdComrade Founding Team",
                 },
               ],
               address: {

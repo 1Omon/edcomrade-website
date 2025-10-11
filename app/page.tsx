@@ -27,9 +27,9 @@ import { FAQSection } from "@/components/faq-section"
 export const metadata: Metadata = {
   title: "Home | Your Partner in Educational Excellence",
   description:
-    "Transform your school with ACE Educational Systems. Reduce admin work by 75%, improve parent satisfaction by 90%, and increase enrollment by 25%. Join 500+ schools across Ghana.",
+    "Transform your school with EdComrade. Reduce admin work by 75%, improve parent satisfaction by 90%, and increase enrollment by 25%. Join 500+ schools across Ghana.",
   openGraph: {
-    title: "ACE Educational Systems | Your Partner in Educational Excellence",
+    title: "EdComrade | Your Partner in Educational Excellence",
     description: "Transform your school with integrated technology solutions built for African education.",
     images: ["/og-home.jpg"],
   },
@@ -201,7 +201,7 @@ export default function HomePage() {
             One platform. Everything solved.
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 text-balance leading-relaxed font-light">
-            ACE Educational Systems brings together school management, learning platforms, finance, and marketing—all
+            EdComrade brings together school management, learning platforms, finance, and marketing—all
             integrated seamlessly to transform how your institution operates.
           </p>
         </div>
@@ -213,7 +213,7 @@ export default function HomePage() {
             <div className="relative rounded-3xl overflow-hidden h-[400px] lg:h-[500px]">
               <Image
                 src="/african-school-administrator-smiling-confidently-w.jpg"
-                alt="School administrator using ACE platform"
+                alt="School administrator using EdComrade platform"
                 fill
                 className="object-cover"
               />
@@ -226,7 +226,7 @@ export default function HomePage() {
                 Every day, brilliant educators spend hours on paperwork instead of teaching. Parents feel disconnected.
                 Schools lose students to competitors not because they lack quality, but because they lack visibility.
               </p>
-              <p className="text-lg sm:text-xl leading-relaxed">ACE changes that. One platform. Everything solved.</p>
+              <p className="text-lg sm:text-xl leading-relaxed">EdComrade changes that. One platform. Everything solved.</p>
             </div>
           </div>
 
@@ -236,7 +236,7 @@ export default function HomePage() {
                 Parents who feel <span className="text-secondary font-medium">connected</span>
               </h2>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed font-light">
-                Working parents no longer miss out on their children's education. With ACE's parent portal, they see
+                Working parents no longer miss out on their children's education. With EdComrade's parent portal, they see
                 grades, attendance, and school updates from their phones—anytime, anywhere.
               </p>
               <p className="text-lg sm:text-xl leading-relaxed">
@@ -246,7 +246,7 @@ export default function HomePage() {
             <div className="relative rounded-3xl overflow-hidden h-[400px] lg:h-[500px] order-1 lg:order-2">
               <Image
                 src="/african-parent-smiling-while-checking-child-s-grad.jpg"
-                alt="Parent using ACE mobile app"
+                alt="Parent using EdComrade mobile app"
                 fill
                 className="object-cover"
               />
@@ -308,7 +308,7 @@ export default function HomePage() {
               <div className="relative rounded-3xl overflow-hidden min-h-[400px] shadow-2xl order-2 lg:order-1">
                 <Image
                   src="/african-students-engaged-with-tablets-in-classroom.jpg"
-                  alt="Students using ACE learning platform"
+                  alt="Students using EdComrade learning platform"
                   fill
                   className="object-cover"
                 />
@@ -569,11 +569,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ACE Community Network */}
+      {/* EdComrade Community Network */}
       <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6 sm:mb-8 text-center">
-            Join the ACE Community
+            Join the EdComrade Community
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground text-balance mb-16 sm:mb-20 md:mb-24 text-center max-w-3xl mx-auto leading-relaxed font-light">
             More than software—a network of innovative schools collaborating to elevate education across Africa
@@ -582,7 +582,7 @@ export default function HomePage() {
           <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px] mb-16 shadow-2xl">
             <Image
               src="/diverse-group-of-african-students-from-different-s.jpg"
-              alt="ACE Community students at inter-school competition"
+              alt="EdComrade Community students at inter-school competition"
               fill
               className="object-cover"
             />
@@ -718,7 +718,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-xl leading-relaxed font-light">
-                "We used to spend entire weekends preparing reports. Now it takes minutes. ACE has given us our time
+                "We used to spend entire weekends preparing reports. Now it takes minutes. EdComrade has given us our time
                 back to focus on what matters—teaching our students."
               </p>
             </div>
@@ -796,7 +796,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-xl leading-relaxed font-light">
-                "Our enrollment increased by 30% after launching our new website and social media presence. ACE helped
+                "Our enrollment increased by 30% after launching our new website and social media presence. EdComrade helped
                 us tell our story to the right families."
               </p>
             </div>
@@ -824,11 +824,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose ACE */}
+      {/* Why Choose EdComrade */}
       <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-16 sm:mb-20 md:mb-24 text-center">
-            Why schools choose ACE
+            Why schools choose EdComrade
           </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
@@ -892,7 +892,7 @@ export default function HomePage() {
             Ready to transform your school?
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-16 sm:mb-20 leading-relaxed text-center font-light">
-            Let's discuss how ACE can help your institution thrive in the digital age.
+            Let's discuss how EdComrade can help your institution thrive in the digital age.
           </p>
           <div className="bg-background rounded-3xl p-10 border border-border">
             <form className="space-y-6">
@@ -976,7 +976,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-5 gap-12 mb-16">
             <div className="md:col-span-2">
-              <div className="text-3xl font-medium mb-6">ACE</div>
+              <div className="text-3xl font-medium mb-6">EdComrade</div>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6 font-light">
                 Ghana's premier educational technology company, transforming schools through innovative digital
                 solutions and strategic partnerships.
@@ -1054,7 +1054,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground font-light">
-            <p>© 2025 ACE Educational Systems. All rights reserved.</p>
+            <p>© 2025 EdComrade. All rights reserved.</p>
             <div className="flex gap-6">
               <Link href="#" className="hover:text-foreground transition-colors">
                 Privacy Policy

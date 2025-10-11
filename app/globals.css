@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* ACE Educational Systems Brand Colors */
+  /* EdComrade Brand Colors */
   --background: oklch(0.99 0 0); /* Pure white */
   --foreground: oklch(0.25 0 0); /* Deep charcoal for text */
 

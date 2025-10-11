@@ -6,19 +6,19 @@ import { cn } from "@/lib/utils"
 
 const faqs = [
   {
-    question: "Is ACE too complicated for my staff?",
+    question: "Is EdComrade too complicated for my staff?",
     answer:
-      "Not at all! ACE is designed for educators, not technology experts. Most teachers master the basics in their first training session. We provide comprehensive training and ongoing support to ensure your team feels confident.",
+      "Not at all! EdComrade is designed for educators, not technology experts. Most teachers master the basics in their first training session. We provide comprehensive training and ongoing support to ensure your team feels confident.",
   },
   {
     question: "What happens to our current records?",
     answer:
-      "We help transfer all your existing student and staff information into ACE. Nothing is lost, and everything becomes more organized and accessible. Our team handles the entire migration process.",
+      "We help transfer all your existing student and staff information into EdComrade. Nothing is lost, and everything becomes more organized and accessible. Our team handles the entire migration process.",
   },
   {
     question: "What if we have internet problems?",
     answer:
-      "Critical functions work even without internet connection. When connectivity returns, everything automatically synchronizes. We've designed ACE specifically for African internet conditions.",
+      "Critical functions work even without internet connection. When connectivity returns, everything automatically synchronizes. We've designed EdComrade specifically for African internet conditions.",
   },
   {
     question: "Can we try it before committing?",
@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "What if we need something specific to our school?",
     answer:
-      "ACE is designed to adapt to your needs. We regularly add new features based on feedback from schools like yours. For Excellence package users, we offer custom module development.",
+      "EdComrade is designed to adapt to your needs. We regularly add new features based on feedback from schools like yours. For Excellence package users, we offer custom module development.",
   },
 ]
 
@@ -47,7 +47,7 @@ export function FAQSection() {
           Questions we often answer
         </h2>
         <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground text-balance mb-16 sm:mb-20 text-center leading-relaxed font-light">
-          Everything you need to know about transforming your school with ACE
+          Everything you need to know about transforming your school with EdComrade
         </p>
 
         <div className="space-y-4">

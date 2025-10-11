@@ -1,1 +1,1 @@
-This is the website for Ace Educational System. 
+This is the website for EdComrade Educational System. 

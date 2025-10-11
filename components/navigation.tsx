@@ -37,7 +37,7 @@ export function Navigation() {
             <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center transition-transform group-hover:scale-105">
               <span className="text-primary-foreground font-bold text-xl">A</span>
             </div>
-            <span className="text-xl font-semibold tracking-tight">ACE Educational Systems</span>
+            <span className="text-xl font-semibold tracking-tight">EdComrade</span>
           </Link>
 
           {/* Desktop Navigation */}

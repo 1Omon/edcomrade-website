@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
 const testimonials = [
   {
     quote:
-      "We used to spend entire weekends preparing reports. Now it takes minutes. ACE has given us our time back to focus on what matters—teaching our students.",
+      "We used to spend entire weekends preparing reports. Now it takes minutes. EdComrade has given us our time back to focus on what matters—teaching our students.",
     name: "Dr. Kwame Mensah",
     title: "Headmaster, Accra",
   },
@@ -27,7 +27,7 @@ const testimonials = [
   },
   {
     quote:
-      "Our enrollment increased by 30% after launching our new website and social media presence. ACE helped us tell our story to the right families.",
+      "Our enrollment increased by 30% after launching our new website and social media presence. EdComrade helped us tell our story to the right families.",
     name: "Mrs. Ama Darko",
     title: "School Owner, Takoradi",
   },

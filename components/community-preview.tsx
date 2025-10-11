@@ -32,7 +32,7 @@ export function CommunityPreview() {
             <span className="text-secondary">growth is collective</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-            Being part of ACE means more than software. It means belonging to an ecosystem of forward-thinking schools.
+            Being part of EdComrade means more than software. It means belonging to an ecosystem of forward-thinking schools.
           </p>
         </div>
 
