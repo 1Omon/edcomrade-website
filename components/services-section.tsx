@@ -2,6 +2,7 @@
 
 import { GraduationCap, BarChart3, CreditCard, Users, Megaphone, Shield } from "lucide-react"
 import { Card } from "@/components/ui/card"
+import { FadeIn } from "@/components/fade-in"
 
 const services = [
   {
@@ -48,30 +49,35 @@ export function ServicesSection() {
     <section className="py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-balance">
-            Everything your school needs.
-            <br />
-            <span className="text-primary">All in one place.</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-            From classroom to boardroom, we've built the tools that make education work better.
-          </p>
+          <FadeIn direction="up" delay={60}>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-balance">
+              Everything your school needs.
+              <br />
+              <span className="text-primary">All in one place.</span>
+            </h2>
+          </FadeIn>
+          <FadeIn direction="up" delay={140}>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
+              From classroom to boardroom, we build tools that make education work better — and feel better.
+            </p>
+          </FadeIn>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Card
-              key={index}
-              className="p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 bg-background group"
-            >
-              <div
-                className={`w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${service.color}`}
+            <FadeIn key={index} direction="up" delay={120 + index * 80}>
+              <Card
+                className="p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 bg-background group"
               >
-                <service.icon size={28} strokeWidth={1.5} />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-            </Card>
+                <div
+                  className={`w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${service.color}`}
+                >
+                  <service.icon size={28} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+              </Card>
+            </FadeIn>
           ))}
         </div>
       </div>

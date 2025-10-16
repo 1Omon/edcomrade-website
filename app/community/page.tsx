@@ -5,12 +5,12 @@ import type { Metadata } from "next"
 import { ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Community | Join the Movement",
+  title: "Community | Schools rising together",
   description:
-    "Join 500+ schools in the EdComrade Community Network. Free inter-school competitions, teacher development, student exchanges, and collaborative growth for all EdComrade users.",
+    "More than technology — a movement of schools rising together. Join a vibrant network of educators across Africa for visibility, collaboration and growth.",
   openGraph: {
-    title: "EdComrade Community | Join the Educational Movement",
-    description: "Connect with 500+ schools across Ghana. Free community benefits for all EdComrade users.",
+    title: "EdComrade Community | Schools rising together",
+    description: "A collaborative network powering visibility, storytelling, and shared growth for African schools.",
     images: ["/og-community.jpg"],
   },
 }
@@ -24,12 +24,12 @@ export default function CommunityPage() {
       <section className="pt-32 pb-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6">
-            You're not just getting software.
+            More than technology —
             <br />
-            <span className="text-primary font-medium">You're joining a movement.</span>
+            <span className="text-primary font-medium">a movement of schools rising together.</span>
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-balance leading-relaxed max-w-3xl mx-auto font-light">
-            The EdComrade Community is where ambitious schools connect, collaborate, and grow together.
+            Schools don’t grow alone. They grow through community — shared experiences, collaboration, and visibility. When you join EdComrade, you join a nationwide community of excellence.
           </p>
         </div>
       </section>
@@ -47,39 +47,27 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* Story: The Loneliness of Leadership */}
+      {/* 1. The Power of the EdComrade Network */}
       <section className="py-24 md:py-32 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="space-y-6">
-            <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-balance">
-              Running a school can be lonely.
-            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance">
+              1. The Power of the EdComrade Network
+            </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              You're making decisions that affect hundreds of lives. Navigating challenges that feel unique to your
-              institution. Wondering if other schools face the same struggles, or if it's just you.
-            </p>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              You attend conferences where everyone shares their successes but rarely their failures. You read articles
-              about "best practices" that seem impossible to implement in your context. You feel like you're solving
-              every problem alone.
+              The EdComrade Network connects hundreds of schools across Ghana (and soon, across Africa) into one collaborative digital ecosystem. Through shared infrastructure, events, and storytelling platforms, schools gain visibility, share insights, and attract more parents and opportunities.
             </p>
           </div>
 
-          <div className="h-px bg-border my-16" />
-
           <div className="space-y-6">
-            <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-balance">
-              What if you weren't alone?
-            </p>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              The EdComrade Community is a network of over 500 schools across Ghana—from small rural institutions to large
-              urban campuses. Schools that share your challenges, your ambitions, and your commitment to educational
-              excellence.
-            </p>
-            <p className="text-lg md:text-xl leading-relaxed">
-              When you join EdComrade, you don't just get access to our platform. You get access to a community of peers who
-              understand exactly what you're going through. Because they're going through it too.
-            </p>
+            <h3 className="text-xl md:text-2xl font-semibold">As part of our network, schools enjoy:</h3>
+            <ul className="list-disc pl-5 space-y-3 text-muted-foreground">
+              <li><span className="font-medium text-foreground">Shared visibility:</span> Featured across the EdComrade directory, app, and campaigns.</li>
+              <li><span className="font-medium text-foreground">Annual Events & Competitions:</span> Inter-school competitions and networking events for administrators, teachers, and students.</li>
+              <li><span className="font-medium text-foreground">Professional storytelling:</span> Cinematic photography and video coverage that amplifies your brand story.</li>
+              <li><span className="font-medium text-foreground">Collaborative learning:</span> Webinars, growth programs, and workshops on digital transformation and school branding.</li>
+              <li><span className="font-medium text-foreground">Partner perks:</span> Access to exclusive partnerships (e.g., MTN broadband setup support, EdTech tool discounts, sponsorships).</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -204,105 +192,75 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* 2. The EdComrade Pioneer Circle */}
       <section className="py-24 md:py-32 px-6 lg:px-8 bg-primary">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-primary-foreground text-balance">
-            Community benefits are free for EdComrade users
+        <div className="max-w-4xl mx-auto space-y-8 text-primary-foreground">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance">
+            2. The EdComrade Pioneer Circle
           </h2>
-          <p className="text-lg md:text-xl text-primary-foreground/90 text-balance leading-relaxed max-w-3xl mx-auto font-light">
-            When you use EdComrade's platform, you automatically become part of the community. No additional fees. No separate
-            membership. It's part of who we are and what we believe—that schools grow faster together.
+          <p className="text-lg md:text-xl leading-relaxed">
+            At the core of our community are the EdComrade Pioneers — the first 100 schools that believed in the vision early.
+          </p>
+          <h3 className="text-xl md:text-2xl font-semibold">Pioneer privileges include:</h3>
+          <ul className="list-disc pl-5 space-y-3">
+            <li>Locked‑in pricing for the first 3 years</li>
+            <li>Exclusive early access to new tools and updates</li>
+            <li>Priority event coverage and storytelling support each year</li>
+            <li>Co‑branding as “EdComrade Pioneer Schools” across our ecosystem</li>
+            <li>Influence over upcoming features via beta programs and advisory groups</li>
+          </ul>
+          <p className="text-lg md:text-xl leading-relaxed">
+            Being a Pioneer School isn’t just a label — it’s a legacy. It marks you as one of the schools that helped shape the digital backbone of modern education in Africa.
           </p>
         </div>
       </section>
 
-      {/* Special Recognition */}
+      {/* 3. The Spirit of Collaboration */}
       <section className="py-24 md:py-32 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance text-center">
-            Special recognition for pioneers
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance">
+            3. The Spirit of Collaboration
           </h2>
-
-          <div className="space-y-6">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Some schools receive special treatment within the EdComrade Community—not because they pay more, but because of
-              their unique contributions or circumstances:
-            </p>
-
-            <div className="space-y-8 mt-8">
-              <div className="space-y-3">
-                <h3 className="text-xl md:text-2xl font-medium">Early Adopters</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Schools that joined EdComrade in our early days helped shape what we've become. They get priority access to
-                  new features, dedicated support, and recognition as community leaders.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-xl md:text-2xl font-medium">Rural & Underserved Schools</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Schools serving underserved communities receive additional support—subsidized pricing, extra training
-                  sessions, and priority technical assistance. Excellence shouldn't depend on location.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-xl md:text-2xl font-medium">Innovation Leaders</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Schools that develop innovative practices and share them with the community are recognized as EdComrade
-                  Innovation Partners. They get featured in case studies, speaking opportunities at community events,
-                  and special collaboration opportunities.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-xl md:text-2xl font-medium">Community Contributors</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Schools whose teachers actively mentor others, whose leaders share insights in forums, and whose
-                  students participate in community programs receive recognition and additional benefits. We believe in
-                  rewarding those who give back.
-                </p>
-              </div>
-            </div>
+            We believe competition is healthy — but collaboration creates greatness. Every EdComrade school contributes to a shared pool of knowledge, growth strategies, and innovations.
+          </p>
+          <div className="space-y-3 text-muted-foreground">
+            <p>Our network thrives on shared wins:</p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>When one school’s story goes viral, others gain recognition.</li>
+              <li>When a new system feature is born, all schools benefit.</li>
+              <li>When we host an event, the entire network gets stronger.</li>
+            </ul>
           </div>
+          <p className="text-lg md:text-xl leading-relaxed">
+            Together, we’re not just redefining education. We’re building a collective advantage — a connected system where every school uplifts the others.
+          </p>
         </div>
       </section>
 
-      {/* The Vision */}
+      {/* 4. The Future We’re Building */}
       <section className="py-24 md:py-32 px-6 lg:px-8 bg-muted/30">
         <div className="max-w-4xl mx-auto space-y-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance text-center">
-            We're building something bigger
+            4. The Future We’re Building
           </h2>
-
-          <div className="space-y-6">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              The EdComrade Community isn't just a network of schools using the same software. It's a movement of educators
-              who believe that African education can lead the world. That our students deserve the same opportunities as
-              students anywhere. That collaboration beats competition. That we rise by lifting others.
-            </p>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              By 2030, we envision a community of 1,000+ schools across 10 African countries. A network so strong that
-              when one school innovates, hundreds benefit. Where a brilliant teacher in rural Ghana can mentor an
-              educator in urban Nigeria. Where students compete, collaborate, and build friendships across borders.
-            </p>
-            <p className="text-lg md:text-xl leading-relaxed">
-              This isn't just about better school management. It's about reimagining what African education can be when
-              we work together.
-            </p>
-          </div>
+            We’re laying the foundation for the EdComrade Learning Living Network — a vision where students from different schools interact, collaborate, and grow in homelike hubs that nurture real‑world learning, creativity, and community.
+          </p>
+          <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
+            <li>Students from different schools live, learn, and grow under one ecosystem.</li>
+            <li>Parents have full visibility into development, no matter the city.</li>
+            <li>Schools share infrastructure, AI tutors, and digital resources.</li>
+          </ul>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* 5. Why Join Us */}
       <section className="py-24 md:py-32 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance">
-            Ready to be part of something bigger?
-          </h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance">5. Why Join Us</h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-            Join the EdComrade Community and connect with hundreds of schools committed to educational excellence.
+            Because your school deserves to grow with others who share your ambition. Because we see schools as brands — and brands as communities. When you stand with EdComrade, you’re not just building your reputation — you’re shaping the story of education in Africa.
           </p>
           <Link
             href="/#contact"
