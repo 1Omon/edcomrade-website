@@ -20,7 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aceedu.com"),
+  metadataBase: new URL("https://edcomrade.com"),
   title: {
     default: "EdComrade | Transform Your School with Technology",
     template: "%s | EdComrade",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GH",
-    url: "https://aceedu.com",
+    url: "https://edcomrade.com",
     title: "EdComrade | Transform Your School with Technology",
     description:
       "Ghana's premier educational technology company empowering 500+ schools with integrated management, learning, and marketing solutions.",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     description:
       "Ghana's premier educational technology company empowering 500+ schools with integrated solutions.",
     images: ["/og-image.jpg"],
-    creator: "@aceedu",
+    creator: "@edcomrade",
   },
   robots: {
     index: true,
@@ -105,8 +105,8 @@ export default function RootLayout({
               name: "EdComrade",
               description:
                 "Ghana's premier educational technology company providing integrated school management, learning platforms, and marketing solutions.",
-              url: "https://aceedu.com",
-              logo: "https://aceedu.com/logo.png",
+              url: "https://edcomrade.com",
+              logo: "https://edcomrade.com/logo.png",
               foundingDate: "2022",
               founders: [
                 {
@@ -121,15 +121,15 @@ export default function RootLayout({
               },
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+233-XX-XXX-XXXX",
+                telephone: "+233-55-528-4923",
                 contactType: "Customer Service",
-                email: "hello@aceedu.com",
+                email: "hello@edcomrade.com",
                 availableLanguage: ["English", "Twi", "Ga", "Ewe"],
               },
               sameAs: [
-                "https://twitter.com/aceedu",
-                "https://linkedin.com/company/aceedu",
-                "https://facebook.com/aceedu",
+                "https://twitter.com/edcomrade",
+                "https://linkedin.com/company/edcomrade",
+                "https://facebook.com/edcomrade",
               ],
               areaServed: {
                 "@type": "Country",

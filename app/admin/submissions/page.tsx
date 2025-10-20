@@ -24,7 +24,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ q
           name="q"
           defaultValue={q || ''}
           placeholder="Search by school, contact, email, city..."
-          className="border rounded px-3 py-2 w-full"
+          className="border border-border rounded px-3 py-2 w-full"
         />
       </form>
       <div className="overflow-x-auto">

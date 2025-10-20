@@ -63,7 +63,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-background/70 text-sm">
                 <Mail size={16} />
-                <span>info@aceedu.com</span>
+                <span>info@edcomrade.com</span>
               </li>
               <li className="flex items-center gap-2 text-background/70 text-sm">
                 <Phone size={16} />

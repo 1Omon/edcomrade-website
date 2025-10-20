@@ -29,7 +29,8 @@ export default function CommunityPage() {
             <span className="text-primary font-medium">a movement of schools rising together.</span>
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-balance leading-relaxed max-w-3xl mx-auto font-light">
-            Schools don’t grow alone. They grow through community — shared experiences, collaboration, and visibility. When you join EdComrade, you join a nationwide community of excellence.
+            Schools don’t grow alone. They grow through community — shared experiences, collaboration, and visibility.
+            Join a nationwide network of excellence designed to empower, inspire, and celebrate schools that dare to lead.
           </p>
         </div>
       </section>
@@ -262,13 +263,15 @@ export default function CommunityPage() {
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
             Because your school deserves to grow with others who share your ambition. Because we see schools as brands — and brands as communities. When you stand with EdComrade, you’re not just building your reputation — you’re shaping the story of education in Africa.
           </p>
-          <Link
-            href="/#contact"
-            className="bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity inline-flex items-center gap-2"
-          >
-            Join the Movement
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+          <div className="flex items-center justify-center gap-3">
+            <Link href="/pioneer-100" className="bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity inline-flex items-center gap-2">
+              Join Pioneer 100
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link href="/#contact" className="border border-border px-8 py-4 rounded-full text-lg font-medium hover:bg-accent transition-colors">
+              Talk to our team
+            </Link>
+          </div>
         </div>
       </section>
 

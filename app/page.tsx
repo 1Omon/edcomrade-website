@@ -21,16 +21,19 @@ import {
   FileCheck,
   Smartphone,
   AlertCircle,
+  MapPin,
+  Mail,
+  Phone,
 } from "lucide-react"
 import { FAQSection } from "@/components/faq-section"
 
 export const metadata: Metadata = {
-  title: "Home | Your Partner in Educational Excellence",
+  title: "EdComrade | We digitize. You inspire.",
   description:
-    "Transform your school with EdComrade. Reduce admin work by 75%, improve parent satisfaction by 90%, and increase enrollment by 25%. Join 500+ schools across Ghana.",
+    "EdComrade is building Ghana’s digital education future — giving private schools visibility, systems, and intelligence to operate like 21st‑century institutions.",
   openGraph: {
-    title: "EdComrade | Your Partner in Educational Excellence",
-    description: "Transform your school with integrated technology solutions built for African education.",
+    title: "EdComrade | We digitize. You inspire.",
+    description: "An ecosystem that merges storytelling, software, and systems to make excellence visible.",
     images: ["/og-home.jpg"],
   },
 }
@@ -62,26 +65,26 @@ export default function HomePage() {
 
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light tracking-tight text-balance mb-6 sm:mb-8 md:mb-10">
-            Education.
+            Ghana’s schools,
             <br />
-            <span className="font-semibold text-primary">Transformed.</span>
+            <span className="font-semibold text-primary">digitized and made visible.</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground text-balance mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto leading-relaxed font-light">
-            Your Partner in Excellence
+            We merge storytelling, software, and systems to build your school’s digital backbone.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
             <Link
               href="#contact"
               className="w-full sm:w-auto bg-secondary text-secondary-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-full text-lg sm:text-xl font-medium hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-3"
             >
-              Start Your Journey
+              Get a 15‑min demo
               <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </Link>
             <Link
-              href="#how-it-works"
+              href="/pioneer-100"
               className="w-full sm:w-auto text-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-full text-lg sm:text-xl font-medium hover:bg-accent transition-colors"
             >
-              See How It Works
+              Join Pioneer 100
             </Link>
           </div>
         </div>
@@ -198,12 +201,41 @@ export default function HomePage() {
       <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8 bg-primary">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-primary-foreground text-balance mb-6 sm:mb-8">
-            One platform. Everything solved.
+            One ecosystem. Real transformation.
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 text-balance leading-relaxed font-light">
-            EdComrade brings together school management, learning platforms, finance, and marketing—all
-            integrated seamlessly to transform how your institution operates.
+            Storytelling for visibility. Software for systems. Data for performance. Community for momentum.
           </p>
+        </div>
+      </section>
+
+      {/* The EdComrade Framework – Four Pillars */}
+      <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6 sm:mb-8 text-center">
+            The EdComrade Framework
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground text-balance mb-16 sm:mb-20 md:mb-24 text-center max-w-3xl mx-auto leading-relaxed font-light">
+            Digital Excellence as Infrastructure — built on four pillars that turn schools into modern, trusted brands.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="rounded-3xl border border-border p-8 bg-background">
+              <h3 className="text-2xl font-medium mb-2">Visibility</h3>
+              <p className="text-muted-foreground">Cinematic media, branding, and narrative to make excellence visible.</p>
+            </div>
+            <div className="rounded-3xl border border-border p-8 bg-background">
+              <h3 className="text-2xl font-medium mb-2">Systems</h3>
+              <p className="text-muted-foreground">Smart ERP that automates admissions, attendance, comms, and reporting.</p>
+            </div>
+            <div className="rounded-3xl border border-border p-8 bg-background">
+              <h3 className="text-2xl font-medium mb-2">Performance</h3>
+              <p className="text-muted-foreground">Dashboards and analytics that track growth and inspire excellence.</p>
+            </div>
+            <div className="rounded-3xl border border-border p-8 bg-background">
+              <h3 className="text-2xl font-medium mb-2">Community</h3>
+              <p className="text-muted-foreground">A collaborative network where schools share knowledge and momentum.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -982,9 +1014,9 @@ export default function HomePage() {
                 solutions and strategic partnerships.
               </p>
               <div className="space-y-2 text-base text-muted-foreground font-light">
-                <p>📍 Accra • Kumasi • Takoradi • Tamale</p>
-                <p>📧 hello@aceedu.com</p>
-                <p>📱 +233 XX XXX XXXX</p>
+                <p className="flex gap-x-2"><MapPin/> Accra • Kumasi • Takoradi • Tamale</p>
+                <p className="flex gap-x-2"><Mail/> hello@edcomrade.com</p>
+                <p className="flex gap-x-2"><Phone/> +233 55 528 4923</p>
               </div>
             </div>
             <div>

@@ -24,6 +24,11 @@ CLOUDINARY_API_KEY="your_api_key"
 CLOUDINARY_API_SECRET="your_api_secret"
 
 NEXT_PUBLIC_BASE_URL="http://localhost:3000"
+
+PAYSTACK_SECRET_KEY=""
+PAYSTACK_PUBLIC_KEY=""
+PAYSTACK_SECRET_KEY=""
+
 ```
 
 ### Install deps

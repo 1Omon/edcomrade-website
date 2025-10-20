@@ -12,9 +12,9 @@ export function MinimalNav() {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/community", label: "Community" },
     { href: "/technology", label: "Technology" },
+    { href: "/community", label: "Community" },
+    { href: "/pioneer-100", label: "Pioneer 100" },
   ]
 
   return (

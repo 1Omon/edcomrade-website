@@ -5,13 +5,12 @@ import type { Metadata } from "next"
 import { ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "About Us | Our Story & Mission",
+  title: "About EdComrade | The Genesis Document",
   description:
-    "From a college project in 2021 to Ghana's premier edtech company. Learn how EdComrade is transforming education across Africa with technology and partnership.",
+    "EdComrade is the ecosystem digitizing Ghana’s private schools — making excellence visible through storytelling, software, and systems.",
   openGraph: {
-    title: "About EdComrade | Our Story & Mission",
-    description:
-      "From college project to transforming 500+ schools across Ghana. Our journey and vision for African education.",
+    title: "About EdComrade | The Genesis Document",
+    description: "We digitize. You inspire. Building Ghana’s digital education future.",
     images: ["/og-about.jpg"],
   },
 }
@@ -25,12 +24,12 @@ export default function AboutPage() {
       <section className="pt-32 pb-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6">
-            It started with a
+            The EdComrade Genesis
             <br />
-            <span className="text-primary font-medium">simple idea</span>
+            <span className="text-primary font-medium">We digitize. You inspire.</span>
           </h1>
           <p className="text-xl lg:text-2xl text-muted-foreground text-balance leading-relaxed max-w-3xl mx-auto font-light">
-            What if schools could focus on teaching, while technology handled everything else?
+            An ecosystem engineered to make Ghana’s private schools visible, measurable, and connected to the digital economy of tomorrow.
           </p>
         </div>
       </section>
@@ -48,27 +47,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Origin Story */}
+      {/* Genesis Narrative */}
       <section className="py-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-16">
           <div>
-            <div className="text-sm font-semibold text-primary mb-4">2021 — The Beginning</div>
-            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">
-              A college project that became a mission
-            </h2>
+            <div className="text-sm font-semibold text-primary mb-4">Why we exist</div>
+            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">Make excellence visible</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              EdComrade began as a mini-project by a group of computer science students who noticed something troubling:
-              school administrators spent more time wrestling with spreadsheets than supporting teachers. Students
-              waited weeks for exam results. Parents had no visibility into their children's progress.
+              For decades, private schools carried the burden of innovation in silence. Many did extraordinary work without
+              recognition because they lacked visibility and digital infrastructure. EdComrade was born to change that — to
+              build the digital backbone of Ghana’s private education sector by merging storytelling, software, and systems thinking.
             </p>
           </div>
 
           <div className="bg-accent rounded-3xl p-12 lg:p-16">
             <p className="text-2xl lg:text-3xl font-medium text-balance leading-relaxed">
-              "We realized that the tools schools needed didn't exist—not in a way that was affordable, integrated, or
-              built for African contexts."
+              "Digital Excellence as Infrastructure": not just apps — an operational identity that helps schools evolve
+              intelligently and competitively.
             </p>
-            <p className="text-lg text-muted-foreground mt-6">— Founding Team, EdComrade</p>
+            <p className="text-lg text-muted-foreground mt-6">— The EdComrade Philosophy</p>
           </div>
 
           <div className="relative rounded-3xl overflow-hidden h-[300px] md:h-[400px]">
@@ -82,34 +79,34 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div>
-            <div className="text-sm font-semibold text-primary mb-4">2022 — First Deployment</div>
-            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">
-              From prototype to production
-            </h2>
+          <div className="space-y-6">
+            <div className="text-sm font-semibold text-primary mb-1">Our framework</div>
+            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance">Four pillars of progress</h2>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="rounded-2xl border p-6"><h3 className="text-xl font-semibold mb-1">Visibility</h3><p className="text-muted-foreground">Storytelling and branding that make excellence discoverable.</p></div>
+              <div className="rounded-2xl border p-6"><h3 className="text-xl font-semibold mb-1">Systems</h3><p className="text-muted-foreground">ERP that automates admissions, attendance, communication, reporting.</p></div>
+              <div className="rounded-2xl border p-6"><h3 className="text-xl font-semibold mb-1">Performance</h3><p className="text-muted-foreground">Dashboards and analytics that measure and motivate.</p></div>
+              <div className="rounded-2xl border p-6"><h3 className="text-xl font-semibold mb-1">Community</h3><p className="text-muted-foreground">A network that shares knowledge, tools, and opportunities.</p></div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="text-sm font-semibold text-primary">The EdComrade Index</div>
+            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance">Ghana’s Digital Education Ranking</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Our first partner school took a chance on us. Within months, they reduced administrative overhead by 60%,
-              digitized their entire student records system, and launched online fee payments with Mobile Money
-              integration. Word spread quickly.
+              We evaluate digital maturity, innovation, community impact, academic experience, and brand presence — not
+              to compete, but to inspire elevation and make excellence contagious.
             </p>
           </div>
 
-          <div>
-            <div className="text-sm font-semibold text-primary mb-4">2023 — Rapid Growth</div>
-            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">Scaling Up</h2>
+          <div className="space-y-4">
+            <div className="text-sm font-semibold text-secondary">Now</div>
+            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance">The Pioneer 100</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We reached 100+ schools across Ghana and launched the EdComrade Community Network for inter-school
-              collaboration.
+              A national campaign to digitize the first 100 schools leading this transformation — full media, custom
+              websites, standardized ERP, and recognition on the EdComrade Index.
             </p>
-          </div>
-
-          <div>
-            <div className="text-sm font-semibold text-secondary mb-4">2025 — Leading the Future</div>
-            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-balance mb-6">Transforming Education</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              500+ schools have been transformed. We are expanding across Africa and building the future of education
-              technology.
-            </p>
+            <Link href="/pioneer-100" className="inline-flex items-center gap-2 text-primary hover:underline">Join Pioneer 100 <ArrowRight className="w-4 h-4" /></Link>
           </div>
         </div>
       </section>
