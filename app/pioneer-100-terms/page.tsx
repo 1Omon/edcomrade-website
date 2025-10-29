@@ -201,10 +201,10 @@ export default function TermsPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50 backdrop-blur-lg bg-white/90">
+      <header className=" border-b border-slate-200 sticky top-0 z-50 backdrop-blur-lg bg-white/90">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" className="font-semibold text-xl hover:text-indigo-600 transition">EdComrade</a>
-          <a href="/pioneer-100" className="text-sm text-slate-600 hover:text-indigo-600 transition flex items-center gap-2">
+          <a href="/" className="font-semibold text-xl hover:text-primary transition">EdComrade</a>
+          <a href="/pioneer-100" className="text-sm text-slate-600 hover:text-primary transition flex items-center gap-2">
             <ChevronRight className="w-4 h-4" />
             Back to Pioneer 100
           </a>
@@ -212,7 +212,7 @@ export default function TermsPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white py-20 px-6">
+      <section className="relative overflow-hidden bg-primary text-white py-20 px-6">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
         
         <div className="max-w-4xl mx-auto relative">
@@ -232,7 +232,7 @@ export default function TermsPage() {
           <div className="flex flex-wrap gap-4">
             <a 
               href="/pioneer-100-terms.pdf" 
-              className="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all inline-flex items-center gap-2"
+              className="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all inline-flex items-center gap-2"
             >
               <Download className="w-5 h-5" />
               Download PDF
@@ -254,7 +254,7 @@ export default function TermsPage() {
         <div className="max-w-5xl mx-auto">
           <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-8 border-2 border-indigo-200 shadow-lg">
             <div className="flex items-start gap-4">
-              <div className="bg-indigo-600 rounded-xl p-3 text-white">
+              <div className="bg-primary rounded-xl p-3 text-white">
                 <AlertCircle className="w-6 h-6" />
               </div>
               <div className="flex-1">
@@ -266,7 +266,7 @@ export default function TermsPage() {
                   </p>
                   <p className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>Simple refund process:</strong> Email request to <a href="mailto:edcomrade.gh@gmail.com" className="text-indigo-600 underline font-medium">edcomrade.gh@gmail.com</a></span>
+                    <span><strong>Simple refund process:</strong> Email request to <a href="mailto:edcomrade.gh@gmail.com" className="text-primary underline font-medium">edcomrade.gh@gmail.com</a></span>
                   </p>
                   <p className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
@@ -314,7 +314,7 @@ export default function TermsPage() {
                       onClick={() => setActiveSection(item.id)}
                       className={`block px-3 py-2 rounded-lg text-sm transition ${
                         activeSection === item.id
-                          ? "bg-indigo-50 text-indigo-600 font-medium"
+                          ? "bg-indigo-50 text-primary font-medium"
                           : "text-slate-600 hover:bg-slate-50"
                       }`}
                     >
@@ -338,7 +338,7 @@ export default function TermsPage() {
                 {/* Section 1 */}
                 <section id="purpose">
                   <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-sm font-bold">1</span>
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">1</span>
                     Purpose
                   </h2>
                   <p className="text-slate-700 leading-relaxed">
@@ -349,7 +349,7 @@ export default function TermsPage() {
                 {/* Section 2 */}
                 <section id="deposit">
                   <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-sm font-bold">2</span>
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">2</span>
                     Deposit Requirement
                   </h2>
                   <div className="space-y-4 text-slate-700 leading-relaxed">
@@ -387,7 +387,7 @@ export default function TermsPage() {
                 {/* Section 4 */}
                 <section id="scope">
                   <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-sm font-bold">4</span>
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">4</span>
                     Scope of the Pioneer 100 Package
                   </h2>
                   <div className="grid md:grid-cols-2 gap-4">
@@ -400,7 +400,7 @@ export default function TermsPage() {
                       "'Pioneer School' certification badge"
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-3 bg-slate-50 rounded-lg p-4">
-                        <CheckCircle className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-slate-700 text-sm">{item}</span>
                       </div>
                     ))}
@@ -411,7 +411,7 @@ export default function TermsPage() {
                 {/* Section 5 */}
                 <section id="scheduling">
                   <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-sm font-bold">5</span>
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">5</span>
                     Scheduling & Tour Commitments
                   </h2>
                   <p className="text-slate-700 leading-relaxed">
@@ -422,7 +422,7 @@ export default function TermsPage() {
                 {/* Section 6 */}
                 <section id="participant">
                   <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-sm font-bold">6</span>
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">6</span>
                     Participant Responsibilities
                   </h2>
                   <ul className="space-y-3 text-slate-700">
@@ -433,7 +433,7 @@ export default function TermsPage() {
                       "Make final payment (₵2,500) before the scheduled shoot date"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-indigo-600 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -443,7 +443,7 @@ export default function TermsPage() {
                 {/* Section 7 */}
                 <section id="payments">
                   <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-sm font-bold">7</span>
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">7</span>
                     Payment & Receipts
                   </h2>
                   <p className="text-slate-700 leading-relaxed">
@@ -454,11 +454,11 @@ export default function TermsPage() {
                 {/* Section 8 */}
                 <section id="withdrawal">
                   <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-sm font-bold">8</span>
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">8</span>
                     Withdrawal & Cancellation
                   </h2>
                   <p className="text-slate-700 leading-relaxed">
-                    A Participant may withdraw from the Program any time before December 31, 2025. Written notice must be sent to <a href="mailto:edcomrade.gh@gmail.com" className="text-indigo-600 underline font-medium">edcomrade.gh@gmail.com</a> with subject line "Refund Request – [School Name]". Refunds are not automatic; written request and verification are required.
+                    A Participant may withdraw from the Program any time before December 31, 2025. Written notice must be sent to <a href="mailto:edcomrade.gh@gmail.com" className="text-primary underline font-medium">edcomrade.gh@gmail.com</a> with subject line "Refund Request – [School Name]". Refunds are not automatic; written request and verification are required.
                   </p>
                 </section>
 
@@ -523,7 +523,7 @@ export default function TermsPage() {
                 ].map((section) => (
                   <section key={section.id} id={section.id}>
                     <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                      <span className="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-sm font-bold">{section.num}</span>
+                      <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">{section.num}</span>
                       {section.title}
                     </h2>
                     <p className="text-slate-700 leading-relaxed">{section.content}</p>
@@ -569,12 +569,12 @@ export default function TermsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-indigo-600 to-purple-600 text-white">
+      <section className="py-20 px-6 bg-secondary">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Join the Pioneer 100?</h2>
-          <p className="text-xl text-white/90 mb-8">Secure your school's spot in Ghana's digital education revolution</p>
+          <p className="text-xl  mb-8">Secure your school's spot in Ghana's digital education revolution</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="/pioneer-100#reserve" className="bg-white text-indigo-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all">
+            <a href="/pioneer-100#reserve" className="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all">
               Reserve Your Slot
             </a>
             <a href="mailto:edcomrade.gh@gmail.com" className="bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/30 transition-all">
