@@ -26,6 +26,7 @@ import {
   Phone,
 } from "lucide-react"
 import { FAQSection } from "@/components/faq-section"
+import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "EdComrade | We digitize. You inspire.",
@@ -1004,100 +1005,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-border mb-16 md:mb-0">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-5 gap-12 mb-16">
-            <div className="md:col-span-2">
-              <div className="text-3xl font-medium mb-6">EdComrade</div>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6 font-light">
-                Ghana's premier educational technology company, transforming schools through innovative digital
-                solutions and strategic partnerships.
-              </p>
-              <div className="space-y-2 text-base text-muted-foreground font-light">
-                <p className="flex gap-x-2"><MapPin/> Accra • Kumasi • Takoradi • Cape Coast</p>
-                <p className="flex gap-x-2"><Mail/> edcomrade.gh@gmail.com</p>
-                <p className="flex gap-x-2"><Phone/> +233 55 528 4923</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-medium text-lg mb-6">Product</h4>
-              <ul className="space-y-3 text-muted-foreground font-light">
-                <li>
-                  <Link href="/technology" className="hover:text-foreground transition-colors text-lg">
-                    Technology
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#contact" className="hover:text-foreground transition-colors text-lg">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#contact" className="hover:text-foreground transition-colors text-lg">
-                    Demo
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium text-lg mb-6">Company</h4>
-              <ul className="space-y-3 text-muted-foreground font-light">
-                <li>
-                  <Link href="/about" className="hover:text-foreground transition-colors text-lg">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/community" className="hover:text-foreground transition-colors text-lg">
-                    Community
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground transition-colors text-lg">
-                    Careers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium text-lg mb-6">Connect</h4>
-              <ul className="space-y-3 text-muted-foreground font-light">
-                <li>
-                  <Link href="#" className="hover:text-foreground transition-colors text-lg">
-                    Twitter
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground transition-colors text-lg">
-                    LinkedIn
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground transition-colors text-lg">
-                    Facebook
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#contact" className="hover:text-foreground transition-colors text-lg">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground font-light">
-            <p>© 2025 EdComrade. All rights reserved.</p>
-            <div className="flex gap-6">
-              <Link href="#" className="hover:text-foreground transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-foreground transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+   <Footer/>
     </main>
   )
 }

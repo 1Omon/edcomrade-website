@@ -22,7 +22,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://edcomrade.com"),
   title: {
-    default: "EdComrade | Transform Your School with Technology",
+    default: "EdComrade | Modernize Your School with Technology and Visibility",
     template: "%s | EdComrade",
   },
   description:
@@ -127,7 +127,7 @@ export default function RootLayout({
                 availableLanguage: ["English", "Twi", "Ga", "Ewe"],
               },
               sameAs: [
-                "https://twitter.com/edcomrade",
+                "https://Twitter (X).com/edcomrade",
                 "https://linkedin.com/company/edcomrade",
                 "https://facebook.com/edcomrade",
               ],

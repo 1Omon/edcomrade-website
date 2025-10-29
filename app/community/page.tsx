@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import type { Metadata } from "next"
 import { ArrowRight } from "lucide-react"
+import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Community | Schools rising together",
@@ -305,81 +306,7 @@ export default function CommunityPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6 lg:px-8 border-t border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="text-2xl font-bold mb-4">EdComrade</div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Transforming education through technology and partnership.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Product</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="/technology" className="hover:text-foreground transition-colors">
-                    Technology
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground transition-colors">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground transition-colors">
-                    Demo
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="/about" className="hover:text-foreground transition-colors">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/community" className="hover:text-foreground transition-colors">
-                    Community
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground transition-colors">
-                    Careers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="#" className="hover:text-foreground transition-colors">
-                    Twitter
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground transition-colors">
-                    LinkedIn
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#contact" className="hover:text-foreground transition-colors">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            © 2025 EdComrade. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </main>
   )
 }

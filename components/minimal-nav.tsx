@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 export function MinimalNav() {
   const pathname = usePathname()
@@ -21,9 +22,25 @@ export function MinimalNav() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-semibold tracking-tight">
-            EdComrade
-          </Link>
+            <a
+              href="/"
+              className="font-semibold text-xl hover:text-primary transition"
+            >
+              <Image
+                src="/full-logo.png"
+                alt="EdComrade Logo"
+                width={100}
+                height={40}
+                className="object-cover hidden md:block w-[300px] h-[45px]"
+              />
+              <Image
+                src="/logo-icon.png"
+                alt="EdComrade Logo"
+                width={100}
+                height={40}
+                className="object-cover block md:hidden w-[60px] h-[60px]"
+              />
+            </a>
 
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
