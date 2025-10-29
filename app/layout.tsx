@@ -123,7 +123,7 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 telephone: "+233-55-528-4923",
                 contactType: "Customer Service",
-                email: "hello@edcomrade.com",
+                email: "edcomrade.gh@gmail.com",
                 availableLanguage: ["English", "Twi", "Ga", "Ewe"],
               },
               sameAs: [

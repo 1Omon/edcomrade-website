@@ -24,12 +24,12 @@ export default function CommunityPage() {
       <section className="pt-32 pb-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6">
-            More than technology —
+            A movement of
             <br />
-            <span className="text-primary font-medium">a movement of schools rising together.</span>
+            <span className="text-primary font-medium"> schools rising together.</span>
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-balance leading-relaxed max-w-3xl mx-auto font-light">
-            Schools don’t grow alone. They grow through community — shared experiences, collaboration, and visibility.
+            
             Join a nationwide network of excellence designed to empower, inspire, and celebrate schools that dare to lead.
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function CommunityPage() {
               <h3 className="text-2xl md:text-3xl font-medium">You learn from each other</h3>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 A school in Accra figured out an innovative way to improve parent engagement. A school in Kumasi
-                developed a brilliant timetabling system. A school in Tamale created a scholarship program that
+                developed a brilliant timetabling system. A school in Cape Coast created a scholarship program that
                 increased enrollment by 40%. In the EdComrade Community, these insights don't stay siloed—they're shared,
                 adapted, and implemented across the network.
               </p>

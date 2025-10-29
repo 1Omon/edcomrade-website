@@ -64,7 +64,7 @@ export default function HomePage() {
         </div>
 
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light tracking-tight text-balance mb-6 sm:mb-8 md:mb-10">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight text-balance mb-6 sm:mb-8 md:mb-10">
             Ghana’s schools,
             <br />
             <span className="font-semibold text-primary">digitized and made visible.</span>
@@ -1014,8 +1014,8 @@ export default function HomePage() {
                 solutions and strategic partnerships.
               </p>
               <div className="space-y-2 text-base text-muted-foreground font-light">
-                <p className="flex gap-x-2"><MapPin/> Accra • Kumasi • Takoradi • Tamale</p>
-                <p className="flex gap-x-2"><Mail/> hello@edcomrade.com</p>
+                <p className="flex gap-x-2"><MapPin/> Accra • Kumasi • Takoradi • Cape Coast</p>
+                <p className="flex gap-x-2"><Mail/> edcomrade.gh@gmail.com</p>
                 <p className="flex gap-x-2"><Phone/> +233 55 528 4923</p>
               </div>
             </div>

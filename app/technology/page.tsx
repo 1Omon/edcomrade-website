@@ -24,9 +24,8 @@ export default function TechnologyPage() {
       <section className="pt-32 pb-16 px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center space-y-6">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance">
-            Technology that understands schools —
-            <br />
-            <span className="text-primary font-medium">built to simplify today and amplify tomorrow.</span>
+            Technology that             <br />
+            <span className="text-primary font-medium">understands schools.</span>
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-balance leading-relaxed max-w-4xl mx-auto font-light">
             At EdComrade, we believe that great schools deserve great systems. Our technology is a living, evolving
