@@ -293,7 +293,7 @@ export default function TermsPage() {
           </div>
 
           <p className="text-sm text-white/70 mt-6">
-            Last updated: January 15, 2025
+            Last updated: October 1, 2025
           </p>
         </div>
       </section>
@@ -400,7 +400,7 @@ export default function TermsPage() {
                 {/* Agreement Header */}
                 <div className="pb-6 border-b border-slate-200">
                   <p className="text-slate-600">
-                    <strong>Effective Date:</strong> January 15, 2025
+                    <strong>Effective Date:</strong> October 1, 2025
                   </p>
                   <p className="text-slate-600">
                     <strong>Campaign Organizer:</strong> EdComrade Ltd., a

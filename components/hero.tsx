@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center items-center px-6 sm:px-10 lg:px-16 overflow-hidden bg-[url('/modern-african-classroom-with-students-using-table.jpg')] bg-cover bg-center bg-no-repeat">
+    <section className="relative min-h-[100vh] flex flex-col justify-center items-center px-6 sm:px-10 lg:px-16 overflow-hidden bg-[url('/modern-african-classroom-with-students-using-table.jpg')] bg-cover bg-center bg-no-repeat">
       {/* dark overlay with gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90 backdrop-blur-[2px]" />
 
@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[url('/grid-light.svg')] opacity-10 mix-blend-overlay" />
 
       <div className="relative z-10 max-w-6xl mx-auto text-center text-white">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light leading-tight mb-8 animate-fade-in">
+        <h1 className="text-5xl  lg:text-6xl font-light leading-tight mb-8 animate-fade-in">
           Ghana’s schools,{" "}
           <span className="font-semibold text-primary">digitized and made visible.</span>
         </h1>

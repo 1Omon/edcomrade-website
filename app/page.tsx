@@ -93,7 +93,7 @@ export default function HomePage() {
           </div>
         </div>
       </section> */}
-<Hero/>
+      <Hero />
       {/* Results Bar - Social Proof */}
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
@@ -558,61 +558,63 @@ export default function HomePage() {
       <section className="py-20 sm:py-28 md:py-36 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6 sm:mb-8 text-center">
-            Choose your path to excellence
+            Choose your path to digital excellence
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground text-balance mb-16 sm:mb-20 md:mb-24 text-center max-w-3xl mx-auto leading-relaxed font-light">
-            Flexible packages designed for schools at every stage of their
-            digital journey
+            Whether you’re taking your first digital step or ready to reinvent
+            your entire institution, EdComrade offers the tools, creativity, and
+            systems to get you there.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
-            {/* Foundation Package */}
+            {/* MEDIA PACKAGE */}
             <div className="bg-background border border-border rounded-3xl p-10 sm:p-12 space-y-8 hover:border-primary transition-colors hover:shadow-xl">
               <div>
                 <h3 className="text-3xl sm:text-4xl font-medium mb-3">
-                  Foundation
+                  Media Package
                 </h3>
                 <p className="text-lg text-muted-foreground font-light">
-                  Perfect for schools ready to digitize core operations
+                  For schools ready to elevate their visibility, storytelling,
+                  and admissions through modern digital media.
                 </p>
               </div>
               <div>
                 <div className="text-5xl sm:text-6xl font-light mb-2">
-                  GHS 2,000
+                  GHS 4,250
                 </div>
                 <div className="text-lg text-muted-foreground font-light">
-                  + GHS 15 per student/year
+                  one-time setup — optional yearly add-ons available
                 </div>
               </div>
               <ul className="space-y-4">
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Student information system
+                    Modern school website with CMS
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Attendance & grade management
+                    Professional photography & videography
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Parent SMS communication
+                    Social media management & ad campaigns
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Professional school website
+                    Admission marketing & storytelling
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Staff training & support
+                    Training for digital content updates
                   </span>
                 </li>
               </ul>
@@ -624,56 +626,57 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Growth Package */}
+            {/* ERP PACKAGE */}
             <div className="bg-primary text-primary-foreground border border-primary rounded-3xl p-10 sm:p-12 space-y-8 relative hover:scale-105 transition-transform shadow-2xl">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground px-6 py-2 rounded-full text-sm font-medium">
                 MOST POPULAR
               </div>
               <div>
                 <h3 className="text-3xl sm:text-4xl font-medium mb-3">
-                  Growth
+                  ERP System
                 </h3>
                 <p className="text-lg text-primary-foreground/90 font-light">
-                  For schools seeking comprehensive transformation
+                  For schools that want to automate their operations, connect
+                  data, and simplify management with precision.
                 </p>
               </div>
               <div>
-                <div className="text-5xl sm:text-6xl font-light mb-2">
-                  GHS 3,500
+                <div className="text-4xl sm:text-5xl font-light mb-2">
+                  GHS 5,000 – 12,000
                 </div>
                 <div className="text-lg text-primary-foreground/90 font-light">
-                  + GHS 20 per student/year
+                  per year — based on school size, type & modules selected
                 </div>
               </div>
               <ul className="space-y-4">
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Everything in Foundation
+                    Comprehensive school ERP system
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Advanced parent portal
+                    Attendance, grading & reporting automation
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Mobile app (iOS & Android)
+                    Parent portal & mobile app access
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Social media management
+                    Smart finance, fees & accounting tools
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Event photography (annual)
+                    Analytics & performance insights
                   </span>
                 </li>
               </ul>
@@ -685,59 +688,60 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Excellence Package */}
+            {/* FULL TRANSFORMATION PACKAGE */}
             <div className="bg-background border border-border rounded-3xl p-10 sm:p-12 space-y-8 hover:border-secondary transition-colors hover:shadow-xl">
               <div>
                 <h3 className="text-3xl sm:text-4xl font-medium mb-3">
-                  Excellence
+                  Full Transformation
                 </h3>
                 <p className="text-lg text-muted-foreground font-light">
-                  For visionary institutions leading the future
+                  For visionary schools and institutions outsourcing their PR,
+                  marketing, and technology to one trusted partner — EdComrade.
                 </p>
               </div>
               <div>
                 <div className="text-5xl sm:text-6xl font-light mb-2">
-                  GHS 8,000
+                  Custom
                 </div>
                 <div className="text-lg text-muted-foreground font-light">
-                  + GHS 25 per student/year
+                  Contact our sales team for a tailored plan
                 </div>
               </div>
               <ul className="space-y-4">
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Everything in Growth
+                    Everything in Media + ERP
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    White-label customization
+                    Dedicated marketing & PR management team
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Full LMS & exam platform
+                    White-label customization & private cloud hosting
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    Dedicated account manager
+                    360° strategy for media, systems & growth
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
                   <span className="text-lg font-light">
-                    24/7 priority support
+                    Dedicated success manager
                   </span>
                 </li>
               </ul>
               <Link
                 href="#contact"
-                className="block w-full text-center border border-border px-8 py-4 rounded-full text-lg font-medium hover:bg-accent transition-colors"
+                className="block w-full text-center border border-border px-8 py-4 rounded-full text-lg font-medium hover:bg-secondary/60 transition-colors"
               >
                 Contact Sales
               </Link>
@@ -1072,8 +1076,8 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-medium">Proven Results</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed font-light">
-                  Over a dozen schools, measurable improvements in efficiency and
-                  enrollment
+                  Over a dozen schools, measurable improvements in efficiency
+                  and enrollment
                 </p>
               </div>
             </div>
