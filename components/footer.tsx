@@ -104,7 +104,7 @@ export function Footer() {
             <ul className="space-y-3 text-gray-200 font-light">
               <li>
                 <Link
-                  href="#"
+                  href="https://www.x.com/edcomradegh/"
                   className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
                 >
                   <BsTwitterX/>
@@ -113,7 +113,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/company/edcomrade/"
                   className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
                 >
                   <BsLinkedin/>
@@ -122,7 +122,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href=""
                   className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
                 >
                   <BsFacebook/>
@@ -131,7 +131,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#instagram"
+                  href="https://www.instagram.com/edcomradegh/"
                   className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
                 >
                   <BsInstagram/>

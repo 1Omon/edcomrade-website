@@ -127,9 +127,10 @@ export default function RootLayout({
                 availableLanguage: ["English", "Twi", "Ga", "Ewe"],
               },
               sameAs: [
-                "https://Twitter (X).com/edcomrade",
+                "https://x.com/edcomradegh",
                 "https://linkedin.com/company/edcomrade",
                 "https://facebook.com/edcomrade",
+                "https://www.instagram.com/edcomradegh/"
               ],
               areaServed: {
                 "@type": "Country",
@@ -146,7 +147,7 @@ export default function RootLayout({
           {children}
           <Analytics />
         </Suspense>
-        {/* <MobileBottomNav /> */}
+        <MobileBottomNav />
         <WhatsAppButton />
         <BackToTop />
         <ExitIntentModal />

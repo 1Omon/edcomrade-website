@@ -388,7 +388,7 @@ export default function HomePage() {
                   </li>
                 </ul>
               </div>
-              <div className="relative rounded-3xl overflow-hidden min-h-[400px] shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden min-h-[400px] ">
                 <Image
                   src="/modern-school-management-dashboard-on-computer-scr.jpg"
                   alt="School management dashboard interface"
@@ -400,7 +400,7 @@ export default function HomePage() {
 
             {/* Learning Platform */}
             <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <div className="relative rounded-3xl overflow-hidden min-h-[400px] shadow-2xl order-2 lg:order-1">
+              <div className="relative rounded-3xl overflow-hidden min-h-[400px]  order-2 lg:order-1">
                 <Image
                   src="/african-students-engaged-with-tablets-in-classroom.jpg"
                   alt="Students using EdComrade learning platform"
@@ -490,7 +490,7 @@ export default function HomePage() {
                   </li>
                 </ul>
               </div>
-              <div className="relative rounded-3xl overflow-hidden min-h-[400px] shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden min-h-[400px] ">
                 <Image
                   src="/african-parent-using-mobile-phone-for-mobile-money.jpg"
                   alt="Mobile Money payment integration"
@@ -502,7 +502,7 @@ export default function HomePage() {
 
             {/* Marketing & Branding */}
             <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-              <div className="relative rounded-3xl overflow-hidden min-h-[400px] shadow-2xl order-2 lg:order-1">
+              <div className="relative rounded-3xl overflow-hidden min-h-[400px]  order-2 lg:order-1">
                 <Image
                   src="/professional-school-website-on-laptop-and-phone--m.jpg"
                   alt="School branding and marketing materials"
@@ -580,7 +580,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="text-5xl sm:text-6xl font-light mb-2">
-                  GHS 4,250
+                  ₵ 4,250
                 </div>
                 <div className="text-lg text-muted-foreground font-light">
                   one-time setup — optional yearly add-ons available
@@ -627,7 +627,7 @@ export default function HomePage() {
             </div>
 
             {/* ERP PACKAGE */}
-            <div className="bg-primary text-primary-foreground border border-primary rounded-3xl p-10 sm:p-12 space-y-8 relative hover:scale-105 transition-transform shadow-2xl">
+            <div className="bg-primary text-primary-foreground border border-primary rounded-3xl p-10 sm:p-12 space-y-8 relative hover:scale-105 transition-transform ">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground px-6 py-2 rounded-full text-sm font-medium">
                 MOST POPULAR
               </div>
@@ -642,7 +642,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="text-4xl sm:text-5xl font-light mb-2">
-                  GHS 5,000 – 12,000
+                  ₵ 5,000 – 12,000
                 </div>
                 <div className="text-lg text-primary-foreground/90 font-light">
                   per year — based on school size, type & modules selected
@@ -761,7 +761,7 @@ export default function HomePage() {
             elevate education across Africa
           </p>
 
-          <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px] mb-16 shadow-2xl">
+          <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px] mb-16 ">
             <Image
               src="/diverse-group-of-african-students-from-different-s.jpg"
               alt="EdComrade Community students at inter-school competition"
@@ -1171,7 +1171,7 @@ export default function HomePage() {
             The future of education is here
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-secondary-foreground/90 mb-10 leading-relaxed font-light">
-            Join 500+ forward-thinking schools already transforming education
+            Join the 100 forward-thinking schools ready to transform education
             across Ghana
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
@@ -1183,7 +1183,7 @@ export default function HomePage() {
               <ArrowRight className="w-6 h-6" />
             </Link>
             <Link
-              href="/technology"
+              href="/pioneer-100"
               className="w-full sm:w-auto text-secondary-foreground px-10 sm:px-12 py-5 sm:py-6 rounded-full text-lg sm:text-xl font-medium hover:bg-secondary-foreground/10 transition-colors"
             >
               Explore Technology

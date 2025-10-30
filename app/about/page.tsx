@@ -308,7 +308,7 @@ export default function AboutPage() {
             Whether you're a school administrator, educator, or education advocate, there's a place for you in the EdComrade
             community.
           </p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center flex-wrap gap-4">
             <Link
               href="/#contact"
               className="bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity inline-flex items-center gap-2"
