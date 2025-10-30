@@ -281,7 +281,7 @@ export default function CommunityPage() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="text-6xl font-bold text-primary-foreground mb-4">500+</div>
           <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground text-balance mb-6">
-            Schools already in the network
+            Schools estimated to join the network
           </h2>
           <p className="text-xl text-primary-foreground/90 leading-relaxed">
             From small rural schools to large urban institutions, the EdComrade community is growing every day.

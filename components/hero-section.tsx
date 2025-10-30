@@ -1,6 +1,5 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { ArrowRight, Play } from "lucide-react"
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
@@ -60,23 +59,22 @@ export function HeroSection() {
             </p>
           </FadeIn>
 
-          {/* CTA Buttons */}
+          {/* CTA buttons */}
           <FadeIn direction="up" delay={320}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
-                <Button
-                  size="lg"
+                <button
                   className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-base px-8 h-14 group"
                 >
                   Get a 15‑min demo
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                </Button>
+                </button>
               </motion.div>
               <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
-                <Button size="lg" variant="outline" className="text-base px-8 h-14 group bg-transparent">
+                <button className="text-base px-8 h-14 group bg-transparent">
                   <Play className="mr-2 group-hover:scale-110 transition-transform" size={20} />
                   See how it works
-                </Button>
+                </button>
               </motion.div>
             </div>
           </FadeIn>
@@ -93,7 +91,7 @@ export function HeroSection() {
                 <div className="text-2xl font-bold">98%</div>
               </div>
               <div className="flex items-center gap-8 text-xs text-muted-foreground">
-                <span>Partner Schools</span>
+                <span>Incoming Partner Schools</span>
                 <span>Active Students</span>
                 <span>Satisfaction Rate</span>
               </div>

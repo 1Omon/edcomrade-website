@@ -249,7 +249,7 @@ export default function AboutPage() {
           <div className="space-y-12">
             <div className="flex gap-8 items-start">
               <div className="flex-shrink-0 w-32 text-right">
-                <div className="text-2xl font-medium text-primary">2021</div>
+                <div className="text-2xl font-medium text-primary">2022</div>
               </div>
               <div className="flex-1 border-l-2 border-primary pl-8 pb-12">
                 <h3 className="text-2xl font-medium mb-3">The Beginning</h3>
@@ -261,7 +261,7 @@ export default function AboutPage() {
 
             <div className="flex gap-8 items-start">
               <div className="flex-shrink-0 w-32 text-right">
-                <div className="text-2xl font-medium text-primary">2022</div>
+                <div className="text-2xl font-medium text-primary">2023</div>
               </div>
               <div className="flex-1 border-l-2 border-primary pl-8 pb-12">
                 <h3 className="text-2xl font-medium mb-3">First Deployment</h3>
@@ -273,19 +273,19 @@ export default function AboutPage() {
 
             <div className="flex gap-8 items-start">
               <div className="flex-shrink-0 w-32 text-right">
-                <div className="text-2xl font-medium text-primary">2023</div>
+                <div className="text-2xl font-medium text-primary">2026</div>
               </div>
               <div className="flex-1 border-l-2 border-primary pl-8 pb-12">
                 <h3 className="text-2xl font-medium mb-3">Rapid Growth</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed font-light">
-                  Reached 100+ schools across Ghana. Launched EdComrade Community Network for inter-school collaboration.
+                  Reach 100+ schools across Ghana. Launch EdComrade Community Network for inter-school collaboration.
                 </p>
               </div>
             </div>
 
             <div className="flex gap-8 items-start">
               <div className="flex-shrink-0 w-32 text-right">
-                <div className="text-2xl font-medium text-secondary">2025</div>
+                <div className="text-2xl font-medium text-secondary">2028</div>
               </div>
               <div className="flex-1 border-l-2 border-secondary pl-8">
                 <h3 className="text-2xl font-medium mb-3">Leading the Future</h3>

@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     url: "https://edcomrade.com",
     title: "EdComrade | Transform Your School with Technology",
     description:
-      "Ghana's premier educational technology company empowering 500+ schools with integrated management, learning, and marketing solutions.",
+      "Ghana's premier educational technology company aiming to empower 500+ schools with integrated management, learning, and marketing solutions.",
     siteName: "EdComrade",
     images: [
       {
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "EdComrade | Transform Your School with Technology",
     description:
-      "Ghana's premier educational technology company empowering 500+ schools with integrated solutions.",
+      "Ghana's premier educational technology company aiming to empower 500+ schools with integrated solutions.",
     images: ["/og-image.jpg"],
     creator: "@edcomrade",
   },
@@ -146,7 +146,7 @@ export default function RootLayout({
           {children}
           <Analytics />
         </Suspense>
-        <MobileBottomNav />
+        {/* <MobileBottomNav /> */}
         <WhatsAppButton />
         <BackToTop />
         <ExitIntentModal />

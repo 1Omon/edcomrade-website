@@ -97,7 +97,7 @@ export function ExitIntentModal() {
             <div className="text-center space-y-6">
               <div className="mx-auto inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2 text-sm">
                 <span className="h-2 w-2 rounded-full bg-secondary" />
-                Trusted by 500+ forward-thinking schools
+                Trusted by many forward-thinking schools
               </div>
 
               <h2 id="exit-title" className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-balance">
