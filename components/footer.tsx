@@ -91,10 +91,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/pioneer-100"
                   className="hover:text-secondary transition-colors text-lg"
                 >
-                  Careers
+                  Pioneer 100
                 </Link>
               </li>
             </ul>
@@ -105,6 +105,7 @@ export function Footer() {
               <li>
                 <Link
                   href="https://www.x.com/edcomradegh/"
+                  target="_blank"
                   className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
                 >
                   <BsTwitterX/>
@@ -114,6 +115,7 @@ export function Footer() {
               <li>
                 <Link
                   href="https://www.linkedin.com/company/edcomrade/"
+                  target="_blank"
                   className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
                 >
                   <BsLinkedin/>
@@ -123,6 +125,7 @@ export function Footer() {
               <li>
                 <Link
                   href=""
+                  target="_blank"
                   className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
                 >
                   <BsFacebook/>
@@ -132,6 +135,7 @@ export function Footer() {
               <li>
                 <Link
                   href="https://www.instagram.com/edcomradegh/"
+                  target="_blank"
                   className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
                 >
                   <BsInstagram/>
