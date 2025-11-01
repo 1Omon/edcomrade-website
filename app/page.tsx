@@ -1888,25 +1888,25 @@ export default function HomePage() {
             {[
               {
                 image: "/professional-african-male-headmaster-portrait--con.jpeg",
-                name: "Dr. Kwame Mensah",
+                name: "Dr. Kusi Mensah",
                 role: "Headmaster, Accra",
                 quote: "We used to spend entire weekends preparing reports. Now it takes minutes. EdComrade has given us our time back to focus on what matters—teaching our students."
               },
               {
-                image: "/professional-african-female-school-administrator-p.jpg",
+                image: "/professional-african-female-school-administrator-p.jpeg",
                 name: "Mrs. Abena Osei",
                 role: "School Administrator, Kumasi",
                 quote: "Our fee collection rate went from 60% to 95% in just six months. Parents love the Mobile Money integration, and we finally have clear financial visibility."
               },
               {
-                image: "/professional-african-male-deputy-head-portrait--fr.jpg",
-                name: "Mr. Kofi Asante",
+                image: "/professional-african-male-deputy-head-portrait--fr.jpeg",
+                name: "Mr. Samuel Asante",
                 role: "Deputy Head, Tema",
                 quote: "Parents actually thank us now for keeping them informed. The communication portal has transformed our relationship with families."
               },
               {
-                image: "/professional-african-female-school-owner-portrait-.jpg",
-                name: "Mrs. Ama Darko",
+                image: "/professional-african-female-school-owner-portrait-.jpeg",
+                name: "Mrs. Patricia Koomson",
                 role: "School Owner, Takoradi",
                 quote: "Our enrollment increased by 30% after launching our new website and social media presence. EdComrade helped us tell our story to the right families."
               }
