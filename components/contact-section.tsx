@@ -41,7 +41,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Info */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-balance">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-balance">
               Let's start a
               <br />
               <span className="text-primary">conversation</span>
@@ -57,7 +57,7 @@ export function ContactSection() {
                   <Mail className="text-primary" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Email Us</h3>
+                  <h3 className="font-medium mb-1">Email Us</h3>
                   <p className="text-muted-foreground">info@edcomrade.com</p>
                 </div>
               </Card>
@@ -67,7 +67,7 @@ export function ContactSection() {
                   <Phone className="text-secondary" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Call Us</h3>
+                  <h3 className="font-medium mb-1">Call Us</h3>
                   <p className="text-muted-foreground">+234 800 000 0000</p>
                 </div>
               </Card>
@@ -77,7 +77,7 @@ export function ContactSection() {
                   <MapPin className="text-primary" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Visit Us</h3>
+                  <h3 className="font-medium mb-1">Visit Us</h3>
                   <p className="text-muted-foreground">Lagos, Nigeria</p>
                 </div>
               </Card>

@@ -5,7 +5,7 @@ export function CTABanner() {
   return (
     <section className="py-24 bg-secondary text-secondary-foreground">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-balance">
+        <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-balance">
           Ready to transform your school?
         </h2>
         <p className="text-xl md:text-2xl opacity-90 mb-10 leading-relaxed text-pretty">

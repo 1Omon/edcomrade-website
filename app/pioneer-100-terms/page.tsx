@@ -16,7 +16,7 @@
 //     <main className="min-h-screen bg-background px-6 lg:px-8 py-24">
 //       <div className="max-w-3xl mx-auto">
 //         <header className="mb-8">
-//           <h1 className="text-3xl md:text-4xl font-semibold">EdComrade Pioneer 100 — Deposit & Refund Agreement (Public Summary)</h1>
+//           <h1 className="text-3xl md:text-4xl font-medium">EdComrade Pioneer 100 — Deposit & Refund Agreement (Public Summary)</h1>
 //           <p className="text-sm text-muted-foreground mt-2">Last updated: [Insert date]</p>
 //         </header>
 
@@ -230,7 +230,7 @@ export default function TermsPage() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a
             href="/"
-            className="font-semibold text-xl hover:text-primary transition"
+            className="font-medium text-xl hover:text-primary transition"
           >
             <Image
               src="/full-logo.png"
@@ -267,7 +267,7 @@ export default function TermsPage() {
             <span>Legal Agreement</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-4 leading-tight">
             Pioneer 100 Terms & Agreement
           </h1>
 
@@ -279,14 +279,14 @@ export default function TermsPage() {
           <div className="flex flex-wrap gap-4">
             <a
               href="/pioneer-100-terms.pdf"
-              className="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all inline-flex items-center gap-2"
+              className="bg-white text-primary px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all inline-flex items-center gap-2"
             >
               <Download className="w-5 h-5" />
               Download PDF
             </a>
             <a
               href="#refund"
-              className="bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/30 transition-all"
+              className="bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white px-6 py-3 rounded-full font-medium hover:bg-white/30 transition-all"
             >
               View Refund Policy
             </a>
@@ -307,7 +307,7 @@ export default function TermsPage() {
                 <AlertCircle className="w-6 h-6" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                <h2 className="text-2xl font-light text-slate-900 mb-3">
                   Quick Summary
                 </h2>
                 <div className="space-y-2 text-slate-700">
@@ -357,7 +357,7 @@ export default function TermsPage() {
             {/* Sidebar Navigation */}
             <aside className="lg:col-span-1">
               <div className="sticky top-24 bg-white rounded-2xl border border-slate-200 p-4 shadow-sm">
-                <h3 className="font-semibold text-sm text-slate-500 uppercase tracking-wide mb-4">
+                <h3 className="font-medium text-sm text-slate-500 uppercase tracking-wide mb-4">
                   Contents
                 </h3>
                 <nav className="space-y-1">
@@ -414,8 +414,8 @@ export default function TermsPage() {
 
                 {/* Section 1 */}
                 <section id="purpose">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">
+                  <h2 className="text-2xl font-light text-slate-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-light">
                       1
                     </span>
                     Purpose
@@ -432,8 +432,8 @@ export default function TermsPage() {
 
                 {/* Section 2 */}
                 <section id="deposit">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">
+                  <h2 className="text-2xl font-light text-slate-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-light">
                       2
                     </span>
                     Deposit Requirement
@@ -459,8 +459,8 @@ export default function TermsPage() {
                   id="refund"
                   className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border-2 border-green-200"
                 >
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-green-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">
+                  <h2 className="text-2xl font-light text-slate-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 bg-green-600 text-white rounded-lg flex items-center justify-center text-sm font-light">
                       3
                     </span>
                     Refund Policy
@@ -509,8 +509,8 @@ export default function TermsPage() {
 
                 {/* Section 4 */}
                 <section id="scope">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">
+                  <h2 className="text-2xl font-light text-slate-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-light">
                       4
                     </span>
                     Scope of the Pioneer 100 Package
@@ -541,8 +541,8 @@ export default function TermsPage() {
 
                 {/* Section 5 */}
                 <section id="scheduling">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">
+                  <h2 className="text-2xl font-light text-slate-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-light">
                       5
                     </span>
                     Scheduling & Tour Commitments
@@ -559,8 +559,8 @@ export default function TermsPage() {
 
                 {/* Section 6 */}
                 <section id="participant">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">
+                  <h2 className="text-2xl font-light text-slate-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-light">
                       6
                     </span>
                     Participant Responsibilities
@@ -582,8 +582,8 @@ export default function TermsPage() {
 
                 {/* Section 7 */}
                 <section id="payments">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">
+                  <h2 className="text-2xl font-light text-slate-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-light">
                       7
                     </span>
                     Payment & Receipts
@@ -599,8 +599,8 @@ export default function TermsPage() {
 
                 {/* Section 8 */}
                 <section id="withdrawal">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">
+                  <h2 className="text-2xl font-light text-slate-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-light">
                       8
                     </span>
                     Withdrawal & Cancellation
@@ -625,8 +625,8 @@ export default function TermsPage() {
                   id="refund-process"
                   className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border-2 border-blue-200"
                 >
-                  <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center text-sm font-bold">
+                  <h2 className="text-2xl font-light text-slate-900 mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center text-sm font-light">
                       9
                     </span>
                     Refund Request Process
@@ -646,7 +646,7 @@ export default function TermsPage() {
                         key={i}
                         className="flex items-center gap-3 bg-white rounded-lg p-3 text-sm"
                       >
-                        <div className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                        <div className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-light flex-shrink-0">
                           {i + 1}
                         </div>
                         <span className="text-slate-700">{item}</span>
@@ -699,8 +699,8 @@ export default function TermsPage() {
                   },
                 ].map((section) => (
                   <section key={section.id} id={section.id}>
-                    <h2 className="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                      <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-bold">
+                    <h2 className="text-2xl font-light text-slate-900 mb-4 flex items-center gap-3">
+                      <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-light">
                         {section.num}
                       </span>
                       {section.title}
@@ -719,7 +719,7 @@ export default function TermsPage() {
                   <p className="text-slate-700">
                     For and on behalf of EdComrade Ltd.
                   </p>
-                  <p className="text-slate-700 font-semibold">
+                  <p className="text-slate-700 font-medium">
                     Solomon Annan Ayisi
                   </p>
                   <p className="text-slate-600 text-sm">Founder & CEO</p>
@@ -728,7 +728,7 @@ export default function TermsPage() {
 
               {/* Refund Template Card */}
               <div className="mt-8 bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-8 shadow-xl">
-                <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                <h3 className="text-2xl font-light mb-4 flex items-center gap-3">
                   <FileText className="w-6 h-6" />
                   Refund Request Email Template
                 </h3>
@@ -767,7 +767,7 @@ export default function TermsPage() {
       {/* CTA Section */}
       <section className="py-20 px-6 bg-secondary">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-light mb-4">
             Ready to Join the Pioneer 100?
           </h2>
           <p className="text-xl  mb-8">
@@ -776,13 +776,13 @@ export default function TermsPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="/pioneer-100#reserve"
-              className="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all"
+              className="bg-white text-primary px-8 py-4 rounded-full font-medium text-lg hover:shadow-2xl hover:scale-105 transition-all"
             >
               Reserve Your Slot
             </a>
             <a
               href="mailto:edcomrade.gh@gmail.com"
-              className="bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/30 transition-all"
+              className="bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-white/30 transition-all"
             >
               Contact Us
             </a>

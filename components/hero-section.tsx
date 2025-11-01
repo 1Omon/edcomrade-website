@@ -44,7 +44,7 @@ export function HeroSection() {
 
           {/* Main Headline */}
           <FadeIn direction="up" delay={120}>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance leading-[1.1]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-balance leading-[1.1]">
               Lead your school into the future
               <br />
               <span className="text-primary">with tools that feel human</span>
@@ -84,11 +84,11 @@ export function HeroSection() {
             <div className="pt-12 flex flex-col items-center gap-4">
               <p className="text-sm text-muted-foreground">Trusted by leading schools across Africa</p>
               <div className="flex items-center gap-8 opacity-60">
-                <div className="text-2xl font-bold">500+</div>
+                <div className="text-2xl font-light">500+</div>
                 <div className="w-px h-8 bg-border" />
-                <div className="text-2xl font-bold">50K+</div>
+                <div className="text-2xl font-light">50K+</div>
                 <div className="w-px h-8 bg-border" />
-                <div className="text-2xl font-bold">98%</div>
+                <div className="text-2xl font-light">98%</div>
               </div>
               <div className="flex items-center gap-8 text-xs text-muted-foreground">
                 <span>Incoming Partner Schools</span>

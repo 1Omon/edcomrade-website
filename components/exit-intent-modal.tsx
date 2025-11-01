@@ -100,7 +100,7 @@
 //                 Trusted by many forward-thinking schools
 //               </div>
 
-//               <h2 id="exit-title" className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-balance">
+//               <h2 id="exit-title" className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-balance">
 //                 Before you go — see how schools grow with EdComrade
 //               </h2>
 
@@ -110,15 +110,15 @@
 
 //               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
 //                 <div className="rounded-2xl border border-border/60 p-4">
-//                   <p className="text-2xl font-semibold">98%</p>
+//                   <p className="text-2xl font-medium">98%</p>
 //                   <p className="text-sm text-muted-foreground">Faster fee reconciliation</p>
 //                 </div>
 //                 <div className="rounded-2xl border border-border/60 p-4">
-//                   <p className="text-2xl font-semibold">3x</p>
+//                   <p className="text-2xl font-medium">3x</p>
 //                   <p className="text-sm text-muted-foreground">Parent engagement uplift</p>
 //                 </div>
 //                 <div className="rounded-2xl border border-border/60 p-4">
-//                   <p className="text-2xl font-semibold"><span className="align-baseline">24/7</span></p>
+//                   <p className="text-2xl font-medium"><span className="align-baseline">24/7</span></p>
 //                   <p className="text-sm text-muted-foreground">Reliable support</p>
 //                 </div>
 //               </div>
@@ -252,7 +252,7 @@ export function ExitIntentModal() {
               {/* Heading */}
               <h2
                 id="exit-title"
-                className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight leading-snug"
+                className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight leading-snug"
               >
                 Before you go — see how schools grow with{" "}
                 <span className="text-secondary">EdComrade</span>
@@ -267,15 +267,15 @@ export function ExitIntentModal() {
               {/* Metrics */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-left">
                 <div className="rounded-2xl border border-border/60 p-3 sm:p-4">
-                  <p className="text-xl sm:text-2xl font-semibold">98%</p>
+                  <p className="text-xl sm:text-2xl font-medium">98%</p>
                   <p className="text-xs sm:text-sm text-muted-foreground">Faster fee reconciliation</p>
                 </div>
                 <div className="rounded-2xl border border-border/60 p-3 sm:p-4">
-                  <p className="text-xl sm:text-2xl font-semibold">3x</p>
+                  <p className="text-xl sm:text-2xl font-medium">3x</p>
                   <p className="text-xs sm:text-sm text-muted-foreground">Parent engagement uplift</p>
                 </div>
                 <div className="rounded-2xl border border-border/60 p-3 sm:p-4">
-                  <p className="text-xl sm:text-2xl font-semibold">24/7</p>
+                  <p className="text-xl sm:text-2xl font-medium">24/7</p>
                   <p className="text-xs sm:text-sm text-muted-foreground">Reliable support</p>
                 </div>
               </div>

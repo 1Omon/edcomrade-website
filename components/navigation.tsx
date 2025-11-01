@@ -35,9 +35,9 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center transition-transform group-hover:scale-105">
-              <span className="text-primary-foreground font-bold text-xl">A</span>
+              <span className="text-primary-foreground font-light text-xl">A</span>
             </div>
-            <span className="text-xl font-semibold tracking-tight">EdComrade</span>
+            <span className="text-xl font-medium tracking-tight">EdComrade</span>
           </Link>
 
           {/* Desktop Navigation */}

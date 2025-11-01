@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-white py-20 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-border mb-16 md:mb-0">
+    <footer className="bg-foreground text-white py-20 sm:py-24 px-4 sm:px-6 lg:px-8  mb-16 md:mb-0">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-5 gap-12 mb-16">
           <div className="md:col-span-2">

@@ -94,7 +94,7 @@ export function SwipeableTestimonials() {
               </div>
               <p className="text-xl leading-relaxed">{testimonial.quote}</p>
               <div>
-                <div className="font-semibold text-lg">{testimonial.name}</div>
+                <div className="font-medium text-lg">{testimonial.name}</div>
                 <div className="text-muted-foreground">{testimonial.title}</div>
               </div>
             </div>

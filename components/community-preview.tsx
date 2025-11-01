@@ -26,7 +26,7 @@ export function CommunityPreview() {
     <section className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-balance">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 text-balance">
             Join a community where
             <br />
             <span className="text-secondary">growth is collective</span>
@@ -42,7 +42,7 @@ export function CommunityPreview() {
               <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-6">
                 <benefit.icon size={32} className="text-secondary" strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+              <h3 className="text-xl font-medium mb-3">{benefit.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
             </Card>
           ))}

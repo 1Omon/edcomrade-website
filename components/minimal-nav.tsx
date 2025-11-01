@@ -16,6 +16,7 @@ export function MinimalNav() {
     { href: "/technology", label: "Technology" },
     { href: "/community", label: "Community" },
     { href: "/pioneer-100", label: "Pioneer 100" },
+    { href: "/about", label: "About" },
   ]
 
   return (
@@ -24,7 +25,7 @@ export function MinimalNav() {
         <div className="flex items-center justify-between h-16">
             <a
               href="/"
-              className="font-semibold text-xl hover:text-primary transition"
+              className="font-medium text-xl hover:text-primary transition"
             >
               <Image
                 src="/full-logo.png"

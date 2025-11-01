@@ -18,7 +18,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ q
   const { submissions } = await getSubmissions(q);
   return (
     <div className="mx-auto max-w-5xl px-4 py-10">
-      <h1 className="text-2xl font-semibold mb-6">School Submissions</h1>
+      <h1 className="text-2xl font-medium mb-6">School Submissions</h1>
       <form className="mb-4">
         <input
           name="q"

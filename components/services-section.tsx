@@ -50,7 +50,7 @@ export function ServicesSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <FadeIn direction="up" delay={60}>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-balance">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 text-balance">
               Everything your school needs.
               <br />
               <span className="text-primary">All in one place.</span>
@@ -74,7 +74,7 @@ export function ServicesSection() {
                 >
                   <service.icon size={28} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                <h3 className="text-xl font-medium mb-3">{service.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{service.description}</p>
               </Card>
             </FadeIn>

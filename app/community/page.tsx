@@ -62,7 +62,7 @@ export default function CommunityPage() {
           </div>
 
           <div className="space-y-6">
-            <h3 className="text-xl md:text-2xl font-semibold">As part of our network, schools enjoy:</h3>
+            <h3 className="text-xl md:text-2xl font-medium">As part of our network, schools enjoy:</h3>
             <ul className="list-disc pl-5 space-y-3 text-muted-foreground">
               <li><span className="font-medium text-foreground">Shared visibility:</span> Featured across the EdComrade directory, app, and campaigns.</li>
               <li><span className="font-medium text-foreground">Annual Events & Competitions:</span> Inter-school competitions and networking events for administrators, teachers, and students.</li>
@@ -134,7 +134,7 @@ export default function CommunityPage() {
 
           <div className="space-y-16">
             <div className="space-y-6">
-              <p className="text-xl md:text-2xl font-medium leading-relaxed">
+              <p className="text-xl md:text-2xl font-light leading-relaxed">
                 "We were struggling with student retention. I posted in the EdComrade Community forum, and within 24 hours,
                 three headmasters shared their strategies. We implemented their ideas, adapted them to our context, and
                 our retention improved by 35% in one term."
@@ -143,7 +143,7 @@ export default function CommunityPage() {
             </div>
 
             <div className="space-y-6">
-              <p className="text-xl md:text-2xl font-medium leading-relaxed">
+              <p className="text-xl md:text-2xl font-light leading-relaxed">
                 "My daughter's school participates in EdComrade inter-school competitions. Last year, she competed in a
                 national debate tournament and met students from 15 different schools. She's still in touch with them.
                 It's not just about academics—it's about building networks and confidence."
@@ -152,7 +152,7 @@ export default function CommunityPage() {
             </div>
 
             <div className="space-y-6">
-              <p className="text-xl md:text-2xl font-medium leading-relaxed">
+              <p className="text-xl md:text-2xl font-light leading-relaxed">
                 "I'm a new teacher, and I was overwhelmed. Through the EdComrade Community, I was paired with a mentor from
                 another school who's been teaching for 15 years. She's helped me navigate classroom management,
                 curriculum planning, and parent communication. I don't know what I would have done without her."
@@ -166,7 +166,7 @@ export default function CommunityPage() {
       <section className="py-12 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="relative rounded-3xl overflow-hidden h-[300px] shadow-xl">
+            <div className="relative rounded-3xl overflow-hidden h-[300px]">
               <Image
                 src="/african-students-competing-in-academic-olympiad--f.jpg?height=300&width=400"
                 alt="Students competing in EdComrade inter-school competition"
@@ -174,7 +174,7 @@ export default function CommunityPage() {
                 className="object-cover"
               />
             </div>
-            <div className="relative rounded-3xl overflow-hidden h-[300px] shadow-xl">
+            <div className="relative rounded-3xl overflow-hidden h-[300px]">
               <Image
                 src="/african-teachers-in-professional-development-works.jpg?height=300&width=400"
                 alt="Teachers in EdComrade professional development session"
@@ -182,9 +182,9 @@ export default function CommunityPage() {
                 className="object-cover"
               />
             </div>
-            <div className="relative rounded-3xl overflow-hidden h-[300px] shadow-xl">
+            <div className="relative rounded-3xl overflow-hidden h-[300px]">
               <Image
-                src="/placeholder.svg?height=300&width=400"
+                src="/diverse-group-of-african-students-from-different-s.jpeg?height=300&width=400"
                 alt="School leaders connecting at EdComrade community event"
                 fill
                 className="object-cover"
@@ -203,7 +203,7 @@ export default function CommunityPage() {
           <p className="text-lg md:text-xl leading-relaxed">
             At the core of our community are the EdComrade Pioneers — the first 100 schools that believed in the vision early.
           </p>
-          <h3 className="text-xl md:text-2xl font-semibold">Pioneer privileges include:</h3>
+          <h3 className="text-xl md:text-2xl font-medium">Pioneer privileges include:</h3>
           <ul className="list-disc pl-5 space-y-3">
             <li>Locked‑in pricing for the first 3 years</li>
             <li>Exclusive early access to new tools and updates</li>
@@ -263,14 +263,14 @@ export default function CommunityPage() {
   <div 
     className="absolute inset-0 z-0 bg-cover bg-center brightness-50" 
     style={{
-      backgroundImage: "url('https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=2000&auto=format&fit=crop')",
+      backgroundImage: "url('/vidset.jpg?q=80&w=2000&auto=format&fit=crop')",
     }}
   />
   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-0" />
 
   <div className="relative z-10 max-w-5xl mx-auto text-center space-y-10">
     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white text-balance">
-      Why Join the <span className="font-semibold text-secondary">Pioneer 100</span> Movement
+      Why Join the <span className="font-medium text-secondary">Pioneer 100</span> Movement
     </h2>
     <p className="text-lg md:text-xl text-gray-200 leading-relaxed font-light max-w-3xl mx-auto">
       Because your school deserves to grow alongside others who share your ambition.  
@@ -297,7 +297,7 @@ export default function CommunityPage() {
       </div>
       <div className="rounded-2xl overflow-hidden shadow-lg">
         <img 
-          src="https://images.unsplash.com/photo-1573496799515-eef1b06a4932?q=80&w=800&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop" 
           alt="Community of schools" 
           className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
         />
@@ -330,8 +330,8 @@ export default function CommunityPage() {
 
     {/* Social proof embedded for authority */}
     <div className="pt-20 text-white/90">
-      <div className="text-6xl font-bold text-secondary mb-3">500+</div>
-      <h3 className="text-3xl lg:text-4xl font-semibold mb-4">
+      <div className="text-6xl font-light text-secondary mb-3">500+</div>
+      <h3 className="text-3xl lg:text-4xl font-medium mb-4">
         Schools Estimated to Join the Network
       </h3>
       <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
@@ -364,271 +364,3 @@ export default function CommunityPage() {
     </main>
   )
 }
-
-
-
-// "use client"
-
-// import Image from "next/image"
-// import Link from "next/link"
-// import { motion } from "framer-motion"
-
-// export default function CommunityPage() {
-//   return (
-//     <main className="bg-white text-gray-900 overflow-hidden">
-//       {/* === HERO SECTION === */}
-//       <section className="relative h-[90vh] flex items-center justify-center text-center">
-//         <Image
-//           src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80"
-//           alt="Students walking together at sunrise"
-//           fill
-//           className="object-cover brightness-75"
-//           priority
-//         />
-//         <div className="relative z-10 px-6">
-//           <motion.h1
-//             className="text-5xl md:text-7xl font-light text-white leading-tight drop-shadow-xl"
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 1 }}
-//           >
-//             A movement of
-//             <br />
-//             <span className="font-semibold text-primary">schools rising together.</span>
-//           </motion.h1>
-//           <motion.p
-//             className="mt-6 text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto font-light"
-//             initial={{ opacity: 0 }}
-//             animate={{ opacity: 1 }}
-//             transition={{ delay: 0.6 }}
-//           >
-//             Join a nationwide network of excellence designed to empower, inspire, and celebrate schools that dare to lead.
-//           </motion.p>
-
-//           <motion.div
-//             className="mt-10"
-//             initial={{ opacity: 0 }}
-//             animate={{ opacity: 1 }}
-//             transition={{ delay: 1 }}
-//           >
-//             <Link
-//               href="/pioneer-100"
-//               className="bg-primary text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-primary/90 transition"
-//             >
-//               Join Pioneer 100
-//             </Link>
-//           </motion.div>
-//         </div>
-//       </section>
-
-//       {/* === SECTION 2: THE POWER OF THE NETWORK === */}
-//       <section className="py-24 px-6 lg:px-12 bg-gradient-to-b from-white to-gray-50">
-//         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-//           <div className="relative h-[420px] rounded-3xl overflow-hidden shadow-xl">
-//             <Image
-//               src="https://images.unsplash.com/photo-1600607687920-4e2b9c65d4e7?auto=format&fit=crop&w=1600&q=80"
-//               alt="Teacher guiding students outdoors"
-//               fill
-//               className="object-cover"
-//             />
-//           </div>
-//           <div className="space-y-6">
-//             <h2 className="text-4xl md:text-5xl font-light">
-//               The Power of the <span className="font-semibold text-primary">EdComrade Network</span>
-//             </h2>
-//             <p className="text-lg text-gray-600 leading-relaxed">
-//               The EdComrade Network connects hundreds of schools across Ghana into one collaborative digital ecosystem. Through shared infrastructure, events, and storytelling platforms, schools gain visibility, share insights, and attract more parents and opportunities.
-//             </p>
-//             <p className="text-lg text-gray-600 leading-relaxed">
-//               As part of our network, schools enjoy shared visibility, annual competitions, professional storytelling, collaborative learning, and exclusive partner perks.
-//             </p>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* === SECTION 3: WHAT COMMUNITY MEANS === */}
-//       <section className="py-28 bg-gray-900 text-gray-50 relative">
-//         <div className="absolute inset-0">
-//           <Image
-//             src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80"
-//             alt="Aerial of a school campus"
-//             fill
-//             className="object-cover opacity-40"
-//           />
-//         </div>
-
-//         <div className="relative max-w-6xl mx-auto text-center space-y-8 px-6">
-//           <h2 className="text-4xl md:text-5xl font-light">
-//             What being part of EdComrade means
-//           </h2>
-//           <p className="max-w-3xl mx-auto text-lg text-gray-200">
-//             Every school joins a vibrant community that learns, shares, and grows together.
-//           </p>
-
-//           <div className="grid md:grid-cols-3 gap-8 mt-16">
-//             {[
-//               {
-//                 title: "You Learn from Each Other",
-//                 desc: "A school in Accra discovers a new way to drive parent engagement. Days later, that same idea is adopted by schools in Tamale and Takoradi. These insights are shared, adapted, and implemented across the network.",
-//                 img: "https://i0.wp.com/www.gbcghanaonline.com/wp-content/uploads/2025/08/DEBATE-PIC-1-1.jpg",
-//               },
-//               {
-//                 title: "Your Students Compete Nationally",
-//                 desc: "Your brightest students compete in national EdComrade Olympiads. Your debate team faces off against schools from across the region. Your Science Club showcases innovations at inter-school fairs.",
-//                 img: "https://st2.depositphotos.com/1011643/7062/i/950/depositphotos_70622223-stock-photo-group-of-african-college-students.jpg",
-//               },
-//               {
-//                 title: "Your Teachers Grow Together",
-//                 desc: "Monthly professional development sessions. Peer mentoring programs. Subject-specific forums where your teachers discuss curriculum challenges with hundreds of educators across Ghana.",
-//                 img: "https://cdn.modernghana.com/content__/640/457/33201824712_ola_girls.jpg",
-//               },
-//             ].map((item, i) => (
-//               <div key={i} className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 space-y-4">
-//                 <div className="relative h-48 rounded-2xl overflow-hidden">
-//                   <Image src={item.img} alt={item.title} fill className="object-cover" />
-//                 </div>
-//                 <h3 className="text-2xl font-semibold">{item.title}</h3>
-//                 <p className="text-gray-200 text-base">{item.desc}</p>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* === SECTION 4: REAL STORIES === */}
-//       <section className="py-24 px-6 lg:px-12 bg-gradient-to-b from-gray-50 to-white">
-//         <div className="max-w-5xl mx-auto space-y-16">
-//           <h2 className="text-center text-4xl md:text-5xl font-light">
-//             Stories from the <span className="font-semibold text-primary">community</span>
-//           </h2>
-
-//           <div className="space-y-12">
-//             <div className="bg-white rounded-3xl p-8 shadow-lg space-y-4">
-//               <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-700">
-//                 "We were struggling with student retention. I posted in the EdComrade Community forum, and within 24 hours, three headmasters shared their strategies. We implemented their ideas, adapted them to our context, and our retention improved by 35% in one term."
-//               </p>
-//               <p className="text-lg text-gray-500">— Headmaster, Private School in Cape Coast</p>
-//             </div>
-
-//             <div className="bg-white rounded-3xl p-8 shadow-lg space-y-4">
-//               <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-700">
-//                 "My daughter's school participates in EdComrade inter-school competitions. Last year, she competed in a national debate tournament and met students from 15 different schools. She's still in touch with them. It's not just about academics—it's about building networks and confidence."
-//               </p>
-//               <p className="text-lg text-gray-500">— Parent, Accra</p>
-//             </div>
-
-//             <div className="bg-white rounded-3xl p-8 shadow-lg space-y-4">
-//               <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-700">
-//                 "I'm a new teacher, and I was overwhelmed. Through the EdComrade Community, I was paired with a mentor from another school who's been teaching for 15 years. She's helped me navigate classroom management, curriculum planning, and parent communication."
-//               </p>
-//               <p className="text-lg text-gray-500">— Teacher, Junior High School in Kumasi</p>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* === SECTION 5: GALLERY === */}
-//       <section className="py-24 bg-gray-50">
-//         <div className="max-w-6xl mx-auto space-y-10 px-6">
-//           <h2 className="text-center text-4xl md:text-5xl font-light">
-//             Moments that define the <span className="font-semibold text-primary">movement</span>
-//           </h2>
-
-//           <div className="grid md:grid-cols-3 gap-6">
-//             {[
-//               "https://profuturo.education/wp-content/uploads/2021/05/IMG_5777-scaled.jpg",
-//               "https://africancentreforschoolleadership.org/content/themes/yootheme/cache/a6/2267-scaled-a6cc4868.jpeg",
-//               "https://www.vvob.org/sites/belgium/files/images/mainimagebig/a_school_leader_l_gives_constructive_feedback_to_a_teacher_after_lesson_observation.jpeg",
-//               "https://i0.wp.com/esdev.org/wp-content/uploads/2023/08/teacher-pro.jpg?fit=650%2C433&ssl=1",
-//               "https://bisghana.com.gh/wp-content/uploads/2016/12/Un-Day-2016-18-1170x568.jpg",
-//               "https://www.ghanadistricts.com/Content/Slider/1fc59a1e-3951-4ca5-9fda-313ff82d27fc.jpg",
-//             ].map((img, i) => (
-//               <div key={i} className="relative h-64 md:h-80 rounded-3xl overflow-hidden shadow-lg">
-//                 <Image src={img} alt="Gallery image" fill className="object-cover" />
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* === SECTION 6: PIONEER CIRCLE === */}
-//       <section className="py-24 px-6 lg:px-12 bg-gradient-to-b from-white to-gray-50">
-//         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-//           <div className="space-y-6">
-//             <h2 className="text-4xl md:text-5xl font-light">
-//               The EdComrade <span className="font-semibold text-primary">Pioneer Circle</span>
-//             </h2>
-//             <p className="text-lg text-gray-600 leading-relaxed">
-//               At the core of our community are the EdComrade Pioneers — the first 100 schools that believed in the vision early.
-//             </p>
-//             <ul className="space-y-3 text-gray-600">
-//               <li className="flex items-start">
-//                 <span className="text-primary mr-2">•</span>
-//                 <span>Locked-in pricing for the first 3 years</span>
-//               </li>
-//               <li className="flex items-start">
-//                 <span className="text-primary mr-2">•</span>
-//                 <span>Exclusive early access to new tools and updates</span>
-//               </li>
-//               <li className="flex items-start">
-//                 <span className="text-primary mr-2">•</span>
-//                 <span>Priority event coverage and storytelling support</span>
-//               </li>
-//               <li className="flex items-start">
-//                 <span className="text-primary mr-2">•</span>
-//                 <span>Co-branding as "EdComrade Pioneer Schools"</span>
-//               </li>
-//             </ul>
-//           </div>
-//           <div className="relative h-[420px] rounded-3xl overflow-hidden shadow-xl">
-//             <Image
-//               src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80"
-//               alt="Students collaborating"
-//               fill
-//               className="object-cover"
-//             />
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* === SECTION 7: SOCIAL PROOF === */}
-//       <section className="py-24 bg-gray-900 text-white text-center">
-//         <div className="max-w-6xl mx-auto px-6">
-//           <div className="text-6xl md:text-7xl font-bold mb-4">500+</div>
-//           <h2 className="text-3xl md:text-4xl font-light mb-6">
-//             Schools estimated to join the network
-//           </h2>
-//           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-//             From small rural schools to large urban institutions, the EdComrade community is growing every day.
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* === SECTION 8: CTA === */}
-//       <section className="py-28 bg-primary text-white text-center">
-//         <div className="max-w-4xl mx-auto space-y-8 px-6">
-//           <h2 className="text-4xl md:text-5xl font-light">
-//             Your school deserves to grow with others <br /> <span className="font-semibold">who share your ambition.</span>
-//           </h2>
-//           <p className="text-xl md:text-2xl font-light text-white/90">
-//             When you stand with EdComrade, you're not just building your reputation — you're shaping the story of education in Africa.
-//           </p>
-//           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-//             <Link
-//               href="/pioneer-100"
-//               className="bg-white text-primary px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition"
-//             >
-//               Join the Pioneer 100
-//             </Link>
-//             <Link
-//               href="/#contact"
-//               className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition"
-//             >
-//               Talk to our team
-//             </Link>
-//           </div>
-//         </div>
-//       </section>
-//     </main>
-//   )
-// }
