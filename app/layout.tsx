@@ -102,45 +102,102 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "EdComrade",
-              description:
-                "Ghana's premier educational technology company providing integrated school management, learning platforms, and marketing solutions.",
+              name: "EdComrade Ltd.",
+              legalName: "EdComrade Ltd.",
+              alternateName: ["EdComrade", "EdComrade Ghana"],
               url: "https://edcomrade.com",
-              logo: "https://edcomrade.com/logo.png",
-              foundingDate: "2022",
+              logo: "https://edcomrade.com/full-logo.png",
+              foundingDate: "2023",
               founders: [
                 {
                   "@type": "Person",
-                  name: "EdComrade Founding Team",
+                  name: "Solomon Annan Ayisi",
+                  jobTitle: "Co-founder & CEO",
+                  nationality: "Ghanaian",
+                },
+                {
+                  "@type": "Person",
+                  name: "Prince Sarfo",
+                  jobTitle: "Co-founder & CTO",
+                  nationality: "Ghanaian",
                 },
               ],
+              foundingLocation: {
+                "@type": "Place",
+                name: "Accra, Ghana",
+              },
               address: {
                 "@type": "PostalAddress",
-                addressCountry: "GH",
                 addressLocality: "Accra",
+                addressCountry: "GH",
               },
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+233-55-528-4923",
-                contactType: "Customer Service",
-                email: "edcomrade.gh@gmail.com",
-                availableLanguage: ["English", "Twi", "Ga", "Ewe"],
-              },
+              email: "edcomrade.gh@gmail.com",
+              description:
+                "EdComrade Ltd. is Africa’s Education Innovation & Infrastructure Company — the operating system where schools become unstoppable. We provide intelligent ERP systems, media solutions, and digital transformation for private schools across Africa.",
+              slogan: "We digitize schools.",
+              tagline:
+                "The Operating System where African schools become unstoppable.",
               sameAs: [
+                "https://www.linkedin.com/company/edcomradegh",
+                "https://www.facebook.com/edcomrade",
                 "https://x.com/edcomradegh",
-                "https://linkedin.com/company/edcomrade",
-                "https://facebook.com/edcomrade",
-                "https://www.instagram.com/edcomradegh/"
+                "https://instagram.com/edcomradegh",
               ],
-              areaServed: {
-                "@type": "Country",
-                name: "Ghana",
+              brand: {
+                "@type": "Brand",
+                name: "EdComrade",
+                logo: "https://edcomrade.com/logo-icon.png",
+                slogan: "We digitize schools.",
               },
+              knowsAbout: [
+                "Education Technology",
+                "School Management Systems",
+                "Educational Marketing",
+                "Digital Transformation",
+                "African Education Infrastructure",
+                "Learning Management Systems",
+                "AI in Education",
+                "Educational Media Production",
+              ],
+              makesOffer: [
+                {
+                  "@type": "Offer",
+                  name: "EdComrade ERP System",
+                  description:
+                    "A modular, cloud-based ERP system that automates school operations, integrates parents, and simplifies administration.",
+                  category: "School Management Software",
+                  priceCurrency: "GHS",
+                  price: "5000-12000",
+                  availability: "https://schema.org/InStock",
+                },
+                {
+                  "@type": "Offer",
+                  name: "EdComrade Media",
+                  description:
+                    "A professional school media and marketing package — including photography, videography, digital advertising, and storytelling.",
+                  category: "Media Production Service",
+                  priceCurrency: "GHS",
+                  price: "3500",
+                  availability: "https://schema.org/InStock",
+                },
+              ],
+              areaServed: [{ "@type": "Country", name: "Ghana" }],
+              keywords: [
+                "EdComrade",
+                "School ERP Ghana",
+                "Education Technology Africa",
+                "Private School Digitization",
+                "EdTech Ghana",
+                "African School Infrastructure",
+              ],
             }),
           }}
         />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
+      <body
+        className={`${inter.variable} font-sans antialiased`}
+        suppressHydrationWarning
+      >
         <CustomCursor />
         <ScrollProgress />
         <Suspense fallback={<LoadingSkeleton />}>
