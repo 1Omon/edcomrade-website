@@ -9,7 +9,7 @@ export default function Hero() {
       {/* Cinematic Split Design */}
       <div className="absolute inset-0 grid grid-cols-1 lg:grid-cols-2">
         {/* Left Section */}
-        <div className="relative bg-gradient-to-br from-primary via-primary to-primary/90 flex items-center justify-center p-8 md:p-12 lg:p-16">
+        <div className="relative bg-primary flex items-center justify-center p-8 md:p-12 lg:p-16">
           <div className="absolute inset-0 bg-[url('/grid-light.svg')] opacity-10"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
 
@@ -130,7 +130,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
+      {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div> */}
 
       {/* Animation Styles */}
       <style jsx>{`

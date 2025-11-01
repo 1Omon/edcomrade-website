@@ -1143,13 +1143,19 @@ export default function PioneerPage() {
                       "Greater Accra",
                       "Ashanti",
                       "Eastern",
+                      "Oti",
                       "Central",
                       "Volta",
                       "Western",
+                      "Western North",
                       "Northern",
+                      "North East",
                       "Upper East",
                       "Upper West",
+                      "Savannah",
+                      "Ahafo",
                       "Bono",
+                      "Bono East",
                     ].map((r) => (
                       <option key={r}>{r}</option>
                     ))}
