@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
-import Image from "next/image"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export function MinimalNav() {
-  const pathname = usePathname()
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const links = [
     { href: "/", label: "Home" },
@@ -17,31 +17,31 @@ export function MinimalNav() {
     { href: "/community", label: "Community" },
     { href: "/pioneer-100", label: "Pioneer 100" },
     { href: "/about", label: "About" },
-  ]
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-            <a
-              href="/"
-              className="font-medium text-xl hover:text-primary transition"
-            >
-              <Image
-                src="/full-logo.png"
-                alt="EdComrade Logo"
-                width={100}
-                height={40}
-                className="object-cover hidden md:block w-[300px] h-[45px]"
-              />
-              <Image
-                src="/logo-icon.png"
-                alt="EdComrade Logo"
-                width={100}
-                height={40}
-                className="object-cover block md:hidden w-[60px] h-[60px]"
-              />
-            </a>
+          <a
+            href="/"
+            className="font-medium text-xl hover:text-primary transition"
+          >
+            <Image
+              src="/full-logo.png"
+              alt="EdComrade Logo"
+              width={100}
+              height={40}
+              className="object-cover hidden md:block w-[300px] h-[45px]"
+            />
+            <Image
+              src="/logo-icon.png"
+              alt="EdComrade Logo"
+              width={100}
+              height={40}
+              className="object-cover block md:hidden w-[60px] h-[60px]"
+            />
+          </a>
 
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
@@ -50,7 +50,9 @@ export function MinimalNav() {
                 href={link.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-foreground",
-                  pathname === link.href ? "text-foreground" : "text-muted-foreground",
+                  pathname === link.href
+                    ? "text-primary"
+                    : "text-muted-foreground"
                 )}
               >
                 {link.label}
@@ -69,7 +71,11 @@ export function MinimalNav() {
             className="md:hidden p-2 rounded-lg hover:bg-accent transition-colors"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
@@ -84,7 +90,9 @@ export function MinimalNav() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={cn(
                   "block text-lg font-medium py-2 transition-colors",
-                  pathname === link.href ? "text-foreground" : "text-muted-foreground",
+                  link.href === "/pioneer-100"
+                    ? "text-muted-foreground"
+                    : "hidden"
                 )}
               >
                 {link.label}
@@ -101,5 +109,5 @@ export function MinimalNav() {
         </div>
       )}
     </nav>
-  )
+  );
 }
