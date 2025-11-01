@@ -1779,7 +1779,7 @@ export default function HomePage() {
 
           <div className="relative rounded-3xl overflow-hidden h-[400px] md:h-[500px] mb-16 border border-border shadow-xl">
             <Image
-              src="/diverse-group-of-african-students-from-different-s.jpg"
+              src="/diverse-group-of-african-students-from-different-s.jpeg"
               alt="EdComrade Community"
               fill
               className="object-cover"
