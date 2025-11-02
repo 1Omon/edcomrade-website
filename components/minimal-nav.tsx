@@ -32,7 +32,7 @@ export function MinimalNav() {
               alt="EdComrade Logo"
               width={100}
               height={40}
-              className="object-cover hidden md:block w-[300px] h-[45px]"
+              className="object-cover hidden md:block w-[200px] h-[40px]"
             />
             <Image
               src="/logo-icon.png"

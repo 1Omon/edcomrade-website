@@ -20,7 +20,7 @@ export function Footer() {
                   alt="EdComrade Logo"
                   width={100}
                   height={45}
-                  className="object-cover w-[300px] h-[45px]"
+                  className="object-cover w-[250px] h-[45px]"
                 />
               </a>
             </div>
