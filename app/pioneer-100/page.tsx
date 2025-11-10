@@ -159,7 +159,7 @@
 //               <div className="text-sm ">Slots Remaining</div>
 //             </div>
 //             <div className="text-center">
-//               <div className="text-3xl font-light text-primary">₵3,500</div>
+//               <div className="text-3xl font-light text-primary">₵5,000</div>
 //               <div className="text-sm ">Total Package</div>
 //             </div>
 //             <div className="text-center">
@@ -383,7 +383,7 @@
 //               </h2>
 
 //               <div className="bg-slate-800 rounded-3xl p-8 shadow-2xl">
-//                 <div className="text-5xl font-light mb-2">₵3,500</div>
+//                 <div className="text-5xl font-light mb-2">₵5,000</div>
 //                 <div className="text-xl opacity-90 mb-6">
 //                   Total Pioneer Package
 //                 </div>
@@ -833,7 +833,7 @@ export default function PioneerPage() {
               <div className="text-sm text-muted-foreground font-medium">Slots Remaining</div>
             </div>
             <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center">
-              <div className="text-4xl font-light text-primary mb-2">₵3,500</div>
+              <div className="text-4xl font-light text-primary mb-2">₵5,000</div>
               <div className="text-sm text-muted-foreground font-medium">Total Package</div>
             </div>
             <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center">
@@ -1058,7 +1058,7 @@ export default function PioneerPage() {
               </h2>
 
               <div className="bg-primary text-primary-foreground rounded-3xl p-8 shadow-xl">
-                <div className="text-5xl font-light mb-2">₵3,500</div>
+                <div className="text-5xl font-light mb-2">₵5,000</div>
                 <div className="text-xl opacity-90 mb-6">
                   Total Pioneer Package
                 </div>

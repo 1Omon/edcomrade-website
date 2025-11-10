@@ -339,7 +339,7 @@ export default function TermsPage() {
                   <p className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                     <span>
-                      <strong>Total package: ₵3,500</strong> (₵1,000 deposit +
+                      <strong>Total package: ₵5,000</strong> (₵1,000 deposit +
                       ₵2,500 balance)
                     </span>
                   </p>

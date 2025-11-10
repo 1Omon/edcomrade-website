@@ -607,7 +607,7 @@
 //               </div>
 //               <div>
 //                 <div className="text-4xl sm:text-5xl font-light mb-2">
-//                   ₵ 5,000 – 12,000
+//                   ₵ 6,000 – 15,000
 //                 </div>
 //                 <div className="text-lg text-primary-foreground/90 font-light">
 //                   per year — based on school size, type & modules selected
@@ -1694,7 +1694,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div>
-                <div className="text-5xl font-light mb-2">₵ 5,000 – 12,000</div>
+                <div className="text-5xl font-light mb-2">₵ 6,000 – 15,000</div>
                 <div className="opacity-90">
                   per year — based on school size, type & modules selected
                 </div>
