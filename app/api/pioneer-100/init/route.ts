@@ -15,7 +15,7 @@
 //   if (!reservation)
 //     return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-//   const amountPesewas: any = 1000 * 100; // ₵1,000 in pesewas
+//   const amountPesewas: any = 1500 * 100; // ₵1,00 in pesewas
 //   const init:any = await paystack.transaction.initialize({
 //     email,
 //     amount: amountPesewas,
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
   if (!reservationId || !email)
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
 
-  const amountPesewas = 1000 * 100; // ₵1,000 in pesewas
+  const amountPesewas = 1500 * 100; // ₵1,500 in pesewas
 
   const response = await fetch("https://api.paystack.co/transaction/initialize", {
     method: "POST",

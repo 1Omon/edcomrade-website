@@ -174,7 +174,7 @@
 //               href="#reserve"
 //               className="bg-secondary px-8 py-4 rounded-full font-medium text-lg hover:shadow-2xl hover:scale-105 transition-all inline-flex items-center gap-2"
 //             >
-//               Reserve Your Slot — ₵1,000
+//               Reserve Your Slot — ₵1,500
 //               <Star className="w-5 h-5" />
 //             </a>
 //             <a
@@ -188,7 +188,7 @@
 //           </div>
 
 //           <p className="text-center text-sm text-slate-500">
-//             ₵1,000 deposit refundable until Dec 31, 2025 ·{" "}
+//             ₵1,500 deposit refundable until Dec 31, 2025 ·{" "}
 //             <a
 //               href="/pioneer-100-terms"
 //               className="underline hover:text-primary"
@@ -322,7 +322,7 @@
 //                 {
 //                   num: "01",
 //                   title: "Reserve",
-//                   desc: "₵1,000 deposit secures your spot",
+//                   desc: "₵1,500 deposit secures your spot",
 //                   color: "from-indigo-500 to-indigo-600",
 //                 },
 //                 {
@@ -390,11 +390,11 @@
 //                 <div className="space-y-3">
 //                   <div className="flex items-start gap-3">
 //                     <Check className="w-5 h-5 mt-1 flex-shrink-0" />
-//                     <span>₵1,000 deposit (refundable until Dec 31, 2025)</span>
+//                     <span>₵1,500 deposit (refundable until Dec 31, 2025)</span>
 //                   </div>
 //                   <div className="flex items-start gap-3">
 //                     <Check className="w-5 h-5 mt-1 flex-shrink-0" />
-//                     <span>₵2,500 balance before shoot</span>
+//                     <span>₵3,500 balance before shoot</span>
 //                   </div>
 //                 </div>
 //               </div>
@@ -592,7 +592,7 @@
 //                   disabled={isSubmitting}
 //                   className="w-full bg-secondary  px-6 py-4 rounded-xl font-medium text-lg hover:shadow-2xl hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
 //                 >
-//                   {isSubmitting ? "Processing…" : "Proceed to Payment — ₵1,000"}
+//                   {isSubmitting ? "Processing…" : "Proceed to Payment — ₵1,500"}
 //                 </button>
 
 //                 <p className="text-xs text-slate-500 text-center">
@@ -848,7 +848,7 @@ export default function PioneerPage() {
               href="#reserve"
               className="bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-medium hover:shadow-lg hover:scale-105 transition-all inline-flex items-center gap-2"
             >
-              Reserve Your Slot — ₵1,000
+              Reserve Your Slot — ₵1,500
               <Star className="w-5 h-5" />
             </a>
             <a
@@ -862,7 +862,7 @@ export default function PioneerPage() {
           </div>
 
           <p className="text-center text-sm text-muted-foreground">
-            ₵1,000 deposit refundable until Dec 31, 2025 ·{" "}
+            ₵1,500 deposit refundable until Dec 31, 2025 ·{" "}
             <a
               href="/pioneer-100-terms"
               className="underline hover:text-primary"
@@ -1002,7 +1002,7 @@ export default function PioneerPage() {
               {
                 num: "01",
                 title: "Reserve",
-                desc: "₵1,000 deposit secures your spot",
+                desc: "₵1,500 deposit secures your spot",
               },
               {
                 num: "02",
@@ -1065,11 +1065,11 @@ export default function PioneerPage() {
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 mt-1 flex-shrink-0" />
-                    <span>₵1,000 deposit (refundable until Dec 31, 2025)</span>
+                    <span>₵1,500 deposit (refundable until Dec 31, 2025)</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 mt-1 flex-shrink-0" />
-                    <span>₵2,500 balance before shoot</span>
+                    <span>₵3,500 balance before shoot</span>
                   </div>
                 </div>
               </div>
@@ -1273,7 +1273,7 @@ export default function PioneerPage() {
                   disabled={isSubmitting}
                   className="w-full bg-secondary text-secondary-foreground px-6 py-4 rounded-xl font-medium text-lg hover:shadow-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? "Processing…" : "Proceed to Payment — ₵1,000"}
+                  {isSubmitting ? "Processing…" : "Proceed to Payment — ₵1,500"}
                 </button>
 
                 <p className="text-xs text-muted-foreground text-center">

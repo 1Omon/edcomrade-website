@@ -45,7 +45,7 @@
 //           </p>
 
 //           <h2 id="deposit">2. Deposit Requirement</h2>
-//           <p>Each participating school (“Participant”) shall make a ₵1,000 deposit to reserve a slot in the Program.</p>
+//           <p>Each participating school (“Participant”) shall make a ₵1,500 deposit to reserve a slot in the Program.</p>
 //           <p>
 //             Deposits must be made through Paystack, Direct Mobile Money (MTN), or Bank Transfer to EdComrade’s designated
 //             account(s). The deposit represents a commitment fee confirming the school’s interest and enabling scheduling for the
@@ -83,7 +83,7 @@
 //             <li>Provide accurate information during registration.</li>
 //             <li>Obtain parental/guardian consent for all students featured in media materials.</li>
 //             <li>Designate an authorized representative for correspondence and on-site coordination.</li>
-//             <li>Make final payment (₵2,500) before the scheduled shoot date.</li>
+//             <li>Make final payment (₵3,500) before the scheduled shoot date.</li>
 //           </ul>
 
 //           <h2 id="payments">7. Payment & Receipts</h2>
@@ -138,7 +138,7 @@
 
 //           <h2 id="acceptance">14. Acceptance</h2>
 //           <p>
-//             By making the ₵1,000 deposit or submitting the Pioneer 100 registration form, the Participant acknowledges that
+//             By making the ₵1,500 deposit or submitting the Pioneer 100 registration form, the Participant acknowledges that
 //             they have read, understood, and agreed to the terms of this Agreement.
 //           </p>
 
@@ -156,14 +156,14 @@
 
 //           <h2 id="payment-confirmation">3. Payment Confirmation & Commitment Agreement</h2>
 //           <p>
-//             Upon payment, we confirm receipt of ₵1,000 and your reserved slot. Deposit is refundable until Dec 31, 2025.
+//             Upon payment, we confirm receipt of ₵1,500 and your reserved slot. Deposit is refundable until Dec 31, 2025.
 //             You will receive onboarding steps within 24 hours.
 //           </p>
 //           <ul>
 //             <li>School Name: [Auto‑filled]</li>
 //             <li>Payment Reference: [Paystack Ref]</li>
 //             <li>Date: [Auto‑filled]</li>
-//             <li>Deposit Amount: ₵1,000</li>
+//             <li>Deposit Amount: ₵1,500</li>
 //             <li>Tour Window: January 2026</li>
 //           </ul>
 
@@ -339,8 +339,8 @@ export default function TermsPage() {
                   <p className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                     <span>
-                      <strong>Total package: ₵5,000</strong> (₵1,000 deposit +
-                      ₵2,500 balance)
+                      <strong>Total package: ₵5,000</strong> (₵1,500 deposit +
+                      ₵3,500 balance)
                     </span>
                   </p>
                 </div>
@@ -441,7 +441,7 @@ export default function TermsPage() {
                   <div className="space-y-4 text-slate-700 leading-relaxed">
                     <p>
                       Each participating school ("Participant") shall make a{" "}
-                      <strong>₵1,000 deposit</strong> to reserve a slot in the
+                      <strong>₵1,500 deposit</strong> to reserve a slot in the
                       Program.
                     </p>
                     <p>
@@ -570,7 +570,7 @@ export default function TermsPage() {
                       "Provide accurate information during registration",
                       "Obtain parental/guardian consent for all students featured in media materials",
                       "Designate an authorized representative for correspondence and on-site coordination",
-                      "Make final payment (₵2,500) before the scheduled shoot date",
+                      "Make final payment (₵3,500) before the scheduled shoot date",
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
@@ -695,7 +695,7 @@ export default function TermsPage() {
                     num: 14,
                     title: "Acceptance",
                     content:
-                      "By making the ₵1,000 deposit or submitting the Pioneer 100 registration form, the Participant acknowledges that they have read, understood, and agreed to the terms of this Agreement.",
+                      "By making the ₵1,500 deposit or submitting the Pioneer 100 registration form, the Participant acknowledges that they have read, understood, and agreed to the terms of this Agreement.",
                   },
                 ].map((section) => (
                   <section key={section.id} id={section.id}>
@@ -751,7 +751,7 @@ export default function TermsPage() {
                     <p>Payment Reference: [Reference Number]</p>
                     <p>Payment Date: [Date]</p>
                     <p>Payment Method: [Method]</p>
-                    <p>Amount: ₵1,000</p>
+                    <p>Amount: ₵1,500</p>
                     <p>Account Name: [Account Name]</p>
                     <p>Account Number: [Number]</p>
                     <p>Reason: [Brief explanation]</p>
