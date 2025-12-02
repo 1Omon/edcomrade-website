@@ -1,20 +1,92 @@
-import { MinimalNav } from "@/components/minimal-nav"
-import Link from "next/link"
-import Image from "next/image"
-import type { Metadata } from "next"
-import { ArrowRight, Eye, Cog, BarChart, Users, Sparkles, Target } from "lucide-react"
-import { Footer } from "@/components/footer"
+import { MinimalNav } from "@/components/minimal-nav";
+import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
+import {
+  ArrowRight,
+  Eye,
+  Cog,
+  BarChart,
+  Users,
+  Sparkles,
+  Target,
+} from "lucide-react";
+import { Footer } from "@/components/footer";
+
 
 export const metadata: Metadata = {
-  title: "About EdComrade | The Genesis Document",
-  description:
-    "EdComrade is the ecosystem digitizing Ghana's private schools — making excellence visible through storytelling, software, and systems.",
-  openGraph: {
-    title: "About EdComrade | The Genesis Document",
-    description: "We digitize. You inspire. Building Ghana's digital education future.",
-    images: ["/og-about.jpg"],
+  metadataBase: new URL("https://edcomrade.com"),
+
+  title: {
+    default:
+      "About EdComrade | Digitizing Ghana’s Schools Through Technology, Storytelling & Systems",
+    template: "%s | About EdComrade",
   },
-}
+
+  description:
+    "EdComrade is building Ghana’s most powerful school digitization ecosystem — Schoolpedia, ERP systems, custom school websites, media visibility, and AI-powered operations. We help schools grow through technology, storytelling, and world-class digital infrastructure.",
+
+  keywords: [
+    "EdComrade",
+    "about EdComrade",
+    "EdComrade Ghana",
+    "school technology Ghana",
+    "school digitization Ghana",
+    "private schools Ghana",
+    "school ERP Ghana",
+    "Schoolpedia Ghana",
+    "school website Ghana",
+    "education technology Africa",
+    "school media coverage Ghana",
+    "school digital transformation",
+    "EdComrade mission",
+    "digitizing Ghana schools",
+  ],
+
+  openGraph: {
+    type: "website",
+    locale: "en_GH",
+    url: "https://edcomrade.com/about",
+    title:
+      "About EdComrade | Digitizing Ghana’s Schools Through Technology & Storytelling",
+    description:
+      "The official story of EdComrade — the education technology ecosystem transforming how Ghanaian schools operate, grow, tell their stories, and reach families through Schoolpedia, ERP systems, and AI tools.",
+    siteName: "EdComrade",
+    images: [
+      {
+        url: "/og-about.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About EdComrade — Ghana's School Digitization Ecosystem",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "About EdComrade | Ghana’s Modern School Digitization Ecosystem",
+    description:
+      "Learn how EdComrade is building the infrastructure for digitized, visible, modern schools across Ghana — powered by Schoolpedia, ERP systems, websites, and media storytelling.",
+    images: ["/og-about.jpg"],
+    creator: "@edcomrade",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "https://edcomrade.com/about",
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -35,7 +107,8 @@ export default function AboutPage() {
             We digitize. You inspire.
           </p>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            An ecosystem engineered to make Ghana's private schools visible, measurable, and connected to the digital economy of tomorrow.
+            An ecosystem engineered to make Ghana's private schools visible,
+            measurable, and connected to the digital economy of tomorrow.
           </p>
         </div>
       </section>
@@ -60,11 +133,16 @@ export default function AboutPage() {
             <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               Why We Exist
             </div>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">Make Excellence Visible</h2>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">
+              Make Excellence Visible
+            </h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              For decades, private schools carried the burden of innovation in silence. Many did extraordinary work without
-              recognition because they lacked visibility and digital infrastructure. EdComrade was born to change that — to
-              build the digital backbone of Ghana's private education sector by merging storytelling, software, and systems thinking.
+              For decades, private schools carried the burden of innovation in
+              silence. Many did extraordinary work without recognition because
+              they lacked visibility and digital infrastructure. EdComrade was
+              born to change that — to build the digital backbone of Ghana's
+              private education sector by merging storytelling, software, and
+              systems thinking.
             </p>
           </div>
 
@@ -78,17 +156,24 @@ export default function AboutPage() {
               </div>
             </div>
             <p className="text-lg md:text-2xl font-medium leading-relaxed">
-              "Digital Excellence as Infrastructure": not just apps — an operational identity that helps schools evolve
-              intelligently and competitively.
+              "Digital Excellence as Infrastructure": not just apps — an
+              operational identity that helps schools evolve intelligently and
+              competitively.
             </p>
           </div>
 
           <div className="relative rounded-3xl overflow-hidden h-[300px] md:h-[400px] border border-border shadow-xl">
-            <Image src="/african-school-administrator-overwhelmed-with-pape.jpg" alt="The problem EdComrade solves" fill className="object-cover" />
+            <Image
+              src="/african-school-administrator-overwhelmed-with-pape.jpg"
+              alt="The problem EdComrade solves"
+              fill
+              className="object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
               <div className="p-6 md:p-8 text-white">
                 <p className="text-xl md:text-2xl font-medium">
-                  "School administrators spent more time wrestling with spreadsheets than supporting teachers."
+                  "School administrators spent more time wrestling with
+                  spreadsheets than supporting teachers."
                 </p>
               </div>
             </div>
@@ -98,36 +183,43 @@ export default function AboutPage() {
             <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2">
               Our Framework
             </div>
-            <h2 className="text-4xl md:text-5xl font-light">The Four Pillars of Progress</h2>
+            <h2 className="text-4xl md:text-5xl font-light">
+              The Four Pillars of Progress
+            </h2>
             <div className="grid sm:grid-cols-2 gap-6">
               {[
                 {
                   icon: <Eye className="w-6 h-6" />,
                   title: "Visibility",
-                  desc: "Storytelling and branding that make excellence discoverable."
+                  desc: "Storytelling and branding that make excellence discoverable.",
                 },
                 {
                   icon: <Cog className="w-6 h-6" />,
                   title: "Systems",
-                  desc: "ERP that automates admissions, attendance, communication, reporting."
+                  desc: "ERP that automates admissions, attendance, communication, reporting.",
                 },
                 {
                   icon: <BarChart className="w-6 h-6" />,
                   title: "Performance",
-                  desc: "Dashboards and analytics that measure and motivate."
+                  desc: "Dashboards and analytics that measure and motivate.",
                 },
                 {
                   icon: <Users className="w-6 h-6" />,
                   title: "Community",
-                  desc: "A network that shares knowledge, tools, and opportunities."
-                }
+                  desc: "A network that shares knowledge, tools, and opportunities.",
+                },
               ].map((pillar, i) => (
-                <div key={i} className="bg-background border border-border rounded-2xl p-6 hover:border-primary/50 hover:shadow-lg transition-all">
+                <div
+                  key={i}
+                  className="bg-background border border-border rounded-2xl p-6 hover:border-primary/50 hover:shadow-lg transition-all"
+                >
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
                     {pillar.icon}
                   </div>
                   <h3 className="text-xl font-light mb-2">{pillar.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{pillar.desc}</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {pillar.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -137,10 +229,13 @@ export default function AboutPage() {
             <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
               The EdComrade Index
             </div>
-            <h2 className="text-4xl md:text-5xl font-light">Ghana's Digital Education Ranking</h2>
+            <h2 className="text-4xl md:text-5xl font-light">
+              Ghana's Digital Education Ranking
+            </h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We evaluate digital maturity, innovation, community impact, academic experience, and brand presence — not
-              to compete, but to inspire elevation and make excellence contagious.
+              We evaluate digital maturity, innovation, community impact,
+              academic experience, and brand presence — not to compete, but to
+              inspire elevation and make excellence contagious.
             </p>
           </div>
 
@@ -148,12 +243,18 @@ export default function AboutPage() {
             <div className="inline-block px-3 py-1 rounded-full bg-secondary/20 text-secondary text-sm font-medium mb-4">
               Now
             </div>
-            <h2 className="text-3xl md:text-4xl font-light mb-4">The Digital 100</h2>
+            <h2 className="text-3xl md:text-4xl font-light mb-4">
+              The Digital 100
+            </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              A national campaign to digitize the first 100 schools leading this transformation — full media, custom
-              websites, standardized ERP, and recognition on the EdComrade Index.
+              A national campaign to digitize the first 100 schools leading this
+              transformation — full media, custom websites, standardized ERP,
+              and recognition on the EdComrade Index.
             </p>
-            <Link href="/campaigns/digital-100" className="inline-flex items-center gap-2 text-secondary font-medium hover:underline">
+            <Link
+              href="/campaigns/digital-100"
+              className="inline-flex items-center gap-2 text-secondary font-medium hover:underline"
+            >
               Join Digital 100 <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -167,9 +268,11 @@ export default function AboutPage() {
             Our ambition is bigger than software
           </h2>
           <p className="text-xl leading-relaxed max-w-3xl mx-auto opacity-90">
-            We're building an ecosystem where schools don't just survive—they thrive. Where technology removes barriers
-            instead of creating them. Where every institution, regardless of size, has access to world-class tools and a
-            community of peers pushing education forward.
+            We're building an ecosystem where schools don't just survive—they
+            thrive. Where technology removes barriers instead of creating them.
+            Where every institution, regardless of size, has access to
+            world-class tools and a community of peers pushing education
+            forward.
           </p>
         </div>
       </section>
@@ -189,20 +292,23 @@ export default function AboutPage() {
               {
                 num: "01",
                 title: "Expand the ecosystem",
-                desc: "Connect 1,000+ schools across Africa by 2026. Build partnerships that enable inter-school competitions, resource sharing, and collaborative innovation."
+                desc: "Connect 1,000+ schools across Africa by 2026. Build partnerships that enable inter-school competitions, resource sharing, and collaborative innovation.",
               },
               {
                 num: "02",
                 title: "AI-powered insights",
-                desc: "Launch predictive analytics that help schools identify at-risk students early, optimize resource allocation, and personalize learning pathways at scale."
+                desc: "Launch predictive analytics that help schools identify at-risk students early, optimize resource allocation, and personalize learning pathways at scale.",
               },
               {
                 num: "03",
                 title: "Marketing as a service",
-                desc: "Help schools tell their stories better. From brand strategy to digital campaigns, we're building tools that make every institution stand out in a competitive market."
-              }
+                desc: "Help schools tell their stories better. From brand strategy to digital campaigns, we're building tools that make every institution stand out in a competitive market.",
+              },
             ].map((item, i) => (
-              <div key={i} className="bg-background border border-border rounded-2xl p-8 hover:border-primary/50 hover:shadow-lg transition-all">
+              <div
+                key={i}
+                className="bg-background border border-border rounded-2xl p-8 hover:border-primary/50 hover:shadow-lg transition-all"
+              >
                 <div className="flex gap-6 items-start">
                   <div className="w-16 h-16 rounded-xl bg-primary flex items-center justify-center text-primary-foreground text-2xl font-light flex-shrink-0">
                     {item.num}
@@ -232,12 +338,29 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[
-              { src: "/african-students-engaged-in-learning-with-teacher-.jpg", title: "Education First" },
-              { src: "/african-students-engaged-with-tablets-in-classroom.jpg?height=250&width=400", title: "Built for Africa" },
-              { src: "/happy-african-school-administrator-using-modern-la.jpg?height=250&width=400", title: "Partnership Over Profit" }
+              {
+                src: "/african-students-engaged-in-learning-with-teacher-.jpg",
+                title: "Education First",
+              },
+              {
+                src: "/african-students-engaged-with-tablets-in-classroom.jpg?height=250&width=400",
+                title: "Built for Africa",
+              },
+              {
+                src: "/happy-african-school-administrator-using-modern-la.jpg?height=250&width=400",
+                title: "Partnership Over Profit",
+              },
             ].map((item, i) => (
-              <div key={i} className="relative rounded-2xl overflow-hidden h-[250px] border border-border shadow-lg group">
-                <Image src={item.src} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div
+                key={i}
+                className="relative rounded-2xl overflow-hidden h-[250px] border border-border shadow-lg group"
+              >
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                   <div className="p-6 text-white">
                     <h3 className="text-xl font-light">{item.title}</h3>
@@ -251,16 +374,16 @@ export default function AboutPage() {
             {[
               {
                 title: "Education first",
-                desc: "Technology should serve learning, not complicate it. Every feature we build starts with the question: does this help students succeed?"
+                desc: "Technology should serve learning, not complicate it. Every feature we build starts with the question: does this help students succeed?",
               },
               {
                 title: "Built for Africa",
-                desc: "From Mobile Money integration to offline-first design, we understand the unique challenges and opportunities of African education."
+                desc: "From Mobile Money integration to offline-first design, we understand the unique challenges and opportunities of African education.",
               },
               {
                 title: "Partnership over profit",
-                desc: "We succeed when schools succeed. Our pricing is transparent, our support is unlimited, and our commitment is long-term."
-              }
+                desc: "We succeed when schools succeed. Our pricing is transparent, our support is unlimited, and our commitment is long-term.",
+              },
             ].map((value, i) => (
               <div key={i} className="space-y-4">
                 <h3 className="text-2xl font-light">{value.title}</h3>
@@ -289,32 +412,36 @@ export default function AboutPage() {
                 year: "2022",
                 title: "The Beginning",
                 desc: "Started as a college mini-project by computer science students who saw schools drowning in paperwork",
-                color: "primary"
+                color: "primary",
               },
               {
                 year: "2023",
                 title: "First Deployment",
                 desc: "Our first partner school reduced admin overhead by 60% within months. Word spread quickly.",
-                color: "primary"
+                color: "primary",
               },
               {
                 year: "2026",
                 title: "Rapid Growth",
                 desc: "Reach 100+ schools across Ghana. Launch EdComrade Community Network for inter-school collaboration.",
-                color: "primary"
+                color: "primary",
               },
               {
                 year: "2028",
                 title: "Leading the Future",
                 desc: "500+ schools transformed. Expanding across Africa. Building the future of education technology.",
-                color: "secondary"
-              }
+                color: "secondary",
+              },
             ].map((item, i) => (
               <div key={i} className="flex gap-8 my-8 items-start">
                 <div className="flex-shrink-0 w-32 text-right pt-2">
-                  <div className={`text-2xl font-light text-${item.color}`}>{item.year}</div>
+                  <div className={`text-2xl font-light text-${item.color}`}>
+                    {item.year}
+                  </div>
                 </div>
-                <div className={`flex-1 border-l-2 border-${item.color} pl-8 pb-12 last:pb-0`}>
+                <div
+                  className={`flex-1 border-l-2 border-${item.color} pl-8 pb-12 last:pb-0`}
+                >
                   {/* <div className={`w-4 h-4 rounded-full bg-${item.color} -ml-[25px] mb-4`}></div> */}
                   <h3 className="text-2xl font-light mb-3">{item.title}</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
@@ -335,8 +462,8 @@ export default function AboutPage() {
               Join us in transforming education
             </h2>
             <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto">
-              Whether you're a school administrator, educator, or education advocate, there's a place for you in the EdComrade
-              community.
+              Whether you're a school administrator, educator, or education
+              advocate, there's a place for you in the EdComrade community.
             </p>
             <div className="flex items-center justify-center flex-wrap gap-4">
               <Link
@@ -358,7 +485,7 @@ export default function AboutPage() {
       </section>
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </main>
-  )
+  );
 }

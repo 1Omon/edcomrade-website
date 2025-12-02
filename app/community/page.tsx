@@ -1,20 +1,82 @@
-import { MinimalNav } from "@/components/minimal-nav"
-import Link from "next/link"
-import Image from "next/image"
-import type { Metadata } from "next"
-import { ArrowRight } from "lucide-react"
-import { Footer } from "@/components/footer"
+import { MinimalNav } from "@/components/minimal-nav";
+import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
+import { ArrowRight } from "lucide-react";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Community | Schools rising together",
-  description:
-    "More than technology — a movement of schools rising together. Join a vibrant network of educators across Africa for visibility, collaboration and growth.",
-  openGraph: {
-    title: "EdComrade Community | Schools rising together",
-    description: "A collaborative network powering visibility, storytelling, and shared growth for African schools.",
-    images: ["/og-community.jpg"],
+  metadataBase: new URL("https://edcomrade.com"),
+
+  title: {
+    default:
+      "EdComrade Community | A Network of Digitized Schools Rising Together",
+    template: "%s | EdComrade Community",
   },
-}
+
+  description:
+    "Join the EdComrade Community — a collaborative network of private schools in Ghana and Africa powered by Schoolpedia, digital storytelling, modern ERP tools, and a shared mission to elevate education through technology and visibility.",
+
+  keywords: [
+    "EdComrade community",
+    "school community Ghana",
+    "private school network Ghana",
+    "Schoolpedia community",
+    "school collaboration Ghana",
+    "education network Africa",
+    "school digitization Ghana",
+    "school improvement Ghana",
+    "school visibility Ghana",
+    "school storytelling Ghana",
+    "EdComrade network",
+    "schools rising together",
+    "school growth ecosystem",
+  ],
+
+  openGraph: {
+    type: "website",
+    locale: "en_GH",
+    url: "https://edcomrade.com/community",
+    title:
+      "EdComrade Community | Schools Rising Together Through Technology & Storytelling",
+    description:
+      "A growing network of schools powered by the EdComrade ecosystem: Schoolpedia, digital marketing, ERP systems, media coverage, and visibility tools designed for African education.",
+    images: [
+      {
+        url: "/og-community.jpg",
+        width: 1200,
+        height: 630,
+        alt: "EdComrade Community — Schools Rising Together",
+      },
+    ],
+    siteName: "EdComrade",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "EdComrade Community | Schools Rising Together",
+    description:
+      "Join a vibrant community of schools using Schoolpedia and EdComrade’s digital tools to grow visibility, strengthen operations, and collaborate with institutions across Ghana.",
+    images: ["/og-community.jpg"],
+    creator: "@edcomrade",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "https://edcomrade.com/community",
+  },
+};
 
 export default function CommunityPage() {
   return (
@@ -27,11 +89,84 @@ export default function CommunityPage() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance mb-6">
             A movement of
             <br />
-            <span className="text-primary font-medium"> schools rising together.</span>
+            <span className="text-primary font-medium">
+              {" "}
+              schools rising together.
+            </span>
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-balance leading-relaxed max-w-3xl mx-auto font-light">
-            
-            Join a nationwide network of excellence designed to empower, inspire, and celebrate schools that dare to lead.
+            Join a nationwide network of excellence designed to empower,
+            inspire, and celebrate schools that dare to lead.
+          </p>
+        </div>
+      </section>
+
+      {/* Schoolpedia PR Engine */}
+      <section className="py-24 px-6 lg:px-8 bg-muted/40">
+        <div className="max-w-5xl mx-auto text-center space-y-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance">
+            Schoolpedia — Your School’s{" "}
+            <span className="font-medium text-primary">Free PR Engine</span>
+          </h2>
+
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            Every school deserves visibility. That’s why we built{" "}
+            <span className="text-foreground font-medium">Schoolpedia</span> — a
+            national PR and storytelling platform that gives every school in
+            Ghana a digital presence, reputation tools, and media reach at{" "}
+            <strong className="text-foreground font-medium">no cost</strong>.
+          </p>
+
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            Whether you’re a small rural school or a top-tier academy, your
+            school’s achievements, culture, and identity deserve to be seen.
+            Schoolpedia ensures you’re not buried under the noise — you are{" "}
+            <span className="font-medium text-foreground">
+              discoverable, searchable, and celebrated
+            </span>
+            .
+          </p>
+
+          {/* Key Benefits */}
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            <div className="rounded-2xl p-8 bg-background shadow-sm border border-border">
+              <h3 className="text-xl font-medium mb-3">National Visibility</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Your school appears across Schoolpedia search, categories, and
+                EdComrade’s discovery engine. Parents, teachers, and partners
+                find you effortlessly.
+              </p>
+            </div>
+
+            <div className="rounded-2xl p-8 bg-background shadow-sm border border-border">
+              <h3 className="text-xl font-medium mb-3">
+                Built-in PR & Storytelling
+              </h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                A dedicated page that amplifies your achievements, culture,
+                activities, and identity. You become part of national-level
+                storytelling campaigns.
+              </p>
+            </div>
+
+            <div className="rounded-2xl p-8 bg-background shadow-sm border border-border">
+              <h3 className="text-xl font-medium mb-3">
+                Part of a Growing Network
+              </h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Your school joins a fast-growing community of forward-thinking
+                institutions rising together with shared visibility and growth
+                opportunities.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto pt-8">
+            Schoolpedia is the foundation — the PR engine that makes the entire
+            EdComrade ecosystem work. It’s how we make sure{" "}
+            <strong className="text-foreground font-medium">
+              no school is left unseen.
+            </strong>
           </p>
         </div>
       </section>
@@ -57,18 +192,55 @@ export default function CommunityPage() {
               1. The Power of the EdComrade Network
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              The EdComrade Network connects hundreds of schools across Ghana (and soon, across Africa) into one collaborative digital ecosystem. Through shared infrastructure, events, and storytelling platforms, schools gain visibility, share insights, and attract more parents and opportunities.
+              The EdComrade Network connects hundreds of schools across Ghana
+              into one collaborative digital ecosystem, powered by{" "}
+              <span className="font-medium text-foreground">Schoolpedia</span> —
+              our nationwide PR and visibility platform. Through shared
+              infrastructure, events, and media storytelling, schools gain
+              visibility, build reputation, attract parents, and access
+              opportunities previously out of reach.
             </p>
           </div>
 
           <div className="space-y-6">
-            <h3 className="text-xl md:text-2xl font-medium">As part of our network, schools enjoy:</h3>
+            <h3 className="text-xl md:text-2xl font-medium">
+              As part of our network, schools enjoy:
+            </h3>
             <ul className="list-disc pl-5 space-y-3 text-muted-foreground">
-              <li><span className="font-medium text-foreground">Shared visibility:</span> Featured across the EdComrade directory, app, and campaigns.</li>
-              <li><span className="font-medium text-foreground">Annual Events & Competitions:</span> Inter-school competitions and networking events for administrators, teachers, and students.</li>
-              <li><span className="font-medium text-foreground">Professional storytelling:</span> Cinematic photography and video coverage that amplifies your brand story.</li>
-              <li><span className="font-medium text-foreground">Collaborative learning:</span> Webinars, growth programs, and workshops on digital transformation and school branding.</li>
-              <li><span className="font-medium text-foreground">Partner perks:</span> Access to exclusive partnerships (e.g., MTN broadband setup support, EdTech tool discounts, sponsorships).</li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Shared visibility:
+                </span>{" "}
+                Featured across the EdComrade directory, app, and campaigns.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Annual Events & Competitions:
+                </span>{" "}
+                Inter-school competitions and networking events for
+                administrators, teachers, and students.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Professional storytelling:
+                </span>{" "}
+                Cinematic photography and video coverage that amplifies your
+                brand story.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Collaborative learning:
+                </span>{" "}
+                Webinars, growth programs, and workshops on digital
+                transformation and school branding.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">
+                  Partner perks:
+                </span>{" "}
+                Access to exclusive partnerships (e.g., MTN broadband setup
+                support, EdTech tool discounts, sponsorships).
+              </li>
             </ul>
           </div>
         </div>
@@ -83,42 +255,59 @@ export default function CommunityPage() {
 
           <div className="space-y-12">
             <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-medium">You learn from each other</h3>
+              <h3 className="text-2xl md:text-3xl font-medium">
+                You learn from each other
+              </h3>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                A school in Accra figured out an innovative way to improve parent engagement. A school in Kumasi
-                developed a brilliant timetabling system. A school in Cape Coast created a scholarship program that
-                increased enrollment by 40%. In the EdComrade Community, these insights don't stay siloed—they're shared,
+                A school in Accra figured out an innovative way to improve
+                parent engagement. A school in Kumasi developed a brilliant
+                timetabling system. A school in Cape Coast created a scholarship
+                program that increased enrollment by 40%. In the EdComrade
+                Community, these insights don't stay siloed—they're shared,
                 adapted, and implemented across the network.
               </p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-medium">Your students compete on bigger stages</h3>
+              <h3 className="text-2xl md:text-3xl font-medium">
+                Your students compete on bigger stages
+              </h3>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Imagine your brightest Mathematics student competing against the best from 50 other schools in a
-                national EdComrade Mathematics Olympiad. Your debate team facing off against schools from across the region.
-                Your Science Club showcasing innovations at an inter-school fair. These aren't hypotheticals—they're
-                regular events in the EdComrade Community.
+                Imagine your brightest Mathematics student competing against the
+                best from 50 other schools in a national EdComrade Mathematics
+                Olympiad. Your debate team facing off against schools from
+                across the region. Your Science Club showcasing innovations at
+                an inter-school fair. These aren't hypotheticals—they're regular
+                events in the EdComrade Community.
               </p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-medium">Your teachers grow together</h3>
+              <h3 className="text-2xl md:text-3xl font-medium">
+                Your teachers grow together
+              </h3>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Monthly professional development sessions. Peer mentoring programs connecting experienced educators with
-                newer teachers. Subject-specific forums where your English teacher can discuss curriculum challenges
-                with 200 other English teachers across Ghana. Your staff doesn't just work for your school—they're part
-                of a national network of educators pushing each other toward excellence.
+                Monthly professional development sessions. Peer mentoring
+                programs connecting experienced educators with newer teachers.
+                Subject-specific forums where your English teacher can discuss
+                curriculum challenges with 200 other English teachers across
+                Ghana. Your staff doesn't just work for your school—they're part
+                of a national network of educators pushing each other toward
+                excellence.
               </p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-medium">You build something bigger than your school</h3>
+              <h3 className="text-2xl md:text-3xl font-medium">
+                You build something bigger than your school
+              </h3>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                The EdComrade Community isn't just about taking—it's about contributing. Your innovations become case studies
-                for other schools. Your teachers mentor educators from other institutions. Your success stories inspire
-                schools just starting their journey. You're not just improving your school—you're helping transform
-                education across Africa.
+                The EdComrade Community isn't just about taking—it's about
+                contributing. Your innovations become case studies for other
+                schools. Your teachers mentor educators from other institutions.
+                Your success stories inspire schools just starting their
+                journey. You're not just improving your school—you're helping
+                transform education across Africa.
               </p>
             </div>
           </div>
@@ -135,29 +324,39 @@ export default function CommunityPage() {
           <div className="space-y-16">
             <div className="space-y-6">
               <p className="text-xl md:text-2xl font-light leading-relaxed">
-                "We were struggling with student retention. I posted in the EdComrade Community forum, and within 24 hours,
-                three headmasters shared their strategies. We implemented their ideas, adapted them to our context, and
-                our retention improved by 35% in one term."
+                "We were struggling with student retention. I posted in the
+                EdComrade Community forum, and within 24 hours, three
+                headmasters shared their strategies. We implemented their ideas,
+                adapted them to our context, and our retention improved by 35%
+                in one term."
               </p>
-              <p className="text-lg text-muted-foreground">— Headmaster, Private School in Cape Coast</p>
+              <p className="text-lg text-muted-foreground">
+                — Headmaster, Private School in Cape Coast
+              </p>
             </div>
 
             <div className="space-y-6">
               <p className="text-xl md:text-2xl font-light leading-relaxed">
-                "My daughter's school participates in EdComrade inter-school competitions. Last year, she competed in a
-                national debate tournament and met students from 15 different schools. She's still in touch with them.
-                It's not just about academics—it's about building networks and confidence."
+                "My daughter's school participates in EdComrade inter-school
+                competitions. Last year, she competed in a national debate
+                tournament and met students from 15 different schools. She's
+                still in touch with them. It's not just about academics—it's
+                about building networks and confidence."
               </p>
               <p className="text-lg text-muted-foreground">— Parent, Accra</p>
             </div>
 
             <div className="space-y-6">
               <p className="text-xl md:text-2xl font-light leading-relaxed">
-                "I'm a new teacher, and I was overwhelmed. Through the EdComrade Community, I was paired with a mentor from
-                another school who's been teaching for 15 years. She's helped me navigate classroom management,
-                curriculum planning, and parent communication. I don't know what I would have done without her."
+                "I'm a new teacher, and I was overwhelmed. Through the EdComrade
+                Community, I was paired with a mentor from another school who's
+                been teaching for 15 years. She's helped me navigate classroom
+                management, curriculum planning, and parent communication. I
+                don't know what I would have done without her."
               </p>
-              <p className="text-lg text-muted-foreground">— Teacher, Junior High School in Kumasi</p>
+              <p className="text-lg text-muted-foreground">
+                — Teacher, Junior High School in Kumasi
+              </p>
             </div>
           </div>
         </div>
@@ -201,18 +400,28 @@ export default function CommunityPage() {
             2. The EdComrade Pioneer Circle
           </h2>
           <p className="text-lg md:text-xl leading-relaxed">
-            At the core of our community are the EdComrade Pioneers — the first 100 schools that believed in the vision early.
+            At the core of our community are the EdComrade Pioneers — the first
+            100 schools that believed in the vision early.
           </p>
-          <h3 className="text-xl md:text-2xl font-medium">Pioneer privileges include:</h3>
+          <h3 className="text-xl md:text-2xl font-medium">
+            Pioneer privileges include:
+          </h3>
           <ul className="list-disc pl-5 space-y-3">
             <li>Locked‑in pricing for the first 3 years</li>
             <li>Exclusive early access to new tools and updates</li>
             <li>Priority event coverage and storytelling support each year</li>
-            <li>Co‑branding as “EdComrade Pioneer Schools” across our ecosystem</li>
-            <li>Influence over upcoming features via beta programs and advisory groups</li>
+            <li>
+              Co‑branding as “EdComrade Pioneer Schools” across our ecosystem
+            </li>
+            <li>
+              Influence over upcoming features via beta programs and advisory
+              groups
+            </li>
           </ul>
           <p className="text-lg md:text-xl leading-relaxed">
-            Being a Pioneer School isn’t just a label — it’s a legacy. It marks you as one of the schools that helped shape the digital backbone of modern education in Africa.
+            Being a Pioneer School isn’t just a label — it’s a legacy. It marks
+            you as one of the schools that helped shape the digital backbone of
+            modern education in Africa.
           </p>
         </div>
       </section>
@@ -223,19 +432,25 @@ export default function CommunityPage() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance">
             3. The Spirit of Collaboration
           </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            We believe competition is healthy — but collaboration creates greatness. Every EdComrade school contributes to a shared pool of knowledge, growth strategies, and innovations.
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            We believe competition is healthy — but collaboration creates
+            greatness. Every EdComrade school contributes to a shared pool of
+            knowledge, growth strategies, and innovations.
           </p>
           <div className="space-y-3 text-muted-foreground">
             <p>Our network thrives on shared wins:</p>
             <ul className="list-disc pl-5 space-y-2">
-              <li>When one school’s story goes viral, others gain recognition.</li>
+              <li>
+                When one school’s story goes viral, others gain recognition.
+              </li>
               <li>When a new system feature is born, all schools benefit.</li>
               <li>When we host an event, the entire network gets stronger.</li>
             </ul>
           </div>
           <p className="text-lg md:text-xl leading-relaxed">
-            Together, we’re not just redefining education. We’re building a collective advantage — a connected system where every school uplifts the others.
+            Together, we’re not just redefining education. We’re building a
+            collective advantage — a connected system where every school uplifts
+            the others.
           </p>
         </div>
       </section>
@@ -246,102 +461,117 @@ export default function CommunityPage() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-balance ">
             4. The Future We’re Building
           </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            We’re laying the foundation for the EdComrade Learning Living Network — a vision where students from different schools interact, collaborate, and grow in homelike hubs that nurture real‑world learning, creativity, and community.
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            We’re laying the foundation for the EdComrade Learning Living
+            Network — a vision where students from different schools interact,
+            collaborate, and grow in homelike hubs that nurture real‑world
+            learning, creativity, and community.
           </p>
           <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-            <li>Students from different schools live, learn, and grow under one ecosystem.</li>
-            <li>Parents have full visibility into development, no matter the city.</li>
-            <li>Schools share infrastructure, AI tutors, and digital resources.</li>
+            <li>
+              Students from different schools live, learn, and grow under one
+              ecosystem.
+            </li>
+            <li>
+              Parents have full visibility into development, no matter the city.
+            </li>
+            <li>
+              Schools share infrastructure, AI tutors, and digital resources.
+            </li>
           </ul>
         </div>
       </section>
 
-{/* Why Join Us + Social Proof (Merged Section) */}
-<section className="relative py-28 md:py-36 px-6 lg:px-8 overflow-hidden">
-  {/* Background image with cinematic overlay */}
-  <div 
-    className="absolute inset-0 z-0 bg-cover bg-center brightness-50" 
-    style={{
-      backgroundImage: "url('/vidset.jpg?q=80&w=2000&auto=format&fit=crop')",
-    }}
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-0" />
-
-  <div className="relative z-10 max-w-5xl mx-auto text-center space-y-10">
-    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white text-balance">
-      Why Join the <span className="font-medium text-secondary">Digital 100</span> Movement
-    </h2>
-    <p className="text-lg md:text-xl text-gray-200 leading-relaxed font-light max-w-3xl mx-auto">
-      Because your school deserves to grow alongside others who share your ambition.  
-      Because we see schools as <strong>brands</strong> — and brands as <strong>communities</strong>.  
-      When you stand with EdComrade, you’re not just building your reputation —  
-      you’re helping shape the story of education across Africa.
-    </p>
-
-    {/* Image gallery for emotional storytelling */}
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-12">
-      <div className="rounded-2xl overflow-hidden shadow-lg">
-        <img 
-          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" 
-          alt="School collaboration" 
-          className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+      {/* Why Join Us + Social Proof (Merged Section) */}
+      <section className="relative py-28 md:py-36 px-6 lg:px-8 overflow-hidden">
+        {/* Background image with cinematic overlay */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center brightness-50"
+          style={{
+            backgroundImage:
+              "url('/vidset.jpg?q=80&w=2000&auto=format&fit=crop')",
+          }}
         />
-      </div>
-      <div className="rounded-2xl overflow-hidden shadow-lg">
-        <img 
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" 
-          alt="Innovation and leadership" 
-          className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
-        />
-      </div>
-      <div className="rounded-2xl overflow-hidden shadow-lg">
-        <img 
-          src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop" 
-          alt="Community of schools" 
-          className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
-        />
-      </div>
-      <div className="rounded-2xl overflow-hidden shadow-lg">
-        <img 
-          src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?q=80&w=800&auto=format&fit=crop" 
-          alt="Growth and progress" 
-          className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
-        />
-      </div>
-    </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent z-0" />
 
-    {/* Call to action */}
-    <div className="flex flex-wrap items-center justify-center gap-4">
-      <Link 
-        href="/campaigns/digital-100" 
-        className="bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity inline-flex items-center gap-2"
-      >
-        Join Digital 100
-        <ArrowRight className="w-5 h-5" />
-      </Link>
-      <Link 
-        href="/#contact" 
-        className="border border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-black transition-colors"
-      >
-        Talk to our team
-      </Link>
-    </div>
+        <div className="relative z-10 max-w-5xl mx-auto text-center space-y-10">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white text-balance">
+            Why Join the{" "}
+            <span className="font-medium text-secondary">Digital 100</span>{" "}
+            Movement
+          </h2>
+          <p className="text-lg md:text-xl text-gray-200 leading-relaxed font-light max-w-3xl mx-auto">
+            Because your school deserves to grow alongside others who share your
+            ambition. Because we see schools as <strong>brands</strong> — and
+            brands as <strong>communities</strong>. When you stand with
+            EdComrade, you’re not just building your reputation — you’re helping
+            shape the story of education across Africa.
+          </p>
 
-    {/* Social proof embedded for authority */}
-    <div className="pt-20 text-white/90">
-      <div className="text-6xl font-light text-secondary mb-3">500+</div>
-      <h3 className="text-3xl lg:text-4xl font-medium mb-4">
-        Schools Estimated to Join the Network
-      </h3>
-      <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-        From small rural schools to large urban institutions, the EdComrade community is expanding —  
-        a movement of educators, innovators, and visionaries shaping Africa’s educational renaissance.
-      </p>
-    </div>
-  </div>
-</section>
+          {/* Image gallery for emotional storytelling */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-12">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop"
+                alt="School collaboration"
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop"
+                alt="Innovation and leadership"
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop"
+                alt="Community of schools"
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?q=80&w=800&auto=format&fit=crop"
+                alt="Growth and progress"
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
 
+          {/* Call to action */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/campaigns/digital-100"
+              className="bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity inline-flex items-center gap-2"
+            >
+              Join Digital 100
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/#contact"
+              className="border border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-black transition-colors"
+            >
+              Talk to our team
+            </Link>
+          </div>
+
+          {/* Social proof embedded for authority */}
+          <div className="pt-20 text-white/90">
+            <div className="text-6xl font-light text-secondary mb-3">500+</div>
+            <h3 className="text-3xl lg:text-4xl font-medium mb-4">
+              Schools Estimated to Join the Network
+            </h3>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              From small rural schools to large urban institutions, the
+              EdComrade community is expanding — a movement of educators,
+              innovators, and visionaries shaping Africa’s educational
+              renaissance.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Schools in the EdComrade Community */}
       {/* <section className="py-24 px-6 lg:px-8 bg-muted/30">
@@ -360,7 +590,7 @@ export default function CommunityPage() {
       </section> */}
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </main>
-  )
+  );
 }

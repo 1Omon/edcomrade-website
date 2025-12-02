@@ -23,17 +23,76 @@ import { MinimalNav } from "@/components/minimal-nav";
 import { FC } from "react";
 import Image from "next/image";
 
+
 export const metadata: Metadata = {
-  title: "Technology | Built to simplify today and amplify tomorrow",
-  description:
-    "Technology that understands schools — a living, evolving ecosystem that helps schools operate efficiently, grow visibility, and connect meaningfully with families.",
-  openGraph: {
-    title: "EdComrade Technology | Simplify today. Amplify tomorrow.",
-    description:
-      "A unified ecosystem for schools: ERP, custom systems, and intelligent add-ons designed for African education.",
-    images: ["/og-technology.jpg"],
+  metadataBase: new URL("https://edcomrade.com"),
+  title: {
+    default:
+      "EdComrade Technology | School Management System, ERP & Digital Infrastructure for Ghanaian Schools",
+    template: "%s | EdComrade Technology",
   },
-};
+  description:
+    "EdComrade provides the most advanced school management technology in Ghana — ERP system, parent portal, AI tools, custom digital infrastructure, Schoolpedia integration, analytics, communication, finance, academics, and more.",
+  keywords: [
+    "EdComrade",
+    "school ERP Ghana",
+    "school management system Ghana",
+    "school software Ghana",
+    "parent portal Ghana",
+    "school technology Africa",
+    "education technology Ghana",
+    "AI school systems",
+    "school analytics Ghana",
+    "private school software Ghana",
+    "Schoolpedia integration",
+    "Ghana school digitization",
+    "LMS Ghana",
+    "online school tools Ghana",
+    "school automation Ghana",
+    "best ERP for schools Ghana"
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_GH",
+    url: "https://edcomrade.com/technology",
+    title:
+      "EdComrade Technology | Modern School ERP, AI Tools & Digital Ecosystem",
+    description:
+      "A modern technology ecosystem for Ghanaian schools — ERP, parent portal, AI-driven insights, Schoolpedia visibility, communication tools, analytics, and custom infrastructure.",
+    images: [
+      {
+        url: "/og-technology.jpg",
+        width: 1200,
+        height: 630,
+        alt: "EdComrade Technology – ERP & Digital Infrastructure for Schools",
+      },
+    ],
+    siteName: "EdComrade",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "EdComrade Technology | Intelligent ERP & School Management for Ghana",
+    description:
+      "EdComrade builds digital tools that simplify school operations — ERP, parent portal, Schoolpedia integration, AI analytics, and custom systems.",
+    images: ["/og-technology.jpg"],
+    creator: "@edcomrade",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://edcomrade.com/technology",
+  },
+}
 
 export default function TechnologyPage() {
   return (
@@ -167,9 +226,9 @@ export default function TechnologyPage() {
             </h2>
 
             {/* Center Image */}
-            <div className="relative w-full max-w-4xl mx-auto h-[350px] rounded-3xl overflow-hidden shadow-2xl border-2 border-primary-foreground/20">
+            <div className="relative w-full max-w-4xl mx-auto h-[450px] md:h-[350px] rounded-3xl overflow-hidden shadow-2xl border-2 border-primary-foreground/20">
               <div className="absolute inset-0 bg-gradient-to-br from-background/95 to-background/90 backdrop-blur-sm">
-                <div className="grid grid-cols-3 gap-4 p-8 h-full">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-8 h-full">
                   <div className="bg-primary/10 rounded-2xl p-6 flex flex-col items-center justify-center text-center">
                     <Clock className="w-12 h-12 text-primary mb-3" />
                     <p className="text-sm font-medium text-foreground">
@@ -333,25 +392,25 @@ export default function TechnologyPage() {
                             Today
                           </span>
                         </div>
-                        <div className="grid grid-cols-3 gap-3">
-                          <div className="bg-background rounded-lg p-3 border border-border">
-                            <p className="text-2xl font-bold text-primary">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                          <div className="bg-background rounded-lg p-3 border border-border flex flex-col items-center justify-center">
+                            <p className="text-xl md:text-2xl font-bold text-primary">
                               94%
                             </p>
                             <p className="text-xs text-muted-foreground">
                               Attendance
                             </p>
                           </div>
-                          <div className="bg-background rounded-lg p-3 border border-border">
-                            <p className="text-2xl font-bold text-secondary">
+                          <div className="bg-background rounded-lg p-3 border border-border flex flex-col items-center justify-center">
+                            <p className="text-xl md:text-2xl font-bold text-secondary">
                               ₵45k
                             </p>
                             <p className="text-xs text-muted-foreground">
                               Collected
                             </p>
                           </div>
-                          <div className="bg-background rounded-lg p-3 border border-border">
-                            <p className="text-2xl font-bold">12</p>
+                          <div className="bg-background rounded-lg p-3 border border-border flex flex-col items-center justify-center">
+                            <p className="text-xl md:text-2xl font-bold">12</p>
                             <p className="text-xs text-muted-foreground">
                               Absent
                             </p>
@@ -799,7 +858,7 @@ export default function TechnologyPage() {
                     growth instead of just surviving each term."
                   </p>
                   <p className="text-sm text-muted-foreground mt-3 font-medium">
-                    — Headmistress, Premium Basic School, Tema
+                    — Headmaster, Accra
                   </p>
                 </div>
               </div>
