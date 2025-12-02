@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Pioneer 100 — Reservation Confirmed",
-  description: "Your Pioneer 100 deposit was received. Next steps and onboarding checklist.",
+  title: "Digital 100 — Reservation Confirmed",
+  description: "Your Digital 100 deposit was received. Next steps and onboarding checklist.",
 }
 
 export default function Page() {

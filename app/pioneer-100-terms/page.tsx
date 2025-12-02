@@ -1,187 +1,3 @@
-// import type { Metadata } from "next";
-// import Link from "next/link";
-
-// export const metadata: Metadata = {
-//   title: "EdComrade Pioneer 100 — Deposit & Refund Agreement",
-//   description:
-//     "Public summary of the EdComrade Pioneer 100 Deposit & Refund Agreement, including deposit terms, refund policy, responsibilities, and processes.",
-//   openGraph: {
-//     title: "EdComrade Pioneer 100 — Deposit & Refund Agreement",
-//     description: "Public summary of terms for deposits, refunds, media rights, liability, and data protection.",
-//   },
-// };
-
-// export default function Page() {
-//   return (
-//     <main className="min-h-screen bg-background px-6 lg:px-8 py-24">
-//       <div className="max-w-3xl mx-auto">
-//         <header className="mb-8">
-//           <h1 className="text-3xl md:text-4xl font-medium">EdComrade Pioneer 100 — Deposit & Refund Agreement (Public Summary)</h1>
-//           <p className="text-sm text-muted-foreground mt-2">Last updated: [Insert date]</p>
-//         </header>
-
-//         {/* Summary box */}
-//         <div className="mb-8 rounded-2xl border bg-muted/30 p-4 text-sm text-muted-foreground">
-//           Deposits are fully refundable until December 31, 2025. Refunds require written request via
-//           {" "}
-//           <a className="underline" href="mailto:edcomrade.gh@gmail.com">edcomrade.gh@gmail.com</a>.
-//           {" "}
-//           You may also download a PDF copy of this agreement.
-//           {" "}
-//           <Link href="/pioneer-100-terms.pdf" className="underline">Download PDF</Link>
-//           {"."}
-//         </div>
-
-//         <div className="prose prose-neutral dark:prose-invert max-w-none">
-//           <p><strong>Effective Date:</strong> [Insert Date]</p>
-//           <p><strong>Campaign Organizer:</strong> EdComrade Ltd. (“EdComrade”), a limited liability company registered in Ghana.</p>
-//           <p><strong>Program:</strong> The “Pioneer 100” Digital School Media and Technology Program (“Program”).</p>
-
-//           <h2 id="purpose">1. Purpose</h2>
-//           <p>
-//             This Agreement governs participation in the EdComrade Pioneer 100 program — a limited campaign for the first 100
-//             private schools in Ghana to receive a comprehensive digital transformation package, including school website
-//             development, media coverage, and early access to EdComrade software.
-//           </p>
-
-//           <h2 id="deposit">2. Deposit Requirement</h2>
-//           <p>Each participating school (“Participant”) shall make a ₵1,500 deposit to reserve a slot in the Program.</p>
-//           <p>
-//             Deposits must be made through Paystack, Direct Mobile Money (MTN), or Bank Transfer to EdComrade’s designated
-//             account(s). The deposit represents a commitment fee confirming the school’s interest and enabling scheduling for the
-//             January 2026 National Media Tour.
-//           </p>
-
-//           <h2 id="refund">3. Refund Policy</h2>
-//           <ul>
-//             <li>Deposits are fully refundable until December 31, 2025, provided the school submits a formal written request.</li>
-//             <li>After December 31, 2025, deposits become non-refundable but remain transferable to another EdComrade service or future media project within 6 months.</li>
-//             <li>Refunds are processed within 14 business days of approval and issued to the same account used for payment.</li>
-//             <li>If EdComrade fails to deliver its services or cancels the January 2026 tour without an alternative arrangement, all deposits shall be refunded in full.</li>
-//           </ul>
-
-//           <h2 id="scope">4. Scope of the Pioneer 100 Package</h2>
-//           <ul>
-//             <li>One (1) on-site media shoot (photo + short video feature)</li>
-//             <li>Custom website and dashboard setup</li>
-//             <li>Admissions marketing campaign</li>
-//             <li>One free ERP module upon software adoption within 6 months</li>
-//             <li>Training and onboarding support</li>
-//             <li>“Pioneer School” certification badge</li>
-//           </ul>
-//           <p>Full deliverables are outlined in the campaign brochure and onboarding documentation.</p>
-
-//           <h2 id="scheduling">5. Scheduling & Tour Commitments</h2>
-//           <p>
-//             EdComrade will conduct its National Media Tour across Ghana during January 2026, visiting each region to capture
-//             registered schools. Schools will be contacted by EdComrade’s onboarding team to confirm their specific shoot window.
-//             Participants must ensure their campus is accessible and ready for filming on the assigned date.
-//           </p>
-
-//           <h2 id="participant">6. Participant Responsibilities</h2>
-//           <ul>
-//             <li>Provide accurate information during registration.</li>
-//             <li>Obtain parental/guardian consent for all students featured in media materials.</li>
-//             <li>Designate an authorized representative for correspondence and on-site coordination.</li>
-//             <li>Make final payment (₵3,500) before the scheduled shoot date.</li>
-//           </ul>
-
-//           <h2 id="payments">7. Payment & Receipts</h2>
-//           <p>
-//             Upon payment of the deposit, the school receives an official digital receipt and onboarding pack by email/WhatsApp.
-//             Balances are due before the scheduled shoot date. All payments are logged and acknowledged via official EdComrade channels.
-//           </p>
-
-//           <h2 id="withdrawal">8. Withdrawal & Cancellation</h2>
-//           <p>
-//             A Participant may withdraw from the Program any time before December 31, 2025. Written notice must be sent to
-//             <a className="underline" href="mailto:edcomrade.gh@gmail.com"> edcomrade.gh@gmail.com</a> with subject line
-//             “Refund Request – [School Name]”. Refunds are not automatic; written request and verification are required.
-//           </p>
-
-//           <h2 id="refund-process">9. Refund Request Process</h2>
-//           <p>To initiate a refund, send an official email including:</p>
-//           <ul>
-//             <li>School Name</li>
-//             <li>Payment Reference / Receipt</li>
-//             <li>Payment Method</li>
-//             <li>Account Details for Refund</li>
-//             <li>Reason for Cancellation</li>
-//           </ul>
-//           <p>Refund confirmation will be issued within 5 business days of approval. Funds disbursed within 14 business days thereafter.</p>
-
-//           <h2 id="media-rights">10. Media Rights & Usage</h2>
-//           <p>
-//             By participating, the school grants EdComrade limited permission to use captured content (photos/videos) for delivery
-//             to the school, and for inclusion in EdComrade’s marketing or Pioneer 100 documentary (unless opted out in writing).
-//             Schools may request restricted or private usage at any time.
-//           </p>
-
-//           <h2 id="liability">11. Liability</h2>
-//           <p>
-//             EdComrade shall not be held liable for delays caused by acts of God, government restrictions, or unforeseen
-//             logistical challenges. In such cases, EdComrade may reschedule affected shoots or issue refunds at its discretion.
-//             EdComrade’s total liability shall not exceed the total amount paid by the school.
-//           </p>
-
-//           <h2 id="data">12. Confidentiality & Data Protection</h2>
-//           <p>
-//             All school data and media files are handled under strict confidentiality and used only for onboarding,
-//             communication, and service delivery. EdComrade complies with Ghana’s Data Protection Act, 2012 (Act 843).
-//           </p>
-
-//           <h2 id="law">13. Governing Law</h2>
-//           <p>
-//             This Agreement is governed by the laws of the Republic of Ghana. Disputes shall first be resolved amicably; failing
-//             which, the matter shall be referred to arbitration under Ghanaian law.
-//           </p>
-
-//           <h2 id="acceptance">14. Acceptance</h2>
-//           <p>
-//             By making the ₵1,500 deposit or submitting the Pioneer 100 registration form, the Participant acknowledges that
-//             they have read, understood, and agreed to the terms of this Agreement.
-//           </p>
-
-//           <p className="mt-6"><strong>Signed:</strong><br />For and on behalf of EdComrade Ltd.<br />Solomon Annan Ayisi<br />Founder & CEO</p>
-
-//           <hr />
-
-//           <h2 id="refund-template">2. Refund Request Template (for schools)</h2>
-//           <p><strong>Subject:</strong> Refund Request – EdComrade Pioneer 100 Deposit</p>
-//           <p><strong>To:</strong> edcomrade.gh@gmail.com</p>
-//           <p><strong>Date:</strong> [Insert Date]</p>
-//           <p>Include: School Name, Payment Reference, Payment Date, Method, Amount, Account Name & Number, Reason, and Contacts.</p>
-
-//           <hr />
-
-//           <h2 id="payment-confirmation">3. Payment Confirmation & Commitment Agreement</h2>
-//           <p>
-//             Upon payment, we confirm receipt of ₵1,500 and your reserved slot. Deposit is refundable until Dec 31, 2025.
-//             You will receive onboarding steps within 24 hours.
-//           </p>
-//           <ul>
-//             <li>School Name: [Auto‑filled]</li>
-//             <li>Payment Reference: [Paystack Ref]</li>
-//             <li>Date: [Auto‑filled]</li>
-//             <li>Deposit Amount: ₵1,500</li>
-//             <li>Tour Window: January 2026</li>
-//           </ul>
-
-//           <hr />
-
-//           <h2 id="display-notes">4. Notes for Website Legal Page Display</h2>
-//           <ul>
-//             <li>Use clean section headers with anchors (#deposit, #refund, #liability, etc.).</li>
-//             <li>Include last updated date at top of page.</li>
-//             <li>Add summary box: “Deposits are fully refundable until December 31, 2025. Refunds require written request.”</li>
-//             <li>Provide a downloadable PDF version of the agreement.</li>
-//           </ul>
-//         </div>
-//       </div>
-//     </main>
-//   );
-// }
-
 "use client";
 import { useState } from "react";
 import {
@@ -195,6 +11,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TermsPage() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -228,7 +45,7 @@ export default function TermsPage() {
       {/* Header */}
       <header className=" border-b border-slate-200 sticky top-0 z-50 backdrop-blur-lg bg-white/90">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a
+          <Link
             href="/"
             className="font-medium text-xl hover:text-primary transition"
           >
@@ -246,14 +63,14 @@ export default function TermsPage() {
               height={40}
               className="object-cover block md:hidden w-[60px] h-[60px]"
             />
-          </a>
-          <a
-            href="/pioneer-100"
+          </Link>
+          <Link
+            href="/campaigns/digital-100"
             className="text-sm text-slate-600 hover:text-primary transition flex items-center gap-2"
           >
             <ChevronRight className="w-4 h-4" />
-            Back to Pioneer 100
-          </a>
+            Back to Digital 100
+          </Link>
         </div>
       </header>
 
@@ -268,7 +85,7 @@ export default function TermsPage() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-4 leading-tight">
-            Pioneer 100 Terms & Agreement
+            Digital 100 Terms & Agreement
           </h1>
 
           <p className="text-xl text-white/90 mb-6">
@@ -277,19 +94,19 @@ export default function TermsPage() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a
-              href="/pioneer-100-terms.pdf"
+            <Link
+              href="/digital-100-terms.pdf"
               className="bg-white text-primary px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all inline-flex items-center gap-2"
             >
               <Download className="w-5 h-5" />
               Download PDF
-            </a>
-            <a
+            </Link>
+            <Link
               href="#refund"
               className="bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white px-6 py-3 rounded-full font-medium hover:bg-white/30 transition-all"
             >
               View Refund Policy
-            </a>
+            </Link>
           </div>
 
           <p className="text-sm text-white/70 mt-6">
@@ -315,19 +132,19 @@ export default function TermsPage() {
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                     <span>
                       <strong>Deposits are fully refundable</strong> until
-                      December 31, 2025
+                      January 31, 2025
                     </span>
                   </p>
                   <p className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                     <span>
                       <strong>Simple refund process:</strong> Email request to{" "}
-                      <a
+                      <Link
                         href="mailto:edcomrade.gh@gmail.com"
                         className="text-primary underline font-medium"
                       >
                         edcomrade.gh@gmail.com
-                      </a>
+                      </Link>
                     </span>
                   </p>
                   <p className="flex items-start gap-2">
@@ -377,7 +194,7 @@ export default function TermsPage() {
                     { id: "law", label: "Governing Law" },
                     { id: "acceptance", label: "Acceptance" },
                   ].map((item) => (
-                    <a
+                    <Link
                       key={item.id}
                       href={`#${item.id}`}
                       onClick={() => setActiveSection(item.id)}
@@ -388,7 +205,7 @@ export default function TermsPage() {
                       }`}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                 </nav>
               </div>
@@ -407,7 +224,7 @@ export default function TermsPage() {
                     limited liability company registered in Ghana
                   </p>
                   <p className="text-slate-600">
-                    <strong>Program:</strong> The "Pioneer 100" Digital School
+                    <strong>Program:</strong> The "Digital 100" Digital School
                     Media and Technology Program
                   </p>
                 </div>
@@ -422,7 +239,7 @@ export default function TermsPage() {
                   </h2>
                   <p className="text-slate-700 leading-relaxed">
                     This Agreement governs participation in the EdComrade
-                    Pioneer 100 program — a limited campaign for the first 100
+                    Digital 100 program — a limited campaign for the first 100
                     private schools in Ghana to receive a comprehensive digital
                     transformation package, including school website
                     development, media coverage, and early access to EdComrade
@@ -470,16 +287,14 @@ export default function TermsPage() {
                       <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                       <span>
                         Deposits are{" "}
-                        <strong>
-                          fully refundable until December 31, 2025
-                        </strong>
+                        <strong>fully refundable until January 31, 2025</strong>
                         , provided the school submits a formal written request.
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                       <span>
-                        After December 31, 2025, deposits become non-refundable
+                        After January 31, 2025, deposits become non-refundable
                         but remain{" "}
                         <strong>
                           transferable to another EdComrade service
@@ -513,7 +328,7 @@ export default function TermsPage() {
                     <span className="w-8 h-8 bg-indigo-100 text-primary rounded-lg flex items-center justify-center text-sm font-light">
                       4
                     </span>
-                    Scope of the Pioneer 100 Package
+                    Scope of the Digital 100 Package
                   </h2>
                   <div className="grid md:grid-cols-2 gap-4">
                     {[
@@ -607,13 +422,13 @@ export default function TermsPage() {
                   </h2>
                   <p className="text-slate-700 leading-relaxed">
                     A Participant may withdraw from the Program any time before
-                    December 31, 2025. Written notice must be sent to{" "}
-                    <a
+                    January 31, 2025. Written notice must be sent to{" "}
+                    <Link
                       href="mailto:edcomrade.gh@gmail.com"
                       className="text-primary underline font-medium"
                     >
                       edcomrade.gh@gmail.com
-                    </a>{" "}
+                    </Link>{" "}
                     with subject line "Refund Request – [School Name]". Refunds
                     are not automatic; written request and verification are
                     required.
@@ -667,7 +482,7 @@ export default function TermsPage() {
                     num: 10,
                     title: "Media Rights & Usage",
                     content:
-                      "By participating, the school grants EdComrade limited permission to use captured content (photos/videos) for delivery to the school, and for inclusion in EdComrade's marketing or Pioneer 100 documentary (unless opted out in writing). Schools may request restricted or private usage at any time.",
+                      "By participating, the school grants EdComrade limited permission to use captured content (photos/videos) for delivery to the school, and for inclusion in EdComrade's marketing or Digital 100 documentary (unless opted out in writing). Schools may request restricted or private usage at any time.",
                   },
                   {
                     id: "liability",
@@ -695,7 +510,7 @@ export default function TermsPage() {
                     num: 14,
                     title: "Acceptance",
                     content:
-                      "By making the ₵1,500 deposit or submitting the Pioneer 100 registration form, the Participant acknowledges that they have read, understood, and agreed to the terms of this Agreement.",
+                      "By making the ₵1,500 deposit or submitting the Digital 100 registration form, the Participant acknowledges that they have read, understood, and agreed to the terms of this Agreement.",
                   },
                 ].map((section) => (
                   <section key={section.id} id={section.id}>
@@ -739,11 +554,11 @@ export default function TermsPage() {
                   </p>
                   <p>
                     <span className="text-slate-400">Subject:</span> Refund
-                    Request – EdComrade Pioneer 100 Deposit
+                    Request – EdComrade Digital 100 Deposit
                   </p>
                   <p className="pt-4 text-slate-300">Dear EdComrade Team,</p>
                   <p className="text-slate-300">
-                    I am writing to request a refund for our Pioneer 100
+                    I am writing to request a refund for our Digital 100
                     deposit.
                   </p>
                   <div className="pt-4 space-y-1 text-slate-300">
@@ -768,24 +583,24 @@ export default function TermsPage() {
       <section className="py-20 px-6 bg-secondary">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-light mb-4">
-            Ready to Join the Pioneer 100?
+            Ready to Join the Digital 100?
           </h2>
           <p className="text-xl  mb-8">
             Secure your school's spot in Ghana's digital education revolution
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="/pioneer-100#reserve"
+            <Link
+              href="/campaigns/digital-100#reserve"
               className="bg-white text-primary px-8 py-4 rounded-full font-medium text-lg hover:shadow-2xl hover:scale-105 transition-all"
             >
               Reserve Your Slot
-            </a>
-            <a
+            </Link>
+            <Link
               href="mailto:edcomrade.gh@gmail.com"
               className="bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-white/30 transition-all"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -796,12 +611,12 @@ export default function TermsPage() {
           <p>© 2025 EdComrade Ltd. All rights reserved. Registered in Ghana.</p>
           <p className="mt-2">
             For questions about these terms, contact{" "}
-            <a
+            <Link
               href="mailto:edcomrade.gh@gmail.com"
               className="underline hover:text-white transition"
             >
               edcomrade.gh@gmail.com
-            </a>
+            </Link>
           </p>
         </div>
       </footer>

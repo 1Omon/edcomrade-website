@@ -10,11 +10,11 @@ import Image from "next/image";
 export function Footer() {
   return (
     <footer className="bg-foreground text-white py-20 sm:py-24 px-4 sm:px-6 lg:px-8  mb-16 md:mb-0">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[90%] mx-auto">
         <div className="grid md:grid-cols-5 gap-12 mb-16">
           <div className="md:col-span-2">
             <div className="mb-6">
-              <a href="/" className="">
+              <Link href="/" className="">
                 <Image
                   src="/full-logo.png"
                   alt="EdComrade Logo"
@@ -22,7 +22,7 @@ export function Footer() {
                   height={45}
                   className="object-cover w-[250px] h-[45px]"
                 />
-              </a>
+              </Link>
             </div>
             <p className="text-lg text-gray-200 leading-relaxed mb-6 font-light">
               Ghana's premier educational technology company, transforming
@@ -91,10 +91,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/pioneer-100"
+                  href="/campaigns"
                   className="hover:text-secondary transition-colors text-lg"
                 >
-                  Pioneer 100
+                  Campaigns
                 </Link>
               </li>
             </ul>

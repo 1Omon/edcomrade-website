@@ -270,7 +270,7 @@ export default function CommunityPage() {
 
   <div className="relative z-10 max-w-5xl mx-auto text-center space-y-10">
     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white text-balance">
-      Why Join the <span className="font-medium text-secondary">Pioneer 100</span> Movement
+      Why Join the <span className="font-medium text-secondary">Digital 100</span> Movement
     </h2>
     <p className="text-lg md:text-xl text-gray-200 leading-relaxed font-light max-w-3xl mx-auto">
       Because your school deserves to grow alongside others who share your ambition.  
@@ -314,10 +314,10 @@ export default function CommunityPage() {
     {/* Call to action */}
     <div className="flex flex-wrap items-center justify-center gap-4">
       <Link 
-        href="/pioneer-100" 
+        href="/campaigns/digital-100" 
         className="bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity inline-flex items-center gap-2"
       >
-        Join Pioneer 100
+        Join Digital 100
         <ArrowRight className="w-5 h-5" />
       </Link>
       <Link 

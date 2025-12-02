@@ -49,10 +49,10 @@ export default function Hero() {
                 </Link>
 
                 <Link
-                  href="/pioneer-100"
+                  href="/campaigns"
                   className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 inline-flex items-center justify-center gap-3 text-white"
                 >
-                  Pioneer 100
+                  Campaigns
                   <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 </Link>
               </div>
@@ -119,10 +119,10 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/pioneer-100"
+              href="/campaigns/digital-100"
               className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 px-8 py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 inline-flex items-center justify-center gap-3 text-white"
             >
-              Pioneer 100
+              Digital 100
               <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             </Link>
           </div>

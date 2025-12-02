@@ -15,13 +15,13 @@ export function MinimalNav() {
     { href: "/", label: "Home" },
     { href: "/technology", label: "Technology" },
     { href: "/community", label: "Community" },
-    { href: "/pioneer-100", label: "Pioneer 100" },
+    { href: "/campaigns", label: "Campaigns" },
     { href: "/about", label: "About" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a
             href="/"
@@ -90,7 +90,7 @@ export function MinimalNav() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={cn(
                   "block text-lg font-medium py-2 transition-colors",
-                  link.href === "/pioneer-100"
+                  link.href === "/campaigns"
                     ? "text-muted-foreground"
                     : "hidden"
                 )}
