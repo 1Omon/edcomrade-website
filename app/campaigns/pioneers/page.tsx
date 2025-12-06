@@ -2,7 +2,7 @@ import React from "react";
 import { MinimalNav } from "@/components/minimal-nav";
 import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
-import { useRouter } from "next/navigation";
+import GoBackNavigation from "@/components/go-back-navigation";
 
 export const metadata: Metadata = {
   title: "Campaigns | Join Our Exclusive Network",
@@ -17,25 +17,11 @@ export const metadata: Metadata = {
 };
 
 const Pioneers = () => {
-  const router = useRouter();
-
   return (
     <main className="min-h-screen bg-background">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50 ">
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 ">
-          <div
-            className="flex items-center h-16 cursor-pointer hover:text-primary transition"
-            onClick={() => router.back()}
-          >
-            <ArrowLeft className="w-6 h-6 mr-2 " />
-            <span className="">Go Back</span>
-          </div>
-        </div>
-      </nav>
+      <GoBackNavigation />
 
-      <div className="pt-32 pb-24 px-6 lg:px-8">
-ffff
-      </div>
+      <div className="pt-32 pb-24 px-6 lg:px-8"></div>
     </main>
   );
 };
