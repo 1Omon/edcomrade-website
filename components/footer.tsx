@@ -25,9 +25,7 @@ export function Footer() {
               </Link>
             </div>
             <p className="text-lg text-gray-200 leading-relaxed mb-6 font-light">
-              Ghana's premier educational technology company, transforming
-              schools through innovative digital solutions and strategic
-              partnerships.
+              The Operating System for African Schools. Building the digital backbone for the next generation of education.
             </p>
             <div className="space-y-2 text-base text-gray-200 font-light">
               <p className="flex gap-x-2">
@@ -41,107 +39,84 @@ export function Footer() {
               </p>
             </div>
           </div>
+
           <div>
-            <h4 className="font-medium text-lg mb-6">Product</h4>
+            <h4 className="font-medium text-lg mb-6">Solutions</h4>
             <ul className="space-y-3 text-gray-200 font-light">
               <li>
-                <Link
-                  href="/technology"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
+                <Link href="/schools" className="hover:text-secondary transition-colors text-lg">
+                  For Schools
+                </Link>
+              </li>
+              <li>
+                <Link href="/teachers" className="hover:text-secondary transition-colors text-lg">
+                  For Teachers
+                </Link>
+              </li>
+              <li>
+                <Link href="/parents" className="hover:text-secondary transition-colors text-lg">
+                  For Parents
+                </Link>
+              </li>
+              <li>
+                <Link href="/technology" className="hover:text-secondary transition-colors text-lg">
                   Technology
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contact"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contact"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
-                  Demo
                 </Link>
               </li>
             </ul>
           </div>
+
+          <div>
+            <h4 className="font-medium text-lg mb-6">The Ecosystem</h4>
+            <ul className="space-y-3 text-gray-200 font-light">
+              <li>
+                <Link href="/digital-100" className="hover:text-secondary transition-colors text-lg">
+                  The Digital 100
+                </Link>
+              </li>
+              <li>
+                <Link href="/schoolpedia" className="hover:text-secondary transition-colors text-lg">
+                  Schoolpedia
+                </Link>
+              </li>
+              <li>
+                <Link href="/campaigns" className="hover:text-secondary transition-colors text-lg">
+                  Campaigns
+                </Link>
+              </li>
+              <li>
+                <Link href="/community" className="hover:text-secondary transition-colors text-lg">
+                  Community
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           <div>
             <h4 className="font-medium text-lg mb-6">Company</h4>
             <ul className="space-y-3 text-gray-200 font-light">
               <li>
-                <Link
-                  href="/about"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
-                  About Us
+                <Link href="/about" className="hover:text-secondary transition-colors text-lg">
+                  Manifesto
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/community"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
-                  Community
+                <Link href="#contact" className="hover:text-secondary transition-colors text-lg">
+                  Contact Us
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/campaigns"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
-                  Campaigns
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-medium text-lg mb-6">Connect</h4>
-            <ul className="space-y-3 text-gray-200 font-light">
-              <li>
-                <Link
-                  href="https://www.x.com/edcomradegh/"
-                  target="_blank"
-                  className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
-                >
-                  <BsTwitterX/>
-                  Twitter (X)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.linkedin.com/company/edcomrade/"
-                  target="_blank"
-                  className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
-                >
-                  <BsLinkedin/>
-                  LinkedIn
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href=""
-                  target="_blank"
-                  className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
-                >
-                  <BsFacebook/>
-                  Facebook
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.instagram.com/edcomradegh/"
-                  target="_blank"
-                  className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
-                >
-                  <BsInstagram/>
-                  
-                  Instagram
-                </Link>
+              <li className="pt-4">
+                <div className="flex gap-4">
+                  <Link href="https://www.x.com/edcomradegh/" target="_blank" className="hover:text-secondary transition-colors">
+                    <BsTwitterX className="w-5 h-5" />
+                  </Link>
+                  <Link href="https://www.linkedin.com/company/edcomrade/" target="_blank" className="hover:text-secondary transition-colors">
+                    <BsLinkedin className="w-5 h-5" />
+                  </Link>
+                  <Link href="https://www.instagram.com/edcomradegh/" target="_blank" className="hover:text-secondary transition-colors">
+                    <BsInstagram className="w-5 h-5" />
+                  </Link>
+                </div>
               </li>
             </ul>
           </div>

@@ -166,13 +166,22 @@ export default function HomePage() {
 
       {/* Solution - One Platform */}
       <section className="py-24 md:py-32 px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6">
-            One ecosystem. Real transformation.
+        <div className="max-w-5xl mx-auto text-center space-y-8">
+          <div className="inline-block px-4 py-1.5 rounded-full border border-primary-foreground/30 backdrop-blur-sm mb-4">
+            <span className="text-sm font-medium tracking-wide uppercase">Why We Exist</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
+            Make Excellence Visible.
           </h2>
-          <p className="text-xl md:text-2xl leading-relaxed opacity-90">
-            Storytelling for visibility. Software for systems. Data for
-            performance. Community for momentum.
+          <p className="text-xl md:text-2xl leading-relaxed opacity-90 max-w-4xl mx-auto font-light">
+            For decades, private schools in Ghana have carried the burden of innovation alone.
+            EdComrade runs your systems so you can focus on the students.
+            We build the digital backbone that makes your excellence visible,
+            measurable, and unstoppable.
+          </p>
+          <div className="h-1 w-24 bg-secondary mx-auto mt-12 opacity-80"></div>
+          <p className="text-lg md:text-xl font-medium tracking-wide opacity-80">
+            STORYTELLING • SYSTEMS • DATA • COMMUNITY
           </p>
         </div>
       </section>
@@ -380,81 +389,62 @@ export default function HomePage() {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Finance & Billing */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center">
-                  <CreditCard className="w-8 h-8 text-secondary" />
-                </div>
-                <h3 className="text-3xl md:text-4xl font-light">
-                  Finance & Billing
-                </h3>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  Take control of your finances. Automated billing with Mobile
-                  Money integration. Know exactly who has paid, send reminders,
-                  and plan budgets with confidence.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Mobile Money integration (MTN, Vodafone, AirtelTigo)",
-                    "Automated invoicing & payment reminders",
-                    "Real-time payment tracking",
-                    "Financial reports & budget planning"
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
-                      <span className="text-lg">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="relative rounded-3xl overflow-hidden h-[400px] border border-border shadow-xl">
-                <Image
-                  src="/african-parent-using-mobile-phone-for-mobile-money.jpeg"
-                  alt="Mobile Money payment"
-                  fill
-                  className="object-cover"
-                />
+      {/* Solution Overview - 3 Systems */}
+      <section id="solution" className="py-24 px-6 lg:px-8 bg-secondary text-secondary-foreground overflow-hidden relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            <div className="space-y-8 relative z-10">
+              <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+                Not just software. <br />
+                <span className="opacity-80">A Complete Ecosystem.</span>
+              </h2>
+              <p className="text-xl opacity-90 leading-relaxed font-light">
+                EdComrade replaces your fragmented tools with three powerful, interconnected systems.
+              </p>
+
+              <ul className="space-y-8 pt-4">
+                <li className="flex gap-6">
+                  <div className="w-12 h-12 rounded-xl bg-background/10 flex items-center justify-center font-bold text-xl">01</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-1">School ERP</h3>
+                    <p className="opacity-70">The operational engine handling fees, academics, and staff.</p>
+                  </div>
+                </li>
+                <li className="flex gap-6">
+                  <div className="w-12 h-12 rounded-xl bg-background/10 flex items-center justify-center font-bold text-xl">02</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-1">ParentAide App</h3>
+                    <p className="opacity-70">The communication bridge keeping parents connected 24/7.</p>
+                  </div>
+                </li>
+                <li className="flex gap-6">
+                  <div className="w-12 h-12 rounded-xl bg-background/10 flex items-center justify-center font-bold text-xl">03</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-1">Schoolpedia</h3>
+                    <p className="opacity-70">The marketing spotlight that brings new admissions to your door.</p>
+                  </div>
+                </li>
+              </ul>
+
+              <div className="pt-8">
+                <Link href="/technology" className="underline text-lg font-medium hover:opacity-80">
+                  Explore the 3 Systems &rarr;
+                </Link>
               </div>
             </div>
 
-            {/* Marketing & Branding */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative rounded-3xl overflow-hidden h-[400px] order-2 lg:order-1 border border-border shadow-xl">
-                <Image
-                  src="/professional-school-website-on-laptop-and-phone--m.jpeg"
-                  alt="School branding materials"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-6 order-1 lg:order-2">
-                <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center">
-                  <TrendingUp className="w-8 h-8 text-secondary" />
-                </div>
-                <h3 className="text-3xl md:text-4xl font-light">
-                  Marketing & Branding
-                </h3>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  Stand out in a competitive market. Professional branding,
-                  website design, social media management, and strategic
-                  campaigns that attract and retain students.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Professional brand identity & logo design",
-                    "Modern, mobile-responsive websites",
-                    "Social media management & content creation",
-                    "Event photography & videography"
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-3 items-start">
-                      <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
-                      <span className="text-lg">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="relative h-[600px] w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+              <Image
+                src="/modern-school-management-dashboard-interface--clea.jpg"
+                alt="EdComrade Ecosystem Dashboard"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
@@ -465,15 +455,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              Flexible Options
+              The Ecosystem
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6">
-              Choose your path to digital excellence
+              Components of the Operating System
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Whether you're taking your first digital step or ready to reinvent
-              your entire institution, EdComrade offers the tools, creativity, and
-              systems to get you there.
+              Adopt the full infrastructure or select individual modules.
+              Every component is designed to integrate seamlessly into your institution's growth.
             </p>
           </div>
 

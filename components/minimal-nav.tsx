@@ -15,6 +15,7 @@ export function MinimalNav() {
     { href: "/", label: "Home" },
     { href: "/technology", label: "Technology" },
     { href: "/community", label: "Community" },
+    { label: "For Schools", href: "/schools" },
     { href: "/campaigns", label: "Campaigns" },
     { href: "/about", label: "About" },
   ];
@@ -88,12 +89,7 @@ export function MinimalNav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={cn(
-                  "block text-lg font-medium py-2 transition-colors",
-                  link.href === "/campaigns"
-                    ? "text-muted-foreground"
-                    : "hidden"
-                )}
+                className="block text-lg font-medium py-2 transition-colors text-muted-foreground hover:text-foreground"
               >
                 {link.label}
               </Link>

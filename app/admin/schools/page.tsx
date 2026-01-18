@@ -4,8 +4,8 @@ import { headers } from "next/headers";
 
 async function getSchools(q?: string) {
   const h = headers();
-  const proto = h.get('x-forwarded-proto') || 'http';
-  const host = h.get('host') || 'localhost:3000';
+  const proto = (await h).get('x-forwarded-proto') || 'http';
+  const host = (await h).get('host') || 'localhost:3000';
   const base = `${proto}://${host}`;
   const path = `${base}/api/schools${q ? `?q=${encodeURIComponent(q)}` : ''}`
   const res = await fetch(path, { cache: 'no-store' });

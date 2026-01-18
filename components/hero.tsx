@@ -21,21 +21,21 @@ export default function Hero() {
             <div className="space-y-6 md:space-y-8">
               <div className="inline-block px-4 py-2 rounded-full border border-primary-foreground/30 backdrop-blur-sm">
                 <span className="text-sm font-medium">
-                  Ghana’s Education Revolution
+                  Institutional Infrastructure
                 </span>
               </div>
 
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tighter">
-                We
+                The Operating System
                 <br />
-                digitize.
+                for African Schools.
               </h1>
 
               <div className="h-1 w-24 bg-secondary"></div>
 
               <p className="text-xl md:text-2xl lg:text-3xl font-light leading-relaxed opacity-90">
-                Making Ghana’s private schools visible, measurable and
-                unstoppable.
+                The digital backbone, visibility engine, and intelligence layer for
+                the modern educational institution.
               </p>
 
               {/* CTA Buttons */}
@@ -89,15 +89,15 @@ export default function Hero() {
           {/* Tag */}
           <div className="inline-block px-4 py-2 rounded-full border border-white/30 backdrop-blur-sm">
             <span className="text-xs sm:text-sm font-medium">
-              Ghana’s Education Revolution
+              Institutional Infrastructure
             </span>
           </div>
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight tracking-tight">
-            We
+            The Operating System
             <br />
-            digitize.
+            for African Schools.
           </h1>
 
           {/* Divider */}
@@ -105,7 +105,8 @@ export default function Hero() {
 
           {/* Subtext */}
           <p className="text-base sm:text-lg font-light opacity-90 leading-relaxed max-w-md mx-auto">
-            Making Ghana’s private schools visible, measurable & unstoppable.
+            The digital backbone, visibility engine, and intelligence layer for the
+            modern educational institution.
           </p>
 
           {/* CTA Buttons */}
@@ -128,9 +129,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div> */}
 
       {/* Animation Styles */}
       <style jsx>{`
