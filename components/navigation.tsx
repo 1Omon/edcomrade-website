@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +27,8 @@ export function Navigation() {
     { href: "/schools", label: "School OS", desc: "Digital Infrastructure" },
     { href: "/parents", label: "Parent Network", desc: "Digital Peace of Mind" },
     { href: "/intelligence", label: "Intelligence", desc: "Digital Visibility" },
-    { href: "/about", label: "Our Story", desc: "The Mission" },
+    { href: "/how-it-works", label: "Roadmap", desc: "The Deployment Loop" },
+    { href: "/manifesto", label: "Manifesto", desc: "The Mission" },
   ];
 
   const isDarkPage = pathname === "/campaigns/digital-100";
@@ -44,17 +46,8 @@ export function Navigation() {
       <Container>
         <div className="flex items-center justify-between">
           {/* Logo — The Foundation */}
-          <Link href="/" className="flex items-center gap-4 group">
-            <div className={cn(
-              "w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:rotate-6 shadow-2xl shadow-primary/20",
-              isScrolled ? "bg-primary" : "bg-primary"
-            )}>
-              <span className="text-primary-foreground font-light text-2xl tracking-tighter">EC</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tighter leading-none">EdComrade</span>
-              <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-muted-foreground group-hover:text-primary transition-colors">Africa's Education OS</span>
-            </div>
+          <Link href="/" className="">
+            <Image src="/full-logo.png" alt="Logo" width={128} height={128} className="bg-center bg-no-repeat bg-cover " />
           </Link>
 
           {/* Desktop Navigation — The Network */}
@@ -99,8 +92,8 @@ export function Navigation() {
 
       {/* Mobile Menu — Fullscreen Inevitability */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-0 bg-background/98 z-[100] md:hidden animate-in fade-in slide-in-from-top duration-500">
-          <Container className="pt-32 space-y-12">
+        <div className="fixed inset-0 top-0 bg-transparent/98 z-50 md:hidden animate-in fade-in slide-in-from-top duration-500">
+          <Container className="pt-32 min-h-screen space-y-12 bg-white">
             <div className="flex flex-col gap-6">
               <span className="text-xs uppercase tracking-[0.5em] font-bold text-muted-foreground mb-4">Ecosystem Layers</span>
               {navLinks.map((link) => (
@@ -118,7 +111,7 @@ export function Navigation() {
                 </Link>
               ))}
             </div>
-            <div className="grid grid-cols-2 gap-4 pt-12">
+            <div className="grid grid-cols-2 gap-4 pt-4">
               <Button variant="outline" size="lg" className="rounded-2xl" asChild>
                 <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>Portal</Link>
               </Button>

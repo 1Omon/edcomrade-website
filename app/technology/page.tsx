@@ -26,18 +26,19 @@ export default function TechnologyPage() {
       <Navigation />
 
       {/* Hero — The Technical Backbone */}
-      <Section className="pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
-        <Container className="max-w-5xl space-y-12 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary">
-            Architecture & Protocol
+      <Section className="min-[90vh] flex items-center overflow-hidden relative">
+        <Container>
+          <div className="max-w-5xl mx-auto text-center space-y-12 py-32">
+            {/* <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary mx-auto">
+              Architecture & Protocol
+            </div> */}
+            <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
+              Interoperable <br /> <span className="text-primary italic">Intelligence.</span>
+            </h1>
+            <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
+              We don't build features. We build a unified data protocol that connects the bursar, the teacher, the parent, and the public into one inevitable loop of trust.
+            </p>
           </div>
-          <h1 className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85]">
-            Interoperable <br /> <span className="text-primary italic">Intelligence.</span>
-          </h1>
-          <p className="text-2xl md:text-4xl text-muted-foreground font-light max-w-4xl leading-tight">
-            We don't build features. We build a unified data protocol that connects the bursar, the teacher, the parent, and the public into one inevitable loop of trust.
-          </p>
         </Container>
       </Section>
 
@@ -46,8 +47,8 @@ export default function TechnologyPage() {
         <Container>
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-12">
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tight">The Unified <br /> Backbone.</h2>
-              <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
+              <h2 className="text-4xl md:text-7xl font-bold tracking-tight">The Unified <br /> Backbone.</h2>
+              <p className="text-lg md:text-2xl text-muted-foreground font-light leading-relaxed">
                 Fragmented software creates data silos. EdComrade OS is a single system of record where every transaction, attendance record, and academic grade flows through a verified intelligence layer.
               </p>
 
@@ -112,8 +113,8 @@ export default function TechnologyPage() {
       {/* The Blueprint Call */}
       <Section intensity="none" className="bg-black text-white py-40">
         <Container className="max-w-5xl text-center space-y-12">
-          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter">Deploy the OS.</h2>
-          <p className="text-2xl md:text-3xl text-zinc-400 font-light leading-relaxed">
+          <h2 className="text-4xl md:text-8xl font-bold tracking-tighter">Deploy the OS.</h2>
+          <p className="text-xl md:text-3xl text-zinc-400 font-light leading-relaxed">
             We aren't just selling software. We are installing the digital infrastructure for the next 50 years of African education.
           </p>
           <div className="pt-10 flex flex-col sm:flex-row justify-center gap-8">
@@ -121,7 +122,7 @@ export default function TechnologyPage() {
               <Link href="/contact">Technical Implementation</Link>
             </Button>
             <Button variant="ghost" size="xl" className="text-zinc-500 hover:text-white transition-colors" asChild>
-              <Link href="/about">Strategic Manifesto</Link>
+              <Link href="/manifesto">Strategic Manifesto</Link>
             </Button>
           </div>
         </Container>

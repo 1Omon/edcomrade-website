@@ -2,6 +2,9 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { Search, MapPin, BadgeCheck, ExternalLink, ArrowRight } from "lucide-react";
+import { Section } from "@/components/ui/section";
+import { Container } from "@/components/ui/container";
+import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,56 +18,35 @@ export default function SchoolpediaPage() {
         <main className="min-h-screen bg-background">
             <Navigation />
 
-            {/* Hero */}
-            <section className="relative pt-32 pb-24 px-6 lg:px-8 bg-black text-white overflow-hidden">
-                {/* Abstract Abstract Background */}
-                <div className="absolute top-0 right-0 w-full h-full opacity-20 pointer-events-none">
-                    <div className="absolute right-0 top-20 w-96 h-96 bg-primary/40 rounded-full blur-3xl"></div>
-                    <div className="absolute left-0 bottom-0 w-80 h-80 bg-secondary/20 rounded-full blur-3xl"></div>
-                </div>
-
-                <div className="max-w-4xl mx-auto text-center relative z-10 space-y-8">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-300 mb-4">
-                        <BadgeCheck className="w-4 h-4 text-secondary" />
-                        <span className="text-sm font-medium">The Trusted School Directory</span>
+            {/* Hero — The Record of Truth */}
+            <Section className="min-[90vh] flex items-center overflow-hidden">
+                <Container>
+                    <div className="max-w-5xl mx-auto text-center space-y-12 py-32">
+                        {/* <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary mx-auto">
+                            The Ecosystem Ledger: Schoolpedia
+                        </div> */}
+                        <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
+                            The Record <br /> <span className="text-primary italic">of Truth.</span>
+                        </h1>
+                        <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
+                            Fragmentation is the enemy of trust. Schoolpedia is the verified ledger for Ghanaian education, making excellence visible and discoverable.
+                        </p>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6">
+                            <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20" asChild>
+                                <Link href="https://schoolpedia.edcomrade.com" target="_blank">Launch Schoolpedia <ExternalLink className="ml-2 w-5 h-5" /></Link>
+                            </Button>
+                            <Button variant="outline" size="xl" className="rounded-full px-12 text-xl" asChild>
+                                <Link href="/schools">I own a school</Link>
+                            </Button>
+                        </div>
                     </div>
-
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-                        Find the perfect school <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-white">
-                            with zero stress.
-                        </span>
-                    </h1>
-
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
-                        Schoolpedia is Ghana's first verified search engine for parents.
-                        Compare fees, facilities, and academic performance in one place.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-                        <Link
-                            href="https://schoolpedia.edcomrade.com"
-                            target="_blank"
-                            className="bg-primary text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-primary/90 transition-all flex items-center justify-center gap-3 w-full sm:w-auto shadow-lg shadow-primary/20"
-                        >
-                            <Search className="w-5 h-5" />
-                            Launch Schoolpedia
-                            <ExternalLink className="w-4 h-4 opacity-70" />
-                        </Link>
-                        <Link
-                            href="/schools"
-                            className="px-8 py-4 rounded-full text-lg font-medium border border-white/20 hover:bg-white/10 transition-colors w-full sm:w-auto"
-                        >
-                            I own a school
-                        </Link>
-                    </div>
-                </div>
-            </section>
+                </Container>
+            </Section>
 
             {/* Value Proposition */}
-            <section className="py-24 px-6 lg:px-8 bg-muted/30">
-                <div className="max-w-6xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-light mb-16">Why parents trust Schoolpedia</h2>
+            <Section intensity="soft" className="py-24 border-y border-border/50">
+                <Container className="text-center">
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-20">Why parents trust Schoolpedia</h2>
 
                     <div className="grid md:grid-cols-3 gap-12">
                         <div className="space-y-4">
@@ -97,32 +79,35 @@ export default function SchoolpediaPage() {
                             </p>
                         </div>
                     </div>
-                </div>
-            </section>
+                </Container>
+            </Section>
 
             {/* CTA for Schools */}
-            <section className="py-24 px-6 lg:px-8 bg-white border-t border-gray-100">
-                <div className="max-w-5xl mx-auto bg-black text-white rounded-[2rem] p-8 md:p-16 text-center relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -mr-12 -mt-12"></div>
+            <Section id="contribute" className="py-24">
+                <Container>
+                    <div className="max-w-5xl mx-auto bg-foreground text-white rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-12 -mt-12"></div>
 
-                    <div className="relative z-10 space-y-6">
-                        <h2 className="text-3xl md:text-5xl font-bold">Is your school missing?</h2>
-                        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-                            Over 5,000 parents visit Schoolpedia every month looking for schools like yours. Don't be invisible.
-                        </p>
-                        <div className="pt-4">
-                            <Link
-                                href="https://schoolpedia.edcomrade.com/contribute"
-                                target="_blank"
-                                className="inline-flex items-center gap-2 bg-secondary text-black px-8 py-3 rounded-full font-bold hover:bg-white transition-colors"
-                            >
-                                Get Listed on Schoolpedia
-                                <ArrowRight className="w-5 h-5" />
-                            </Link>
+                        <div className="relative z-10 space-y-6">
+                            <h2 className="text-3xl md:text-5xl font-bold">Is your school missing?</h2>
+                            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                                Over 5,000 parents visit Schoolpedia every month looking for schools like yours. Don't be invisible.
+                            </p>
+                            <div className="pt-8">
+                                <Button size="xl" variant="secondary" className="rounded-full px-12" asChild>
+                                    <Link
+                                        href="https://schoolpedia.edcomrade.com/contribute"
+                                        target="_blank"
+                                    >
+                                        Get Listed on Schoolpedia
+                                        <ArrowRight className="ml-3 w-5 h-5" />
+                                    </Link>
+                                </Button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </Container>
+            </Section>
 
             <Footer />
         </main>

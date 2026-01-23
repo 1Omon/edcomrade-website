@@ -18,6 +18,7 @@ import {
     Search
 } from "lucide-react";
 import Link from "next/link";
+import { LeadForm } from "@/components/lead-form";
 
 export default function IntelligencePage() {
     return (
@@ -25,19 +26,19 @@ export default function IntelligencePage() {
             <Navigation />
 
             {/* Hero — Global Intelligence */}
-            <Section className="min-[90vh] flex items-center pt-40 pb-20">
+            <Section className="min-[90vh] flex items-center">
                 <Container>
-                    <div className="max-w-5xl space-y-12">
-                        <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary">
+                    <div className="max-w-5xl mx-auto text-center space-y-12 pt-32">
+                        {/* <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary mx-auto">
                             Ecosystem Layer 3: Intelligence
-                        </div>
-                        <h1 className="text-7xl md:text-9xl font-bold tracking-tighter leading-[0.85]">
+                        </div> */}
+                        <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
                             Digital <br /> <span className="text-primary italic">Visibility.</span>
                         </h1>
-                        <p className="text-2xl md:text-4xl text-muted-foreground font-light max-w-3xl leading-tight">
+                        <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
                             Solving the trust deficit. We turn fragmented data into systemic intelligence, making African education visible, measurable, and inevitable.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-8 pt-6">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6">
                             <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20" asChild>
                                 <Link href="/schoolpedia">Explore Schoolpedia</Link>
                             </Button>
@@ -55,8 +56,8 @@ export default function IntelligencePage() {
                     <div className="grid lg:grid-cols-2 gap-24 items-center mb-32">
                         <div className="space-y-12">
                             <div className="space-y-6">
-                                <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">The Record <br /> of Truth.</h2>
-                                <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
+                                <h2 className="text-4xl md:text-7xl font-bold tracking-tight text-foreground">The Record <br /> of Truth.</h2>
+                                <p className="text-lg md:text-2xl text-muted-foreground font-light leading-relaxed">
                                     Schoolpedia isn't just a directory—it's the verified ledger of Ghanaian education. We provide the infrastructure for schools to prove their excellence.
                                 </p>
                             </div>
@@ -110,21 +111,23 @@ export default function IntelligencePage() {
                 </Container>
             </Section>
 
-            {/* Strategic Partners */}
-            <Section intensity="none" className="py-40">
-                <Container className="max-w-4xl text-center space-y-12">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 text-zinc-500 text-xs font-bold tracking-[0.4em] uppercase mb-4">
-                        Strategic Inevitability
+            {/* Strategic Partners — Intelligence Inquiry */}
+            <Section id="contact" intensity="none" className="py-40">
+                <Container className="max-w-4xl space-y-20">
+                    <div className="text-center space-y-8">
+                        <h2 className="text-4xl md:text-8xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50 uppercase">
+                            For Policy <br /> & Growth.
+                        </h2>
+                        <p className="text-xl md:text-3xl text-muted-foreground font-light leading-relaxed max-w-2xl mx-auto">
+                            Visibility is the first step to progress. Partner with the EdComrade OS to drive national education intelligence.
+                        </p>
                     </div>
-                    <h2 className="text-6xl md:text-8xl font-bold tracking-tighter uppercase transition-all">For Policy <br /> & Growth.</h2>
-                    <p className="text-2xl md:text-3xl text-muted-foreground font-light leading-relaxed">
-                        We are building the bridge between the private education sector and national goals. Visibility is the first step to progress.
-                    </p>
-                    <div className="pt-10 flex justify-center gap-8">
-                        <Button size="xl" className="rounded-full px-16 text-xl shadow-2xl shadow-primary/20">
-                            Partner with the OS <ArrowRight className="ml-3" />
-                        </Button>
-                    </div>
+
+                    <LeadForm
+                        type="partnership"
+                        title="Ecosystem Partnership"
+                        subtitle="Join the intelligence layer of African education."
+                    />
                 </Container>
             </Section>
 
@@ -135,7 +138,7 @@ export default function IntelligencePage() {
 
 function FeatureCard({ icon: Icon, title, desc }: { icon: any, title: string, desc: string }) {
     return (
-        <Card className="p-10 hover:border-primary/20 transition-all duration-500 group">
+        <Card className="p-6 sm:p-10 hover:border-primary/20 transition-all duration-500 group">
             <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                 <Icon className="w-8 h-8" />
             </div>

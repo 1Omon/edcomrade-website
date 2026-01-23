@@ -205,7 +205,6 @@ export default function RootLayout({
         </Suspense>
         <WhatsAppButton />
         <BackToTop />
-        <ExitIntentModal />
       </body>
     </html>
   );

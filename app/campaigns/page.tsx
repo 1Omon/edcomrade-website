@@ -123,11 +123,11 @@ export default function CampaignsPage() {
             </div>
 
             <h2 className="text-4xl md:text-6xl font-bold">
-              The Pioneer 10
+              The Pioneers
             </h2>
 
             <p className="text-xl text-muted-foreground leading-relaxed font-light">
-              This is our most exclusive partnership. We select 10 visionary schools per region to receive our entire ecosystem:
+              This is our most exclusive partnership. We select 3 visionary schools per region to receive our entire ecosystem:
               <span className="text-foreground font-medium"> ERP, App, and Marketing</span> at a subsidized pilot rate.
             </p>
 

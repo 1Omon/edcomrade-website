@@ -34,9 +34,9 @@ export default function HeroModern({ userRole }: HeroModernProps) {
             </div>
 
             <Container className="relative z-20 pt-32 pb-20">
-                <div className="max-w-4xl space-y-12 animate-in fade-in slide-in-from-bottom-12 duration-1000 ease-out">
+                <div className="max-w-5xl mx-auto text-center space-y-12 animate-in fade-in slide-in-from-bottom-12 duration-1000 ease-out">
 
-                    <div className="inline-flex items-center gap-4 px-5 py-2 rounded-full bg-primary/5 border border-primary/10 shadow-sm backdrop-blur-sm group hover:bg-primary/10 transition-colors">
+                    <div className="inline-flex items-center gap-4 px-5 py-2 rounded-full bg-primary/5 border border-primary/10 shadow-sm backdrop-blur-sm group hover:bg-primary/10 transition-colors mx-auto">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -46,15 +46,15 @@ export default function HeroModern({ userRole }: HeroModernProps) {
                         </span>
                     </div>
 
-                    <h1 className="text-7xl sm:text-8xl lg:text-[10rem] font-bold tracking-tighter text-foreground leading-[0.85]">
+                    <h1 className="text-5xl sm:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
                         {content.title}
                     </h1>
 
-                    <p className="text-2xl md:text-4xl text-muted-foreground leading-tight max-w-2xl font-light">
+                    <p className="text-xl md:text-4xl text-muted-foreground leading-tight max-w-4xl mx-auto font-light">
                         {content.subtitle}
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-8 pt-6">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6">
                         <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20 group h-16" asChild>
                             <Link href="#contact">
                                 {content.ctaPrimary} <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />

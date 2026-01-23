@@ -18,6 +18,7 @@ import {
   ShieldCheck,
   TrendingUp
 } from "lucide-react";
+import { LeadForm } from "@/components/lead-form";
 
 export default function Digital100Page() {
   return (
@@ -30,18 +31,18 @@ export default function Digital100Page() {
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-black to-black opacity-60" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/10 blur-[150px] rounded-full opacity-40 animate-pulse" />
 
-        <Container className="relative z-10">
+        <Container className="relative z-10 py-30">
           <div className="max-w-5xl mx-auto text-center space-y-12">
             <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-semibold tracking-[0.3em] uppercase text-zinc-400">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
               National Infrastructure Project
             </div>
 
-            <h1 className="text-7xl md:text-[10rem] font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 leading-[0.85]">
+            <h1 className="text-5xl md:text-[10rem] font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 leading-[0.85]">
               Visible. <br /> Trusted.
             </h1>
 
-            <p className="text-2xl md:text-4xl text-zinc-400 font-light max-w-3xl mx-auto leading-tight">
+            <p className="text-xl md:text-4xl text-zinc-400 font-light max-w-3xl mx-auto leading-tight">
               If they can't find you on Google, do you exist? <br />
               <span className="text-white font-medium">We are selecting 100 schools to digitize completely.</span>
             </p>
@@ -59,18 +60,18 @@ export default function Digital100Page() {
       </Section>
 
       {/* The Hard Truth — Why It Matters */}
-      <Section intensity="none" className="bg-zinc-950 border-y border-white/5">
+      <Section intensity="none" className="bg-zinc-950 border-y border-white/5 py-12 md:py-24">
         <Container>
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-10">
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
+              <h2 className="text-4xl md:text-7xl font-bold tracking-tight">
                 The Invisible <br /> Crisis.
               </h2>
-              <p className="text-xl md:text-2xl text-zinc-400 leading-relaxed">
+              <p className="text-lg md:text-2xl text-zinc-400 leading-relaxed">
                 There are incredible schools in Ghana—with legacy teachers and stunning facilities—that look and feel abandoned online.
                 Broken links. Empty pages. No location on Google Maps.
               </p>
-              <p className="text-xl md:text-2xl text-zinc-300 font-medium leading-relaxed">
+              <p className="text-lg md:text-2xl text-zinc-300 font-medium leading-relaxed">
                 Parents judge you before they ever walk through your gates. <br />
                 <span className="text-secondary italic">Don't let a bad digital impression cost you a generation of students.</span>
               </p>
@@ -86,7 +87,7 @@ export default function Digital100Page() {
       </Section>
 
       {/* The Infrastructure — What's Included */}
-      <Section id="details" intensity="none" className="bg-black">
+      <Section id="details" intensity="none" className="bg-black py-12 md:py-24">
         <Container>
           <div className="text-center max-w-4xl mx-auto mb-24 space-y-6">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tight">The Overhaul.</h2>
@@ -131,8 +132,8 @@ export default function Digital100Page() {
       {/* The Model — Zero Upfront */}
       <Section intensity="strong" className="bg-white text-black py-40">
         <Container className="max-w-5xl text-center space-y-12">
-          <h2 className="text-5xl md:text-8xl font-bold tracking-tight">The Inevitable Payoff.</h2>
-          <p className="text-2xl md:text-4xl font-light text-zinc-600 leading-tight">
+          <h2 className="text-4xl md:text-8xl font-bold tracking-tight">The Inevitable Payoff.</h2>
+          <p className="text-xl md:text-4xl font-light text-zinc-600 leading-tight">
             We don't charge you to build your website. <br />
             We invest in your school's digital foundation because when you run properly, <span className="text-black font-semibold">everyone wins.</span>
           </p>
@@ -151,19 +152,25 @@ export default function Digital100Page() {
         </Container>
       </Section>
 
-      {/* Final Call */}
+      {/* Final Call — Application Protocol */}
       <Section id="apply" className="bg-zinc-950 py-40">
-        <Container className="max-w-4xl text-center space-y-10">
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tight">Be Among the 100.</h2>
-          <p className="text-xl md:text-2xl text-zinc-400">
-            We are currently reviewing applications for the 2026 cohort. <br />
-            Is your school ready to be seen?
-          </p>
-          <div className="pt-10">
-            <Button size="xl" variant="premium" className="rounded-full px-16 text-xl shadow-2xl shadow-primary/20">
-              Start Application <ArrowRight className="ml-3 w-6 h-6" />
-            </Button>
+        <Container className="max-w-4xl space-y-20">
+          <div className="text-center space-y-8">
+            <h2 className="text-5xl md:text-8xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500">
+              Be Among the 100.
+            </h2>
+            <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto">
+              We are currently reviewing applications for the 2026 cohort.
+              Is your school ready to be seen?
+            </p>
           </div>
+
+          <LeadForm
+            type="pioneer"
+            title="Cohort Application"
+            subtitle="Apply for Digital 100 priority onboarding."
+            className="bg-zinc-900 border-white/5 text-white"
+          />
         </Container>
       </Section>
 

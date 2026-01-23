@@ -19,6 +19,8 @@ export async function submitSchoolAction(formData: FormData) {
     description: String(formData.get("description") || "").trim() || undefined,
     logoUrl: String(formData.get("logoUrl") || "").trim() || undefined,
     logoPublicId: String(formData.get("logoPublicId") || "").trim() || undefined,
+    type: (formData.get("type") as any) || "application",
+    status: "pending",
   };
 
   if (!payload.schoolName || !payload.contactName || !payload.email) {
@@ -27,7 +29,7 @@ export async function submitSchoolAction(formData: FormData) {
 
   const created = await SchoolSubmission.create(payload);
   revalidatePath("/admin/submissions");
-  return { id: created._id.toString() };
+  return { id: (created as any)._id.toString() };
 }
 
 

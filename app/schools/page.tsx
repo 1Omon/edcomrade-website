@@ -19,6 +19,7 @@ import {
     BarChart3
 } from "lucide-react";
 import Link from "next/link";
+import { LeadForm } from "@/components/lead-form";
 
 export default function SchoolsPage() {
     return (
@@ -26,19 +27,19 @@ export default function SchoolsPage() {
             <Navigation />
 
             {/* Hero — The OS for Institutions */}
-            <Section className="min-[90vh] flex items-center pt-40 pb-20">
+            <Section className="min-[90vh] flex items-center">
                 <Container>
-                    <div className="max-w-5xl space-y-12">
-                        <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary">
+                    <div className="max-w-5xl mx-auto text-center space-y-12 pt-32">
+                        {/* <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary mx-auto">
                             Ecosystem Layer 1: Infrastructure
-                        </div>
-                        <h1 className="text-7xl md:text-9xl font-bold tracking-tighter leading-[0.85]">
+                        </div> */}
+                        <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
                             The OS for <br /> <span className="text-primary italic">Institutions.</span>
                         </h1>
-                        <p className="text-2xl md:text-4xl text-muted-foreground font-light max-w-3xl leading-tight">
+                        <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
                             Fragmentation is expensive. EdComrade is the unified backbone that turns a school building into a digital institution.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-8 pt-6">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6">
                             <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20" asChild>
                                 <Link href="#contact">Deploy Infrastructure</Link>
                             </Button>
@@ -55,8 +56,8 @@ export default function SchoolsPage() {
                 <Container>
                     <div className="grid lg:grid-cols-2 gap-24 items-end mb-32">
                         <div className="space-y-6">
-                            <h2 className="text-5xl md:text-7xl font-bold tracking-tight">Built for <br /> Sovereign Control.</h2>
-                            <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
+                            <h2 className="text-4xl md:text-7xl font-bold tracking-tight">Built for <br /> Sovereign Control.</h2>
+                            <p className="text-lg md:text-2xl text-muted-foreground font-light leading-relaxed">
                                 We don't just provide software; we provide the foundation for digital visibility, operational integrity, and long-term data sovereignty.
                             </p>
                         </div>
@@ -103,19 +104,23 @@ export default function SchoolsPage() {
                 </Container>
             </Section>
 
-            {/* Call to Inevitability */}
-            <Section intensity="none" className="py-40">
-                <Container className="max-w-4xl text-center space-y-12">
-                    <h2 className="text-6xl md:text-8xl font-bold tracking-tighter">Inevitable Progress.</h2>
-                    <p className="text-2xl md:text-3xl text-muted-foreground font-light leading-relaxed">
-                        The world is digitizing. Your school either leads this change or is eventually replaced by it. <br />
-                        <span className="text-foreground font-medium">Build your foundation today.</span>
-                    </p>
-                    <div className="pt-10">
-                        <Button size="xl" className="rounded-full px-16 text-xl shadow-2xl shadow-primary/20">
-                            Request Implementation <ArrowRight className="ml-3" />
-                        </Button>
+            {/* Call to Inevitability — Infrastructure Inquiry */}
+            <Section id="contact" intensity="none" className="py-40">
+                <Container className="max-w-4xl space-y-20">
+                    <div className="text-center space-y-8">
+                        <h2 className="text-4xl md:text-8xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
+                            Inevitable Progress.
+                        </h2>
+                        <p className="text-xl md:text-3xl text-muted-foreground font-light leading-relaxed max-w-2xl mx-auto">
+                            The world is digitizing. Your school either leads this change or is eventually replaced by it.
+                        </p>
                     </div>
+
+                    <LeadForm
+                        type="application"
+                        title="Infrastructure Deployment"
+                        subtitle="Begin the transition to Africa's Education OS."
+                    />
                 </Container>
             </Section>
 
@@ -135,7 +140,7 @@ function CapabilityBadge({ icon: Icon, label }: { icon: any, label: string }) {
 
 function FeatureCard({ icon: Icon, title, desc }: { icon: any, title: string, desc: string }) {
     return (
-        <Card className="p-10 hover:border-primary/20 transition-all duration-500 group">
+        <Card className="p-6 sm:p-10 hover:border-primary/20 transition-all duration-500 group">
             <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                 <Icon className="w-8 h-8" />
             </div>

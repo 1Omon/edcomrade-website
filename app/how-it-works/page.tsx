@@ -16,27 +16,25 @@ export default function HowItWorksPage() {
         <main className="min-h-screen bg-background">
             <Navigation />
 
-            {/* Hero */}
-            <Section className="pt-40 pb-20">
+            {/* Hero — The Roadmap */}
+            <Section className="min-[90vh] flex items-center">
                 <Container>
-                    <div className="max-w-4xl mx-auto text-center space-y-8">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold tracking-wide uppercase">
-                            The Ecosystem
-                        </div>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
-                            It’s not just distinct tools.<br />
-                            <span className="text-muted-foreground">It’s a trust loop.</span>
+                    <div className="max-w-5xl mx-auto text-center space-y-12 pt-32">
+                        {/* <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary">
+                            The Protocol: How It Works
+                        </div> */}
+                        <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
+                            It’s not just <br /> <span className="italic">Tools.</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                            Most schools have fragmentation. We give you connection.
-                            See how our three systems work together to build a self-reinforcing cycle of growth.
+                        <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
+                            Fragmentation is the silent tax on progress. EdComrade creates a self-reinforcing loop of visibility, efficiency, and institutional trust.
                         </p>
                     </div>
                 </Container>
             </Section>
 
             {/* The 3 Systems - Scroll Telling */}
-            <div className="relative">
+            <div className="relative pb-20">
                 {/* Vertical Line */}
                 <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block" />
 
