@@ -16,6 +16,19 @@ import { UserRole } from "./role-selection-modal";
 
 export default function HomePageClient() {
     const [userRole, setUserRole] = useState<UserRole>("public");
+
+    useEffect(() => {
+        const savedRole = localStorage.getItem("edcomrade_perspective") as UserRole;
+        if (savedRole) {
+            setUserRole(savedRole);
+        }
+    }, []);
+
+    const handleRoleChange = (role: UserRole) => {
+        setUserRole(role);
+        localStorage.setItem("edcomrade_perspective", role);
+    };
+
     const role = userRole || "public";
     const content = CONTENT_BY_ROLE[role];
 
