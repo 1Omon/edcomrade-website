@@ -5,7 +5,6 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Suspense } from "react";
 import { ScrollProgress } from "@/components/scroll-progress";
-import { MobileBottomNav } from "@/components/mobile-bottom-nav";
 import { CustomCursor } from "@/components/custom-cursor";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { BackToTop } from "@/components/back-to-top";
@@ -131,7 +130,7 @@ export default function RootLayout({
                 addressLocality: "Accra",
                 addressCountry: "GH",
               },
-              email: "edcomrade.gh@gmail.com",
+              email: "info@edcomrade.com",
               description:
                 "EdComrade Ltd. is Africa’s Education Innovation & Infrastructure Company — the operating system where schools become unstoppable. We provide intelligent ERP systems, media solutions, and digital transformation for private schools across Africa.",
               slogan: "We digitize schools.",
@@ -204,7 +203,6 @@ export default function RootLayout({
           {children}
           <Analytics />
         </Suspense>
-        <MobileBottomNav />
         <WhatsAppButton />
         <BackToTop />
         <ExitIntentModal />

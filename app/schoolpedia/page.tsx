@@ -1,4 +1,4 @@
-import { MinimalNav } from "@/components/minimal-nav";
+import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { Search, MapPin, BadgeCheck, ExternalLink, ArrowRight } from "lucide-react";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function SchoolpediaPage() {
     return (
         <main className="min-h-screen bg-background">
-            <MinimalNav />
+            <Navigation />
 
             {/* Hero */}
             <section className="relative pt-32 pb-24 px-6 lg:px-8 bg-black text-white overflow-hidden">
@@ -112,7 +112,8 @@ export default function SchoolpediaPage() {
                         </p>
                         <div className="pt-4">
                             <Link
-                                href="/schools"
+                                href="https://schoolpedia.edcomrade.com/contribute"
+                                target="_blank"
                                 className="inline-flex items-center gap-2 bg-secondary text-black px-8 py-3 rounded-full font-bold hover:bg-white transition-colors"
                             >
                                 Get Listed on Schoolpedia

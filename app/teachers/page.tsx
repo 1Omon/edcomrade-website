@@ -1,4 +1,4 @@
-import { MinimalNav } from "@/components/minimal-nav";
+import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function TeachersPage() {
     return (
         <main className="min-h-screen bg-background">
-            <MinimalNav />
+            <Navigation />
 
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 px-6 lg:px-8 overflow-hidden">

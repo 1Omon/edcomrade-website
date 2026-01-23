@@ -1,102 +1,81 @@
-import { MinimalNav } from "@/components/minimal-nav";
-import Link from "next/link";
-import Image from "next/image";
-import type { Metadata } from "next";
-import {
-  ArrowRight,
-  Eye,
-  Cog,
-  BarChart,
-  Users,
-  Target,
-  Rocket
-} from "lucide-react";
+import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { Section } from "@/components/ui/section";
+import { Container } from "@/components/ui/container";
+import Link from "next/link";
 
-
-export const metadata: Metadata = {
-  title: "About Us | The EdComrade Story",
-  description: "We are building the digital operating system for African education.",
+export const metadata = {
+  title: "Our Story | Why We Built This",
+  description: "The origin story of EdComrade. Built because excellence without visibility is invisible.",
 };
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
-      <MinimalNav />
+      <Navigation />
 
-      {/* Hero */}
-      <section className="pt-40 pb-20 px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
-            The EdComrade <br />
-            <span className="text-primary">Genesis</span>
+      <Section className="pt-40 pb-20">
+        <Container className="max-w-3xl mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">
+            The Lost Form.
           </h1>
-          <p className="text-xl md:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
             We didn't start with code. We started with a question: <br />
-            <span className="text-foreground italic">"Why are our smartest schools still running on paper?"</span>
+            <span className="italic text-foreground">"Why are our smartest schools still running on paper?"</span>
           </p>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      {/* Image Banner */}
-      <section className="px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto relative rounded-[3rem] overflow-hidden h-[500px] shadow-2xl">
-          <Image
-            src="/young-african-computer-science-students-working-on.jpg"
-            alt="EdComrade Team"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
-          <div className="absolute bottom-10 left-10 text-white max-w-xl">
-            <p className="text-2xl font-bold">Born in a dorm room. <br />Built for a continent.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Narrative */}
-      <section className="py-24 px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto space-y-16">
-
-          <div className="prose prose-lg dark:prose-invert max-w-none">
-            <h3 className="text-3xl font-bold mb-6">The Hidden Crisis</h3>
-            <p className="text-xl leading-relaxed text-muted-foreground">
-              In 2022, we visited over 50 private schools in Accra and Kumasi. What we found was shocking.
-              Schools with incredible teachers and brilliant students were being suffocated by chaos.
-              Records were lost. Fees were untracked. Communication was broken.
-              <br /><br />
-              The "Operating System" of African education was manual, prone to error, and exhausting.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-muted/50 p-8 rounded-3xl border border-border">
-              <Target className="w-10 h-10 text-red-500 mb-4" />
-              <h4 className="text-xl font-bold mb-2">The Problem</h4>
-              <p className="text-muted-foreground">Great schools were invisible and inefficient. They spent 80% of their time on admin, leaving only 20% for education.</p>
-            </div>
-            <div className="bg-primary/10 p-8 rounded-3xl border border-primary/20">
-              <Rocket className="w-10 h-10 text-primary mb-4" />
-              <h4 className="text-xl font-bold mb-2">The Solution</h4>
-              <p className="text-muted-foreground">A unified digital infrastructure. One platform to manage operations, engage parents, and showcase excellence.</p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Vision */}
-      <section className="py-32 px-6 lg:px-8 bg-black text-white text-center">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <h2 className="text-5xl md:text-7xl font-bold">Our North Star</h2>
-          <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
-            By 2030, we will be the underlying infrastructure for 10,000 African schools.
-            We believe that when you fix the system, you free the teacher. And when you free the teacher, you change the future.
+      <Section intensity="none" className="pb-32">
+        <Container className="max-w-2xl mx-auto prose prose-lg prose-zinc dark:prose-invert">
+          <p>
+            In 2022, we visited a top private school in Accra to enroll a nephew. The school was beautiful.
+            The teachers were passionate. The headmaster was brilliant.
           </p>
-        </div>
-      </section>
+          <p>
+            But when we asked for the admission form, chaos ensued. It was lost in a pile.
+            When we finally got it, we were told to pay at the bank and bring back the slip.
+            Two days later, the slip was misplaced, and we had to prove payment again.
+          </p>
+          <p>
+            <strong>We realized something profound:</strong> <br />
+            The school wasn't incompetent. It was <em>overwhelmed</em>.
+          </p>
+          <p>
+            We visited 50 more schools. We saw the same story everywhere.
+            Headmasters drowning in spreadsheets. Parents relying on gossip because they had no data.
+            Excellent schools losing students simply because they were invisible online.
+          </p>
+          <hr className="border-border my-12" />
+          <h3>Excellence without visibility is invisible.</h3>
+          <p>
+            We built EdComrade to solve this. not just to "digitize" schools, but to give them their dignity back.
+            To create a connected system where:
+          </p>
+          <ul>
+            <li>A Headmaster can see his school's health in one glance.</li>
+            <li>A Parent can trust that their child is safe and learning.</li>
+            <li>A great School can be found by the families who need it.</li>
+          </ul>
+          <p>
+            This is not just software. It is the infrastructure of trust for African education.
+          </p>
+
+          <div className="pt-12 not-prose">
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                SA
+              </div>
+              <div>
+                <p className="font-bold text-foreground">Solomon Annan Ayisi</p>
+                <p className="text-sm text-muted-foreground">Co-founder & CEO</p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
 
       <Footer />
     </main>
-  );
+  )
 }

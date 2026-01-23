@@ -1,4 +1,4 @@
-import { MinimalNav } from "@/components/minimal-nav";
+import { Navigation } from "@/components/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function CommunityPage() {
   return (
     <main className="min-h-screen bg-background">
-      <MinimalNav />
+      <Navigation />
 
       {/* Hero */}
       <section className="pt-32 pb-24 px-6 lg:px-8">

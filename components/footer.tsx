@@ -32,10 +32,10 @@ export function Footer() {
                 <MapPin /> Accra • Kumasi • Takoradi • Cape Coast
               </p>
               <p className="flex gap-x-2">
-                <Mail /> edcomrade.gh@gmail.com
+                <Mail /> info@edcomrade.com
               </p>
               <p className="flex gap-x-2">
-                <Phone /> +233 55 528 4923
+                <Phone /> +233 55 528 4923, +233 55 528 4923
               </p>
             </div>
           </div>
@@ -45,22 +45,22 @@ export function Footer() {
             <ul className="space-y-3 text-gray-200 font-light">
               <li>
                 <Link href="/schools" className="hover:text-secondary transition-colors text-lg">
-                  For Schools
-                </Link>
-              </li>
-              <li>
-                <Link href="/teachers" className="hover:text-secondary transition-colors text-lg">
-                  For Teachers
+                  School OS
                 </Link>
               </li>
               <li>
                 <Link href="/parents" className="hover:text-secondary transition-colors text-lg">
-                  For Parents
+                  Parent Network
+                </Link>
+              </li>
+              <li>
+                <Link href="/intelligence" className="hover:text-secondary transition-colors text-lg">
+                  Intelligence
                 </Link>
               </li>
               <li>
                 <Link href="/technology" className="hover:text-secondary transition-colors text-lg">
-                  Technology
+                  Core Technology
                 </Link>
               </li>
             </ul>
@@ -70,7 +70,7 @@ export function Footer() {
             <h4 className="font-medium text-lg mb-6">The Ecosystem</h4>
             <ul className="space-y-3 text-gray-200 font-light">
               <li>
-                <Link href="/digital-100" className="hover:text-secondary transition-colors text-lg">
+                <Link href="/campaigns/digital-100" className="hover:text-secondary transition-colors text-lg">
                   The Digital 100
                 </Link>
               </li>
@@ -122,7 +122,7 @@ export function Footer() {
           </div>
         </div>
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-200 font-light">
-          <p>© 2025 EdComrade. All rights reserved.</p>
+          <p>© 2026 EdComrade. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-secondary transition-colors">
               Privacy Policy

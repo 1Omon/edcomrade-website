@@ -1,4 +1,4 @@
-import { MinimalNav } from "@/components/minimal-nav";
+import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ArrowRight, Sparkles, Award, Globe, Star, Trophy } from "lucide-react";
 import Link from "next/link";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function CampaignsPage() {
   return (
     <main className="min-h-screen bg-background">
-      <MinimalNav />
+      <Navigation />
 
       {/* HERO */}
       <section className="pt-32 pb-20 px-6 lg:px-8">
