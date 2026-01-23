@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import HeroModern from "@/components/hero-modern";
@@ -26,7 +26,7 @@ export default function HomePageClient() {
 
     const handleRoleChange = (role: UserRole) => {
         setUserRole(role);
-        localStorage.setItem("edcomrade_perspective", role);
+        localStorage.setItem("edcomrade_perspective", role as string);
     };
 
     const role = userRole || "public";

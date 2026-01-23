@@ -85,7 +85,7 @@ export default function ParentsPage() {
                         />
                         <FeatureCard
                             icon={Smartphone}
-                            title="Mobile First"
+                            title="Instant Visibility"
                             desc="Designed for the busy parent. Everything—from attendance to academic results—available in three taps."
                         />
                         <FeatureCard

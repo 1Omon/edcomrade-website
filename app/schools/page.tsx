@@ -86,7 +86,7 @@ export default function SchoolsPage() {
                         />
                         <FeatureCard
                             icon={Users}
-                            title="Staff Empowerment"
+                            title="Instructional Sovereignty"
                             desc="Automate lesson notes, grading, and attendance. Free your teachers from the prison of paperwork so they can focus on inspiration."
                         />
                         <FeatureCard

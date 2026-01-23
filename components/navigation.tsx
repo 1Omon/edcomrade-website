@@ -77,14 +77,14 @@ export function Navigation() {
           </div>
 
           {/* Action — The Execution */}
-          {/* <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6">
             <Button variant="ghost" className="text-sm font-semibold" asChild>
               <Link href="/login">Portal</Link>
             </Button>
             <Button variant="premium" className="rounded-full px-8 shadow-xl shadow-primary/10" asChild>
               <Link href="/campaigns/digital-100">Get Digital 100</Link>
             </Button>
-          </div> */}
+          </div>
 
           {/* Mobile Toggle */}
           <button
