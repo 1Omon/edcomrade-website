@@ -125,7 +125,7 @@
 
 //               <div className="flex flex-col sm:flex-row gap-4 pt-2">
 //                 <Link
-//                   href="#contact"
+//                   href="/contact"
 //                   onClick={() => setIsOpen(false)}
 //                   className="flex-1 bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity"
 //                 >
@@ -283,7 +283,7 @@ export function ExitIntentModal() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
                 <Link
-                  href="#contact"
+                  href="/contact"
                   onClick={() => setIsOpen(false)}
                   className="flex-1 bg-secondary text-secondary-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-medium hover:opacity-90 transition-opacity"
                 >

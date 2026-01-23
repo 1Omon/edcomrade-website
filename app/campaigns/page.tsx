@@ -150,7 +150,7 @@ export default function CampaignsPage() {
 
             <div className="pt-4">
               <Link
-                href="/#contact"
+                href="//contact"
                 className="bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-bold hover:shadow-lg transition-all inline-flex items-center gap-2"
               >
                 Apply for Pioneer Status

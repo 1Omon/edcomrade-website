@@ -32,4 +32,25 @@ export async function submitSchoolAction(formData: FormData) {
   return { id: (created as any)._id.toString() };
 }
 
+export async function submitContactAction(formData: FormData) {
+  await connectToDatabase();
+
+  const payload = {
+    firstName: String(formData.get("firstName") || "").trim(),
+    lastName: String(formData.get("lastName") || "").trim() || undefined,
+    email: String(formData.get("email") || "").trim(),
+    school: String(formData.get("school") || "").trim() || undefined,
+    message: String(formData.get("message") || "").trim() || undefined,
+  };
+
+  if (!payload.firstName || !payload.email) {
+    throw new Error("firstName and email are required");
+  }
+
+  const { Contact } = await import("@/models/Contact");
+  const created = await Contact.create(payload);
+  revalidatePath("/admin/contacts");
+  return { id: (created as any)._id.toString() };
+}
+
 

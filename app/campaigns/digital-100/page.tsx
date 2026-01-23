@@ -25,9 +25,9 @@ export default function Digital100Page() {
     <main className="min-h-screen bg-black text-white selection:bg-primary selection:text-white">
       <Navigation />
 
-      {/* Hero — The Inevitability Entrance */}
+      {/* Hero — A New Beginning */}
       <Section className="min-h-[95vh] flex items-center bg-black relative overflow-hidden">
-        {/* Infrastructure Glows */}
+        {/* Visual Glows */}
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-black to-black opacity-60" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary/10 blur-[150px] rounded-full opacity-40 animate-pulse" />
 
@@ -35,24 +35,24 @@ export default function Digital100Page() {
           <div className="max-w-5xl mx-auto text-center space-y-12">
             <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-semibold tracking-[0.3em] uppercase text-zinc-400">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              National Infrastructure Project
+              Special Project for Schools
             </div>
 
             <h1 className="text-5xl md:text-[10rem] font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 leading-[0.85]">
-              Visible. <br /> Trusted.
+              Found. <br /> Trusted.
             </h1>
 
             <p className="text-xl md:text-4xl text-zinc-400 font-light max-w-3xl mx-auto leading-tight">
-              If they can't find you on Google, do you exist? <br />
-              <span className="text-white font-medium">We are selecting 100 schools to digitize completely.</span>
+              If parents can't find you on Google, do you exist? <br />
+              <span className="text-white font-medium">We are choosing 100 schools to help them get organized and get found.</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-10">
               <Button size="xl" variant="premium" className="rounded-full px-16 text-xl" asChild>
-                <Link href="#apply">Apply for Cohort</Link>
+                <Link href="#apply">Apply Now</Link>
               </Button>
               <Link href="#details" className="text-zinc-500 hover:text-white transition-colors underline-offset-8 hover:underline text-lg">
-                See the infrastructure
+                See what's included
               </Link>
             </div>
           </div>
@@ -65,65 +65,65 @@ export default function Digital100Page() {
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-10">
               <h2 className="text-4xl md:text-7xl font-bold tracking-tight">
-                The Invisible <br /> Crisis.
+                Get <br /> Found.
               </h2>
               <p className="text-lg md:text-2xl text-zinc-400 leading-relaxed">
-                There are incredible schools in Ghana—with legacy teachers and stunning facilities—that look and feel abandoned online.
-                Broken links. Empty pages. No location on Google Maps.
+                There are amazing schools in Ghana—with great teachers and beautiful campuses—that look hidden online.
+                Broken links. Empty pages. Or not even appearing on Google Maps.
               </p>
               <p className="text-lg md:text-2xl text-zinc-300 font-medium leading-relaxed">
-                Parents judge you before they ever walk through your gates. <br />
-                <span className="text-secondary italic">Don't let a bad digital impression cost you a generation of students.</span>
+                Parents judge you before they ever visit. <br />
+                <span className="text-secondary italic">Don't let a poor digital profile cost you new students.</span>
               </p>
             </div>
             <div className="aspect-square bg-zinc-900 rounded-[3rem] border border-white/5 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-zinc-600 font-mono text-sm uppercase tracking-widest">(Before vs After Transformation)</span>
+              <div className="absolute inset-0 flex items-center justify-center text-center p-8">
+                <span className="text-zinc-600 font-mono text-sm uppercase tracking-widest">(We transform your school's digital home)</span>
               </div>
             </div>
           </div>
         </Container>
       </Section>
 
-      {/* The Infrastructure — What's Included */}
+      {/* What's Included */}
       <Section id="details" intensity="none" className="bg-black py-12 md:py-24">
         <Container>
           <div className="text-center max-w-4xl mx-auto mb-24 space-y-6">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tight">The Overhaul.</h2>
-            <p className="text-xl md:text-2xl text-zinc-400 font-light">Everything you need to look world-class. <span className="text-white font-medium">Zero upfront cost for selected schools.</span></p>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tight">Ready to Shine.</h2>
+            <p className="text-xl md:text-2xl text-zinc-400 font-light">Everything you need to look world-class. <span className="text-white font-medium">No upfront cost for the 100 schools we select.</span></p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <PackageCard
               icon={Globe}
-              title="Institutional Website"
-              desc="A mobile-first, infrastructure-grade website that accepts inquiries and builds instant authority."
+              title="A Modern Website"
+              desc="A beautiful website that looks great on every phone, accepts inquiries, and builds instant trust."
             />
             <PackageCard
               icon={Camera}
-              title="Cinematic Media Shoot"
-              desc="A professional day of photography and videography to showcase your campus as it truly is."
+              title="Professional Photos"
+              desc="A full day of professional photography and video to show off your campus and your students."
             />
             <PackageCard
               icon={MapPin}
-              title="Google Maps Authority"
-              desc="We claim and optimize your Google Business Profile. You show up when parents search."
+              title="Get on Google Maps"
+              desc="We set up and optimize your Google profile so you show up when parents search for 'schools near me'."
             />
             <PackageCard
               icon={Award}
-              title="Verification Badge"
-              desc="Verified 'Trusted School' status on Schoolpedia—the record of truth for Ghanaian education."
+              title="Trusted School Badge"
+              desc="A verified profile on Schoolpedia—Ghana's official directory where parents go to find the best schools."
             />
             <PackageCard
               icon={TrendingUp}
-              title="Admissions Dashboard"
-              desc="Digital forms and tracking so parents can apply from their phones, and you can track every lead."
+              title="Simple Admissions"
+              desc="Digital application forms parents can fill on their phones, so you never miss another student."
             />
             <PackageCard
               icon={ShieldCheck}
-              title="Ecosystem Identity"
-              desc="Integrate into the EdComrade OS. Connect your operations, your parents, and your future."
+              title="Modern Tools"
+              desc="Get early access to our system. Connect your office, your parents, and your future in one place."
             />
           </div>
         </Container>

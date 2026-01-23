@@ -26,13 +26,13 @@ export default function NotFound() {
 
                         <div className="space-y-6">
                             <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary mx-auto">
-                                Error 404: Node Missing
+                                Page Not Found
                             </div>
                             <h1 className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
-                                Out of <br /> <span className="italic">Reach.</span>
+                                Let's get <br /> <span className="italic">Back.</span>
                             </h1>
                             <p className="text-xl md:text-3xl text-muted-foreground font-light max-w-2xl mx-auto leading-tight">
-                                The protocol you are trying to access does not exist in the current education ledger.
+                                We can't find the page you're looking for. Let's get you back on the right path.
                             </p>
                         </div>
 

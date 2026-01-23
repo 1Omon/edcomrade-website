@@ -41,7 +41,7 @@ export default function HomePageClient() {
 
             {/* Perspective Switcher — Subtle Inception */}
             <div className="bg-muted/30 border-y border-border py-4">
-                <Container className="flex items-center justify-center gap-8 text-sm font-medium text-muted-foreground overflow-x-auto whitespace-nowrap">
+                <Container className="flex flex-wrap items-center justify-center gap-8 text-sm font-medium text-muted-foreground overflow-x-auto whitespace-nowrap">
                     <span className="flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-primary" />
                         Explore Perspective:

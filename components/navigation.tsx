@@ -24,11 +24,11 @@ export function Navigation() {
 
   // Ecosystem Layers
   const navLinks = [
-    { href: "/schools", label: "School OS", desc: "Digital Infrastructure" },
-    { href: "/parents", label: "Parent Network", desc: "Digital Peace of Mind" },
-    { href: "/intelligence", label: "Intelligence", desc: "Digital Visibility" },
-    { href: "/how-it-works", label: "Roadmap", desc: "The Deployment Loop" },
-    { href: "/manifesto", label: "Manifesto", desc: "The Mission" },
+    { href: "/schools", label: "For Schools", desc: "Tools to grow your school" },
+    { href: "/parents", label: "For Parents", desc: "Stay connected to your child" },
+    { href: "/intelligence", label: "Explore Schools", desc: "Find a school you can trust" },
+    { href: "/how-it-works", label: "How It Works", desc: "A simple path forward" },
+    { href: "/manifesto", label: "Our Story", desc: "Why we do what we do" },
   ];
 
   const isDarkPage = pathname === "/campaigns/digital-100";
@@ -72,7 +72,7 @@ export function Navigation() {
           {/* Action — The Execution */}
           <div className="hidden md:flex items-center gap-6">
             <Button variant="ghost" className="text-sm font-semibold" asChild>
-              <Link href="/login">Portal</Link>
+              <Link href="/contact">Contact</Link>
             </Button>
             <Button variant="premium" className="rounded-full px-8 shadow-xl shadow-primary/10" asChild>
               <Link href="/campaigns/digital-100">Get Digital 100</Link>
@@ -113,7 +113,7 @@ export function Navigation() {
             </div>
             <div className="grid grid-cols-2 gap-4 pt-4">
               <Button variant="outline" size="lg" className="rounded-2xl" asChild>
-                <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>Portal</Link>
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
               </Button>
               <Button variant="premium" size="lg" className="rounded-2xl shadow-2xl" asChild>
                 <Link href="/campaigns/digital-100" onClick={() => setIsMobileMenuOpen(false)}>Apply Now</Link>

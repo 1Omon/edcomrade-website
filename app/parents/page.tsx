@@ -30,50 +30,46 @@ export default function ParentsPage() {
             <Section className="min-[90vh] flex items-center">
                 <Container>
                     <div className="max-w-5xl mx-auto text-center space-y-12 pt-32">
-                        {/* <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-secondary/5 border border-secondary/10 text-xs font-bold tracking-[0.4em] uppercase text-secondary mx-auto">
-                            Ecosystem Layer 2: Network
-                        </div> */}
                         <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
-                            Digital <br /> <span className="text-secondary italic">Peace of Mind.</span>
+                            Connection & <br /> <span className="text-secondary italic">Peace of Mind.</span>
                         </h1>
                         <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
-                            Education should not be a "black box". ParentAide is a direct, verified window into your child's journey. Legitimacy in every update.
+                            Education should not be a "mystery". ParentAide gives you a direct, clear window into your child's journey, so you're always kept in the loop.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6">
                             <Button size="xl" variant="secondary" className="rounded-full px-12 text-xl shadow-2xl shadow-secondary/20" asChild>
-                                <Link href="#download">Join the Network</Link>
+                                <Link href="#download">Get the App</Link>
                             </Button>
                             <Button variant="outline" size="xl" className="rounded-full px-12 text-xl" asChild>
-                                <Link href="/schoolpedia">Find Verified Schools</Link>
+                                <Link href="/schoolpedia">Find Top Schools</Link>
                             </Button>
                         </div>
                     </div>
                 </Container>
             </Section>
 
-            {/* The Parent Experience — Network Power */}
+            {/* The Parent Experience — Always Connected */}
             <Section intensity="soft" className="py-32 md:py-48 border-y border-border/50 bg-secondary/5">
                 <Container>
                     <div className="grid lg:grid-cols-2 gap-24 items-center mb-32">
                         <div className="relative aspect-[3/4] bg-zinc-900 rounded-[4rem] overflow-hidden shadow-2xl ring-1 ring-white/10 group">
-                            {/* Mobile App Mockup Placeholder */}
                             <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 to-black flex items-center justify-center text-white/20">
-                                <p className="font-mono text-sm uppercase tracking-widest">(ParentAide App Interface)</p>
+                                <p className="font-mono text-sm uppercase tracking-widest">(Simple App Interface)</p>
                             </div>
                         </div>
                         <div className="space-y-12">
                             <div className="space-y-6">
-                                <h2 className="text-4xl md:text-7xl font-bold tracking-tight text-foreground">Always <br /> Connected.</h2>
+                                <h2 className="text-4xl md:text-7xl font-bold tracking-tight text-foreground">Stay <br /> Connected.</h2>
                                 <p className="text-lg md:text-2xl text-muted-foreground font-light leading-relaxed">
-                                    No more guessing. No more missing announcements. No more chasing receipts. ParentAide is the digital bridge between home and school.
+                                    No more missed announcements or chasing receipts. ParentAide is the simple bridge between your home and your child's school.
                                 </p>
                             </div>
 
                             <div className="grid sm:grid-cols-2 gap-8">
-                                <FeatureItem icon={Eye} title="Real-time Pulse" desc="Instant attendance and safety alerts. Know they arrived." />
-                                <FeatureItem icon={Network} title="Direct Bridge" desc="Secure channel to teachers and administrators." />
-                                <FeatureItem icon={ShieldCheck} title="Financial Clarity" desc="Pay fees and view verified history on your phone." />
-                                <FeatureItem icon={Telescope} title="Performance Track" desc="Visual progress reports and data-driven insights." />
+                                <FeatureItem icon={Eye} title="Daily Progress" desc="Instant attendance and safety alerts. See what they're learning." />
+                                <FeatureItem icon={Network} title="Direct Chat" desc="A secure and easy channel to reach teachers and the office." />
+                                <FeatureItem icon={ShieldCheck} title="Clear Payments" desc="Pay fees and see your payment history right on your phone." />
+                                <FeatureItem icon={Telescope} title="Future Goals" desc="Clear progress reports to help you spot your child's strengths." />
                             </div>
                         </div>
                     </div>
@@ -81,39 +77,39 @@ export default function ParentsPage() {
                     <div className="grid md:grid-cols-3 gap-8">
                         <FeatureCard
                             icon={Bell}
-                            title="Instant Authority"
-                            desc="Receive official announcements directly. No noise, just the information you need for your child's success."
+                            title="Easy Updates"
+                            desc="Receive the school's official news directly. Stay organized and informed about everything happening at school."
                         />
                         <FeatureCard
                             icon={Smartphone}
-                            title="Instant Visibility"
-                            desc="Designed for the busy parent. Everything—from attendance to academic results—available in three taps."
+                            title="Made for You"
+                            desc="Designed for busy parents. Check grades, attendance, and more in just a few taps on your phone."
                         />
                         <FeatureCard
                             icon={History}
-                            title="Legitimacy Ledger"
-                            desc="View a verified history of your child's academic and financial records. Data that provides peace of mind."
+                            title="Safe Records"
+                            desc="Keep a clear, verified history of your child's school journey. It's information that gives you true peace of mind."
                         />
                     </div>
                 </Container>
             </Section>
 
-            {/* Final Call — Network Inquiry */}
+            {/* Final Call — Get in Touch */}
             <Section id="contact" intensity="none" className="py-40">
                 <Container className="max-w-4xl space-y-20">
                     <div className="text-center space-y-8">
                         <h2 className="text-4xl md:text-8xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
-                            Join the Future.
+                            Join the Community.
                         </h2>
                         <p className="text-xl md:text-3xl text-muted-foreground font-light leading-relaxed max-w-2xl mx-auto">
-                            Become a partner in your child's educational journey. Verify your school's participation and join the network.
+                            Become a true partner in your child's education. See if your school is ready to connect with the network today.
                         </p>
                     </div>
 
                     <LeadForm
                         type="inquiry"
-                        title="Network Participation"
-                        subtitle="Request verification for your institution."
+                        title="Stay Informed"
+                        subtitle="Let's get your school connected."
                     />
                 </Container>
             </Section>

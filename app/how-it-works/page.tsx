@@ -16,25 +16,22 @@ export default function HowItWorksPage() {
         <main className="min-h-screen bg-background">
             <Navigation />
 
-            {/* Hero — The Roadmap */}
+            {/* Hero — Simple Steps to Success */}
             <Section className="min-[90vh] flex items-center">
                 <Container>
                     <div className="max-w-5xl mx-auto text-center space-y-12 pt-32">
-                        {/* <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary">
-                            The Protocol: How It Works
-                        </div> */}
                         <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
-                            It’s not just <br /> <span className="italic">Tools.</span>
+                            A Simple <br /> <span className="italic">Way.</span>
                         </h1>
                         <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
-                            Fragmentation is the silent tax on progress. EdComrade creates a self-reinforcing loop of visibility, efficiency, and institutional trust.
+                            Education doesn't have to be complicated. EdComrade helps schools get found, stay organized, and build lasting trust with parents.
                         </p>
                     </div>
                 </Container>
             </Section>
 
-            {/* The 3 Systems - Scroll Telling */}
-            <div className="relative pb-20">
+            {/* The 3 Steps - Simple Path */}
+            <div className="relative py-20">
                 {/* Vertical Line */}
                 <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block" />
 
@@ -47,10 +44,10 @@ export default function HowItWorksPage() {
                                     <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6">
                                         <span className="text-3xl font-bold">1</span>
                                     </div>
-                                    <h3 className="text-3xl font-bold mb-4">Schoolpedia</h3>
-                                    <p className="text-lg text-muted-foreground mb-6">The Discovery Engine.</p>
+                                    <h3 className="text-3xl font-bold mb-4">Be Found</h3>
+                                    <p className="text-lg text-muted-foreground mb-6">Let parents discover you online.</p>
                                     <ul className="space-y-3">
-                                        {["Verified School Profile", "SEO & Google Indexing", "Content Management"].map((item, i) => (
+                                        {["Verified School Profile", "Easy-to-find on Google", "Showcase Your Best Work"].map((item, i) => (
                                             <li key={i} className="flex gap-3 items-center text-muted-foreground">
                                                 <CheckCircle2 className="w-5 h-5 text-primary" /> {item}
                                             </li>
@@ -60,9 +57,9 @@ export default function HowItWorksPage() {
                             </div>
                             <div className="order-1 md:order-2 md:pl-12">
                                 <div className="sticky top-32">
-                                    <h2 className="text-4xl font-bold mb-6">It starts with <span className="text-primary">Visibility</span>.</h2>
+                                    <h2 className="text-4xl font-bold mb-6">It starts with being <span className="text-primary">Seen</span>.</h2>
                                     <p className="text-xl text-muted-foreground leading-relaxed max-w-md">
-                                        Parents cannot choose you if they cannot find you. Schoolpedia authenticates your school and puts you on the map.
+                                        Parents can't choose your school if they can't find you. We put your school on the map with information they can trust.
                                     </p>
                                 </div>
                             </div>
@@ -76,9 +73,9 @@ export default function HowItWorksPage() {
                         <div className="grid md:grid-cols-2 gap-16 items-center">
                             <div className="md:text-right md:pr-12">
                                 <div className="sticky top-32">
-                                    <h2 className="text-4xl font-bold mb-6">It works through <span className="text-primary">Efficiency</span>.</h2>
+                                    <h2 className="text-4xl font-bold mb-6">It works through <span className="text-primary">Getting Organized</span>.</h2>
                                     <p className="text-xl text-muted-foreground leading-relaxed max-w-md ml-auto">
-                                        Once students enroll, the ERP takes over. It manages fees, academics, and staff without the paperwork chaos.
+                                        Once students join, our system takes over the hard work. It manages fees, grades, and staff without the messy paperwork.
                                     </p>
                                 </div>
                             </div>
@@ -87,10 +84,10 @@ export default function HowItWorksPage() {
                                     <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary-foreground mb-6">
                                         <span className="text-3xl font-bold">2</span>
                                     </div>
-                                    <h3 className="text-3xl font-bold mb-4">The ERP Core</h3>
-                                    <p className="text-lg text-muted-foreground mb-6">The Operating Center.</p>
+                                    <h3 className="text-3xl font-bold mb-4">Stay Organized</h3>
+                                    <p className="text-lg text-muted-foreground mb-6">The heart of your school.</p>
                                     <ul className="space-y-3">
-                                        {["Student Records", "Fee Management", "Staff Payroll & Portal"].map((item, i) => (
+                                        {["Secure Student Records", "Simple Fee Tracking", "Everything in One Place"].map((item, i) => (
                                             <li key={i} className="flex gap-3 items-center text-muted-foreground">
                                                 <CheckCircle2 className="w-5 h-5 text-secondary" /> {item}
                                             </li>
@@ -111,10 +108,10 @@ export default function HowItWorksPage() {
                                     <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-white mb-6">
                                         <span className="text-3xl font-bold">3</span>
                                     </div>
-                                    <h3 className="text-3xl font-bold mb-4">ParentAide</h3>
-                                    <p className="text-lg text-primary-foreground/80 mb-6">The Trust Builder.</p>
+                                    <h3 className="text-3xl font-bold mb-4">Keep Parents Happy</h3>
+                                    <p className="text-lg text-primary-foreground/80 mb-6">Build lasting connections.</p>
                                     <ul className="space-y-3">
-                                        {["Real-time Grade Updates", "Fee Receipts & History", "Direct Teacher Comms"].map((item, i) => (
+                                        {["Direct News to Phones", "Digital Fee Receipts", "Better Communication"].map((item, i) => (
                                             <li key={i} className="flex gap-3 items-center text-primary-foreground/80">
                                                 <CheckCircle2 className="w-5 h-5 text-secondary" /> {item}
                                             </li>
@@ -126,7 +123,7 @@ export default function HowItWorksPage() {
                                 <div className="sticky top-32">
                                     <h2 className="text-4xl font-bold mb-6">It grows through <span className="text-primary">Trust</span>.</h2>
                                     <p className="text-xl text-muted-foreground leading-relaxed max-w-md">
-                                        Happy parents become your best marketers. ParentAide keeps them informed, involved, and loyal.
+                                        When parents are happy, your school grows. ParentAide keeps them informed, involved, and loyal to your school.
                                     </p>
                                 </div>
                             </div>
@@ -138,13 +135,13 @@ export default function HowItWorksPage() {
             {/* CTA */}
             <Section intensity="strong" className="py-32 text-center">
                 <Container className="max-w-3xl space-y-8">
-                    <h2 className="text-4xl md:text-5xl font-bold">Ready to close the loop?</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold">Ready to Move Forward?</h2>
                     <p className="text-xl opacity-90">
-                        Join the schools that are no longer just surviving, but thriving.
+                        Join the schools that are no longer just surviving, but truly flourishing.
                     </p>
                     <div className="flex justify-center gap-4">
                         <Button size="xl" variant="default" className="bg-white text-secondary-foreground hover:bg-white/90" asChild>
-                            <Link href="#contact">Get Started</Link>
+                            <Link href="/campaigns/digital-100#apply">Get Started Today</Link>
                         </Button>
                     </div>
                 </Container>

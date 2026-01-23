@@ -18,10 +18,8 @@ import { Container } from "@/components/ui/container";
 
 const ADMIN_NAV = [
     { name: "Intelligence Queue", icon: Inbox, href: "/admin/submissions" },
+    { name: "General Inquiries", icon: Users, href: "/admin/contacts" },
     { name: "Institutional Records", icon: School, href: "/admin/schools" },
-    // Future expansion
-    // { name: "Parent Network", icon: Users, href: "/admin/parents" },
-    // { name: "System Settings", icon: Settings, href: "/admin/settings" },
 ];
 
 export default function AdminLayout({

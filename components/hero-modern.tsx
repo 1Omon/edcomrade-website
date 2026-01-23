@@ -36,7 +36,7 @@ export default function HeroModern({ userRole }: HeroModernProps) {
             <Container className="relative z-20 pt-32 pb-20">
                 <div className="max-w-5xl mx-auto text-center space-y-12 animate-in fade-in slide-in-from-bottom-12 duration-1000 ease-out">
 
-                    <div className="inline-flex items-center gap-4 px-5 py-2 rounded-full bg-primary/5 border border-primary/10 shadow-sm backdrop-blur-sm group hover:bg-primary/10 transition-colors mx-auto">
+                    {/* <div className="inline-flex items-center gap-4 px-5 py-2 rounded-full bg-primary/5 border border-primary/10 shadow-sm backdrop-blur-sm group hover:bg-primary/10 transition-colors mx-auto">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -44,7 +44,7 @@ export default function HeroModern({ userRole }: HeroModernProps) {
                         <span className="text-xs font-bold text-primary uppercase tracking-[0.4em]">
                             {content.badge}
                         </span>
-                    </div>
+                    </div> */}
 
                     <h1 className="text-5xl sm:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
                         {content.title}
@@ -56,7 +56,7 @@ export default function HeroModern({ userRole }: HeroModernProps) {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6">
                         <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20 group h-16" asChild>
-                            <Link href="#contact">
+                            <Link href="/how-it-works">
                                 {content.ctaPrimary} <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                             </Link>
                         </Button>
@@ -79,13 +79,13 @@ export default function HeroModern({ userRole }: HeroModernProps) {
                             <div className="w-10 h-10 rounded-xl bg-muted/50 flex items-center justify-center group-hover:text-primary transition-colors">
                                 <Globe className="w-5 h-5" />
                             </div>
-                            <span className="text-sm font-semibold tracking-tight">Global Visibility</span>
+                            <span className="text-sm font-semibold tracking-tight">Found by Parents</span>
                         </div>
                         <div className="hidden md:flex items-center gap-3 text-muted-foreground group">
                             <div className="w-10 h-10 rounded-xl bg-muted/50 flex items-center justify-center group-hover:text-primary transition-colors">
                                 <Zap className="w-5 h-5" />
                             </div>
-                            <span className="text-sm font-semibold tracking-tight">Rapid Deployment</span>
+                            <span className="text-sm font-semibold tracking-tight">Simple Setup</span>
                         </div>
                     </div>
 

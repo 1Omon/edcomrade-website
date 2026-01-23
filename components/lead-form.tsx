@@ -37,12 +37,12 @@ export function LeadForm({ type, title, subtitle, className }: LeadFormProps) {
     if (isSuccess) {
         return (
             <div className="bg-background border border-border/50 rounded-3xl p-12 text-center space-y-6 animate-in zoom-in duration-500">
-                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center text-primary mx-auto">
+                <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-primary mx-auto">
                     <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h3 className="text-3xl font-bold">Protocol Received.</h3>
+                <h3 className="text-3xl font-bold">Thank You!</h3>
                 <p className="text-muted-foreground font-light max-w-sm mx-auto">
-                    Our architects have received your request. We will contact your institution shortly.
+                    We've received your request and our team will be in touch with you shortly.
                 </p>
             </div>
         );
@@ -51,9 +51,9 @@ export function LeadForm({ type, title, subtitle, className }: LeadFormProps) {
     return (
         <div className={cn("bg-background border border-border/50 rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-primary/5", className)}>
             <div className="space-y-4 mb-10">
-                <h3 className="text-3xl font-bold tracking-tight">{title || "Start Implementation"}</h3>
+                <h3 className="text-3xl font-bold tracking-tight">{title || "Get Started Today"}</h3>
                 <p className="text-muted-foreground font-light leading-relaxed">
-                    {subtitle || "Connect your school to the national education backbone."}
+                    {subtitle || "Get the tools you need to grow your school and stay organized."}
                 </p>
             </div>
 
@@ -81,7 +81,7 @@ export function LeadForm({ type, title, subtitle, className }: LeadFormProps) {
 
                 <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                        <label className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground">Email Protocol</label>
+                        <label className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground">Email Address</label>
                         <input
                             name="email"
                             type="email"
@@ -120,7 +120,7 @@ export function LeadForm({ type, title, subtitle, className }: LeadFormProps) {
                         <Loader2 className="w-6 h-6 animate-spin" />
                     ) : (
                         <>
-                            Submit to Ledger <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            Get Started <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </>
                     )}
                 </Button>

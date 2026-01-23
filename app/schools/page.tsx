@@ -26,100 +26,97 @@ export default function SchoolsPage() {
         <main className="min-h-screen bg-background text-foreground">
             <Navigation />
 
-            {/* Hero — The OS for Institutions */}
+            {/* Hero — The Foundation for Modern Schools */}
             <Section className="min-[90vh] flex items-center">
                 <Container>
                     <div className="max-w-5xl mx-auto text-center space-y-12 pt-32">
-                        {/* <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary mx-auto">
-                            Ecosystem Layer 1: Infrastructure
-                        </div> */}
                         <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
-                            The OS for <br /> <span className="text-primary italic">Institutions.</span>
+                            The System for <br /> <span className="text-primary italic">Better Schools.</span>
                         </h1>
                         <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
-                            Fragmentation is expensive. EdComrade is the unified backbone that turns a school building into a digital institution.
+                            Running a school shouldn't be a struggle. Get the tools you need to manage everything in one place and show parents the excellence you provide.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6">
                             <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20" asChild>
-                                <Link href="#contact">Deploy Infrastructure</Link>
+                                <Link href="/contact">Build My School Profile</Link>
                             </Button>
                             <Button variant="outline" size="xl" className="rounded-full px-12 text-xl" asChild>
-                                <Link href="/campaigns/digital-100">Join Digital 100</Link>
+                                <Link href="/campaigns/digital-100">Join the Digital 100</Link>
                             </Button>
                         </div>
                     </div>
                 </Container>
             </Section>
 
-            {/* The Core Capabilities — Infrastructure First */}
+            {/* The Core Benefits — Built for Success */}
             <Section intensity="soft" className="py-32 md:py-48 border-y border-border/50">
                 <Container>
                     <div className="grid lg:grid-cols-2 gap-24 items-end mb-32">
                         <div className="space-y-6">
-                            <h2 className="text-4xl md:text-7xl font-bold tracking-tight">Built for <br /> Sovereign Control.</h2>
+                            <h2 className="text-4xl md:text-7xl font-bold tracking-tight">Built to <br /> Help You Lead.</h2>
                             <p className="text-lg md:text-2xl text-muted-foreground font-light leading-relaxed">
-                                We don't just provide software; we provide the foundation for digital visibility, operational integrity, and long-term data sovereignty.
+                                We give you a solid foundation to manage your fees, grades, and parent communication with complete confidence.
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-4 justify-start lg:justify-end">
-                            <CapabilityBadge icon={Fingerprint} label="Institutional Identity" />
-                            <CapabilityBadge icon={ShieldCheck} label="Fee Integrity" />
-                            <CapabilityBadge icon={Cpu} label="System Automation" />
-                            <CapabilityBadge icon={BarChart3} label="Data Intelligence" />
+                            <CapabilityBadge icon={Fingerprint} label="Professional Look" />
+                            <CapabilityBadge icon={ShieldCheck} label="Clear Records" />
+                            <CapabilityBadge icon={Cpu} label="Simple Setup" />
+                            <CapabilityBadge icon={BarChart3} label="Better Insights" />
                         </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <FeatureCard
                             icon={Fingerprint}
-                            title="Visibility (Schoolpedia)"
-                            desc="Claim your institutional record. Verify your results, your facilities, and your legacy. If parents can't find you on the map, you don't exist."
+                            title="Get Found (Schoolpedia)"
+                            desc="Don't be invisible. We help you create a verified profile that makes it easy for parents to find your school and trust what you offer."
                         />
                         <FeatureCard
                             icon={ShieldCheck}
-                            title="Operational Integrity"
-                            desc="Digital fee collection and automated student records. End the leakages. Provide dignity and clarity to both the bursar and the family."
+                            title="Clear Finances"
+                            desc="Collect fees digitally and keep messy records away. Give parents professional receipts and give your bursar total peace of mind."
                         />
                         <FeatureCard
                             icon={TrendingUp}
-                            title="Growth Intelligence"
-                            desc="Real-time admissions tracking and retention data. Use intelligence to predict your next generation of students, not just count the current ones."
+                            title="Plan Your Growth"
+                            desc="See at a glance how many students are joining and leaving. Use clear charts to plan for the next term with confidence."
                         />
                         <FeatureCard
                             icon={Users}
-                            title="Instructional Sovereignty"
-                            desc="Automate lesson notes, grading, and attendance. Free your teachers from the prison of paperwork so they can focus on inspiration."
+                            title="Support Your Teachers"
+                            desc="Automate grading and lesson notes. When teachers spend less time on paperwork, they have more time to inspire students."
                         />
                         <FeatureCard
                             icon={Globe}
-                            title="Global Presence"
-                            desc="A mobile-responsive institutional website that integrates directly with your operations. Seamless inquiries from phone to dashboard."
+                            title="Your Modern Website"
+                            desc="Get a professional website for your school that looks great on every phone. Let parents send inquiries directly to you."
                         />
                         <FeatureCard
                             icon={Lock}
-                            title="Institutional Memory"
-                            desc="Ten years of student history, staff records, and financial data. Secure, searchable, and owned completely by your institution."
+                            title="School History"
+                            desc="Years of student records and financial data safely saved. It's your history, protected by us, and always owned by you."
                         />
                     </div>
                 </Container>
             </Section>
 
-            {/* Call to Inevitability — Infrastructure Inquiry */}
+            {/* Final Call — Start Your Journey */}
             <Section id="contact" intensity="none" className="py-40">
                 <Container className="max-w-4xl space-y-20">
                     <div className="text-center space-y-8">
                         <h2 className="text-4xl md:text-8xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
-                            Inevitable Progress.
+                            Move Forward.
                         </h2>
                         <p className="text-xl md:text-3xl text-muted-foreground font-light leading-relaxed max-w-2xl mx-auto">
-                            The world is digitizing. Your school either leads this change or is eventually replaced by it.
+                            The world is moving to digital. We make sure your school is leading the way, not being left behind.
                         </p>
                     </div>
 
                     <LeadForm
                         type="application"
-                        title="Infrastructure Deployment"
-                        subtitle="Begin the transition to Africa's Education OS."
+                        title="Get Your Tools"
+                        subtitle="Join the future of education in Ghana."
                     />
                 </Container>
             </Section>

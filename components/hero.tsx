@@ -47,7 +47,7 @@ export default function Hero({ userRole }: HeroProps) {
               {/* CTA Buttons */}
               <div className="flex flex-row xs:flex-col gap-4 pt-4">
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="group bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-lg font-medium hover:shadow-2xl hover:shadow-secondary/30 hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-3"
                 >
                   {content.ctaPrimary}
@@ -115,7 +115,7 @@ export default function Hero({ userRole }: HeroProps) {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
             <Link
-              href="#contact"
+              href="/contact"
               className="group bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-secondary/30 hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-3"
             >
               {content.ctaPrimary}
