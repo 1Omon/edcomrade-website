@@ -92,14 +92,14 @@ export function ContactSection() {
                   <label htmlFor="firstName" className="block text-sm font-medium mb-2">
                     First Name
                   </label>
-                  <Input id="firstName" placeholder="John" {...register('firstName')} aria-invalid={!!errors.firstName} />
+                  <Input id="firstName" placeholder="Kofi" {...register('firstName')} aria-invalid={!!errors.firstName} />
                   {errors.firstName && <p className="mt-1 text-xs text-red-600">{errors.firstName.message}</p>}
                 </div>
                 <div>
                   <label htmlFor="lastName" className="block text-sm font-medium mb-2">
                     Last Name
                   </label>
-                  <Input id="lastName" placeholder="Doe" {...register('lastName')} />
+                  <Input id="lastName" placeholder="Ato" {...register('lastName')} />
                 </div>
               </div>
 
@@ -107,7 +107,7 @@ export function ContactSection() {
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
                   Email
                 </label>
-                <Input id="email" type="email" placeholder="john@school.com" {...register('email')} aria-invalid={!!errors.email} />
+                <Input id="email" type="email" placeholder="Kofi@school.com" {...register('email')} aria-invalid={!!errors.email} />
                 {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email.message}</p>}
               </div>
 

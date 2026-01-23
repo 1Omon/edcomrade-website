@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
+import { Magnetic } from "@/components/ui/magnetic";
 import {
   Check,
   ArrowRight,
@@ -48,12 +49,16 @@ export default function Digital100Page() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-10">
-              <Button size="xl" variant="premium" className="rounded-full px-16 text-xl" asChild>
-                <Link href="#apply">Apply Now</Link>
-              </Button>
-              <Link href="#details" className="text-zinc-500 hover:text-white transition-colors underline-offset-8 hover:underline text-lg">
-                See what's included
-              </Link>
+              <Magnetic strength={0.2}>
+                <Button size="xl" variant="premium" className="rounded-full px-16 text-xl" asChild>
+                  <Link href="#apply">Apply Now</Link>
+                </Button>
+              </Magnetic>
+              <Magnetic strength={0.1}>
+                <Link href="#details" className="text-zinc-500 hover:text-white transition-colors underline-offset-8 hover:underline text-lg">
+                  See what's included
+                </Link>
+              </Magnetic>
             </div>
           </div>
         </Container>

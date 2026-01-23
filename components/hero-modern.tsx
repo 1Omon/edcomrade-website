@@ -6,6 +6,7 @@ import { CONTENT_BY_ROLE } from "@/lib/content-constants";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
+import { Magnetic } from "@/components/ui/magnetic";
 
 interface HeroModernProps {
     userRole: string;
@@ -55,17 +56,21 @@ export default function HeroModern({ userRole }: HeroModernProps) {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6">
-                        <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20 group h-16" asChild>
-                            <Link href="/how-it-works">
-                                {content.ctaPrimary} <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                        </Button>
+                        <Magnetic strength={0.2}>
+                            <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20 group h-16" asChild>
+                                <Link href="/how-it-works">
+                                    {content.ctaPrimary} <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            </Button>
+                        </Magnetic>
 
-                        <Button variant="outline" size="xl" className="rounded-full px-12 text-xl h-16 border-border hover:bg-muted/50" asChild>
-                            <Link href="/campaigns/digital-100">
-                                {content.ctaSecondary}
-                            </Link>
-                        </Button>
+                        <Magnetic strength={0.1}>
+                            <Button variant="outline" size="xl" className="rounded-full px-12 text-xl h-16 border-border hover:bg-muted/50" asChild>
+                                <Link href="/campaigns/digital-100">
+                                    {content.ctaSecondary}
+                                </Link>
+                            </Button>
+                        </Magnetic>
                     </div>
 
                     <div className="pt-12 grid grid-cols-2 md:grid-cols-3 gap-12 items-center">

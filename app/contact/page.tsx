@@ -100,10 +100,10 @@ export default function ContactPage() {
                                 ) : (
                                     <form onSubmit={handleSubmit} className="space-y-8">
                                         <div className="grid sm:grid-cols-2 gap-8">
-                                            <FormGroup label="First Name" name="firstName" required placeholder="John" />
-                                            <FormGroup label="Last Name" name="lastName" placeholder="Doe" />
+                                            <FormGroup label="First Name" name="firstName" required placeholder="Kofi" />
+                                            <FormGroup label="Last Name" name="lastName" placeholder="Ato" />
                                         </div>
-                                        <FormGroup label="Email Address" name="email" type="email" required placeholder="john@example.com" />
+                                        <FormGroup label="Email Address" name="email" type="email" required placeholder="Kofi@example.com" />
                                         <FormGroup label="School Name (Optional)" name="school" placeholder="The Royal Academy" />
                                         <div className="space-y-3">
                                             <label className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground">How can we help?</label>

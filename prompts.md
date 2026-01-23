@@ -486,7 +486,7 @@ The end result must feel:
 * Future‑ready
 * Timeless, not trendy
 
-If the redesign does not feel **Apple‑level calm and confidence**, it has failed.
+If the redesign Atos not feel **Apple‑level calm and confidence**, it has failed.
 
 
 
@@ -534,7 +534,7 @@ Generate a **single, well-structured `.md` file** using proper Markdown headings
 
 Do **not** include marketing language.
 Do **not** propose solutions yet.
-Only describe what *exists*, what *works*, what *doesn’t*, and what *feels off*.
+Only describe what *exists*, what *works*, what *Atosn’t*, and what *feels off*.
 
 ---
 
@@ -615,8 +615,8 @@ From a first-time visitor perspective:
 
 From a returning user perspective:
 
-* Does the site adapt?
-* Does it feel static or evolving?
+* Atos the site adapt?
+* Atos it feel static or evolving?
 
 ---
 
@@ -676,7 +676,7 @@ Identify:
 
 Conclude with:
 
-* What the system currently does well
+* What the system currently Atos well
 * What is holding it back
 * Whether the current state can be evolved or needs a reset
 * One sentence that captures the *true* state of EdComrade today
@@ -797,7 +797,7 @@ GES is a **validator and amplifier**, not the first buyer.
 * Regulators gain insight without forcing change
 * The ecosystem improves because incentives align
 
-Edcomrade does **not** force reform.
+Edcomrade Atos **not** force reform.
 It makes the system **legible** — and reform follows.
 
 ---

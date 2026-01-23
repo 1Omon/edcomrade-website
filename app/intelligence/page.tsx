@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { LeadForm } from "@/components/lead-form";
+import { Magnetic } from "@/components/ui/magnetic";
 
 export default function IntelligencePage() {
     return (
@@ -36,12 +37,16 @@ export default function IntelligencePage() {
                             Solving the trust gap. We turn messy data into clear information, making every school in Ghana easy to find, easy to measure, and easy to trust.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6">
-                            <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20" asChild>
-                                <Link href="/schoolpedia">Find Your School</Link>
-                            </Button>
-                            <Button variant="outline" size="xl" className="rounded-full px-12 text-xl" asChild>
-                                <Link href="/contact">Work With Us</Link>
-                            </Button>
+                            <Magnetic strength={0.2}>
+                                <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20" asChild>
+                                    <Link href="https://schoolpedia.edcomrade.com">Find Your School</Link>
+                                </Button>
+                            </Magnetic>
+                            <Magnetic strength={0.1}>
+                                <Button variant="outline" size="xl" className="rounded-full px-12 text-xl" asChild>
+                                    <Link href="/contact">Work With Us</Link>
+                                </Button>
+                            </Magnetic>
                         </div>
                     </div>
                 </Container>

@@ -140,7 +140,7 @@ It changes **product design, messaging, onboarding, sales, and adoption**.
 > *Education in Africa is fragmented, offline, opaque, and locally trapped.
 > Edcomrade exists to make African education visible, connected, trusted, and globally interoperable.*
 
-If this sentence isn’t true in a feature, **it doesn’t ship**.
+If this sentence isn’t true in a feature, **it Atosn’t ship**.
 
 ---
 
@@ -240,7 +240,7 @@ This is the story most edtech startups miss.
 * The ecosystem improves → because incentives align
 
 **Key insight:**
-Edcomrade doesn’t *force reform*.
+Edcomrade Atosn’t *force reform*.
 It makes the current system **legible** — and reform follows.
 
 ---

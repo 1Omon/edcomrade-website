@@ -9,6 +9,9 @@ import { CustomCursor } from "@/components/custom-cursor";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { BackToTop } from "@/components/back-to-top";
 import { ExitIntentModal } from "@/components/exit-intent-modal";
+import { BackgroundBlobs } from "@/components/ui/background-blobs";
+import { Noise } from "@/components/ui/noise";
+import { PageTransitionWrapper } from "@/components/ui/page-transition";
 import { LoadingSkeleton } from "@/components/loading-skeleton";
 
 const inter = Inter({
@@ -197,10 +200,14 @@ export default function RootLayout({
         className={`${inter.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
+        <Noise />
+        <BackgroundBlobs />
         <CustomCursor />
         <ScrollProgress />
         <Suspense fallback={<LoadingSkeleton />}>
-          {children}
+          <PageTransitionWrapper>
+            {children}
+          </PageTransitionWrapper>
           <Analytics />
         </Suspense>
         <WhatsAppButton />

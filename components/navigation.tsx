@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { Magnetic } from "@/components/ui/magnetic";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,30 +54,35 @@ export function Navigation() {
           {/* Desktop Navigation — The Network */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "px-6 py-2 rounded-full text-sm font-medium transition-all hover:bg-muted/50 group relative",
-                  pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {link.label}
-                {pathname === link.href && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary" />
-                )}
-              </Link>
+              <Magnetic key={link.href} strength={0.15}>
+                <Link
+                  href={link.href}
+                  className={cn(
+                    "px-6 py-2 rounded-full text-sm font-medium transition-all hover:bg-muted/50 group relative",
+                    pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {link.label}
+                  {pathname === link.href && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary" />
+                  )}
+                </Link>
+              </Magnetic>
             ))}
           </div>
 
           {/* Action — The Execution */}
           <div className="hidden md:flex items-center gap-6">
-            <Button variant="ghost" className="text-sm font-semibold" asChild>
-              <Link href="/contact">Contact</Link>
-            </Button>
-            <Button variant="premium" className="rounded-full px-8 shadow-xl shadow-primary/10" asChild>
-              <Link href="/campaigns/digital-100">Get Digital 100</Link>
-            </Button>
+            <Magnetic strength={0.1}>
+              <Button variant="ghost" className="text-sm font-semibold" asChild>
+                <Link href="/contact">Contact</Link>
+              </Button>
+            </Magnetic>
+            <Magnetic strength={0.2}>
+              <Button variant="premium" className="rounded-full px-8 shadow-xl shadow-primary/10" asChild>
+                <Link href="/campaigns/digital-100">Get Digital 100</Link>
+              </Button>
+            </Magnetic>
           </div>
 
           {/* Mobile Toggle */}

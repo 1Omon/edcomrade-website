@@ -24,7 +24,7 @@ export default function HowItWorksPage() {
                             A Simple <br /> <span className="italic">Way.</span>
                         </h1>
                         <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
-                            Education doesn't have to be complicated. EdComrade helps schools get found, stay organized, and build lasting trust with parents.
+                            Education Atosn't have to be complicated. EdComrade helps schools get found, stay organized, and build lasting trust with parents.
                         </p>
                     </div>
                 </Container>

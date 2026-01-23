@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { LeadForm } from "@/components/lead-form";
+import { Magnetic } from "@/components/ui/magnetic";
 
 export default function ParentsPage() {
     return (
@@ -37,12 +38,16 @@ export default function ParentsPage() {
                             Education should not be a "mystery". ParentAide gives you a direct, clear window into your child's journey, so you're always kept in the loop.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6">
-                            <Button size="xl" variant="secondary" className="rounded-full px-12 text-xl shadow-2xl shadow-secondary/20" asChild>
-                                <Link href="#download">Get the App</Link>
-                            </Button>
-                            <Button variant="outline" size="xl" className="rounded-full px-12 text-xl" asChild>
-                                <Link href="/schoolpedia">Find Top Schools</Link>
-                            </Button>
+                            <Magnetic strength={0.2}>
+                                <Button size="xl" variant="secondary" className="rounded-full px-12 text-xl shadow-2xl shadow-secondary/20" asChild>
+                                    <Link href="#download">Get the App</Link>
+                                </Button>
+                            </Magnetic>
+                            <Magnetic strength={0.1}>
+                                <Button variant="outline" size="xl" className="rounded-full px-12 text-xl" asChild>
+                                    <Link href="/schoolpedia">Find Top Schools</Link>
+                                </Button>
+                            </Magnetic>
                         </div>
                     </div>
                 </Container>

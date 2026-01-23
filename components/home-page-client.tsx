@@ -12,6 +12,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ArrowRight, Check, School, Globe, Users, TrendingUp, Sparkles } from "lucide-react";
 import { AnimatedCounter } from "@/components/animated-counter";
 import Link from "next/link";
+import { Magnetic } from "@/components/ui/magnetic";
 import { UserRole } from "./role-selection-modal";
 
 export default function HomePageClient() {
@@ -161,9 +162,11 @@ export default function HomePageClient() {
                             </div>
 
                             <div className="pt-8">
-                                <Button asChild size="xl" className="rounded-full shadow-2xl">
-                                    <Link href="/technology">Explore the Layers <ArrowRight className="ml-3" /></Link>
-                                </Button>
+                                <Magnetic strength={0.15}>
+                                    <Button asChild size="xl" className="rounded-full shadow-2xl">
+                                        <Link href="/technology">Explore the Layers <ArrowRight className="ml-3" /></Link>
+                                    </Button>
+                                </Magnetic>
                             </div>
                         </div>
                         <div className="relative aspect-square lg:aspect-[4/5] w-full bg-zinc-950 rounded-[4rem] overflow-hidden shadow-[0_0_100px_rgba(0,71,171,0.15)] ring-1 ring-white/5 group">
@@ -191,12 +194,16 @@ export default function HomePageClient() {
                             <span className="text-white font-medium">Is your school ready to be seen?</span>
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-8 pt-10">
-                            <Button asChild size="xl" variant="premium" className="rounded-full px-16 text-xl">
-                                <Link href="/campaigns/digital-100">Apply to Cohort</Link>
-                            </Button>
-                            <Button asChild size="xl" variant="ghost" className="text-zinc-500 hover:text-white transition-colors">
-                                <Link href="/campaigns/digital-100">Learn about Inevitability</Link>
-                            </Button>
+                            <Magnetic strength={0.2}>
+                                <Button asChild size="xl" variant="premium" className="rounded-full px-16 text-xl">
+                                    <Link href="/campaigns/digital-100">Apply to Cohort</Link>
+                                </Button>
+                            </Magnetic>
+                            <Magnetic strength={0.1}>
+                                <Button asChild size="xl" variant="ghost" className="text-zinc-500 hover:text-white transition-colors">
+                                    <Link href="/campaigns/digital-100">Learn about Inevitability</Link>
+                                </Button>
+                            </Magnetic>
                         </div>
                     </div>
                 </Container>

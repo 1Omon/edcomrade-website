@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { LeadForm } from "@/components/lead-form";
+import { Magnetic } from "@/components/ui/magnetic";
 
 export default function SchoolsPage() {
     return (
@@ -37,12 +38,16 @@ export default function SchoolsPage() {
                             Running a school shouldn't be a struggle. Get the tools you need to manage everything in one place and show parents the excellence you provide.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-6">
-                            <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20" asChild>
-                                <Link href="/contact">Build My School Profile</Link>
-                            </Button>
-                            <Button variant="outline" size="xl" className="rounded-full px-12 text-xl" asChild>
-                                <Link href="/campaigns/digital-100">Join the Digital 100</Link>
-                            </Button>
+                            <Magnetic strength={0.2}>
+                                <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20" asChild>
+                                    <Link href="/contact">Build My School Profile</Link>
+                                </Button>
+                            </Magnetic>
+                            <Magnetic strength={0.1}>
+                                <Button variant="outline" size="xl" className="rounded-full px-12 text-xl" asChild>
+                                    <Link href="/campaigns/digital-100">Join the Digital 100</Link>
+                                </Button>
+                            </Magnetic>
                         </div>
                     </div>
                 </Container>
