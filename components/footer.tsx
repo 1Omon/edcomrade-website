@@ -129,7 +129,7 @@ function SocialLink({ href, icon: Icon }: { href: string, icon: any }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-muted-foreground/50 hover:text-primary transition-colors transition-transform hover:-translate-y-1"
+      className="text-muted-foreground/50 hover:text-primary transition-colors hover:-translate-y-1"
     >
       <Icon className="w-5 h-5" />
     </Link>

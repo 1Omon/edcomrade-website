@@ -200,7 +200,7 @@ export default function HomePageClient() {
                                 </Button>
                             </Magnetic>
                             <Magnetic strength={0.1}>
-                                <Button asChild size="xl" variant="ghost" className="text-zinc-500 hover:text-white hover:text-foreground transition-colors">
+                                <Button asChild size="xl" variant="ghost" className="text-zinc-500  hover:text-foreground transition-colors">
                                     <Link href="/campaigns/digital-100">Learn about Inevitability</Link>
                                 </Button>
                             </Magnetic>

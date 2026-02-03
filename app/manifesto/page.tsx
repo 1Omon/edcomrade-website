@@ -115,7 +115,7 @@ export default function AboutPage() {
             />
             <TeamMember
               name="Prince Sarfo"
-              role="CTO & Head of Engineering"
+              role="CTO & Software Engineer"
               bio="Building Edcomrade and ecosystem interoperability."
               initials="PS"
             />
