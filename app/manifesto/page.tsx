@@ -127,27 +127,27 @@ export default function AboutPage() {
             />
             <TeamMember
               name="Reginald Owusu"
-              role="Head of AI"
-              bio="Building the intelligence engine for EdComrade."
+              role="Software Engineer, Schoolpedia"
+              bio="Building the Schoolpedia network and national visibility protocols."
               initials="RO"
             />
+              <TeamMember
+                name="Emmanuel Antwi-Bosiako"
+                role="Software Engineer, Schoolpedia"
+                bio="Building the Schoolpedia network and national visibility protocols."
+                initials="EA"
+              />
             <TeamMember
-              name="Judas Jackson"
+              name="Judah Jackson"
               role="Software Engineer, School ERP"
               bio="Building the School ERP and Parent Portal."
               initials="JJ"
             />
             <TeamMember
-              name="Emmanuel Antwi-Bosiako"
-              role="Software Engineer, Schoolpedia"
-              bio="Building the Schoolpedia ledger and national visibility protocols."
-              initials="EA"
-            />
-            <TeamMember
-              name="William "
+              name="William Owusu"
               role="Software Engineer, School ERP"
               bio="Building the School ERP and Parent Portal."
-              initials="EA"
+              initials="WO"
             />
             <TeamMember
               name="Seth Amissah"
