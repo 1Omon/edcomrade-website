@@ -99,7 +99,7 @@ export const CONTENT_BY_ROLE = {
             items: [
                 {
                     icon: Globe,
-                    title: "Schoolpedia: The Record",
+                    title: "Global Visibility",
                     desc: "The single, verified record of truth for every educational institution in Ghana.",
                 },
                 {
@@ -109,7 +109,7 @@ export const CONTENT_BY_ROLE = {
                 },
                 {
                     icon: Cpu,
-                    title: "Edcomrade",
+                    title: "ERP Infrastructure",
                     desc: "The underlying technology that makes African schools inevitable on the global stage.",
                 },
                 {

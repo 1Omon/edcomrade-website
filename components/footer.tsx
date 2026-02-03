@@ -49,7 +49,7 @@ export function Footer() {
           </FooterColumn>
 
           <FooterColumn title="About Us">
-            <FooterLink href="/manifesto">Our Manifestor</FooterLink>
+            <FooterLink href="/manifesto">Our Manifesto</FooterLink>
             <FooterLink href="/technology">Technology</FooterLink>
             <FooterLink href="/partners">Work With Us</FooterLink>
             <FooterLink href="/careers">Careers</FooterLink>

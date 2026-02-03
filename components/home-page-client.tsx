@@ -77,7 +77,7 @@ export default function HomePageClient() {
                             <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-primary mb-2">
                                 <AnimatedCounter end={1500} suffix="+" />
                             </h4>
-                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Schools Standardized</p>
+                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Schools To Standardize</p>
                         </div>
                         <div>
                             <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-foreground mb-2">
@@ -147,9 +147,9 @@ export default function HomePageClient() {
 
                             <div className="space-y-6">
                                 {[
-                                    { title: "Layer 1: School OS", desc: "The technical backbone for modern operations." },
-                                    { title: "Layer 2: Parent Network", desc: "The verified bridge between school and home." },
-                                    { title: "Layer 3: Global Visibility", desc: "Making African schools discoverable to the world." }
+                                    { title: "Layer 1: School ERP", desc: "The technical backbone for modern operations." },
+                                    { title: "Layer 2: ParentAide", desc: "The verified bridge between school and home." },
+                                    { title: "Layer 3: Schoolpedia", desc: "Making African schools discoverable to the world." }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-6 items-start group">
                                         <div className="text-4xl font-bold text-muted-foreground/30 group-hover:text-primary transition-colors">0{i + 1}</div>
