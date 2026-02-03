@@ -11,7 +11,7 @@ export function Footer() {
         <div className="flex items-center gap-2 text-[12px] text-muted-foreground/40 font-medium mb-12 py-4 border-b border-border/30">
           <Link href="/" className="hover:text-foreground transition-colors">EdComrade Home</Link>
           <span>/</span>
-          <span className="text-muted-foreground/60">Verified Schools</span>
+          <span className="text-muted-foreground/90">Verified Schools</span>
         </div>
 
         {/* Branding & Logo Protocol */}
@@ -37,7 +37,7 @@ export function Footer() {
           <FooterColumn title="Information">
             <FooterLink href="/schools">For Schools</FooterLink>
             <FooterLink href="/parents">For Parents</FooterLink>
-            <FooterLink href="/intelligence">Find a School</FooterLink>
+            <FooterLink href="/schoolpedia.edcomrade.com">Find a School</FooterLink>
             <FooterLink href="/how-it-works">How It Works</FooterLink>
           </FooterColumn>
 
@@ -49,7 +49,7 @@ export function Footer() {
           </FooterColumn>
 
           <FooterColumn title="About Us">
-            <FooterLink href="/manifesto">Our Story</FooterLink>
+            <FooterLink href="/manifesto">Our Manifestor</FooterLink>
             <FooterLink href="/technology">Technology</FooterLink>
             <FooterLink href="/partners">Work With Us</FooterLink>
             <FooterLink href="/careers">Careers</FooterLink>
@@ -65,7 +65,7 @@ export function Footer() {
             <div className="space-y-4">
               <p className="text-[11px] text-muted-foreground uppercase tracking-widest font-bold">Location</p>
               <address className="not-italic text-sm text-muted-foreground font-light space-y-1">
-                <p>Accra Hub</p>
+                <p>Lakeside (Adenta)</p>
                 <p>Ghana, West Africa</p>
               </address>
               <div className="flex gap-4 pt-4">
@@ -80,7 +80,7 @@ export function Footer() {
         {/* Legal & Utility Protocol */}
         <div className="pt-12 border-t border-border/50">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-[12px] text-muted-foreground/60 font-light">
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-[12px] text-muted-foreground/90 font-light">
               <span>© 2026 EdComrade.</span>
               <FooterLink href="#" isLegal>Privacy Policy</FooterLink>
               <FooterLink href="#" isLegal>Terms of Service</FooterLink>

@@ -28,7 +28,7 @@ export default function TechnologyPage() {
       {/* Hero — The Technical Backbone */}
       <Section className="min-[90vh] flex items-center overflow-hidden relative">
         <Container>
-          <div className="max-w-5xl mx-auto text-center space-y-12 py-32">
+          <div className="max-w-5xl mx-auto text-center space-y-12 pt-48">
             {/* <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary mx-auto">
               Architecture & Protocol
             </div> */}
@@ -49,7 +49,7 @@ export default function TechnologyPage() {
             <div className="space-y-12">
               <h2 className="text-4xl md:text-7xl font-bold tracking-tight">The Unified <br /> Backbone.</h2>
               <p className="text-lg md:text-2xl text-muted-foreground font-light leading-relaxed">
-                Fragmented software creates data silos. EdComrade OS is a single system of record where every transaction, attendance record, and academic grade flows through a verified intelligence layer.
+                Fragmented software creates data silos. Edcomrade is a single system of record where every transaction, attendance record, and academic grade flows through a verified intelligence layer.
               </p>
 
               <div className="space-y-8">
@@ -87,21 +87,21 @@ export default function TechnologyPage() {
           <div className="grid md:grid-cols-3 gap-16">
             <div className="space-y-6">
               <Cpu className="w-12 h-12 text-primary" />
-              <h3 className="text-3xl font-bold tracking-tight">School OS Core</h3>
+              <h3 className="text-3xl font-bold tracking-tight">School ERP</h3>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
                 The technical engine for bursaries, admissions, and payroll. Optimized for African connectivity and institutional stability.
               </p>
             </div>
             <div className="space-y-6">
               <Network className="w-12 h-12 text-primary" />
-              <h3 className="text-3xl font-bold tracking-tight">Parent-App Bridge</h3>
+              <h3 className="text-3xl font-bold tracking-tight">ParentAIde</h3>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
                 A high-performance notification and payment conduit built on mobile-first architecture for the Ghanaian family.
               </p>
             </div>
             <div className="space-y-6">
               <Globe className="w-12 h-12 text-primary" />
-              <h3 className="text-3xl font-bold tracking-tight">Ecosystem Visibility</h3>
+              <h3 className="text-3xl font-bold tracking-tight">Schoolpedia</h3>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
                 Public-facing intelligence that turns school data into verified digital reputations via the Schoolpedia API.
               </p>
@@ -113,7 +113,7 @@ export default function TechnologyPage() {
       {/* The Blueprint Call */}
       <Section intensity="none" className="bg-black text-white py-40">
         <Container className="max-w-5xl text-center space-y-12">
-          <h2 className="text-4xl md:text-8xl font-bold tracking-tighter">Deploy the OS.</h2>
+          <h2 className="text-4xl md:text-8xl font-bold tracking-tighter">Deploy the System.</h2>
           <p className="text-xl md:text-3xl text-zinc-400 font-light leading-relaxed">
             We aren't just selling software. We are installing the digital infrastructure for the next 50 years of African education.
           </p>

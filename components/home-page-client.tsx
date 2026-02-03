@@ -75,7 +75,7 @@ export default function HomePageClient() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                         <div>
                             <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-primary mb-2">
-                                <AnimatedCounter end={500} suffix="+" />
+                                <AnimatedCounter end={1500} suffix="+" />
                             </h4>
                             <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Schools Standardized</p>
                         </div>
@@ -89,7 +89,7 @@ export default function HomePageClient() {
                             <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-foreground mb-2">
                                 <AnimatedCounter end={3} suffix="M+" />
                             </h4>
-                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Verified Records</p>
+                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Records To Verify</p>
                         </div>
                         <div>
                             <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-secondary mb-2">
@@ -196,11 +196,11 @@ export default function HomePageClient() {
                         <div className="flex flex-col sm:flex-row justify-center gap-8 pt-10">
                             <Magnetic strength={0.2}>
                                 <Button asChild size="xl" variant="premium" className="rounded-full px-16 text-xl">
-                                    <Link href="/campaigns/digital-100">Apply to Cohort</Link>
+                                    <Link href="/campaigns/digital-100">Apply to Join</Link>
                                 </Button>
                             </Magnetic>
                             <Magnetic strength={0.1}>
-                                <Button asChild size="xl" variant="ghost" className="text-zinc-500 hover:text-white transition-colors">
+                                <Button asChild size="xl" variant="ghost" className="text-zinc-500 hover:text-white hover:text-foreground transition-colors">
                                     <Link href="/campaigns/digital-100">Learn about Inevitability</Link>
                                 </Button>
                             </Magnetic>

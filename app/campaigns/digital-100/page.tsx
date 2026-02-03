@@ -150,7 +150,7 @@ export default function Digital100Page() {
               </div>
               <div>
                 <h4 className="text-2xl font-bold mb-4">Long-Term Partnership</h4>
-                <p className="text-zinc-500">We grow together. As you use the EdComrade OS to run your school, our infrastructure pays for itself.</p>
+                <p className="text-zinc-500">We grow together. As you use Edcomrade to run your school, our infrastructure pays for itself.</p>
               </div>
             </div>
           </div>

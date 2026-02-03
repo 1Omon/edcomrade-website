@@ -29,7 +29,7 @@ export default function IntelligencePage() {
             {/* Hero — Making Progress Visible */}
             <Section className="min-[90vh] flex items-center">
                 <Container>
-                    <div className="max-w-5xl mx-auto text-center space-y-12 pt-32">
+                    <div className="max-w-5xl mx-auto text-center space-y-12 pt-48">
                         <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
                             Clear <br /> <span className="text-primary italic">Information.</span>
                         </h1>
@@ -120,7 +120,7 @@ export default function IntelligencePage() {
                             For Policy <br /> & Growth.
                         </h2>
                         <p className="text-xl md:text-3xl text-muted-foreground font-light leading-relaxed max-w-2xl mx-auto">
-                            Visibility is the first step to progress. Partner with the EdComrade OS to drive national education intelligence.
+                            Visibility is the first step to progress. Partner with Edcomrade to drive national education intelligence.
                         </p>
                     </div>
 

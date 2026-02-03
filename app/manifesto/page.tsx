@@ -15,7 +15,7 @@ export default function AboutPage() {
 
       {/* Hero — The Manifesto */}
       <Section className="min-[90vh] flex items-center">
-        <Container className="max-w-5xl mx-auto text-center space-y-12 pt-32">
+        <Container className="max-w-5xl mx-auto text-center space-y-12 pt-48">
           {/* <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary">
             The Manifesto
           </div> */}
@@ -52,7 +52,7 @@ export default function AboutPage() {
               </div>
               <div className="flex gap-6">
                 <span className="text-4xl font-bold text-primary/30 italic">03.</span>
-                <p className="text-lg font-medium leading-relaxed">Interoperability is inevitable. The schools that Lead the OS will lead the next generation.</p>
+                <p className="text-lg font-medium leading-relaxed">Interoperability is inevitable. The schools that trully Lead will use Edcomrade to lead the next generation.</p>
               </div>
             </div>
           </div>
@@ -110,13 +110,13 @@ export default function AboutPage() {
             <TeamMember
               name="Solomon Annan Ayisi"
               role="CEO & Chief Architect"
-              bio="Directing the vision for the EdComrade OS and ecosystem interoperability."
+              bio="Directing the vision for Edcomrade and ecosystem interoperability."
               initials="SA"
             />
             <TeamMember
               name="Prince Sarfo"
               role="CTO & Head of Engineering"
-              bio="Building the EdComrade OS and ecosystem interoperability."
+              bio="Building Edcomrade and ecosystem interoperability."
               initials="PS"
             />
             <TeamMember
@@ -162,8 +162,8 @@ export default function AboutPage() {
       {/* Signature Area — The Commitment */}
       <Section intensity="none" className="py-32 md:py-52">
         <Container className="max-w-3xl mx-auto">
-          <div className="space-y-12 text-center md:text-left">
-            <div className="prose prose-2xl prose-zinc dark:prose-invert font-light leading-relaxed">
+          <div className="space-y-5 text-center md:text-left">
+            <div className="prose prose-2xl text-4xl prose-zinc dark:prose-invert font-light leading-relaxed">
               <p>
                 EdComrade is a promise of <strong>legitimacy</strong>.
                 We are here because we believe that the brilliant teachers, determined headmasters, and ambitious students of Ghana deserve a system that is as world-class as their potential.

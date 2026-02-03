@@ -1,13 +1,14 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { ArrowRight, Sparkles, Award, Globe, Star, Trophy } from "lucide-react";
+import { ArrowRight, Sparkles, Award, Globe, Star, Trophy, Video } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Campaigns | Digital 100 & Pioneer 10",
-  description: "Exclusive opportunities for schools in Ghana to accelerate their digital transformation.",
+  description:
+    "Exclusive opportunities for schools in Ghana to accelerate their digital transformation.",
 };
 
 export default function CampaignsPage() {
@@ -31,8 +32,9 @@ export default function CampaignsPage() {
           </h1>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-            We are selecting a limited cohort of schools to lead Ghana's education revolution.
-            Join the movement through our two flagship campaigns.
+            We are selecting a limited cohort of schools to lead Ghana's
+            education revolution. Join the movement through our two flagship
+            campaigns.
           </p>
         </div>
       </section>
@@ -48,28 +50,51 @@ export default function CampaignsPage() {
               For Meaningful Visibility
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-bold">
-              The Digital 100
-            </h2>
+            <h2 className="text-4xl md:text-6xl font-bold">The Digital 100</h2>
 
             <p className="text-xl text-gray-300 leading-relaxed font-light">
-              We are identifying the top 100 private schools ready for the global stage.
-              This campaign focuses on one thing: <span className="text-white font-bold">Unignorable Visibility.</span>
+              We are identifying the top 100 private schools ready for the
+              global stage. This campaign focuses on one thing:{" "}
+              <span className="text-white font-bold">
+                Unignorable Visibility.
+              </span>
             </p>
 
             <ul className="space-y-4 text-gray-400">
               <li className="flex gap-4 items-start">
                 <Globe className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h4 className="text-white font-medium">Global web presence</h4>
-                  <p className="text-sm">A custom, high-performance website that captures your school's unique culture.</p>
+                  <h4 className="text-white font-medium">
+                    Global web presence
+                  </h4>
+                  <p className="text-sm">
+                    A custom, high-performance website that captures your
+                    school's unique culture.
+                  </p>
+                </div>
+              </li>
+              <li className="flex gap-4 items-start">
+                <Video className="w-6 h-6 text-primary mt-1" />
+                <div>
+                  <h4 className="text-white font-medium">
+                    Professional Media Production
+                  </h4>
+                  <p className="text-sm">
+                    High-quality cinema production for your school's digital
+                    presence.
+                  </p>
                 </div>
               </li>
               <li className="flex gap-4 items-start">
                 <Star className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h4 className="text-white font-medium">Schoolpedia Verification</h4>
-                  <p className="text-sm">Instant "Blue Tick" status and priority ranking on Ghana's search engine.</p>
+                  <h4 className="text-white font-medium">
+                    Schoolpedia Verification
+                  </h4>
+                  <p className="text-sm">
+                    Instant "Blue Tick" status and priority ranking on Ghana's
+                    search engine.
+                  </p>
                 </div>
               </li>
             </ul>
@@ -102,7 +127,6 @@ export default function CampaignsPage() {
       {/* PIONEER 10 */}
       <section className="py-24 px-6 lg:px-8 bg-muted/30">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-
           <div className="order-2 lg:order-1 relative h-[500px] rounded-2xl overflow-hidden border border-secondary/20 shadow-2xl">
             <Image
               src="/african-teachers-in-professional-development-works.jpg"
@@ -112,8 +136,13 @@ export default function CampaignsPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
             <div className="absolute bottom-8 left-8 text-white max-w-sm">
-              <p className="text-lg font-medium">"Our operations transformed overnight. It felt like we jumped 10 years into the future."</p>
-              <p className="text-sm opacity-70 mt-2">— Principal, Pioneer School #001</p>
+              <p className="text-lg font-medium">
+                "Our operations transformed overnight. It felt like we jumped 10
+                years into the future."
+              </p>
+              <p className="text-sm opacity-70 mt-2">
+                — Principal, Pioneer School #001
+              </p>
             </div>
           </div>
 
@@ -122,28 +151,40 @@ export default function CampaignsPage() {
               For Complete Transformation
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-bold">
-              The Pioneers
-            </h2>
+            <h2 className="text-4xl md:text-6xl font-bold">The Pioneers</h2>
 
             <p className="text-xl text-muted-foreground leading-relaxed font-light">
-              This is our most exclusive partnership. We select 3 visionary schools per region to receive our entire ecosystem:
-              <span className="text-foreground font-medium"> ERP, App, and Marketing</span> at a subsidized pilot rate.
+              This is our most exclusive partnership. We select 3 visionary
+              schools per region to receive our entire ecosystem:
+              <span className="text-foreground font-medium">
+                {" "}
+                ERP, App, and Marketing
+              </span>{" "}
+              at a subsidized pilot rate.
             </p>
 
             <ul className="space-y-4 text-muted-foreground">
               <li className="flex gap-4 items-start">
                 <Trophy className="w-6 h-6 text-secondary-foreground mt-1" />
                 <div>
-                  <h4 className="text-foreground font-medium">Full EdComrade Ecosystem</h4>
-                  <p className="text-sm">School ERP + ParentAide App + Schoolpedia Listing + Website.</p>
+                  <h4 className="text-foreground font-medium">
+                    Full EdComrade Ecosystem
+                  </h4>
+                  <p className="text-sm">
+                    School ERP + ParentAide App + Schoolpedia Listing + Website.
+                  </p>
                 </div>
               </li>
               <li className="flex gap-4 items-start">
                 <Globe className="w-6 h-6 text-secondary-foreground mt-1" />
                 <div>
-                  <h4 className="text-foreground font-medium">Lifetime Legacy Pricing</h4>
-                  <p className="text-sm">Lock in our "Founding Member" rates forever, regardless of future price increases.</p>
+                  <h4 className="text-foreground font-medium">
+                    Lifetime Legacy Pricing
+                  </h4>
+                  <p className="text-sm">
+                    Lock in our "Founding Member" rates forever, regardless of
+                    future price increases.
+                  </p>
                 </div>
               </li>
             </ul>
@@ -158,7 +199,6 @@ export default function CampaignsPage() {
               </Link>
             </div>
           </div>
-
         </div>
       </section>
 

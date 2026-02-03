@@ -27,9 +27,8 @@ export function Navigation() {
   const navLinks = [
     { href: "/schools", label: "For Schools", desc: "Tools to grow your school" },
     { href: "/parents", label: "For Parents", desc: "Stay connected to your child" },
-    { href: "/intelligence", label: "Explore Schools", desc: "Find a school you can trust" },
     { href: "/how-it-works", label: "How It Works", desc: "A simple path forward" },
-    { href: "/manifesto", label: "Our Story", desc: "Why we do what we do" },
+    { href: "/manifesto", label: "Our Manifesto", desc: "Why we do what we do" },
   ];
 
   const isDarkPage = pathname === "/campaigns/digital-100";

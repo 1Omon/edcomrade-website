@@ -30,7 +30,7 @@ export default function SchoolsPage() {
             {/* Hero — The Foundation for Modern Schools */}
             <Section className="min-[90vh] flex items-center">
                 <Container>
-                    <div className="max-w-5xl mx-auto text-center space-y-12 pt-32">
+                    <div className="max-w-5xl mx-auto text-center space-y-12 pt-48">
                         <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
                             The System for <br /> <span className="text-primary italic">Better Schools.</span>
                         </h1>

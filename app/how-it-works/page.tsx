@@ -19,12 +19,12 @@ export default function HowItWorksPage() {
             {/* Hero — Simple Steps to Success */}
             <Section className="min-[90vh] flex items-center">
                 <Container>
-                    <div className="max-w-5xl mx-auto text-center space-y-12 pt-32">
+                    <div className="max-w-5xl mx-auto text-center space-y-12 pt-48">
                         <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
                             A Simple <br /> <span className="italic">Way.</span>
                         </h1>
                         <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
-                            Education Atosn't have to be complicated. EdComrade helps schools get found, stay organized, and build lasting trust with parents.
+                            Education doesn't have to be complicated. EdComrade helps schools get found, stay organized, and build lasting trust with parents.
                         </p>
                     </div>
                 </Container>

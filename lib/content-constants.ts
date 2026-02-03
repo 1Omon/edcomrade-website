@@ -109,7 +109,7 @@ export const CONTENT_BY_ROLE = {
                 },
                 {
                     icon: Cpu,
-                    title: "EdComrade OS",
+                    title: "Edcomrade",
                     desc: "The underlying technology that makes African schools inevitable on the global stage.",
                 },
                 {

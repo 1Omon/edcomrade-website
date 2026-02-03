@@ -50,7 +50,7 @@ export default function NotFound() {
                         {/* Subtle Diagnostic Protocol */}
                         <div className="pt-24 opacity-20 hidden md:block">
                             <div className="flex justify-center gap-12 font-mono text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
-                                <span>Architecture: EdComrade OS</span>
+                                <span>Architecture: Edcomrade</span>
                                 <span>Status: Incomplete Request</span>
                                 <span>Trace: 0x404_NOT_FOUND</span>
                             </div>
