@@ -1,163 +1,137 @@
 import Link from "next/link";
-import {
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
-import { BsFacebook, BsInstagram, BsLinkedin, BsTwitterX } from "react-icons/bs";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { BsInstagram, BsLinkedin, BsTwitterX } from "react-icons/bs";
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-white py-20 sm:py-24 px-4 sm:px-6 lg:px-8  mb-16 md:mb-0">
-      <div className="max-w-[90%] mx-auto">
-        <div className="grid md:grid-cols-5 gap-12 mb-16">
-          <div className="md:col-span-2">
-            <div className="mb-6">
-              <Link href="/" className="">
-                <Image
-                  src="/full-logo.png"
-                  alt="EdComrade Logo"
-                  width={100}
-                  height={45}
-                  className="object-cover w-[250px] h-[45px]"
-                />
-              </Link>
-            </div>
-            <p className="text-lg text-gray-200 leading-relaxed mb-6 font-light">
-              Ghana's premier educational technology company, transforming
-              schools through innovative digital solutions and strategic
-              partnerships.
+    <footer className="bg-background border-t border-border/50 pt-20 pb-12 px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Navigation Breadcrumb */}
+        <div className="flex items-center gap-2 text-[12px] text-muted-foreground/40 font-medium mb-12 py-4 border-b border-border/30">
+          <Link href="/" className="hover:text-foreground transition-colors">EdComrade Home</Link>
+          <span>/</span>
+          <span className="text-muted-foreground/90">Verified Schools</span>
+        </div>
+
+        {/* Branding & Logo Protocol */}
+        <div className="mb-16">
+          <Link href="/" className="opacity-80 hover:opacity-100 transition-opacity">
+            <Image
+              src="/full-logo.png"
+              alt="EdComrade"
+              width={160}
+              height={30}
+              className="grayscale brightness-0 dark:invert w-auto h-8"
+            />
+          </Link>
+          <div className="mt-4 border-b border-border/50 pb-8">
+            <p className="text-sm text-muted-foreground font-light tracking-tight max-w-sm">
+              Setting the standard for private education in Ghana.
             </p>
-            <div className="space-y-2 text-base text-gray-200 font-light">
-              <p className="flex gap-x-2">
-                <MapPin /> Accra • Kumasi • Takoradi • Cape Coast
-              </p>
-              <p className="flex gap-x-2">
-                <Mail /> edcomrade.gh@gmail.com
-              </p>
-              <p className="flex gap-x-2">
-                <Phone /> +233 55 528 4923
-              </p>
-            </div>
-          </div>
-          <div>
-            <h4 className="font-medium text-lg mb-6">Product</h4>
-            <ul className="space-y-3 text-gray-200 font-light">
-              <li>
-                <Link
-                  href="/technology"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
-                  Technology
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contact"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contact"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
-                  Demo
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-medium text-lg mb-6">Company</h4>
-            <ul className="space-y-3 text-gray-200 font-light">
-              <li>
-                <Link
-                  href="/about"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/community"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
-                  Community
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/campaigns"
-                  className="hover:text-secondary transition-colors text-lg"
-                >
-                  Campaigns
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-medium text-lg mb-6">Connect</h4>
-            <ul className="space-y-3 text-gray-200 font-light">
-              <li>
-                <Link
-                  href="https://www.x.com/edcomradegh/"
-                  target="_blank"
-                  className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
-                >
-                  <BsTwitterX/>
-                  Twitter (X)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.linkedin.com/company/edcomrade/"
-                  target="_blank"
-                  className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
-                >
-                  <BsLinkedin/>
-                  LinkedIn
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href=""
-                  target="_blank"
-                  className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
-                >
-                  <BsFacebook/>
-                  Facebook
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.instagram.com/edcomradegh/"
-                  target="_blank"
-                  className="hover:text-secondary transition-colors text-lg flex gap-x-2 items-center"
-                >
-                  <BsInstagram/>
-                  
-                  Instagram
-                </Link>
-              </li>
-            </ul>
           </div>
         </div>
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-200 font-light">
-          <p>© 2025 EdComrade. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="#" className="hover:text-secondary transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="hover:text-secondary transition-colors">
-              Terms of Service
-            </Link>
+
+        {/* Apple-style Columnar Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-20 animate-in fade-in slide-in-from-bottom-5 duration-700">
+          <FooterColumn title="Information">
+            <FooterLink href="/schools">For Schools</FooterLink>
+            <FooterLink href="/parents">For Parents</FooterLink>
+            <FooterLink href="https://schoolpedia.edcomrade.com">Find a School</FooterLink>
+            <FooterLink href="/how-it-works">How It Works</FooterLink>
+          </FooterColumn>
+
+          <FooterColumn title="Ecosystem">
+            <FooterLink href="/campaigns/digital-100">Digital 100</FooterLink>
+            <FooterLink href="/schoolpedia">Schoolpedia</FooterLink>
+            <FooterLink href="/campaigns">Open Campaigns</FooterLink>
+            <FooterLink href="/community">Community</FooterLink>
+          </FooterColumn>
+
+          <FooterColumn title="About Us">
+            <FooterLink href="/manifesto">Our Manifesto</FooterLink>
+            <FooterLink href="/technology">Technology</FooterLink>
+            <FooterLink href="/partners">Work With Us</FooterLink>
+            <FooterLink href="/careers">Careers</FooterLink>
+          </FooterColumn>
+
+          <FooterColumn title="Contact">
+            <FooterLink href="mailto:partner@edcomrade.com">Help & Support</FooterLink>
+            <FooterLink href="tel:+233505617353">Call Us</FooterLink>
+            <FooterLink href="/contact">Get in Touch</FooterLink>
+          </FooterColumn>
+
+          <FooterColumn title="Our Office" className="col-span-2 md:col-span-1">
+            <div className="space-y-4">
+              <p className="text-[11px] text-muted-foreground uppercase tracking-widest font-bold">Location</p>
+              <address className="not-italic text-sm text-muted-foreground font-light space-y-1">
+                <p>Lakeside (Adenta)</p>
+                <p>Ghana, West Africa</p>
+              </address>
+              <div className="flex gap-4 pt-4">
+                <SocialLink href="https://x.com/edcomradegh" icon={BsTwitterX} />
+                <SocialLink href="https://linkedin.com/company/edcomrade" icon={BsLinkedin} />
+                <SocialLink href="https://instagram.com/edcomradegh" icon={BsInstagram} />
+              </div>
+            </div>
+          </FooterColumn>
+        </div>
+
+        {/* Legal & Utility Protocol */}
+        <div className="pt-12 border-t border-border/50">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-[12px] text-muted-foreground/90 font-light">
+              <span>© 2026 EdComrade.</span>
+              <FooterLink href="#" isLegal>Privacy Policy</FooterLink>
+              <FooterLink href="#" isLegal>Terms of Service</FooterLink>
+              <FooterLink href="#" isLegal>Cookies</FooterLink>
+              <FooterLink href="#" isLegal>School Standards</FooterLink>
+            </div>
+
+            <div className="text-[12px] text-muted-foreground/40 font-bold uppercase tracking-widest">
+              Built for the future of Africa
+            </div>
           </div>
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterColumn({ title, children, className }: { title: string, children: React.ReactNode, className?: string }) {
+  return (
+    <div className={cn("space-y-5", className)}>
+      <h4 className="text-[12px] font-bold tracking-[0.2em] uppercase text-foreground/80">{title}</h4>
+      <nav className="flex flex-col space-y-3">
+        {children}
+      </nav>
+    </div>
+  );
+}
+
+function FooterLink({ href, children, isLegal = false }: { href: string, children: React.ReactNode, isLegal?: boolean }) {
+  return (
+    <Link
+      href={href}
+      className={cn(
+        "transition-colors hover:text-primary",
+        isLegal ? "hover:underline" : "text-sm text-muted-foreground hover:translate-x-1 transition-transform inline-block"
+      )}
+    >
+      {children}
+    </Link>
+  );
+}
+
+function SocialLink({ href, icon: Icon }: { href: string, icon: any }) {
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-muted-foreground/50 hover:text-primary transition-colors hover:-translate-y-1"
+    >
+      <Icon className="w-5 h-5" />
+    </Link>
   );
 }

@@ -12,6 +12,9 @@ export interface SchoolSubmissionDocument extends Document {
   description?: string;
   logoUrl?: string;
   logoPublicId?: string;
+  type: "application" | "inquiry" | "partnership" | "pioneer";
+  status: "pending" | "verified" | "archived" | "onboarding";
+  metadata?: Map<string, any>;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -29,6 +32,17 @@ const SchoolSubmissionSchema = new Schema<SchoolSubmissionDocument>(
     description: { type: String },
     logoUrl: { type: String },
     logoPublicId: { type: String },
+    type: {
+      type: String,
+      enum: ["application", "inquiry", "partnership", "pioneer"],
+      default: "application"
+    },
+    status: {
+      type: String,
+      enum: ["pending", "verified", "archived", "onboarding"],
+      default: "pending"
+    },
+    metadata: { type: Map, of: Schema.Types.Mixed },
   },
   { timestamps: true }
 );

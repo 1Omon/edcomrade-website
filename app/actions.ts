@@ -19,6 +19,8 @@ export async function submitSchoolAction(formData: FormData) {
     description: String(formData.get("description") || "").trim() || undefined,
     logoUrl: String(formData.get("logoUrl") || "").trim() || undefined,
     logoPublicId: String(formData.get("logoPublicId") || "").trim() || undefined,
+    type: (formData.get("type") as any) || "application",
+    status: "pending",
   };
 
   if (!payload.schoolName || !payload.contactName || !payload.email) {
@@ -27,7 +29,28 @@ export async function submitSchoolAction(formData: FormData) {
 
   const created = await SchoolSubmission.create(payload);
   revalidatePath("/admin/submissions");
-  return { id: created._id.toString() };
+  return { id: (created as any)._id.toString() };
+}
+
+export async function submitContactAction(formData: FormData) {
+  await connectToDatabase();
+
+  const payload = {
+    firstName: String(formData.get("firstName") || "").trim(),
+    lastName: String(formData.get("lastName") || "").trim() || undefined,
+    email: String(formData.get("email") || "").trim(),
+    school: String(formData.get("school") || "").trim() || undefined,
+    message: String(formData.get("message") || "").trim() || undefined,
+  };
+
+  if (!payload.firstName || !payload.email) {
+    throw new Error("firstName and email are required");
+  }
+
+  const { Contact } = await import("@/models/Contact");
+  const created = await Contact.create(payload);
+  revalidatePath("/admin/contacts");
+  return { id: (created as any)._id.toString() };
 }
 
 

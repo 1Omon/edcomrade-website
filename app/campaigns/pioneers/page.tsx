@@ -1,5 +1,5 @@
 import React from "react";
-import { MinimalNav } from "@/components/minimal-nav";
+import { Navigation } from "@/components/navigation";
 import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
 import GoBackNavigation from "@/components/go-back-navigation";
