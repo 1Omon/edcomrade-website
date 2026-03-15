@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import HomePageClient from "@/components/home-page-client";
 
 export const metadata: Metadata = {
-  title: "EdComrade | We digitize. You inspire.",
+  title: "EdComrade | Your School, Found and Well-Run",
   description:
     "EdComrade is building Ghana's digital education future — giving private schools visibility, systems, and intelligence to operate like 21st‑century institutions.",
   openGraph: {

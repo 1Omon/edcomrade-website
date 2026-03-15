@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Parent Network",
-    description: "Digital peace of mind and direct engagement. A verified window into your child's educational journey.",
+    title: "EdComrade | Stay Connected to Your Child's School",
+    description: "ParentAide gives you a real-time window into your child's education. Grades, attendance, and fees — all in one place.",
 };
 
 export default function ParentsLayout({

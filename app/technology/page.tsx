@@ -36,7 +36,7 @@ export default function TechnologyPage() {
               Interoperable <br /> <span className="text-primary italic">Intelligence.</span>
             </h1>
             <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
-              We don't build features. We build a unified data protocol that connects the bursar, the teacher, the parent, and the public into one inevitable loop of trust.
+              We don&apos;t just build features. We build a unified system that connects the headmaster, the teacher, the parent, and the public into one seamless loop of trust.
             </p>
           </div>
         </Container>
@@ -66,7 +66,7 @@ export default function TechnologyPage() {
                 <TechStep
                   icon={ShieldCheck}
                   title="Sovereign Security"
-                  desc="Infrastructure-grade encryption protecting the most sensitive data of the next generation."
+                  desc="Enterprise-grade encryption protecting the most sensitive data of the next generation."
                 />
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function TechnologyPage() {
             </div>
             <div className="space-y-6">
               <Network className="w-12 h-12 text-primary" />
-              <h3 className="text-3xl font-bold tracking-tight">ParentAIde</h3>
+              <h3 className="text-3xl font-bold tracking-tight">ParentAide</h3>
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
                 A high-performance notification and payment conduit built on mobile-first architecture for the Ghanaian family.
               </p>
@@ -115,7 +115,7 @@ export default function TechnologyPage() {
         <Container className="max-w-5xl text-center space-y-12">
           <h2 className="text-4xl md:text-8xl font-bold tracking-tighter">Deploy the System.</h2>
           <p className="text-xl md:text-3xl text-zinc-400 font-light leading-relaxed">
-            We aren't just selling software. We are installing the digital infrastructure for the next 50 years of African education.
+            We aren&apos;t just selling software. We are installing the digital foundation for the next 50 years of African education.
           </p>
           <div className="pt-10 flex flex-col sm:flex-row justify-center gap-8">
             <Button size="xl" className="rounded-full px-16 text-xl shadow-2xl shadow-primary/20" asChild>

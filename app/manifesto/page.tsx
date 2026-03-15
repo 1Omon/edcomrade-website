@@ -20,7 +20,7 @@ export default function AboutPage() {
             The Manifesto
           </div> */}
           <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
-            The Inevitability <br /> of <span className="italic">Systems.</span>
+            Setting the <span className="italic">Standard.</span>
           </h1>
           <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
             African education is not an "industry" to be disrupted. It is a $50B foundation to be standardized, verified, and interconnected.
@@ -52,7 +52,7 @@ export default function AboutPage() {
               </div>
               <div className="flex gap-6">
                 <span className="text-4xl font-bold text-primary/30 italic">03.</span>
-                <p className="text-lg font-medium leading-relaxed">Interoperability is inevitable. The schools that trully Lead will use Edcomrade to lead the next generation.</p>
+                <p className="text-lg font-medium leading-relaxed">Interoperability is essential. The schools that truly lead will use EdComrade to set the standard for the next generation.</p>
               </div>
             </div>
           </div>
@@ -64,9 +64,9 @@ export default function AboutPage() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
         <Container>
           <div className="max-w-4xl mx-auto text-center space-y-12 mb-32">
-            <h2 className="text-4xl md:text-8xl font-bold tracking-tighter">Beyond "Apps". <br /> <span className="text-primary italic">Infrastructure.</span></h2>
+            <h2 className="text-4xl md:text-8xl font-bold tracking-tighter">Beyond "Apps". <br /> <span className="text-primary italic">A Foundation.</span></h2>
             <p className="text-lg md:text-2xl text-zinc-400 font-light leading-relaxed">
-              We didn't build a management tool. We built the digital backbone of the African educational institution. A unified operating system for visibility, trust, and intelligence.
+              We didn&apos;t build a management tool. We built the digital foundation of the African educational institution. A unified operating system for visibility, trust, and intelligence.
             </p>
           </div>
 
@@ -76,7 +76,7 @@ export default function AboutPage() {
                 <Zap className="w-8 h-8" />
               </div>
               <h3 className="text-2xl font-bold tracking-tight">Systemic Control</h3>
-              <p className="text-zinc-500 leading-relaxed font-light">Eliminating operational leaks through standardized infrastructure-grade operations.</p>
+              <p className="text-zinc-500 leading-relaxed font-light">Eliminating operational leaks through standardized, institution-grade operations.</p>
             </div>
             <div className="space-y-6 group">
               <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-primary transition-all duration-500">
@@ -150,10 +150,10 @@ export default function AboutPage() {
               initials="WO"
             />
             <TeamMember
-              name="Seth Amissah"
-              role="Media Relations"
-              bio="Capturing the story of African education."
-              initials="SA"
+              name="Robert Dzaka"
+              role="Customer Support Manager"
+              bio="Providing assistance and guidance to schools and parents."
+              initials="RD"
             />
           </div>
         </Container>
@@ -169,7 +169,7 @@ export default function AboutPage() {
                 We are here because we believe that the brilliant teachers, determined headmasters, and ambitious students of Ghana deserve a system that is as world-class as their potential.
               </p>
               <p>
-                We don't just write code. We build the architecture of inevitability.
+                We don&apos;t just write code. We build the architecture of excellence.
               </p>
             </div>
 

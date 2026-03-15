@@ -11,9 +11,11 @@ interface LeadFormProps {
     title?: string;
     subtitle?: string;
     className?: string;
+    footerNote?: string;
+    buttonLabel?: string;
 }
 
-export function LeadForm({ type, title, subtitle, className }: LeadFormProps) {
+export function LeadForm({ type, title, subtitle, className, footerNote, buttonLabel }: LeadFormProps) {
     const [isPending, setIsPending] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
@@ -69,7 +71,7 @@ export function LeadForm({ type, title, subtitle, className }: LeadFormProps) {
                         />
                     </div>
                     <div className="space-y-2">
-                        <label className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground">Admin/Owner Name</label>
+                        <label className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground">Head / Proprietor Name</label>
                         <input
                             name="contactName"
                             required
@@ -91,7 +93,7 @@ export function LeadForm({ type, title, subtitle, className }: LeadFormProps) {
                         />
                     </div>
                     <div className="space-y-2">
-                        <label className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground">Phone Number</label>
+                        <label className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground">Phone Number (WhatsApp preferred)</label>
                         <input
                             name="phone"
                             placeholder="+233 ..."
@@ -101,7 +103,7 @@ export function LeadForm({ type, title, subtitle, className }: LeadFormProps) {
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground">Additional Context</label>
+                    <label className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground">Anything specific you&apos;d like us to know</label>
                     <textarea
                         name="description"
                         rows={3}
@@ -110,20 +112,28 @@ export function LeadForm({ type, title, subtitle, className }: LeadFormProps) {
                     />
                 </div>
 
-                <Button
-                    type="submit"
-                    size="xl"
-                    disabled={isPending}
-                    className="w-full rounded-2xl group relative overflow-hidden h-16 text-lg"
-                >
-                    {isPending ? (
-                        <Loader2 className="w-6 h-6 animate-spin" />
-                    ) : (
-                        <>
-                            Get Started <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </>
+                <div className="space-y-6">
+                    <Button
+                        type="submit"
+                        size="xl"
+                        disabled={isPending}
+                        className="w-full rounded-2xl group relative overflow-hidden h-16 text-lg"
+                    >
+                        {isPending ? (
+                            <Loader2 className="w-6 h-6 animate-spin" />
+                        ) : (
+                            <>
+                                {buttonLabel || "Get Started"} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </>
+                        )}
+                    </Button>
+
+                    {footerNote && (
+                        <p className="text-xs text-muted-foreground font-light text-center leading-relaxed">
+                            {footerNote}
+                        </p>
                     )}
-                </Button>
+                </div>
             </form>
         </div>
     );

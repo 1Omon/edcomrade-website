@@ -68,34 +68,34 @@ export default function HomePageClient() {
                 </Container>
             </div>
 
-            {/* TRUST BAR — The Evidence */}
+            {/* STATS / PROOF SECTION — Launching with Ghana's founding schools */}
             <div className="border-b border-border bg-white/50 backdrop-blur-sm">
                 <Container className="py-12 md:py-20 text-center space-y-12">
-                    <p className="text-sm font-bold uppercase tracking-[0.5em] text-muted-foreground">The Evidence of Scale</p>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                    <p className="text-sm font-bold uppercase tracking-[0.5em] text-muted-foreground">Active in 2026</p>
+                    <div className="max-w-3xl mx-auto space-y-4 mb-12">
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Launching with Ghana's founding schools.</h2>
+                        <p className="text-lg text-muted-foreground font-light">
+                            EdComrade is live and onboarding its first cohort of private schools across Ghana. Digital 100 is currently open for the 2026 intake. Pioneers applications are reviewed on a rolling basis by region.
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                         <div>
                             <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-primary mb-2">
-                                <AnimatedCounter end={1500} suffix="+" />
+                                <AnimatedCounter end={100} />
                             </h4>
-                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Schools To Standardize</p>
+                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Schools in the Digital 100 intake</p>
                         </div>
                         <div>
                             <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-foreground mb-2">
-                                <AnimatedCounter end={98} suffix="%" />
+                                <AnimatedCounter end={5} />
                             </h4>
-                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">System Retention</p>
-                        </div>
-                        <div>
-                            <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-foreground mb-2">
-                                <AnimatedCounter end={3} suffix="M+" />
-                            </h4>
-                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Records To Verify</p>
+                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Pioneers schools selected per region</p>
                         </div>
                         <div>
                             <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-secondary mb-2">
-                                <AnimatedCounter end={24} suffix="/7" />
+                                <AnimatedCounter end={7} suffix=" days" />
                             </h4>
-                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Operational Support</p>
+                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Typical onboarding time</p>
                         </div>
                     </div>
                 </Container>
@@ -138,24 +138,24 @@ export default function HomePageClient() {
                             <div className="space-y-6">
                                 <span className="text-xs font-bold uppercase tracking-[0.4em] text-primary">The Connected Operating System</span>
                                 <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-foreground leading-[0.85]">
-                                    One System. <br /> <span className="text-primary italic">Total Inevitability.</span>
+                                    One ecosystem. <br /> <span className="text-primary italic">Three tools working together.</span>
                                 </h2>
                                 <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
-                                    Fragmentation is the enemy of excellence. We bridge the gap between private ambition and institutional reality.
+                                    Each layer solves a different part of the problem. Together, they give your school everything it needs.
                                 </p>
                             </div>
 
                             <div className="space-y-6">
                                 {[
-                                    { title: "Layer 1: School ERP", desc: "The technical backbone for modern operations." },
-                                    { title: "Layer 2: ParentAide", desc: "The verified bridge between school and home." },
-                                    { title: "Layer 3: Schoolpedia", desc: "Making African schools discoverable to the world." }
+                                    { title: "School ERP", label: "Layer 1", desc: "The management backbone. Student records, fee billing, staff management, timetabling, and report cards — all in one system." },
+                                    { title: "ParentAide", label: "Layer 2", desc: "The parent connection. Families see their child's grades, attendance, and fees in real time. Schools communicate without the chaos." },
+                                    { title: "Schoolpedia", label: "Layer 3", desc: "The discovery platform. Parents find and compare schools across Ghana. Your school gets a verified profile parents can trust." }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-6 items-start group">
-                                        <div className="text-4xl font-bold text-muted-foreground/30 group-hover:text-primary transition-colors">0{i + 1}</div>
+                                        <div className="text-xs font-bold px-3 py-1 rounded-full bg-primary/10 text-primary mt-2 whitespace-nowrap">{item.label}</div>
                                         <div className="space-y-2">
                                             <h4 className="text-2xl font-bold tracking-tight">{item.title}</h4>
-                                            <p className="text-muted-foreground leading-relaxed font-light">{item.desc}</p>
+                                            <p className="text-muted-foreground leading-relaxed font-light text-lg">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -164,7 +164,7 @@ export default function HomePageClient() {
                             <div className="pt-8">
                                 <Magnetic strength={0.15}>
                                     <Button asChild size="xl" className="rounded-full shadow-2xl">
-                                        <Link href="/technology">Explore the Layers <ArrowRight className="ml-3" /></Link>
+                                        <Link href="/how-it-works">See How It All Works <ArrowRight className="ml-3" /></Link>
                                     </Button>
                                 </Magnetic>
                             </div>
@@ -189,9 +189,9 @@ export default function HomePageClient() {
                         <h2 className="text-6xl md:text-[10rem] font-bold tracking-tighter leading-[0.8] text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-600">
                             Digital 100.
                         </h2>
-                        <p className="text-2xl md:text-4xl text-zinc-400 max-w-3xl mx-auto leading-tight font-light">
-                            100 schools selected for infrastructure transformation. <br />
-                            <span className="text-white font-medium">Is your school ready to be seen?</span>
+                        <p className="text-2xl md:text-3xl text-zinc-400 max-w-3xl mx-auto leading-tight font-light">
+                            100 schools selected for a complete digital transformation. <br />
+                            <span className="text-white font-medium">We visit your school, produce professional photography and video, build your website, and list you on Google and Schoolpedia — all as one coordinated package.</span>
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-8 pt-10">
                             <Magnetic strength={0.2}>
@@ -201,7 +201,7 @@ export default function HomePageClient() {
                             </Magnetic>
                             <Magnetic strength={0.1}>
                                 <Button asChild size="xl" variant="ghost" className="text-zinc-500  hover:text-foreground transition-colors">
-                                    <Link href="/campaigns/digital-100">Learn about Inevitability</Link>
+                                    <Link href="/campaigns/digital-100#details">See What's Included</Link>
                                 </Button>
                             </Magnetic>
                         </div>

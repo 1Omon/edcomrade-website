@@ -27,7 +27,7 @@ export function Footer() {
           </Link>
           <div className="mt-4 border-b border-border/50 pb-8">
             <p className="text-sm text-muted-foreground font-light tracking-tight max-w-sm">
-              Setting the standard for modern education in Africa.
+              Setting the standard for private education in Ghana.
             </p>
           </div>
         </div>
@@ -37,7 +37,7 @@ export function Footer() {
           <FooterColumn title="Information">
             <FooterLink href="/schools">For Schools</FooterLink>
             <FooterLink href="/parents">For Parents</FooterLink>
-            <FooterLink href="/schoolpedia.edcomrade.com">Find a School</FooterLink>
+            <FooterLink href="https://schoolpedia.edcomrade.com">Find a School</FooterLink>
             <FooterLink href="/how-it-works">How It Works</FooterLink>
           </FooterColumn>
 
@@ -56,8 +56,8 @@ export function Footer() {
           </FooterColumn>
 
           <FooterColumn title="Contact">
-            <FooterLink href="mailto:info@edcomrade.com">Help & Support</FooterLink>
-            <FooterLink href="tel:+233555284923">Call Us</FooterLink>
+            <FooterLink href="mailto:partner@edcomrade.com">Help & Support</FooterLink>
+            <FooterLink href="tel:+233505617353">Call Us</FooterLink>
             <FooterLink href="/contact">Get in Touch</FooterLink>
           </FooterColumn>
 
