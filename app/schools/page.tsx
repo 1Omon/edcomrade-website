@@ -21,6 +21,7 @@ import {
 import Link from "next/link";
 import { LeadForm } from "@/components/lead-form";
 import { Magnetic } from "@/components/ui/magnetic";
+import { PioneerPricing } from "@/components/pioneer-pricing";
 
 export default function SchoolsPage() {
     return (
@@ -45,7 +46,7 @@ export default function SchoolsPage() {
                             </Magnetic>
                             <Magnetic strength={0.1}>
                                 <Button variant="outline" size="xl" className="rounded-full px-12 text-xl h-16" asChild>
-                                    <Link href="/campaigns/digital-100">Join the Digital 100</Link>
+                                    <Link href="/contact">Contact Us</Link>
                                 </Button>
                             </Magnetic>
                         </div>
@@ -97,9 +98,16 @@ export default function SchoolsPage() {
                             title="Your School History — Protected"
                             desc="Every student record, every financial transaction, every report card — safely stored and always owned by you. Not lost when a staff member leaves."
                         />
+                        <FeatureCard
+                            icon={Users}
+                            title="Social Management Service"
+                            desc="We handle your school's online reputation. Professional WhatsApp broadcasts, Facebook & Instagram engagement, and Google Business Profile management."
+                        />
                     </div>
                 </Container>
             </Section>
+
+            <PioneerPricing />
 
             {/* Final Call — Parents are searching online */}
             <Section id="get-started" intensity="none" className="py-40">
@@ -113,11 +121,6 @@ export default function SchoolsPage() {
                             The families you want to serve are already online — comparing schools, reading reviews, checking Google Maps. EdComrade ensures you are not invisible to the parents who would choose you.
                         </p>
                         <div className="pt-4">
-                            <Magnetic strength={0.1}>
-                                <Button size="lg" variant="outline" className="rounded-full px-10 border-primary/20 hover:bg-primary/5 h-14" asChild>
-                                    <Link href="/campaigns/digital-100">See the Digital 100 Package</Link>
-                                </Button>
-                            </Magnetic>
                         </div>
                     </div>
 

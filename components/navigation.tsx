@@ -31,7 +31,7 @@ export function Navigation() {
     { href: "/manifesto", label: "Our Manifesto", desc: "Why we do what we do" },
   ];
 
-  const isDarkPage = pathname === "/campaigns/digital-100";
+  const isDarkPage = false;
 
   return (
     <nav
@@ -79,7 +79,7 @@ export function Navigation() {
             </Magnetic>
             <Magnetic strength={0.2}>
               <Button variant="premium" className="rounded-full px-8 shadow-xl shadow-primary/10" asChild>
-                <Link href="/campaigns/digital-100">Get Digital 100</Link>
+                <Link href="/contact">Get Started</Link>
               </Button>
             </Magnetic>
           </div>
@@ -121,7 +121,7 @@ export function Navigation() {
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
               </Button>
               <Button variant="premium" size="lg" className="rounded-2xl shadow-2xl" asChild>
-                <Link href="/campaigns/digital-100" onClick={() => setIsMobileMenuOpen(false)}>Apply Now</Link>
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Get Started</Link>
               </Button>
             </div>
           </Container>

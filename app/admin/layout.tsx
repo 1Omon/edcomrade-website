@@ -20,6 +20,7 @@ const ADMIN_NAV = [
     { name: "Intelligence Queue", icon: Inbox, href: "/admin/submissions" },
     { name: "General Inquiries", icon: Users, href: "/admin/contacts" },
     { name: "Institutional Records", icon: School, href: "/admin/schools" },
+    { name: "Pioneer Modules", icon: Settings, href: "/admin/modules" },
 ];
 
 export default function AdminLayout({

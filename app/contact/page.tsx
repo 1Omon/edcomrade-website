@@ -75,7 +75,7 @@ export default function ContactPage() {
                                 <ContactItem
                                     icon={MapPin}
                                     title="Visit Us"
-                                    content="Lakeside (Adenta), Ghana, West Africa"
+                                    content="New Legon (Accra), Ghana, West Africa"
                                 />
                             </div>
                         </div>

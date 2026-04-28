@@ -75,16 +75,10 @@ export default function HomePageClient() {
                     <div className="max-w-3xl mx-auto space-y-4 mb-12">
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Launching with Ghana's founding schools.</h2>
                         <p className="text-lg text-muted-foreground font-light">
-                            EdComrade is live and onboarding its first cohort of private schools across Ghana. Digital 100 is currently open for the 2026 intake. Pioneers applications are reviewed on a rolling basis by region.
+                            EdComrade is live and onboarding its first cohort of private schools across Ghana. Pioneers applications are reviewed on a rolling basis by region.
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                        <div>
-                            <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-primary mb-2">
-                                <AnimatedCounter end={100} />
-                            </h4>
-                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Schools in the Digital 100 intake</p>
-                        </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
                         <div>
                             <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-foreground mb-2">
                                 <AnimatedCounter end={5} />
@@ -179,35 +173,7 @@ export default function HomePageClient() {
                 </Container>
             </Section>
 
-            {/* CAMPAIGN TEASER */}
-            <Section intensity="none" fullWidth className="bg-black text-white py-40">
-                <Container>
-                    <div className="max-w-5xl mx-auto text-center space-y-12">
-                        <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-[0.5em] text-zinc-400">
-                            Active Initiative
-                        </div>
-                        <h2 className="text-6xl md:text-[10rem] font-bold tracking-tighter leading-[0.8] text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-600">
-                            Digital 100.
-                        </h2>
-                        <p className="text-2xl md:text-3xl text-zinc-400 max-w-3xl mx-auto leading-tight font-light">
-                            100 schools selected for a complete digital transformation. <br />
-                            <span className="text-white font-medium">We visit your school, produce professional photography and video, build your website, and list you on Google and Schoolpedia — all as one coordinated package.</span>
-                        </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-8 pt-10">
-                            <Magnetic strength={0.2}>
-                                <Button asChild size="xl" variant="premium" className="rounded-full px-16 text-xl">
-                                    <Link href="/campaigns/digital-100">Apply to Join</Link>
-                                </Button>
-                            </Magnetic>
-                            <Magnetic strength={0.1}>
-                                <Button asChild size="xl" variant="ghost" className="text-zinc-500  hover:text-foreground transition-colors">
-                                    <Link href="/campaigns/digital-100#details">See What's Included</Link>
-                                </Button>
-                            </Magnetic>
-                        </div>
-                    </div>
-                </Container>
-            </Section>
+
 
             <Footer />
         </main>
