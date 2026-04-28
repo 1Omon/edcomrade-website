@@ -87,7 +87,7 @@ export const CONTENT_BY_ROLE = {
     public: {
         hero: {
             badge: "Ghana's Private School Platform",
-            title: "Your school deserves to be found and trusted.",
+            title: "Be found and trusted.",
             subtitle: "EdComrade gives private schools in Ghana the tools and visibility to grow — without the guesswork.",
             ctaPrimary: "For Schools",
             ctaSecondary: "Learn More",

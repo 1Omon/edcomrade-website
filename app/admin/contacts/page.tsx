@@ -19,8 +19,8 @@ export default async function AdminContactsPage() {
     return (
         <div className="space-y-8 animate-in fade-in duration-500">
             <div>
-                <h1 className="text-3xl font-bold tracking-tight">General Inquiries</h1>
-                <p className="text-muted-foreground font-light text-lg">Messages received from the contact page.</p>
+                <h1 className="text-3xl font-bold tracking-tight text-foreground">Contact Messages</h1>
+                <p className="text-muted-foreground font-light text-lg">All messages sent to us from the website.</p>
             </div>
 
             <div className="grid gap-6">

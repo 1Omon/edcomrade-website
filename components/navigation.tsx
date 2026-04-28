@@ -72,11 +72,6 @@ export function Navigation() {
 
           {/* Action — The Execution */}
           <div className="hidden md:flex items-center gap-6">
-            <Magnetic strength={0.1}>
-              <Button variant="ghost" className="text-sm font-semibold" asChild>
-                <Link href="/contact">Contact</Link>
-              </Button>
-            </Magnetic>
             <Magnetic strength={0.2}>
               <Button variant="premium" className="rounded-full px-8 shadow-xl shadow-primary/10" asChild>
                 <Link href="/contact">Get Started</Link>

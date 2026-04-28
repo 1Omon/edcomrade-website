@@ -8,7 +8,6 @@ import { ScrollProgress } from "@/components/scroll-progress";
 import { CustomCursor } from "@/components/custom-cursor";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { BackToTop } from "@/components/back-to-top";
-import { ExitIntentModal } from "@/components/exit-intent-modal";
 import { BackgroundBlobs } from "@/components/ui/background-blobs";
 import { Noise } from "@/components/ui/noise";
 import { PageTransitionWrapper } from "@/components/ui/page-transition";
@@ -28,11 +27,10 @@ export const metadata: Metadata = {
     template: "%s | EdComrade",
   },
   description:
-    "Helping private schools in Ghana get found, trusted, and well-run. Join the Digital 100 or Pioneers Programme to transform your school's digital presence and operations.",
+    "Helping private schools in Ghana build their future through better visibility, trust, and management. Join the Pioneers Programme to transform your school's digital presence and operations.",
   keywords: [
     "school management system Ghana",
     "private school platform Ghana",
-    "Digital 100 Ghana",
     "school ERP Ghana",
     "ParentAide",
     "Schoolpedia",
@@ -159,20 +157,10 @@ export default function RootLayout({
                   "@type": "Offer",
                   name: "EdComrade Pioneers Programme",
                   description:
-                    "Free 6-month access to the full software suite for selected schools.",
+                    "Helping schools build a solid digital foundation with professional tools and visibility.",
                   category: "School Management Software",
                   priceCurrency: "GHS",
                   price: "0",
-                  availability: "https://schema.org/InStock",
-                },
-                {
-                  "@type": "Offer",
-                  name: "EdComrade Digital 100",
-                  description:
-                    "A complete digital transformation package covering professional photography, video, website, Google Business Profile, and Schoolpedia listing.",
-                  category: "Digital Transformation Package",
-                  priceCurrency: "GHS",
-                  price: "5000",
                   availability: "https://schema.org/InStock",
                 },
               ],

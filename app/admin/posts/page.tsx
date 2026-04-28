@@ -51,12 +51,12 @@ export default function AdminPostsPage() {
         <div className="space-y-8 animate-in fade-in duration-500">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight">Content Management</h1>
-                    <p className="text-muted-foreground font-light text-lg">Manage blogs, case studies, and success stories.</p>
+                    <h1 className="text-3xl font-bold tracking-tight text-foreground">Blog & Stories</h1>
+                    <p className="text-muted-foreground font-light text-lg">Create and edit the stories on your website.</p>
                 </div>
                 <Button asChild className="gap-2">
                     <Link href="/admin/posts/new">
-                        <Plus className="w-4 h-4" /> Write Post
+                        <Plus className="w-4 h-4" /> Write Something New
                     </Link>
                 </Button>
             </div>

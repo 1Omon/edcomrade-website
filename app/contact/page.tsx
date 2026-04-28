@@ -69,13 +69,13 @@ export default function ContactPage() {
                                 <ContactItem
                                     icon={Phone}
                                     title="Call Us"
-                                    content="+233 55 528 4923"
+                                    content="+233 55 528 4923 "
                                     link="tel:+233555284923"
                                 />
                                 <ContactItem
                                     icon={MapPin}
                                     title="Visit Us"
-                                    content="New Legon (Accra), Ghana, West Africa"
+                                    content="Accra, Ghana"
                                 />
                             </div>
                         </div>

@@ -11,16 +11,20 @@ import {
     ArrowLeft,
     ChevronRight,
     Globe,
-    ShieldCheck
+    ShieldCheck,
+    MessageSquare,
+    DollarSign,
+    FileText
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 
 const ADMIN_NAV = [
-    { name: "Submissions", icon: Inbox, href: "/admin/submissions" },
-    { name: "General Inquiries", icon: Users, href: "/admin/contacts" },
-    { name: "Institutional Records", icon: School, href: "/admin/schools" },
-    { name: "Pioneer Modules", icon: Settings, href: "/admin/modules" },
+    { name: "School Applications", icon: Inbox, href: "/admin/submissions" },
+    { name: "Contact Messages", icon: MessageSquare, href: "/admin/contacts" },
+    { name: "School Database", icon: School, href: "/admin/schools" },
+    { name: "Manage Content", icon: FileText, href: "/admin/posts" },
+    { name: "Program Pricing", icon: DollarSign, href: "/admin/modules" },
 ];
 
 export default function AdminLayout({

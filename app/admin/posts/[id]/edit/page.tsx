@@ -85,7 +85,7 @@ export default function EditPostPage({ params }: { params: Promise<{ id: string 
                     <Button variant="ghost" size="icon" asChild type="button">
                         <Link href="/admin/posts"><ArrowLeft className="w-5 h-5" /></Link>
                     </Button>
-                    <h1 className="text-3xl font-bold tracking-tight">Edit Post</h1>
+                    <h1 className="text-3xl font-bold tracking-tight">Edit Your Story</h1>
                 </div>
                 <div className="flex gap-3">
                     <Button type="button" variant="outline" onClick={(e) => {
@@ -103,7 +103,7 @@ export default function EditPostPage({ params }: { params: Promise<{ id: string 
             <div className="grid md:grid-cols-3 gap-8">
                 <div className="md:col-span-2 space-y-6">
                     <div>
-                        <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 block">Post Title</label>
+                        <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 block">Title</label>
                         <input
                             type="text"
                             value={formData.title}
@@ -121,7 +121,7 @@ export default function EditPostPage({ params }: { params: Promise<{ id: string 
 
                 <div className="space-y-6">
                     <div className="bg-muted/20 p-6 rounded-2xl border border-border/50 space-y-4">
-                        <h3 className="font-bold border-b border-border/50 pb-2 mb-4">Post Settings</h3>
+                        <h3 className="font-bold border-b border-border/50 pb-2 mb-4">Details</h3>
                         
                         <div>
                             <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 block">Type</label>

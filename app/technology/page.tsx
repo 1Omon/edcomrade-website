@@ -33,7 +33,7 @@ export default function TechnologyPage() {
               Architecture & Protocol
             </div> */}
             <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
-              Interoperable <br /> <span className="text-primary italic">Intelligence.</span>
+              Connected <br /> <span className="text-primary italic">Schools.</span>
             </h1>
             <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
               We don&apos;t just build features. We build a unified system that connects the headmaster, the teacher, the parent, and the public into one seamless loop of trust.
@@ -47,26 +47,26 @@ export default function TechnologyPage() {
         <Container>
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-12">
-              <h2 className="text-4xl md:text-7xl font-bold tracking-tight">The Unified <br /> Backbone.</h2>
+              <h2 className="text-4xl md:text-7xl font-bold tracking-tight">The Solid <br /> Foundation.</h2>
               <p className="text-lg md:text-2xl text-muted-foreground font-light leading-relaxed">
-                Fragmented software creates data silos. Edcomrade is a single system of record where every transaction, attendance record, and academic grade flows through a verified intelligence layer.
+                Scattered information creates confusion. EdComrade provides a single, clear system where every fee paid, every student record, and every academic grade is perfectly organized.
               </p>
 
               <div className="space-y-8">
                 <TechStep
                   icon={Database}
-                  title="Single System of Record"
-                  desc="One database (SQL-optimized) for every stakeholder. Zero data duplication. Total institutional memory."
+                  title="Clear Records"
+                  desc="One simple home for everything. No messy paperwork. No lost data. Total history for your school."
                 />
                 <TechStep
                   icon={Share2}
-                  title="Automated Interoperability"
-                  desc="When a teacher marks attendance, the Parent Network is notified instantly and the Institutional Report is updated in real-time."
+                  title="Automatic Updates"
+                  desc="When a teacher marks attendance, parents are notified instantly and your records are updated automatically."
                 />
                 <TechStep
                   icon={ShieldCheck}
-                  title="Sovereign Security"
-                  desc="Enterprise-grade encryption protecting the most sensitive data of the next generation."
+                  title="Your Data, Protected"
+                  desc="Enterprise-grade security protecting your school's information and your students' privacy."
                 />
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function TechnologyPage() {
               {/* Architecture Schematic Placeholder */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_oklch(0.40_0.16_260_/_0.1),_transparent_80%)]" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-zinc-700 font-mono text-sm uppercase tracking-[0.5em] animate-pulse">Architecture Layer 1.0</span>
+                <span className="text-zinc-700 font-mono text-sm uppercase tracking-[0.5em] animate-pulse">The EdComrade Foundation</span>
               </div>
             </div>
           </div>

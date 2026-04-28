@@ -254,12 +254,12 @@ export default function HowItWorksPage() {
                                 <div className="bg-primary text-white text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-lg">Recommended</div>
                             </div>
                             <GlassmorphismCard className="p-12 md:p-16 h-full flex flex-col space-y-8 bg-black text-white shadow-xl shadow-primary/10 border-white/10">
-                                <h4 className="text-3xl font-bold tracking-tight text-white">The Digital 100</h4>
-                                <p className="text-lg text-zinc-400 font-light leading-relaxed">For schools ready for a complete digital overhaul. Professional photography, custom website, Google optimization, and ERP setup — all for a flat fee.</p>
+                                <h4 className="text-3xl font-bold tracking-tight text-white">Full Digital Setup</h4>
+                                <p className="text-lg text-zinc-400 font-light leading-relaxed">For schools ready for a complete transformation. Professional photography, custom website, Google optimization, and ERP setup — all handled by our expert team.</p>
                                 <div className="flex-grow" />
                                 <Magnetic>
                                     <Button asChild size="xl" variant="premium" className="rounded-full px-12 h-16 text-lg w-full">
-                                        <Link href="/campaigns/digital-100">Apply for Digital 100</Link>
+                                        <Link href="/contact">Talk to an Expert</Link>
                                     </Button>
                                 </Magnetic>
                             </GlassmorphismCard>

@@ -84,11 +84,11 @@ export default function AdminModulesPage() {
         <div className="space-y-8 animate-in fade-in duration-500">
             <div className="flex justify-between items-end">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight">Pioneer Modules</h1>
-                    <p className="text-muted-foreground font-light text-lg">Manage modules and pricing displayed on the Schools page.</p>
+                    <h1 className="text-3xl font-bold tracking-tight text-foreground">Program Pricing</h1>
+                    <p className="text-muted-foreground font-light text-lg">Manage the service packages and pricing tiers for schools.</p>
                 </div>
                 <Button onClick={handleCreate} className="gap-2">
-                    <Plus className="w-4 h-4" /> Add Module
+                    <Plus className="w-4 h-4" /> Add New Package
                 </Button>
             </div>
 
@@ -102,7 +102,7 @@ export default function AdminModulesPage() {
                                 <div className="space-y-4">
                                     <div className="grid grid-cols-2 gap-4">
                                         <div>
-                                            <label className="text-xs font-bold text-muted-foreground">Module Name</label>
+                                            <label className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Package Name</label>
                                             <input className="w-full border p-2 rounded mt-1" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} />
                                         </div>
                                         <div>

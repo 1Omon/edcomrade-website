@@ -23,8 +23,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ q
         <div className="space-y-8 animate-in fade-in duration-500">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight">Institutional Records</h1>
-                    <p className="text-muted-foreground font-light text-lg">Manage the verified ecosystem entities.</p>
+                    <h1 className="text-3xl font-bold tracking-tight text-foreground">School Database</h1>
+                    <p className="text-muted-foreground font-light text-lg">View and manage schools that are part of our network.</p>
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-4 items-center">
@@ -40,7 +40,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ q
                         href="/admin/schools/new"
                         className="w-full md:w-auto bg-primary text-white px-6 py-2.5 rounded-xl font-bold text-center shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all"
                     >
-                        Create Entity
+                        Add New School
                     </Link>
                 </div>
             </div>
@@ -84,7 +84,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ q
                                 href={`/admin/schools/${s._id}`}
                                 className="text-sm font-bold text-primary hover:underline flex items-center gap-1"
                             >
-                                Review Records →
+                                View Details →
                             </Link>
                         </div>
                     </div>
@@ -92,8 +92,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ q
 
                 {schools.length === 0 && (
                     <div className="col-span-full py-20 text-center space-y-4">
-                        <div className="text-6xl text-muted-foreground/20 italic font-bold">No Entities</div>
-                        <p className="text-muted-foreground font-light">The institutional ledger is empty.</p>
+                        <div className="text-6xl text-muted-foreground/20 italic font-bold">No Schools</div>
+                        <p className="text-muted-foreground font-light">There are no schools in the database yet.</p>
                     </div>
                 )}
             </div>
