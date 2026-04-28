@@ -20,11 +20,10 @@ export default function AboutPage() {
             The Manifesto
           </div> */}
           <h1 className="text-5xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
-            Setting the <span className="italic">Standard.</span>
+            Helping Schools <span className="italic">Build their Future.</span>
           </h1>
           <p className="text-xl md:text-4xl text-muted-foreground font-light max-w-4xl mx-auto leading-tight">
-            African education is not an "industry" to be disrupted. It is a $50B
-            foundation to be standardized, verified, and interconnected.
+            We are creating the solid, reliable digital home for African education.
           </p>
         </Container>
       </Section>
@@ -38,7 +37,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-24 items-start">
             <div className="space-y-12">
               <h2 className="text-4xl md:text-7xl font-bold tracking-tight">
-                The Digital <br /> Ghost Town.
+                Why Schools Need to <br /> Be Online.
               </h2>
               <p className="text-lg md:text-2xl text-muted-foreground font-light leading-relaxed">
                 Ghana is home to world-class educational institutions—built on
@@ -94,13 +93,11 @@ export default function AboutPage() {
         <Container>
           <div className="max-w-4xl mx-auto text-center space-y-12 mb-32">
             <h2 className="text-4xl md:text-8xl font-bold tracking-tighter">
-              Beyond "Apps". <br />{" "}
-              <span className="text-primary italic">A Foundation.</span>
+              Beyond Software. <br />{" "}
+              <span className="text-primary italic">A Solid Foundation.</span>
             </h2>
             <p className="text-lg md:text-2xl text-zinc-400 font-light leading-relaxed">
-              We didn&apos;t build a management tool. We built the digital
-              foundation of the African educational institution. A unified
-              operating system for visibility, trust, and intelligence.
+              We did not just build another management tool. We built the digital foundation so schools can focus on what matters most: education.
             </p>
           </div>
 
@@ -110,7 +107,7 @@ export default function AboutPage() {
                 <Zap className="w-8 h-8" />
               </div>
               <h3 className="text-2xl font-bold tracking-tight">
-                Systemic Control
+                Complete Management
               </h3>
               <p className="text-zinc-500 leading-relaxed font-light">
                 Eliminating operational leaks through standardized,
@@ -122,7 +119,7 @@ export default function AboutPage() {
                 <ShieldCheck className="w-8 h-8" />
               </div>
               <h3 className="text-2xl font-bold tracking-tight">
-                Verified Trust
+                Build Trust with Parents
               </h3>
               <p className="text-zinc-500 leading-relaxed font-light">
                 The direct, digital bridge between institutional reality and
@@ -134,7 +131,7 @@ export default function AboutPage() {
                 <Globe className="w-8 h-8" />
               </div>
               <h3 className="text-2xl font-bold tracking-tight">
-                Global Visibility
+                Reach More Families
               </h3>
               <p className="text-zinc-500 leading-relaxed font-light">
                 Claiming the map. making African excellence discoverable to the
@@ -153,7 +150,7 @@ export default function AboutPage() {
         <Container>
           <div className="max-w-4xl mx-auto text-center space-y-8 mb-24">
             <h2 className="text-4xl md:text-7xl font-bold tracking-tight">
-              The Architects.
+              Meet Our Team.
             </h2>
             <p className="text-xl text-muted-foreground font-light leading-relaxed">
               We are a team of educators, engineers, and visionaries committed
@@ -257,8 +254,8 @@ export default function AboutPage() {
                 className="rounded-full px-16 text-xl shadow-2xl"
                 asChild
               >
-                <Link href="/campaigns/digital-100">
-                  Join the Project <ArrowRight className="ml-3" />
+                <Link href="/contact">
+                  Talk to Us <ArrowRight className="ml-3" />
                 </Link>
               </Button>
             </div>

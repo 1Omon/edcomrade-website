@@ -37,15 +37,15 @@ export default function HomePageClient() {
         <main className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
             <Navigation />
 
-            {/* HERO — Infrastructure Entrance */}
+            {/* HERO */}
             <HeroModern userRole={role} />
 
-            {/* Perspective Switcher — Subtle Inception */}
+            {/* Perspective Switcher */}
             <div className="bg-muted/30 border-y border-border py-4">
                 <Container className="flex flex-wrap items-center justify-center gap-8 text-sm font-medium text-muted-foreground overflow-x-auto whitespace-nowrap">
                     <span className="flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-primary" />
-                        Explore Perspective:
+                        Who is this for?
                     </span>
                     <button
                         onClick={() => setUserRole("public")}
@@ -130,9 +130,9 @@ export default function HomePageClient() {
                     <div className="grid lg:grid-cols-2 gap-32 items-center">
                         <div className="space-y-12">
                             <div className="space-y-6">
-                                <span className="text-xs font-bold uppercase tracking-[0.4em] text-primary">The Connected Operating System</span>
+                                <span className="text-xs font-bold uppercase tracking-[0.4em] text-primary">The Complete Solution</span>
                                 <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-foreground leading-[0.85]">
-                                    One ecosystem. <br /> <span className="text-primary italic">Three tools working together.</span>
+                                    Everything your school <br /> <span className="text-primary italic">needs in one place.</span>
                                 </h2>
                                 <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
                                     Each layer solves a different part of the problem. Together, they give your school everything it needs.
@@ -166,7 +166,7 @@ export default function HomePageClient() {
                         <div className="relative aspect-square lg:aspect-[4/5] w-full bg-zinc-950 rounded-[4rem] overflow-hidden shadow-[0_0_100px_rgba(0,71,171,0.15)] ring-1 ring-white/5 group">
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                             <div className="absolute inset-0 flex items-center justify-center text-zinc-800 font-mono text-sm uppercase tracking-[0.3em]">
-                                Architecture Visualizer
+                                How EdComrade Works
                             </div>
                         </div>
                     </div>

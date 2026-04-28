@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 
 const ADMIN_NAV = [
-    { name: "Intelligence Queue", icon: Inbox, href: "/admin/submissions" },
+    { name: "Submissions", icon: Inbox, href: "/admin/submissions" },
     { name: "General Inquiries", icon: Users, href: "/admin/contacts" },
     { name: "Institutional Records", icon: School, href: "/admin/schools" },
     { name: "Pioneer Modules", icon: Settings, href: "/admin/modules" },
@@ -32,7 +32,7 @@ export default function AdminLayout({
 
     return (
         <div className="min-h-screen bg-muted/20 flex flex-col md:flex-row">
-            {/* Sidebar — Command Center Control */}
+            {/* Sidebar */}
             <aside className="w-full md:w-72 bg-background border-b md:border-b-0 md:border-r border-border/50 p-6 flex flex-col gap-12 sticky top-0 h-auto md:h-screen z-40">
                 <div className="flex items-center gap-4">
                     <Link href="/" className="flex items-center gap-3 group">
@@ -40,15 +40,15 @@ export default function AdminLayout({
                             <span className="font-bold text-lg">EC</span>
                         </div>
                         <div className="flex flex-col">
-                            <span className="font-bold tracking-tight">OS Admin</span>
-                            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Command Center</span>
+                            <span className="font-bold tracking-tight">EdComrade Admin</span>
+                            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Dashboard</span>
                         </div>
                     </Link>
                 </div>
 
                 <nav className="flex flex-col gap-2 flex-grow">
                     <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-muted-foreground/50 mb-4 px-3">
-                        Infrastructure
+                        Menu
                     </div>
                     {ADMIN_NAV.map((item) => {
                         const isActive = pathname === item.href;
@@ -82,7 +82,7 @@ export default function AdminLayout({
                 </div>
             </aside>
 
-            {/* Main Content — Intelligence Layer */}
+            {/* Main Content */}
             <main className="flex-grow min-h-screen overflow-y-auto">
                 <header className="sticky top-0 z-30 bg-background/80 backdrop-blur-xl border-b border-border/50 px-8 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground font-medium">

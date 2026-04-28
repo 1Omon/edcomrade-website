@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import { dbConnect } from '@/lib/db';
+import { connectToDatabase } from '@/lib/db';
 import PioneerModule from '@/models/PioneerModule';
 
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
-    await dbConnect();
+    await connectToDatabase();
     const { id } = await params;
     const body = await req.json();
     const module = await PioneerModule.findByIdAndUpdate(id, body, {
@@ -22,7 +22,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
 export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
-    await dbConnect();
+    await connectToDatabase();
     const { id } = await params;
     const module = await PioneerModule.findByIdAndDelete(id);
     if (!module) {
