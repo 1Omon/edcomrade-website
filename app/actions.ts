@@ -3,6 +3,7 @@
 import { connectToDatabase } from "@/lib/db";
 import { SchoolSubmission } from "@/models/SchoolSubmission";
 import { revalidatePath } from "next/cache";
+import { sendNotificationEmail } from "@/lib/email-service";
 
 export async function submitSchoolAction(formData: FormData) {
   await connectToDatabase();
@@ -28,6 +29,10 @@ export async function submitSchoolAction(formData: FormData) {
   }
 
   const created = await SchoolSubmission.create(payload);
+  
+  // Send email notification
+  await sendNotificationEmail('submission', payload);
+
   revalidatePath("/admin/submissions");
   return { id: (created as any)._id.toString() };
 }
@@ -49,6 +54,10 @@ export async function submitContactAction(formData: FormData) {
 
   const { Contact } = await import("@/models/Contact");
   const created = await Contact.create(payload);
+
+  // Send email notification
+  await sendNotificationEmail('contact', payload);
+
   revalidatePath("/admin/contacts");
   return { id: (created as any)._id.toString() };
 }
