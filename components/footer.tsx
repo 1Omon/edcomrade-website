@@ -64,7 +64,7 @@ export function Footer() {
             <FooterLink href="mailto:partner@edcomrade.com">
               Help & Support
             </FooterLink>
-            <FooterLink href="tel:+233505617353">Call Us</FooterLink>
+            <FooterLink href="tel:+233555284923">Call Us</FooterLink>
             <FooterLink href="/contact">Get in Touch</FooterLink>
           </FooterColumn>
 
