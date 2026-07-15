@@ -3,73 +3,53 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-import { Suspense } from "react";
-import { ScrollProgress } from "@/components/scroll-progress";
-import { CustomCursor } from "@/components/custom-cursor";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { BackToTop } from "@/components/back-to-top";
-import { BackgroundBlobs } from "@/components/ui/background-blobs";
-import { Noise } from "@/components/ui/noise";
-import { PageTransitionWrapper } from "@/components/ui/page-transition";
-import { LoadingSkeleton } from "@/components/loading-skeleton";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://edcomrade.com"),
   title: {
-    default: "EdComrade | Ghana's Private School Platform",
-    template: "%s | EdComrade",
+    default: "Edcomrade | Your Ally in Everything Education",
+    template: "%s | Edcomrade",
   },
   description:
-    "Helping private schools in Ghana build their future through better visibility, trust, and management. Join the Pioneers Programme to transform your school's digital presence and operations.",
+    "Edcomrade modernises schools across Ghana — giving every institution the software, visibility, and parent connectivity it needs to thrive.",
   keywords: [
     "school management system Ghana",
     "private school platform Ghana",
     "school ERP Ghana",
     "ParentAide",
     "Schoolpedia",
-    "school website design Ghana",
-    "school marketing Ghana",
-    "EdComrade",
+    "Pioneers Software",
+    "school website Ghana",
+    "Edcomrade",
   ],
-  authors: [{ name: "EdComrade" }],
-  creator: "EdComrade",
-  publisher: "EdComrade",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  authors: [{ name: "Edcomrade" }],
+  creator: "Edcomrade",
+  publisher: "Edcomrade",
+  formatDetection: { email: false, address: false, telephone: false },
   openGraph: {
     type: "website",
     locale: "en_GH",
     url: "https://edcomrade.com",
-    title: "EdComrade | Your School, Found and Well-Run",
-    description:
-      "Helping private schools in Ghana get found, trusted, and well-run.",
-    siteName: "EdComrade",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "EdComrade - Your School, Found and Well-Run",
-      },
-    ],
+    title: "Edcomrade | Your Ally in Everything Education",
+    description: "School ERP software, Ghana's school discovery platform, and the parent app — built for African education.",
+    siteName: "Edcomrade",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Edcomrade" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "EdComrade | Your School, Found and Well-Run",
-    description:
-      "Helping private schools in Ghana get found, trusted, and well-run.",
+    title: "Edcomrade | Your Ally in Everything Education",
+    description: "School ERP software, Ghana's school discovery platform, and the parent app — built for African education.",
     images: ["/og-image.jpg"],
-    creator: "@edcomrade",
+    creator: "@edcomradegh",
   },
   robots: {
     index: true,
@@ -86,9 +66,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <head>
@@ -98,93 +76,35 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "EdComrade Ltd.",
-              legalName: "EdComrade Ltd.",
-              alternateName: ["EdComrade", "EdComrade Ghana"],
+              name: "S.A Edcomrade Ventures",
+              alternateName: ["Edcomrade", "Edcomrade Ghana"],
               url: "https://edcomrade.com",
               logo: "https://edcomrade.com/full-logo.png",
               foundingDate: "2023",
               founders: [
-                {
-                  "@type": "Person",
-                  name: "Solomon Annan Ayisi",
-                  jobTitle: "Co-founder & CEO",
-                  nationality: "Ghanaian",
-                },
-                {
-                  "@type": "Person",
-                  name: "Prince Sarfo",
-                  jobTitle: "Co-founder & CTO",
-                  nationality: "Ghanaian",
-                },
+                { "@type": "Person", name: "Solomon A. Ayisi", jobTitle: "CEO & Founder" },
+                { "@type": "Person", name: "Prince Sarfo", jobTitle: "CTO & Co-Founder" },
               ],
-              foundingLocation: {
-                "@type": "Place",
-                name: "Accra, Ghana",
-              },
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Accra",
-                addressCountry: "GH",
-              },
+              foundingLocation: { "@type": "Place", name: "Accra, Ghana" },
+              address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
               email: "partner@edcomrade.com",
-              description:
-                "EdComrade is a Ghanaian educational support organisation that helps private schools across Africa get found and trusted by families and run their operations efficiently.",
-              slogan: "We digitize. You inspire.",
-              tagline:
-                "Your School, Found and Well-Run.",
+              description: "Edcomrade modernises African schools through ERP software, school discovery, and parent connectivity.",
+              slogan: "Your ally in everything education.",
               sameAs: [
-                "https://www.linkedin.com/company/edcomradegh",
-                "https://www.facebook.com/edcomrade",
+                "https://linkedin.com/company/edcomrade",
                 "https://x.com/edcomradegh",
                 "https://instagram.com/edcomradegh",
-              ],
-              brand: {
-                "@type": "Brand",
-                name: "EdComrade",
-                logo: "https://edcomrade.com/logo-icon.png",
-                slogan: "We digitize. You inspire.",
-              },
-              knowsAbout: [
-                "Education Technology",
-                "School Management Systems",
-                "Educational Marketing",
-                "Digital Transformation",
-                "African Education Infrastructure",
-              ],
-              makesOffer: [
-                {
-                  "@type": "Offer",
-                  name: "EdComrade Pioneers Programme",
-                  description:
-                    "Helping schools build a solid digital foundation with professional tools and visibility.",
-                  category: "School Management Software",
-                  priceCurrency: "GHS",
-                  price: "0",
-                  availability: "https://schema.org/InStock",
-                },
               ],
               areaServed: [{ "@type": "Country", name: "Ghana" }],
             }),
           }}
         />
       </head>
-      <body
-        className={`${inter.variable} font-sans antialiased`}
-        suppressHydrationWarning
-      >
-        <Noise />
-        <BackgroundBlobs />
-        <CustomCursor />
-        <ScrollProgress />
-        <Suspense fallback={<LoadingSkeleton />}>
-          <PageTransitionWrapper>
-            {children}
-          </PageTransitionWrapper>
-          <Analytics />
-        </Suspense>
+      <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
+        {children}
         <WhatsAppButton />
         <BackToTop />
+        <Analytics />
       </body>
     </html>
   );

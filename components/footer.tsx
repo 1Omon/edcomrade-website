@@ -1,181 +1,103 @@
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { BsInstagram, BsLinkedin, BsTwitterX } from "react-icons/bs";
 
-export function Footer() {
+function Col({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <footer className="bg-background border-t border-border/50 pt-20 pb-12 px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Navigation Breadcrumb */}
-        <div className="flex items-center gap-2 text-[12px] text-muted-foreground/40 font-medium mb-12 py-4 border-b border-border/30">
-          <Link href="/" className="hover:text-foreground transition-colors">
-            EdComrade Home
-          </Link>
-          <span>/</span>
-          <span className="text-muted-foreground/90">Verified Schools</span>
-        </div>
-
-        {/* Branding & Logo Protocol */}
-        <div className="mb-16">
-          <Link
-            href="/"
-            className="opacity-80 hover:opacity-100 transition-opacity"
-          >
-            <Image
-              src="/full-logo.png"
-              alt="EdComrade"
-              width={160}
-              height={30}
-              className="grayscale brightness-0 dark:invert w-auto h-8"
-            />
-          </Link>
-          <div className="mt-4 border-b border-border/50 pb-8">
-            <p className="text-sm text-muted-foreground font-light tracking-tight max-w-sm">
-              Setting the standard for private education in Ghana.
-            </p>
-          </div>
-        </div>
-
-        {/* Apple-style Columnar Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-20 animate-in fade-in slide-in-from-bottom-5 duration-700">
-          <FooterColumn title="Information">
-            <FooterLink href="/schools">For Schools</FooterLink>
-            <FooterLink href="/parents">For Parents</FooterLink>
-            <FooterLink href="https://schoolpedia.edcomrade.com">
-              Find a School
-            </FooterLink>
-            <FooterLink href="/how-it-works">How It Works</FooterLink>
-          </FooterColumn>
-
-          <FooterColumn title="Ecosystem">
-            <FooterLink href="/schoolpedia">Schoolpedia</FooterLink>
-            <FooterLink href="/community">Community</FooterLink>
-          </FooterColumn>
-
-          <FooterColumn title="About Us">
-            <FooterLink href="/manifesto">Our Manifesto</FooterLink>
-            <FooterLink href="/technology">Technology</FooterLink>
-            <FooterLink href="/partners">Work With Us</FooterLink>
-            <FooterLink href="/careers">Careers</FooterLink>
-          </FooterColumn>
-
-          <FooterColumn title="Contact">
-            <FooterLink href="mailto:partner@edcomrade.com">
-              Help & Support
-            </FooterLink>
-            <FooterLink href="tel:+233555284923">Call Us</FooterLink>
-            <FooterLink href="/contact">Get in Touch</FooterLink>
-          </FooterColumn>
-
-          <FooterColumn title="Our Office" className="col-span-2 md:col-span-1">
-            <div className="space-y-4">
-              <p className="text-[11px] text-muted-foreground uppercase tracking-widest font-bold">
-                Location
-              </p>
-              <address className="not-italic text-sm text-muted-foreground font-light space-y-1">
-                <p>New Legon (Accra)</p>
-                <p>Ghana, West Africa</p>
-              </address>
-              <div className="flex gap-4 pt-4">
-                <SocialLink
-                  href="https://x.com/edcomradegh"
-                  icon={BsTwitterX}
-                />
-                <SocialLink
-                  href="https://linkedin.com/company/edcomrade"
-                  icon={BsLinkedin}
-                />
-                <SocialLink
-                  href="https://instagram.com/edcomradegh"
-                  icon={BsInstagram}
-                />
-              </div>
-            </div>
-          </FooterColumn>
-        </div>
-
-        {/* Legal & Utility Protocol */}
-        <div className="pt-12 border-t border-border/50">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-[12px] text-muted-foreground/90 font-light">
-              <span>© 2026 EdComrade.</span>
-              <FooterLink href="#" isLegal>
-                Privacy Policy
-              </FooterLink>
-              <FooterLink href="#" isLegal>
-                Terms of Service
-              </FooterLink>
-              <FooterLink href="#" isLegal>
-                Cookies
-              </FooterLink>
-              <FooterLink href="#" isLegal>
-                School Standards
-              </FooterLink>
-            </div>
-
-            <div className="text-[12px] text-muted-foreground/40 font-bold uppercase tracking-widest">
-              Built for the future of Africa
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-function FooterColumn({
-  title,
-  children,
-  className,
-}: {
-  title: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div className={cn("space-y-5", className)}>
-      <h4 className="text-[12px] font-bold tracking-[0.2em] uppercase text-foreground/80">
+    <div>
+      <p className="text-[11px] font-semibold tracking-[0.12em] uppercase text-white/40 mb-5">
         {title}
-      </h4>
-      <nav className="flex flex-col space-y-3">{children}</nav>
+      </p>
+      <nav className="flex flex-col gap-3">{children}</nav>
     </div>
   );
 }
 
-function FooterLink({
+function FLink({
   href,
   children,
-  isLegal = false,
+  external,
 }: {
   href: string;
   children: React.ReactNode;
-  isLegal?: boolean;
+  external?: boolean;
 }) {
   return (
     <Link
       href={href}
-      className={cn(
-        "transition-colors hover:text-primary",
-        isLegal
-          ? "hover:underline"
-          : "text-sm text-muted-foreground hover:translate-x-1 transition-transform inline-block",
-      )}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="text-[14px] text-white/60 hover:text-white transition-colors"
     >
       {children}
     </Link>
   );
 }
 
-function SocialLink({ href, icon: Icon }: { href: string; icon: any }) {
+export function Footer() {
   return (
-    <Link
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-muted-foreground/50 hover:text-primary transition-colors hover:-translate-y-1"
-    >
-      <Icon className="w-5 h-5" />
-    </Link>
+    <footer className="bg-[#1A3C5E]">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-20">
+        {/* Top grid */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 pb-14 border-b border-white/10">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-1">
+            <Link href="/" className="inline-block mb-4 opacity-90 hover:opacity-100 transition-opacity">
+              <Image
+                src="/full-logo.png"
+                alt="Edcomrade"
+                width={110}
+                height={32}
+                className="h-8 w-auto brightness-0 invert"
+              />
+            </Link>
+            <p className="text-[14px] text-white/50 leading-relaxed max-w-[180px]">
+              Your ally in everything education.
+            </p>
+            {/* Social icons */}
+            <div className="flex items-center gap-4 mt-6">
+              <Link href="https://x.com/edcomradegh" target="_blank" rel="noopener noreferrer" aria-label="Edcomrade on X" className="text-white/40 hover:text-white transition-colors text-[13px] font-medium">𝕏</Link>
+              <Link href="https://linkedin.com/company/edcomrade" target="_blank" rel="noopener noreferrer" aria-label="Edcomrade on LinkedIn" className="text-white/40 hover:text-white transition-colors text-[13px] font-medium">in</Link>
+              <Link href="https://instagram.com/edcomradegh" target="_blank" rel="noopener noreferrer" aria-label="Edcomrade on Instagram" className="text-white/40 hover:text-white transition-colors text-[13px] font-medium">IG</Link>
+            </div>
+          </div>
+
+          <Col title="Products">
+            <FLink href="/software">Pioneers' Software</FLink>
+            <FLink href="/software#custom">Custom App</FLink>
+            <FLink href="/parentaide">ParentAide</FLink>
+            <FLink href="https://schoolpedia.edcomrade.com" external>Schoolpedia ↗</FLink>
+          </Col>
+
+          <Col title="Company">
+            <FLink href="/about">About</FLink>
+            <FLink href="/edmedia">EdMedia</FLink>
+            <FLink href="/manifesto">Manifesto</FLink>
+            <FLink href="#">Careers</FLink>
+          </Col>
+
+          <Col title="Support">
+            <FLink href="/contact">Contact Us</FLink>
+            <FLink href="https://wa.me/233555284923" external>WhatsApp</FLink>
+            <FLink href="mailto:partner@edcomrade.com" external>Email Us</FLink>
+          </Col>
+
+          <Col title="Legal">
+            <FLink href="#">Privacy Policy</FLink>
+            <FLink href="#">Terms of Service</FLink>
+            <FLink href="#">Cookies</FLink>
+          </Col>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="pt-8 flex flex-col sm:flex-row justify-between gap-3">
+          <p className="text-[13px] text-white/35">
+            © {new Date().getFullYear()} S.A Edcomrade Ventures
+          </p>
+          <p className="text-[13px] text-white/35">
+            Built in Ghana, built for Africa
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 }

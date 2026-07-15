@@ -4,45 +4,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* 
-   * DESIGN MANIFESTO: "Royal Earth" Palette 
-   * Infrastructure-grade, sophisticated, deeply rooted.
-   */
+  /* ─────────────────────────────────────────────
+     EDCOMRADE BRAND TOKENS — Novo-aligned palette
+  ───────────────────────────────────────────── */
+  --color-navy:        #1A3C5E;  /* primary dark surface, main CTA bg */
+  --color-navy-deep:   #0D1F2D;  /* Custom App hero bg */
+  --color-navy-mid:    #1E3A52;  /* cards on dark sections */
+  --color-accent:      #2E8BC0;  /* section labels, links, icon accents */
+  --color-gold:        #B8973A;  /* Custom App only */
+  --color-green-dark:  #1B5E20;  /* free-tier badge text */
+  --color-green-light: #E8F5EE;  /* free-tier badge background */
+  --color-surface:     #F0F4F8;  /* card bg on white sections */
+  --color-border:      #E5E7EB;  /* borders, dividers */
 
-  --background: oklch(0.985 0.002 240);
+  /* Tailwind design-system tokens (admin / shadcn) */
+  --background: oklch(1 0 0);
   --foreground: oklch(0.15 0 0);
-  /* Darker charcoal for better contrast */
-
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0 0);
-
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0 0);
-
   --primary: oklch(0.35 0.14 260);
-  /* Deeper, more institutional blue */
   --primary-foreground: oklch(0.98 0 0);
-
   --secondary: oklch(0.80 0.12 85);
-  /* Muted gold for prestige, not flash */
   --secondary-foreground: oklch(0.15 0 0);
-
   --muted: oklch(0.95 0.005 240);
   --muted-foreground: oklch(0.50 0 0);
-
   --accent: oklch(0.94 0.02 260);
   --accent-foreground: oklch(0.15 0 0);
-
   --destructive: oklch(0.55 0.18 25);
   --destructive-foreground: oklch(0.98 0 0);
-
   --border: oklch(0.90 0.005 240);
   --input: oklch(0.90 0.005 240);
   --ring: oklch(0.35 0.14 260);
-
   --radius: 0.5rem;
-  /* Tighter radius for a more "built" feel */
-
   --sidebar: oklch(0.98 0 0);
   --sidebar-foreground: oklch(0.15 0 0);
   --sidebar-primary: oklch(0.35 0.14 260);
@@ -55,34 +50,24 @@
 
 .dark {
   --background: oklch(0.10 0 0);
-  /* Deeper black */
   --foreground: oklch(0.98 0 0);
-
   --card: oklch(0.14 0 0);
   --card-foreground: oklch(0.98 0 0);
-
   --popover: oklch(0.14 0 0);
   --popover-foreground: oklch(0.98 0 0);
-
   --primary: oklch(0.55 0.14 260);
   --primary-foreground: oklch(0.98 0 0);
-
   --secondary: oklch(0.80 0.12 85);
   --secondary-foreground: oklch(0.05 0 0);
-
   --muted: oklch(0.18 0 0);
   --muted-foreground: oklch(0.60 0 0);
-
   --accent: oklch(0.18 0.02 260);
   --accent-foreground: oklch(0.98 0 0);
-
   --destructive: oklch(0.55 0.18 25);
   --destructive-foreground: oklch(0.98 0 0);
-
   --border: oklch(0.20 0 0);
   --input: oklch(0.20 0 0);
   --ring: oklch(0.55 0.14 260);
-
   --sidebar: oklch(0.12 0 0);
   --sidebar-foreground: oklch(0.98 0 0);
   --sidebar-primary: oklch(0.55 0.14 260);
@@ -95,35 +80,25 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -132,17 +107,10 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-
-  /* Spacing Reset for Institutional Layouts */
-  --spacing-tight: 1rem;
-  --spacing-normal: 2.5rem;
-  --spacing-loose: 6rem;
-  --spacing-xl: 10rem;
 }
 
 @layer base {
@@ -151,18 +119,21 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    /* Pure white — no off-white */
+    background-color: #ffffff;
+    color: #111827;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
-    letter-spacing: -0.01em;
-    /* Tighter letter-spacing for premium Inter feel */
+    /* No global letter-spacing — headings set their own precisely */
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply tracking-tight font-semibold;
+  /* Components own their typography — no cascade overrides */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
   }
 }
