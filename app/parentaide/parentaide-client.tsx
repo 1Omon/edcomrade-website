@@ -110,7 +110,7 @@ export default function ParentAidePageClient() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-[#1E3A52] p-8 rounded-xl">
               <span className="text-[#2E8BC0] font-semibold text-[13px] tracking-widest block mb-4">01</span>
-              <p className="font-semibold text-white mb-2" style={{ fontSize: 18 }}>Top up via Paystack</p>
+              <p className="font-semibold text-white mb-2" style={{ fontSize: 18 }}>Top up</p>
               <p className="text-white/60" style={{ fontSize: 15, lineHeight: 1.7 }}>Fund your wallet securely using Mobile Money or Card.</p>
             </div>
             <div className="bg-[#1E3A52] p-8 rounded-xl">

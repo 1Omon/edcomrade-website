@@ -46,7 +46,7 @@ export default function SchoolpediaPageClient() {
               href="https://schoolpedia.edcomrade.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-[#1A3C5E] px-8 py-4 rounded-lg font-bold transition-colors hover:bg-gray-50"
+              className="inline-flex items-center gap-2 bg-white text-[#1A3C5E] px-8 py-4 h-12 rounded-lg font-bold transition-colors hover:bg-gray-50"
               style={{ fontSize: 16 }}
             >
               Search Schools <ArrowRight className="w-5 h-5" />

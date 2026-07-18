@@ -55,7 +55,7 @@ export default function SoftwarePageClient() {
       desc: "Conflict-free timetables generated instantly.",
     },
     {
-      title: "Basic Fee Billing & Paystack Collection",
+      title: "Basic Fee Billing & Collection",
       desc: "Generate invoices and accept mobile money payments.",
     },
   ];
@@ -254,7 +254,7 @@ export default function SoftwarePageClient() {
                 letterSpacing: "-0.02em",
               }}
             >
-              The Core Administration Module is free for every school. Always.
+              The School Administration Module is free for every school. Always.
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {pioneersFeatures.map((f, i) => (
