@@ -2,31 +2,25 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Layers, Sparkles } from "lucide-react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 
-/* ─────────────────────────────────────────────
-   Shared Layout Primitives
-───────────────────────────────────────────── */
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <p
-      className="text-[11px] font-semibold uppercase text-[#2E8BC0] mb-2"
-      style={{ letterSpacing: "0.12em" }}
-    >
-      {children}
-    </p>
+    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2E8BC0]/10 text-[#2E8BC0] text-[11px] font-bold uppercase tracking-wider mb-3 shadow-xs">
+      <Sparkles className="w-3 h-3" />
+      <span>{children}</span>
+    </div>
   );
 }
 
 function CustomLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p
-      className="text-[11px] font-semibold uppercase text-[#B8973A] mb-2"
-      style={{ letterSpacing: "0.12em" }}
-    >
-      {children}
-    </p>
+    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B8973A]/15 text-[#B8973A] text-[11px] font-bold uppercase tracking-wider mb-3 shadow-xs">
+      <Sparkles className="w-3 h-3 text-[#B8973A]" />
+      <span>{children}</span>
+    </div>
   );
 }
 
@@ -36,27 +30,27 @@ export default function SoftwarePageClient() {
   const pioneersFeatures = [
     {
       title: "Admissions Management",
-      desc: "Digital forms, automated applicant tracking.",
+      desc: "Digital application forms, candidate scoring & automated applicant tracking.",
     },
     {
       title: "Student Information System",
-      desc: "Centralised records, grades, and term reports.",
+      desc: "Centralised student bio, academic history, report cards & term grades.",
     },
     {
       title: "Health Records",
-      desc: "Medical history, allergies, and incident logs.",
+      desc: "Student medical history, allergies, emergency contacts & clinic incident logs.",
     },
     {
       title: "Staff Communication",
-      desc: "Instant messaging and notice board for teachers.",
+      desc: "Instant announcements, staff notice board & teacher broadcast messaging.",
     },
     {
       title: "Automated Timetable Scheduling",
-      desc: "Conflict-free timetables generated instantly.",
+      desc: "Conflict-free class and teacher timetables generated automatically.",
     },
     {
       title: "Basic Fee Billing & Collection",
-      desc: "Generate invoices and accept mobile money payments.",
+      desc: "Generate digital term invoices and collect fee payments via Paystack.",
     },
   ];
 
@@ -71,94 +65,72 @@ export default function SoftwarePageClient() {
   ];
 
   const customFeatures = [
-    "01 Bespoke System Design",
-    "02 Cinematic School Website",
-    "03 Your Own .edu.gh Domain",
-    "04 Full Data Ownership",
-    "05 ParentAide Integration",
-    "06 Schoolpedia Verified Profile",
-    "07 AI-Powered Analytics",
+    "01 Bespoke System Architecture & Database Design",
+    "02 Cinematic Custom School Website & Portal",
+    "03 Dedicated Own Domain (.edu.gh)",
+    "04 100% Data Ownership & Isolated Servers",
+    "05 Native ParentAide Integration",
+    "06 Schoolpedia Verified Institutional Profile",
+    "07 AI-Powered Academic & Financial Analytics",
     "08 Hardware Procurement Support",
-    "09 Full Staff Training",
-    "10 Annual Maintenance",
+    "09 Comprehensive On-Site Staff Training",
+    "10 Priority SLA Maintenance & Support",
   ];
 
   const comparisonRows = [
-    {
-      feature: "Best for",
-      p: "Schools digitising now",
-      c: "Established schools & chains",
-    },
-    {
-      feature: "Starting cost",
-      p: "Free school administration module",
-      c: "From GHS 30,000",
-    },
-    {
-      feature: "Ongoing cost",
-      p: "Per student/term (add-ons)",
-      c: "Annual maintenance or instalments",
-    },
-    {
-      feature: "Own domain",
-      p: "No (pioneers.edcomrade.com)",
-      c: "Yes (.edu.gh)",
-    },
-    {
-      feature: "Data ownership",
-      p: "Shared DB (isolated)",
-      c: "Dedicated DB instance",
-    },
-    { feature: "Deployment time", p: "2–4 weeks", c: "~3 months" },
-    { feature: "Website included", p: "No", c: "Yes (Cinematic design)" },
-    { feature: "AI analytics", p: "No", c: "Yes" },
-    { feature: "ParentAide", p: "Included", c: "Included" },
-    { feature: "Schoolpedia profile", p: "Verified", c: "Verified" },
-    { feature: "Hardware support", p: "Optional", c: "Included consultation" },
-    { feature: "Staff training", p: "Online", c: "On-site" },
-    { feature: "5-year price lock", p: "Yes", c: "Yes" },
-    { feature: "Customisation", p: "Limited (settings)", c: "Fully bespoke" },
+    { feature: "Target Institution", p: "Schools digitising now", c: "Established private schools & chains" },
+    { feature: "Starting Cost", p: "Core Module Permanently Free", c: "License-to-own from GHS 30,000" },
+    { feature: "Ongoing Cost Structure", p: "Pay per student/term for add-ons", c: "Annual maintenance or multi-year instalments" },
+    { feature: "Domain Ownership", p: "Shared sub-domain (pioneers.edcomrade.com)", c: "Dedicated domain (your-school.edu.gh)" },
+    { feature: "Data Isolation", p: "Multi-tenant with isolated data layer", c: "Dedicated server & database instance" },
+    { feature: "Deployment Time", p: "2–4 Weeks", c: "~3 Months" },
+    { feature: "Cinematic Website", p: "Verified Schoolpedia profile", c: "Included custom Web & Mobile portal" },
+    { feature: "AI Analytics Engine", p: "Standard reporting", c: "Full predictive AI analytics" },
+    { feature: "ParentAide Connectivity", p: "Bundled Free", c: "Bundled Free" },
+    { feature: "Schoolpedia Verification", p: "Included", c: "Included" },
+    { feature: "Hardware Consultation", p: "Optional", c: "Included" },
+    { feature: "Staff Onboarding", p: "Guided Online Workshops", c: "Dedicated On-Site Training" },
+    { feature: "5-Year Price Guarantee", p: "Yes (Lock in pricing)", c: "Yes (Fixed license terms)" },
+    { feature: "Workflow Customisation", p: "Standardised modular settings", c: "100% Bespoke workflow engineering" },
   ];
 
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Sticky Tab Navigation */}
-      <div className="sticky top-[64px] z-40 bg-white/90 backdrop-blur-md border-b border-[#E5E7EB]">
-        <div className="max-w-6xl mx-auto px-6 md:px-8 flex items-center justify-center gap-8 py-4">
+      {/* Sticky Clay Tab Navigation */}
+      <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b border-[#E5E7EB] py-3">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 flex items-center justify-center gap-4">
           <button
             onClick={() => {
               setActiveTab("pioneers");
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             className={[
-              "text-[15px] font-semibold transition-colors pb-1 border-b-2",
+              "clay-btn px-6 py-2 text-sm transition-all",
               activeTab === "pioneers"
-                ? "text-[#1A3C5E] border-[#1A3C5E]"
-                : "text-gray-500 border-transparent hover:text-gray-800",
+                ? "clay-btn-primary"
+                : "clay-btn-outline text-gray-600",
             ].join(" ")}
           >
-            Pioneers' Software
+            Pioneers&apos; Software
           </button>
+
           <button
             onClick={() => {
               setActiveTab("custom");
               const customSection = document.getElementById("custom");
               if (customSection) {
                 const yOffset = -120;
-                const y =
-                  customSection.getBoundingClientRect().top +
-                  window.pageYOffset +
-                  yOffset;
+                const y = customSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
                 window.scrollTo({ top: y, behavior: "smooth" });
               }
             }}
             className={[
-              "text-[15px] font-semibold transition-colors pb-1 border-b-2",
+              "clay-btn px-6 py-2 text-sm transition-all",
               activeTab === "custom"
-                ? "text-[#B8973A] border-[#B8973A]"
-                : "text-gray-500 border-transparent hover:text-gray-800",
+                ? "clay-btn-gold text-white"
+                : "clay-btn-outline text-gray-600",
             ].join(" ")}
           >
             Custom App
@@ -171,14 +143,14 @@ export default function SoftwarePageClient() {
       ───────────────────────────────────────────── */}
       <div id="pioneers">
         {/* Hero */}
-        <section className="bg-[#1A3C5E] py-24 md:py-32 px-6 md:px-8">
+        <section className="bg-[#1A3C5E] py-24 md:py-32 px-6 md:px-8 relative overflow-hidden">
           <div className="max-w-6xl mx-auto">
-            <Label>PIONEERS' SOFTWARE</Label>
+            <Label>PIONEERS&apos; SOFTWARE</Label>
             <h1
               className="font-extrabold text-white max-w-4xl"
               style={{
-                fontSize: "clamp(56px, 8vw, 96px)",
-                lineHeight: 0.95,
+                fontSize: "clamp(44px, 7vw, 84px)",
+                lineHeight: 0.96,
                 letterSpacing: "-0.03em",
               }}
             >
@@ -186,12 +158,8 @@ export default function SoftwarePageClient() {
               <br />
               <span className="text-[#2E8BC0]">Free</span> to start.
             </h1>
-            <p
-              className="text-[#CBD5E1] mt-6 max-w-[480px]"
-              style={{ fontSize: 18, lineHeight: 1.7 }}
-            >
-              A shared ERP platform built for schools that need to modernise
-              without a large upfront investment.
+            <p className="text-white/80 mt-6 max-w-[540px] text-lg leading-relaxed">
+              A cloud-hosted multi-tenant school ERP built for African schools that need to modernise without heavy upfront capital investments.
             </p>
           </div>
         </section>
@@ -199,186 +167,127 @@ export default function SoftwarePageClient() {
         {/* Who it's for */}
         <section className="bg-white py-20 md:py-24 px-6 md:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2
-              className="font-bold text-[#1A3C5E] mb-12"
-              style={{
-                fontSize: "clamp(32px, 4vw, 48px)",
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Who is it for?
+            <h2 className="font-bold text-[#1A3C5E] text-3xl md:text-4xl mb-12">
+              Who is Pioneers&apos; Software for?
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                {
-                  title: "Private Basic Schools",
-                  desc: "Streamline admissions and keep parents informed.",
-                },
-                {
-                  title: "Private SHS",
-                  desc: "Manage boarding, academics, and exams efficiently.",
-                },
-                {
-                  title: "Vocational & Tech Schools",
-                  desc: "Organise schedules, staff, and student records.",
-                },
+                { title: "Private Basic Schools", desc: "Streamline student admissions, health records, timetables, and parent communication." },
+                { title: "Private Senior High Schools", desc: "Manage hostel boarding, terminal exams, grading, and multi-term fee billing." },
+                { title: "Vocational & Technical Institutes", desc: "Organise practical schedules, staff communications, and fee invoicing." },
               ].map((c, i) => (
-                <div key={i} className="bg-[#F0F4F8] p-6 rounded-xl">
-                  <h3
-                    className="font-semibold text-[#1A3C5E] mb-2"
-                    style={{ fontSize: 20, lineHeight: 1.3 }}
-                  >
-                    {c.title}
-                  </h3>
-                  <p
-                    className="text-gray-600"
-                    style={{ fontSize: 17, lineHeight: 1.7 }}
-                  >
-                    {c.desc}
-                  </p>
+                <div key={i} className="clay-surface p-7 clay-card-hover">
+                  <h3 className="font-bold text-[#1A3C5E] text-xl mb-2">{c.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{c.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* School Administration Module — Free */}
-        <section className="bg-[#E8F5EE] py-20 md:py-24 px-6 md:px-8 border-y border-[#1B5E20]/10">
+        {/* Core Admin Module — Free Callout */}
+        <section className="bg-[#E8F5EE] py-20 md:py-24 px-6 md:px-8 border-y border-[#1B5E20]/15">
           <div className="max-w-6xl mx-auto">
-            <h2
-              className="font-bold text-[#1B5E20] mb-12 max-w-3xl"
-              style={{
-                fontSize: "clamp(32px, 4vw, 48px)",
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              The School Administration Module is free for every school. Always.
-            </h2>
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+              <div>
+                <span className="clay-badge bg-white text-[#1B5E20] mb-3">
+                  100% Free Core Module
+                </span>
+                <h2 className="font-bold text-[#1B5E20] text-3xl md:text-5xl max-w-3xl">
+                  The Core Administration Module is free for every school. Forever.
+                </h2>
+              </div>
+              <Link
+                href="/contact"
+                className="clay-btn clay-btn-primary px-6 py-3 text-sm flex-shrink-0"
+              >
+                Claim Free Access
+              </Link>
+            </div>
+
             <div className="grid md:grid-cols-3 gap-6">
               {pioneersFeatures.map((f, i) => (
-                <div
-                  key={i}
-                  className="bg-white p-6 rounded-xl border border-[#1B5E20]/10"
-                >
-                  <h3
-                    className="font-semibold text-[#1B5E20] mb-2"
-                    style={{ fontSize: 20, lineHeight: 1.3 }}
-                  >
-                    {f.title}
-                  </h3>
-                  <p
-                    className="text-gray-600"
-                    style={{ fontSize: 17, lineHeight: 1.7 }}
-                  >
-                    {f.desc}
-                  </p>
+                <div key={i} className="clay-card p-6 clay-card-hover">
+                  <div className="w-8 h-8 rounded-full bg-[#1B5E20]/10 flex items-center justify-center text-[#1B5E20] font-bold text-xs mb-3">
+                    0{i + 1}
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-lg mb-2">{f.title}</h3>
+                  <p className="text-gray-600 text-xs leading-relaxed">{f.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Bundled Callout */}
-        <section className="bg-[#F0F4F8] py-8 px-6 md:px-8 text-center border-b border-[#E5E7EB]">
-          <p className="text-[#1A3C5E] font-medium" style={{ fontSize: 17 }}>
-            Every Pioneers' school also gets{" "}
-            <span className="font-bold">ParentAide</span> for parents and a
-            verified <span className="font-bold">Schoolpedia</span> profile — at
-            no extra cost.
+        {/* Bundled Strip */}
+        <section className="bg-[#1A3C5E] text-white py-8 px-6 md:px-8 text-center">
+          <p className="text-sm md:text-base font-medium max-w-3xl mx-auto">
+            Every Pioneers&apos; school automatically gets <span className="text-[#2E8BC0] font-bold">ParentAide</span> for parents and a verified <span className="text-[#2E8BC0] font-bold">Schoolpedia</span> profile — included at zero cost.
           </p>
         </section>
 
         {/* Add-on Modules */}
-        <section className="bg-[#F0F4F8] py-20 md:py-24 px-6 md:px-8">
+        <section className="bg-[#F4F7FA] py-20 md:py-24 px-6 md:px-8">
           <div className="max-w-6xl mx-auto">
-            <Label>PAID ADD-ONS</Label>
-            <h2
-              className="font-bold text-[#1A3C5E] mb-12"
-              style={{
-                fontSize: "clamp(32px, 4vw, 48px)",
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Activate more when you're ready.
+            <Label>Modular Add-Ons</Label>
+            <h2 className="font-bold text-[#1A3C5E] text-3xl md:text-4xl mb-4">
+              Activate additional modules when your school is ready.
             </h2>
-            <div className="grid md:grid-cols-4 gap-6 mb-8">
+            <p className="text-gray-600 text-base max-w-2xl mb-12">
+              Priced transparently per student per term. Activate 3 or more modules to receive a 15% discount and lock in your price for 5 years.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {addOnModules.map((m, i) => (
-                <div
-                  key={i}
-                  className="bg-white p-6 rounded-xl border border-[#E5E7EB] flex flex-col justify-between"
-                >
-                  <h3
-                    className="font-semibold text-[#1A3C5E] mb-4"
-                    style={{ fontSize: 18, lineHeight: 1.3 }}
-                  >
-                    {m.name}
-                  </h3>
-                  <p
-                    className="text-[#2E8BC0] font-bold"
-                    style={{ fontSize: 16 }}
-                  >
-                    {m.price}{" "}
-                    <span className="text-gray-500 font-normal text-[14px]">
-                      / student / term
-                    </span>
-                  </p>
+                <div key={i} className="clay-card p-6 flex flex-col justify-between clay-card-hover">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#2E8BC0]">Add-on Module</span>
+                    <h3 className="font-bold text-[#1A3C5E] text-base mt-1 mb-3">{m.name}</h3>
+                  </div>
+                  <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
+                    <span className="text-xs font-bold text-gray-500">Pricing</span>
+                    <span className="text-sm font-extrabold text-[#2E8BC0]">{m.price} <span className="text-[10px] font-normal text-gray-400">/stud/term</span></span>
+                  </div>
                 </div>
               ))}
             </div>
-            <p
-              className="text-gray-600 mb-12"
-              style={{ fontSize: 17, lineHeight: 1.7 }}
-            >
-              Activate 3 or more modules and receive 15% off. Lock in today's
-              prices for 5 years.
-            </p>
 
-            {/* Sample costs table */}
-            <div className="bg-white rounded-xl border border-[#E5E7EB] overflow-hidden">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
-                    <th className="p-4 font-semibold text-[#1A3C5E] text-[15px]">
-                      Scenario
-                    </th>
-                    <th className="p-4 font-semibold text-[#1A3C5E] text-[15px]">
-                      Per Term
-                    </th>
-                    <th className="p-4 font-semibold text-[#1A3C5E] text-[15px]">
-                      Per Year (3 terms)
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="text-[15px] text-gray-700">
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="p-4">100 students (Core only)</td>
-                    <td className="p-4 font-semibold text-[#1B5E20]">Free</td>
-                    <td className="p-4 font-semibold text-[#1B5E20]">Free</td>
-                  </tr>
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="p-4">200 students (1 module @ GHS 2)</td>
-                    <td className="p-4">GHS 400</td>
-                    <td className="p-4">GHS 1,200</td>
-                  </tr>
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="p-4">
-                      300 students (3 modules @ GHS 7, 15% disc.)
-                    </td>
-                    <td className="p-4">GHS 1,785</td>
-                    <td className="p-4">GHS 5,355</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4">
-                      400 students (4 modules @ GHS 10, 15% disc.)
-                    </td>
-                    <td className="p-4">GHS 3,400</td>
-                    <td className="p-4">GHS 10,200</td>
-                  </tr>
-                </tbody>
-              </table>
+            {/* Sample Pricing Table */}
+            <div className="clay-card p-6 md:p-8 overflow-hidden">
+              <h3 className="font-bold text-[#1A3C5E] text-xl mb-4">Sample Pricing Calculations</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-gray-200 bg-[#F4F7FA]">
+                      <th className="p-3.5 text-xs font-bold text-gray-600 uppercase tracking-wider">School Size & Module Configuration</th>
+                      <th className="p-3.5 text-xs font-bold text-gray-600 uppercase tracking-wider">Est. Per Term</th>
+                      <th className="p-3.5 text-xs font-bold text-gray-600 uppercase tracking-wider">Est. Per Year (3 terms)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-sm divide-y divide-gray-100">
+                    <tr>
+                      <td className="p-3.5 font-semibold text-gray-800">100 students (Core Administration only)</td>
+                      <td className="p-3.5 text-emerald-700 font-bold">Free</td>
+                      <td className="p-3.5 text-emerald-700 font-bold">Free</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3.5 font-semibold text-gray-800">200 students (1 paid module @ GHS 2)</td>
+                      <td className="p-3.5 font-bold text-gray-900">GHS 400</td>
+                      <td className="p-3.5 font-bold text-gray-900">GHS 1,200</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3.5 font-semibold text-gray-800">300 students (3 modules @ GHS 7, 15% discount)</td>
+                      <td className="p-3.5 font-bold text-[#2E8BC0]">GHS 1,785</td>
+                      <td className="p-3.5 font-bold text-[#2E8BC0]">GHS 5,355</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3.5 font-semibold text-gray-800">400 students (4 modules @ GHS 10, 15% discount)</td>
+                      <td className="p-3.5 font-bold text-[#2E8BC0]">GHS 3,400</td>
+                      <td className="p-3.5 font-bold text-[#2E8BC0]">GHS 10,200</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </section>
@@ -387,274 +296,129 @@ export default function SoftwarePageClient() {
       {/* ─────────────────────────────────────────────
          CUSTOM APP SECTION
       ───────────────────────────────────────────── */}
-      <div
-        id="custom"
-        onMouseEnter={() => setActiveTab("custom")}
-        onMouseLeave={() => setActiveTab("pioneers")}
-      >
-        {/* Hero */}
-        <section className="bg-[#0D1F2D] py-24 md:py-32 px-6 md:px-8 border-t-[4px] border-[#B8973A]">
+      <div id="custom">
+        <section className="bg-[#0D1F2D] py-24 md:py-32 px-6 md:px-8 border-t-4 border-[#B8973A] relative overflow-hidden">
           <div className="max-w-6xl mx-auto">
-            <CustomLabel>CUSTOM APP</CustomLabel>
+            <CustomLabel>CUSTOM APP PLATFORM</CustomLabel>
             <h1
               className="font-extrabold text-white max-w-4xl"
               style={{
-                fontSize: "clamp(56px, 8vw, 96px)",
-                lineHeight: 0.95,
+                fontSize: "clamp(44px, 7vw, 84px)",
+                lineHeight: 0.96,
                 letterSpacing: "-0.03em",
               }}
             >
-              A school management system built entirely for your institution.
+              A school management system built exclusively for your brand.
             </h1>
-            <p
-              className="text-[#CBD5E1] mt-6 max-w-[480px]"
-              style={{ fontSize: 18, lineHeight: 1.7 }}
-            >
-              Your brand. Your domain. Your data. Built from the ground up.
+            <p className="text-white/80 mt-6 max-w-[540px] text-lg leading-relaxed">
+              Your own domain (.edu.gh), dedicated database, cinematic portals, and custom workflows tailored to your school&apos;s legacy.
             </p>
           </div>
         </section>
 
-        {/* Who it's for */}
+        {/* Features & Deliverables */}
         <section className="bg-white py-20 md:py-24 px-6 md:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2
-              className="font-bold text-[#1A3C5E] mb-12"
-              style={{
-                fontSize: "clamp(32px, 4vw, 48px)",
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Who is it for?
+            <h2 className="font-bold text-[#1A3C5E] text-3xl md:text-4xl mb-12">
+              What Custom App includes
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Established Private Schools",
-                  desc: "Schools with unique processes requiring specific workflows.",
-                },
-                {
-                  title: "International Schools",
-                  desc: "Institutions needing complex grading and premium portals.",
-                },
-                {
-                  title: "School Chains & Groups",
-                  desc: "Centralised management across multiple campuses.",
-                },
-              ].map((c, i) => (
-                <div key={i} className="bg-[#F0F4F8] p-6 rounded-xl">
-                  <h3
-                    className="font-semibold text-[#1A3C5E] mb-2"
-                    style={{ fontSize: 20, lineHeight: 1.3 }}
-                  >
-                    {c.title}
-                  </h3>
-                  <p
-                    className="text-gray-600"
-                    style={{ fontSize: 17, lineHeight: 1.7 }}
-                  >
-                    {c.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
 
-            {/* School Chains Note */}
-            <div className="mt-12 bg-[#1E3A52] p-8 rounded-xl">
-              <p
-                className="text-white font-medium"
-                style={{ fontSize: 17, lineHeight: 1.7 }}
-              >
-                <span className="text-[#B8973A] font-bold">
-                  Managing multiple campuses?
-                </span>{" "}
-                We build centralised board dashboards that give leadership
-                real-time visibility across every branch.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* What you get */}
-        <section className="bg-[#F0F4F8] py-20 md:py-24 px-6 md:px-8">
-          <div className="max-w-6xl mx-auto">
-            <h2
-              className="font-bold text-[#1A3C5E] mb-12"
-              style={{
-                fontSize: "clamp(32px, 4vw, 48px)",
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              What you get.
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6 mb-16">
+            <div className="grid md:grid-cols-2 gap-4 mb-16">
               {customFeatures.map((f, i) => (
-                <div
-                  key={i}
-                  className="bg-white p-6 rounded-xl border border-[#E5E7EB]"
-                >
-                  <p
-                    className="font-semibold text-[#1A3C5E]"
-                    style={{ fontSize: 17 }}
-                  >
-                    {f}
-                  </p>
+                <div key={i} className="clay-surface p-5 flex items-center gap-3 border border-[#B8973A]/20">
+                  <CheckCircle2 className="w-5 h-5 text-[#B8973A] flex-shrink-0" />
+                  <span className="text-sm font-bold text-gray-800">{f}</span>
                 </div>
               ))}
             </div>
 
-            <h2
-              className="font-bold text-[#1A3C5E] mb-8"
-              style={{
-                fontSize: "clamp(32px, 4vw, 48px)",
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Delivery Platforms & Pricing
-            </h2>
-            <div className="bg-white rounded-xl border border-[#E5E7EB] overflow-hidden mb-16">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
-                    <th className="p-4 font-semibold text-[#1A3C5E] text-[15px]">
-                      Platform Setup
-                    </th>
-                    <th className="p-4 font-semibold text-[#1A3C5E] text-[15px]">
-                      Pricing
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="text-[15px] text-gray-700">
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="p-4 font-medium">Web PWA</td>
-                    <td className="p-4 text-[#B8973A] font-semibold">
-                      Starts at GHS 30,000
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="p-4 font-medium">
-                      Web + Mobile App (iOS/Android)
-                    </td>
-                    <td className="p-4">Custom Quote</td>
-                  </tr>
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="p-4 font-medium">Web + Desktop App</td>
-                    <td className="p-4">Custom Quote</td>
-                  </tr>
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="p-4 font-medium">Web + Mobile + Desktop</td>
-                    <td className="p-4">Custom Quote</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-medium">
-                      Desktop Only (Offline-first)
-                    </td>
-                    <td className="p-4">Custom Quote</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            {/* Platforms & Pricing Table */}
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="clay-card p-7 border-t-4 border-[#B8973A]">
+                <h3 className="font-bold text-[#1A3C5E] text-xl mb-4">Deployment Options</h3>
+                <div className="space-y-3">
+                  <div className="p-3 bg-[#F4F7FA] rounded-xl flex items-center justify-between">
+                    <span className="text-sm font-semibold text-gray-800">Web PWA Portal</span>
+                    <span className="text-xs font-extrabold text-[#B8973A]">From GHS 30,000</span>
+                  </div>
+                  <div className="p-3 bg-[#F4F7FA] rounded-xl flex items-center justify-between">
+                    <span className="text-sm font-semibold text-gray-800">Web + Mobile App (iOS/Android)</span>
+                    <span className="text-xs font-bold text-gray-500">Custom Quote</span>
+                  </div>
+                  <div className="p-3 bg-[#F4F7FA] rounded-xl flex items-center justify-between">
+                    <span className="text-sm font-semibold text-gray-800">Web + Desktop Native App</span>
+                    <span className="text-xs font-bold text-gray-500">Custom Quote</span>
+                  </div>
+                  <div className="p-3 bg-[#F4F7FA] rounded-xl flex items-center justify-between">
+                    <span className="text-sm font-semibold text-gray-800">Web + Mobile + Desktop</span>
+                    <span className="text-xs font-bold text-gray-500">Custom Quote</span>
+                  </div>
+                </div>
+              </div>
 
-            <h2
-              className="font-bold text-[#1A3C5E] mb-8"
-              style={{
-                fontSize: "clamp(32px, 4vw, 48px)",
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Deployment Timeline
-            </h2>
-            <div className="bg-white rounded-xl border border-[#E5E7EB] overflow-hidden">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-[#F9FAFB] border-b border-[#E5E7EB]">
-                    <th className="p-4 font-semibold text-[#1A3C5E] text-[15px]">
-                      Phase
-                    </th>
-                    <th className="p-4 font-semibold text-[#1A3C5E] text-[15px]">
-                      Duration
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="text-[15px] text-gray-700">
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="p-4 font-medium">
-                      Discovery & Requirements
-                    </td>
-                    <td className="p-4">Week 1–2</td>
-                  </tr>
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="p-4 font-medium">Design & Architecture</td>
-                    <td className="p-4">Week 2–4</td>
-                  </tr>
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="p-4 font-medium">Development</td>
-                    <td className="p-4">Week 4–10</td>
-                  </tr>
-                  <tr className="border-b border-[#E5E7EB]">
-                    <td className="p-4 font-medium">Testing & QA</td>
-                    <td className="p-4">Week 10–11</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-medium">Deployment & Training</td>
-                    <td className="p-4">Week 11–12</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="clay-card p-7 border-t-4 border-[#1A3C5E]">
+                <h3 className="font-bold text-[#1A3C5E] text-xl mb-4">5-Phase Timeline (~3 Months)</h3>
+                <div className="space-y-2.5 text-xs text-gray-700 font-medium">
+                  <div className="p-3 bg-[#F4F7FA] rounded-xl flex items-center justify-between">
+                    <span>Phase 1: Discovery & Specifications</span>
+                    <span className="font-bold text-[#2E8BC0]">Weeks 1–2</span>
+                  </div>
+                  <div className="p-3 bg-[#F4F7FA] rounded-xl flex items-center justify-between">
+                    <span>Phase 2: UI/UX & System Architecture</span>
+                    <span className="font-bold text-[#2E8BC0]">Weeks 2–4</span>
+                  </div>
+                  <div className="p-3 bg-[#F4F7FA] rounded-xl flex items-center justify-between">
+                    <span>Phase 3: Core Engineering & Modules</span>
+                    <span className="font-bold text-[#2E8BC0]">Weeks 4–10</span>
+                  </div>
+                  <div className="p-3 bg-[#F4F7FA] rounded-xl flex items-center justify-between">
+                    <span>Phase 4: Security & Penetration Testing</span>
+                    <span className="font-bold text-[#2E8BC0]">Weeks 10–11</span>
+                  </div>
+                  <div className="p-3 bg-[#F4F7FA] rounded-xl flex items-center justify-between">
+                    <span>Phase 5: Staff Training & Go-Live</span>
+                    <span className="font-bold text-[#2E8BC0]">Weeks 11–12</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
       </div>
 
       {/* ─────────────────────────────────────────────
-         COMPARISON TABLE (Bottom)
+         COMPARISON TABLE (Full Matrix)
       ───────────────────────────────────────────── */}
-      <section className="bg-white py-20 md:py-24 px-6 md:px-8 border-t border-[#E5E7EB]">
+      <section className="bg-[#F4F7FA] py-20 md:py-28 px-6 md:px-8 border-t border-gray-200">
         <div className="max-w-6xl mx-auto">
-          <h2
-            className="font-bold text-[#1A3C5E] mb-12 text-center"
-            style={{
-              fontSize: "clamp(32px, 4vw, 48px)",
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Compare Solutions
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[800px]">
-              <thead>
-                <tr className="border-b-2 border-[#1A3C5E]">
-                  <th className="p-4 font-semibold text-gray-400 text-[13px] uppercase tracking-wider w-1/3">
-                    Feature
-                  </th>
-                  <th className="p-4 font-semibold text-[#1A3C5E] text-[16px] w-1/3">
-                    Pioneers' Software
-                  </th>
-                  <th className="p-4 font-semibold text-[#B8973A] text-[16px] w-1/3">
-                    Custom App
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-[15px] text-gray-700">
-                {comparisonRows.map((r, i) => (
-                  <tr
-                    key={i}
-                    className="border-b border-[#E5E7EB] hover:bg-[#F9FAFB] transition-colors"
-                  >
-                    <td className="p-4 font-medium text-gray-900">
-                      {r.feature}
-                    </td>
-                    <td className="p-4 text-gray-600">{r.p}</td>
-                    <td className="p-4 font-medium">{r.c}</td>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <Label>Side-by-Side Comparison</Label>
+            <h2 className="font-bold text-[#1A3C5E] text-3xl md:text-4xl">
+              Compare Pioneers&apos; Software vs Custom App
+            </h2>
+          </div>
+
+          <div className="clay-card p-6 md:p-8 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse min-w-[700px]">
+                <thead>
+                  <tr className="border-b-2 border-gray-200 bg-[#F4F7FA]">
+                    <th className="p-3.5 text-xs font-bold text-gray-500 uppercase tracking-wider w-1/3">Feature</th>
+                    <th className="p-3.5 text-sm font-bold text-[#2E8BC0] w-1/3">Pioneers&apos; Software</th>
+                    <th className="p-3.5 text-sm font-bold text-[#B8973A] w-1/3">Custom App</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="text-xs md:text-sm divide-y divide-gray-100">
+                  {comparisonRows.map((r, idx) => (
+                    <tr key={idx} className="hover:bg-gray-50 transition-colors">
+                      <td className="p-3.5 font-bold text-gray-800">{r.feature}</td>
+                      <td className="p-3.5 text-gray-600">{r.p}</td>
+                      <td className="p-3.5 font-semibold text-gray-900">{r.c}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

@@ -1,22 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { Loader2, Mail, Phone, MapPin, Send, CheckCircle2, Sparkles } from "lucide-react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { submitContactAction } from "@/app/actions";
-import { Loader2 } from "lucide-react";
 
-/* ─────────────────────────────────────────────
-   Shared Layout Primitives
-───────────────────────────────────────────── */
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <p
-      className="text-[11px] font-semibold uppercase text-[#2E8BC0] mb-2"
-      style={{ letterSpacing: "0.12em" }}
-    >
-      {children}
-    </p>
+    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2E8BC0]/10 text-[#2E8BC0] text-[11px] font-bold uppercase tracking-wider mb-3 shadow-xs">
+      <Sparkles className="w-3 h-3" />
+      <span>{children}</span>
+    </div>
   );
 }
 
@@ -39,7 +34,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
       setIsSuccess(true);
     } catch (error) {
       console.error(error);
-      alert("Something went wrong. Please try again.");
+      alert("Something went wrong submitting your message. Please try again.");
     } finally {
       setIsPending(false);
     }
@@ -50,173 +45,214 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
       <Navigation />
 
       {/* Hero */}
-      <section className="bg-white pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-8">
+      <section className="bg-white pt-32 pb-12 md:pt-40 md:pb-20 px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
+          <span className="clay-badge bg-[#E8F5EE] text-[#1B5E20] mb-4">
+            Get in Touch
+          </span>
           <h1
             className="font-extrabold text-[#1A3C5E] max-w-4xl"
             style={{
-              fontSize: "clamp(56px, 8vw, 96px)",
-              lineHeight: 0.95,
+              fontSize: "clamp(44px, 7vw, 84px)",
+              lineHeight: 0.96,
               letterSpacing: "-0.03em",
             }}
           >
-            Let's start a conversation.
+            Let&apos;s start a conversation.
           </h1>
-          <p className="text-gray-600 mt-6 max-w-[480px]" style={{ fontSize: 18, lineHeight: 1.7 }}>
-            Whether you are a school owner looking to modernise operations, a parent with a question, or a brand wanting to partner with EdMedia, our team is ready to assist.
+          <p className="text-gray-600 mt-6 max-w-[540px] text-lg leading-relaxed">
+            Whether you are a school proprietor looking to modernise operations, a parent with questions, or an educational partner, our team is ready to connect.
           </p>
         </div>
       </section>
 
       {/* Grid */}
-      <section className="bg-white pb-24 md:pb-32 px-6 md:px-8">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[1.5fr_1fr] gap-16 items-start">
-          
-          {/* Left Column — Form */}
-          <div>
+      <section className="bg-[#F4F7FA] py-16 md:py-24 px-6 md:px-8 border-t border-gray-200">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1.5fr_1fr] gap-12 items-start">
+
+          {/* Left Column — Clay Form */}
+          <div className="clay-card p-8 md:p-12">
             {isSuccess ? (
-              <div className="bg-[#F0F4F8] rounded-xl p-10 md:p-16 text-center">
-                <h3 className="text-[24px] font-bold text-[#1A3C5E] mb-4">Thank you.</h3>
-                <p className="text-gray-600 mb-8" style={{ fontSize: 17, lineHeight: 1.7 }}>
-                  We will be in touch shortly — usually within one business day.
+              <div className="text-center py-8">
+                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-6 shadow-sm">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#1A3C5E] mb-3">Thank you for reaching out!</h3>
+                <p className="text-gray-600 text-base max-w-md mx-auto mb-8 leading-relaxed">
+                  Your message has been saved. Our team will review your inquiry and respond within one business day.
                 </p>
                 <button
                   onClick={() => setIsSuccess(false)}
-                  className="bg-[#1A3C5E] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1E3A52] transition-colors"
-                  style={{ fontSize: 15 }}
+                  className="clay-btn clay-btn-primary px-8 py-3 text-sm"
                 >
                   Send Another Message
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-[#1A3C5E] text-2xl mb-1">Send a Direct Message</h3>
+                  <p className="text-xs text-gray-500 mb-6">Fill in the details below to connect with Edcomrade leadership.</p>
+                </div>
+
                 <div className="space-y-2">
-                  <label className="text-[13px] font-semibold text-gray-700 block">Full Name</label>
+                  <label className="text-xs font-bold text-gray-700 block uppercase tracking-wider">Full Name *</label>
                   <input
                     type="text"
                     name="name"
                     required
                     placeholder="E.g. Solomon Ayisi"
-                    className="w-full bg-[#F0F4F8] border border-transparent rounded-lg px-4 py-3 text-[15px] focus:bg-white focus:border-[#2E8BC0] outline-none transition-colors"
+                    className="w-full clay-input px-4 py-3 text-sm text-gray-800"
                   />
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[13px] font-semibold text-gray-700 block">Email Address</label>
+                    <label className="text-xs font-bold text-gray-700 block uppercase tracking-wider">Email Address *</label>
                     <input
                       type="email"
                       name="email"
                       required
                       placeholder="solomon@example.com"
-                      className="w-full bg-[#F0F4F8] border border-transparent rounded-lg px-4 py-3 text-[15px] focus:bg-white focus:border-[#2E8BC0] outline-none transition-colors"
+                      className="w-full clay-input px-4 py-3 text-sm text-gray-800"
                     />
                   </div>
+
                   <div className="space-y-2">
-                    <label className="text-[13px] font-semibold text-gray-700 block">Phone Number (Optional)</label>
+                    <label className="text-xs font-bold text-gray-700 block uppercase tracking-wider">Phone Number (WhatsApp)</label>
                     <input
                       type="tel"
                       name="phone"
                       placeholder="+233 55 528 4923"
-                      className="w-full bg-[#F0F4F8] border border-transparent rounded-lg px-4 py-3 text-[15px] focus:bg-white focus:border-[#2E8BC0] outline-none transition-colors"
+                      className="w-full clay-input px-4 py-3 text-sm text-gray-800"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[13px] font-semibold text-gray-700 block">I am a...</label>
+                  <label className="text-xs font-bold text-gray-700 block uppercase tracking-wider">I am a... *</label>
                   <select
                     name="role"
                     required
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
-                    className="w-full bg-[#F0F4F8] border border-transparent rounded-lg px-4 py-3 text-[15px] focus:bg-white focus:border-[#2E8BC0] outline-none transition-colors appearance-none"
+                    className="w-full clay-input px-4 py-3 text-sm text-gray-800 bg-white"
                   >
-                    <option value="proprietor">School Proprietor / Head</option>
+                    <option value="proprietor">School Proprietor / Headmaster</option>
                     <option value="parent">Parent or Guardian</option>
                     <option value="student">Student</option>
                     <option value="partner">Partner or Vendor</option>
-                    <option value="other">Other Enquiry</option>
+                    <option value="other">General Inquiry</option>
                   </select>
                 </div>
 
                 {role === "proprietor" && (
-                  <div className="space-y-2">
-                    <label className="text-[13px] font-semibold text-gray-700 block">School Name</label>
+                  <div className="space-y-2 animate-in fade-in duration-200">
+                    <label className="text-xs font-bold text-gray-700 block uppercase tracking-wider">School Name</label>
                     <input
                       type="text"
                       name="schoolName"
-                      placeholder="E.g. Greenfield Academy"
-                      className="w-full bg-[#F0F4F8] border border-transparent rounded-lg px-4 py-3 text-[15px] focus:bg-white focus:border-[#2E8BC0] outline-none transition-colors"
+                      placeholder="E.g. Greenfield International School"
+                      className="w-full clay-input px-4 py-3 text-sm text-gray-800"
                     />
                   </div>
                 )}
 
                 <div className="space-y-2">
-                  <label className="text-[13px] font-semibold text-gray-700 block">Subject</label>
+                  <label className="text-xs font-bold text-gray-700 block uppercase tracking-wider">Subject</label>
                   <input
                     type="text"
                     name="subject"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     placeholder="Consultation Request"
-                    className="w-full bg-[#F0F4F8] border border-transparent rounded-lg px-4 py-3 text-[15px] focus:bg-white focus:border-[#2E8BC0] outline-none transition-colors"
+                    className="w-full clay-input px-4 py-3 text-sm text-gray-800"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[13px] font-semibold text-gray-700 block">Message</label>
+                  <label className="text-xs font-bold text-gray-700 block uppercase tracking-wider">Message *</label>
                   <textarea
                     name="message"
                     required
                     rows={5}
-                    placeholder="How can we help your school or address your question?"
-                    className="w-full bg-[#F0F4F8] border border-transparent rounded-lg px-4 py-3 text-[15px] focus:bg-white focus:border-[#2E8BC0] outline-none transition-colors resize-none"
+                    placeholder="Tell us how we can help your school or answer your questions..."
+                    className="w-full clay-input px-4 py-3 text-sm text-gray-800 resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isPending}
-                  className="w-full bg-[#1A3C5E] text-white py-[14px] rounded-lg font-semibold hover:bg-[#1E3A52] transition-colors flex items-center justify-center gap-2"
-                  style={{ fontSize: 15 }}
+                  className="clay-btn clay-btn-primary w-full py-3.5 text-sm gap-2 font-bold"
                 >
                   {isPending ? (
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <Loader2 className="w-5 h-5 animate-spin" />
                   ) : (
-                    "Send Message"
+                    <>
+                      <span>Send Message</span>
+                      <Send className="w-4 h-4" />
+                    </>
                   )}
                 </button>
               </form>
             )}
           </div>
 
-          {/* Right Column — Info */}
-          <div>
-            <h2 className="font-bold text-[#1A3C5E] mb-8" style={{ fontSize: 24, lineHeight: 1.3 }}>
-              Contact Information
-            </h2>
+          {/* Right Column — Info Cards */}
+          <div className="space-y-6">
+            <div className="clay-card p-8">
+              <Label>Direct Channels</Label>
+              <h3 className="font-bold text-[#1A3C5E] text-xl mb-6">Contact Information</h3>
 
-            <div className="space-y-8">
-              <div>
-                <Label>Email</Label>
-                <a href="mailto:partner@edcomrade.com" className="font-semibold text-gray-900 hover:text-[#2E8BC0] transition-colors" style={{ fontSize: 17 }}>
-                  partner@edcomrade.com
-                </a>
+              <div className="space-y-6 text-sm">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center flex-shrink-0 shadow-xs">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs text-gray-400 font-bold uppercase tracking-wider block">Email Address</span>
+                    <a href="mailto:partner@edcomrade.com" className="font-bold text-[#1A3C5E] hover:text-[#2E8BC0] transition-colors text-base">
+                      partner@edcomrade.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center flex-shrink-0 shadow-xs">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs text-gray-400 font-bold uppercase tracking-wider block">WhatsApp & Call</span>
+                    <a href="https://wa.me/233555284923" target="_blank" rel="noopener noreferrer" className="font-bold text-[#1A3C5E] hover:text-[#2E8BC0] transition-colors text-base">
+                      +233 55 528 4923
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center flex-shrink-0 shadow-xs">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs text-gray-400 font-bold uppercase tracking-wider block">Office Address</span>
+                    <p className="font-bold text-[#1A3C5E] text-base leading-snug">
+                      New Legon, Accra<br />
+                      Ghana, West Africa
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <Label>WhatsApp & Phone</Label>
-                <a href="https://wa.me/233555284923" className="font-semibold text-gray-900 hover:text-[#2E8BC0] transition-colors" style={{ fontSize: 17 }}>
-                  +233 55 528 4923
-                </a>
-              </div>
-              <div>
-                <Label>Office Address</Label>
-                <p className="font-semibold text-gray-900" style={{ fontSize: 17 }}>
-                  New Legon, Accra<br />
-                  Ghana, West Africa
-                </p>
-              </div>
+            </div>
+
+            <div className="clay-card p-8 bg-[#1A3C5E] text-white">
+              <span className="clay-badge bg-white/10 text-white border border-white/20 mb-3">
+                Quick Response Guarantee
+              </span>
+              <h4 className="font-bold text-white text-lg mb-2">School Onboarding Consultation</h4>
+              <p className="text-white/70 text-xs leading-relaxed">
+                School heads requesting a demo or Pioneers&apos; Software setup receive priority phone callback within 4 hours during business days.
+              </p>
             </div>
           </div>
 

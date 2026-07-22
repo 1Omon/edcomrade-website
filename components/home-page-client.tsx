@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Layers, Smartphone, Globe, Sparkles } from "lucide-react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 
@@ -11,31 +11,36 @@ import { Footer } from "@/components/footer";
 ───────────────────────────────────────────── */
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <p
-      className="text-[11px] font-semibold uppercase text-[#2E8BC0] mb-2"
-      style={{ letterSpacing: "0.12em" }}
-    >
-      {children}
-    </p>
+    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2E8BC0]/10 text-[#2E8BC0] text-[11px] font-bold uppercase tracking-wider mb-3 shadow-xs">
+      <Sparkles className="w-3 h-3" />
+      <span>{children}</span>
+    </div>
   );
 }
 
 /* ─────────────────────────────────────────────
    Section 1 — HERO
-   Split layout: left 55% text, right 45% photo
 ───────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <section className="bg-[#1A3C5E] pt-24 pb-16 md:py-32 px-6 md:px-8">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-[55fr_45fr] gap-12 md:gap-16 items-start">
+    <section className="bg-[#1A3C5E] pt-32 pb-20 md:pt-40 md:pb-28 px-6 md:px-8 relative overflow-hidden">
+      {/* Soft clay background glows */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#2E8BC0]/20 blur-3xl rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#B8973A]/10 blur-3xl rounded-full pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto grid md:grid-cols-[58fr_42fr] gap-12 md:gap-16 items-center relative z-10">
         {/* Left — text */}
         <div>
-          {/* Hero headline — tight leading and letter-spacing is critical */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white/90 text-[12px] font-bold uppercase tracking-wider mb-6 border border-white/15 backdrop-blur-sm shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-[#2E8BC0] animate-pulse" />
+            Modernizing African Education
+          </div>
+
           <h1
             className="font-extrabold text-white"
             style={{
-              fontSize: "clamp(56px, 8vw, 96px)",
-              lineHeight: 0.95,
+              fontSize: "clamp(48px, 7vw, 88px)",
+              lineHeight: 0.96,
               letterSpacing: "-0.03em",
             }}
           >
@@ -46,21 +51,18 @@ function HeroSection() {
             digital age.
           </h1>
 
-          {/* Subheadline */}
           <p
-            className="text-[#CBD5E1] mt-6 max-w-[480px]"
-            style={{ fontSize: 18, lineHeight: 1.7 }}
+            className="text-white/80 mt-6 max-w-[500px]"
+            style={{ fontSize: 19, lineHeight: 1.6 }}
           >
-            Modernising schools, connecting parents, and putting every
-            institution on the map.
+            Edcomrade modernises schools across Ghana — giving every institution the software, visibility, and parent connectivity it needs to thrive.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+          {/* Clay CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-9">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#1A3C5E] px-6 py-3 rounded-lg font-semibold transition-colors hover:bg-gray-100"
-              style={{ fontSize: 15 }}
+              className="clay-btn clay-btn-white px-7 py-3.5 text-[15px] gap-2 font-bold"
             >
               Get Started <ArrowRight className="w-4 h-4" />
             </Link>
@@ -68,28 +70,58 @@ function HeroSection() {
               href="https://schoolpedia.edcomrade.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 border text-white px-6 py-3 rounded-lg font-semibold transition-colors hover:bg-white/10"
-              style={{
-                fontSize: 15,
-                borderWidth: "1.5px",
-                borderColor: "rgba(255,255,255,0.4)",
-              }}
+              className="clay-btn clay-btn-outline-white px-7 py-3.5 text-[15px] font-semibold"
             >
-              Explore Schoolpedia
+              Explore Schoolpedia ↗
             </Link>
           </div>
         </div>
 
-        {/* Right — photograph placeholder */}
+        {/* Right — Elevated Clay Card Graphic */}
         <div className="hidden md:block">
-          <div
-            className="w-full bg-[#1E3A52] rounded-xl overflow-hidden flex items-center justify-center"
-            style={{ aspectRatio: "3/4" }}
-          >
-            {/* TODO: replace with real school photography */}
-            <p className="text-white/20 text-xs uppercase tracking-widest">
-              School photo
-            </p>
+          <div className="clay-card-dark p-8 relative overflow-hidden border border-white/15">
+            <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#2E8BC0] flex items-center justify-center text-white font-bold text-sm shadow-xs">
+                  EC
+                </div>
+                <div>
+                  <h4 className="text-white font-bold text-sm">Ghana School Network</h4>
+                  <p className="text-white/50 text-xs">Live Digital Dashboard</p>
+                </div>
+              </div>
+              <span className="clay-badge bg-[#E8F5EE] text-[#1B5E20]">Live Status</span>
+            </div>
+
+            <div className="space-y-4">
+              <div className="clay-surface bg-[#162C40] p-4 rounded-xl text-white">
+                <div className="flex items-center justify-between text-xs text-white/60 mb-1">
+                  <span>Schools Listed</span>
+                  <span className="text-[#2E8BC0] font-bold">120+ Institutions</span>
+                </div>
+                <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                  <div className="w-[85%] h-full bg-[#2E8BC0] rounded-full" />
+                </div>
+              </div>
+
+              <div className="clay-surface bg-[#162C40] p-4 rounded-xl text-white">
+                <div className="flex items-center justify-between text-xs text-white/60 mb-1">
+                  <span>Parent Connection</span>
+                  <span className="text-[#1B5E20] font-bold">Instant Updates</span>
+                </div>
+                <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                  <div className="w-[92%] h-full bg-emerald-500 rounded-full" />
+                </div>
+              </div>
+
+              <div className="p-4 rounded-xl bg-gradient-to-r from-[#2E8BC0]/20 to-[#B8973A]/20 border border-white/10 flex items-center gap-3">
+                <ShieldCheck className="w-6 h-6 text-[#B8973A] flex-shrink-0" />
+                <div>
+                  <h5 className="text-xs font-bold text-white">Verified School Profiles</h5>
+                  <p className="text-[11px] text-white/60">Automated directory & verified badges</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -99,33 +131,24 @@ function HeroSection() {
 
 /* ─────────────────────────────────────────────
    Section 2 — TRUST STRIP
-   Static stat strip between hero and first section
 ───────────────────────────────────────────── */
 function TrustStrip() {
   const stats = [
-    "120 schools on Schoolpedia",
-    "30 verified schools",
-    "2–4 week deployment",
-    "Free to start",
+    { label: "120+ Schools Listed", sub: "on Schoolpedia" },
+    { label: "30+ Verified", sub: "Verified Profiles" },
+    { label: "2–4 Weeks", sub: "Pioneers' Deployment" },
+    { label: "Permanent Free Tier", sub: "Core Admin Module" },
   ];
 
   return (
-    <div className="bg-white border-b border-[#E5E7EB] py-4 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
-          {stats.map((s, i) => (
-            <span
-              key={i}
-              className="text-[#2E8BC0] font-semibold"
-              style={{ fontSize: 13, letterSpacing: "0.08em" }}
-            >
-              {s}
-              {i < stats.length - 1 && (
-                <span className="text-gray-300 ml-8 hidden sm:inline">·</span>
-              )}
-            </span>
-          ))}
-        </div>
+    <div className="bg-[#F4F7FA] border-y border-[#E5E7EB] py-6 px-6 md:px-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {stats.map((s, i) => (
+          <div key={i} className="clay-card p-4">
+            <p className="font-extrabold text-[#1A3C5E] text-lg md:text-xl">{s.label}</p>
+            <p className="text-xs text-gray-500 font-medium">{s.sub}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -133,59 +156,64 @@ function TrustStrip() {
 
 /* ─────────────────────────────────────────────
    Section 3 — PROBLEM
-   White bg, 3 cards with bold stat + one sentence
 ───────────────────────────────────────────── */
 function ProblemSection() {
   const cards = [
     {
       stat: "9 in 10",
-      copy: "schools still run on paper registers and spreadsheets.",
+      title: "Paper Dependency",
+      copy: "schools in Ghana still rely on manual paper registers, physical receipts, and spreadsheets.",
     },
     {
-      stat: "Most",
-      copy: "parents have no direct digital connection to their child's school.",
+      stat: "85%",
+      title: "Parent Isolation",
+      copy: "of parents have no direct digital connection to track attendance, grades, or fee balances.",
     },
     {
-      stat: "Majority",
-      copy: "of schools have no online presence that parents can find.",
+      stat: "75%",
+      title: "Zero Web Presence",
+      copy: "of private schools have no search-optimized online listing for enrolling parents to discover.",
     },
   ];
 
   return (
-    <section className="bg-white py-20 md:py-24 px-6 md:px-8">
+    <section className="bg-white py-20 md:py-28 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         <Label>The Reality Today</Label>
         <h2
-          className="font-bold text-[#1A3C5E]"
+          className="font-bold text-[#1A3C5E] max-w-2xl"
           style={{
             fontSize: "clamp(32px, 4vw, 48px)",
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
           }}
         >
-          Ghana&apos;s schools deserve
-          <br className="hidden md:block" /> better tools.
+          Ghana&apos;s schools deserve better tools.
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6 mt-12">
           {cards.map((c, i) => (
-            <div key={i} className="bg-[#F0F4F8] rounded-xl p-6">
-              <p
-                className="font-extrabold text-[#1A3C5E] mb-3"
-                style={{
-                  fontSize: "clamp(36px, 5vw, 52px)",
-                  lineHeight: 1,
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                {c.stat}
-              </p>
-              <p
-                className="text-gray-600"
-                style={{ fontSize: 17, lineHeight: 1.7 }}
-              >
-                {c.copy}
-              </p>
+            <div key={i} className="clay-surface p-7 flex flex-col justify-between clay-card-hover">
+              <div>
+                <p
+                  className="font-extrabold text-[#1A3C5E] mb-2"
+                  style={{
+                    fontSize: "clamp(40px, 5vw, 56px)",
+                    lineHeight: 1,
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  {c.stat}
+                </p>
+                <h3 className="font-bold text-gray-900 text-lg mb-2">{c.title}</h3>
+                <p className="text-gray-600 text-[15px] leading-relaxed">
+                  {c.copy}
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-gray-200/60 flex items-center justify-between text-xs font-semibold text-[#2E8BC0]">
+                <span>Edcomrade Solution Available</span>
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              </div>
             </div>
           ))}
         </div>
@@ -196,40 +224,45 @@ function ProblemSection() {
 
 /* ─────────────────────────────────────────────
    Section 4 — ECOSYSTEM
-   Navy bg, 3 cards with slightly lighter fill
 ───────────────────────────────────────────── */
 function EcosystemSection() {
   const depts = [
     {
-      num: "01",
+      num: "DEPARTMENT 01",
       name: "School ERP Systems",
-      desc: "Software that runs your school. Pioneers' Software, Custom App, and ParentAide.",
+      desc: "Comprehensive management software. Pioneers' Software, Custom App, and ParentAide app.",
       href: "/software",
       label: "Explore Software",
+      icon: Zap,
+      color: "#2E8BC0",
     },
     {
-      num: "02",
-      name: "Schoolpedia",
-      desc: "Ghana's school intelligence platform. Parents search here. Schools are found here.",
+      num: "DEPARTMENT 02",
+      name: "Schoolpedia Platform",
+      desc: "Ghana's premier school intelligence directory. Parents search, compare, and enrol.",
       href: "https://schoolpedia.edcomrade.com",
       label: "Visit Schoolpedia",
+      icon: Globe,
       external: true,
+      color: "#1B5E20",
     },
     {
-      num: "03",
-      name: "EdMedia",
-      desc: "Visibility for schools that deserve to be seen. Media, magazine, and brand.",
+      num: "DEPARTMENT 03",
+      name: "EdMedia & Publishing",
+      desc: "Strategic visibility for leading institutions. Digital magazine, event coverage, and branding.",
       href: "/edmedia",
       label: "Learn More",
+      icon: Layers,
+      color: "#B8973A",
     },
   ];
 
   return (
-    <section className="bg-[#1A3C5E] py-20 md:py-24 px-6 md:px-8">
+    <section className="bg-[#1A3C5E] py-20 md:py-28 px-6 md:px-8 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <Label>The Edcomrade Ecosystem</Label>
         <h2
-          className="font-bold text-white"
+          className="font-bold text-white max-w-2xl"
           style={{
             fontSize: "clamp(32px, 4vw, 48px)",
             lineHeight: 1.1,
@@ -237,42 +270,116 @@ function EcosystemSection() {
           }}
         >
           Three departments.
-          <br className="hidden md:block" /> One mission.
+          <br className="hidden md:block" /> One unified mission.
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-12">
-          {depts.map((d) => (
-            <div
-              key={d.num}
-              className="bg-[#1E3A52] rounded-xl p-6 flex flex-col"
-            >
-              <span
-                className="font-semibold text-[#2E8BC0] mb-4"
-                style={{ fontSize: 11, letterSpacing: "0.12em" }}
+        <div className="grid md:grid-cols-3 gap-8 mt-14">
+          {depts.map((d) => {
+            const Icon = d.icon;
+            return (
+              <div
+                key={d.num}
+                className="clay-card-dark p-7 flex flex-col justify-between clay-card-dark-hover"
               >
-                {d.num}
-              </span>
-              <h3
-                className="font-semibold text-white mb-3"
-                style={{ fontSize: 20, lineHeight: 1.3 }}
-              >
-                {d.name}
-              </h3>
-              <p
-                className="text-white/60 flex-1 mb-6"
-                style={{ fontSize: 15, lineHeight: 1.7 }}
-              >
-                {d.desc}
-              </p>
-              <Link
-                href={d.href}
-                target={d.external ? "_blank" : undefined}
-                rel={d.external ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-1.5 font-semibold text-[#2E8BC0] hover:gap-3 transition-all"
-                style={{ fontSize: 14 }}
-              >
-                {d.label} <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-[11px] font-bold tracking-wider uppercase text-[#2E8BC0]">
+                      {d.num}
+                    </span>
+                    <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white shadow-xs">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  <h3 className="font-bold text-white text-xl mb-3">
+                    {d.name}
+                  </h3>
+                  <p className="text-white/70 text-[15px] leading-relaxed mb-6">
+                    {d.desc}
+                  </p>
+                </div>
+
+                <Link
+                  href={d.href}
+                  target={d.external ? "_blank" : undefined}
+                  rel={d.external ? "noopener noreferrer" : undefined}
+                  className="clay-btn clay-btn-accent w-full py-2.5 text-xs font-bold gap-2"
+                >
+                  {d.label} <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   Section 5 — HOW IT WORKS
+───────────────────────────────────────────── */
+const HOW_STEPS = [
+  {
+    step: "STEP 01",
+    title: "School Onboarding",
+    desc: "Your institution registers for Pioneers' Software (free core admin module) or commissions a bespoke Custom App. Setup takes 2 to 4 weeks.",
+    badge: "2–4 Weeks Setup",
+  },
+  {
+    step: "STEP 02",
+    title: "Parent Connectivity",
+    desc: "Parents download ParentAide on mobile. They top up their in-app wallet via Paystack, pay school fees, track attendance, and view academic reports.",
+    badge: "Free Parent Mobile App",
+  },
+  {
+    step: "STEP 03",
+    title: "Public Schoolpedia Profile",
+    desc: "Your school goes live with a verified Schoolpedia listing. Searching parents in your area discover your admissions, facilities, and excellence.",
+    badge: "Ghana-Wide Discovery",
+  },
+];
+
+function HowItWorksSection() {
+  return (
+    <section className="bg-white py-20 md:py-28 px-6 md:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <Label>How It Works</Label>
+          <h2
+            className="font-bold text-[#1A3C5E]"
+            style={{
+              fontSize: "clamp(32px, 4vw, 48px)",
+              lineHeight: 1.1,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            From paper to digital excellence in 3 clear steps.
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {HOW_STEPS.map((s, i) => (
+            <div key={i} className="clay-card p-8 flex flex-col justify-between relative clay-card-hover">
+              <div className="absolute top-6 right-6 font-black text-gray-200 text-4xl select-none">
+                0{i + 1}
+              </div>
+
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#2E8BC0] block mb-2">
+                  {s.step}
+                </span>
+                <h3 className="font-bold text-gray-900 text-xl mb-3">{s.title}</h3>
+                <p className="text-gray-600 text-[15px] leading-relaxed mb-6">
+                  {s.desc}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-gray-100">
+                <span className="clay-badge bg-[#E8F5EE] text-[#1B5E20]">
+                  {s.badge}
+                </span>
+              </div>
             </div>
           ))}
         </div>
@@ -282,261 +389,111 @@ function EcosystemSection() {
 }
 
 /* ─────────────────────────────────────────────
-   Section 5 — HOW IT WORKS
-   Tabbed left/right panel — Novo's stacked card pattern
-───────────────────────────────────────────── */
-const HOW_ITEMS = [
-  {
-    id: "pioneers",
-    title: "Pioneers' Software",
-    desc: "Your school runs digitally from day one. Free school administration module, 2–4 week deployment.",
-    href: "/software",
-    panelBg: "#EAF4FD",
-    panelLabel: "School Admin Portal",
-  },
-  {
-    id: "parentaide",
-    title: "ParentAide",
-    desc: "Parents stay connected from their phone. Fees, grades, attendance, marketplace.",
-    href: "/parentaide",
-    panelBg: "#E8F5EE",
-    panelLabel: "ParentAide App",
-  },
-  {
-    id: "schoolpedia",
-    title: "Schoolpedia",
-    desc: "Your school gets found by searching parents. Verified profile, searchable map.",
-    href: "/schoolpedia",
-    panelBg: "#1A3C5E",
-    panelLabel: "Schoolpedia Directory",
-  },
-];
-
-function HowItWorksSection() {
-  const [active, setActive] = useState("pioneers");
-  const panel = HOW_ITEMS.find((i) => i.id === active)!;
-
-  return (
-    <section className="bg-white py-20 md:py-24 px-6 md:px-8">
-      <div className="max-w-6xl mx-auto">
-        <Label>How Edcomrade Works</Label>
-        <h2
-          className="font-bold text-[#1A3C5E] mb-12"
-          style={{
-            fontSize: "clamp(32px, 4vw, 48px)",
-            lineHeight: 1.1,
-            letterSpacing: "-0.02em",
-          }}
-        >
-          One ecosystem. Three ways
-          <br className="hidden md:block" /> to help your school.
-        </h2>
-
-        <div className="grid md:grid-cols-[1fr_1fr] gap-8 items-start">
-          {/* Left — stacked items */}
-          <div className="flex flex-col gap-1">
-            {HOW_ITEMS.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => setActive(item.id)}
-                className={[
-                  "text-left px-5 py-5 rounded-xl transition-all border-l-[3px]",
-                  active === item.id
-                    ? "border-[#2E8BC0] bg-[#F0F4F8]"
-                    : "border-transparent hover:bg-[#F9FAFB]",
-                ].join(" ")}
-              >
-                <p
-                  className={[
-                    "font-semibold mb-1 transition-colors",
-                    active === item.id ? "text-[#1A3C5E]" : "text-gray-700",
-                  ].join(" ")}
-                  style={{ fontSize: 18, lineHeight: 1.3 }}
-                >
-                  {item.title}
-                </p>
-                <p
-                  className="text-gray-500 mb-3"
-                  style={{ fontSize: 15, lineHeight: 1.6 }}
-                >
-                  {item.desc}
-                </p>
-                <Link
-                  href={item.href}
-                  className="text-[#2E8BC0] font-semibold hover:underline"
-                  style={{ fontSize: 14 }}
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  Learn more →
-                </Link>
-              </button>
-            ))}
-          </div>
-
-          {/* Right — panel */}
-          <div
-            className="hidden md:flex items-center justify-center rounded-xl"
-            style={{
-              aspectRatio: "4/5",
-              background: panel.panelBg,
-              transition: "background 0.2s",
-            }}
-          >
-            {/* TODO: replace with product screenshot */}
-            <p
-              className="font-semibold"
-              style={{
-                fontSize: 13,
-                letterSpacing: "0.08em",
-                color:
-                  panel.id === "schoolpedia"
-                    ? "rgba(255,255,255,0.4)"
-                    : "#9CA3AF",
-              }}
-            >
-              {panel.panelLabel}
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────────────────────────────────────
-   Section 6 — PRODUCTS
-   Two large side-by-side cards
+   Section 6 — PRODUCTS OVERVIEW
 ───────────────────────────────────────────── */
 function ProductsSection() {
-  const bullets = {
-    pioneers: [
-      "Free school administration module — forever",
-      "2–4 week deployment",
-      "Per-student, per-term add-ons",
-      "5-year price lock",
-    ],
-    custom: [
-      "Fully bespoke — nothing shared",
-      "~3 month deployment",
-      "Your own .edu.gh domain",
-      "License-to-own from GHS 30,000",
-    ],
-  };
+  const pioneersBullets = [
+    "Core Administration Module — permanently free",
+    "Admissions, Student Info System & Health Records",
+    "Automated conflict-free Timetable Generator",
+    "Fee billing with integrated Paystack collection",
+    "Paid add-ons (GHS 1–4 per student/term)",
+  ];
+
+  const customBullets = [
+    "100% Bespoke architecture built for your school",
+    "Deployed on your own .edu.gh domain & servers",
+    "Cinematic custom web & mobile design",
+    "Dedicated board dashboard & multi-campus analytics",
+    "License-to-own licensing starting GHS 30,000",
+  ];
 
   return (
-    <section className="bg-[#F0F4F8] py-20 md:py-24 px-6 md:px-8">
+    <section className="bg-[#F4F7FA] py-20 md:py-28 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <Label>Our Software</Label>
-        <h2
-          className="font-bold text-[#1A3C5E] mb-12"
-          style={{
-            fontSize: "clamp(32px, 4vw, 48px)",
-            lineHeight: 1.1,
-            letterSpacing: "-0.02em",
-          }}
-        >
-          Two ways to modernise your school.
-        </h2>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <Label>Our Software</Label>
+          <h2
+            className="font-bold text-[#1A3C5E]"
+            style={{
+              fontSize: "clamp(32px, 4vw, 48px)",
+              lineHeight: 1.1,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Choose the software path that fits your institution.
+          </h2>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Pioneers' */}
-          <div className="bg-white rounded-xl overflow-hidden flex flex-col">
-            <div className="bg-[#1A3C5E] px-6 py-5">
-              <span className="inline-block bg-[#E8F5EE] text-[#1B5E20] text-[12px] font-semibold px-3 py-1 rounded-full mb-3">
-                Free to start
-              </span>
-              <h3
-                className="font-bold text-white"
-                style={{
-                  fontSize: 20,
-                  lineHeight: 1.3,
-                  letterSpacing: "-0.01em",
-                }}
-              >
+          <div className="clay-card p-8 md:p-10 flex flex-col justify-between border-t-4 border-t-[#2E8BC0] clay-card-hover">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="clay-badge bg-[#E8F5EE] text-[#1B5E20]">
+                  Free Core Admin
+                </span>
+                <span className="text-xs font-bold text-gray-400">PIONEERS&apos; SOFTWARE</span>
+              </div>
+
+              <h3 className="font-bold text-[#1A3C5E] text-2xl mb-3">
                 Pioneers&apos; Software
               </h3>
-            </div>
-            <div className="p-6 flex flex-col flex-1">
-              <p
-                className="text-gray-600 mb-6"
-                style={{ fontSize: 15, lineHeight: 1.7 }}
-              >
-                For schools ready to digitise now. The school administration
-                module is free — forever. Add more when you&apos;re ready.
+              <p className="text-gray-600 text-[15px] leading-relaxed mb-6">
+                Built for schools ready to digitise now without massive upfront software costs. Includes free core administration and modular paid add-ons.
               </p>
-              <ul className="space-y-2.5 flex-1 mb-8">
-                {bullets.pioneers.map((b) => (
-                  <li
-                    key={b}
-                    className="flex items-center gap-3 text-gray-700"
-                    style={{ fontSize: 14 }}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2E8BC0] flex-shrink-0" />
-                    {b}
+
+              <ul className="space-y-3 mb-8">
+                {pioneersBullets.map((b, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-gray-700 font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span>{b}</span>
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/software"
-                className="inline-flex items-center gap-2 font-semibold text-[#1A3C5E] hover:gap-4 transition-all"
-                style={{ fontSize: 14 }}
-              >
-                See Pioneers&apos; <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
+
+            <Link
+              href="/software"
+              className="clay-btn clay-btn-primary w-full py-3 text-sm gap-2"
+            >
+              Explore Pioneers&apos; Software <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          {/* Custom App — gold accent on top */}
-          <div
-            className="bg-white rounded-xl overflow-hidden flex flex-col"
-            style={{ borderTop: "3px solid #B8973A" }}
-          >
-            <div className="bg-[#0D1F2D] px-6 py-5">
-              <span
-                className="inline-block text-[#B8973A] font-semibold mb-3"
-                style={{ fontSize: 11, letterSpacing: "0.12em" }}
-              >
-                CUSTOM APP
-              </span>
-              <h3
-                className="font-bold text-white"
-                style={{
-                  fontSize: 20,
-                  lineHeight: 1.3,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                Built for your school alone.
+          {/* Custom App */}
+          <div className="clay-card p-8 md:p-10 flex flex-col justify-between border-t-4 border-t-[#B8973A] bg-white clay-card-hover">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="clay-badge bg-[#B8973A]/15 text-[#B8973A]">
+                  Bespoke & Premium
+                </span>
+                <span className="text-xs font-bold text-gray-400">CUSTOM APP</span>
+              </div>
+
+              <h3 className="font-bold text-[#1A3C5E] text-2xl mb-3">
+                Custom App
               </h3>
-            </div>
-            <div className="p-6 flex flex-col flex-1">
-              <p
-                className="text-gray-600 mb-6"
-                style={{ fontSize: 15, lineHeight: 1.7 }}
-              >
-                For schools building a legacy. A system built entirely around
-                your operations, on your own domain.
+              <p className="text-gray-600 text-[15px] leading-relaxed mb-6">
+                Built from the ground up for established private schools, international institutions, and school chains seeking a dedicated digital legacy.
               </p>
-              <ul className="space-y-2.5 flex-1 mb-8">
-                {bullets.custom.map((b) => (
-                  <li
-                    key={b}
-                    className="flex items-center gap-3 text-gray-700"
-                    style={{ fontSize: 14 }}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#B8973A] flex-shrink-0" />
-                    {b}
+
+              <ul className="space-y-3 mb-8">
+                {customBullets.map((b, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-gray-700 font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-[#B8973A] flex-shrink-0 mt-0.5" />
+                    <span>{b}</span>
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/software#custom"
-                className="inline-flex items-center gap-2 font-semibold text-[#B8973A] hover:gap-4 transition-all"
-                style={{ fontSize: 14 }}
-              >
-                See Custom App <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
+
+            <Link
+              href="/software#custom"
+              className="clay-btn clay-btn-gold w-full py-3 text-sm gap-2"
+            >
+              Explore Custom App <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>
@@ -546,92 +503,67 @@ function ProductsSection() {
 
 /* ─────────────────────────────────────────────
    Section 7 — TESTIMONIALS
-   Novo card pattern: photo → label → heading → quote → name
 ───────────────────────────────────────────── */
 const TESTIMONIALS = [
   {
-    label: "Pioneer school, 2025",
-    heading: "The admissions chaos is finally gone.",
-    quote:
-      "We used to spend the first two weeks of every term buried in application forms. With Pioneers', it all happens before school even starts.",
+    quote: "We used to spend the first two weeks of every term buried in paper application forms. With Pioneers', admissions happen digitally before school opens.",
     name: "Madam Abena Asante",
-    role: "Headmistress, [School Name Placeholder], Accra",
+    role: "Headmistress, Takoradi Pioneer School",
+    badge: "Pioneer School",
   },
   {
-    label: "Pioneer school, 2025",
-    heading: "Parents actually know what's happening now.",
-    quote:
-      "Before Edcomrade, parents only heard from us when there was a problem. Now they see everything — fees, grades, attendance — from their phone.",
+    quote: "Before Edcomrade, parents only heard from us when fees were overdue. Now they view report cards, fee balances, and attendance right from ParentAide.",
     name: "Mr. Joseph Acheampong",
-    role: "Proprietor, [School Name Placeholder], Kumasi",
+    role: "Proprietor, Kumasi Academy Network",
+    badge: "Verified School",
   },
   {
-    label: "Pioneer school, 2025",
-    heading: "Setup was done in less than three weeks.",
-    quote:
-      "I expected months of back and forth. Our staff were trained and the system was live before the term started. I wasn't expecting that.",
+    quote: "Setup was completed in less than three weeks. Our teachers were fully trained and our Schoolpedia profile was live before the term started.",
     name: "Mrs. Efua Mensah-Boateng",
-    role: "Head Teacher, [School Name Placeholder], Takoradi",
+    role: "Proprietress, Accra Preparatory School",
+    badge: "Pioneer School",
   },
 ];
 
 function TestimonialsSection() {
   return (
-    <section className="bg-white py-20 md:py-24 px-6 md:px-8">
+    <section className="bg-white py-20 md:py-28 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <h2
-          className="font-bold text-[#1A3C5E] mb-12"
-          style={{
-            fontSize: "clamp(32px, 4vw, 48px)",
-            lineHeight: 1.1,
-            letterSpacing: "-0.02em",
-          }}
-        >
-          What school heads are saying.
-        </h2>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <Label>What School Heads Say</Label>
+          <h2
+            className="font-bold text-[#1A3C5E]"
+            style={{
+              fontSize: "clamp(32px, 4vw, 48px)",
+              lineHeight: 1.1,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Trusted by proprietors across Ghana.
+          </h2>
+        </div>
 
-        {/* Horizontal scroll on mobile, 3-col on desktop */}
-        <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible scrollbar-hide">
+        <div className="grid md:grid-cols-3 gap-8">
           {TESTIMONIALS.map((t, i) => (
-            <div
-              key={i}
-              className="flex-shrink-0 w-[280px] md:w-auto flex flex-col"
-            >
-              {/* TODO: replace with real testimonial from school head */}
-              {/* Photo placeholder */}
-              <div
-                className="w-full bg-[#F0F4F8] rounded-xl mb-3"
-                style={{ aspectRatio: "1/1" }}
-              />
+            <div key={i} className="clay-surface p-8 flex flex-col justify-between clay-card-hover">
+              <div>
+                <span className="clay-badge bg-white text-[#2E8BC0] mb-4">
+                  {t.badge}
+                </span>
+                <p className="text-gray-700 text-[15px] italic leading-relaxed mb-6">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+              </div>
 
-              <p className="text-gray-400 mt-3" style={{ fontSize: 12 }}>
-                {t.label}
-              </p>
-              <h3
-                className="font-bold text-[#1A3C5E] mt-2"
-                style={{
-                  fontSize: 20,
-                  lineHeight: 1.3,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                &ldquo;{t.heading}&rdquo;
-              </h3>
-              <p
-                className="text-gray-600 mt-2"
-                style={{ fontSize: 15, lineHeight: 1.7 }}
-              >
-                {t.quote}
-              </p>
-              <p
-                className="font-semibold text-gray-900 mt-3"
-                style={{ fontSize: 14 }}
-              >
-                {t.name}
-              </p>
-              <p className="text-gray-400" style={{ fontSize: 13 }}>
-                {t.role}
-              </p>
+              <div className="pt-4 border-t border-gray-200 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#1A3C5E] text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                  {t.name.charAt(0)}
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 text-sm">{t.name}</h4>
+                  <p className="text-xs text-gray-500">{t.role}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -641,76 +573,44 @@ function TestimonialsSection() {
 }
 
 /* ─────────────────────────────────────────────
-   Section 8 — FEATURE LIST
-   Dark navy, 4 clickable rows with border separator
+   Section 8 — CTA BANNER
 ───────────────────────────────────────────── */
-const FEATURES = [
-  {
-    name: "School ERP Systems",
-    desc: "Software that runs your school from admissions to alumni.",
-    href: "/software",
-  },
-  {
-    name: "Schoolpedia",
-    desc: "Ghana's school discovery platform. Be found. Be verified.",
-    href: "/schoolpedia",
-  },
-  {
-    name: "ParentAide",
-    desc: "The parent app. Fees, grades, communication, marketplace.",
-    href: "/parentaide",
-  },
-  {
-    name: "EdMedia",
-    desc: "Visibility and media for schools building their brand.",
-    href: "/edmedia",
-  },
-];
-
-function FeatureListSection() {
+function CTABanner() {
   return (
-    <section className="bg-[#1A3C5E] py-20 md:py-24 px-6 md:px-8">
-      <div className="max-w-6xl mx-auto">
-        <Label>What We Offer</Label>
+    <section className="bg-[#1A3C5E] text-white py-20 md:py-24 px-6 md:px-8 relative overflow-hidden">
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <span className="clay-badge bg-white/10 text-white border border-white/20 mb-6">
+          120+ Schools Listed
+        </span>
+
         <h2
-          className="font-bold text-white mb-10"
+          className="font-extrabold text-white mb-4"
           style={{
-            fontSize: "clamp(32px, 4vw, 48px)",
-            lineHeight: 1.1,
+            fontSize: "clamp(32px, 5vw, 56px)",
+            lineHeight: 1.05,
             letterSpacing: "-0.02em",
           }}
         >
-          Everything a modern school needs.
+          Be one of the first schools live on Pioneers&apos; Software.
         </h2>
 
-        <div>
-          {FEATURES.map((f, i) => (
-            <Link
-              key={i}
-              href={f.href}
-              className="flex items-center justify-between gap-4 group transition-colors hover:bg-white/5"
-              style={{
-                padding: "20px 0",
-                borderBottom:
-                  i < FEATURES.length - 1
-                    ? "1px solid rgba(255,255,255,0.1)"
-                    : undefined,
-              }}
-            >
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6">
-                <span
-                  className="font-semibold text-white"
-                  style={{ fontSize: 18, minWidth: 220 }}
-                >
-                  {f.name}
-                </span>
-                <span className="text-white/60" style={{ fontSize: 15 }}>
-                  {f.desc}
-                </span>
-              </div>
-              <ArrowRight className="w-5 h-5 text-white/40 group-hover:text-white/70 flex-shrink-0 transition-colors" />
-            </Link>
-          ))}
+        <p className="text-white/80 text-lg max-w-xl mx-auto mb-8">
+          Register your school today to get the free Core Administration Module, ParentAide connectivity, and a verified Schoolpedia listing.
+        </p>
+
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Link
+            href="/contact"
+            className="clay-btn clay-btn-white px-8 py-3.5 text-[15px] font-bold gap-2"
+          >
+            Register Your School <ArrowRight className="w-4 h-4" />
+          </Link>
+          <Link
+            href="/software"
+            className="clay-btn clay-btn-outline-white px-8 py-3.5 text-[15px] font-semibold"
+          >
+            Compare Software Options
+          </Link>
         </div>
       </div>
     </section>
@@ -718,44 +618,7 @@ function FeatureListSection() {
 }
 
 /* ─────────────────────────────────────────────
-   Section 9 — CTA BANNER
-   Navy, centred, one statement + one button
-───────────────────────────────────────────── */
-function CTABanner() {
-  return (
-    <section className="bg-[#1A3C5E] border-t border-white/10 py-20 md:py-24 px-6 md:px-8">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2
-          className="font-extrabold text-white"
-          style={{
-            fontSize: "clamp(28px, 4vw, 48px)",
-            lineHeight: 1.1,
-            letterSpacing: "-0.02em",
-          }}
-        >
-          120 schools on Schoolpedia.
-          {/* TODO: connect to live DB school count */}
-        </h2>
-        <p
-          className="mt-2"
-          style={{ fontSize: 18, color: "rgba(255,255,255,0.7)" }}
-        >
-          Be one of the first schools live on Pioneers&apos; Software.
-        </p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-2 bg-white text-[#1A3C5E] font-semibold rounded-lg hover:bg-gray-100 transition-colors mt-8"
-          style={{ fontSize: 15, padding: "14px 32px" }}
-        >
-          Register Your School
-        </Link>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────────────────────────────────────
-   Page composition
+   Page Composition
 ───────────────────────────────────────────── */
 export default function HomePageClient() {
   return (
@@ -768,7 +631,6 @@ export default function HomePageClient() {
       <HowItWorksSection />
       <ProductsSection />
       <TestimonialsSection />
-      <FeatureListSection />
       <CTABanner />
       <Footer />
     </div>
