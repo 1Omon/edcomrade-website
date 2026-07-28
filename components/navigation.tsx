@@ -78,7 +78,7 @@ export function Navigation() {
           className={[
             "max-w-6xl mx-auto rounded-full px-6 py-3 transition-all duration-300 flex items-center justify-between gap-6",
             scrolled
-              ? "bg-white/90 backdrop-blur-md shadow-clay-card border border-white/80"
+              ? "bg-white/90 backdrop-blur-md shadow-lg border border-white/80"
               : "bg-white/70 backdrop-blur-sm border border-white/40 shadow-sm",
           ].join(" ")}
         >
@@ -116,7 +116,7 @@ export function Navigation() {
               {dropdownOpen && (
                 <div
                   role="menu"
-                  className="absolute top-full left-0 mt-3 w-80 clay-card p-3 z-50 animate-in fade-in zoom-in-95 duration-150"
+                  className="absolute top-full left-0 mt-3 w-80 bg-gray-100 rounded-2xl border border-gray-200 shadow-lg p-3 z-50 animate-in fade-in zoom-in-95 duration-150"
                 >
                   <div className="text-[11px] font-bold uppercase tracking-wider text-[#2E8BC0] px-3 py-1.5 mb-1 flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5" /> School Ecosystem
@@ -127,7 +127,7 @@ export function Navigation() {
                       href={p.href}
                       role="menuitem"
                       onClick={() => setDropdownOpen(false)}
-                      className="block p-3 rounded-xl hover:bg-[#F4F7FA] transition-colors group"
+                      className="block p-3 rounded-xl hover:bg-white transition-colors group"
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-[14px] font-bold text-gray-900 group-hover:text-[#1A3C5E]">
@@ -170,13 +170,13 @@ export function Navigation() {
               href="https://schoolpedia.edcomrade.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="clay-btn clay-btn-outline px-5 py-2 text-[14px]"
+              className="inline-flex items-center justify-center font-semibold rounded-full bg-transparent text-[#1A3C5E] border border-gray-300 hover:bg-gray-50 px-5 py-2 text-[14px] transition-all duration-200"
             >
               List Your School
             </Link>
             <Link
               href="/contact"
-              className="clay-btn clay-btn-primary px-6 py-2 text-[14px]"
+              className="inline-flex items-center justify-center font-semibold rounded-full bg-[#1A3C5E] text-white hover:bg-[#163350] shadow-sm hover:shadow-md px-6 py-2 text-[14px] transition-all duration-200"
             >
               Get Started
             </Link>
@@ -205,7 +205,7 @@ export function Navigation() {
       {/* ── Mobile slide-in panel (clay container) ── */}
       <div
         className={[
-          "fixed top-3 right-3 bottom-3 z-50 w-[310px] clay-card bg-white flex flex-col transition-transform duration-300 md:hidden overflow-hidden p-0",
+          "fixed top-3 right-3 bottom-3 z-50 w-[310px] bg-white rounded-2xl border border-gray-200 shadow-lg flex flex-col transition-transform duration-300 md:hidden overflow-hidden p-0",
           mobileOpen ? "translate-x-0" : "translate-x-[110%]",
         ].join(" ")}
       >
@@ -279,7 +279,7 @@ export function Navigation() {
         <div className="p-5 border-t border-[#E5E7EB] bg-[#F4F7FA]">
           <Link
             href="/contact"
-            className="clay-btn clay-btn-primary w-full py-3 text-[15px]"
+            className="inline-flex items-center justify-center font-semibold rounded-full bg-[#1A3C5E] text-white hover:bg-[#163350] shadow-sm hover:shadow-md w-full py-3 text-[15px] transition-all duration-200"
             onClick={() => setMobileOpen(false)}
           >
             Get Started

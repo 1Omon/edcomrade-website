@@ -21,7 +21,7 @@ export default function AboutPageClient() {
       {/* Hero */}
       <section className="bg-white pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
-          <span className="clay-badge bg-[#E8F5EE] text-[#1B5E20] mb-4">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#E8F5EE] text-[#1B5E20] shadow-sm mb-4">
             Our Mission & History
           </span>
           <h1
@@ -42,7 +42,7 @@ export default function AboutPageClient() {
       {/* Founding Story */}
       <section className="bg-[#F4F7FA] py-20 md:py-28 px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="clay-card p-8 md:p-12">
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 md:p-12">
             <Label>Our Founding Story</Label>
             <h2 className="font-bold text-[#1A3C5E] text-2xl md:text-3xl mb-8">
               From a 4-day enrolment ordeal at boarding school to an African edtech movement.
@@ -66,7 +66,7 @@ export default function AboutPageClient() {
       {/* Mission Block */}
       <section className="bg-[#1A3C5E] text-white py-24 md:py-32 px-6 md:px-8 relative overflow-hidden">
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <span className="clay-badge bg-white/10 text-white border border-white/20 mb-6">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/10 text-white border border-white/20 shadow-sm mb-6">
             Core Philosophy
           </span>
           <h2
@@ -94,12 +94,12 @@ export default function AboutPageClient() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
             {/* Founder 1 */}
-            <div className="clay-card p-8 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left clay-card-hover">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left hover:-translate-y-1 hover:shadow-md transition-all duration-300">
               <div className="w-24 h-24 rounded-2xl bg-[#1A3C5E] text-white flex items-center justify-center font-bold text-2xl flex-shrink-0 shadow-md">
                 SA
               </div>
               <div>
-                <span className="clay-badge bg-[#2E8BC0]/15 text-[#2E8BC0] mb-2">CEO & Founder</span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#2E8BC0]/15 text-[#2E8BC0] shadow-sm mb-2">CEO & Founder</span>
                 <h3 className="font-bold text-gray-900 text-xl mb-1">Solomon A. Ayisi</h3>
                 <p className="text-xs text-gray-500 mb-3">Business Management</p>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -109,12 +109,12 @@ export default function AboutPageClient() {
             </div>
 
             {/* Founder 2 */}
-            <div className="clay-card p-8 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left clay-card-hover">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left hover:-translate-y-1 hover:shadow-md transition-all duration-300">
               <div className="w-24 h-24 rounded-2xl bg-[#1E3A52] text-white flex items-center justify-center font-bold text-2xl flex-shrink-0 shadow-md">
                 PS
               </div>
               <div>
-                <span className="clay-badge bg-[#B8973A]/15 text-[#B8973A] mb-2">CTO & Co-Founder</span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#B8973A]/15 text-[#B8973A] shadow-sm mb-2">CTO & Co-Founder</span>
                 <h3 className="font-bold text-gray-900 text-xl mb-1">Prince Sarfo</h3>
                 <p className="text-xs text-gray-500 mb-3">Systems Architect</p>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -125,11 +125,11 @@ export default function AboutPageClient() {
           </div>
 
           {/* Broader Team Placeholders */}
-          <div className="clay-surface p-8 max-w-4xl mx-auto text-center">
+          <div className="bg-[#F4F7FA] rounded-2xl shadow-sm p-8 max-w-4xl mx-auto text-center">
             <h3 className="font-bold text-[#1A3C5E] text-xl mb-4">Engineering, Operations & Support Team</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-4">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="clay-card p-4 flex flex-col items-center">
+                <div key={i} className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 flex flex-col items-center">
                   <div className="w-16 h-16 rounded-full bg-[#1A3C5E]/10 text-[#1A3C5E] flex items-center justify-center font-bold text-xs mb-3">
                     EC 0{i}
                   </div>
@@ -153,7 +153,7 @@ export default function AboutPageClient() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="clay-card p-8 clay-card-hover border-t-4 border-t-[#2E8BC0]">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 hover:-translate-y-1 hover:shadow-md transition-all duration-300 border-t-4 border-t-[#2E8BC0]">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-bold text-[#2E8BC0] uppercase tracking-wider">Horizon 1</span>
                 <span className="text-xs font-bold text-gray-400">2025–2027</span>
@@ -175,7 +175,7 @@ export default function AboutPageClient() {
               </ul>
             </div>
 
-            <div className="clay-card p-8 clay-card-hover border-t-4 border-t-[#B8973A]">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 hover:-translate-y-1 hover:shadow-md transition-all duration-300 border-t-4 border-t-[#B8973A]">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-bold text-[#B8973A] uppercase tracking-wider">Horizon 2</span>
                 <span className="text-xs font-bold text-gray-400">2027–2030</span>
@@ -197,7 +197,7 @@ export default function AboutPageClient() {
               </ul>
             </div>
 
-            <div className="clay-card p-8 clay-card-hover border-t-4 border-t-[#1B5E20]">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 hover:-translate-y-1 hover:shadow-md transition-all duration-300 border-t-4 border-t-[#1B5E20]">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-bold text-[#1B5E20] uppercase tracking-wider">Horizon 3</span>
                 <span className="text-xs font-bold text-gray-400">2030+</span>

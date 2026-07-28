@@ -47,7 +47,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
       {/* Hero */}
       <section className="bg-white pt-32 pb-12 md:pt-40 md:pb-20 px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <span className="clay-badge bg-[#E8F5EE] text-[#1B5E20] mb-4">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#E8F5EE] text-[#1B5E20] shadow-sm mb-4">
             Get in Touch
           </span>
           <h1
@@ -71,7 +71,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1.5fr_1fr] gap-12 items-start">
 
           {/* Left Column — Clay Form */}
-          <div className="clay-card p-8 md:p-12">
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 md:p-12">
             {isSuccess ? (
               <div className="text-center py-8">
                 <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-6 shadow-sm">
@@ -83,7 +83,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
                 </p>
                 <button
                   onClick={() => setIsSuccess(false)}
-                  className="clay-btn clay-btn-primary px-8 py-3 text-sm"
+                  className="inline-flex items-center justify-center font-semibold rounded-full bg-[#1A3C5E] text-white hover:bg-[#163350] shadow-sm hover:shadow-md px-8 py-3 text-sm transition-all duration-200"
                 >
                   Send Another Message
                 </button>
@@ -102,7 +102,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
                     name="name"
                     required
                     placeholder="E.g. Solomon Ayisi"
-                    className="w-full clay-input px-4 py-3 text-sm text-gray-800"
+                    className="w-full bg-[#F9FAFB] rounded-xl border border-gray-300 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#2E8BC0] focus:ring-2 focus:ring-[#2E8BC0]/20 transition-all"
                   />
                 </div>
 
@@ -114,7 +114,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
                       name="email"
                       required
                       placeholder="solomon@example.com"
-                      className="w-full clay-input px-4 py-3 text-sm text-gray-800"
+                      className="w-full bg-[#F9FAFB] rounded-xl border border-gray-300 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#2E8BC0] focus:ring-2 focus:ring-[#2E8BC0]/20 transition-all"
                     />
                   </div>
 
@@ -124,7 +124,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
                       type="tel"
                       name="phone"
                       placeholder="+233 55 528 4923"
-                      className="w-full clay-input px-4 py-3 text-sm text-gray-800"
+                      className="w-full bg-[#F9FAFB] rounded-xl border border-gray-300 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#2E8BC0] focus:ring-2 focus:ring-[#2E8BC0]/20 transition-all"
                     />
                   </div>
                 </div>
@@ -136,7 +136,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
                     required
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
-                    className="w-full clay-input px-4 py-3 text-sm text-gray-800 bg-white"
+                    className="w-full bg-[#F9FAFB] rounded-xl border border-gray-300 px-4 py-3 text-sm text-gray-800 bg-white focus:outline-none focus:border-[#2E8BC0] focus:ring-2 focus:ring-[#2E8BC0]/20 transition-all"
                   >
                     <option value="proprietor">School Proprietor / Headmaster</option>
                     <option value="parent">Parent or Guardian</option>
@@ -153,7 +153,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
                       type="text"
                       name="schoolName"
                       placeholder="E.g. Greenfield International School"
-                      className="w-full clay-input px-4 py-3 text-sm text-gray-800"
+                      className="w-full bg-[#F9FAFB] rounded-xl border border-gray-300 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#2E8BC0] focus:ring-2 focus:ring-[#2E8BC0]/20 transition-all"
                     />
                   </div>
                 )}
@@ -166,7 +166,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     placeholder="Consultation Request"
-                    className="w-full clay-input px-4 py-3 text-sm text-gray-800"
+                    className="w-full bg-[#F9FAFB] rounded-xl border border-gray-300 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#2E8BC0] focus:ring-2 focus:ring-[#2E8BC0]/20 transition-all"
                   />
                 </div>
 
@@ -177,14 +177,14 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
                     required
                     rows={5}
                     placeholder="Tell us how we can help your school or answer your questions..."
-                    className="w-full clay-input px-4 py-3 text-sm text-gray-800 resize-none"
+                    className="w-full bg-[#F9FAFB] rounded-xl border border-gray-300 px-4 py-3 text-sm text-gray-800 resize-none focus:outline-none focus:border-[#2E8BC0] focus:ring-2 focus:ring-[#2E8BC0]/20 transition-all"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isPending}
-                  className="clay-btn clay-btn-primary w-full py-3.5 text-sm gap-2 font-bold"
+                  className="inline-flex items-center justify-center font-semibold rounded-full bg-[#1A3C5E] text-white hover:bg-[#163350] shadow-sm hover:shadow-md w-full py-3.5 text-sm gap-2 font-bold transition-all duration-200"
                 >
                   {isPending ? (
                     <Loader2 className="w-5 h-5 animate-spin" />
@@ -201,7 +201,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
 
           {/* Right Column — Info Cards */}
           <div className="space-y-6">
-            <div className="clay-card p-8">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
               <Label>Direct Channels</Label>
               <h3 className="font-bold text-[#1A3C5E] text-xl mb-6">Contact Information</h3>
 
@@ -245,8 +245,8 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
               </div>
             </div>
 
-            <div className="clay-card p-8 bg-[#1A3C5E] text-white">
-              <span className="clay-badge bg-white/10 text-white border border-white/20 mb-3">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 bg-[#1A3C5E] text-white">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/10 text-white border border-white/20 shadow-sm mb-3">
                 Quick Response Guarantee
               </span>
               <h4 className="font-bold text-white text-lg mb-2">School Onboarding Consultation</h4>

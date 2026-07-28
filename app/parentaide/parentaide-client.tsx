@@ -64,7 +64,7 @@ export default function ParentAidePageClient() {
       {/* Hero */}
       <section className="bg-white pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <span className="clay-badge bg-[#E8F5EE] text-[#1B5E20] mb-4">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#E8F5EE] text-[#1B5E20] shadow-sm mb-4">
             Free for Parents & Guardians
           </span>
           <h1
@@ -99,7 +99,7 @@ export default function ParentAidePageClient() {
             {features.map((feat, i) => {
               const Icon = feat.icon;
               return (
-                <div key={i} className="clay-card p-6 flex flex-col justify-between clay-card-hover">
+                <div key={i} className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                   <div>
                     <div className="w-12 h-12 rounded-2xl bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center mb-4 shadow-xs">
                       <Icon className="w-6 h-6" />
@@ -127,19 +127,19 @@ export default function ParentAidePageClient() {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="clay-card-dark p-7 clay-card-dark-hover">
+            <div className="bg-[#1E3A52] rounded-2xl border border-white/10 shadow-lg p-7 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               <span className="text-[#2E8BC0] font-bold text-xs tracking-wider uppercase block mb-3">01 · Top Up</span>
               <h3 className="font-bold text-white text-xl mb-2">Fund Securely</h3>
               <p className="text-white/70 text-sm leading-relaxed">Top up your ParentAide Wallet via Mobile Money (MTN, Telecel, AT) or Paystack card payments.</p>
             </div>
 
-            <div className="clay-card-dark p-7 clay-card-dark-hover">
+            <div className="bg-[#1E3A52] rounded-2xl border border-white/10 shadow-lg p-7 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               <span className="text-[#2E8BC0] font-bold text-xs tracking-wider uppercase block mb-3">02 · Pay Fees</span>
               <h3 className="font-bold text-white text-xl mb-2">Settle Tuition</h3>
               <p className="text-white/70 text-sm leading-relaxed">No bank queues. Pay school fees, PTA dues, and excursion bills directly to your school&apos;s verified account.</p>
             </div>
 
-            <div className="clay-card-dark p-7 clay-card-dark-hover">
+            <div className="bg-[#1E3A52] rounded-2xl border border-white/10 shadow-lg p-7 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               <span className="text-[#2E8BC0] font-bold text-xs tracking-wider uppercase block mb-3">03 · Shop Items</span>
               <h3 className="font-bold text-white text-xl mb-2">Buy Supplies</h3>
               <p className="text-white/70 text-sm leading-relaxed">Order approved textbooks, uniform sets, and stationery directly from the in-app school store.</p>
@@ -157,16 +157,16 @@ export default function ParentAidePageClient() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="clay-surface p-8 clay-card-hover border-t-4 border-t-[#2E8BC0]">
-              <span className="clay-badge bg-white text-[#2E8BC0] mb-4">Official School Stores</span>
+            <div className="bg-[#F4F7FA] rounded-2xl shadow-sm p-8 hover:-translate-y-1 hover:shadow-md transition-all duration-300 border-t-4 border-t-[#2E8BC0]">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white text-[#2E8BC0] shadow-sm mb-4">Official School Stores</span>
               <h3 className="font-bold text-[#1A3C5E] text-2xl mb-3">Direct School Purchases</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Buy directly from your child&apos;s school — official uniforms, customized books, badges, and PE gear, packed and ready before term re-opens.
               </p>
             </div>
 
-            <div className="clay-surface p-8 clay-card-hover border-t-4 border-t-[#B8973A]">
-              <span className="clay-badge bg-white text-[#B8973A] mb-4">Third-Party Vendors</span>
+            <div className="bg-[#F4F7FA] rounded-2xl shadow-sm p-8 hover:-translate-y-1 hover:shadow-md transition-all duration-300 border-t-4 border-t-[#B8973A]">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white text-[#B8973A] shadow-sm mb-4">Third-Party Vendors</span>
               <h3 className="font-bold text-[#1A3C5E] text-2xl mb-3">Verified Educational Suppliers</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Browse partner bookshops, stationery suppliers, uniform tailors, and educational technology vendors all integrated into one trusted marketplace.
@@ -179,7 +179,7 @@ export default function ParentAidePageClient() {
       {/* Download CTA */}
       <section className="bg-[#1A3C5E] text-white py-24 md:py-32 px-6 md:px-8 text-center border-t border-white/10">
         <div className="max-w-3xl mx-auto">
-          <span className="clay-badge bg-white/10 text-white border border-white/20 mb-6">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/10 text-white border border-white/20 shadow-sm mb-6">
             Mobile App In Development
           </span>
           <h2 className="font-extrabold text-white text-3xl md:text-5xl mb-6">
@@ -192,18 +192,18 @@ export default function ParentAidePageClient() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               disabled
-              className="clay-btn clay-btn-outline-white px-8 py-3.5 text-sm cursor-not-allowed opacity-60 gap-3"
+              className="inline-flex items-center justify-center font-semibold rounded-full bg-transparent text-white border border-white/30 hover:bg-white/10 px-8 py-3.5 text-sm cursor-not-allowed opacity-60 gap-3 transition-all duration-200"
             >
               <span>App Store</span>
-              <span className="clay-badge bg-white/20 text-white text-[10px]">Coming Soon</span>
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/20 text-white shadow-sm">Coming Soon</span>
             </button>
 
             <button
               disabled
-              className="clay-btn clay-btn-outline-white px-8 py-3.5 text-sm cursor-not-allowed opacity-60 gap-3"
+              className="inline-flex items-center justify-center font-semibold rounded-full bg-transparent text-white border border-white/30 hover:bg-white/10 px-8 py-3.5 text-sm cursor-not-allowed opacity-60 gap-3 transition-all duration-200"
             >
               <span>Google Play</span>
-              <span className="clay-badge bg-white/20 text-white text-[10px]">Coming Soon</span>
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/20 text-white shadow-sm">Coming Soon</span>
             </button>
           </div>
         </div>

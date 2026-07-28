@@ -55,7 +55,7 @@ export default function EdMediaPageClient() {
       {/* Hero */}
       <section className="bg-white pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <span className="clay-badge bg-[#E8F5EE] text-[#1B5E20] mb-4">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#E8F5EE] text-[#1B5E20] shadow-sm mb-4">
             EdMedia Department
           </span>
           <h1
@@ -90,7 +90,7 @@ export default function EdMediaPageClient() {
             {services.map((s, i) => {
               const Icon = s.icon;
               return (
-                <div key={i} className="clay-card p-8 flex flex-col justify-between clay-card-hover">
+                <div key={i} className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 flex flex-col justify-between hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                   <div>
                     <div className="w-12 h-12 rounded-2xl bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center mb-5 shadow-xs">
                       <Icon className="w-6 h-6" />
@@ -112,7 +112,7 @@ export default function EdMediaPageClient() {
       <section className="bg-[#1A3C5E] text-white py-20 md:py-28 px-6 md:px-8 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="clay-badge bg-white/10 text-white border border-white/20 mb-3">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/10 text-white border border-white/20 shadow-sm mb-3">
               Print & Digital Publication
             </span>
             <h2 className="font-bold text-white text-3xl md:text-4xl">
@@ -122,7 +122,7 @@ export default function EdMediaPageClient() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {/* Magazine Cover 01 */}
-            <div className="clay-card-dark p-6 flex flex-col justify-between clay-card-dark-hover">
+            <div className="bg-[#1E3A52] rounded-2xl border border-white/10 shadow-lg p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               <div className="w-full bg-[#162C40] rounded-2xl flex flex-col items-center justify-center p-8 border border-white/10 aspect-[3/4] mb-4">
                 <BookOpen className="w-10 h-10 text-[#2E8BC0] mb-3" />
                 <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Issue 01 · 2025</span>
@@ -132,7 +132,7 @@ export default function EdMediaPageClient() {
             </div>
 
             {/* Magazine Cover 02 */}
-            <div className="clay-card-dark p-6 flex flex-col justify-between clay-card-dark-hover">
+            <div className="bg-[#1E3A52] rounded-2xl border border-white/10 shadow-lg p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               <div className="w-full bg-[#162C40] rounded-2xl flex flex-col items-center justify-center p-8 border border-white/10 aspect-[3/4] mb-4">
                 <BookOpen className="w-10 h-10 text-[#B8973A] mb-3" />
                 <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Issue 02 · 2025</span>
@@ -142,7 +142,7 @@ export default function EdMediaPageClient() {
             </div>
 
             {/* Magazine Cover 03 */}
-            <div className="clay-card-dark p-6 flex flex-col justify-between clay-card-dark-hover hidden md:flex">
+            <div className="bg-[#1E3A52] rounded-2xl border border-white/10 shadow-lg p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition-all duration-300 hidden md:flex">
               <div className="w-full bg-[#162C40] rounded-2xl flex flex-col items-center justify-center p-8 border border-white/10 aspect-[3/4] mb-4">
                 <BookOpen className="w-10 h-10 text-emerald-400 mb-3" />
                 <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Issue 03 · 2026</span>
@@ -165,7 +165,7 @@ export default function EdMediaPageClient() {
           </p>
           <Link
             href="/contact?subject=edmedia"
-            className="clay-btn clay-btn-primary px-8 py-3.5 text-sm font-bold gap-2"
+            className="inline-flex items-center justify-center font-semibold rounded-full bg-[#1A3C5E] text-white hover:bg-[#163350] shadow-sm hover:shadow-md px-8 py-3.5 text-sm font-bold gap-2 transition-all duration-200"
           >
             Get in Touch with EdMedia <ArrowRight className="w-4 h-4" />
           </Link>

@@ -107,10 +107,10 @@ export default function SoftwarePageClient() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             className={[
-              "clay-btn px-6 py-2 text-sm transition-all",
+              "inline-flex items-center justify-center font-semibold rounded-full px-6 py-2 text-sm transition-all",
               activeTab === "pioneers"
-                ? "clay-btn-primary"
-                : "clay-btn-outline text-gray-600",
+                ? "bg-[#1A3C5E] text-white hover:bg-[#163350] shadow-sm hover:shadow-md"
+                : "bg-transparent text-gray-600 border border-gray-300 hover:bg-gray-50",
             ].join(" ")}
           >
             Pioneers&apos; Software
@@ -127,10 +127,10 @@ export default function SoftwarePageClient() {
               }
             }}
             className={[
-              "clay-btn px-6 py-2 text-sm transition-all",
+              "inline-flex items-center justify-center font-semibold rounded-full px-6 py-2 text-sm transition-all",
               activeTab === "custom"
-                ? "clay-btn-gold text-white"
-                : "clay-btn-outline text-gray-600",
+                ? "bg-[#B8973A] text-white hover:bg-[#a38430] shadow-sm hover:shadow-md"
+                : "bg-transparent text-gray-600 border border-gray-300 hover:bg-gray-50",
             ].join(" ")}
           >
             Custom App
@@ -176,7 +176,7 @@ export default function SoftwarePageClient() {
                 { title: "Private Senior High Schools", desc: "Manage hostel boarding, terminal exams, grading, and multi-term fee billing." },
                 { title: "Vocational & Technical Institutes", desc: "Organise practical schedules, staff communications, and fee invoicing." },
               ].map((c, i) => (
-                <div key={i} className="clay-surface p-7 clay-card-hover">
+                <div key={i} className="bg-[#F4F7FA] rounded-2xl shadow-sm p-7 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                   <h3 className="font-bold text-[#1A3C5E] text-xl mb-2">{c.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{c.desc}</p>
                 </div>
@@ -190,7 +190,7 @@ export default function SoftwarePageClient() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
               <div>
-                <span className="clay-badge bg-white text-[#1B5E20] mb-3">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white text-[#1B5E20] shadow-sm mb-3">
                   100% Free Core Module
                 </span>
                 <h2 className="font-bold text-[#1B5E20] text-3xl md:text-5xl max-w-3xl">
@@ -199,7 +199,7 @@ export default function SoftwarePageClient() {
               </div>
               <Link
                 href="/contact"
-                className="clay-btn clay-btn-primary px-6 py-3 text-sm flex-shrink-0"
+                className="inline-flex items-center justify-center font-semibold rounded-full bg-[#1A3C5E] text-white hover:bg-[#163350] shadow-sm hover:shadow-md px-6 py-3 text-sm flex-shrink-0 transition-all duration-200"
               >
                 Claim Free Access
               </Link>
@@ -207,7 +207,7 @@ export default function SoftwarePageClient() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {pioneersFeatures.map((f, i) => (
-                <div key={i} className="clay-card p-6 clay-card-hover">
+                <div key={i} className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                   <div className="w-8 h-8 rounded-full bg-[#1B5E20]/10 flex items-center justify-center text-[#1B5E20] font-bold text-xs mb-3">
                     0{i + 1}
                   </div>
@@ -239,7 +239,7 @@ export default function SoftwarePageClient() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {addOnModules.map((m, i) => (
-                <div key={i} className="clay-card p-6 flex flex-col justify-between clay-card-hover">
+                <div key={i} className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#2E8BC0]">Add-on Module</span>
                     <h3 className="font-bold text-[#1A3C5E] text-base mt-1 mb-3">{m.name}</h3>
@@ -253,7 +253,7 @@ export default function SoftwarePageClient() {
             </div>
 
             {/* Sample Pricing Table */}
-            <div className="clay-card p-6 md:p-8 overflow-hidden">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8 overflow-hidden">
               <h3 className="font-bold text-[#1A3C5E] text-xl mb-4">Sample Pricing Calculations</h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
@@ -325,7 +325,7 @@ export default function SoftwarePageClient() {
 
             <div className="grid md:grid-cols-2 gap-4 mb-16">
               {customFeatures.map((f, i) => (
-                <div key={i} className="clay-surface p-5 flex items-center gap-3 border border-[#B8973A]/20">
+                <div key={i} className="bg-[#F4F7FA] rounded-2xl shadow-sm p-5 flex items-center gap-3 border border-[#B8973A]/20">
                   <CheckCircle2 className="w-5 h-5 text-[#B8973A] flex-shrink-0" />
                   <span className="text-sm font-bold text-gray-800">{f}</span>
                 </div>
@@ -334,7 +334,7 @@ export default function SoftwarePageClient() {
 
             {/* Platforms & Pricing Table */}
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="clay-card p-7 border-t-4 border-[#B8973A]">
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-7 border-t-4 border-[#B8973A]">
                 <h3 className="font-bold text-[#1A3C5E] text-xl mb-4">Deployment Options</h3>
                 <div className="space-y-3">
                   <div className="p-3 bg-[#F4F7FA] rounded-xl flex items-center justify-between">
@@ -356,7 +356,7 @@ export default function SoftwarePageClient() {
                 </div>
               </div>
 
-              <div className="clay-card p-7 border-t-4 border-[#1A3C5E]">
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-7 border-t-4 border-[#1A3C5E]">
                 <h3 className="font-bold text-[#1A3C5E] text-xl mb-4">5-Phase Timeline (~3 Months)</h3>
                 <div className="space-y-2.5 text-xs text-gray-700 font-medium">
                   <div className="p-3 bg-[#F4F7FA] rounded-xl flex items-center justify-between">
@@ -398,7 +398,7 @@ export default function SoftwarePageClient() {
             </h2>
           </div>
 
-          <div className="clay-card p-6 md:p-8 overflow-hidden">
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse min-w-[700px]">
                 <thead>

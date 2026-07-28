@@ -22,7 +22,7 @@ export default function SchoolpediaPageClient() {
       {/* Hero */}
       <section className="bg-[#2E8BC0] text-white pt-32 pb-20 md:pt-40 md:pb-28 px-6 md:px-8 relative overflow-hidden">
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <span className="clay-badge bg-white/15 text-white border border-white/25 mb-4">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/15 text-white border border-white/25 shadow-sm mb-4">
             Ghana&apos;s School Intelligence Platform
           </span>
           <h1
@@ -46,7 +46,7 @@ export default function SchoolpediaPageClient() {
               href="https://schoolpedia.edcomrade.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="clay-btn clay-btn-white px-8 py-3.5 text-base font-bold gap-2 text-[#1A3C5E]"
+              className="inline-flex items-center justify-center font-semibold rounded-full bg-white text-[#1A3C5E] hover:bg-gray-50 shadow-sm hover:shadow-md px-8 py-3.5 text-base font-bold gap-2 transition-all duration-200"
             >
               Search Schools on Schoolpedia <ArrowRight className="w-5 h-5" />
             </Link>
@@ -65,7 +65,7 @@ export default function SchoolpediaPageClient() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="clay-surface p-8 clay-card-hover border-t-4 border-t-[#2E8BC0]">
+            <div className="bg-[#F4F7FA] rounded-2xl shadow-sm p-8 hover:-translate-y-1 hover:shadow-md transition-all duration-300 border-t-4 border-t-[#2E8BC0]">
               <div className="w-12 h-12 rounded-2xl bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center mb-5 shadow-xs">
                 <Search className="w-6 h-6" />
               </div>
@@ -75,7 +75,7 @@ export default function SchoolpediaPageClient() {
               </p>
             </div>
 
-            <div className="clay-surface p-8 clay-card-hover border-t-4 border-t-[#B8973A]">
+            <div className="bg-[#F4F7FA] rounded-2xl shadow-sm p-8 hover:-translate-y-1 hover:shadow-md transition-all duration-300 border-t-4 border-t-[#B8973A]">
               <div className="w-12 h-12 rounded-2xl bg-[#B8973A]/10 text-[#B8973A] flex items-center justify-center mb-5 shadow-xs">
                 <SlidersHorizontal className="w-6 h-6" />
               </div>
@@ -85,7 +85,7 @@ export default function SchoolpediaPageClient() {
               </p>
             </div>
 
-            <div className="clay-surface p-8 clay-card-hover border-t-4 border-t-[#1B5E20]">
+            <div className="bg-[#F4F7FA] rounded-2xl shadow-sm p-8 hover:-translate-y-1 hover:shadow-md transition-all duration-300 border-t-4 border-t-[#1B5E20]">
               <div className="w-12 h-12 rounded-2xl bg-[#1B5E20]/10 text-[#1B5E20] flex items-center justify-center mb-5 shadow-xs">
                 <CheckCircle2 className="w-6 h-6" />
               </div>
@@ -102,7 +102,7 @@ export default function SchoolpediaPageClient() {
       <section className="bg-[#1A3C5E] text-white py-20 md:py-28 px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="clay-badge bg-white/10 text-white border border-white/20 mb-3">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/10 text-white border border-white/20 shadow-sm mb-3">
               For School Proprietors
             </span>
             <h2 className="font-bold text-white text-3xl md:text-4xl">
@@ -111,7 +111,7 @@ export default function SchoolpediaPageClient() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="clay-card-dark p-8 clay-card-dark-hover">
+            <div className="bg-[#1E3A52] rounded-2xl border border-white/10 shadow-lg p-8 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white font-bold text-sm mb-4">
                 <ShieldCheck className="w-5 h-5 text-[#2E8BC0]" />
               </div>
@@ -121,7 +121,7 @@ export default function SchoolpediaPageClient() {
               </p>
             </div>
 
-            <div className="clay-card-dark p-8 clay-card-dark-hover">
+            <div className="bg-[#1E3A52] rounded-2xl border border-white/10 shadow-lg p-8 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white font-bold text-sm mb-4">
                 <Award className="w-5 h-5 text-[#B8973A]" />
               </div>
@@ -131,7 +131,7 @@ export default function SchoolpediaPageClient() {
               </p>
             </div>
 
-            <div className="clay-card-dark p-8 clay-card-dark-hover">
+            <div className="bg-[#1E3A52] rounded-2xl border border-white/10 shadow-lg p-8 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white font-bold text-sm mb-4">
                 <Eye className="w-5 h-5 text-emerald-400" />
               </div>
@@ -148,22 +148,22 @@ export default function SchoolpediaPageClient() {
       <section className="bg-[#F4F7FA] py-12 px-6 md:px-8 border-y border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="clay-card p-5">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
               <p className="font-extrabold text-[#1A3C5E] text-2xl md:text-3xl mb-1">120+</p>
               <p className="text-xs text-gray-500 font-semibold">Schools Listed on Map</p>
             </div>
 
-            <div className="clay-card p-5">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
               <p className="font-extrabold text-[#1A3C5E] text-2xl md:text-3xl mb-1">30+</p>
               <p className="text-xs text-gray-500 font-semibold">Verified School Profiles</p>
             </div>
 
-            <div className="clay-card p-5">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
               <p className="font-extrabold text-emerald-700 text-2xl md:text-3xl mb-1">Free</p>
               <p className="text-xs text-gray-500 font-semibold">Listing For Every School</p>
             </div>
 
-            <div className="clay-card p-5">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
               <p className="font-extrabold text-[#2E8BC0] text-2xl md:text-3xl mb-1">Pioneers&apos;</p>
               <p className="text-xs text-gray-500 font-semibold">Software Powered</p>
             </div>
@@ -182,7 +182,7 @@ export default function SchoolpediaPageClient() {
           </p>
           <Link
             href="/software"
-            className="clay-btn clay-btn-primary px-8 py-3.5 text-sm font-bold gap-2"
+            className="inline-flex items-center justify-center font-semibold rounded-full bg-[#1A3C5E] text-white hover:bg-[#163350] shadow-sm hover:shadow-md px-8 py-3.5 text-sm font-bold gap-2 transition-all duration-200"
           >
             Explore Pioneers&apos; Software <ArrowRight className="w-4 h-4" />
           </Link>

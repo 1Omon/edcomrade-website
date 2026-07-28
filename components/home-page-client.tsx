@@ -31,11 +31,7 @@ function HeroSection() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-[58fr_42fr] gap-12 md:gap-16 items-center relative z-10">
         {/* Left — text */}
         <div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white/90 text-[12px] font-bold uppercase tracking-wider mb-6 border border-white/15 backdrop-blur-sm shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#2E8BC0] animate-pulse" />
-            Modernizing African Education
-          </div>
-
+ 
           <h1
             className="font-extrabold text-white"
             style={{
@@ -62,7 +58,7 @@ function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 mt-9">
             <Link
               href="/contact"
-              className="clay-btn clay-btn-white px-7 py-3.5 text-[15px] gap-2 font-bold"
+              className="inline-flex items-center justify-center font-semibold rounded-full bg-white text-[#1A3C5E] hover:bg-gray-50 shadow-sm hover:shadow-md px-7 py-3.5 text-[15px] gap-2 font-bold transition-all duration-200"
             >
               Get Started <ArrowRight className="w-4 h-4" />
             </Link>
@@ -70,7 +66,7 @@ function HeroSection() {
               href="https://schoolpedia.edcomrade.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="clay-btn clay-btn-outline-white px-7 py-3.5 text-[15px] font-semibold"
+              className="inline-flex items-center justify-center font-semibold rounded-full bg-transparent text-white border border-white/30 hover:bg-white/10 px-7 py-3.5 text-[15px] transition-all duration-200"
             >
               Explore Schoolpedia ↗
             </Link>
@@ -79,7 +75,7 @@ function HeroSection() {
 
         {/* Right — Elevated Clay Card Graphic */}
         <div className="hidden md:block">
-          <div className="clay-card-dark p-8 relative overflow-hidden border border-white/15">
+          <div className="bg-[#1E3A52] rounded-2xl border border-white/10 shadow-lg p-8 relative overflow-hidden">
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#2E8BC0] flex items-center justify-center text-white font-bold text-sm shadow-xs">
@@ -90,11 +86,11 @@ function HeroSection() {
                   <p className="text-white/50 text-xs">Live Digital Dashboard</p>
                 </div>
               </div>
-              <span className="clay-badge bg-[#E8F5EE] text-[#1B5E20]">Live Status</span>
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#E8F5EE] text-[#1B5E20] shadow-sm">Live Status</span>
             </div>
 
             <div className="space-y-4">
-              <div className="clay-surface bg-[#162C40] p-4 rounded-xl text-white">
+              <div className="bg-[#162C40] rounded-xl p-4 text-white shadow-sm">
                 <div className="flex items-center justify-between text-xs text-white/60 mb-1">
                   <span>Schools Listed</span>
                   <span className="text-[#2E8BC0] font-bold">120+ Institutions</span>
@@ -104,7 +100,7 @@ function HeroSection() {
                 </div>
               </div>
 
-              <div className="clay-surface bg-[#162C40] p-4 rounded-xl text-white">
+              <div className="bg-[#162C40] rounded-xl p-4 text-white shadow-sm">
                 <div className="flex items-center justify-between text-xs text-white/60 mb-1">
                   <span>Parent Connection</span>
                   <span className="text-[#1B5E20] font-bold">Instant Updates</span>
@@ -144,7 +140,7 @@ function TrustStrip() {
     <div className="bg-[#F4F7FA] border-y border-[#E5E7EB] py-6 px-6 md:px-8">
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         {stats.map((s, i) => (
-          <div key={i} className="clay-card p-4">
+          <div key={i} className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4">
             <p className="font-extrabold text-[#1A3C5E] text-lg md:text-xl">{s.label}</p>
             <p className="text-xs text-gray-500 font-medium">{s.sub}</p>
           </div>
@@ -193,7 +189,7 @@ function ProblemSection() {
 
         <div className="grid md:grid-cols-3 gap-6 mt-12">
           {cards.map((c, i) => (
-            <div key={i} className="clay-surface p-7 flex flex-col justify-between clay-card-hover">
+            <div key={i} className="bg-[#F4F7FA] rounded-2xl shadow-sm p-7 flex flex-col justify-between hover:-translate-y-1 hover:shadow-md transition-all duration-300">
               <div>
                 <p
                   className="font-extrabold text-[#1A3C5E] mb-2"
@@ -279,7 +275,7 @@ function EcosystemSection() {
             return (
               <div
                 key={d.num}
-                className="clay-card-dark p-7 flex flex-col justify-between clay-card-dark-hover"
+                className="bg-[#1E3A52] rounded-2xl border border-white/10 shadow-lg p-7 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -303,7 +299,7 @@ function EcosystemSection() {
                   href={d.href}
                   target={d.external ? "_blank" : undefined}
                   rel={d.external ? "noopener noreferrer" : undefined}
-                  className="clay-btn clay-btn-accent w-full py-2.5 text-xs font-bold gap-2"
+                  className="inline-flex items-center justify-center font-semibold rounded-full bg-[#2E8BC0] text-white hover:bg-[#2679aa] shadow-sm hover:shadow-md w-full py-2.5 text-xs font-bold gap-2 transition-all duration-200"
                 >
                   {d.label} <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
@@ -360,7 +356,7 @@ function HowItWorksSection() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {HOW_STEPS.map((s, i) => (
-            <div key={i} className="clay-card p-8 flex flex-col justify-between relative clay-card-hover">
+            <div key={i} className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 flex flex-col justify-between relative hover:-translate-y-1 hover:shadow-md transition-all duration-300">
               <div className="absolute top-6 right-6 font-black text-gray-200 text-4xl select-none">
                 0{i + 1}
               </div>
@@ -376,7 +372,7 @@ function HowItWorksSection() {
               </div>
 
               <div className="pt-4 border-t border-gray-100">
-                <span className="clay-badge bg-[#E8F5EE] text-[#1B5E20]">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#E8F5EE] text-[#1B5E20] shadow-sm">
                   {s.badge}
                 </span>
               </div>
@@ -427,10 +423,10 @@ function ProductsSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Pioneers' */}
-          <div className="clay-card p-8 md:p-10 flex flex-col justify-between border-t-4 border-t-[#2E8BC0] clay-card-hover">
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 md:p-10 flex flex-col justify-between border-t-4 border-t-[#2E8BC0] hover:-translate-y-1 hover:shadow-md transition-all duration-300">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="clay-badge bg-[#E8F5EE] text-[#1B5E20]">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#E8F5EE] text-[#1B5E20] shadow-sm">
                   Free Core Admin
                 </span>
                 <span className="text-xs font-bold text-gray-400">PIONEERS&apos; SOFTWARE</span>
@@ -455,17 +451,17 @@ function ProductsSection() {
 
             <Link
               href="/software"
-              className="clay-btn clay-btn-primary w-full py-3 text-sm gap-2"
+              className="inline-flex items-center justify-center font-semibold rounded-full bg-[#1A3C5E] text-white hover:bg-[#163350] shadow-sm hover:shadow-md w-full py-3 text-sm gap-2 transition-all duration-200"
             >
               Explore Pioneers&apos; Software <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
           {/* Custom App */}
-          <div className="clay-card p-8 md:p-10 flex flex-col justify-between border-t-4 border-t-[#B8973A] bg-white clay-card-hover">
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 md:p-10 flex flex-col justify-between border-t-4 border-t-[#B8973A] hover:-translate-y-1 hover:shadow-md transition-all duration-300">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="clay-badge bg-[#B8973A]/15 text-[#B8973A]">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#B8973A]/15 text-[#B8973A] shadow-sm">
                   Bespoke & Premium
                 </span>
                 <span className="text-xs font-bold text-gray-400">CUSTOM APP</span>
@@ -490,7 +486,7 @@ function ProductsSection() {
 
             <Link
               href="/software#custom"
-              className="clay-btn clay-btn-gold w-full py-3 text-sm gap-2"
+              className="inline-flex items-center justify-center font-semibold rounded-full bg-[#B8973A] text-white hover:bg-[#a38430] shadow-sm hover:shadow-md w-full py-3 text-sm gap-2 transition-all duration-200"
             >
               Explore Custom App <ArrowRight className="w-4 h-4" />
             </Link>
@@ -545,9 +541,9 @@ function TestimonialsSection() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {TESTIMONIALS.map((t, i) => (
-            <div key={i} className="clay-surface p-8 flex flex-col justify-between clay-card-hover">
+            <div key={i} className="bg-[#F4F7FA] rounded-2xl shadow-sm p-8 flex flex-col justify-between hover:-translate-y-1 hover:shadow-md transition-all duration-300">
               <div>
-                <span className="clay-badge bg-white text-[#2E8BC0] mb-4">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white text-[#2E8BC0] shadow-sm mb-4">
                   {t.badge}
                 </span>
                 <p className="text-gray-700 text-[15px] italic leading-relaxed mb-6">
@@ -579,7 +575,7 @@ function CTABanner() {
   return (
     <section className="bg-[#1A3C5E] text-white py-20 md:py-24 px-6 md:px-8 relative overflow-hidden">
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <span className="clay-badge bg-white/10 text-white border border-white/20 mb-6">
+        <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/10 text-white border border-white/20 shadow-sm mb-6">
           120+ Schools Listed
         </span>
 
@@ -601,13 +597,13 @@ function CTABanner() {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/contact"
-            className="clay-btn clay-btn-white px-8 py-3.5 text-[15px] font-bold gap-2"
+            className="inline-flex items-center justify-center font-semibold rounded-full bg-white text-[#1A3C5E] hover:bg-gray-50 shadow-sm hover:shadow-md px-8 py-3.5 text-[15px] font-bold gap-2 transition-all duration-200"
           >
             Register Your School <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
             href="/software"
-            className="clay-btn clay-btn-outline-white px-8 py-3.5 text-[15px] font-semibold"
+            className="inline-flex items-center justify-center font-semibold rounded-full bg-transparent text-white border border-white/30 hover:bg-white/10 px-8 py-3.5 text-[15px] transition-all duration-200"
           >
             Compare Software Options
           </Link>
