@@ -1,178 +1,147 @@
 @import "tailwindcss";
 
-:root {
-  /* Typography */
-  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-
-  /* Neutral scale — the dominant palette */
-  --color-ink:        #0A0A0A;   /* Primary text — near black, not pure black */
-  --color-ink-muted:  #4B4B4B;   /* Secondary text */
-  --color-ink-faint:  #8A8A8A;   /* Captions, metadata, labels */
-  --color-paper:      #FFFFFF;   /* Primary background */
-  --color-paper-warm: #F8F7F4;   /* Off-white — used for alternating sections */
-  --color-rule:       #E0E0E0;   /* Horizontal rules, dividers, borders */
-  --color-rule-dark:  #2A2A2A;   /* Rules on dark backgrounds */
-
-  /* Dark inversion — used for section backgrounds */
-  --color-dark:       #111111;   /* Section inversion background */
-  --color-dark-mid:   #1C1C1C;   /* Card on dark background */
-
-  /* Brand accent — used sparingly */
-  --color-navy:       #1A3C5E;   /* Hover states, active nav, dark CTA buttons */
-  --color-accent:     #2E8BC0;   /* Accent words, links, category tags, rule accents */
-  --color-gold:       #B8973A;   /* Custom App only — premium signal */
-  --color-green:      #1B5E20;   /* Free tier, success states, verified badges */
-
-  /* Spacing — base 4 system */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-20: 80px;
-  --space-24: 96px;
-
-  /* Layout */
-  --content-max: 1200px;
-  --content-wide: 1440px;
-  --content-narrow: 720px;
-
-  /* Type scale */
-  --text-xs:   11px;
-  --text-sm:   13px;
-  --text-base: 16px;
-  --text-lg:   18px;
-  --text-xl:   22px;
-  --text-2xl:  28px;
-  --text-3xl:  36px;
-  --text-4xl:  48px;
-  --text-5xl:  64px;
-  --text-hero: clamp(52px, 7vw, 88px);
-
-  /* Leading */
-  --leading-tight:  0.95;
-  --leading-snug:   1.15;
-  --leading-normal: 1.5;
-  --leading-loose:  1.75;
-
-  /* Tracking */
-  --tracking-tight:  -0.03em;
-  --tracking-snug:   -0.02em;
-  --tracking-normal: 0em;
-  --tracking-wide:   0.08em;
-  --tracking-wider:  0.14em;
-}
-
-@theme inline {
-  --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
-
-  --color-ink: var(--color-ink);
-  --color-ink-muted: var(--color-ink-muted);
-  --color-ink-faint: var(--color-ink-faint);
-  --color-paper: var(--color-paper);
-  --color-paper-warm: var(--color-paper-warm);
-  --color-rule: var(--color-rule);
-  --color-rule-dark: var(--color-rule-dark);
-  --color-dark: var(--color-dark);
-  --color-dark-mid: var(--color-dark-mid);
-  --color-navy: var(--color-navy);
-  --color-accent: var(--color-accent);
-  --color-gold: var(--color-gold);
-  --color-green: var(--color-green);
-}
-
 @layer base {
-  * {
-    border-color: var(--color-rule);
+  :root {
+    /* Edcomrade Brand Palette */
+    --color-navy: #1A3C5E;          /* Deep institutional navy */
+    --color-navy-dark: #0F2537;     /* Dark container navy */
+    --color-cyan: #2E8BC0;          /* Vibrant cyan blue accent */
+    --color-cyan-light: #EBF4FA;    /* Soft cyan tint */
+    --color-gold: #B8973A;          /* Prestige gold accent */
+    --color-gold-light: #FDF9EE;    /* Soft gold tint */
+    --color-green: #1B5E20;         /* Emerald green (Pioneers free badge) */
+    --color-green-light: #E8F5EE;   /* Soft green tint */
+    
+    /* Editorial Ink & Paper */
+    --color-ink: #1A3C5E;           /* Deep navy ink for text */
+    --color-ink-faint: rgba(26, 60, 94, 0.45);
+    --color-ink-muted: #475569;     /* Slate muted text */
+    --color-paper: #F8FAFC;         /* Crisp slate paper */
+    --color-paper-warm: #F1F5F9;    /* Soft section paper background */
+    --color-card-bg: #FFFFFF;       /* Pure white cards */
+    --color-rule: rgba(26, 60, 94, 0.12);
+    --color-rule-dark: rgba(255, 255, 255, 0.15);
+
+    /* Typography scale */
+    --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+    --font-sans: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: var(--font-jetbrains), "JetBrains Mono", monospace;
+
+    --text-hero: clamp(40px, 6vw, 76px);
+    --text-5xl: clamp(34px, 4.5vw, 56px);
+    --text-4xl: clamp(28px, 3.5vw, 44px);
+    --text-3xl: clamp(22px, 2.5vw, 32px);
+    --text-2xl: clamp(18px, 2vw, 24px);
+    --text-xl: 1.25rem;
+    --text-lg: 1.125rem;
+    --text-base: 1rem;
+    --text-sm: 0.875rem;
+    --text-xs: 0.75rem;
+
+    --tracking-tight: -0.025em;
+    --tracking-snug: -0.015em;
+    --tracking-wide: 0.05em;
+    --tracking-wider: 0.1em;
   }
-
-  body {
-    background-color: var(--color-paper);
-    color: var(--color-ink);
-    font-family: var(--font-sans);
-    font-size: var(--text-base);
-    line-height: var(--leading-normal);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1, h2, h3, h4 {
-    color: var(--color-ink);
-  }
 }
 
-/* Broadsheet Newspaper Component Utilities */
-.section-header {
-  border-top: 1px solid var(--color-rule);
-  padding-top: var(--space-4);
-  margin-bottom: var(--space-8);
-}
-
-.section-header-dark {
-  border-top: 1px solid var(--color-rule-dark);
-  padding-top: var(--space-4);
-  margin-bottom: var(--space-8);
-}
-
-.section-label {
-  font-family: var(--font-sans);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  color: var(--color-accent);
-  font-weight: 600;
-  display: block;
-  margin-bottom: var(--space-2);
-}
-
-.section-headline {
-  font-family: var(--font-serif);
-  font-size: var(--text-3xl);
-  letter-spacing: var(--tracking-snug);
-  line-height: var(--leading-snug);
+html, body {
+  background-color: var(--color-paper);
   color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Magazine Cards & Badges */
+.mag-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-rule);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px -2px rgba(26, 60, 94, 0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.mag-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -4px rgba(26, 60, 94, 0.12);
+  border-color: var(--color-cyan);
+}
+
+.mag-badge-cyan {
+  background-color: var(--color-cyan-light);
+  color: var(--color-cyan);
+  border: 1px solid rgba(46, 139, 192, 0.25);
+  font-size: var(--text-xs);
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.section-headline-dark {
-  font-family: var(--font-serif);
-  font-size: var(--text-3xl);
-  letter-spacing: var(--tracking-snug);
-  line-height: var(--leading-snug);
-  color: #FFFFFF;
+.mag-badge-green {
+  background-color: var(--color-green-light);
+  color: var(--color-green);
+  border: 1px solid rgba(27, 94, 32, 0.25);
+  font-size: var(--text-xs);
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.newspaper-row {
-  border-top: 1px solid var(--color-rule);
-  padding: var(--space-4) 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+.mag-badge-gold {
+  background-color: var(--color-gold-light);
+  color: var(--color-gold);
+  border: 1px solid rgba(184, 151, 58, 0.3);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.newspaper-row-dark {
-  border-top: 1px solid var(--color-rule-dark);
-  padding: var(--space-4) 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+/* Image Zoom */
+.img-zoom-container {
+  overflow: hidden;
+  position: relative;
 }
 
-/* Drop Cap for Manifesto Essay */
+.img-zoom-container img {
+  transition: transform 0.5s ease;
+}
+
+.img-zoom-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Section Header Utility */
+.section-header-brand {
+  border-top: 2px solid var(--color-cyan);
+  padding-top: 16px;
+  margin-bottom: 36px;
+}
+
 .drop-cap::first-letter {
   font-family: var(--font-serif);
-  font-size: var(--text-hero);
+  font-size: 3.8em;
   float: left;
   line-height: 0.8;
   margin-right: 12px;
-  color: var(--color-ink);
+  margin-top: 4px;
+  color: var(--color-navy);
   font-weight: 700;
 }

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+import { Sparkles, Users, Layers, Award } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Edcomrade — Built in Ghana, Built for Africa",
@@ -14,110 +16,101 @@ export default function AboutPage() {
     <main style={{ backgroundColor: "var(--color-paper)" }}>
       <Navigation />
 
-      {/* Hero */}
-      <section style={{ paddingTop: "140px", paddingBottom: "80px" }}>
+      {/* Hero Header */}
+      <section style={{ paddingTop: "150px", paddingBottom: "80px", backgroundColor: "var(--color-paper)" }}>
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div style={{ borderTop: "1px solid var(--color-rule)", paddingTop: "16px", marginBottom: "32px" }}>
-            <span style={{ fontSize: "var(--text-xs)", letterSpacing: "var(--tracking-wider)", textTransform: "uppercase", color: "var(--color-accent)", fontWeight: 600 }}>
-              OUR STORY
-            </span>
-          </div>
-          <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-hero)", fontWeight: 700, lineHeight: 0.95, letterSpacing: "var(--tracking-tight)", color: "var(--color-ink)", maxWidth: "850px", marginBottom: "48px" }}>
-            Built in Ghana. Built for Africa.
-          </h1>
-
-          {/* Founding story — editorial prose */}
-          <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
-            <div className="lg:col-span-2 space-y-6" style={{ fontSize: "var(--text-lg)", color: "var(--color-ink-muted)", lineHeight: 1.75 }}>
-              <p>
-                In 2023, Solomon Ayisi visited a well-regarded private school in Accra and found the bursar managing fee records in a notebook. Not a spreadsheet — a notebook, with a pen. The school had 400 students, a dedicated teaching staff, and parents who drove their children an hour each way because the institution had a reputation. It also had no way to communicate that reputation to anyone outside its immediate catchment.
-              </p>
-              <p>
-                That visit became the founding question of Edcomrade: why do Ghana&apos;s best schools remain invisible? Not because they lack quality — but because they lack infrastructure. Digital infrastructure. The kind that makes a school searchable, trustworthy, and connected to the families who are looking for exactly what that school offers.
-              </p>
-              <p>
-                Solomon chose to build a company instead of deploying to one school. He partnered with Prince Sarfo, a software engineer who had spent years building enterprise systems, and they started with a simple constraint: every product had to work on the infrastructure Ghana actually has — not the infrastructure Silicon Valley assumes. Slow internet. Mobile-first users. Trust built in person, not through ads.
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div className="lg:col-span-7 space-y-6">
+              <span className="mag-badge-cyan">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>OUR FOUNDING STORY</span>
+              </span>
+              <h1 className="font-serif text-5xl sm:text-6xl font-bold text-[#1A3C5E] leading-tight">
+                Built in Ghana. Built for Africa.
+              </h1>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                In 2023, Solomon Ayisi visited a well-regarded private school in Accra and found the bursar managing fee records in a paper notebook. That visit sparked Edcomrade: why do Ghana&apos;s best schools remain invisible?
               </p>
             </div>
-            <div>
-              <div style={{ border: "1px solid var(--color-rule)", padding: "24px", borderLeft: "3px solid var(--color-accent)" }}>
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-xl)", fontStyle: "italic", color: "var(--color-ink)", lineHeight: 1.5 }}>
-                  &ldquo;The administration eats the education. We want to end that.&rdquo;
-                </p>
-                <p style={{ fontSize: "var(--text-xs)", color: "var(--color-ink-faint)", marginTop: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                  Solomon A. Ayisi · Founder
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Mission — dark section */}
-      <section style={{ backgroundColor: "var(--color-dark)", padding: "80px 0" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 text-center">
-          <p style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-4xl)", fontStyle: "italic", color: "#fff", lineHeight: 1.3, fontWeight: 600 }}>
-            We modernise African schools.<br />
-            We centre education around parents.<br />
-            We make excellence visible.
-          </p>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section style={{ backgroundColor: "var(--color-paper)", padding: "80px 0" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div style={{ borderTop: "1px solid var(--color-rule)", paddingTop: "16px", marginBottom: "48px" }}>
-            <span style={{ fontSize: "var(--text-xs)", letterSpacing: "var(--tracking-wider)", textTransform: "uppercase", color: "var(--color-accent)", fontWeight: 600, display: "block", marginBottom: "8px" }}>
-              THE TEAM
-            </span>
-            <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-3xl)", fontWeight: 700, lineHeight: 1.15, color: "var(--color-ink)" }}>
-              Two builders. One company.
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { name: "Solomon A. Ayisi", role: "CEO & Founder", bio: "Former educator turned entrepreneur. Built Edcomrade after realising the right infrastructure was missing, not the talent." },
-              { name: "Prince Sarfo", role: "CTO & Co-Founder", bio: "Enterprise software engineer with a decade of system architecture experience. Builds what African schools actually need." },
-            ].map((m) => (
-              <div key={m.name}>
-                {/* TODO: add team member photo */}
-                <div style={{ border: "1px solid var(--color-rule)", aspectRatio: "1/1", backgroundColor: "var(--color-paper-warm)", marginBottom: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ fontSize: "var(--text-xs)", color: "var(--color-ink-faint)", fontFamily: "var(--font-mono)" }}>PHOTO</span>
+            <div className="lg:col-span-5">
+              <div className="mag-card p-3">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/hero-classroom.png"
+                    alt="Founding story classroom vision"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <p style={{ fontSize: "var(--text-base)", fontWeight: 600, color: "var(--color-ink)" }}>{m.name}</p>
-                <p style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-faint)", marginBottom: "8px" }}>{m.role}</p>
-                <p style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-muted)", lineHeight: 1.7 }}>{m.bio}</p>
               </div>
-            ))}
-            {/* TODO: add team member */}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Dark Mission Bar */}
+      <section className="bg-[#0F2537] text-white py-16 text-center">
+        <div className="max-w-[900px] mx-auto px-6 space-y-4">
+          <span className="mag-badge-gold">OUR CORE MISSION</span>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-snug">
+            We modernise African schools. We centre education around parents. We make excellence visible.
+          </h2>
+        </div>
+      </section>
+
+      {/* Founders Section */}
+      <section style={{ padding: "90px 0", backgroundColor: "#EEF4F8" }}>
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-10">
+          <div className="border-b-2 border-[#2E8BC0] pb-4">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#2E8BC0] font-bold block mb-2">
+              THE BUILDERS
+            </span>
+            <h2 className="font-serif text-4xl font-bold text-[#1A3C5E]">Leadership & Founders.</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="mag-card p-8 space-y-4">
+              <span className="mag-badge-cyan">CEO & FOUNDER</span>
+              <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Solomon A. Ayisi</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Former educator turned software entrepreneur. Built Edcomrade after realizing the core digital infrastructure was missing for private schools in West Africa.
+              </p>
+            </div>
+
+            <div className="mag-card p-8 space-y-4">
+              <span className="mag-badge-gold">CTO & CO-FOUNDER</span>
+              <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Prince Sarfo</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Enterprise systems architect with over a decade of software engineering experience. Leads the core database engine powering Pioneers&apos; ERP and ParentAide.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Vision Horizons */}
-      <section style={{ backgroundColor: "var(--color-paper-warm)", padding: "80px 0" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div style={{ borderTop: "1px solid var(--color-rule)", paddingTop: "16px", marginBottom: "48px" }}>
-            <span style={{ fontSize: "var(--text-xs)", letterSpacing: "var(--tracking-wider)", textTransform: "uppercase", color: "var(--color-accent)", fontWeight: 600, display: "block", marginBottom: "8px" }}>
+      <section style={{ padding: "90px 0", backgroundColor: "var(--color-paper)" }}>
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-10">
+          <div className="border-b-2 border-[#1A3C5E] pb-4">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#2E8BC0] font-bold block mb-2">
               VISION HORIZONS
             </span>
-            <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-3xl)", fontWeight: 700, lineHeight: 1.15, color: "var(--color-ink)" }}>
-              Where we are going.
-            </h2>
+            <h2 className="font-serif text-4xl font-bold text-[#1A3C5E]">Where we are going.</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { h: "Horizon 1", title: "Digital Foundations", desc: "Every school in Ghana has access to free ERP infrastructure, a verified online profile, and a connected parent community. This is Edcomrade today." },
-              { h: "Horizon 2", title: "African Expansion", desc: "Pioneers' Software and Schoolpedia expand to Nigeria, Kenya, and Senegal. The model is built to port. The infrastructure already works." },
-              { h: "Horizon 3", title: "Education Intelligence", desc: "Aggregate anonymised data from thousands of schools becomes the most accurate picture of African education ever assembled — and we make it useful." },
-            ].map((v) => (
-              <div key={v.h} style={{ borderTop: "1px solid var(--color-rule)", paddingTop: "16px" }}>
-                <div style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-5xl)", fontWeight: 700, color: "var(--color-rule)", lineHeight: 1, marginBottom: "12px" }}>
-                  {v.h}
-                </div>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-2xl)", fontWeight: 600, color: "var(--color-ink)", marginBottom: "12px" }}>{v.title}</h3>
-                <p style={{ fontSize: "var(--text-base)", color: "var(--color-ink-muted)", lineHeight: 1.75 }}>{v.desc}</p>
+              { h: "Horizon 1", title: "Digital Foundations", desc: "Every school in Ghana has access to free ERP infrastructure, a verified online profile, and a connected parent community." },
+              { h: "Horizon 2", title: "African Expansion", desc: "Pioneers' ERP and Schoolpedia expand to Nigeria, Kenya, and Senegal with local payment integrations." },
+              { h: "Horizon 3", title: "Education Intelligence", desc: "Aggregated anonymised data from thousands of schools becomes the most accurate picture of African education ever assembled." },
+            ].map((v, i) => (
+              <div key={i} className="mag-card p-8 space-y-4">
+                <span className="font-mono text-2xl font-bold text-[#2E8BC0]">{v.h}</span>
+                <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">{v.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>

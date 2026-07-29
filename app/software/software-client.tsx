@@ -1,46 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-
-function SectionHeader({ label, headline, dark = false }: { label: string; headline: string; dark?: boolean }) {
-  return (
-    <div style={{ borderTop: `1px solid ${dark ? "var(--color-rule-dark)" : "var(--color-rule)"}`, paddingTop: "16px", marginBottom: "48px" }}>
-      <span style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-xs)", letterSpacing: "var(--tracking-wider)", textTransform: "uppercase", color: dark ? "var(--color-gold)" : "var(--color-accent)", fontWeight: 600, display: "block", marginBottom: "8px" }}>
-        {label}
-      </span>
-      <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-4xl)", letterSpacing: "var(--tracking-snug)", lineHeight: 1.1, color: dark ? "#fff" : "var(--color-ink)", fontWeight: 700 }}>
-        {headline}
-      </h2>
-    </div>
-  );
-}
-
-function FeatureRow({ name, desc, free = false }: { name: string; desc: string; free?: boolean }) {
-  return (
-    <div style={{ borderTop: "1px solid var(--color-rule)", padding: "16px 0", display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "24px" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-        <span style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-base)", fontWeight: 600, color: "var(--color-ink)" }}>{name}</span>
-        {free && (
-          <span style={{ fontSize: "var(--text-xs)", fontWeight: 700, color: "var(--color-green)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-            Free
-          </span>
-        )}
-      </div>
-      <p style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-muted)", lineHeight: 1.6, maxWidth: "400px", textAlign: "right" }}>{desc}</p>
-    </div>
-  );
-}
-
-function FeatureRowDark({ name, desc }: { name: string; desc: string }) {
-  return (
-    <div style={{ borderTop: "1px solid var(--color-rule-dark)", padding: "16px 0", display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "24px" }}>
-      <span style={{ fontFamily: "var(--font-sans)", fontSize: "var(--text-base)", fontWeight: 600, color: "#fff" }}>{name}</span>
-      <p style={{ fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.55)", lineHeight: 1.6, maxWidth: "400px", textAlign: "right" }}>{desc}</p>
-    </div>
-  );
-}
+import { CheckCircle2, ShieldCheck, Layers, Sparkles, ArrowRight, Star } from "lucide-react";
 
 const pioneersFeatures = [
   { name: "Core Administration", desc: "Student records, admissions, staff management. The foundation.", free: true },
@@ -63,9 +27,7 @@ const customFeatures = [
   { name: "AI-Powered Analytics", desc: "Predictive academic and financial intelligence built in from day one." },
   { name: "Native ParentAide Integration", desc: "Parents get the full app experience, connected directly to your system." },
   { name: "Schoolpedia Verified Profile", desc: "Prominent verified listing on Ghana's school discovery platform." },
-  { name: "Hardware Procurement Support", desc: "Device sourcing consultation and setup for your labs and offices." },
   { name: "On-Site Staff Training", desc: "Dedicated training sessions run at your school. Not a Zoom link." },
-  { name: "Priority SLA Maintenance", desc: "Guaranteed response times and a dedicated technical contact." },
 ];
 
 const comparisonRows = [
@@ -76,173 +38,216 @@ const comparisonRows = [
   { feature: "Data Isolation", p: "Multi-tenant with data layer", c: "Dedicated server & database", better: "c" },
   { feature: "Deployment Time", p: "2–4 weeks", c: "~3 months", better: "p" },
   { feature: "AI Analytics", p: "Standard reporting", c: "Full predictive AI analytics", better: "c" },
-  { feature: "ParentAide Connectivity", p: "Bundled free", c: "Bundled free" },
-  { feature: "Schoolpedia Verification", p: "Included", c: "Included" },
-  { feature: "Staff Onboarding", p: "Guided online workshops", c: "Dedicated on-site training", better: "c" },
   { feature: "5-Year Price Guarantee", p: "Yes", c: "Yes" },
-  { feature: "Workflow Customisation", p: "Standardised modular settings", c: "100% bespoke engineering", better: "c" },
 ];
 
 export default function SoftwareClient() {
   return (
-    <div style={{ backgroundColor: "var(--color-paper)" }}>
+    <main style={{ backgroundColor: "var(--color-paper)" }}>
       <Navigation />
 
-      {/* Page Header */}
-      <section style={{ paddingTop: "140px", paddingBottom: "80px", backgroundColor: "var(--color-paper)" }}>
+      {/* Hero Header */}
+      <section style={{ paddingTop: "150px", paddingBottom: "80px", backgroundColor: "var(--color-paper)" }}>
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div style={{ borderTop: "1px solid var(--color-rule)", paddingTop: "16px", marginBottom: "32px" }}>
-            <span style={{ fontSize: "var(--text-xs)", letterSpacing: "var(--tracking-wider)", textTransform: "uppercase", color: "var(--color-accent)", fontWeight: 600 }}>
-              SCHOOL ERP SYSTEMS
-            </span>
-          </div>
-          <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-hero)", fontWeight: 700, lineHeight: 0.95, letterSpacing: "var(--tracking-tight)", color: "var(--color-ink)", maxWidth: "800px", marginBottom: "24px" }}>
-            Two ways to bring your school into the digital age.
-          </h1>
-          <p style={{ fontSize: "var(--text-lg)", color: "var(--color-ink-muted)", lineHeight: 1.75, maxWidth: "600px" }}>
-            Pioneers&apos; Software is free, fast, and ready in weeks. Custom App is a bespoke institutional system built entirely around one school. Same mission. Different scale.
-          </p>
-          <div className="flex gap-4 mt-8">
-            <a href="#pioneers" style={{ backgroundColor: "var(--color-ink)", color: "#fff", fontSize: "var(--text-sm)", fontWeight: 600, padding: "10px 20px", borderRadius: "3px" }}>
-              Pioneers&apos; Software ↓
-            </a>
-            <a href="#custom" style={{ border: "1.5px solid var(--color-rule)", color: "var(--color-ink)", fontSize: "var(--text-sm)", fontWeight: 600, padding: "10px 20px", borderRadius: "3px" }}>
-              Custom App ↓
-            </a>
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div className="lg:col-span-7 space-y-6">
+              <span className="mag-badge-cyan">
+                <Layers className="w-3.5 h-3.5" />
+                <span>SCHOOL ERP SYSTEMS</span>
+              </span>
+              <h1 className="font-serif text-5xl sm:text-6xl font-bold text-[#1A3C5E] leading-tight">
+                Two paths to modernise your school.
+              </h1>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                Pioneers&apos; ERP is 100% free to start and ready in weeks. Custom App is a bespoke institutional platform engineered for one school. Same mission. Different scale.
+              </p>
+              <div className="flex gap-4 pt-2">
+                <a href="#pioneers" className="px-6 py-3 rounded-lg bg-[#1B5E20] hover:bg-[#154818] text-white font-bold text-sm shadow-sm transition-all">
+                  Pioneers&apos; ERP (Free) ↓
+                </a>
+                <a href="#custom" className="px-6 py-3 rounded-lg bg-[#1A3C5E] hover:bg-[#2E8BC0] text-white font-bold text-sm shadow-sm transition-all">
+                  Custom App ↓
+                </a>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="mag-card p-3">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/software-dashboard.png"
+                    alt="Pioneers ERP Dashboard"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* ── PIONEERS' SOFTWARE ── */}
-      <section id="pioneers" style={{ backgroundColor: "var(--color-paper-warm)", padding: "80px 0" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <SectionHeader label="PIONEERS' SOFTWARE" headline="Your school, running digitally. Free to start." />
+      {/* ── PIONEERS' SOFTWARE (FREE) ── */}
+      <section id="pioneers" style={{ backgroundColor: "#EEF4F8", padding: "90px 0" }}>
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b-2 border-[#1B5E20] pb-4">
+            <div>
+              <span className="mag-badge-green mb-2">PIONEERS&apos; SOFTWARE</span>
+              <h2 className="font-serif text-4xl font-bold text-[#1A3C5E]">
+                Your school running digitally. Free to start.
+              </h2>
+            </div>
+            <span className="text-xs font-mono text-[#1B5E20] font-bold uppercase tracking-wider mt-2 md:mt-0">
+              CORE MODULE 100% FREE
+            </span>
+          </div>
 
-          <blockquote style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-2xl)", fontStyle: "italic", lineHeight: 1.3, color: "var(--color-ink)", marginBottom: "48px", maxWidth: "700px" }}>
-            &ldquo;Built for the school owner who knows it&apos;s time, but cannot afford the wrong first step.&rdquo;
-          </blockquote>
-
-          <div style={{ marginBottom: "48px" }}>
-            {pioneersFeatures.map((f) => (
-              <FeatureRow key={f.name} name={f.name} desc={f.desc} free={f.free} />
+          <div className="grid md:grid-cols-2 gap-6">
+            {pioneersFeatures.map((f, i) => (
+              <div key={i} className="mag-card p-6 flex justify-between items-start">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-[#1A3C5E] text-base">{f.name}</span>
+                    {f.free && <span className="mag-badge-green text-[10px] py-0.5">FREE</span>}
+                  </div>
+                  <p className="text-xs text-slate-500">{f.desc}</p>
+                </div>
+              </div>
             ))}
           </div>
 
-          {/* Pricing table */}
-          <div style={{ border: "1px solid var(--color-rule)", borderRadius: "4px", overflow: "hidden", marginBottom: "48px" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "var(--font-sans)" }}>
-              <thead>
-                <tr style={{ borderBottom: "2px solid var(--color-ink)" }}>
-                  <th style={{ padding: "12px 16px", textAlign: "left", fontSize: "var(--text-xs)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-faint)" }}>Configuration</th>
-                  <th style={{ padding: "12px 16px", textAlign: "right", fontSize: "var(--text-xs)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-faint)" }}>Per Term</th>
-                  <th style={{ padding: "12px 16px", textAlign: "right", fontSize: "var(--text-xs)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-faint)" }}>Per Year</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { config: "100 students — Core Admin only", term: "Free", year: "Free", green: true },
-                  { config: "200 students — 1 paid module (GHS 2)", term: "GHS 400", year: "GHS 1,200" },
-                  { config: "300 students — 3 modules (15% discount)", term: "GHS 1,785", year: "GHS 5,355" },
-                  { config: "400 students — 4 modules (15% discount)", term: "GHS 3,400", year: "GHS 10,200" },
-                ].map((r, i) => (
-                  <tr key={i} style={{ backgroundColor: i % 2 === 0 ? "var(--color-paper)" : "var(--color-paper-warm)", borderBottom: "1px solid var(--color-rule)" }}>
-                    <td style={{ padding: "14px 16px", fontSize: "var(--text-sm)", fontWeight: 500, color: "var(--color-ink)" }}>{r.config}</td>
-                    <td style={{ padding: "14px 16px", fontSize: "var(--text-sm)", fontWeight: 700, textAlign: "right", color: r.green ? "var(--color-green)" : "var(--color-ink)" }}>{r.term}</td>
-                    <td style={{ padding: "14px 16px", fontSize: "var(--text-sm)", fontWeight: 700, textAlign: "right", color: r.green ? "var(--color-green)" : "var(--color-ink)" }}>{r.year}</td>
+          {/* Pricing Table Card */}
+          <div className="mag-card p-8 space-y-6">
+            <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Transparent Modular Pricing</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-[#1A3C5E] text-xs font-mono text-slate-500 uppercase">
+                    <th className="py-3">Configuration</th>
+                    <th className="py-3 text-right">Per Term</th>
+                    <th className="py-3 text-right">Per Academic Year</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-gray-100 font-semibold text-[#1A3C5E]">
+                  <tr className="bg-[#E8F5EE]/40">
+                    <td className="py-3.5">100 students — Core Admin only</td>
+                    <td className="py-3.5 text-right text-[#1B5E20] font-bold">Free</td>
+                    <td className="py-3.5 text-right text-[#1B5E20] font-bold">Free</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3.5">200 students — 1 paid module (GHS 2/student)</td>
+                    <td className="py-3.5 text-right">GHS 400</td>
+                    <td className="py-3.5 text-right">GHS 1,200</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3.5">300 students — 3 modules (15% discount)</td>
+                    <td className="py-3.5 text-right">GHS 1,785</td>
+                    <td className="py-3.5 text-right">GHS 5,355</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3.5">400 students — 4 modules (15% discount)</td>
+                    <td className="py-3.5 text-right">GHS 3,400</td>
+                    <td className="py-3.5 text-right">GHS 10,200</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* 5-Year Lock Callout */}
+            <div className="bg-[#FDF9EE] border-l-4 border-[#B8973A] p-5 rounded-r-lg">
+              <p className="font-serif text-lg font-bold text-[#1A3C5E]">
+                &ldquo;Activate 3 or more paid modules and lock your per-student pricing for five full academic years.&rdquo;
+              </p>
+            </div>
           </div>
 
-          {/* 5-year lock-in callout */}
-          <div style={{ border: "1px solid var(--color-rule)", borderLeft: "3px solid var(--color-gold)", padding: "24px 28px", borderRadius: "0 4px 4px 0" }}>
-            <p style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-xl)", fontStyle: "italic", lineHeight: 1.5, color: "var(--color-ink)" }}>
-              &ldquo;Activate 3 or more modules and lock your per-student pricing for five academic years — regardless of how your school grows.&rdquo;
-            </p>
-            <p style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-faint)", marginTop: "12px" }}>
-              5-Year Price Lock · Effective on activation of 3+ paid modules
-            </p>
-          </div>
-
-          <div style={{ marginTop: "40px" }}>
-            <Link href="/contact?subject=pioneers" style={{ backgroundColor: "var(--color-ink)", color: "#fff", fontSize: "var(--text-sm)", fontWeight: 600, padding: "10px 20px", borderRadius: "3px", display: "inline-block" }}
-              className="hover:bg-[var(--color-navy)]">
-              Register Your School — Free →
+          <div className="pt-2">
+            <Link
+              href="/contact?subject=pioneers"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[#1B5E20] hover:bg-[#154818] text-white font-bold text-base shadow-md transition-all"
+            >
+              <span>Register Your School — Free</span>
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── CUSTOM APP ── */}
-      <section id="custom" style={{ backgroundColor: "var(--color-dark)", padding: "80px 0" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div style={{ borderTop: "1px solid var(--color-rule-dark)", paddingTop: "16px", marginBottom: "48px" }}>
-            <span style={{ fontSize: "var(--text-xs)", letterSpacing: "var(--tracking-wider)", textTransform: "uppercase", color: "var(--color-gold)", fontWeight: 600, display: "block", marginBottom: "8px" }}>
-              CUSTOM APP
-            </span>
-            <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-4xl)", lineHeight: 1.1, letterSpacing: "var(--tracking-snug)", color: "#fff", fontWeight: 700 }}>
-              A system built entirely around your institution.
+      {/* ── CUSTOM APP (DARK NAVY SECTION) ── */}
+      <section id="custom" className="bg-[#0F2537] text-white py-24">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-12">
+          <div className="border-b border-white/10 pb-6">
+            <span className="mag-badge-gold mb-2">CUSTOM APP</span>
+            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-white">
+              A bespoke system engineered for your institution.
             </h2>
+            <p className="text-white/70 text-lg max-w-2xl mt-4">
+              For established schools and multi-campus chains that require dedicated domain, custom database architecture, and 100% data isolation.
+            </p>
           </div>
 
-          <blockquote style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-2xl)", fontStyle: "italic", lineHeight: 1.3, color: "rgba(255,255,255,0.8)", marginBottom: "48px", maxWidth: "700px" }}>
-            &ldquo;For the school that has outgrown shared infrastructure — and wants a system that carries its name.&rdquo;
-          </blockquote>
-
-          <div style={{ marginBottom: "48px" }}>
-            {customFeatures.map((f) => (
-              <FeatureRowDark key={f.name} name={f.name} desc={f.desc} />
-            ))}
-          </div>
-
-          {/* Deployment options */}
-          <div style={{ border: "1px solid var(--color-rule-dark)", borderRadius: "4px", padding: "28px", marginBottom: "40px" }}>
-            <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-gold)", marginBottom: "16px" }}>DEPLOYMENT OPTIONS & PRICING</p>
-            {[
-              { label: "Web PWA Portal", price: "From GHS 30,000" },
-              { label: "Web + Mobile App (iOS & Android)", price: "Custom quote" },
-              { label: "Web + Desktop Native App", price: "Custom quote" },
-              { label: "School Chain — Multi-campus deployment", price: "Custom quote" },
-            ].map((o) => (
-              <div key={o.label} style={{ borderTop: "1px solid var(--color-rule-dark)", padding: "14px 0", display: "flex", justifyContent: "space-between" }}>
-                <span style={{ fontSize: "var(--text-sm)", color: "#fff", fontWeight: 500 }}>{o.label}</span>
-                <span style={{ fontSize: "var(--text-sm)", color: "var(--color-gold)", fontWeight: 700, fontFamily: "var(--font-mono)" }}>{o.price}</span>
+          <div className="grid md:grid-cols-2 gap-6">
+            {customFeatures.map((f, i) => (
+              <div key={i} className="bg-[#1A3C5E]/60 border border-white/10 p-6 rounded-xl space-y-2">
+                <span className="font-bold text-white text-base block">{f.name}</span>
+                <p className="text-xs text-white/60">{f.desc}</p>
               </div>
             ))}
           </div>
 
-          <div style={{ border: "1px solid var(--color-rule-dark)", borderLeft: "3px solid var(--color-gold)", padding: "24px 28px", borderRadius: "0 4px 4px 0", marginBottom: "40px" }}>
-            <p style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-xl)", fontStyle: "italic", lineHeight: 1.5, color: "rgba(255,255,255,0.85)" }}>
-              &ldquo;School chains and multi-campus institutions receive consolidated dashboards, cross-campus analytics, and a unified management layer. One login. Every campus.&rdquo;
-            </p>
+          <div className="bg-[#1A3C5E] border-2 border-[#B8973A] rounded-xl p-8 space-y-4">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#B8973A] font-bold">
+              DEPLOYMENT & PRICING
+            </span>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-white/10 pt-4 gap-2">
+              <span className="text-base font-bold text-white">Web PWA & Dedicated Portal</span>
+              <span className="font-mono text-xl font-bold text-[#B8973A]">From GHS 30,000</span>
+            </div>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-white/10 pt-4 gap-2">
+              <span className="text-base font-bold text-white">Web + iOS & Android Native Apps</span>
+              <span className="font-mono text-xl font-bold text-[#B8973A]">Custom Quote</span>
+            </div>
           </div>
 
-          <Link href="/contact?subject=custom-app" style={{ backgroundColor: "#fff", color: "var(--color-ink)", fontSize: "var(--text-sm)", fontWeight: 600, padding: "10px 20px", borderRadius: "3px", display: "inline-block" }}>
-            Request a Custom App Demo →
+          <Link
+            href="/contact?subject=custom-app"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[#B8973A] hover:bg-[#a08230] text-white font-bold text-base shadow-lg transition-all"
+          >
+            <span>Request Custom App Consultation</span>
+            <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
       </section>
 
-      {/* ── COMPARISON TABLE ── */}
-      <section style={{ backgroundColor: "var(--color-paper)", padding: "80px 0" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <SectionHeader label="SIDE BY SIDE" headline="Pioneers' Software vs Custom App." />
-          <div style={{ overflowX: "auto" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "var(--font-sans)", minWidth: "600px" }}>
+      {/* ── COMPARISON MATRIX ── */}
+      <section style={{ padding: "90px 0", backgroundColor: "var(--color-paper)" }}>
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-8">
+          <div className="border-b-2 border-[#2E8BC0] pb-4">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#2E8BC0] font-bold block mb-2">
+              SIDE BY SIDE
+            </span>
+            <h2 className="font-serif text-4xl font-bold text-[#1A3C5E]">
+              Pioneers&apos; ERP vs Custom App.
+            </h2>
+          </div>
+
+          <div className="mag-card p-6 overflow-x-auto">
+            <table className="w-full text-left text-sm border-collapse min-w-[600px]">
               <thead>
-                <tr style={{ borderBottom: `2px solid var(--color-ink)` }}>
-                  <th style={{ padding: "12px 16px", textAlign: "left", fontSize: "var(--text-xs)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-faint)", width: "33%" }}>Feature</th>
-                  <th style={{ padding: "12px 16px", textAlign: "left", fontSize: "var(--text-sm)", fontWeight: 700, color: "var(--color-accent)", width: "33%" }}>Pioneers&apos; Software</th>
-                  <th style={{ padding: "12px 16px", textAlign: "left", fontSize: "var(--text-sm)", fontWeight: 700, color: "var(--color-gold)", width: "33%" }}>Custom App</th>
+                <tr className="border-b-2 border-[#1A3C5E] text-xs font-mono text-slate-500 uppercase">
+                  <th className="py-3 w-1/3">Feature</th>
+                  <th className="py-3 w-1/3 text-[#1B5E20]">Pioneers&apos; ERP</th>
+                  <th className="py-3 w-1/3 text-[#B8973A]">Custom App</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-gray-100 font-semibold text-[#1A3C5E]">
                 {comparisonRows.map((r, i) => (
-                  <tr key={i} style={{ backgroundColor: i % 2 === 0 ? "var(--color-paper)" : "var(--color-paper-warm)", borderBottom: "1px solid var(--color-rule)" }}>
-                    <td style={{ padding: "14px 16px", fontSize: "var(--text-sm)", fontWeight: 600, color: "var(--color-ink)" }}>{r.feature}</td>
-                    <td style={{ padding: "14px 16px", fontSize: "var(--text-sm)", color: r.better === "p" ? "var(--color-green)" : "var(--color-ink-muted)" }}>{r.p}</td>
-                    <td style={{ padding: "14px 16px", fontSize: "var(--text-sm)", color: r.better === "c" ? "var(--color-green)" : "var(--color-ink-muted)" }}>{r.c}</td>
+                  <tr key={i} className={i % 2 === 0 ? "bg-slate-50/50" : "bg-white"}>
+                    <td className="py-3.5">{r.feature}</td>
+                    <td className={`py-3.5 ${r.better === 'p' ? 'text-[#1B5E20] font-bold' : 'text-slate-600'}`}>{r.p}</td>
+                    <td className={`py-3.5 ${r.better === 'c' ? 'text-[#B8973A] font-bold' : 'text-slate-600'}`}>{r.c}</td>
                   </tr>
                 ))}
               </tbody>
@@ -252,6 +257,6 @@ export default function SoftwareClient() {
       </section>
 
       <Footer />
-    </div>
+    </main>
   );
 }

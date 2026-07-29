@@ -1,116 +1,77 @@
 import Link from "next/link";
-
-function Col({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <p
-        style={{
-          fontSize: "var(--text-xs)",
-          letterSpacing: "var(--tracking-wider)",
-          textTransform: "uppercase",
-          color: "var(--color-ink-faint)",
-          fontWeight: 600,
-          marginBottom: "16px",
-        }}
-      >
-        {title}
-      </p>
-      <nav className="flex flex-col gap-3">{children}</nav>
-    </div>
-  );
-}
-
-function FLink({ href, children, external }: { href: string; children: React.ReactNode; external?: boolean }) {
-  return (
-    <Link
-      href={href}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noopener noreferrer" : undefined}
-      style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-muted)" }}
-      className="hover:text-[var(--color-ink)] transition-colors"
-    >
-      {children}
-    </Link>
-  );
-}
+import { Sparkles, ArrowRight } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer
-      style={{ backgroundColor: "var(--color-paper-warm)", borderTop: "1px solid var(--color-rule)" }}
-    >
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-16 md:py-20">
-        {/* Top grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 pb-14" style={{ borderBottom: "1px solid var(--color-rule)" }}>
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="inline-block mb-4">
-              <span
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "22px",
-                  fontWeight: 700,
-                  color: "var(--color-ink)",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                Edcomrade
+    <footer className="bg-[#0F2537] text-white pt-20 pb-12 border-t border-white/10">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+        {/* Top Newsletter & Brand Grid */}
+        <div className="grid lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+          <div className="lg:col-span-5 space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#2E8BC0] text-white flex items-center justify-center font-bold text-2xl shadow-md">
+                E
+              </div>
+              <span className="font-serif text-3xl font-bold tracking-tight text-white">
+                EdComrade
               </span>
-            </Link>
-            <p style={{ fontSize: "var(--text-sm)", color: "var(--color-ink-faint)", lineHeight: 1.7, maxWidth: "200px" }}>
-              Education&apos;s ally in the digital age. Built in Ghana.
+            </div>
+            <p className="text-white/70 text-base leading-relaxed max-w-md">
+              The authoritative digital publication and software platform modernising Ghanaian schools. Built in Accra for Africa.
             </p>
-            <div className="flex items-center gap-3 mt-6">
-              <Link href="https://x.com/edcomradegh" target="_blank" rel="noopener noreferrer" aria-label="Edcomrade on X"
-                className="w-8 h-8 border border-[var(--color-rule)] flex items-center justify-center text-[var(--color-ink-faint)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)] transition-colors text-xs font-bold rounded-[3px]">
-                𝕏
-              </Link>
-              <Link href="https://linkedin.com/company/edcomrade" target="_blank" rel="noopener noreferrer" aria-label="Edcomrade on LinkedIn"
-                className="w-8 h-8 border border-[var(--color-rule)] flex items-center justify-center text-[var(--color-ink-faint)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)] transition-colors text-xs font-bold rounded-[3px]">
-                in
-              </Link>
-              <Link href="https://instagram.com/edcomradegh" target="_blank" rel="noopener noreferrer" aria-label="Edcomrade on Instagram"
-                className="w-8 h-8 border border-[var(--color-rule)] flex items-center justify-center text-[var(--color-ink-faint)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)] transition-colors text-xs font-bold rounded-[3px]">
-                IG
-              </Link>
+            <div className="flex items-center gap-3 text-xs font-mono text-[#2E8BC0]">
+              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+              <span>Pioneers&apos; Core ERP — 100% Free For Schools</span>
             </div>
           </div>
 
-          <Col title="Software">
-            <FLink href="/software">Pioneers&apos; Software</FLink>
-            <FLink href="/software#custom">Custom App</FLink>
-            <FLink href="/parentaide">ParentAide</FLink>
-          </Col>
+          <div className="lg:col-span-7 grid sm:grid-cols-3 gap-8 text-sm">
+            {/* Column 1: Software */}
+            <div className="space-y-4">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#2E8BC0] font-bold block">
+                SOFTWARE & PLATFORM
+              </span>
+              <ul className="space-y-2.5 text-white/70">
+                <li><Link href="/software#pioneers" className="hover:text-white transition-colors">Pioneers&apos; Free ERP</Link></li>
+                <li><Link href="/software#custom" className="hover:text-white transition-colors">Custom Institutional App</Link></li>
+                <li><Link href="/schoolpedia" className="hover:text-white transition-colors">Schoolpedia Directory</Link></li>
+                <li><Link href="/parentaide" className="hover:text-white transition-colors">ParentAide Mobile</Link></li>
+              </ul>
+            </div>
 
-          <Col title="Platform">
-            <FLink href="/schoolpedia">Schoolpedia</FLink>
-            <FLink href="https://schoolpedia.edcomrade.com" external>Directory ↗</FLink>
-            <FLink href="/edmedia">EdMedia</FLink>
-            <FLink href="/amplifiers">Amplifiers</FLink>
-          </Col>
+            {/* Column 2: Publishing */}
+            <div className="space-y-4">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#B8973A] font-bold block">
+                PUBLISHING & MEDIA
+              </span>
+              <ul className="space-y-2.5 text-white/70">
+                <li><Link href="/edmedia" className="hover:text-white transition-colors">EdMedia Magazine</Link></li>
+                <li><Link href="/manifesto" className="hover:text-white transition-colors">The Manifesto</Link></li>
+                <li><Link href="/amplifiers" className="hover:text-white transition-colors">Amplifiers Programme</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">Our Story & Founders</Link></li>
+              </ul>
+            </div>
 
-          <Col title="Company">
-            <FLink href="/about">About Us</FLink>
-            <FLink href="/manifesto">Manifesto</FLink>
-            <FLink href="/contact">Contact</FLink>
-          </Col>
-
-          <Col title="Support">
-            <FLink href="https://wa.me/233555284923" external>WhatsApp</FLink>
-            <FLink href="mailto:partner@edcomrade.com" external>Email</FLink>
-          </Col>
+            {/* Column 3: Contact */}
+            <div className="space-y-4">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#10B981] font-bold block">
+                CONTACT & OFFICES
+              </span>
+              <div className="space-y-2 text-white/70 text-xs leading-relaxed">
+                <p><strong className="text-white">Accra Office:</strong><br />New Legon, Greater Accra, Ghana</p>
+                <p><strong className="text-white">Direct Line:</strong><br />+233 55 528 4923</p>
+                <p><strong className="text-white">Email:</strong><br />partner@edcomrade.com</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <p style={{ fontSize: "var(--text-xs)", color: "var(--color-ink-faint)" }}>
-            © {new Date().getFullYear()} S.A Edcomrade Ventures. All rights reserved.
-          </p>
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[var(--color-green)] inline-block" />
-            <p style={{ fontSize: "var(--text-xs)", color: "var(--color-ink-faint)", fontFamily: "var(--font-mono)" }}>
-              Built in Ghana · Built for Africa
-            </p>
+        {/* Bottom Legal Copyright */}
+        <div className="pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/50 gap-4">
+          <p>© 2026 S.A Edcomrade Ventures Ltd. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="/manifesto" className="hover:text-white transition-colors">Manifesto</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Support & Callback</Link>
           </div>
         </div>
       </div>
