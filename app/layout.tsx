@@ -1,26 +1,40 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { BackToTop } from "@/components/back-to-top";
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
   display: "swap",
   weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://edcomrade.com"),
   title: {
-    default: "Edcomrade | Your Ally in Everything Education",
+    default: "Edcomrade | Education's Ally in the Digital Age",
     template: "%s | Edcomrade",
   },
   description:
-    "Edcomrade modernises schools across Ghana — giving every institution the software, visibility, and parent connectivity it needs to thrive.",
+    "Edcomrade gives Ghanaian schools the tools to run well, the visibility to be found, and the media to be known. Broadest educational publication & software platform in West Africa.",
   keywords: [
     "school management system Ghana",
     "private school platform Ghana",
@@ -28,7 +42,7 @@ export const metadata: Metadata = {
     "ParentAide",
     "Schoolpedia",
     "Pioneers Software",
-    "school website Ghana",
+    "EdMedia",
     "Edcomrade",
   ],
   authors: [{ name: "Edcomrade" }],
@@ -39,15 +53,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GH",
     url: "https://edcomrade.com",
-    title: "Edcomrade | Your Ally in Everything Education",
-    description: "School ERP software, Ghana's school discovery platform, and the parent app — built for African education.",
+    title: "Edcomrade | Education's Ally in the Digital Age",
+    description: "School ERP software, Ghana's school discovery platform, and the media publication — built for African education.",
     siteName: "Edcomrade",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Edcomrade" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Edcomrade | Your Ally in Everything Education",
-    description: "School ERP software, Ghana's school discovery platform, and the parent app — built for African education.",
+    title: "Edcomrade | Education's Ally in the Digital Age",
+    description: "School ERP software, Ghana's school discovery platform, and the media publication — built for African education.",
     images: ["/og-image.jpg"],
     creator: "@edcomradegh",
   },
@@ -68,7 +82,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${playfair.variable} ${inter.variable} ${jetbrains.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -89,7 +103,7 @@ export default function RootLayout({
               address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
               email: "partner@edcomrade.com",
               description: "Edcomrade modernises African schools through ERP software, school discovery, and parent connectivity.",
-              slogan: "Your ally in everything education.",
+              slogan: "Education's ally in the digital age.",
               sameAs: [
                 "https://linkedin.com/company/edcomrade",
                 "https://x.com/edcomradegh",
@@ -100,7 +114,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
+      <body className="bg-[var(--color-paper)] text-[var(--color-ink)] font-sans antialiased" suppressHydrationWarning>
         {children}
         <WhatsAppButton />
         <BackToTop />

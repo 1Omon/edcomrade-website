@@ -46,5 +46,5 @@ export async function POST(request: Request) {
     message: String(data.message).trim(),
   });
 
-  return NextResponse.json({ id: created._id.toString() });
+  return NextResponse.json({ id: (created._id as any).toString() });
 }

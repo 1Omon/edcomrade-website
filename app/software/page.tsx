@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import SoftwarePageClient from "./software-client";
+import SoftwareClient from "./software-client";
 
 export const metadata: Metadata = {
-  title: "Software Offerings | Pioneers' ERP & Custom Apps",
+  title: "School ERP Systems — Pioneers' Software & Custom App",
   description:
-    "Explore Edcomrade's School ERP systems: Pioneers' Software (free to start cloud ERP with add-on modules) and Custom App (bespoke License-to-own school system on your domain).",
+    "Two ways to bring your school into the digital age. Pioneers' Software is free and deploys in weeks. Custom App is a bespoke institutional system built around your school.",
   openGraph: {
-    title: "Edcomrade School ERP Software Offerings",
-    description:
-      "Find the right fit for your school: Pioneers' cloud platform or Custom bespoke school software.",
-    images: ["/og-software.jpg"],
+    title: "School ERP Systems | Edcomrade",
+    description: "Pioneers' Software (free cloud ERP) and Custom App (bespoke institutional system) — built for Ghanaian schools.",
   },
 };
 
 export default function SoftwarePage() {
-  return <SoftwarePageClient />;
+  return <SoftwareClient />;
 }

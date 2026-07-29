@@ -6,13 +6,14 @@ async function getSchool(id: string) {
   return res.json() as Promise<{ school: any }>;
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const { school } = await getSchool(params.id);
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const { school } = await getSchool(id);
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
       <h1 className="text-2xl font-medium mb-6">Edit School</h1>
       <form action={async (formData) => {
-        const res = await fetch(`/api/schools/${params.id}`, { method: 'PUT', body: new FormData(formData as any) })
+        const res = await fetch(`/api/schools/${id}`, { method: 'PUT', body: new FormData(formData as any) })
         if (!res.ok) alert('Failed to save')
         else window.location.href = '/admin/schools'
       }} className="space-y-4">
@@ -31,7 +32,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       </form>
 
       <form action={async () => {
-        const res = await fetch(`/api/schools/${params.id}`, { method: 'DELETE' })
+        const res = await fetch(`/api/schools/${id}`, { method: 'DELETE' })
         if (!res.ok) alert('Failed to delete')
         else window.location.href = '/admin/schools'
       }} className="pt-6">

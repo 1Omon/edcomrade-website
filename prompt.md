@@ -1,553 +1,425 @@
-You are working on the Edcomrade website — a Next.js project connected to MongoDB. The live site is at www.edcomrade.com. Your task is to completely revamp it to reflect the company's current direction, product portfolio, and brand identity.
-
-**Start by doing the following before writing a single line of code:**
-
-1. Read the entire codebase structure — map every page, component, layout, and API route that exists.
-2. Identify the current tech patterns: how routing is structured (App Router or Pages Router), how styles are applied (Tailwind, CSS modules, styled-components, or other), how MongoDB is being used (Mongoose models, raw driver, or other), and whether there is any CMS or data-fetching layer.
-3. Identify every page that currently exists and what content it holds.
-4. Report your findings before making any changes.
+You are redesigning the Edcomrade website. The audit is complete. You know the codebase in full. This prompt is your complete brief. Read every section before writing a single line of code.
 
 ---
 
-**BRAND & DESIGN DIRECTION**
+## THE DESIGN CONCEPT — MAGAZINE FIRST
 
-Take strong UI inspiration from novo.co. Study how they use it:
+The new Edcomrade website is an **editorial magazine that also sells software**. Not a SaaS landing page. Not a portfolio. A publication — the kind you read, not just browse. Think of the front page of a serious broadsheet newspaper translated to the web: black ink on white paper, typographically confident, sections that feel like editorial spreads, and colour used the way a magazine uses a single accent in a headline — sparingly, precisely, with intention.
 
-- Large, confident hero sections with bold typographic statements — not busy, not cluttered
-- Clean section rhythm: one idea per section, stated plainly, supported visually
-- Testimonials and social proof integrated naturally into the scroll
-- Navigation that is structured by audience or product area, not a flat list
-- Dark and light sections alternating deliberately to create visual breathing room
-- Strong use of one accent colour against mostly neutral backgrounds
-- Generous whitespace — the site never feels cramped
+The brand colours (navy `#1A3C5E`, accent blue `#2E8BC0`, gold `#B8973A`, green `#1B5E20`) almost never fill large backgrounds. They live in hover states, thin rule lines, active indicators, accent words within headlines, and small badge elements. The dominant palette is **black on white** — then white on black for section inversions. That is it.
 
-Do NOT copy Novo's content, tone, or structure literally. Edcomrade is an African edtech company, not a US fintech. The aesthetic direction is: modern, trustworthy, warm, and ambitious. The tone is confident and plain-spoken — not corporate, not startup-hype.
-
-**Brand colours to use:**
-
-- Primary navy: #1A3C5E
-- Accent blue: #2E8BC0
-- Use white and very light grays as background
-- Sparingly use a warm gold (#B8973A) for premium accents (Custom App sections)
-- Green (#1B5E20) for success states and free-tier callouts
-
-**Typography:** Use a clean sans-serif system. Headings should be large and bold. Body text should be readable at small sizes on mobile.
+This is not minimalism for minimalism's sake. It is the visual grammar of a company that publishes things and builds things simultaneously — which is exactly what Edcomrade does. The editorial confidence signals authority. The software precision signals trust. Together they create a brand that feels like it has been around for a decade even though it launched in 2025.
 
 ---
 
-**SITE ARCHITECTURE — PAGES TO BUILD**
+## BEFORE YOU WRITE ANY CODE — FIX THESE FIRST
 
-Replace the existing site with the following page structure:
+These are technical debts from the audit that must be resolved before the redesign begins. They are quick fixes and should take less than one session.
 
-**`/` — Homepage**
+**TypeScript errors (10 total):**
+- Fix all async `params` signature mismatches in `/admin/schools/[id]/page.ts`, `/api/schools/[id]/route.ts`. Change `params: { id: string }` to `params: Promise<{ id: string }>` and `await params` before destructuring, as required by Next.js 15.
+- Fix `Promise<unknown>` return type on `POST` stream upload in `/api/upload/route.ts` — type it as `Promise<NextResponse>`.
+- Fix `_id` typed as `unknown` in `/api/contact/route.ts`, `/api/digital-100/route.ts`, `/api/schools/[id]/route.ts`, `/api/schools/route.ts`, `/api/submissions/create/route.ts` — cast as `mongoose.Types.ObjectId` or `string` using `(doc._id as mongoose.Types.ObjectId).toString()`.
 
-Hero: Full-width section. Large headline: _"Your school's ally in the digital age."_ Subheadline: _"Edcomrade gives schools the tools to run better, helps parents stay connected, and puts every school in Ghana on the map."_ Two CTAs: "Get Started" and "Explore Schoolpedia".
+**Broken link:**
+- The Paystack callback URL `/campaigns/digital-100/success` references a route that does not exist. Create a minimal `/campaigns/digital-100/success` page that shows a payment confirmation message and redirects to `/software` after 5 seconds. Or update the callback URL in `/api/digital-100/init/route.ts` to point to `/contact?status=paid`.
 
-Below the hero, build the following sections in order:
+**Metadata gaps:**
+- Add `metadata` exports to `/manifesto/page.tsx` and `/technology/page.tsx`.
 
-Section 1 — The Problem: _"Most schools in Ghana still run on paper. Most parents have no digital connection to their child's school. Most schools have no online presence at all."_ — Three-column stat or pain point cards.
+**Unused components to delete:**
+- Remove: `animated-counter.tsx`, `fade-in.tsx`, `faq-section.tsx`, `loading-skeleton.tsx`, `scroll-progress.tsx`, `go-back-navigation.tsx`, `lead-form.tsx`, `pioneer-pricing.tsx`, `ui/noise.tsx`, `ui/magnetic.tsx`, `ui/page-transition.tsx`.
+- Do not delete: `navigation.tsx`, `footer.tsx`, `rich-text-editor.tsx`, `ui/button.tsx`, `ui/card.tsx`, `ui/container.tsx`.
 
-Section 2 — The Ecosystem: Three cards representing the three departments. EdMedia (media and visibility), Schoolpedia (school intelligence platform), School ERP Systems (software for schools). Each links to its dedicated page.
-
-Section 3 — How It Works: A three-step flow. Step 1: School joins Pioneers' or commissions a Custom App. Step 2: Parents download ParentAide and connect. Step 3: School appears on Schoolpedia and builds its reputation. Visually similar to Novo's "How to put Novo to work" section.
-
-Section 4 — Products overview: Two side-by-side cards. Pioneers' Software (free to start, for schools digitising now) and Custom App (bespoke, for schools building a legacy). Both link to `/software`.
-
-Section 5 — Social proof: Placeholder testimonial section. Use three placeholder cards with school-head quotes styled in the Novo testimonial format. Mark them clearly as `{/* TODO: replace with real testimonials */}`.
-
-Section 6 — CTA banner: Dark navy background. _"120 schools already on Schoolpedia. Be one of the first on Pioneers'."_ CTA: "Register Your School".
-
-**`/software` — Software Offerings**
-
-This page presents both software products side by side and in depth. It must clearly communicate:
-
-- The difference between Pioneers' Software and Custom App — who each is for, what each costs, what each includes
-- Pioneers' free school administration module and paid add-on modules with pricing (GHS per student per term)
-- Custom App as premium, bespoke, License-to-own licensing starting at GHS 30,000
-- A comparison table at the bottom
-
-Structure: Start with a tabbed or scrolled layout where Pioneers' and Custom App each get a dedicated section with their own visual identity. Pioneers' uses the blue/green palette (accessible, modern). Custom App uses the navy/gold palette (premium, exclusive).
-
-Include a module grid for Pioneers' showing all 8 modules: Core Administration (free), Classroom & Exam Management, Hostel & Boarding, HR Management, Finance Management, Alumni Management, Transportation & Safety, E-commerce & Inventory.
-
-**`/parentaide` — ParentAide**
-
-Dedicated page for the parent app. Sections:
-
-- Hero: _"Everything about your child's school. In your pocket."_
-- Feature grid: fee payments via wallet, school communication, attendance tracking, academic results, marketplace, school enrolment, scholarship discovery, bus notifications
-- Wallet explainer: how the ParentAide Wallet works (top up via Paystack, pay fees, buy items)
-- Marketplace section: school stores + third-party vendors
-- Download CTA (placeholder — app not yet live, use "Coming Soon" state)
-
-**`/schoolpedia` — Schoolpedia**
-
-Dedicated page for the intelligence platform. Sections:
-
-- Hero: _"Find the right school. Know what you're choosing."_
-- For Parents: search, compare, enrol
-- For Schools: verified profile, PR platform, visibility to searching parents
-- Stats: 120 schools listed, 30 verified (use real numbers, mark with `{/* TODO: update dynamically */}`)
-- Link to schoolpedia.edcomrade.com
-
-**`/edmedia` — EdMedia**
-
-Department page for media and advertising arm. Sections:
-
-- What EdMedia does: digital magazine, social media management, school event coverage, brand consultation, advertising
-- For schools wanting visibility beyond the ERP
-- Contact / enquiry CTA
-
-**`/about` — About**
-
-- The founding story (Solomon took his nephew to boarding school in 2023, four days of paper, decided to build a solution as his KNUST CS project)
-- The mission: modernise African schools, centre education around parents
-- The team: Solomon A. Ayisi (CEO & Founder), Prince Sarfo (CTO & Co-Founder), with placeholders for the rest of the team
-- The vision: 10,000 schools, 3 million users, pan-African
-
-**`/contact` — Contact**
-
-Simple contact page. Email, WhatsApp link, address (New Legon, Accra, Ghana). A form that submits to a MongoDB-backed API route at `/api/contact`. Fields: name, school name (optional), role (proprietor / parent / other), message. On submit, save to a `contacts` collection in MongoDB and send a confirmation response.
+Run `pnpm build` after these fixes. The build must pass with zero TypeScript errors before the redesign begins.
 
 ---
 
-**NAVIGATION**
+## THE DESIGN SYSTEM
 
-Top navbar structure:
-
-- Logo (left)
-- Centre links: Products (dropdown → Pioneers' Software, Custom App, ParentAide), Schoolpedia, EdMedia, About
-- Right: "List Your School" (links to Schoolpedia), "Get Started" (primary CTA button, navy fill)
-- Mobile: hamburger menu
-
-Footer structure (inspired by Novo's footer):
-
-- Logo + tagline: _"Your ally in everything education."_
-- Four columns: Products (Pioneers', Custom App, ParentAide, Schoolpedia), Company (About, EdMedia, Careers, Manifesto), Support (Contact, WhatsApp, Help), Legal (Privacy Policy, Terms)
-- Bottom bar: © 2026 S.A Edcomrade Ventures | Built in Ghana, built for Africa
-- Social icons: Twitter/X, LinkedIn, Instagram
-
----
-
-**TECHNICAL REQUIREMENTS**
-
-- Maintain the existing Next.js setup. Do not change the framework or introduce new routing paradigms unless the existing setup is broken.
-- Keep MongoDB connection patterns consistent with how the existing codebase connects.
-- All new pages should use the same layout wrapper the existing pages use, unless that layout needs to be updated as part of the revamp.
-- Use Tailwind CSS if it is already in the project. If not, match whatever styling system is currently in use.
-- All images are placeholder for now — use `next/image` with placeholder props or a neutral grey div with the correct aspect ratio. Add a comment `{/* TODO: replace with real image */}` on every placeholder.
-- The site must be fully responsive. Mobile layout is as important as desktop.
-- Metadata (`<title>`, `<meta description>`, Open Graph) must be set correctly on every page using Next.js Metadata API.
-- Do not remove the existing Schoolpedia link (schoolpedia.edcomrade.com) — it is a live subdomain.
-- Do not break any existing routes that may have inbound links (check before deleting pages).
-
----
-
-**WHAT NOT TO DO**
-
-- Do not use template UI kits or component libraries that would make the site look generic (no shadcn pre-built page templates, no Tailwind UI page clones)
-- Do not add animations that slow the page or feel gimmicky — subtle fade-ins on scroll are acceptable
-- Do not write placeholder copy that says "Lorem ipsum" — every section should have real Edcomrade content as specified above
-- Do not hardcode the school count stats — pull them from MongoDB or mark them with a `{/* TODO: connect to DB */}` comment for later
-- Do not change the domain, subdomain structure, or deployment configuration
-
----
-
-**DELIVERABLES**
-
-After reading the codebase and reporting your findings, implement the revamp page by page in this order:
-
-1. Shared layout, navbar, and footer
-2. Homepage
-3. `/software`
-4. `/parentaide`
-5. `/schoolpedia`
-6. `/about`
-7. `/edmedia`
-8. `/contact` with working MongoDB form submission
-
-Commit or checkpoint after each page is complete. Do not attempt to build everything in one pass.
-
-This is a solid plan. The agent read the codebase correctly and the structure is sound. Here is the updated version with corrections, additions, and precise design instructions tied to Novo's UI patterns:
-
----
-
-# Edcomrade Website Revamp — Updated Implementation Plan
-
-## Codebase Audit Findings (Confirmed Accurate)
-
-The agent's audit is correct. Proceed with the following confirmed stack:
-
-- Next.js 15.2.8, App Router
-- Tailwind CSS v4 with OKLCH custom properties
-- Mongoose v8, singleton connection via `lib/db.ts`
-- NextAuth v4 protecting `/admin/*`
-- Cloudinary for uploads
-- 7 existing Mongoose models confirmed
-
-No changes to the stack are needed.
-
----
-
-## Content & Product Corrections
-
-The agent must update all content to reflect Edcomrade's current structure before building any page. The existing site describes an older, narrower version of the company. The following is the authoritative product and company information to use across the entire site.
-
-**Company name:** Edcomrade — registered as S.A Edcomrade Ventures. The tagline is: _"Your ally in everything education."_
-
-**Three departments:**
-
-1. **School ERP Systems** — the software department. Contains three products: Pioneers' Software, Custom App, and ParentAide.
-2. **Schoolpedia** — Ghana's school intelligence platform at schoolpedia.edcomrade.com. Parents discover, compare, and enrol children in schools. Schools get a verified public profile. Revenue from banner advertising and sponsored listings.
-3. **EdMedia** — the media and publishing department. Digital magazine, social media management, school event coverage, brand consultation, and advertising for schools and education-sector brands.
-
-**Products under School ERP Systems:**
-
-_Pioneers' Software_ — a cloud-hosted, multi-tenant school ERP at pioneers.edcomrade.com. Schools share the platform with full data isolation. The Core Administration Module is permanently free and includes: admissions management, student information system, health records, staff communication, timetable scheduling (automated with conflict detection), and basic fee billing with Paystack payment collection. Every school also gets a verified Schoolpedia profile and ParentAide bundled free. Paid add-on modules are priced per student per term: Classroom & Exam Management (GHS 2–3), HR Management (GHS 2–3), Hostel & Boarding Management (GHS 3–4), Finance Management (GHS 3–4), Transportation & Safety (GHS 2–3), E-commerce & Inventory (GHS 2), Alumni Management (GHS 1–2). Schools activating three or more modules get 15% off. Schools can lock in today's prices for five years.
-
-_Custom App_ — a fully bespoke school management system and LMS built from the ground up for each school. Deployed on the school's own servers and domain (.edu.gh). License-to-own licensing: fixed license fee plus annual instalments over multiple years, or a one-time payment. Web-only PWA starts at GHS 30,000. Web plus mobile, web plus desktop, web plus mobile plus desktop, and desktop-only are each quoted separately. Deployment takes approximately three months. Custom App is for established private schools, international schools, and school chains.
-
-_ParentAide_ — a mobile app for parents and guardians. Features: Schoolpedia access for school discovery and enrolment, fee and bill payment via an in-app wallet (topped up via Paystack), an education marketplace (school stores and third-party vendors including bookshops and uniform suppliers), scholarship and bursary discovery, school communication and announcements, child academic performance tracking, attendance notifications, bus boarding and alighting alerts, and pickup authorisation management. ParentAide is free for parents. Revenue from marketplace commissions and advertising. The app is not yet live — use a "Coming Soon" state on the download CTA.
-
-**Key live stats to use (mark dynamic ones for DB connection):**
-
-- Schools listed on Schoolpedia: ~120
-- Verified schools on Schoolpedia: ~30
-- Deployment time for Pioneers': 2–4 weeks
-- Deployment time for Custom App: ~3 months
-
----
-
-## Design Direction — Novo.co Patterns to Extract
-
-The agent must study how novo.co achieves its visual quality and apply the same principles to Edcomrade's identity. Do not copy Novo's layout literally — extract the underlying design decisions.
-
-**Specific Novo patterns to replicate in spirit:**
-
-_Hero section:_ Novo uses a large, nearly full-viewport hero with an editorial-style headline broken across multiple lines, a real photograph integrated into the typographic layout (not just a background image), and a single short subheadline below. The headline uses mixed weight — some words bold, some regular — to create rhythm. Edcomrade's hero should do the same: large, confident, typographic. The headline is: _"Your school's ally in the digital age."_ Break it dramatically across lines. Use a real photo or a strong placeholder of an African school environment.
-
-_Section rhythm:_ Novo alternates between white/light sections and dark sections deliberately. Each section contains exactly one idea stated in one headline. Edcomrade should follow this exactly — no section should try to explain two things at once. The dark sections use Edcomrade's navy (#1A3C5E). Light sections use white or a very light blue-gray (#F8FAFB).
-
-_Cards:_ Novo's feature cards are borderless on white backgrounds — they use spacing and subtle background tint rather than borders or drop shadows to create separation. On dark backgrounds, cards use a slightly lighter dark fill. Edcomrade should do the same — avoid heavy card borders or aggressive box shadows.
-
-_Typography scale:_ Novo uses very large headings (80–100px on desktop for hero) and clean body text around 17–18px. Section headings are 36–48px. The type feels editorial, not app-like. Edcomrade should match this scale. The existing Inter font is fine — keep it.
-
-_Navigation:_ Novo's nav is minimal. Logo left, a few grouped links centre or left, two CTAs right. On scroll it gains a subtle background blur. The Products dropdown should feel like an editorial menu — clean list of product names with one-line descriptions, not icon-heavy tiles.
-
-_Testimonial section:_ Novo's testimonials use large portrait photos, a bold pull-quote as the headline, and the customer's name and business below. They scroll horizontally or stack. Edcomrade's placeholder testimonials should be built in this exact format — ready to receive real school head quotes and photos.
-
-_CTA banners:_ Novo uses full-width dark banners with a large statement and a single button. No decorative elements, no gradients. Just the message and the action. Edcomrade's "120 schools on Schoolpedia" banner should follow this pattern exactly.
-
-_Mobile:_ Novo's mobile experience collapses gracefully — the hero still feels large and editorial, sections stack without losing their single-idea discipline. Edcomrade must match this. Test every section at 390px.
-
-**Colour application rules for the agent:**
-
-- Navy #1A3C5E: Dark section backgrounds, primary buttons, nav background on scroll
-- Accent blue #2E8BC0: Links, hover states, icon accents, section label text (the small uppercase label above a heading, e.g. "SCHOOL ERP SYSTEMS")
-- White #FFFFFF: Primary page background for light sections
-- Light blue-gray #F0F4F8: Subtle card tint on white sections
-- Gold #B8973A: Used only in Custom App sections — premium feel. Sparingly. Borders on Custom App cards, accent on pricing, one highlight word in the Custom App hero line.
-- Green #1B5E20 / light green #E8F5EE: Free tier callouts, "School Administration Module — Free" badges, success states
-- Red: Only for error states on forms
-
-**Things to explicitly avoid:**
-
-- Gradient backgrounds (no blue-to-purple gradients, no mesh gradients)
-- Heavy drop shadows (use `shadow-sm` at most)
-- Rounded corners larger than `rounded-xl` (prefer `rounded-lg`)
-- Animations that move content during scroll in a way that distracts from reading
-- Icon libraries that look generic (Heroicons is fine if already in the project, but use sparingly)
-- Any component that looks like it came from a shadcn demo page
-
----
-
-## Updated Page-by-Page Specification
-
-### Phase 1 — Shared Layout, Navbar, Footer
-
-**globals.css:** Add these as named CSS custom properties in addition to existing OKLCH tokens:
+Replace the current inconsistent token setup with this complete system. Apply it globally in `app/globals.css`. Never use hardcoded hex values in component files again.
 
 ```css
---color-navy: #1a3c5e;
---color-accent: #2e8bc0;
---color-gold: #b8973a;
---color-green-dark: #1b5e20;
---color-green-light: #e8f5ee;
---color-surface: #f0f4f8;
+:root {
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Neutral scale — the dominant palette */
+  --color-ink:        #0A0A0A;   /* Primary text — near black, not pure black */
+  --color-ink-muted:  #4B4B4B;   /* Secondary text */
+  --color-ink-faint:  #8A8A8A;   /* Captions, metadata, labels */
+  --color-paper:      #FFFFFF;   /* Primary background */
+  --color-paper-warm: #F8F7F4;   /* Off-white — used for alternating sections */
+  --color-rule:       #E0E0E0;   /* Horizontal rules, dividers, borders */
+  --color-rule-dark:  #2A2A2A;   /* Rules on dark backgrounds */
+
+  /* Dark inversion — used for section backgrounds, never for the whole page */
+  --color-dark:       #111111;   /* Section inversion background */
+  --color-dark-mid:   #1C1C1C;   /* Card on dark background */
+
+  /* Brand accent — used sparingly */
+  --color-navy:       #1A3C5E;   /* Hover states, active nav, dark CTA buttons */
+  --color-accent:     #2E8BC0;   /* Accent words, links, category tags, rule accents */
+  --color-gold:       #B8973A;   /* Custom App only — premium signal */
+  --color-green:      #1B5E20;   /* Free tier, success states, verified badges */
+
+  /* Spacing — base 4 system */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Layout */
+  --content-max: 1200px;
+  --content-wide: 1440px;
+  --content-narrow: 720px;
+
+  /* Type scale */
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 16px;
+  --text-lg:   18px;
+  --text-xl:   22px;
+  --text-2xl:  28px;
+  --text-3xl:  36px;
+  --text-4xl:  48px;
+  --text-5xl:  64px;
+  --text-hero: clamp(52px, 7vw, 88px);
+
+  /* Leading */
+  --leading-tight:  0.95;
+  --leading-snug:   1.15;
+  --leading-normal: 1.5;
+  --leading-loose:  1.75;
+
+  /* Tracking */
+  --tracking-tight:  -0.03em;
+  --tracking-snug:   -0.02em;
+  --tracking-normal: 0em;
+  --tracking-wide:   0.08em;
+  --tracking-wider:  0.14em;
+}
 ```
 
-**Navigation:** Structure exactly as follows:
+**Typography rules — non-negotiable:**
 
-Left: Edcomrade logo (existing `/full-logo.png`)
+The serif (`Playfair Display`) is used exclusively for: hero headlines, section editorial headlines (h1 on content sections), pull quotes, and article titles. Load it from Google Fonts. It must be present on the page — it is the single most visible signal that this is a magazine.
 
-Centre-left grouped links:
+The sans-serif (`Inter`) is used for: navigation, body text, labels, buttons, captions, data, table cells. Everything functional.
 
-- "Products" — dropdown containing:
-  - Pioneers' Software — _"Free ERP for schools digitising now"_
-  - Custom App — _"Bespoke system built for your school"_
-  - ParentAide — _"The parent and guardian app"_
-- "Schoolpedia" — links to schoolpedia.edcomrade.com (external, new tab)
-- "EdMedia" — links to `/edmedia`
-- "About" — links to `/about`
+The mono (`JetBrains Mono`) is used only for: referral codes, data values in the platform section, technical specifications.
 
-Right:
+**The typographic hierarchy is fixed:**
+```
+Display (hero):  Playfair Display, var(--text-hero), weight 700, leading 0.95, tracking -0.03em
+H1 (editorial):  Playfair Display, var(--text-4xl), weight 700, leading 1.1, tracking -0.02em
+H2 (section):    Playfair Display, var(--text-3xl), weight 600, leading 1.15, tracking -0.02em
+H3 (subsection): Inter, var(--text-2xl), weight 600, leading 1.2, tracking -0.01em
+H4 (component):  Inter, var(--text-xl), weight 600, leading 1.3
+Body:            Inter, var(--text-lg), weight 400, leading 1.75, color: var(--color-ink-muted)
+Caption:         Inter, var(--text-sm), weight 400, color: var(--color-ink-faint)
+Label:           Inter, var(--text-xs), weight 600, tracking 0.12em, UPPERCASE
+```
 
-- "List Your School" — ghost/outline button, links to schoolpedia.edcomrade.com
-- "Get Started" — filled navy button, links to `/contact`
+**The column rule:**
+Every major section uses a horizontal rule (`border-top: 1px solid var(--color-rule)`) to open it, in the style of a newspaper section divider. Above the rule: a category label in `var(--text-xs)` uppercase tracking. Below: the section heading. This is a signature visual pattern that runs throughout the entire site.
 
-On scroll: nav gains `backdrop-blur-md bg-white/90` with a bottom border `border-b border-gray-100`. Dropdown on hover, keyboard-accessible.
+**Colour usage rules:**
+- Large backgrounds: `var(--color-paper)` or `var(--color-paper-warm)` for light, `var(--color-dark)` for dark inversions.
+- Text: `var(--color-ink)` for headings, `var(--color-ink-muted)` for body, `var(--color-ink-faint)` for metadata.
+- Brand colours appear only as: the accent word in a headline (one word, `var(--color-accent)`), the underline/border on hover states, the active navigation indicator (3px left border, `var(--color-navy)`), the free badge (`var(--color-green)`), the Custom App gold accent (`var(--color-gold)`), and CTA button fills.
+- Never fill a hero or large section background with navy or accent blue.
 
-Mobile: Hamburger. Full-screen slide-down menu. All links visible. "Get Started" button at the bottom of the mobile menu.
-
-**Footer:** Four columns on desktop, stacked on mobile:
-
-Column 1 — Products: Pioneers' Software (`/software`), Custom App (`/software#custom`), ParentAide (`/parentaide`), Schoolpedia (external)
-
-Column 2 — Company: About (`/about`), EdMedia (`/edmedia`), Manifesto (`/manifesto`), Careers (placeholder `#`)
-
-Column 3 — Support: Contact (`/contact`), WhatsApp (existing button), Help (`mailto:partner@edcomrade.com`)
-
-Column 4 — Legal: Privacy Policy, Terms of Service, Cookies (all placeholder `#` for now)
-
-Below columns: Logo + tagline _"Your ally in everything education."_
-
-Bottom bar: `© 2026 S.A Edcomrade Ventures | Built in Ghana, built for Africa`
-
-Social icons: Twitter/X (x.com/edcomradegh), LinkedIn (linkedin.com/company/edcomrade), Instagram (instagram.com/edcomradegh)
+**The rule/label pattern in code:**
+```tsx
+<div className="section-header">
+  <div className="section-rule" />       {/* border-top: 1px solid var(--color-rule) */}
+  <span className="section-label">      {/* uppercase, xs, wide tracking, var(--color-accent) */}
+    SCHOOL ERP SYSTEMS
+  </span>
+  <h2 className="section-headline">     {/* Playfair Display, 3xl */}
+    Everything a school needs to run digitally.
+  </h2>
+</div>
+```
 
 ---
 
-### Phase 2 — Homepage (`/`)
+## THE NAVIGATION
 
-Remove the role-switcher entirely. Build these sections in order:
+Replace the current navigation entirely. The new navigation is:
 
-**Section 1 — Hero**
-Full viewport height. Dark navy background (#1A3C5E). Large editorial headline broken across three lines:
-
+**Structure:**
 ```
-Your school's ally
-in the digital
+[Edcomrade wordmark — serif, weight 700, ink colour]
+
+[What We Do ▾]  [Software ▾]  [Schoolpedia]  [Work With Us ▾]  [About]
+
+[Enquire]  [Get Started →]
+```
+
+**What We Do dropdown:**
+- School ERP Systems
+- Schoolpedia
+- EdMedia & Publishing
+
+**Software dropdown:**
+- Pioneers' Software — *Free cloud ERP for schools*
+- Custom App — *Bespoke system for institutions*
+- ParentAide — *The parent mobile app*
+
+**Work With Us dropdown:**
+- Become an Amplifier
+- Sales Executive Role
+- Partner With Us
+
+**Navigation design:**
+- Default state: white background, `var(--color-ink)` text, `16px` Inter medium.
+- On scroll past 80px: add `border-bottom: 1px solid var(--color-rule)`. No blur, no backdrop filter — just the rule line. Clean newspaper header.
+- Hover on nav links: `var(--color-accent)` text. No background change.
+- Active page: a 2px underline in `var(--color-accent)` under the link. Nothing else.
+- Dropdowns: white background, `border: 1px solid var(--color-rule)`, `border-radius: 4px` (not rounded — editorial, not app-like), `padding: 16px`. Product names in `Inter` medium ink. Descriptions in `var(--color-ink-faint)` small. `8px` gap between items. No icons.
+- CTA buttons: "Enquire" is `border: 1.5px solid var(--color-rule)`, transparent background, ink text. "Get Started →" is `background: var(--color-ink)`, white text. Both `14px` medium, `padding: 9px 18px`, `border-radius: 3px`.
+- Mobile: hamburger (two lines, not three — editorial convention). Full-height slide from right, white background, all links vertical, "Get Started" as full-width ink button at bottom.
+
+---
+
+## THE PAGES
+
+### Homepage (`/`)
+
+**Section 1 — The Masthead**
+Full viewport height. White background. This is the magazine front page.
+
+Left column (60% width): the editorial headline across four lines in Playfair Display at `var(--text-hero)`:
+```
+Education's
+ally in the
+digital
 age.
 ```
+The word "digital" is in `var(--color-accent)`. Line height `0.95`. Letter spacing `-0.03em`. Below the headline: a single line in `Inter` body: *"Edcomrade gives Ghanaian schools the tools to run well, the visibility to be found, and the media to be known."* Two CTAs below: "Explore the Platform →" (ink button) and "Read Our Manifesto" (text link, underlined).
 
-Headline font size: 80–96px desktop, 48px mobile. Bold. White text. One word or phrase in accent blue — "digital" or "ally" depending on what reads best visually. Below the headline: a single subheadline in white at 18–20px: _"Edcomrade modernises schools, connects parents, and puts every institution in Ghana on the map."_ Two CTAs side by side: "Get Started" (white fill, navy text) and "Explore Schoolpedia" (ghost, white border). Right side or integrated into the layout: a strong photograph of an African classroom or school environment (placeholder div with `aspect-[3/4]` and a gray fill, comment: `{/* TODO: replace with real school photography */}`).
+Right column (40% width): a tall photograph in portrait orientation. `border-radius: 0` — no rounding on images. A thin `1px solid var(--color-rule)` border around the image, like a newspaper photograph. Caption below the image in `var(--text-xs)` italic: *"A private school in Accra — one of 120 listed on Schoolpedia."*
 
-**Section 2 — The Problem**
-White background. Small uppercase label in accent blue: "THE REALITY TODAY". Large heading: _"Ghana's schools deserve better tools."_ Three-column cards (borderless, light surface tint #F0F4F8):
+Below the hero, spanning full width: a thin rule line, then a scrolling ticker strip in `var(--text-xs)` uppercase tracking wide: `120 SCHOOLS ON SCHOOLPEDIA · 30 VERIFIED · 2–4 WEEKS TO DEPLOY · FREE TO START · POWERED BY PIONEERS'` — repeating, slow scroll, `var(--color-ink-faint)` text on white. This is the broadsheet's front-page dateline.
 
-- Card 1: _"9 in 10 schools still run on paper registers and spreadsheets."_
-- Card 2: _"Most parents have no direct digital connection to their child's school."_
-- Card 3: _"The majority of schools have no online presence parents can find."_
-  Each card: bold stat or fraction at the top in large navy text, one sentence below in body text.
+**Section 2 — The Three Departments**
+White background. Opens with the rule/label pattern: label "THE EDCOMRADE ECOSYSTEM", headline "Three departments. One mission."
 
-**Section 3 — The Ecosystem**
-Navy background (#1A3C5E). Small uppercase label in accent blue: "THE EDCOMRADE ECOSYSTEM". Large heading in white: _"Three departments. One mission."_ Three cards side by side with a slightly lighter navy fill (#1E3448) and no borders:
+Three department cards stacked in a row — but styled as newspaper section headers, not SaaS feature cards. Each card: a thin top border in `var(--color-accent)` (2px), department name in `var(--text-xs)` uppercase label, a large editorial headline in Playfair Display (`var(--text-2xl)`), a two-sentence description in body text, and a text link "Explore →". No box shadows. No card backgrounds. Just the content on white with that accent top border.
 
-- Card 1 — School ERP Systems: _"Software that runs your school. Pioneers' Software, Custom App, and ParentAide."_ Link: "Explore Software →"
-- Card 2 — Schoolpedia: _"Ghana's school intelligence platform. Parents search here. Schools are found here."_ Link: "Visit Schoolpedia →"
-- Card 3 — EdMedia: _"Visibility for schools that deserve to be seen. Media, magazine, and brand."_ Link: "Learn More →"
+**Section 3 — The Problem**
+`var(--color-paper-warm)` background. Opens with rule/label. A large pull quote centred: *"Ghana's best schools are often invisible to the parents searching for them."* In Playfair Display italic, `var(--text-3xl)`. Below: two paragraphs of editorial prose — no bullet points. To the right of the prose: a thin vertical rule (`1px solid var(--color-rule)`) separating a stat column showing three numbers: `90%` of schools on paper, `120+` schools discovered on Schoolpedia, `0 GHS` to start on Pioneers'.
 
-**Section 4 — How It Works**
-White background. Label: "HOW IT WORKS". Heading: _"From invisible to indispensable in weeks."_ Three numbered steps (horizontal on desktop, stacked on mobile) — same visual pattern as Novo's "How to put Novo to work" section:
+**Section 4 — How the Ecosystem Works**
+White background. Rule/label: "HOW EDCOMRADE WORKS". Headline: *"Three products. One school. One parent. Connected."*
 
-- Step 1: _"Your school joins Pioneers' or commissions a Custom App. Setup takes 2 to 4 weeks."_
-- Step 2: _"Parents download ParentAide. They pay fees, track their child, and stay connected — from their phone."_
-- Step 3: _"Your school goes live on Schoolpedia. Parents searching for schools in your area find you."_
-  Each step: large number in accent blue, bold title, two-sentence description, optional "Learn more" link.
+A tabbed panel — left side has three rows, each a clickable item: "Pioneers' Software", "ParentAide", "Schoolpedia". The active item has a 3px left border in `var(--color-accent)` and the product name becomes ink (not muted). The right panel shows a product illustration placeholder — a clean line-art style frame (not a screenshot blob). Use a `div` with `aspect-ratio: 4/5`, `background: var(--color-paper-warm)`, `border: 1px solid var(--color-rule)`, and centred text `{/* TODO: replace with product screenshot */}`.
 
-**Section 5 — Products**
-Light surface background (#F0F4F8). Label: "OUR SOFTWARE". Heading: _"Two ways to modernise your school."_ Two large side-by-side cards:
+**Section 5 — From the Magazine (EdMedia)**
+`var(--color-dark)` background. White text. Rule/label in `var(--color-rule-dark)`: "FROM EDCOMRADE MEDIA". Headline in Playfair Display white: *"Stories from the schools building Ghana's future."*
 
-Left card — Pioneers' Software. Blue/green palette. Navy header bar. Body: _"For schools ready to digitise now. The school administration module is free — forever. Add more when you're ready."_ Key points: Free school administration module, 2–4 week deployment, per-student-per-term pricing on add-ons, 5-year price lock. CTA: "See Pioneers' →" linking to `/software`.
+Three article cards in a row. Each card: no background, just a top rule in `var(--color-rule-dark)`, a category tag (`var(--color-accent)` text), a Playfair Display headline in white, a caption-size date in `var(--color-ink-faint)`, and a two-sentence excerpt in small white body text. Below the cards: "Read the Magazine →" in `var(--color-accent)`.
 
-Right card — Custom App. Navy/gold palette. Gold accent border on top. Body: _"For schools building a legacy. A system built entirely around your operations, on your own domain."_ Key points: Fully bespoke, ~3 month deployment, .edu.gh domain, License-to-own licensing from GHS 30,000. CTA: "See Custom App →" linking to `/software#custom`.
+Write three real placeholder article headlines: "The Accra school that digitised in two weeks — and never looked back." | "Why Ghanaian parents are choosing schools differently in 2026." | "EdMedia's inaugural school spotlight: Hecta International."
 
 **Section 6 — Testimonials**
-White background. Label: "WHAT SCHOOL HEADS SAY". Three placeholder cards in Novo's testimonial style. Each card: a gray circle avatar placeholder (60px), bold pull-quote in large text (22–24px), school head name and school name below. Comment: `{/* TODO: replace with real testimonial from school head */}`. Add three placeholder quotes that sound plausible for a Ghanaian school context (not generic — write them as if a Ghanaian school proprietor said them).
+White background. Rule/label: "WHAT SCHOOL HEADS SAY". Three testimonial cards — no background, no box shadow. Each: a Playfair italic pull quote at `var(--text-xl)`, a rule line, then the person's name in `var(--text-sm)` bold and their role in `var(--color-ink-faint)`. Placeholder quotes written as plausible Ghanaian school heads. Mark all three `{/* TODO: replace with real testimonial */}`.
 
-**Section 7 — CTA Banner**
-Full-width navy (#1A3C5E). Centred. Large white text: _"120 schools are already on Schoolpedia."_ Below: _"Be one of the first on Pioneers' Software."_ Single CTA button: "Register Your School" — white fill, navy text. Links to `/contact`.
-
----
-
-### Phase 3 — `/software`
-
-This page has two distinct visual modes separated by a clear divider or tab system. Use a sticky section nav at the top that scrolls between "Pioneers' Software" and "Custom App" as the user scrolls (or use tab switching — choose whichever is cleaner).
-
-**Pioneers' Software section — blue/green palette:**
-
-Hero: Navy background. Label: "PIONEERS' SOFTWARE". Headline: _"Your school, running digitally. Free to start."_ Sub: _"A shared ERP platform built for schools that need to modernise without a large upfront investment."_
-
-Who it's for: White section. Three-column cards: private basic schools, private SHS, vocational and technical schools.
-
-School Administration Module — Free: Green callout banner full-width. Large text: _"The Core Administration Module is free for every school. Always."_ Below: six feature tiles in a 2×3 or 3×2 grid:
-
-- Admissions Management
-- Student Information System
-- Health Records
-- Staff Communication
-- Automated Timetable Scheduling
-- Basic Fee Billing & Paystack Collection
-
-Each tile: small icon (or none), feature name in bold, one sentence description.
-
-ParentAide + Schoolpedia bundled: A callout strip in light blue: _"Every Pioneers' school also gets ParentAide for parents and a verified Schoolpedia profile — at no extra cost."_
-
-Add-on Modules: Surface background. Label: "PAID ADD-ONS". Heading: _"Activate more when you're ready."_ Eight module cards in a 4×2 grid (or responsive 2-col on mobile):
-
-| Module                       | Price                    |
-| ---------------------------- | ------------------------ |
-| Classroom & Exam Management  | GHS 2–3 / student / term |
-| HR Management                | GHS 2–3 / student / term |
-| Hostel & Boarding Management | GHS 3–4 / student / term |
-| Finance Management           | GHS 3–4 / student / term |
-| Transportation & Safety      | GHS 2–3 / student / term |
-| E-commerce & Inventory       | GHS 2 / student / term   |
-| Alumni Management            | GHS 1–2 / student / term |
-
-Note below grid: _"Activate 3 or more modules and receive 15% off. Lock in today's prices for 5 years."_
-
-Sample costs table: Show four rows — 100 students / 200 students / 300 students (with 3 modules, 15% disc.) / 400 students (with 4 modules, 15% disc.) — per term and per year.
-
-**Custom App section — navy/gold palette:**
-
-Use `id="custom"` on this section so the footer and nav can deep-link to it.
-
-Hero strip: Very dark navy (#0D1F2D). Gold accent label: "CUSTOM APP". Headline in white: _"A school management system built entirely for your institution."_ Subheadline in muted white: _"Your brand. Your domain. Your data. Built from the ground up."_
-
-Who it's for: Three cards — established private schools, international schools, school chains and groups.
-
-What you get: Ten-row feature table matching the product spec document:
-01 Bespoke System Design, 02 Cinematic School Website, 03 Your Own .edu.gh Domain, 04 Full Data Ownership, 05 ParentAide Integration, 06 Schoolpedia Verified Profile, 07 AI-Powered Analytics, 08 Hardware Procurement Support, 09 Full Staff Training, 10 Annual Maintenance.
-
-Delivery platforms pricing table: Web PWA (GHS 30,000+), Web + Mobile (custom quote), Web + Desktop (custom quote), Web + Mobile + Desktop (custom quote), Desktop Only (custom quote).
-
-School chains note: A callout box. _"Managing multiple campuses? We build centralised board dashboards that give leadership real-time visibility across every branch."_
-
-Timeline: Five-phase table: Discovery (Week 1–2), Design (Week 2–4), Development (Week 4–10), Testing (Week 10–11), Deployment & Training (Week 11–12).
-
-**Comparison table** (bottom of page, white background):
-14-row comparison table covering: Best for, Starting cost, Ongoing cost, Own domain, Data ownership, Deployment time, Website included, AI analytics, ParentAide, Schoolpedia profile, Hardware support, Staff training, 5-year price lock, Customisation.
+**Section 7 — The CTA Banner**
+`var(--color-ink)` background. White text. Full width. `padding: 80px 0`. Left-aligned (not centred — editorial, not billboard). Large Playfair Display headline: *"The September deployment window is open."* Body line below: *"Register before August 30th — schools confirm in the order they apply."* CTA button: white background, ink text, `border-radius: 3px`. Nothing else.
 
 ---
 
-### Phase 4 — `/parentaide`
+### `/software` — Software Offerings
 
-Hero: White background with a large accent blue headline: _"Everything about your child's school. In your pocket."_ Sub: _"ParentAide connects parents to their child's school — for free."_
+Opens with a full-width rule/label header: "SCHOOL ERP SYSTEMS". Editorial headline: *"Two ways to bring your school into the digital age."* A single sentence below explaining the difference between Pioneers' and Custom App.
 
-Eight-feature grid (2×4 on desktop, 1-col on mobile). Each feature: icon placeholder, bold name, one-sentence description:
+**Pioneers' Software section:**
+Rule/label: "PIONEERS' SOFTWARE". Large editorial headline. Who it's for — a single italic pull quote, not a grid. Then a clean feature list using the newspaper convention: each feature is a row with a thin bottom rule, feature name left in `Inter` medium, description right in body text. Free badge (green) on the core module items. Pricing table using the newspaper row pattern. 5-year lock-in callout as a boxed quote — Playfair italic inside a `border: 1px solid var(--color-rule)` box with a gold left accent border (`3px solid var(--color-gold)`).
 
-1. Fee & Bill Payments — _"Pay school fees directly from your phone via the ParentAide Wallet."_
-2. School Communication — _"Receive announcements, notices, and emergency alerts instantly."_
-3. Attendance Tracking — _"See when your child is present, late, or absent — in real time."_
-4. Academic Performance — _"View report cards, assignments, and grades each term."_
-5. Education Marketplace — _"Order books, uniforms, and school supplies before term starts."_
-6. School Enrolment — _"Find schools on Schoolpedia and apply directly through the app."_
-7. Scholarship Discovery — _"Browse bursaries and scholarships available for your child."_
-8. Bus & Pickup Safety — _"Get notified when your child boards or leaves the school bus."_
+**Custom App section** — `id="custom"`:
+Rule/label in `var(--color-gold)`: "CUSTOM APP". Dark section (`var(--color-dark)` background). White Playfair Display headline: *"A system built entirely around your institution."* Premium feel — more whitespace, fewer elements. Feature list on dark background uses white text with `var(--color-rule-dark)` row dividers. Pricing brackets displayed as a clean table. School chains callout as a boxed quote on dark.
 
-Wallet explainer section: Navy background. Heading: _"One wallet. Every school payment."_ Three steps horizontally: Top up via Paystack → Pay fees and bills instantly → Buy from the marketplace. Clean, simple, no decorative elements.
-
-Marketplace section: White background. Heading: _"The school marketplace, in your hands."_ Two sub-cards: School Stores (_"Buy directly from your child's school — books, uniforms, and provisions, ready before term starts."_) and Third-Party Vendors (_"Bookshops, suppliers, and education brands all in one place."_).
-
-Download CTA: Full-width navy banner. _"ParentAide is coming soon."_ Two placeholder buttons (App Store and Google Play) in disabled/greyed state with "Coming Soon" labels. Comment: `{/* TODO: replace with real store links when app is live */}`.
+Comparison table at the bottom — newspaper table style. Header row with thin bottom border `var(--color-ink)`. Alternating rows in white and `var(--color-paper-warm)`. The "better" cell in each row gets a `var(--color-green)` text colour — no background highlighting.
 
 ---
 
-### Phase 5 — `/schoolpedia`
+### `/amplifiers` — The Amplifiers Programme
 
-This page already exists. Rewrite its content completely.
+This page has its own energy — it is the most kinetic page on the site, but still within the magazine vocabulary.
 
-Hero: Accent blue background. Headline: _"Find the right school. Know what you're choosing."_ Sub: _"Schoolpedia maps every school in Ghana — so parents can search, compare, and decide with confidence."_ CTA: "Search Schools" linking to schoolpedia.edcomrade.com.
+Rule/label: "WORK WITH US". Playfair Display hero headline: *"Amplify what schools can do in your community."*
 
-For Parents section: White. Three columns — Search (find schools by location, type, fees), Compare (side-by-side comparison of any two schools), Enrol (apply directly through the platform via ParentAide).
+A full-width dark section explains what Grind is: *"Grind is the platform for independent sales reps and social media marketers who promote the products they believe in — in return for commissions and recognition. As an Edcomrade Amplifier on Grind, you bring Pioneers' Software to schools in your community and earn real recurring income for up to three years."*
 
-For Schools section: Navy background. Heading: _"Your school's public profile. Built and verified by Edcomrade."_ Three benefits: Verified profile parents trust, PR platform for achievements and news, Visibility when parents search your area.
+Then: the tier system — four tiers displayed as newspaper columns side by side, each with a thin top rule, the tier name as the headline, the unlock trigger as the subheading, and the commission rate as the lead number in Playfair Display large.
 
-Stats strip: Light surface. Four stats side by side:
+Income projection displayed as an editorial table — the kind you'd see in a business newspaper. "What 20 schools earns you. What 50 schools earns you."
 
-- 120+ Schools Listed (mark `{/* TODO: connect to DB School count */}`)
-- 30+ Verified Schools (mark `{/* TODO: connect to DB */}`)
-- Free for every school to list
-- Powered by Pioneers' Software
+How to join — three steps as a numbered list in the newspaper convention: large numeral, step name, description.
 
-Bottom CTA: _"Every school on Pioneers' Software gets a free verified Schoolpedia profile."_ Link to `/software`.
+CTA: "Join the Amplifiers on Grind →" — links to `https://grind.xcuxion.com`. This is the only outbound link on the page that opens in a new tab.
 
----
-
-### Phase 6 — `/about`
-
-Hero: White. Large navy headline: _"Built in Ghana. Built for Africa."_
-
-Founding story section: One flowing text section — not bullet points. Tell the story properly: Solomon took his nephew to a boarding school in 2023, the admissions process took four days of paper forms, entrance exams, and manual purchases, and as an incoming third-year CS student at KNUST he decided to build a solution. His supervised mini project became the MVP. He interviewed the headmaster at KNUST Basic School and the school he had enrolled his nephew in (Hecta International School). He chose to build a company instead of deploying to one school.
-
-Mission block: Navy background. Large white text: _"We modernise African schools. We centre education around parents. We make excellence visible."_
-
-Team section: Two cards — Solomon A. Ayisi (CEO & Founder) and Prince Sarfo (CTO & Co-Founder). Each card: circular avatar placeholder, name, role, one sentence. Comment: `{/* TODO: add real photos */}`. Below the two founder cards: a row of blank placeholder cards for the broader team with comment: `{/* TODO: add team members */}`.
-
-Vision section: Surface background. Three horizon cards:
-
-- Horizon 1 (2025–2027): 100+ schools on Pioneers', Schoolpedia as Ghana's go-to school search platform, GHS 200,000 ARR
-- Horizon 2 (2027–2030): 10,000 schools, 3 million users, education financing and insurance, pan-African presence
-- Horizon 3 (2030+): Edcomrade boarding facilities, foreign exchange programmes, $5M ARR
+A second smaller section for the Custom App Sales Executive role — positioned as a sidebar within the same page or below with its own rule/label: "SALES EXECUTIVE ROLE". Shorter — what the role is, what it earns (bracket commissions), what you need. CTA: "Apply as a Sales Executive →" linking to `https://grind.xcuxion.com`.
 
 ---
 
-### Phase 7 — `/edmedia`
+### `/edmedia` — EdMedia
 
-Hero: White. Headline: _"Visibility for schools that deserve to be seen."_ Sub: _"EdMedia is Edcomrade's media and publishing arm — helping educational institutions build their public identity."_
+Rule/label: "EDMEDIA & PUBLISHING". Playfair Display headline: *"We tell the stories schools deserve to be known for."*
 
-Services grid (3×2): Digital Magazine, Social Media Management, School Event Coverage, Brand Consultation, Education Advertising, PR and Media Outreach. Each: bold name, two-sentence description.
+Dark section. Magazine masthead feel. Three services as editorial columns: Digital Magazine, School Coverage, Brand Consultation. Each: category label, headline, two-sentence description.
 
-Magazine section: Navy background. _"The Edcomrade Education Magazine spotlights schools leading in innovation and social responsibility."_ Placeholder for issue covers: three gray rectangles with `aspect-[3/4]` and comment `{/* TODO: add magazine cover images */}`.
+Below on white: the same three article cards from homepage Section 5 — use the same component.
 
-Enquiry CTA: _"Want EdMedia working for your school?"_ Link to `/contact` with a pre-filled query param `?subject=edmedia` if possible.
-
----
-
-### Phase 8 — `/contact` and MongoDB
-
-**Contact model update:** The agent's proposed change is approved with one addition. The updated `Contact` model should have:
-
-- `name` (string, required) — merged from firstName/lastName
-- `email` (string, required)
-- `phone` (string, optional) — add this field, it is important for Ghana where WhatsApp follow-up is the norm
-- `schoolName` (string, optional)
-- `role` (enum: `proprietor | parent | student | partner | other`, required)
-- `subject` (string, optional) — to capture the pre-filled param from EdMedia and other pages
-- `message` (string, required)
-- `createdAt` (Date, default: Date.now)
-
-Update the admin contacts view to reflect the new field names.
-
-**Contact page:** Clean, simple. Two-column on desktop: left column has the form, right column has contact information (email, WhatsApp link, office address: New Legon, Accra, Ghana, West Africa). Form fields in order: Full Name, Email, Phone (optional), I am a... (role selector as radio or select), School Name (optional, appears when role is proprietor), Subject (pre-filled if query param present), Message. Submit button: "Send Message" in navy. Success state: replace form with a confirmation message _"Thank you. We will be in touch shortly — usually within one business day."_
+Enquiry form for EdMedia services — minimal. Name, school name, service interested in (dropdown), message. Ink CTA button.
 
 ---
 
-## Items That Remain Unchanged
+### `/about` — About
 
-- All `/admin/*` routes — untouched
-- All `/api/*` routes except `/api/contact` which gets the model update above
-- `/manifesto` — keep route and content, add to footer under Company
-- `/community` and `/technology` — keep routes alive, remove from nav, no content changes
-- `/schools`, `/parents`, `/how-it-works` — keep routes alive with a simple redirect to the relevant new page (`/schools` → `/software`, `/parents` → `/parentaide`, `/how-it-works` → `/`) so inbound links do not break
-- Existing WhatsApp button, BackToTop, ScrollProgress — keep in root layout
-- CustomCursor and BackgroundBlobs — remove from root layout or make opt-in per page. They clash with the clean Novo-inspired aesthetic. A cursor effect and floating blobs will conflict with the editorial feel being built.
-- Noise texture — keep, very subtle, adds depth without visual noise
+Rule/label: "OUR STORY". Playfair Display headline: *"Built in Ghana. Built for Africa."*
+
+The founding story as genuine editorial prose — not a timeline, not bullet points. Three paragraphs. Written in the third person but warm. Ends with the sentence that converts: *"Solomon chose to build a company instead of deploying to one school."*
+
+Dark section break: the mission statement in large Playfair italic centred on dark background. Three lines: *"We modernise African schools. / We centre education around parents. / We make excellence visible."*
+
+Team section: Solomon and Prince as editorial profile cards — portrait photo (square, `border: 1px solid var(--color-rule)`), name in `Inter` medium, role in `var(--color-ink-faint)`, one sentence. Mark others `{/* TODO: add team member */}`.
+
+Vision horizons as a clean three-column editorial section with Playfair Display horizon numbers and descriptions.
 
 ---
 
-## Build Order Confirmation
+### `/schoolpedia` — Schoolpedia
 
-Proceed in exactly this order. Run `pnpm run build` and visually verify at 1440px and 390px after each phase before proceeding:
+Rule/label: "SCHOOLPEDIA". Playfair Display headline: *"Find the right school. Know what you're choosing."*
 
-1. globals.css colour tokens + remove CustomCursor and BackgroundBlobs from root layout
-2. Navigation and Footer
-3. Homepage
-4. `/software`
-5. `/parentaide`
-6. `/schoolpedia`
-7. `/about`
-8. `/edmedia`
-9. `/contact` + Contact model + API update + admin contacts view update
-10. Redirects for `/schools`, `/parents`, `/how-it-works`
+A mockup of the Schoolpedia search bar — styled with `border: 1.5px solid var(--color-ink)`, `border-radius: 3px`, placeholder text: *"Search by school name, area, or type..."*, and a magnifying glass icon. Non-functional — it links to `https://schoolpedia.edcomrade.com` on click.
+
+Three editorial sections: For Parents (discover and compare), For Schools (the PR platform), For Everyone (the data). Each as a newspaper row — rule at top, label, headline, prose.
+
+Stats row — four numbers in large Playfair Display with captions below. The newspaper dateline convention: `120+  Schools Listed` / `30  Verified` / `Free  To List` / `2026  Launch Year`.
+
+CTA: "Search Schools on Schoolpedia →" links to `https://schoolpedia.edcomrade.com`.
+
+---
+
+### `/parentaide` — ParentAide
+
+Rule/label: "PARENTAIDE". Playfair Display headline: *"Everything about your child's school. In your pocket."*
+
+Feature grid — eight features displayed as a newspaper feature grid. Two columns. Each feature: a thin top rule, feature name in `Inter` medium ink, one-sentence description in body text. No icons — the typography carries it.
+
+Wallet explainer as a full-width dark strip: *"One wallet. Every school payment."* Three horizontal steps.
+
+Marketplace section as editorial prose with a pull quote.
+
+Download CTA in "Coming Soon" disabled state — `border: 1px solid var(--color-rule)`, greyed text, `cursor: not-allowed`. Caption below: *"ParentAide for iOS and Android — coming soon."*
+
+---
+
+### `/contact` — Contact
+
+Rule/label: "GET IN TOUCH". Playfair Display headline: *"We respond within two business days."*
+
+Two columns. Left: the form — clean, no labels floating, all labels above their inputs, ink submit button. Right: contact details as editorial lines with thin top rules between each item.
+
+Form fields: Full Name, Email, Phone, I am a... (select: Proprietor, Parent, Partner, Sales Enquiry, Other), School Name (conditional — shows when Proprietor is selected), Subject, Message. Success state replaces form with: *"Thank you. We will be in touch shortly."* in Playfair Display.
+
+---
+
+### `/manifesto` — Manifesto
+
+This page should feel like an essay in a literary magazine.
+
+Rule/label: "MANIFESTO". Date: "Accra, Ghana — 2025". Author: "Solomon A. Ayisi, Founder".
+
+The text is full-width on mobile, `var(--content-narrow)` centred on desktop. Playfair Display body throughout — this is the one page where the serif is used for body text, not just headlines, because it is a long-form piece. `var(--text-lg)`, `leading-loose`. Section breaks use a centred `* * *` ornament. Drop cap on the first paragraph — the first letter is Playfair Display, `var(--text-hero)` size, floated left.
+
+Update the content to reflect the current company. Rewrite it as a 600-word op-ed by Solomon: why Ghanaian schools deserve better tools, what fragmentation costs them, what Edcomrade is doing about it, and what the next ten years could look like. Keep it honest, direct, and slightly uncomfortable — the best manifestos are.
+
+---
+
+### `/technology` — Technology
+
+Keep this page but de-emphasise it. Remove from the footer nav (it was already unlinked from the header). Add a simple redirect from the footer link to `/software` instead. Update the metadata. Keep the content — it is useful for technical partners who find it via search.
+
+---
+
+## COMPONENT PATTERNS
+
+**The newspaper row:** Used for feature lists, comparison rows, contact details. A `div` with `border-top: 1px solid var(--color-rule)`, `padding: 16px 0`, `display: flex`, `justify-content: space-between`. Left: label or feature name. Right: value or description.
+
+**The article card:** Used on homepage and EdMedia page. No card background. `border-top: 2px solid var(--color-rule)`, `padding-top: 16px`. Category tag (color: `var(--color-accent)`, uppercase, `var(--text-xs)` tracking-wide). Headline in Playfair Display medium. Date in `var(--color-ink-faint)`. Two-sentence excerpt in body.
+
+**The section rule header:**
+```tsx
+<div style={{ borderTop: '1px solid var(--color-rule)', paddingTop: '16px', marginBottom: '32px' }}>
+  <span style={{ fontSize: 'var(--text-xs)', letterSpacing: 'var(--tracking-wider)',
+    textTransform: 'uppercase', color: 'var(--color-accent)', fontFamily: 'var(--font-sans)' }}>
+    {label}
+  </span>
+  <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'var(--text-3xl)',
+    letterSpacing: 'var(--tracking-snug)', lineHeight: 'var(--leading-snug)',
+    color: 'var(--color-ink)', marginTop: '8px' }}>
+    {headline}
+  </h2>
+</div>
+```
+
+**Buttons:**
+- Primary: `background: var(--color-ink)`, `color: white`, `padding: 10px 20px`, `font-size: var(--text-sm)`, `font-weight: 600`, `border-radius: 3px`, `letter-spacing: 0.02em`. Hover: `background: var(--color-navy)`.
+- Ghost: `border: 1.5px solid var(--color-rule)`, transparent background, `color: var(--color-ink)`. Hover: `border-color: var(--color-ink)`.
+- Accent (rare): `background: var(--color-accent)`, white text. Only used where you need energy — the Amplifiers page CTA.
+
+**No border-radius above 4px anywhere on the site.** Editorial design does not round things aggressively. `3px` on buttons. `4px` on dropdowns. `0px` on images.
+
+**No box-shadows.** Depth is created through layout, whitespace, and rule lines — not elevation.
+
+---
+
+## WHAT TO REMOVE
+
+- All `blur-3xl` and `blur-[120px]` background blob elements.
+- All custom cursor components.
+- All `PageTransitionWrapper` components.
+- All `Noise` texture overlays.
+- All `Magnetic` hover effects.
+- The `ScrollProgress` bar.
+- The `AnimatedCounter` — replace with static numbers. The magazine does not animate its statistics.
+- All `hover:-translate-y-*` card lifts. Cards do not move on hover — the text colour changes and the accent rule appears.
+
+**One subtle animation that stays:** A very simple opacity + translateY fade on page sections as they enter the viewport. `opacity: 0 → 1`, `translateY: 16px → 0`, duration `280ms`, easing `ease-out`. This is applied via Framer Motion or an Intersection Observer. Nothing more dramatic than this.
+
+---
+
+## BUILD ORDER
+
+Build in this exact order. Run `pnpm build` after each phase.
+
+1. Fix all TypeScript errors and broken links (pre-existing debt).
+2. Implement the design system in `globals.css`. Set up Playfair Display from Google Fonts in `layout.tsx`.
+3. Build the Navigation and Footer.
+4. Build the Homepage — section by section in order.
+5. Build `/software`.
+6. Build `/amplifiers`.
+7. Build `/edmedia`.
+8. Build `/about`.
+9. Build `/schoolpedia`.
+10. Build `/parentaide`.
+11. Build `/contact`.
+12. Update `/manifesto` with new content and editorial styling.
+13. Update metadata on all pages.
+14. Final pass: check every page at 390px mobile and 1440px desktop. Check every hover state. Check every link.
+
+Do not skip steps. Do not combine phases. Show a screenshot of each completed page at 1440px before moving to the next.
