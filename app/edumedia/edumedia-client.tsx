@@ -74,7 +74,7 @@ export default function EduMediaClientForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-5 ">
       <div>
         <label style={labelStyle}>Your Name</label>
         <input
@@ -125,7 +125,7 @@ export default function EduMediaClientForm() {
         type="submit"
         disabled={loading}
         style={{
-          backgroundColor: "var(--color-navy)",
+          backgroundColor: "var(--navy-dark)",
           color: "#fff",
           fontSize: "var(--text-sm)",
           fontWeight: 600,

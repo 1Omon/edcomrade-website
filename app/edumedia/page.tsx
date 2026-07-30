@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import EduMediaClientForm from "./edmedia-client";
+import EduMediaClientForm from "./edumedia-client";
 import { ArrowRight, Camera, Newspaper, Award } from "lucide-react";
 
 export const metadata: Metadata = {
