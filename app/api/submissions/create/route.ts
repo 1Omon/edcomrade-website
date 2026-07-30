@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     logoUrl: String(formData.get("logoUrl") || "").trim() || undefined,
     logoPublicId: String(formData.get("logoPublicId") || "").trim() || undefined,
   });
-  return NextResponse.json({ id: doc._id.toString() });
+  return NextResponse.json({ id: (doc._id as any).toString() });
 }
 
 

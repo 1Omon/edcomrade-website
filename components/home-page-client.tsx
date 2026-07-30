@@ -1,215 +1,668 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { useEffect, useRef } from "react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import HeroModern from "@/components/hero-modern";
-import { CONTENT_BY_ROLE } from "@/lib/content-constants";
-import { Section } from "@/components/ui/section";
-import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { ArrowRight, Check, School, Globe, Users, TrendingUp, Sparkles } from "lucide-react";
-import { AnimatedCounter } from "@/components/animated-counter";
-import Link from "next/link";
-import { Magnetic } from "@/components/ui/magnetic";
-import { UserRole } from "./role-selection-modal";
+
+/* ── Parallax hook ─────────────────────────────── */
+function useParallax(speed = 0.3) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const onScroll = () => {
+      const y = window.scrollY * speed;
+      el.style.transform = `translateY(${y}px)`;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [speed]);
+  return ref;
+}
 
 export default function HomePageClient() {
-    const [userRole, setUserRole] = useState<UserRole>("public");
+  const heroImgRef = useParallax(0.25);
 
-    useEffect(() => {
-        const savedRole = localStorage.getItem("edcomrade_perspective") as UserRole;
-        if (savedRole) {
-            setUserRole(savedRole);
-        }
-    }, []);
+  return (
+    <main style={{ background: "var(--paper)" }}>
+      <Navigation />
 
-    const handleRoleChange = (role: UserRole) => {
-        setUserRole(role);
-        localStorage.setItem("edcomrade_perspective", role as string);
-    };
+      {/* ══════════════════════════════════════════════
+          HERO
+      ═══════════════════════════════════════════════ */}
+      <section
+        style={{
+          position: "relative",
+          minHeight: "100svh",
+          display: "flex",
+          alignItems: "center",
+          overflow: "hidden",
+          background:
+            "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)",
+        }}
+      >
+        {/* Parallax background image */}
+        <div
+          ref={heroImgRef}
+          style={{ position: "absolute", inset: 0, zIndex: 0 }}
+        >
+          <Image
+            src="/african-students-engaged-with-tablets-in-classroom.jpg"
+            alt="Students in a modern classroom"
+            fill
+            style={{ objectFit: "cover", opacity: 0.18 }}
+            priority
+          />
+        </div>
 
-    const role = userRole || "public";
-    const content = CONTENT_BY_ROLE[role];
+        {/* Gradient overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to right, rgba(15,37,55,.95) 50%, rgba(15,37,55,.5))",
+            zIndex: 1,
+          }}
+        />
 
-    return (
-        <main className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
-            <Navigation />
-
-            {/* HERO — Infrastructure Entrance */}
-            <HeroModern userRole={role} />
-
-            {/* Perspective Switcher — Subtle Inception */}
-            <div className="bg-muted/30 border-y border-border py-4">
-                <Container className="flex flex-wrap items-center justify-center gap-8 text-sm font-medium text-muted-foreground overflow-x-auto whitespace-nowrap">
-                    <span className="flex items-center gap-2">
-                        <Sparkles className="w-4 h-4 text-primary" />
-                        Explore Perspective:
-                    </span>
-                    <button
-                        onClick={() => setUserRole("public")}
-                        className={`transition-colors hover:text-foreground ${role === "public" ? "text-primary font-bold" : ""}`}
-                    >
-                        The Ecosystem
-                    </button>
-                    <button
-                        onClick={() => setUserRole("school")}
-                        className={`transition-colors hover:text-foreground ${role === "school" ? "text-primary font-bold" : ""}`}
-                    >
-                        For Institutions
-                    </button>
-                    <button
-                        onClick={() => setUserRole("parent")}
-                        className={`transition-colors hover:text-foreground ${role === "parent" ? "text-primary font-bold" : ""}`}
-                    >
-                        For Families
-                    </button>
-                </Container>
+        <div
+          className="container"
+          style={{
+            position: "relative",
+            zIndex: 2,
+            paddingTop: "120px",
+            paddingBottom: "100px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: "860px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <div className="badge badge-gold" style={{ marginBottom: "28px" }}>
+              Free School Management Software
             </div>
 
-            {/* STATS / PROOF SECTION — Launching with Ghana's founding schools */}
-            <div className="border-b border-border bg-white/50 backdrop-blur-sm">
-                <Container className="py-12 md:py-20 text-center space-y-12">
-                    <p className="text-sm font-bold uppercase tracking-[0.5em] text-muted-foreground">Active in 2026</p>
-                    <div className="max-w-3xl mx-auto space-y-4 mb-12">
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Launching with Ghana's founding schools.</h2>
-                        <p className="text-lg text-muted-foreground font-light">
-                            EdComrade is live and onboarding its first cohort of private schools across Ghana. Digital 100 is currently open for the 2026 intake. Pioneers applications are reviewed on a rolling basis by region.
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                        <div>
-                            <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-primary mb-2">
-                                <AnimatedCounter end={100} />
-                            </h4>
-                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Schools in the Digital 100 intake</p>
-                        </div>
-                        <div>
-                            <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-foreground mb-2">
-                                <AnimatedCounter end={5} />
-                            </h4>
-                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Pioneers schools selected per region</p>
-                        </div>
-                        <div>
-                            <h4 className="text-5xl md:text-6xl font-bold tracking-tighter text-secondary mb-2">
-                                <AnimatedCounter end={7} suffix=" days" />
-                            </h4>
-                            <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Typical onboarding time</p>
-                        </div>
-                    </div>
-                </Container>
+            <h1
+              style={{
+                fontFamily: "var(--serif)",
+                fontSize: "clamp(42px, 6vw, 76px)",
+                fontWeight: 700,
+                lineHeight: 1.05,
+                color: "#fff",
+                letterSpacing: "-.03em",
+                marginBottom: "24px",
+              }}
+            >
+              Run your entire school.
+              <br />
+              <span style={{ color: "var(--gold)" }}>
+                From one simple screen.
+              </span>
+            </h1>
+
+            <p
+              style={{
+                fontSize: "clamp(17px, 2vw, 20px)",
+                color: "rgba(255,255,255,.75)",
+                lineHeight: 1.65,
+                marginBottom: "40px",
+                maxWidth: "680px",
+              }}
+            >
+              Replace messy spreadsheets, scattered paper files, and expensive
+              software with one beautiful platform. Collect fees, track
+              attendance, and keep parents informed—all for free.
+            </p>
+
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "14px",
+                marginBottom: "48px",
+                justifyContent: "center",
+              }}
+            >
+              <Link
+                href="/contact?subject=register-school"
+                className="btn-white"
+              >
+                Start for free — it&apos;s GHS 0 <ArrowRight size={16} />
+              </Link>
+              <Link
+                href="/software"
+                className="btn-ghost"
+                style={{ color: "#fff", borderColor: "rgba(255,255,255,.3)" }}
+              >
+                See what&apos;s included
+              </Link>
             </div>
 
-            {/* REALITY CHECK (Dynamic based on Role) */}
-            <Section intensity="none" className="py-24 md:py-40">
-                <Container>
-                    <div className="max-w-4xl mx-auto text-center mb-24">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 text-primary text-xs font-bold tracking-[0.3em] uppercase mb-8">
-                            {content.reality.badge}
-                        </div>
-                        <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[0.9]">{content.reality.title}</h2>
-                        <p className="text-xl md:text-3xl text-muted-foreground leading-relaxed font-light">{content.reality.description}</p>
-                    </div>
+            {/* Social proof line */}
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "24px",
+                justifyContent: "center",
+              }}
+            >
+              <li
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "12px",
+                  fontSize: "15px",
+                  color: "white",
+                  fontWeight: 600,
+                }}
+              >
+                <CheckCircle size={20} color="white" /> Works perfectly on any
+                device. No long training sessions required.
+              </li>
+            </div>
+          </div>
+        </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {content.reality.items.map((item: any, i: number) => (
-                            <Card key={i} className="group hover:border-primary/20 transition-all duration-500 overflow-hidden">
-                                <CardHeader className="p-10">
-                                    <div className="w-16 h-16 rounded-2xl bg-muted/50 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                                        <item.icon className="w-8 h-8" />
-                                    </div>
-                                    <CardTitle className="text-2xl font-bold mb-4">{item.title}</CardTitle>
-                                    <p className="text-muted-foreground leading-relaxed text-lg">
-                                        {item.desc}
-                                    </p>
-                                </CardHeader>
-                            </Card>
-                        ))}
-                    </div>
-                </Container>
-            </Section>
+        {/* Scroll cue */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "36px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 2,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "8px",
+          }}
+        >
+          <div
+            style={{
+              width: 1,
+              height: 48,
+              background: "rgba(255,255,255,.3)",
+              animation: "fadeUp 1.5s ease infinite alternate",
+            }}
+          />
+        </div>
+      </section>
 
-            {/* THE SHIFT (Ecosystem Intro) */}
-            <Section intensity="soft" className="border-y border-border/50 py-40">
-                <Container>
-                    <div className="grid lg:grid-cols-2 gap-32 items-center">
-                        <div className="space-y-12">
-                            <div className="space-y-6">
-                                <span className="text-xs font-bold uppercase tracking-[0.4em] text-primary">The Connected Operating System</span>
-                                <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-foreground leading-[0.85]">
-                                    One ecosystem. <br /> <span className="text-primary italic">Three tools working together.</span>
-                                </h2>
-                                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
-                                    Each layer solves a different part of the problem. Together, they give your school everything it needs.
-                                </p>
-                            </div>
+      {/* ══════════════════════════════════════════════
+          PROBLEM → SOLUTION BRIDGE
+      ═══════════════════════════════════════════════ */}
+      <section style={{ padding: "var(--section) 0", background: "#fff" }}>
+        <div className="container">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "40px",
+              alignItems: "center",
+            }}
+          >
+            {/* Left: before */}
+            <div
+              className="card"
+              style={{ padding: "36px", borderLeft: "4px solid #EF4444" }}
+            >
+              <p
+                style={{
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: ".1em",
+                  textTransform: "uppercase",
+                  color: "#EF4444",
+                  marginBottom: "12px",
+                }}
+              >
+                Before Edcomrade
+              </p>
+              <div
+                style={{
+                  position: "relative",
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  marginBottom: "20px",
+                  aspectRatio: "4/3",
+                }}
+              >
+                <Image
+                  src="/stressed-african-school-administrator-surrounded-b.jpg"
+                  alt="Stressed school administrator with paperwork"
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <p
+                style={{
+                  fontSize: "15px",
+                  color: "var(--ink-mid)",
+                  lineHeight: 1.6,
+                }}
+              >
+                Lost fee receipts, endless paperwork, scattered WhatsApp
+                messages, and exhausted teachers.
+              </p>
+            </div>
 
-                            <div className="space-y-6">
-                                {[
-                                    { title: "School ERP", label: "Layer 1", desc: "The management backbone. Student records, fee billing, staff management, timetabling, and report cards — all in one system." },
-                                    { title: "ParentAide", label: "Layer 2", desc: "The parent connection. Families see their child's grades, attendance, and fees in real time. Schools communicate without the chaos." },
-                                    { title: "Schoolpedia", label: "Layer 3", desc: "The discovery platform. Parents find and compare schools across Ghana. Your school gets a verified profile parents can trust." }
-                                ].map((item, i) => (
-                                    <div key={i} className="flex gap-6 items-start group">
-                                        <div className="text-xs font-bold px-3 py-1 rounded-full bg-primary/10 text-primary mt-2 whitespace-nowrap">{item.label}</div>
-                                        <div className="space-y-2">
-                                            <h4 className="text-2xl font-bold tracking-tight">{item.title}</h4>
-                                            <p className="text-muted-foreground leading-relaxed font-light text-lg">{item.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+            {/* Arrow */}
+            <div
+              style={{ textAlign: "center", fontSize: "40px" }}
+              className="hidden md:block"
+            >
+              →
+            </div>
 
-                            <div className="pt-8">
-                                <Magnetic strength={0.15}>
-                                    <Button asChild size="xl" className="rounded-full shadow-2xl">
-                                        <Link href="/how-it-works">See How It All Works <ArrowRight className="ml-3" /></Link>
-                                    </Button>
-                                </Magnetic>
-                            </div>
-                        </div>
-                        <div className="relative aspect-square lg:aspect-[4/5] w-full bg-zinc-950 rounded-[4rem] overflow-hidden shadow-[0_0_100px_rgba(0,71,171,0.15)] ring-1 ring-white/5 group">
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                            <div className="absolute inset-0 flex items-center justify-center text-zinc-800 font-mono text-sm uppercase tracking-[0.3em]">
-                                Architecture Visualizer
-                            </div>
-                        </div>
-                    </div>
-                </Container>
-            </Section>
+            {/* Right: after */}
+            <div
+              className="card"
+              style={{
+                padding: "36px",
+                borderLeft: "4px solid var(--green-mid)",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: ".1em",
+                  textTransform: "uppercase",
+                  color: "var(--green-mid)",
+                  marginBottom: "12px",
+                }}
+              >
+                With Edcomrade
+              </p>
+              <div
+                style={{
+                  position: "relative",
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  marginBottom: "20px",
+                  aspectRatio: "4/3",
+                }}
+              >
+                <Image
+                  src="/african-school-administrator-smiling-confidently-w.jpeg"
+                  alt="Confident school administrator with laptop"
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <p
+                style={{
+                  fontSize: "15px",
+                  color: "var(--ink-mid)",
+                  lineHeight: 1.6,
+                }}
+              >
+                Digital fee tracking, instant parent updates, and reports
+                generated in a single click.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* CAMPAIGN TEASER */}
-            <Section intensity="none" fullWidth className="bg-black text-white py-40">
-                <Container>
-                    <div className="max-w-5xl mx-auto text-center space-y-12">
-                        <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-[0.5em] text-zinc-400">
-                            Active Initiative
-                        </div>
-                        <h2 className="text-6xl md:text-[10rem] font-bold tracking-tighter leading-[0.8] text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-600">
-                            Digital 100.
-                        </h2>
-                        <p className="text-2xl md:text-3xl text-zinc-400 max-w-3xl mx-auto leading-tight font-light">
-                            100 schools selected for a complete digital transformation. <br />
-                            <span className="text-white font-medium">We visit your school, produce professional photography and video, build your website, and list you on Google and Schoolpedia — all as one coordinated package.</span>
-                        </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-8 pt-10">
-                            <Magnetic strength={0.2}>
-                                <Button asChild size="xl" variant="premium" className="rounded-full px-16 text-xl">
-                                    <Link href="/campaigns/digital-100">Apply to Join</Link>
-                                </Button>
-                            </Magnetic>
-                            <Magnetic strength={0.1}>
-                                <Button asChild size="xl" variant="ghost" className="text-zinc-500  hover:text-foreground transition-colors">
-                                    <Link href="/campaigns/digital-100#details">See What's Included</Link>
-                                </Button>
-                            </Magnetic>
-                        </div>
-                    </div>
-                </Container>
-            </Section>
+      {/* ══════════════════════════════════════════════
+          FEATURES — THREE PILLARS
+      ═══════════════════════════════════════════════ */}
+      <section
+        style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}
+      >
+        <div className="container">
+          <div
+            style={{
+              textAlign: "center",
+              maxWidth: "560px",
+              margin: "0 auto 60px",
+            }}
+          >
+            <p className="eyebrow" style={{ marginBottom: "12px" }}>
+              How it works
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(30px, 4vw, 44px)",
+                fontWeight: 700,
+                color: "var(--navy)",
+              }}
+            >
+              Three powerful tools working together perfectly.
+            </h2>
+          </div>
 
-            <Footer />
-        </main>
-    );
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "24px",
+            }}
+          >
+            {[
+              {
+                img: "/modern-school-management-dashboard-on-computer-scr.jpg",
+                badge: "For Administrators",
+                badgeClass: "badge-blue",
+                title: "School Administration",
+                tagline: "Free school management module",
+                body: "Fee billing, admissions, student records, timetables, staff payroll — one powerful dashboard replacing overpriced software.",
+                cta: "Start for free",
+                href: "/software",
+              },
+              {
+                img: "/african-students-competing-in-academic-olympiad--f.jpg",
+                badge: "For Parents",
+                badgeClass: "badge-gold",
+                title: "Schoolpedia",
+                tagline: "Find and compare schools",
+                body: "Parents search verified schools by location, fees, and results. Your school gets found by the right families.",
+                cta: "Search schools",
+                href: "/schoolpedia",
+              },
+              {
+                img: "/african-parent-smiling-while-checking-child-s-grad.jpeg",
+                badge: "For Families",
+                badgeClass: "badge-green",
+                title: "ParentAide",
+                tagline: "School updates on your phone",
+                body: "Attendance alerts, digital report cards, and Mobile Money fee payments — straight to parents' phones.",
+                cta: "Learn more",
+                href: "/parentaide",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="card fade-up"
+                style={{ overflow: "hidden" }}
+              >
+                <div
+                  className="photo-card"
+                  style={{ aspectRatio: "16/9", borderRadius: 0 }}
+                >
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div style={{ padding: "28px" }}>
+                  <span
+                    className={`badge ${item.badgeClass}`}
+                    style={{ marginBottom: "14px" }}
+                  >
+                    {item.badge}
+                  </span>
+                  <h3
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: 700,
+                      color: "var(--navy)",
+                      marginBottom: "4px",
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "13px",
+                      color: "var(--cyan)",
+                      fontWeight: 600,
+                      marginBottom: "12px",
+                    }}
+                  >
+                    {item.tagline}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      color: "var(--ink-mid)",
+                      lineHeight: 1.65,
+                      marginBottom: "20px",
+                    }}
+                  >
+                    {item.body}
+                  </p>
+                  <Link
+                    href={item.href}
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      color: "var(--navy)",
+                      textDecoration: "none",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "5px",
+                    }}
+                  >
+                    {item.cta} <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          SOCIAL PROOF / TRANSFORMATION
+      ═══════════════════════════════════════════════ */}
+      <section style={{ padding: "var(--section) 0", background: "#fff" }}>
+        <div className="container">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "64px",
+              alignItems: "center",
+            }}
+            className="md:grid-cols-2 grid-cols-1"
+          >
+            <div>
+              <p className="eyebrow" style={{ marginBottom: "16px" }}>
+                Real impact
+              </p>
+              <h2
+                style={{
+                  fontSize: "clamp(30px, 4vw, 44px)",
+                  fontWeight: 700,
+                  lineHeight: 1.2,
+                  color: "var(--navy)",
+                  marginBottom: "24px",
+                }}
+              >
+                Software that gets out of your way.
+              </h2>
+              <p
+                style={{
+                  fontSize: "17px",
+                  color: "var(--ink-mid)",
+                  lineHeight: 1.7,
+                  marginBottom: "32px",
+                }}
+              >
+                Your staff should spend their time educating students, not
+                fighting with messy spreadsheets and broken software. We made
+                Edcomrade so simple that anyone can learn it in a day.
+              </p>
+              <blockquote
+                style={{
+                  borderLeft: "3px solid var(--cyan)",
+                  paddingLeft: "20px",
+                  fontFamily: "var(--serif)",
+                  fontSize: "18px",
+                  fontStyle: "italic",
+                  color: "var(--navy)",
+                  lineHeight: 1.5,
+                  marginBottom: "12px",
+                }}
+              >
+                &ldquo;I used to dread end-of-term billing. Now it takes me 20
+                minutes.&rdquo;
+              </blockquote>
+              <p style={{ fontSize: "13px", color: "var(--ink-mid)" }}>
+                School Bursar
+              </p>
+              <div style={{ marginTop: "36px" }}>
+                <Link
+                  href="/contact?subject=register-school"
+                  className="btn-primary"
+                >
+                  Register your school free <ArrowRight size={15} />
+                </Link>
+              </div>
+            </div>
+
+            <div
+              className="photo-card"
+              style={{ aspectRatio: "4/5", position: "relative" }}
+            >
+              <Image
+                src="/happy-african-school-administrator-using-modern-la.jpg"
+                alt="Happy school administrator"
+                fill
+                style={{ objectFit: "cover", borderRadius: "20px" }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          SOFTWARE PREVIEW
+      ═══════════════════════════════════════════════ */}
+      <section
+        style={{ padding: "var(--section) 0", background: "var(--navy-dark)" }}
+      >
+        <div className="container" style={{ textAlign: "center" }}>
+          <p
+            className="eyebrow"
+            style={{ color: "var(--cyan)", marginBottom: "16px" }}
+          >
+            What it looks like
+          </p>
+          <h2
+            style={{
+              fontSize: "clamp(30px, 4vw, 48px)",
+              fontWeight: 700,
+              color: "#fff",
+              marginBottom: "16px",
+            }}
+          >
+            A dashboard your staff will actually use.
+          </h2>
+          <p
+            style={{
+              fontSize: "17px",
+              color: "rgba(255,255,255,.6)",
+              marginBottom: "48px",
+              maxWidth: "480px",
+              margin: "0 auto 48px",
+            }}
+          >
+            Works perfectly on any device, even on slow connections. No training
+            days required.
+          </p>
+          <div
+            style={{
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 40px 80px rgba(0,0,0,.5)",
+              maxWidth: "900px",
+              margin: "0 auto",
+              position: "relative",
+              aspectRatio: "16/9",
+            }}
+          >
+            <Image
+              src="/modern-school-management-dashboard-interface--clea.jpg"
+              alt="School Management Dashboard"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div style={{ marginTop: "40px" }}>
+            <Link href="/software" className="btn-white">
+              Explore all features <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          FINAL CTA
+      ═══════════════════════════════════════════════ */}
+      <section
+        style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}
+      >
+        <div
+          className="container"
+          style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto" }}
+        >
+          <h2
+            style={{
+              fontSize: "clamp(34px, 5vw, 56px)",
+              fontWeight: 700,
+              color: "var(--navy)",
+              lineHeight: 1.1,
+              marginBottom: "20px",
+            }}
+          >
+            Ready to run a better school?
+          </h2>
+          <p
+            style={{
+              fontSize: "18px",
+              color: "var(--ink-mid)",
+              lineHeight: 1.65,
+              marginBottom: "36px",
+            }}
+          >
+            Join the schools already running on Edcomrade. Our core school
+            management software is free, forever.
+          </p>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "14px",
+              justifyContent: "center",
+            }}
+          >
+            <Link
+              href="/contact?subject=register-school"
+              className="btn-primary"
+              style={{ fontSize: "16px", padding: "16px 32px" }}
+            >
+              Register your school — free <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/software"
+              className="btn-ghost"
+              style={{ fontSize: "16px", padding: "16px 32px" }}
+            >
+              Compare plans
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
 }

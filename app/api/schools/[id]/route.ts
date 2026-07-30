@@ -2,14 +2,16 @@ import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/db";
 import { School } from "@/models/School";
 
-export async function GET(_: Request, { params }: { params: { id: string } }) {
+export async function GET(_: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   await connectToDatabase();
-  const school = await School.findById(params.id).lean();
+  const school = await School.findById(id).lean();
   if (!school) return NextResponse.json({ error: 'Not found' }, { status: 404 });
   return NextResponse.json({ school });
 }
 
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
+export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   await connectToDatabase();
   const formData = await request.formData();
   const update: any = {
@@ -24,13 +26,14 @@ export async function PUT(request: Request, { params }: { params: { id: string }
     logoUrl: String(formData.get("logoUrl") || "").trim() || undefined,
     logoPublicId: String(formData.get("logoPublicId") || "").trim() || undefined,
   };
-  const saved = await School.findByIdAndUpdate(params.id, update, { new: true });
-  return NextResponse.json({ id: saved?._id.toString() });
+  const saved = await School.findByIdAndUpdate(id, update, { new: true });
+  return NextResponse.json({ id: (saved?._id as any)?.toString() });
 }
 
-export async function DELETE(_: Request, { params }: { params: { id: string } }) {
+export async function DELETE(_: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   await connectToDatabase();
-  await School.findByIdAndDelete(params.id);
+  await School.findByIdAndDelete(id);
   return NextResponse.json({ ok: true });
 }
 

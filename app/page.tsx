@@ -1,15 +1,14 @@
-
 import type { Metadata } from "next";
 import HomePageClient from "@/components/home-page-client";
 
 export const metadata: Metadata = {
-  title: "EdComrade | Your School, Found and Well-Run",
+  title: "Edcomrade | Your School's Ally in the Digital Age",
   description:
-    "EdComrade is building Ghana's digital education future — giving private schools visibility, systems, and intelligence to operate like 21st‑century institutions.",
+    "Edcomrade modernises schools across Ghana — giving every institution the software, visibility, and parent connectivity it needs to thrive. Pioneers' Software, Schoolpedia, and ParentAide.",
   openGraph: {
-    title: "EdComrade | We digitize. You inspire.",
+    title: "Edcomrade | Your School's Ally in the Digital Age",
     description:
-      "An ecosystem that merges storytelling, software, and systems to make excellence visible.",
+      "School ERP software, Ghana's school discovery platform, and the parent app — built for African education.",
     images: ["/og-home.jpg"],
   },
 };

@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     consentAccepted: String(formData.get('consentAccepted') || '') === 'on',
     status: 'pending_payment',
   });
-  return NextResponse.json({ id: created._id.toString() });
+  return NextResponse.json({ id: (created._id as any).toString() });
 }
 
 

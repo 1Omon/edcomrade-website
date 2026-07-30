@@ -18,7 +18,7 @@ export const CONTENT_BY_ROLE = {
             title: "Run your school without the chaos.",
             subtitle: "Records, fees, parent communication, and staff management — all in one place. Helping your school grow without the guesswork.",
             ctaPrimary: "Start Your Free 6 Months",
-            ctaSecondary: "Get Digital 100",
+            ctaSecondary: "Contact Us",
         },
         reality: {
             badge: "The Problem We Are Solving",
@@ -87,10 +87,10 @@ export const CONTENT_BY_ROLE = {
     public: {
         hero: {
             badge: "Ghana's Private School Platform",
-            title: "Your school deserves to be found and trusted.",
+            title: "Be found and trusted.",
             subtitle: "EdComrade gives private schools in Ghana the tools and visibility to grow — without the guesswork.",
             ctaPrimary: "For Schools",
-            ctaSecondary: "Explore Digital 100",
+            ctaSecondary: "Learn More",
         },
         reality: {
             badge: "The Problem We Are Solving",

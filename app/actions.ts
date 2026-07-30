@@ -3,6 +3,7 @@
 import { connectToDatabase } from "@/lib/db";
 import { SchoolSubmission } from "@/models/SchoolSubmission";
 import { revalidatePath } from "next/cache";
+import { sendNotificationEmail } from "@/lib/email-service";
 
 export async function submitSchoolAction(formData: FormData) {
   await connectToDatabase();
@@ -28,6 +29,10 @@ export async function submitSchoolAction(formData: FormData) {
   }
 
   const created = await SchoolSubmission.create(payload);
+  
+  // Send email notification
+  await sendNotificationEmail("submission", payload);
+
   revalidatePath("/admin/submissions");
   return { id: (created as any)._id.toString() };
 }
@@ -36,21 +41,25 @@ export async function submitContactAction(formData: FormData) {
   await connectToDatabase();
 
   const payload = {
-    firstName: String(formData.get("firstName") || "").trim(),
-    lastName: String(formData.get("lastName") || "").trim() || undefined,
+    name: String(formData.get("name") || "").trim(),
     email: String(formData.get("email") || "").trim(),
-    school: String(formData.get("school") || "").trim() || undefined,
-    message: String(formData.get("message") || "").trim() || undefined,
+    phone: String(formData.get("phone") || "").trim() || undefined,
+    schoolName: String(formData.get("schoolName") || "").trim() || undefined,
+    role: String(formData.get("role") || "").trim(),
+    subject: String(formData.get("subject") || "").trim() || undefined,
+    message: String(formData.get("message") || "").trim(),
   };
 
-  if (!payload.firstName || !payload.email) {
-    throw new Error("firstName and email are required");
+  if (!payload.name || !payload.email || !payload.role || !payload.message) {
+    throw new Error("Name, email, role, and message are required");
   }
 
   const { Contact } = await import("@/models/Contact");
   const created = await Contact.create(payload);
+
+  // Send email notification
+  await sendNotificationEmail("contact", payload);
+
   revalidatePath("/admin/contacts");
   return { id: (created as any)._id.toString() };
 }
-
-

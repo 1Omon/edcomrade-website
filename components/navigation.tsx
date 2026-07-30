@@ -1,138 +1,281 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { Menu, X, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Container } from "@/components/ui/container";
-import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { Magnetic } from "@/components/ui/magnetic";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 
 export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropOpen, setDropOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Ecosystem Layers
-  const navLinks = [
-    { href: "/schools", label: "For Schools", desc: "Tools to grow your school" },
-    { href: "/parents", label: "For Parents", desc: "Stay connected to your child" },
-    { href: "/how-it-works", label: "How It Works", desc: "A simple path forward" },
-    { href: "/manifesto", label: "Our Manifesto", desc: "Why we do what we do" },
-  ];
-
-  const isDarkPage = pathname === "/campaigns/digital-100";
-
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isScrolled
-          ? "bg-background/80 backdrop-blur-2xl border-b border-border py-4"
-          : "bg-transparent py-8",
-        isDarkPage && !isScrolled ? "text-white" : ""
-      )}
+    <header
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        transition: "all .3s ease",
+        backgroundColor: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(26,60,94,0.08)" : "none",
+        boxShadow: scrolled ? "0 2px 20px rgba(26,60,94,0.06)" : "none",
+      }}
     >
-      <Container>
-        <div className="flex items-center justify-between">
-          {/* Logo — The Foundation */}
-          <Link href="/" className="">
-            <Image src="/full-logo.png" alt="Logo" width={128} height={128} className="bg-center bg-no-repeat bg-cover " />
+      <div
+        className="container"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: "72px",
+        }}
+      >
+        {/* Logo */}
+        <Link
+          href="/"
+          style={{ display: "flex", alignItems: "center", flexShrink: 0 }}
+        >
+          <Image
+            src="/full-logo.png"
+            alt="EdComrade"
+            width={140}
+            height={36}
+            style={{ height: 36, width: "auto", objectFit: "contain" }}
+            priority
+          />
+        </Link>
+
+        {/* Desktop nav */}
+        <nav
+          style={{ display: "flex", alignItems: "center", gap: "8px" }}
+          className="hidden lg:flex"
+        >
+          {/* Platform dropdown */}
+          <div
+            style={{ position: "relative" }}
+            onMouseEnter={() => setDropOpen(true)}
+            onMouseLeave={() => setDropOpen(false)}
+          >
+            <button
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+                padding: "8px 14px",
+                borderRadius: "8px",
+                fontSize: "14px",
+                fontWeight: 600,
+                color: scrolled ? "var(--navy)" : "#fff",
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                transition: "color .2s",
+              }}
+            >
+              Platform <ChevronDown size={14} />
+            </button>
+
+            {dropOpen && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "100%",
+                  left: 0,
+                  paddingTop: "8px",
+                }}
+              >
+                <div
+                  style={{
+                    minWidth: "220px",
+                    background: "#fff",
+                    borderRadius: "14px",
+                    border: "1px solid rgba(26,60,94,.08)",
+                    padding: "8px",
+                    boxShadow: "0 20px 60px rgba(26,60,94,.14)",
+                  }}
+                >
+                  {[
+                    {
+                      href: "/software",
+                      label: "School Management",
+                      sub: "Free software for running your school",
+                    },
+                    {
+                      href: "/schoolpedia",
+                      label: "Schoolpedia",
+                      sub: "The school discovery directory",
+                    },
+                    {
+                      href: "/parentaide",
+                      label: "ParentAide",
+                      sub: "Mobile app for school parents",
+                    },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      style={{
+                        display: "block",
+                        padding: "10px 14px",
+                        borderRadius: "8px",
+                        textDecoration: "none",
+                        transition: "background .15s",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.background = "var(--paper-tint)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.background = "transparent")
+                      }
+                    >
+                      <div
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: 600,
+                          color: "var(--navy)",
+                        }}
+                      >
+                        {item.label}
+                      </div>
+                      <div
+                        style={{
+                          fontSize: "12px",
+                          color: "var(--ink-mid)",
+                          marginTop: "2px",
+                        }}
+                      >
+                        {item.sub}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {[
+            { href: "/edumedia", label: "Media" },
+            { href: "/amplifiers", label: "Partners" },
+            { href: "/about", label: "About" },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              style={{
+                padding: "8px 14px",
+                borderRadius: "8px",
+                fontSize: "14px",
+                fontWeight: 600,
+                color: scrolled ? "var(--navy)" : "#fff",
+                textDecoration: "none",
+                transition: "color .2s",
+              }}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* CTAs */}
+        <div
+          className="hidden sm:flex"
+          style={{ alignItems: "center", gap: "10px" }}
+        >
+          <Link
+            href="/contact"
+            style={{
+              padding: "8px 16px",
+              fontSize: "14px",
+              fontWeight: 600,
+              color: scrolled ? "var(--navy)" : "#fff",
+              textDecoration: "none",
+              opacity: 0.8,
+              transition: "opacity .2s",
+            }}
+          >
+            Contact
           </Link>
-
-          {/* Desktop Navigation — The Network */}
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Magnetic key={link.href} strength={0.15}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    "px-6 py-2 rounded-full text-sm font-medium transition-all hover:bg-muted/50 group relative",
-                    pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  {link.label}
-                  {pathname === link.href && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary" />
-                  )}
-                </Link>
-              </Magnetic>
-            ))}
-          </div>
-
-          {/* Action — The Execution */}
-          <div className="hidden md:flex items-center gap-6">
-            <Magnetic strength={0.1}>
-              <Button variant="ghost" className="text-sm font-semibold" asChild>
-                <Link href="/contact">Contact</Link>
-              </Button>
-            </Magnetic>
-            <Magnetic strength={0.2}>
-              <Button variant="premium" className="rounded-full px-8 shadow-xl shadow-primary/10" asChild>
-                <Link href="/campaigns/digital-100">Get Digital 100</Link>
-              </Button>
-            </Magnetic>
-          </div>
-
-          {/* Mobile Toggle */}
-          <button
-            className="md:hidden p-3 rounded-2xl bg-muted/50 transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+          <Link
+            href="/contact?subject=register-school"
+            className="btn-primary"
+            style={{ padding: "10px 20px", fontSize: "14px" }}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            Get started free <ArrowRight size={15} />
+          </Link>
         </div>
-      </Container>
 
-      {/* Mobile Menu — Fullscreen Inevitability */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-0 bg-transparent/98 z-50 md:hidden animate-in fade-in slide-in-from-top duration-500">
-          <Container className="pt-32 min-h-screen space-y-12 bg-white">
-            <div className="flex flex-col gap-6">
-              <span className="text-xs uppercase tracking-[0.5em] font-bold text-muted-foreground mb-4">Ecosystem Layers</span>
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="flex items-center justify-between py-4 border-b border-border group"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <div className="flex flex-col">
-                    <span className="text-4xl font-bold tracking-tighter group-active:text-primary transition-colors">{link.label}</span>
-                    <span className="text-sm text-muted-foreground">{link.desc}</span>
-                  </div>
-                  <ChevronRight className="text-muted-foreground group-active:text-primary" />
-                </Link>
-              ))}
-            </div>
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <Button variant="outline" size="lg" className="rounded-2xl" asChild>
-                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
-              </Button>
-              <Button variant="premium" size="lg" className="rounded-2xl shadow-2xl" asChild>
-                <Link href="/campaigns/digital-100" onClick={() => setIsMobileMenuOpen(false)}>Apply Now</Link>
-              </Button>
-            </div>
-          </Container>
-          <button
-            className="absolute top-8 right-8 p-4 rounded-full bg-muted/50"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <X size={32} />
-          </button>
+        {/* Mobile hamburger */}
+        <button
+          className="lg:hidden"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          style={{
+            padding: "8px",
+            color: scrolled ? "var(--navy)" : "#fff",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      {mobileOpen && (
+        <div
+          style={{
+            background: "#fff",
+            borderTop: "1px solid var(--rule)",
+            padding: "20px 24px 28px",
+          }}
+        >
+          {[
+            { href: "/software", label: "School Management — Free" },
+            { href: "/schoolpedia", label: "Schoolpedia Directory" },
+            { href: "/parentaide", label: "ParentAide Mobile" },
+            { href: "/edumedia", label: "EduMedia Publishing" },
+            { href: "/amplifiers", label: "Become a Partner" },
+            { href: "/about", label: "About Edcomrade" },
+            { href: "/contact", label: "Contact Us" },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setMobileOpen(false)}
+              style={{
+                display: "block",
+                padding: "12px 0",
+                fontSize: "17px",
+                fontWeight: 600,
+                color: "var(--navy)",
+                textDecoration: "none",
+                borderBottom: "1px solid var(--rule)",
+              }}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <div style={{ paddingTop: "20px" }}>
+            <Link
+              href="/contact?subject=register-school"
+              className="btn-primary"
+              style={{ width: "100%", justifyContent: "center" }}
+            >
+              Get started free <ArrowRight size={15} />
+            </Link>
+          </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

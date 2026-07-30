@@ -12,8 +12,18 @@ export interface SchoolSubmissionDocument extends Document {
   description?: string;
   logoUrl?: string;
   logoPublicId?: string;
-  type: "application" | "inquiry" | "partnership" | "pioneer";
+  type: "application" | "inquiry" | "partnership" | "pioneer" | "deployment_request";
   status: "pending" | "verified" | "archived" | "onboarding";
+  deploymentDetails?: {
+    totalStudents: number;
+    boarderCount?: number;
+    transportCount?: number;
+    selectedModules: string[];
+    isFiveYearLock: boolean;
+    hasBundleDiscount: boolean;
+    costPerTermGHS: number;
+    annualCostGHS: number;
+  };
   metadata?: Map<string, any>;
   createdAt: Date;
   updatedAt: Date;
@@ -34,13 +44,23 @@ const SchoolSubmissionSchema = new Schema<SchoolSubmissionDocument>(
     logoPublicId: { type: String },
     type: {
       type: String,
-      enum: ["application", "inquiry", "partnership", "pioneer"],
-      default: "application"
+      enum: ["application", "inquiry", "partnership", "pioneer", "deployment_request"],
+      default: "application",
     },
     status: {
       type: String,
       enum: ["pending", "verified", "archived", "onboarding"],
-      default: "pending"
+      default: "pending",
+    },
+    deploymentDetails: {
+      totalStudents: { type: Number },
+      boarderCount: { type: Number },
+      transportCount: { type: Number },
+      selectedModules: [{ type: String }],
+      isFiveYearLock: { type: Boolean, default: false },
+      hasBundleDiscount: { type: Boolean, default: false },
+      costPerTermGHS: { type: Number },
+      annualCostGHS: { type: Number },
     },
     metadata: { type: Map, of: Schema.Types.Mixed },
   },
@@ -50,5 +70,3 @@ const SchoolSubmissionSchema = new Schema<SchoolSubmissionDocument>(
 export const SchoolSubmission: Model<SchoolSubmissionDocument> =
   (mongoose.models.SchoolSubmission as Model<SchoolSubmissionDocument>) ||
   mongoose.model<SchoolSubmissionDocument>("SchoolSubmission", SchoolSubmissionSchema);
-
-

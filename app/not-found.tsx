@@ -3,63 +3,134 @@
 import Link from "next/link";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { Section } from "@/components/ui/section";
-import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
-import { FileQuestion, ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight, Home } from "lucide-react";
 
 export default function NotFound() {
-    return (
-        <main className="bg-background text-foreground">
-            <Navigation />
+  return (
+    <main style={{ background: "var(--paper)" }}>
+      <Navigation />
 
-            <Section className="flex items-center justify-center">
-                <Container>
-                    <div className="max-w-4xl mx-auto text-center space-y-6 pt-32">
-                        {/* Visual Narrative: The missing node */}
-                        {/* <div className="relative inline-flex items-center justify-center w-32 h-32 mx-auto">
-                            <div className="absolute inset-0 bg-primary/5 rounded-[2rem] blur-2xl animate-pulse" />
-                            <div className="relative w-24 h-24 bg-white/50 backdrop-blur-md border border-border/50 rounded-3xl flex items-center justify-center text-primary/50 shadow-2xl">
-                                <FileQuestion className="w-12 h-12" />
-                            </div>
-                        </div> */}
+      <section
+        style={{
+          minHeight: "100svh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          paddingTop: "120px",
+          paddingBottom: "80px",
+          background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Decorative background number */}
+        <div
+          style={{
+            position: "absolute",
+            fontSize: "clamp(200px, 35vw, 420px)",
+            fontWeight: 900,
+            color: "rgba(255,255,255,0.04)",
+            letterSpacing: "-0.05em",
+            lineHeight: 1,
+            userSelect: "none",
+            pointerEvents: "none",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            fontFamily: "var(--serif)",
+            whiteSpace: "nowrap",
+          }}
+        >
+          404
+        </div>
 
-                        <div className="space-y-6">
-                            <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-[0.4em] uppercase text-primary mx-auto">
-                                Page Not Found
-                            </div>
-                            <h1 className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground/50">
-                                Let's get <br /> <span className="italic">Back.</span>
-                            </h1>
-                            <p className="text-xl md:text-3xl text-muted-foreground font-light max-w-2xl mx-auto leading-tight">
-                                We can't find the page you're looking for. Let's get you back on the right path.
-                            </p>
-                        </div>
+        <div className="container" style={{ textAlign: "center", maxWidth: "680px", position: "relative", zIndex: 2 }}>
+          <span className="badge badge-gold" style={{ marginBottom: "28px" }}>
+            Page Not Found
+          </span>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-10">
-                            <Button size="xl" className="rounded-full px-12 text-xl shadow-2xl shadow-primary/20" asChild>
-                                <Link href="/">
-                                    <ArrowLeft className="mr-3 w-6 h-6" /> Return to Core
-                                </Link>
-                            </Button>
-                            <Button variant="ghost" size="xl" className="text-muted-foreground hover:text-foreground transition-colors" asChild>
-                                <Link href="/manifesto">Strategic Manifesto</Link>
-                            </Button>
-                        </div>
+          <h1
+            style={{
+              fontSize: "clamp(42px, 7vw, 80px)",
+              fontWeight: 700,
+              lineHeight: 1.05,
+              color: "#fff",
+              letterSpacing: "-0.03em",
+              marginBottom: "20px",
+              fontFamily: "var(--serif)",
+            }}
+          >
+            This page doesn&apos;t exist.
+          </h1>
 
-                        {/* Subtle Diagnostic Protocol */}
-                        <div className="pt-24 opacity-20 hidden md:block">
-                            <div className="flex justify-center gap-12 font-mono text-[10px] uppercase tracking-[0.5em] text-muted-foreground">
-                                <span>Architecture: Edcomrade</span>
-                                <span>Status: Incomplete Request</span>
-                                <span>Trace: 0x404_NOT_FOUND</span>
-                            </div>
-                        </div>
-                    </div>
-                </Container>
-            </Section>
+          <p
+            style={{
+              fontSize: "clamp(16px, 2vw, 19px)",
+              color: "rgba(255,255,255,0.65)",
+              lineHeight: 1.65,
+              marginBottom: "44px",
+              maxWidth: "480px",
+              margin: "0 auto 44px",
+            }}
+          >
+            You may have followed a broken link, or the page was moved. Let&apos;s get you back on track.
+          </p>
 
-            <Footer />
-        </main>
-    );
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
+            <Link href="/" className="btn-white">
+              <Home size={16} /> Back to home
+            </Link>
+            <Link href="/contact" className="btn-ghost" style={{ color: "#fff", borderColor: "rgba(255,255,255,0.3)" }}>
+              Contact us <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          {/* Quick links */}
+          <div style={{ marginTop: "60px", paddingTop: "40px", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+            <p style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: "20px" }}>
+              Popular pages
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center" }}>
+              {[
+                { href: "/software", label: "School Management" },
+                { href: "/schoolpedia", label: "Schoolpedia" },
+                { href: "/parentaide", label: "ParentAide" },
+                { href: "/about", label: "About Us" },
+                { href: "/amplifiers", label: "Partner Programme" },
+              ].map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: 600,
+                    color: "rgba(255,255,255,0.55)",
+                    textDecoration: "none",
+                    padding: "8px 16px",
+                    borderRadius: "999px",
+                    border: "1px solid rgba(255,255,255,0.12)",
+                    transition: "all 0.2s",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "#fff";
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.35)";
+                    e.currentTarget.style.background = "rgba(255,255,255,0.06)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "rgba(255,255,255,0.55)";
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
+                    e.currentTarget.style.background = "transparent";
+                  }}
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
 }
