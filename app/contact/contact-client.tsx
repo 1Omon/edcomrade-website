@@ -38,7 +38,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
 
       {/* Hero */}
       <section style={{ paddingTop: "140px", paddingBottom: "60px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
-        <div className="container" style={{ textAlign: "center", maxWidth: "720px" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "840px" }}>
           <span className="badge badge-blue" style={{ marginBottom: "20px" }}>Contact EdComrade</span>
           <h1 style={{ fontSize: "clamp(36px, 5vw, 60px)", fontWeight: 700, lineHeight: 1.1, marginBottom: "16px" }}>
             Let&apos;s talk about your school.
@@ -52,7 +52,7 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
       {/* Form Container */}
       <section style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "48px", maxWidth: "1000px", margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "48px", maxWidth: "1100px", margin: "0 auto" }}>
             
             {/* Form */}
             <div className="card" style={{ padding: "40px" }}>

@@ -57,7 +57,7 @@ export default function HomePageClient() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,37,55,.95) 50%, rgba(15,37,55,.5))", zIndex: 1 }} />
 
         <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: "120px", paddingBottom: "100px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-          <div style={{ maxWidth: "680px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div style={{ maxWidth: "860px", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
             <div className="badge badge-white" style={{ marginBottom: "28px" }}>
               🇬🇭 Built for Ghanaian schools
@@ -81,7 +81,7 @@ export default function HomePageClient() {
               color: "rgba(255,255,255,.75)",
               lineHeight: 1.65,
               marginBottom: "40px",
-              maxWidth: "520px",
+              maxWidth: "680px",
             }}>
               Replace outdated systems, expensive software, and scattered files with the free School Administration Module. Give your stakeholders a seamless digital experience they already know how to use.
             </p>
@@ -98,7 +98,7 @@ export default function HomePageClient() {
             {/* Social proof line */}
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", justifyContent: "center" }}>
               {[
-                "No down-payment required",
+                "No hidden fees",
                 "Live in under 7 days",
                 "5-year price guarantee",
               ].map((t) => (

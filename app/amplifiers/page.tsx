@@ -24,7 +24,7 @@ export default function AmplifiersPage() {
 
       {/* Hero */}
       <section style={{ paddingTop: "140px", paddingBottom: "80px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
-        <div className="container" style={{ textAlign: "center", maxWidth: "760px" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "860px" }}>
           <span className="badge badge-gold" style={{ marginBottom: "20px" }}>
             <TrendingUp size={12} /> Partner Programme
           </span>
@@ -32,7 +32,7 @@ export default function AmplifiersPage() {
             Help schools digitise. Earn recurring income.
           </h1>
           <p style={{ fontSize: "18px", color: "rgba(255,255,255,0.75)", lineHeight: 1.6, marginBottom: "36px" }}>
-            Introduce Pioneers&apos; ERP to private schools in your region. Every time a school pays their term fee subscription, you earn up to 20% recurring commission.
+            Introduce Edcomrade&apos;s School Administration Module to private schools in your region. Every time a school pays their term fee subscription, you earn up to 20% recurring commission.
           </p>
           <Link href="https://grind.xcuxion.com" target="_blank" rel="noopener noreferrer" className="btn-white">
             Join Amplifiers on Grind <ArrowRight size={16} />

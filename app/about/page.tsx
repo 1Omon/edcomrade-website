@@ -18,7 +18,7 @@ export default function AboutPage() {
 
       {/* Hero */}
       <section style={{ paddingTop: "140px", paddingBottom: "80px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
-        <div className="container" style={{ textAlign: "center", maxWidth: "760px" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "860px" }}>
           <span className="badge badge-blue" style={{ marginBottom: "20px" }}>
             Our Story
           </span>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "32px", maxWidth: "800px", margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "32px", maxWidth: "900px", margin: "0 auto" }}>
             <div className="card" style={{ padding: "28px", textAlign: "center" }}>
               <div className="photo-card" style={{ width: "120px", height: "120px", borderRadius: "50%", margin: "0 auto 20px" }}>
                 <Image src="/professional-african-male-headmaster-portrait.jpg" alt="Solomon Ayisi" fill style={{ objectFit: "cover" }} />

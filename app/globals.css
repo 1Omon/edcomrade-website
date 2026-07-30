@@ -22,7 +22,7 @@
 
     /* Spacing scale */
     --section: clamp(80px, 12vw, 140px);
-    --content-max: 1180px;
+    --content-max: 1280px;
   }
 
   html { scroll-behavior: smooth; }

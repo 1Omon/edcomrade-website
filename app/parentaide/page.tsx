@@ -18,7 +18,7 @@ export default function ParentaidePage() {
 
       {/* Hero */}
       <section style={{ paddingTop: "140px", paddingBottom: "80px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
-        <div className="container" style={{ textAlign: "center", maxWidth: "760px" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "860px" }}>
           <span className="badge badge-green" style={{ marginBottom: "20px" }}>
             <Smartphone size={12} /> ParentAide Mobile App
           </span>

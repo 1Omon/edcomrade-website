@@ -13,7 +13,7 @@ export default function SchoolpediaPageClient() {
 
       {/* Hero */}
       <section style={{ paddingTop: "140px", paddingBottom: "80px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
-        <div className="container" style={{ textAlign: "center", maxWidth: "760px" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "860px" }}>
           <span className="badge badge-gold" style={{ marginBottom: "20px" }}>
             <Search size={12} /> School Directory
           </span>
@@ -52,7 +52,7 @@ export default function SchoolpediaPageClient() {
             <div className="card" style={{ padding: "32px" }}>
               <ShieldCheck size={28} color="var(--cyan)" style={{ marginBottom: "16px" }} />
               <h3 style={{ fontSize: "20px", fontWeight: 700, color: "var(--navy)", marginBottom: "8px" }}>Verified Badge</h3>
-              <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>Schools using Pioneers&apos; ERP receive an official verified trust badge on their public profile.</p>
+              <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>Schools using the School Administration Module receive an official verified trust badge on their public profile.</p>
             </div>
 
             <div className="card" style={{ padding: "32px" }}>

@@ -19,7 +19,7 @@ export default function EdmediaPage() {
 
       {/* Hero */}
       <section style={{ paddingTop: "140px", paddingBottom: "80px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
-        <div className="container" style={{ textAlign: "center", maxWidth: "760px" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "860px" }}>
           <span className="badge badge-gold" style={{ marginBottom: "20px" }}>
             <Newspaper size={12} /> EdMedia Publishing
           </span>
@@ -81,7 +81,7 @@ export default function EdmediaPage() {
 
       {/* Form Section */}
       <section id="enquire" style={{ padding: "var(--section) 0", background: "#fff" }}>
-        <div className="container" style={{ maxWidth: "680px" }}>
+        <div className="container" style={{ maxWidth: "800px" }}>
           <div className="card" style={{ padding: "40px" }}>
             <h2 style={{ fontSize: "28px", fontWeight: 700, color: "var(--navy)", marginBottom: "8px" }}>Feature your school</h2>
             <p style={{ fontSize: "14px", color: "var(--ink-mid)", marginBottom: "28px" }}>

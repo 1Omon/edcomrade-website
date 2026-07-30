@@ -13,7 +13,7 @@ export default function SoftwareClient() {
 
       {/* Hero */}
       <section style={{ paddingTop: "140px", paddingBottom: "80px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
-        <div className="container" style={{ textAlign: "center", maxWidth: "760px" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "860px" }}>
           <span className="badge badge-green" style={{ marginBottom: "20px" }}>
             School Administration Module — 100% Free
           </span>
@@ -90,7 +90,7 @@ export default function SoftwareClient() {
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "32px", maxWidth: "900px", margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "32px", maxWidth: "1024px", margin: "0 auto" }}>
             
             {/* Free Plan */}
             <div className="card" style={{ padding: "40px", borderTop: "4px solid var(--green-mid)" }}>

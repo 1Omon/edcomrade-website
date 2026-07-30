@@ -17,7 +17,7 @@ export default function ManifestoPage() {
 
       {/* Hero */}
       <section style={{ paddingTop: "140px", paddingBottom: "60px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
-        <div className="container" style={{ textAlign: "center", maxWidth: "760px" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "860px" }}>
           <span className="badge badge-gold" style={{ marginBottom: "20px" }}>Our Manifesto</span>
           <h1 style={{ fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 700, lineHeight: 1.1, marginBottom: "20px" }}>
             Helping schools build their future.
@@ -30,7 +30,7 @@ export default function ManifestoPage() {
 
       {/* Essay Content */}
       <section style={{ padding: "var(--section) 0", background: "#fff" }}>
-        <div className="container" style={{ maxWidth: "720px" }}>
+        <div className="container" style={{ maxWidth: "800px" }}>
           <article style={{ fontSize: "18px", color: "var(--ink)", lineHeight: 1.8 }}>
             <p className="drop-cap" style={{ marginBottom: "24px" }}>
               Ghana is home to world-class educational institutions—built on legacy, sacrifice, and brilliance—that are effectively invisible to the digital world. Paper registers, hand-written receipt books, and end-of-term handouts are still the norm across 90% of private schools in West Africa.
@@ -45,7 +45,7 @@ export default function ManifestoPage() {
             </blockquote>
 
             <p style={{ marginBottom: "24px" }}>
-              We built Pioneers&apos; ERP with a core administration module that is permanently free. Cost should never be the reason a Ghanaian school remains trapped in the paper age.
+              We built the School Administration Module to be permanently free. Cost should never be the reason a Ghanaian school remains trapped in the paper age.
             </p>
 
             <div style={{ marginTop: "48px", paddingTop: "32px", borderTop: "1px solid var(--rule)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
