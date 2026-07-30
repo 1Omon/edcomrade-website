@@ -89,7 +89,9 @@ export default function PrivacyPage() {
                 style={{
                   listStyleType: "disc",
                   paddingLeft: "24px",
-                  spaceY: "8px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "8px",
                 }}
               >
                 <li>
