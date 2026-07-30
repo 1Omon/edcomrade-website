@@ -65,28 +65,29 @@ export function Navigation() {
             </button>
 
             {dropOpen && (
-              <div style={{
-                position: "absolute", top: "calc(100% + 8px)", left: 0,
-                minWidth: "220px", background: "#fff", borderRadius: "14px",
-                border: "1px solid rgba(26,60,94,.08)", padding: "8px",
-                boxShadow: "0 20px 60px rgba(26,60,94,.14)",
-              }}>
-                {[
-                  { href: "/software", label: "Pioneers' ERP", sub: "Free school management software" },
-                  { href: "/schoolpedia", label: "Schoolpedia", sub: "Ghana's school discovery directory" },
-                  { href: "/parentaide", label: "ParentAide", sub: "Mobile app for school parents" },
-                ].map((item) => (
-                  <Link key={item.href} href={item.href} style={{
-                    display: "block", padding: "10px 14px", borderRadius: "8px",
-                    textDecoration: "none", transition: "background .15s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--paper-tint)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
-                  >
-                    <div style={{ fontSize: "14px", fontWeight: 600, color: "var(--navy)" }}>{item.label}</div>
-                    <div style={{ fontSize: "12px", color: "var(--ink-mid)", marginTop: "2px" }}>{item.sub}</div>
-                  </Link>
-                ))}
+              <div style={{ position: "absolute", top: "100%", left: 0, paddingTop: "8px" }}>
+                <div style={{
+                  minWidth: "220px", background: "#fff", borderRadius: "14px",
+                  border: "1px solid rgba(26,60,94,.08)", padding: "8px",
+                  boxShadow: "0 20px 60px rgba(26,60,94,.14)",
+                }}>
+                  {[
+                    { href: "/software", label: "Pioneers' ERP", sub: "Free school management software" },
+                    { href: "/schoolpedia", label: "Schoolpedia", sub: "Ghana's school discovery directory" },
+                    { href: "/parentaide", label: "ParentAide", sub: "Mobile app for school parents" },
+                  ].map((item) => (
+                    <Link key={item.href} href={item.href} style={{
+                      display: "block", padding: "10px 14px", borderRadius: "8px",
+                      textDecoration: "none", transition: "background .15s",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "var(--paper-tint)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                    >
+                      <div style={{ fontSize: "14px", fontWeight: 600, color: "var(--navy)" }}>{item.label}</div>
+                      <div style={{ fontSize: "12px", color: "var(--ink-mid)", marginTop: "2px" }}>{item.sub}</div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>

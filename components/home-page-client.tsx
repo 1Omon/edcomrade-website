@@ -56,8 +56,8 @@ export default function HomePageClient() {
         {/* Gradient overlay */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,37,55,.95) 50%, rgba(15,37,55,.5))", zIndex: 1 }} />
 
-        <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: "120px", paddingBottom: "100px" }}>
-          <div style={{ maxWidth: "680px" }}>
+        <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: "120px", paddingBottom: "100px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+          <div style={{ maxWidth: "680px", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
             <div className="badge badge-white" style={{ marginBottom: "28px" }}>
               🇬🇭 Built for Ghanaian schools
@@ -86,7 +86,7 @@ export default function HomePageClient() {
               Pioneers&apos; ERP gives your school a free digital backbone — fee billing, student records, attendance, and parent communication. Set up in days, not months.
             </p>
 
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", marginBottom: "48px" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", marginBottom: "48px", justifyContent: "center" }}>
               <Link href="/contact?subject=register-school" className="btn-white">
                 Start for free — it&apos;s GHS 0 <ArrowRight size={16} />
               </Link>
@@ -96,7 +96,7 @@ export default function HomePageClient() {
             </div>
 
             {/* Social proof line */}
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "24px" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", justifyContent: "center" }}>
               {[
                 "No credit card required",
                 "Live in under 7 days",
