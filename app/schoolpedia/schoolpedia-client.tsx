@@ -4,139 +4,67 @@ import Link from "next/link";
 import Image from "next/image";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { BookOpen, Search, ShieldCheck, ArrowRight, Sparkles, SlidersHorizontal, CheckCircle2 } from "lucide-react";
+import { Search, ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function SchoolpediaPageClient() {
   return (
-    <main style={{ backgroundColor: "var(--color-paper)" }}>
+    <main style={{ background: "var(--paper)" }}>
       <Navigation />
 
-      {/* Hero Header */}
-      <section style={{ paddingTop: "150px", paddingBottom: "80px", backgroundColor: "var(--color-paper)" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            
-            <div className="lg:col-span-7 space-y-6">
-              <span className="mag-badge-cyan">
-                <BookOpen className="w-3.5 h-3.5" />
-                <span>SCHOOLPEDIA DIRECTORY</span>
-              </span>
-              <h1 className="font-serif text-5xl sm:text-6xl font-bold text-[#1A3C5E] leading-tight">
-                Find the right school. Know what you&apos;re choosing.
-              </h1>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                Schoolpedia maps verified private schools across Ghana — giving parents transparent fee structures, academic results, and direct enrolment channels.
-              </p>
-              <div className="pt-2">
-                <Link
-                  href="https://schoolpedia.edcomrade.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[#2E8BC0] hover:bg-[#2576A5] text-white font-bold text-base shadow-md transition-all"
-                >
-                  <span>Launch Schoolpedia Directory</span>
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </div>
-            </div>
+      {/* Hero */}
+      <section style={{ paddingTop: "140px", paddingBottom: "80px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "760px" }}>
+          <span className="badge badge-gold" style={{ marginBottom: "20px" }}>
+            <Search size={12} /> School Directory
+          </span>
+          <h1 style={{ fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 700, lineHeight: 1.1, marginBottom: "20px" }}>
+            Find verified private schools across Ghana.
+          </h1>
+          <p style={{ fontSize: "18px", color: "rgba(255,255,255,0.75)", lineHeight: 1.6, marginBottom: "36px" }}>
+            Schoolpedia gives parents transparent information on fees, facilities, and academic performance so they can choose the right school with confidence.
+          </p>
+          <Link href="https://schoolpedia.edcomrade.com" target="_blank" rel="noopener noreferrer" className="btn-white">
+            Explore Schoolpedia Directory <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
 
-            <div className="lg:col-span-5">
-              <div className="mag-card p-3">
-                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/school-campus.png"
-                    alt="Verified school campus spotlight"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
+      {/* Directory Showcase Photo */}
+      <section style={{ padding: "var(--section) 0", background: "#fff" }}>
+        <div className="container">
+          <div className="photo-card" style={{ maxWidth: "960px", margin: "0 auto", aspectRatio: "16/9" }}>
+            <Image src="/african-students-competing-in-academic-olympiad--f.jpg" alt="Schoolpedia students showcase" fill style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>
 
-      {/* For Parents Cards */}
-      <section style={{ padding: "90px 0", backgroundColor: "#EEF4F8" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-10">
-          <div className="border-b-2 border-[#2E8BC0] pb-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#2E8BC0] font-bold block mb-2">
-              FOR PARENTS & GUARDIANS
-            </span>
-            <h2 className="font-serif text-4xl font-bold text-[#1A3C5E]">
-              A transparent way to find and compare schools in Ghana.
+      {/* Features */}
+      <section style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: "560px", margin: "0 auto 60px" }}>
+            <p className="eyebrow" style={{ marginBottom: "12px" }}>Why list your school</p>
+            <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", fontWeight: 700, color: "var(--navy)" }}>
+              Get found by parents in your district.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="mag-card p-8 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center font-bold">
-                <Search className="w-6 h-6" />
-              </div>
-              <span className="mag-badge-cyan">SEARCH ENGINE</span>
-              <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Targeted Search</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Find schools by region, district, fee tier, curriculum (BECE, Cambridge, WASSCE), and facilities. Zero billboard guesswork.
-              </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
+            <div className="card" style={{ padding: "32px" }}>
+              <ShieldCheck size={28} color="var(--cyan)" style={{ marginBottom: "16px" }} />
+              <h3 style={{ fontSize: "20px", fontWeight: 700, color: "var(--navy)", marginBottom: "8px" }}>Verified Badge</h3>
+              <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>Schools using Pioneers&apos; ERP receive an official verified trust badge on their public profile.</p>
             </div>
 
-            <div className="mag-card p-8 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#B8973A]/10 text-[#B8973A] flex items-center justify-center font-bold">
-                <SlidersHorizontal className="w-6 h-6" />
-              </div>
-              <span className="mag-badge-gold">COMPARISON</span>
-              <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Side-by-Side View</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Compare two institutions across key metrics — student-teacher ratio, transport, boarding, and verified term fees.
-              </p>
+            <div className="card" style={{ padding: "32px" }}>
+              <Search size={28} color="var(--gold)" style={{ marginBottom: "16px" }} />
+              <h3 style={{ fontSize: "20px", fontWeight: 700, color: "var(--navy)", marginBottom: "8px" }}>Location & Fee Search</h3>
+              <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>Parents filter schools by town, region, fee range, and curriculum type (BECE, Cambridge, WASSCE).</p>
             </div>
 
-            <div className="mag-card p-8 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#1B5E20]/10 text-[#1B5E20] flex items-center justify-center font-bold">
-                <CheckCircle2 className="w-6 h-6" />
-              </div>
-              <span className="mag-badge-green">ADMISSIONS</span>
-              <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Direct Enrolment</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Submit application forms directly through ParentAide with instant notifications on application status.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* For School Proprietors (Dark Navy Container) */}
-      <section className="bg-[#0F2537] text-white py-24">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-10">
-          <div className="border-b border-white/10 pb-4">
-            <span className="mag-badge-gold mb-2">FOR SCHOOL PROPRIETORS</span>
-            <h2 className="font-serif text-4xl font-bold text-white">Your school&apos;s verified public profile.</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-[#1A3C5E]/60 border border-white/10 p-8 rounded-xl space-y-3">
-              <span className="mag-badge-gold">TRUST BADGE</span>
-              <h3 className="font-serif text-2xl font-bold text-white">Verified Profile</h3>
-              <p className="text-white/70 text-sm leading-relaxed">
-                Schools running on Pioneers&apos; ERP receive official verification. Display authenticated photos and fee schedules.
-              </p>
-            </div>
-
-            <div className="bg-[#1A3C5E]/60 border border-white/10 p-8 rounded-xl space-y-3">
-              <span className="mag-badge-cyan">PUBLIC RELATIONS</span>
-              <h3 className="font-serif text-2xl font-bold text-white">Institutional PR</h3>
-              <p className="text-white/70 text-sm leading-relaxed">
-                Publish school achievements, academic awards, and open house announcements directly to your public profile.
-              </p>
-            </div>
-
-            <div className="bg-[#1A3C5E]/60 border border-white/10 p-8 rounded-xl space-y-3">
-              <span className="mag-badge-green">LOCAL SEARCH</span>
-              <h3 className="font-serif text-2xl font-bold text-white">SEO Visibility</h3>
-              <p className="text-white/70 text-sm leading-relaxed">
-                Be the top result when parents search for private schools in your district or region across Ghana.
-              </p>
+            <div className="card" style={{ padding: "32px" }}>
+              <ArrowRight size={28} color="var(--green-mid)" style={{ marginBottom: "16px" }} />
+              <h3 style={{ fontSize: "20px", fontWeight: 700, color: "var(--navy)", marginBottom: "8px" }}>Direct Enquiries</h3>
+              <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>Parents can submit admission inquiry forms directly to your admissions officer.</p>
             </div>
           </div>
         </div>

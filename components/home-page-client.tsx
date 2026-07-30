@@ -2,354 +2,213 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Sparkles, ShieldCheck, CheckCircle2, Star, BookOpen, Layers, Users, TrendingUp } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 
-const articles = [
-  {
-    category: "School Spotlight",
-    badgeClass: "mag-badge-cyan",
-    headline: "The Accra school that digitised in two weeks — and never looked back.",
-    date: "June 2026 · EdMedia",
-    excerpt: "When St. Francis Ridge switched to Pioneers' ERP, the bursar was sceptical. Eight days later, she was training staff across 3 campuses.",
-    readTime: "4 min read",
-  },
-  {
-    category: "Parent Intelligence",
-    badgeClass: "mag-badge-gold",
-    headline: "Why Ghanaian parents are choosing verified schools in 2026.",
-    date: "May 2026 · EdMedia",
-    excerpt: "Schoolpedia data shows verified schools attract 3x more direct admissions enquiries than unverified listings.",
-    readTime: "5 min read",
-  },
-  {
-    category: "Digital 100",
-    badgeClass: "mag-badge-green",
-    headline: "Hecta International becomes inaugural Digital 100 member.",
-    date: "April 2026 · EdMedia",
-    excerpt: "We documented every step of Hecta's onboarding. Here is what changed in their admissions pipeline in week one.",
-    readTime: "3 min read",
-  },
-];
+/* ── Parallax hook ─────────────────────────────── */
+function useParallax(speed = 0.3) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const onScroll = () => {
+      const y = window.scrollY * speed;
+      el.style.transform = `translateY(${y}px)`;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [speed]);
+  return ref;
+}
 
 export default function HomePageClient() {
+  const heroImgRef = useParallax(0.25);
+
   return (
-    <main style={{ backgroundColor: "var(--color-paper)" }}>
+    <main style={{ background: "var(--paper)" }}>
       <Navigation />
 
-      {/* ── 1. HERO SECTION ── */}
-      <section style={{ paddingTop: "150px", paddingBottom: "80px", backgroundColor: "var(--color-paper)" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Copy */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="mag-badge-cyan">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Ghana&apos;s Education Intelligence & Software</span>
-              </div>
-              
-              <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-hero)", lineHeight: 0.95, letterSpacing: "-0.03em", color: "var(--color-navy)", fontWeight: 700 }}>
-                The digital home for Ghanaian education.
-              </h1>
+      {/* ══════════════════════════════════════════════
+          HERO
+      ═══════════════════════════════════════════════ */}
+      <section style={{
+        position: "relative",
+        minHeight: "100svh",
+        display: "flex",
+        alignItems: "center",
+        overflow: "hidden",
+        background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)",
+      }}>
 
-              <p style={{ fontSize: "var(--text-lg)", color: "var(--color-ink-muted)", lineHeight: 1.75, maxWidth: "600px" }}>
-                Edcomrade provides free school management software, connects parents to report cards, and publishes the stories that make African schools legendary.
+        {/* Parallax background image */}
+        <div ref={heroImgRef} style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+          <Image
+            src="/african-students-engaged-with-tablets-in-classroom.jpg"
+            alt="Students in a modern classroom"
+            fill
+            style={{ objectFit: "cover", opacity: 0.18 }}
+            priority
+          />
+        </div>
+
+        {/* Gradient overlay */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,37,55,.95) 50%, rgba(15,37,55,.5))", zIndex: 1 }} />
+
+        <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: "120px", paddingBottom: "100px" }}>
+          <div style={{ maxWidth: "680px" }}>
+
+            <div className="badge badge-white" style={{ marginBottom: "28px" }}>
+              🇬🇭 Built for Ghanaian schools
+            </div>
+
+            <h1 style={{
+              fontFamily: "var(--serif)",
+              fontSize: "clamp(42px, 6vw, 76px)",
+              fontWeight: 700,
+              lineHeight: 1.05,
+              color: "#fff",
+              letterSpacing: "-.03em",
+              marginBottom: "24px",
+            }}>
+              Run your school.<br />
+              <span style={{ color: "var(--gold)" }}>Not your paperwork.</span>
+            </h1>
+
+            <p style={{
+              fontSize: "clamp(17px, 2vw, 20px)",
+              color: "rgba(255,255,255,.75)",
+              lineHeight: 1.65,
+              marginBottom: "40px",
+              maxWidth: "520px",
+            }}>
+              Pioneers&apos; ERP gives your school a free digital backbone — fee billing, student records, attendance, and parent communication. Set up in days, not months.
+            </p>
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", marginBottom: "48px" }}>
+              <Link href="/contact?subject=register-school" className="btn-white">
+                Start for free — it&apos;s GHS 0 <ArrowRight size={16} />
+              </Link>
+              <Link href="/software" className="btn-ghost" style={{ color: "#fff", borderColor: "rgba(255,255,255,.3)" }}>
+                See what&apos;s included
+              </Link>
+            </div>
+
+            {/* Social proof line */}
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "24px" }}>
+              {[
+                "No credit card required",
+                "Live in under 7 days",
+                "5-year price guarantee",
+              ].map((t) => (
+                <div key={t} style={{ display: "flex", alignItems: "center", gap: "7px", color: "rgba(255,255,255,.65)", fontSize: "13px" }}>
+                  <CheckCircle size={14} color="var(--green-mid)" />
+                  {t}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll cue */}
+        <div style={{ position: "absolute", bottom: "36px", left: "50%", transform: "translateX(-50%)", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
+          <div style={{ width: 1, height: 48, background: "rgba(255,255,255,.3)", animation: "fadeUp 1.5s ease infinite alternate" }} />
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          PROBLEM → SOLUTION BRIDGE
+      ═══════════════════════════════════════════════ */}
+      <section style={{ padding: "var(--section) 0", background: "#fff" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "40px", alignItems: "center" }}>
+
+            {/* Left: before */}
+            <div className="card" style={{ padding: "36px", borderLeft: "4px solid #EF4444" }}>
+              <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", color: "#EF4444", marginBottom: "12px" }}>Before Edcomrade</p>
+              <div style={{ position: "relative", borderRadius: "12px", overflow: "hidden", marginBottom: "20px", aspectRatio: "4/3" }}>
+                <Image src="/stressed-african-school-administrator-surrounded-b.jpg" alt="Stressed school administrator with paperwork" fill style={{ objectFit: "cover" }} />
+              </div>
+              <p style={{ fontSize: "15px", color: "var(--ink-mid)", lineHeight: 1.6 }}>
+                Lost receipts. WhatsApp announcements. Parents calling the gate. End-of-term chaos.
               </p>
-
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Link
-                  href="/software"
-                  className="inline-flex items-center justify-center px-7 py-3.5 text-base font-bold text-white bg-[#1A3C5E] hover:bg-[#2E8BC0] rounded-lg shadow-md hover:shadow-lg transition-all gap-2"
-                >
-                  <span>Explore Pioneers&apos; Free ERP</span>
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="/schoolpedia"
-                  className="inline-flex items-center justify-center px-7 py-3.5 text-base font-bold text-[#1A3C5E] bg-white border-2 border-[#1A3C5E]/20 hover:border-[#2E8BC0] rounded-lg transition-all gap-2"
-                >
-                  <span>Search Schoolpedia</span>
-                </Link>
-              </div>
-
-              {/* Key Trust Signals */}
-              <div className="grid sm:grid-cols-3 gap-6 pt-6 border-t border-gray-200">
-                <div>
-                  <div className="font-serif text-2xl font-bold text-[#1A3C5E]">100% Free</div>
-                  <div className="text-xs text-slate-500">Core ERP Module</div>
-                </div>
-                <div>
-                  <div className="font-serif text-2xl font-bold text-[#2E8BC0]">120+</div>
-                  <div className="text-xs text-slate-500">Schools Listed</div>
-                </div>
-                <div>
-                  <div className="font-serif text-2xl font-bold text-[#B8973A]">Verified</div>
-                  <div className="text-xs text-slate-500">School Profiles</div>
-                </div>
-              </div>
             </div>
 
-            {/* Right Hero Image Card */}
-            <div className="lg:col-span-5">
-              <div className="mag-card p-3 bg-white">
-                <div className="img-zoom-container rounded-lg overflow-hidden relative aspect-[4/3]">
-                  <Image
-                    src="/images/hero-classroom.png"
-                    alt="Ghanaian school students learning with digital tablets"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-                <div className="p-4 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="mag-badge-green">LIVE IN ACCRA</span>
-                    <span className="text-xs font-mono text-slate-400">Pioneers&apos; Deployment</span>
-                  </div>
-                  <p className="font-serif text-lg font-bold text-[#1A3C5E]">
-                    Students at St. Francis Ridge using digital lesson materials.
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/* Arrow */}
+            <div style={{ textAlign: "center", fontSize: "40px" }} className="hidden md:block">→</div>
 
+            {/* Right: after */}
+            <div className="card" style={{ padding: "36px", borderLeft: "4px solid var(--green-mid)" }}>
+              <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--green-mid)", marginBottom: "12px" }}>After Pioneers&apos; ERP</p>
+              <div style={{ position: "relative", borderRadius: "12px", overflow: "hidden", marginBottom: "20px", aspectRatio: "4/3" }}>
+                <Image src="/african-school-administrator-smiling-confidently-w.jpeg" alt="Confident school administrator with laptop" fill style={{ objectFit: "cover" }} />
+              </div>
+              <p style={{ fontSize: "15px", color: "var(--ink-mid)", lineHeight: 1.6 }}>
+                Digital fee receipts. Instant parent notifications. Reports generated in one click.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 2. SCROLLING TICKER BAR ── */}
-      <section className="bg-[#1A3C5E] text-white py-4 border-y border-white/10 overflow-hidden">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 flex flex-wrap justify-between items-center text-xs font-mono gap-4">
-          <span className="flex items-center gap-2 text-[#2E8BC0] font-bold">
-            <TrendingUp className="w-4 h-4" /> DIGITAL 100 CAMPAIGN
-          </span>
-          <span className="text-white/80">30 Schools Onboarded in Greater Accra</span>
-          <span className="text-[#B8973A] font-bold">5-Year Price Guarantee Active</span>
-          <Link href="/software#pioneers" className="text-white hover:text-[#2E8BC0] underline font-bold">
-            Register School Today →
-          </Link>
-        </div>
-      </section>
-
-      {/* ── 3. THE THREE PILLARS (ECOSYSTEM) ── */}
-      <section style={{ padding: "90px 0", backgroundColor: "var(--color-paper-warm)" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="section-header-brand">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#2E8BC0] font-bold block mb-2">
-              THE EDCOMRADE ECOSYSTEM
-            </span>
-            <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-4xl)", fontWeight: 700, color: "var(--color-navy)" }}>
-              Three connected platforms modernising African education.
+      {/* ══════════════════════════════════════════════
+          FEATURES — THREE PILLARS
+      ═══════════════════════════════════════════════ */}
+      <section style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: "560px", margin: "0 auto 64px" }}>
+            <p className="eyebrow" style={{ marginBottom: "12px" }}>The full ecosystem</p>
+            <h2 style={{ fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 700, lineHeight: 1.15, color: "var(--navy)" }}>
+              Everything your school community needs.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1: Pioneers */}
-            <div className="mag-card p-8 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-[#1B5E20]/10 text-[#1B5E20] flex items-center justify-center font-bold">
-                  <Layers className="w-6 h-6" />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
+            {[
+              {
+                img: "/modern-school-management-dashboard-on-computer-scr.jpg",
+                badge: "For Administrators",
+                badgeClass: "badge-blue",
+                title: "Pioneers' ERP",
+                tagline: "Free school management software",
+                body: "Fee billing, admissions, student records, timetables, staff payroll — one dashboard, zero spreadsheets.",
+                cta: "Start for free",
+                href: "/software",
+              },
+              {
+                img: "/african-students-competing-in-academic-olympiad--f.jpg",
+                badge: "For Parents",
+                badgeClass: "badge-gold",
+                title: "Schoolpedia",
+                tagline: "Find and compare schools",
+                body: "Parents search verified schools by location, fees, and results. Your school gets found by the right families.",
+                cta: "Search schools",
+                href: "/schoolpedia",
+              },
+              {
+                img: "/african-parent-smiling-while-checking-child-s-grad.jpeg",
+                badge: "For Families",
+                badgeClass: "badge-green",
+                title: "ParentAide",
+                tagline: "School updates on your phone",
+                body: "Attendance alerts, digital report cards, and Mobile Money fee payments — straight to parents' phones.",
+                cta: "Learn more",
+                href: "/parentaide",
+              },
+            ].map((item) => (
+              <div key={item.title} className="card fade-up" style={{ overflow: "hidden" }}>
+                <div className="photo-card" style={{ aspectRatio: "16/9", borderRadius: 0 }}>
+                  <Image src={item.img} alt={item.title} fill style={{ objectFit: "cover" }} />
                 </div>
-                <span className="mag-badge-green">FOR SCHOOL ADMINISTRATION</span>
-                <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Pioneers&apos; Free ERP</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Centralised student records, fee billing via Paystack, conflict-free exam scheduling, and staff payroll. Core module permanently free.
-                </p>
-              </div>
-              <div className="pt-6 border-t border-gray-100 mt-6">
-                <Link href="/software" className="text-sm font-bold text-[#1B5E20] hover:underline flex items-center gap-1.5">
-                  Learn About Pioneers&apos; ERP <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Card 2: Schoolpedia */}
-            <div className="mag-card p-8 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center font-bold">
-                  <BookOpen className="w-6 h-6" />
-                </div>
-                <span className="mag-badge-cyan">PUBLIC DISCOVERY</span>
-                <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Schoolpedia Directory</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Ghana&apos;s verified public school map. Search institutions by fee range, facilities, BECE performance, and curriculum.
-                </p>
-              </div>
-              <div className="pt-6 border-t border-gray-100 mt-6">
-                <Link href="/schoolpedia" className="text-sm font-bold text-[#2E8BC0] hover:underline flex items-center gap-1.5">
-                  Search Schoolpedia <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Card 3: ParentAide */}
-            <div className="mag-card p-8 flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-[#B8973A]/10 text-[#B8973A] flex items-center justify-center font-bold">
-                  <Users className="w-6 h-6" />
-                </div>
-                <span className="mag-badge-gold">PARENT CONNECTIVITY</span>
-                <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">ParentAide Mobile</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Real-time attendance notifications, digital term report sheets, and instant Mobile Money fee payments straight to parents&apos; phones.
-                </p>
-              </div>
-              <div className="pt-6 border-t border-gray-100 mt-6">
-                <Link href="/parentaide" className="text-sm font-bold text-[#B8973A] hover:underline flex items-center gap-1.5">
-                  Explore ParentAide <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 4. VISUAL FEATURE SPOTLIGHT — SOFTWARE DASHBOARD ── */}
-      <section style={{ padding: "90px 0", backgroundColor: "var(--color-paper)" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            
-            <div className="lg:col-span-6 space-y-6">
-              <span className="mag-badge-cyan">PROPRIETOR CONTROL</span>
-              <h2 className="font-serif text-4xl font-bold text-[#1A3C5E] leading-tight">
-                Designed for the bursar and proprietor who value precision.
-              </h2>
-              <p className="text-slate-600 text-base leading-relaxed">
-                No complex training required. Pioneers&apos; ERP brings student bio data, fee ledgers, exam performance, and attendance records into a single clean dashboard built for African internet speeds.
-              </p>
-
-              <div className="space-y-3 pt-2">
-                {[
-                  "Double-entry fee accounting with automated Paystack mobile money receipts",
-                  "Automated terminal report sheet generation with grade calculations",
-                  "Conflict-free exam & staff timetable generator built in",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#2E8BC0] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm font-semibold text-slate-700">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="pt-4">
-                <Link
-                  href="/software"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#1A3C5E] text-white font-bold text-sm hover:bg-[#2E8BC0] transition-colors"
-                >
-                  <span>View Software Features</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="lg:col-span-6">
-              <div className="mag-card p-3">
-                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/software-dashboard.png"
-                    alt="School Management ERP Dashboard interface on laptop"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ── 5. VISUAL FEATURE SPOTLIGHT — PARENTAIDE ── */}
-      <section style={{ padding: "90px 0", backgroundColor: "#EEF4F8" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            
-            <div className="lg:col-span-6 order-2 lg:order-1">
-              <div className="mag-card p-3">
-                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/parent-app.png"
-                    alt="Ghanaian mother viewing school report card on smartphone"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-6 order-1 lg:order-2 space-y-6">
-              <span className="mag-badge-gold">FAMILY TRUST</span>
-              <h2 className="font-serif text-4xl font-bold text-[#1A3C5E] leading-tight">
-                Give parents peace of mind on their smartphones.
-              </h2>
-              <p className="text-slate-600 text-base leading-relaxed">
-                ParentAide removes the friction between school and home. Parents receive instant notifications when fee receipts are generated or terminal reports are published by the academic office.
-              </p>
-
-              <div className="space-y-3 pt-2">
-                {[
-                  "Pay school fees instantly via MTN MoMo, Telecel Cash, or Visa card",
-                  "Access student report cards and historical performance graphs anytime",
-                  "Receive morning attendance roll-call alerts for child safety",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#B8973A] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm font-semibold text-slate-700">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="pt-4">
-                <Link
-                  href="/parentaide"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#B8973A] text-white font-bold text-sm hover:bg-[#a08230] transition-colors"
-                >
-                  <span>Explore ParentAide App</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ── 6. EDMEDIA MAGAZINE SECTION ── */}
-      <section style={{ padding: "90px 0", backgroundColor: "var(--color-paper)" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b-2 border-[#2E8BC0] pb-4">
-            <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#2E8BC0] font-bold block mb-2">
-                FROM EDMEDIA PUBLISHING
-              </span>
-              <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--text-4xl)", fontWeight: 700, color: "var(--color-navy)" }}>
-                Stories of excellence in African education.
-              </h2>
-            </div>
-            <Link href="/edmedia" className="text-sm font-bold text-[#2E8BC0] hover:underline mt-4 md:mt-0 flex items-center gap-1">
-              View All Articles <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {articles.map((art, i) => (
-              <div key={i} className="mag-card p-6 flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className={art.badgeClass}>{art.category}</span>
-                    <span className="text-xs font-mono text-slate-400">{art.readTime}</span>
-                  </div>
-                  <h3 className="font-serif text-xl font-bold text-[#1A3C5E] leading-snug hover:text-[#2E8BC0] transition-colors cursor-pointer">
-                    {art.headline}
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {art.excerpt}
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-gray-100 mt-6 text-xs text-slate-400 font-mono">
-                  {art.date}
+                <div style={{ padding: "28px" }}>
+                  <span className={`badge ${item.badgeClass}`} style={{ marginBottom: "14px" }}>{item.badge}</span>
+                  <h3 style={{ fontSize: "22px", fontWeight: 700, color: "var(--navy)", marginBottom: "4px" }}>{item.title}</h3>
+                  <p style={{ fontSize: "13px", color: "var(--cyan)", fontWeight: 600, marginBottom: "12px" }}>{item.tagline}</p>
+                  <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.65, marginBottom: "20px" }}>{item.body}</p>
+                  <Link href={item.href} style={{ fontSize: "14px", fontWeight: 700, color: "var(--navy)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "5px" }}>
+                    {item.cta} <ArrowRight size={14} />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -357,23 +216,79 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* ── 7. BOTTOM SEPTEMBER COHORT CTA BANNER ── */}
-      <section className="bg-[#1A3C5E] text-white py-20">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 text-center space-y-6">
-          <span className="mag-badge-gold">LIMITED SEPTEMBER ONBOARDING</span>
-          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-white max-w-3xl mx-auto leading-tight">
-            Bring Pioneers&apos; Free ERP to your school before the new term begins.
+      {/* ══════════════════════════════════════════════
+          SOCIAL PROOF / TRANSFORMATION
+      ═══════════════════════════════════════════════ */}
+      <section style={{ padding: "var(--section) 0", background: "#fff" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }} className="md:grid-cols-2 grid-cols-1">
+
+            <div>
+              <p className="eyebrow" style={{ marginBottom: "16px" }}>Real impact</p>
+              <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", fontWeight: 700, lineHeight: 1.2, color: "var(--navy)", marginBottom: "24px" }}>
+                Schools using Pioneers&apos; ERP spend 70% less time on admin.
+              </h2>
+              <p style={{ fontSize: "17px", color: "var(--ink-mid)", lineHeight: 1.7, marginBottom: "32px" }}>
+                That&apos;s time back for teaching. For parents. For growing your enrolment. Not for chasing fee balances on WhatsApp.
+              </p>
+              <blockquote style={{ borderLeft: "3px solid var(--cyan)", paddingLeft: "20px", fontFamily: "var(--serif)", fontSize: "18px", fontStyle: "italic", color: "var(--navy)", lineHeight: 1.5, marginBottom: "12px" }}>
+                &ldquo;I used to dread end-of-term billing. Now it takes me 20 minutes.&rdquo;
+              </blockquote>
+              <p style={{ fontSize: "13px", color: "var(--ink-mid)" }}>School Bursar, Accra</p>
+              <div style={{ marginTop: "36px" }}>
+                <Link href="/contact?subject=register-school" className="btn-primary">
+                  Register your school free <ArrowRight size={15} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="photo-card" style={{ aspectRatio: "4/5", position: "relative" }}>
+              <Image src="/happy-african-school-administrator-using-modern-la.jpg" alt="Happy school administrator" fill style={{ objectFit: "cover", borderRadius: "20px" }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          SOFTWARE PREVIEW
+      ═══════════════════════════════════════════════ */}
+      <section style={{ padding: "var(--section) 0", background: "var(--navy-dark)" }}>
+        <div className="container" style={{ textAlign: "center" }}>
+          <p className="eyebrow" style={{ color: "var(--cyan)", marginBottom: "16px" }}>What it looks like</p>
+          <h2 style={{ fontSize: "clamp(30px, 4vw, 48px)", fontWeight: 700, color: "#fff", marginBottom: "16px" }}>
+            A dashboard your staff will actually use.
           </h2>
-          <p className="text-white/80 text-lg max-w-xl mx-auto">
-            Our onboarding team handles setup, staff training, and initial data import in 7 days.
+          <p style={{ fontSize: "17px", color: "rgba(255,255,255,.6)", marginBottom: "48px", maxWidth: "480px", margin: "0 auto 48px" }}>
+            Built for African internet speeds. Works on any device. No training days required.
           </p>
-          <div className="pt-4 flex justify-center gap-4">
-            <Link
-              href="/contact?subject=register-school"
-              className="px-8 py-4 rounded-lg bg-[#2E8BC0] hover:bg-[#2576A5] text-white font-bold text-base shadow-lg transition-all flex items-center gap-2"
-            >
-              <span>Register Your School Free</span>
-              <ArrowRight className="w-5 h-5" />
+          <div style={{ borderRadius: "20px", overflow: "hidden", boxShadow: "0 40px 80px rgba(0,0,0,.5)", maxWidth: "900px", margin: "0 auto", position: "relative", aspectRatio: "16/9" }}>
+            <Image src="/modern-school-management-dashboard-interface--clea.jpg" alt="Pioneers ERP Dashboard" fill style={{ objectFit: "cover" }} />
+          </div>
+          <div style={{ marginTop: "40px" }}>
+            <Link href="/software" className="btn-white">
+              Explore all features <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          FINAL CTA
+      ═══════════════════════════════════════════════ */}
+      <section style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto" }}>
+          <h2 style={{ fontSize: "clamp(34px, 5vw, 56px)", fontWeight: 700, color: "var(--navy)", lineHeight: 1.1, marginBottom: "20px" }}>
+            Your school deserves better than a notebook.
+          </h2>
+          <p style={{ fontSize: "18px", color: "var(--ink-mid)", lineHeight: 1.65, marginBottom: "36px" }}>
+            Join the schools already running on Pioneers&apos; ERP. The core software is free, forever. No catch.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
+            <Link href="/contact?subject=register-school" className="btn-primary" style={{ fontSize: "16px", padding: "16px 32px" }}>
+              Register your school — free <ArrowRight size={16} />
+            </Link>
+            <Link href="/software" className="btn-ghost" style={{ fontSize: "16px", padding: "16px 32px" }}>
+              Compare plans
             </Link>
           </div>
         </div>

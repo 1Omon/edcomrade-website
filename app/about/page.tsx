@@ -3,116 +3,88 @@ import Image from "next/image";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
-import { Sparkles, Users, Layers, Award } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Edcomrade — Built in Ghana, Built for Africa",
+  title: "About Edcomrade — Built in Ghana for African Schools",
   description:
-    "Edcomrade was founded in Accra in 2023 to give every Ghanaian school the software, visibility, and media presence it deserves.",
+    "We are building digital infrastructure to help schools in West Africa operate efficiently and connect with parents.",
 };
 
 export default function AboutPage() {
   return (
-    <main style={{ backgroundColor: "var(--color-paper)" }}>
+    <main style={{ background: "var(--paper)" }}>
       <Navigation />
 
-      {/* Hero Header */}
-      <section style={{ paddingTop: "150px", paddingBottom: "80px", backgroundColor: "var(--color-paper)" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            
-            <div className="lg:col-span-7 space-y-6">
-              <span className="mag-badge-cyan">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>OUR FOUNDING STORY</span>
-              </span>
-              <h1 className="font-serif text-5xl sm:text-6xl font-bold text-[#1A3C5E] leading-tight">
-                Built in Ghana. Built for Africa.
-              </h1>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                In 2023, Solomon Ayisi visited a well-regarded private school in Accra and found the bursar managing fee records in a paper notebook. That visit sparked Edcomrade: why do Ghana&apos;s best schools remain invisible?
-              </p>
-            </div>
+      {/* Hero */}
+      <section style={{ paddingTop: "140px", paddingBottom: "80px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "760px" }}>
+          <span className="badge badge-blue" style={{ marginBottom: "20px" }}>
+            Our Story
+          </span>
+          <h1 style={{ fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 700, lineHeight: 1.1, marginBottom: "20px" }}>
+            Built in Accra. Made for African education.
+          </h1>
+          <p style={{ fontSize: "18px", color: "rgba(255,255,255,0.75)", lineHeight: 1.6, marginBottom: "36px" }}>
+            Edcomrade was started to solve a simple problem: Ghana&apos;s best private schools were managing vital student records and billing in physical paper notebooks.
+          </p>
+        </div>
+      </section>
 
-            <div className="lg:col-span-5">
-              <div className="mag-card p-3">
-                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/hero-classroom.png"
-                    alt="Founding story classroom vision"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+      {/* Story & Image */}
+      <section style={{ padding: "var(--section) 0", background: "#fff" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "48px", alignItems: "center" }}>
+            <div>
+              <p className="eyebrow" style={{ marginBottom: "12px" }}>Why we exist</p>
+              <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, color: "var(--navy)", marginBottom: "20px" }}>
+                Empowering school heads with zero-cost software.
+              </h2>
+              <p style={{ fontSize: "16px", color: "var(--ink-mid)", lineHeight: 1.7, marginBottom: "20px" }}>
+                High software costs should never prevent a school from going digital. That&apos;s why we made the core edition of Pioneers&apos; ERP permanently free for every Ghanaian school.
+              </p>
+              <p style={{ fontSize: "16px", color: "var(--ink-mid)", lineHeight: 1.7, marginBottom: "28px" }}>
+                Today, we support school administrators, teachers, and parents with software, mobile app connections, and verified online directory listings.
+              </p>
+              <Link href="/contact?subject=register-school" className="btn-primary">
+                Get started free <ArrowRight size={15} />
+              </Link>
+            </div>
+            <div className="photo-card" style={{ aspectRatio: "4/3" }}>
+              <Image src="/professional-african-female-school-administrator-p.jpeg" alt="School administrator portrait" fill style={{ objectFit: "cover" }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: "560px", margin: "0 auto 60px" }}>
+            <p className="eyebrow" style={{ marginBottom: "12px" }}>Leadership team</p>
+            <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", fontWeight: 700, color: "var(--navy)" }}>
+              The team behind Edcomrade.
+            </h2>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "32px", maxWidth: "800px", margin: "0 auto" }}>
+            <div className="card" style={{ padding: "28px", textAlign: "center" }}>
+              <div className="photo-card" style={{ width: "120px", height: "120px", borderRadius: "50%", margin: "0 auto 20px" }}>
+                <Image src="/professional-african-male-headmaster-portrait.jpg" alt="Solomon Ayisi" fill style={{ objectFit: "cover" }} />
               </div>
+              <h3 style={{ fontSize: "22px", fontWeight: 700, color: "var(--navy)", marginBottom: "4px" }}>Solomon A. Ayisi</h3>
+              <p style={{ fontSize: "13px", color: "var(--cyan)", fontWeight: 600, marginBottom: "12px" }}>CEO & Founder</p>
+              <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>Former educator and tech entrepreneur passionate about digitising education across West Africa.</p>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* Dark Mission Bar */}
-      <section className="bg-[#0F2537] text-white py-16 text-center">
-        <div className="max-w-[900px] mx-auto px-6 space-y-4">
-          <span className="mag-badge-gold">OUR CORE MISSION</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-snug">
-            We modernise African schools. We centre education around parents. We make excellence visible.
-          </h2>
-        </div>
-      </section>
-
-      {/* Founders Section */}
-      <section style={{ padding: "90px 0", backgroundColor: "#EEF4F8" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-10">
-          <div className="border-b-2 border-[#2E8BC0] pb-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#2E8BC0] font-bold block mb-2">
-              THE BUILDERS
-            </span>
-            <h2 className="font-serif text-4xl font-bold text-[#1A3C5E]">Leadership & Founders.</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="mag-card p-8 space-y-4">
-              <span className="mag-badge-cyan">CEO & FOUNDER</span>
-              <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Solomon A. Ayisi</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Former educator turned software entrepreneur. Built Edcomrade after realizing the core digital infrastructure was missing for private schools in West Africa.
-              </p>
-            </div>
-
-            <div className="mag-card p-8 space-y-4">
-              <span className="mag-badge-gold">CTO & CO-FOUNDER</span>
-              <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Prince Sarfo</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Enterprise systems architect with over a decade of software engineering experience. Leads the core database engine powering Pioneers&apos; ERP and ParentAide.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Vision Horizons */}
-      <section style={{ padding: "90px 0", backgroundColor: "var(--color-paper)" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-10">
-          <div className="border-b-2 border-[#1A3C5E] pb-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#2E8BC0] font-bold block mb-2">
-              VISION HORIZONS
-            </span>
-            <h2 className="font-serif text-4xl font-bold text-[#1A3C5E]">Where we are going.</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { h: "Horizon 1", title: "Digital Foundations", desc: "Every school in Ghana has access to free ERP infrastructure, a verified online profile, and a connected parent community." },
-              { h: "Horizon 2", title: "African Expansion", desc: "Pioneers' ERP and Schoolpedia expand to Nigeria, Kenya, and Senegal with local payment integrations." },
-              { h: "Horizon 3", title: "Education Intelligence", desc: "Aggregated anonymised data from thousands of schools becomes the most accurate picture of African education ever assembled." },
-            ].map((v, i) => (
-              <div key={i} className="mag-card p-8 space-y-4">
-                <span className="font-mono text-2xl font-bold text-[#2E8BC0]">{v.h}</span>
-                <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">{v.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{v.desc}</p>
+            <div className="card" style={{ padding: "28px", textAlign: "center" }}>
+              <div className="photo-card" style={{ width: "120px", height: "120px", borderRadius: "50%", margin: "0 auto 20px" }}>
+                <Image src="/professional-african-male-deputy-head-portrait--fr.jpeg" alt="Prince Sarfo" fill style={{ objectFit: "cover" }} />
               </div>
-            ))}
+              <h3 style={{ fontSize: "22px", fontWeight: 700, color: "var(--navy)", marginBottom: "4px" }}>Prince Sarfo</h3>
+              <p style={{ fontSize: "13px", color: "var(--cyan)", fontWeight: 600, marginBottom: "12px" }}>CTO & Co-Founder</p>
+              <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>Systems engineer with over a decade of experience building enterprise web and mobile applications.</p>
+            </div>
           </div>
         </div>
       </section>

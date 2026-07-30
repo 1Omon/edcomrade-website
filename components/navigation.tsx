@@ -1,158 +1,159 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { ChevronDown, Menu, X, Sparkles, BookOpen, Layers, Users, Phone, ArrowRight, ShieldCheck, Newspaper } from "lucide-react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 
 export function Navigation() {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [dropOpen, setDropOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#1A3C5E] text-white shadow-md transition-all duration-300">
-      {/* Top Banner Ticker */}
-      <div className="bg-[#0F2537] text-white text-[11px] font-mono py-1.5 px-6 border-b border-white/10 overflow-hidden">
-        <div className="max-w-[1200px] mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1 bg-[#2E8BC0] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
-              <Sparkles className="w-3 h-3" /> SEPTEMBER 2026 COHORT
-            </span>
-            <span className="hidden sm:inline text-white/80">Digital 100 Schools Onboarding — Free ERP Setup Included</span>
-          </div>
-          <Link href="/software" className="text-[#2E8BC0] hover:underline font-bold flex items-center gap-1">
-            Claim Free ERP <ArrowRight className="w-3 h-3" />
-          </Link>
-        </div>
-      </div>
+    <header
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        transition: "all .3s ease",
+        backgroundColor: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(26,60,94,0.08)" : "none",
+        boxShadow: scrolled ? "0 2px 20px rgba(26,60,94,0.06)" : "none",
+      }}
+    >
+      <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "72px" }}>
 
-      {/* Main Header Masthead */}
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 h-18 flex items-center justify-between">
-        {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 rounded-lg bg-[#2E8BC0] text-white flex items-center justify-center font-bold text-xl shadow-sm group-hover:scale-105 transition-transform">
-            E
-          </div>
-          <div className="flex flex-col">
-            <span className="font-serif text-2xl font-bold tracking-tight text-white group-hover:text-[#2E8BC0] transition-colors">
-              EdComrade
-            </span>
-            <span className="text-[9px] uppercase tracking-widest text-[#2E8BC0] font-mono font-semibold -mt-1">
-              MAGAZINE & SOFTWARE
-            </span>
-          </div>
+        {/* Logo */}
+        <Link href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
+          <Image
+            src="/full-logo.png"
+            alt="EdComrade"
+            width={140}
+            height={36}
+            style={{ height: 36, width: "auto", objectFit: "contain" }}
+            priority
+          />
         </Link>
 
-        {/* Desktop Nav Items */}
-        <nav className="hidden lg:flex items-center gap-8 text-sm font-semibold text-white/90">
-          {/* Dropdown: What We Do */}
+        {/* Desktop nav */}
+        <nav style={{ display: "flex", alignItems: "center", gap: "8px" }} className="hidden lg:flex">
+
+          {/* Platform dropdown */}
           <div
-            className="relative"
-            onMouseEnter={() => setActiveDropdown("what-we-do")}
-            onMouseLeave={() => setActiveDropdown(null)}
+            style={{ position: "relative" }}
+            onMouseEnter={() => setDropOpen(true)}
+            onMouseLeave={() => setDropOpen(false)}
           >
-            <button className="flex items-center gap-1.5 py-6 hover:text-[#2E8BC0] transition-colors">
-              <span>Ecosystem</span>
-              <ChevronDown className="w-4 h-4 text-white/60" />
+            <button style={{
+              display: "flex", alignItems: "center", gap: "4px",
+              padding: "8px 14px", borderRadius: "8px", fontSize: "14px",
+              fontWeight: 600, color: scrolled ? "var(--navy)" : "#fff",
+              background: "transparent", border: "none", cursor: "pointer",
+              transition: "color .2s",
+            }}>
+              Platform <ChevronDown size={14} />
             </button>
 
-            {activeDropdown === "what-we-do" && (
-              <div className="absolute top-full left-0 w-80 bg-white text-[#1A3C5E] rounded-xl shadow-xl border border-gray-100 p-4 space-y-2 animate-in fade-in duration-200">
-                <Link href="/software" className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[#EEF4F8] transition-colors">
-                  <div className="p-2 rounded-md bg-[#2E8BC0]/10 text-[#2E8BC0] mt-0.5">
-                    <Layers className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-sm text-[#1A3C5E]">Pioneers&apos; Software</div>
-                    <div className="text-xs text-gray-500">Free ERP for Ghanaian schools</div>
-                  </div>
-                </Link>
-                <Link href="/schoolpedia" className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[#EEF4F8] transition-colors">
-                  <div className="p-2 rounded-md bg-[#B8973A]/10 text-[#B8973A] mt-0.5">
-                    <BookOpen className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-sm text-[#1A3C5E]">Schoolpedia</div>
-                    <div className="text-xs text-gray-500">Verified directory of schools</div>
-                  </div>
-                </Link>
-                <Link href="/parentaide" className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[#EEF4F8] transition-colors">
-                  <div className="p-2 rounded-md bg-[#1B5E20]/10 text-[#1B5E20] mt-0.5">
-                    <Users className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-sm text-[#1A3C5E]">ParentAide</div>
-                    <div className="text-xs text-gray-500">Mobile app for school parents</div>
-                  </div>
-                </Link>
+            {dropOpen && (
+              <div style={{
+                position: "absolute", top: "calc(100% + 8px)", left: 0,
+                minWidth: "220px", background: "#fff", borderRadius: "14px",
+                border: "1px solid rgba(26,60,94,.08)", padding: "8px",
+                boxShadow: "0 20px 60px rgba(26,60,94,.14)",
+              }}>
+                {[
+                  { href: "/software", label: "Pioneers' ERP", sub: "Free school management software" },
+                  { href: "/schoolpedia", label: "Schoolpedia", sub: "Ghana's school discovery directory" },
+                  { href: "/parentaide", label: "ParentAide", sub: "Mobile app for school parents" },
+                ].map((item) => (
+                  <Link key={item.href} href={item.href} style={{
+                    display: "block", padding: "10px 14px", borderRadius: "8px",
+                    textDecoration: "none", transition: "background .15s",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--paper-tint)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                  >
+                    <div style={{ fontSize: "14px", fontWeight: 600, color: "var(--navy)" }}>{item.label}</div>
+                    <div style={{ fontSize: "12px", color: "var(--ink-mid)", marginTop: "2px" }}>{item.sub}</div>
+                  </Link>
+                ))}
               </div>
             )}
           </div>
 
-          <Link href="/software" className="hover:text-[#2E8BC0] transition-colors">
-            Software & Pricing
-          </Link>
-          <Link href="/edmedia" className="flex items-center gap-1.5 hover:text-[#2E8BC0] transition-colors">
-            <Newspaper className="w-4 h-4 text-[#2E8BC0]" />
-            <span>EdMedia</span>
-          </Link>
-          <Link href="/amplifiers" className="hover:text-[#2E8BC0] transition-colors">
-            Amplifiers
-          </Link>
-          <Link href="/about" className="hover:text-[#2E8BC0] transition-colors">
-            About Us
-          </Link>
+          {[
+            { href: "/edmedia", label: "Media" },
+            { href: "/amplifiers", label: "Partners" },
+            { href: "/about", label: "About" },
+          ].map((item) => (
+            <Link key={item.href} href={item.href} style={{
+              padding: "8px 14px", borderRadius: "8px", fontSize: "14px",
+              fontWeight: 600, color: scrolled ? "var(--navy)" : "#fff",
+              textDecoration: "none", transition: "color .2s",
+            }}>
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
-        {/* Action CTAs */}
-        <div className="hidden sm:flex items-center gap-4">
-          <Link
-            href="/contact"
-            className="text-sm font-semibold text-white/90 hover:text-[#2E8BC0] transition-colors"
-          >
-            Enquire
+        {/* CTAs */}
+        <div className="hidden sm:flex" style={{ alignItems: "center", gap: "10px" }}>
+          <Link href="/contact" style={{
+            padding: "8px 16px", fontSize: "14px", fontWeight: 600,
+            color: scrolled ? "var(--navy)" : "#fff", textDecoration: "none",
+            opacity: 0.8, transition: "opacity .2s",
+          }}>
+            Contact
           </Link>
-          <Link
-            href="/contact?subject=get-started"
-            className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-white bg-[#2E8BC0] hover:bg-[#2576A5] rounded-full shadow-sm hover:shadow-md transition-all gap-1.5"
-          >
-            <span>Register School</span>
-            <ArrowRight className="w-4 h-4" />
+          <Link href="/contact?subject=register-school" className="btn-primary" style={{ padding: "10px 20px", fontSize: "14px" }}>
+            Get started free <ArrowRight size={15} />
           </Link>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile hamburger */}
         <button
+          className="lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-white hover:text-[#2E8BC0] focus:outline-none"
+          style={{ padding: "8px", color: scrolled ? "var(--navy)" : "#fff", background: "none", border: "none", cursor: "pointer" }}
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="lg:hidden bg-[#0F2537] border-t border-white/10 px-6 py-6 space-y-4">
-          <Link href="/software" onClick={() => setMobileOpen(false)} className="block text-lg font-bold text-white py-2">
-            Pioneers&apos; Software
-          </Link>
-          <Link href="/schoolpedia" onClick={() => setMobileOpen(false)} className="block text-lg font-bold text-white py-2">
-            Schoolpedia Directory
-          </Link>
-          <Link href="/parentaide" onClick={() => setMobileOpen(false)} className="block text-lg font-bold text-white py-2">
-            ParentAide Mobile
-          </Link>
-          <Link href="/edmedia" onClick={() => setMobileOpen(false)} className="block text-lg font-bold text-white py-2">
-            EdMedia Publishing
-          </Link>
-          <Link href="/amplifiers" onClick={() => setMobileOpen(false)} className="block text-lg font-bold text-white py-2">
-            Amplifiers Programme
-          </Link>
-          <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-lg font-bold text-white py-2">
-            About Edcomrade
-          </Link>
-          <Link href="/contact" onClick={() => setMobileOpen(false)} className="block text-lg font-bold text-[#2E8BC0] py-2">
-            Contact & Support →
-          </Link>
+        <div style={{ background: "#fff", borderTop: "1px solid var(--rule)", padding: "20px 24px 28px" }}>
+          {[
+            { href: "/software", label: "Pioneers' ERP — Free" },
+            { href: "/schoolpedia", label: "Schoolpedia Directory" },
+            { href: "/parentaide", label: "ParentAide Mobile" },
+            { href: "/edmedia", label: "EdMedia Publishing" },
+            { href: "/amplifiers", label: "Become a Partner" },
+            { href: "/about", label: "About Edcomrade" },
+            { href: "/contact", label: "Contact Us" },
+          ].map((item) => (
+            <Link key={item.href} href={item.href}
+              onClick={() => setMobileOpen(false)}
+              style={{ display: "block", padding: "12px 0", fontSize: "17px", fontWeight: 600, color: "var(--navy)", textDecoration: "none", borderBottom: "1px solid var(--rule)" }}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <div style={{ paddingTop: "20px" }}>
+            <Link href="/contact?subject=register-school" className="btn-primary" style={{ width: "100%", justifyContent: "center" }}>
+              Get started free <ArrowRight size={15} />
+            </Link>
+          </div>
         </div>
       )}
     </header>

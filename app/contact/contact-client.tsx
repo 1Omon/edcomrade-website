@@ -1,17 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { submitContactAction } from "@/app/actions";
-import { Mail, Phone, MapPin, Send, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 
 interface ContactPageClientProps {
   initialSubject?: string;
 }
 
 export default function ContactPageClient({ initialSubject = "" }: ContactPageClientProps) {
-  const [role, setRole] = useState<string>("other");
+  const [role, setRole] = useState<string>("proprietor");
   const [isPending, setIsPending] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [subject, setSubject] = useState(initialSubject);
@@ -32,200 +33,118 @@ export default function ContactPageClient({ initialSubject = "" }: ContactPageCl
   }
 
   return (
-    <main style={{ backgroundColor: "var(--color-paper)" }}>
+    <main style={{ background: "var(--paper)" }}>
       <Navigation />
 
-      {/* Hero Header */}
-      <section style={{ paddingTop: "150px", paddingBottom: "60px", backgroundColor: "var(--color-paper)" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-6">
-          <span className="mag-badge-cyan">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>GET IN TOUCH</span>
-          </span>
-          <h1 className="font-serif text-5xl sm:text-6xl font-bold text-[#1A3C5E] leading-tight max-w-4xl">
-            Let&apos;s start a conversation.
+      {/* Hero */}
+      <section style={{ paddingTop: "140px", paddingBottom: "60px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "720px" }}>
+          <span className="badge badge-blue" style={{ marginBottom: "20px" }}>Contact EdComrade</span>
+          <h1 style={{ fontSize: "clamp(36px, 5vw, 60px)", fontWeight: 700, lineHeight: 1.1, marginBottom: "16px" }}>
+            Let&apos;s talk about your school.
           </h1>
-          <p className="text-slate-600 text-lg max-w-2xl leading-relaxed">
-            Whether you are a school proprietor looking to modernise operations, a parent with questions, or an educational partner, our team is ready to connect.
+          <p style={{ fontSize: "18px", color: "rgba(255,255,255,0.75)", lineHeight: 1.6 }}>
+            Ready to claim your free school ERP, set up ParentAide, or feature your school on EdMedia? Send us a message below.
           </p>
         </div>
       </section>
 
-      {/* Main Form & Info Grid */}
-      <section style={{ padding: "80px 0", backgroundColor: "#EEF4F8" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
+      {/* Form Container */}
+      <section style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "48px", maxWidth: "1000px", margin: "0 auto" }}>
             
-            {/* Form Card */}
-            <div className="lg:col-span-7 mag-card p-8 sm:p-10">
+            {/* Form */}
+            <div className="card" style={{ padding: "40px" }}>
               {isSuccess ? (
-                <div className="text-center py-8 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-[#E8F5EE] text-[#1B5E20] flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-8 h-8" />
-                  </div>
-                  <h3 className="font-serif text-3xl font-bold text-[#1A3C5E]">Thank you for reaching out!</h3>
-                  <p className="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">
-                    Your message has been received by Edcomrade leadership. We respond within one business day.
+                <div style={{ textAlign: "center", padding: "40px 0" }}>
+                  <CheckCircle size={48} color="var(--green-mid)" style={{ margin: "0 auto 16px" }} />
+                  <h3 style={{ fontSize: "24px", fontWeight: 700, color: "var(--navy)", marginBottom: "8px" }}>Message received!</h3>
+                  <p style={{ fontSize: "14px", color: "var(--ink-mid)", marginBottom: "24px" }}>
+                    Our team will reach out to you within one business day.
                   </p>
-                  <button
-                    onClick={() => setIsSuccess(false)}
-                    className="px-6 py-3 rounded-lg bg-[#1A3C5E] text-white font-bold text-sm hover:bg-[#2E8BC0] transition-colors"
-                  >
-                    Send Another Message
+                  <button onClick={() => setIsSuccess(false)} className="btn-primary">
+                    Send another message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <h2 className="font-serif text-3xl font-bold text-[#1A3C5E]">Send a Message</h2>
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+                  <h2 style={{ fontSize: "24px", fontWeight: 700, color: "var(--navy)" }}>Send a message</h2>
 
-                  <div className="space-y-2">
-                    <label className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block">Full Name *</label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      placeholder="E.g. Solomon Ayisi"
-                      className="w-full bg-[#F8FAFC] border border-gray-200 rounded-lg px-4 py-3 text-sm font-sans text-slate-800 focus:outline-none focus:border-[#2E8BC0] transition-colors"
-                    />
+                  <div>
+                    <label style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em", color: "var(--ink-mid)", display: "block", marginBottom: "6px" }}>Full Name *</label>
+                    <input type="text" name="name" required placeholder="E.g. Solomon Ayisi" style={{ width: "100%", padding: "12px 16px", borderRadius: "8px", border: "1px solid var(--rule)", fontSize: "14px", background: "var(--paper)" }} />
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block">Email Address *</label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="solomon@example.com"
-                        className="w-full bg-[#F8FAFC] border border-gray-200 rounded-lg px-4 py-3 text-sm font-sans text-slate-800 focus:outline-none focus:border-[#2E8BC0] transition-colors"
-                      />
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                    <div>
+                      <label style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em", color: "var(--ink-mid)", display: "block", marginBottom: "6px" }}>Email Address *</label>
+                      <input type="email" name="email" required placeholder="solomon@example.com" style={{ width: "100%", padding: "12px 16px", borderRadius: "8px", border: "1px solid var(--rule)", fontSize: "14px", background: "var(--paper)" }} />
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block">Phone / WhatsApp</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="+233 55 528 4923"
-                        className="w-full bg-[#F8FAFC] border border-gray-200 rounded-lg px-4 py-3 text-sm font-sans text-slate-800 focus:outline-none focus:border-[#2E8BC0] transition-colors"
-                      />
+                    <div>
+                      <label style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em", color: "var(--ink-mid)", display: "block", marginBottom: "6px" }}>Phone / WhatsApp</label>
+                      <input type="tel" name="phone" placeholder="+233 55 528 4923" style={{ width: "100%", padding: "12px 16px", borderRadius: "8px", border: "1px solid var(--rule)", fontSize: "14px", background: "var(--paper)" }} />
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block">I am a... *</label>
-                    <select
-                      name="role"
-                      required
-                      value={role}
-                      onChange={(e) => setRole(e.target.value)}
-                      className="w-full bg-[#F8FAFC] border border-gray-200 rounded-lg px-4 py-3 text-sm font-sans text-slate-800 focus:outline-none focus:border-[#2E8BC0] transition-colors cursor-pointer"
-                    >
+                  <div>
+                    <label style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em", color: "var(--ink-mid)", display: "block", marginBottom: "6px" }}>I am a... *</label>
+                    <select name="role" required value={role} onChange={(e) => setRole(e.target.value)} style={{ width: "100%", padding: "12px 16px", borderRadius: "8px", border: "1px solid var(--rule)", fontSize: "14px", background: "var(--paper)" }}>
                       <option value="proprietor">School Proprietor / Headmaster</option>
                       <option value="parent">Parent or Guardian</option>
-                      <option value="student">Student</option>
-                      <option value="partner">Partner or Vendor</option>
+                      <option value="partner">Sales Partner / Amplifier</option>
                       <option value="other">General Inquiry</option>
                     </select>
                   </div>
 
                   {role === "proprietor" && (
-                    <div className="space-y-2">
-                      <label className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block">School Name</label>
-                      <input
-                        type="text"
-                        name="schoolName"
-                        placeholder="E.g. Greenfield International School"
-                        className="w-full bg-[#F8FAFC] border border-gray-200 rounded-lg px-4 py-3 text-sm font-sans text-slate-800 focus:outline-none focus:border-[#2E8BC0] transition-colors"
-                      />
+                    <div>
+                      <label style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em", color: "var(--ink-mid)", display: "block", marginBottom: "6px" }}>School Name</label>
+                      <input type="text" name="schoolName" placeholder="E.g. St. Francis Academy" style={{ width: "100%", padding: "12px 16px", borderRadius: "8px", border: "1px solid var(--rule)", fontSize: "14px", background: "var(--paper)" }} />
                     </div>
                   )}
 
-                  <div className="space-y-2">
-                    <label className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block">Subject</label>
-                    <input
-                      type="text"
-                      name="subject"
-                      value={subject}
-                      onChange={(e) => setSubject(e.target.value)}
-                      placeholder="School Onboarding / Custom App Demo"
-                      className="w-full bg-[#F8FAFC] border border-gray-200 rounded-lg px-4 py-3 text-sm font-sans text-slate-800 focus:outline-none focus:border-[#2E8BC0] transition-colors"
-                    />
+                  <div>
+                    <label style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em", color: "var(--ink-mid)", display: "block", marginBottom: "6px" }}>Subject</label>
+                    <input type="text" name="subject" value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="Claim Free ERP / Inquiry" style={{ width: "100%", padding: "12px 16px", borderRadius: "8px", border: "1px solid var(--rule)", fontSize: "14px", background: "var(--paper)" }} />
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block">Message *</label>
-                    <textarea
-                      name="message"
-                      required
-                      rows={5}
-                      placeholder="Tell us how we can help your school or answer your questions..."
-                      className="w-full bg-[#F8FAFC] border border-gray-200 rounded-lg px-4 py-3 text-sm font-sans text-slate-800 focus:outline-none focus:border-[#2E8BC0] transition-colors resize-y"
-                    />
+                  <div>
+                    <label style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em", color: "var(--ink-mid)", display: "block", marginBottom: "6px" }}>Message *</label>
+                    <textarea name="message" required rows={4} placeholder="How can we help your school?" style={{ width: "100%", padding: "12px 16px", borderRadius: "8px", border: "1px solid var(--rule)", fontSize: "14px", background: "var(--paper)", resize: "vertical" }} />
                   </div>
 
-                  <button
-                    type="submit"
-                    disabled={isPending}
-                    className="w-full py-4 rounded-lg bg-[#1A3C5E] hover:bg-[#2E8BC0] text-white font-bold text-base shadow-md transition-colors flex items-center justify-center gap-2"
-                  >
-                    <span>{isPending ? "Submitting..." : "Send Message"}</span>
-                    <Send className="w-4 h-4" />
+                  <button type="submit" disabled={isPending} className="btn-primary" style={{ justifyContent: "center" }}>
+                    {isPending ? "Submitting..." : "Send Message"} <Send size={16} />
                   </button>
                 </form>
               )}
             </div>
 
-            {/* Direct Info Cards */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="mag-card p-8 space-y-6">
-                <span className="mag-badge-cyan">DIRECT CHANNELS</span>
-                <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Contact Information</h3>
-
-                <div className="space-y-6 text-sm">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center flex-shrink-0 font-bold">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <span className="text-xs text-slate-400 font-mono font-bold uppercase block">Email Address</span>
-                      <a href="mailto:partner@edcomrade.com" className="font-bold text-[#1A3C5E] hover:text-[#2E8BC0] transition-colors text-base">
-                        partner@edcomrade.com
-                      </a>
-                    </div>
+            {/* Info */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <div className="card" style={{ padding: "32px" }}>
+                <h3 style={{ fontSize: "20px", fontWeight: 700, color: "var(--navy)", marginBottom: "20px" }}>Direct Channels</h3>
+                <div style={{ display: "flex", flexDirection: "column", gap: "16px", fontSize: "14px", color: "var(--ink-mid)" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <Mail size={18} color="var(--cyan)" />
+                    <a href="mailto:partner@edcomrade.com" style={{ color: "var(--navy)", fontWeight: 600, textDecoration: "none" }}>partner@edcomrade.com</a>
                   </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center flex-shrink-0 font-bold">
-                      <Phone className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <span className="text-xs text-slate-400 font-mono font-bold uppercase block">WhatsApp & Direct Line</span>
-                      <a href="https://wa.me/233555284923" target="_blank" rel="noopener noreferrer" className="font-bold text-[#1A3C5E] hover:text-[#2E8BC0] transition-colors text-base">
-                        +233 55 528 4923
-                      </a>
-                    </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <Phone size={18} color="var(--cyan)" />
+                    <a href="https://wa.me/233555284923" target="_blank" rel="noopener noreferrer" style={{ color: "var(--navy)", fontWeight: 600, textDecoration: "none" }}>+233 55 528 4923</a>
                   </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center flex-shrink-0 font-bold">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <span className="text-xs text-slate-400 font-mono font-bold uppercase block">Office Address</span>
-                      <p className="font-bold text-[#1A3C5E] text-base leading-snug">
-                        New Legon, Accra<br />
-                        Ghana, West Africa
-                      </p>
-                    </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <MapPin size={18} color="var(--cyan)" />
+                    <span>New Legon, Accra, Ghana</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-[#0F2537] text-white p-8 rounded-xl space-y-3">
-                <span className="mag-badge-gold">PRIORITY CALLBACK</span>
-                <h4 className="font-serif text-xl font-bold text-white">School Onboarding Priority</h4>
-                <p className="text-white/70 text-xs leading-relaxed">
-                  School heads requesting a demo or Pioneers&apos; ERP setup receive priority phone callback within 4 hours during business days.
+              <div style={{ background: "var(--navy-dark)", color: "#fff", padding: "28px", borderRadius: "16px" }}>
+                <h4 style={{ fontSize: "18px", fontWeight: 700, marginBottom: "8px" }}>Fast Onboarding</h4>
+                <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)", lineHeight: 1.6 }}>
+                  School heads requesting setup receive a phone callback within 4 hours during business days.
                 </p>
               </div>
             </div>

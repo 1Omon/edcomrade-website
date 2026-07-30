@@ -4,146 +4,75 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
 import EdmediaClientForm from "./edmedia-client";
-import { Newspaper, Sparkles, Camera, BookOpen, Award } from "lucide-react";
+import { ArrowRight, Camera, Newspaper, Award } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "EdMedia & Publishing — Stories Schools Deserve",
+  title: "EdMedia — Publishing & Visibility for Ghanaian Schools",
   description:
-    "Edcomrade's media arm covers schools with digital magazines, event photography, brand consultation, and school spotlight features across Ghana.",
+    "Spotlight your school with digital publication, professional campus photography, and institutional branding.",
 };
-
-const articles = [
-  {
-    category: "School Spotlight",
-    headline: "The Accra school that digitised in two weeks — and never looked back.",
-    date: "June 2026 · EdComrade Media",
-    excerpt: "When St. Francis Ridge switched to Pioneers' ERP, the bursar was sceptical. Eight days later, she was training staff across 3 campuses.",
-    readTime: "4 min read",
-  },
-  {
-    category: "Parent Intelligence",
-    headline: "Why Ghanaian parents are choosing verified schools in 2026.",
-    date: "May 2026 · EdComrade Media",
-    excerpt: "Schoolpedia data shows that verified schools attract three times more direct enquiries than unverified listings.",
-    readTime: "5 min read",
-  },
-  {
-    category: "Spotlight Feature",
-    headline: "EdMedia's inaugural school spotlight: Hecta International.",
-    date: "April 2026 · EdComrade Media",
-    excerpt: "Hecta International became the first school in the Digital 100. We documented every step of their onboarding.",
-    readTime: "3 min read",
-  },
-];
 
 export default function EdmediaPage() {
   return (
-    <main style={{ backgroundColor: "var(--color-paper)" }}>
+    <main style={{ background: "var(--paper)" }}>
       <Navigation />
 
       {/* Hero */}
-      <section className="bg-[#0F2537] text-white pt-36 pb-20">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            
-            <div className="lg:col-span-7 space-y-6">
-              <span className="mag-badge-gold">
-                <Newspaper className="w-3.5 h-3.5" />
-                <span>EDMEDIA & PUBLISHING</span>
-              </span>
-              <h1 className="font-serif text-5xl sm:text-6xl font-bold text-white leading-tight">
-                We tell the stories schools deserve to be known for.
-              </h1>
-              <p className="text-white/70 text-lg leading-relaxed max-w-2xl">
-                EdMedia covers excellence in Ghanaian education — through digital publishing, campus photography, and institutional brand positioning.
-              </p>
-            </div>
+      <section style={{ paddingTop: "140px", paddingBottom: "80px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
+        <div className="container" style={{ textAlign: "center", maxWidth: "760px" }}>
+          <span className="badge badge-gold" style={{ marginBottom: "20px" }}>
+            <Newspaper size={12} /> EdMedia Publishing
+          </span>
+          <h1 style={{ fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 700, lineHeight: 1.1, marginBottom: "20px" }}>
+            Give your school the visibility it deserves.
+          </h1>
+          <p style={{ fontSize: "18px", color: "rgba(255,255,255,0.75)", lineHeight: 1.6, marginBottom: "36px" }}>
+            We publish school spotlights, event coverage, and leadership interviews that help great schools build trust with parents.
+          </p>
+          <a href="#enquire" className="btn-white">
+            Feature your school <ArrowRight size={16} />
+          </a>
+        </div>
+      </section>
 
-            <div className="lg:col-span-5">
-              <div className="mag-card p-3 bg-[#1A3C5E] border-white/20">
-                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/school-campus.png"
-                    alt="School campus spotlight photograph"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
+      {/* Real Photo Showcase */}
+      <section style={{ padding: "var(--section) 0", background: "#fff" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
+            <div className="photo-card" style={{ aspectRatio: "4/3" }}>
+              <Image src="/african-students-engaged-in-learning-with-teacher-.jpg" alt="Teacher and students classroom coverage" fill style={{ objectFit: "cover" }} />
             </div>
-
+            <div className="photo-card" style={{ aspectRatio: "4/3" }}>
+              <Image src="/diverse-group-of-african-school-leaders-networking.jpg" alt="School leaders networking" fill style={{ objectFit: "cover" }} />
+            </div>
+            <div className="photo-card" style={{ aspectRatio: "4/3" }}>
+              <Image src="/young-african-computer-science-students-working-on.jpg" alt="Students in computer lab" fill style={{ objectFit: "cover" }} />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section style={{ padding: "90px 0", backgroundColor: "#EEF4F8" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-10">
-          <div className="border-b-2 border-[#2E8BC0] pb-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#2E8BC0] font-bold block mb-2">
-              WHAT EDMEDIA DOES
-            </span>
-            <h2 className="font-serif text-4xl font-bold text-[#1A3C5E]">
-              Three ways we make schools visible.
+      {/* Services */}
+      <section style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: "560px", margin: "0 auto 60px" }}>
+            <p className="eyebrow" style={{ marginBottom: "12px" }}>Media packages</p>
+            <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", fontWeight: 700, color: "var(--navy)" }}>
+              How we showcase your school.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="mag-card p-8 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#2E8BC0]/10 text-[#2E8BC0] flex items-center justify-center font-bold">
-                <BookOpen className="w-6 h-6" />
-              </div>
-              <span className="mag-badge-cyan">DIGITAL MAGAZINE</span>
-              <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">The EdComrade Magazine</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Ghana&apos;s digital publication dedicated to education. Interviews with school leaders, policy analysis, and student success stories.
-              </p>
-            </div>
-
-            <div className="mag-card p-8 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#B8973A]/10 text-[#B8973A] flex items-center justify-center font-bold">
-                <Camera className="w-6 h-6" />
-              </div>
-              <span className="mag-badge-gold">CAMPUS COVERAGE</span>
-              <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Photography & Media</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Professional photography for open days, graduation ceremonies, and flagship school events. Content for your website and Schoolpedia profile.
-              </p>
-            </div>
-
-            <div className="mag-card p-8 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#1B5E20]/10 text-[#1B5E20] flex items-center justify-center font-bold">
-                <Award className="w-6 h-6" />
-              </div>
-              <span className="mag-badge-green">BRAND POSITIONING</span>
-              <h3 className="font-serif text-2xl font-bold text-[#1A3C5E]">Institutional PR</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Articulate your school&apos;s story — messaging strategy, visual identity review, and admissions trust building.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Articles Grid */}
-      <section style={{ padding: "90px 0", backgroundColor: "var(--color-paper)" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 space-y-8">
-          <div className="border-b-2 border-[#1A3C5E] pb-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#2E8BC0] font-bold block mb-2">
-              LATEST STORIES
-            </span>
-            <h2 className="font-serif text-4xl font-bold text-[#1A3C5E]">From the magazine.</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {articles.map((a, i) => (
-              <div key={i} className="mag-card p-6 flex flex-col justify-between space-y-4">
-                <div className="space-y-3">
-                  <span className="mag-badge-cyan">{a.category}</span>
-                  <h3 className="font-serif text-xl font-bold text-[#1A3C5E] leading-snug">{a.headline}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">{a.excerpt}</p>
-                </div>
-                <div className="text-xs font-mono text-slate-400 pt-4 border-t border-gray-100">{a.date}</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
+            {[
+              { icon: Newspaper, badge: "Editorial Spotlight", title: "School Feature Article", desc: "A written feature highlighting your school's history, facilities, and academic achievements." },
+              { icon: Camera, badge: "Event Coverage", title: "Campus Photography", desc: "Professional photography for graduations, open days, sports events, and website assets." },
+              { icon: Award, badge: "Digital PR", title: "Proprietor Interview", desc: "In-depth editorial interview with school founders published across Edcomrade channels." },
+            ].map((s) => (
+              <div key={s.title} className="card" style={{ padding: "32px" }}>
+                <s.icon size={24} color="var(--cyan)" style={{ marginBottom: "16px" }} />
+                <span className="badge badge-blue" style={{ marginBottom: "12px" }}>{s.badge}</span>
+                <h3 style={{ fontSize: "20px", fontWeight: 700, color: "var(--navy)", marginBottom: "8px" }}>{s.title}</h3>
+                <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -151,20 +80,14 @@ export default function EdmediaPage() {
       </section>
 
       {/* Form Section */}
-      <section style={{ padding: "90px 0", backgroundColor: "#EEF4F8" }}>
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div className="mag-card p-8">
-              <h2 className="font-serif text-3xl font-bold text-[#1A3C5E] mb-6">Work with EdMedia</h2>
-              <EdmediaClientForm />
-            </div>
-            <div className="space-y-6 pt-4">
-              <span className="mag-badge-gold">DISCOVERY CALL</span>
-              <h3 className="font-serif text-3xl font-bold text-[#1A3C5E]">Feature your school.</h3>
-              <p className="text-slate-600 text-base leading-relaxed">
-                EdMedia works with a small number of schools each term to deliver high quality features and photography. Reach out today to discuss coverage options.
-              </p>
-            </div>
+      <section id="enquire" style={{ padding: "var(--section) 0", background: "#fff" }}>
+        <div className="container" style={{ maxWidth: "680px" }}>
+          <div className="card" style={{ padding: "40px" }}>
+            <h2 style={{ fontSize: "28px", fontWeight: 700, color: "var(--navy)", marginBottom: "8px" }}>Feature your school</h2>
+            <p style={{ fontSize: "14px", color: "var(--ink-mid)", marginBottom: "28px" }}>
+              Fill in your details below and our media team will get in touch within 24 hours.
+            </p>
+            <EdmediaClientForm />
           </div>
         </div>
       </section>

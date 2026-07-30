@@ -1,79 +1,88 @@
 import Link from "next/link";
-import { Sparkles, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0F2537] text-white pt-20 pb-12 border-t border-white/10">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-        {/* Top Newsletter & Brand Grid */}
-        <div className="grid lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
-          <div className="lg:col-span-5 space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#2E8BC0] text-white flex items-center justify-center font-bold text-2xl shadow-md">
-                E
-              </div>
-              <span className="font-serif text-3xl font-bold tracking-tight text-white">
-                EdComrade
-              </span>
-            </div>
-            <p className="text-white/70 text-base leading-relaxed max-w-md">
-              The authoritative digital publication and software platform modernising Ghanaian schools. Built in Accra for Africa.
+    <footer style={{ backgroundColor: "var(--navy-dark)", color: "#fff", paddingTop: "80px", paddingBottom: "48px" }}>
+      <div className="container">
+
+        {/* Top row */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "48px", justifyContent: "space-between", paddingBottom: "60px", borderBottom: "1px solid rgba(255,255,255,.1)" }}>
+
+          {/* Brand */}
+          <div style={{ maxWidth: "280px" }}>
+            <Image src="/full-logo.png" alt="EdComrade" width={140} height={36} style={{ height: 36, width: "auto", filter: "brightness(0) invert(1)", marginBottom: "16px" }} />
+            <p style={{ fontSize: "14px", lineHeight: 1.7, color: "rgba(255,255,255,.6)" }}>
+              Ghana&apos;s school software and education intelligence platform. Built in Accra.
             </p>
-            <div className="flex items-center gap-3 text-xs font-mono text-[#2E8BC0]">
-              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
-              <span>Pioneers&apos; Core ERP — 100% Free For Schools</span>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "16px" }}>
+              <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--green-mid)", display: "inline-block" }}></span>
+              <span style={{ fontSize: "12px", color: "rgba(255,255,255,.5)", fontFamily: "var(--mono)" }}>Core ERP 100% Free</span>
             </div>
           </div>
 
-          <div className="lg:col-span-7 grid sm:grid-cols-3 gap-8 text-sm">
-            {/* Column 1: Software */}
-            <div className="space-y-4">
-              <span className="text-xs font-mono uppercase tracking-wider text-[#2E8BC0] font-bold block">
-                SOFTWARE & PLATFORM
-              </span>
-              <ul className="space-y-2.5 text-white/70">
-                <li><Link href="/software#pioneers" className="hover:text-white transition-colors">Pioneers&apos; Free ERP</Link></li>
-                <li><Link href="/software#custom" className="hover:text-white transition-colors">Custom Institutional App</Link></li>
-                <li><Link href="/schoolpedia" className="hover:text-white transition-colors">Schoolpedia Directory</Link></li>
-                <li><Link href="/parentaide" className="hover:text-white transition-colors">ParentAide Mobile</Link></li>
-              </ul>
+          {/* Links grid */}
+          <div style={{ display: "flex", gap: "48px", flexWrap: "wrap" }}>
+            <div>
+              <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: "16px" }}>Software</p>
+              {[
+                { href: "/software", label: "Pioneers' ERP — Free" },
+                { href: "/software#custom", label: "Custom School App" },
+                { href: "/schoolpedia", label: "Schoolpedia" },
+                { href: "/parentaide", label: "ParentAide" },
+              ].map((l) => (
+                <Link key={l.href} href={l.href} style={{ display: "block", fontSize: "14px", color: "rgba(255,255,255,.6)", marginBottom: "10px", textDecoration: "none" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,.6)")}
+                >
+                  {l.label}
+                </Link>
+              ))}
             </div>
+            <div>
+              <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "16px" }}>Company</p>
+              {[
+                { href: "/about", label: "About Us" },
+                { href: "/edmedia", label: "EdMedia" },
+                { href: "/amplifiers", label: "Become a Partner" },
+                { href: "/manifesto", label: "Our Manifesto" },
+                { href: "/contact", label: "Contact" },
+              ].map((l) => (
+                <Link key={l.href} href={l.href} style={{ display: "block", fontSize: "14px", color: "rgba(255,255,255,.6)", marginBottom: "10px", textDecoration: "none" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,.6)")}
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-            {/* Column 2: Publishing */}
-            <div className="space-y-4">
-              <span className="text-xs font-mono uppercase tracking-wider text-[#B8973A] font-bold block">
-                PUBLISHING & MEDIA
-              </span>
-              <ul className="space-y-2.5 text-white/70">
-                <li><Link href="/edmedia" className="hover:text-white transition-colors">EdMedia Magazine</Link></li>
-                <li><Link href="/manifesto" className="hover:text-white transition-colors">The Manifesto</Link></li>
-                <li><Link href="/amplifiers" className="hover:text-white transition-colors">Amplifiers Programme</Link></li>
-                <li><Link href="/about" className="hover:text-white transition-colors">Our Story & Founders</Link></li>
-              </ul>
-            </div>
+          {/* CTA */}
+          <div style={{ maxWidth: "220px" }}>
+            <p style={{ fontSize: "18px", fontFamily: "var(--serif)", fontWeight: 700, color: "#fff", marginBottom: "12px", lineHeight: 1.3 }}>
+              Ready to modernise your school?
+            </p>
+            <Link href="/contact?subject=register-school" className="btn-white" style={{ fontSize: "14px", padding: "12px 20px" }}>
+              Get started free <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
 
-            {/* Column 3: Contact */}
-            <div className="space-y-4">
-              <span className="text-xs font-mono uppercase tracking-wider text-[#10B981] font-bold block">
-                CONTACT & OFFICES
-              </span>
-              <div className="space-y-2 text-white/70 text-xs leading-relaxed">
-                <p><strong className="text-white">Accra Office:</strong><br />New Legon, Greater Accra, Ghana</p>
-                <p><strong className="text-white">Direct Line:</strong><br />+233 55 528 4923</p>
-                <p><strong className="text-white">Email:</strong><br />partner@edcomrade.com</p>
-              </div>
-            </div>
+        {/* Bottom row */}
+        <div style={{ paddingTop: "28px", display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "12px" }}>
+          <p style={{ fontSize: "13px", color: "rgba(255,255,255,.35)" }}>© 2026 S.A Edcomrade Ventures Ltd. All rights reserved.</p>
+          <div style={{ display: "flex", gap: "24px" }}>
+            {[
+              { href: "/manifesto", label: "Manifesto" },
+              { href: "/contact", label: "Support" },
+            ].map((l) => (
+              <Link key={l.href} href={l.href} style={{ fontSize: "13px", color: "rgba(255,255,255,.35)", textDecoration: "none" }}>{l.label}</Link>
+            ))}
           </div>
         </div>
 
-        {/* Bottom Legal Copyright */}
-        <div className="pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/50 gap-4">
-          <p>© 2026 S.A Edcomrade Ventures Ltd. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="/manifesto" className="hover:text-white transition-colors">Manifesto</Link>
-            <Link href="/contact" className="hover:text-white transition-colors">Support & Callback</Link>
-          </div>
-        </div>
       </div>
     </footer>
   );
