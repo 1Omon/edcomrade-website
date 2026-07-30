@@ -199,6 +199,8 @@ export function Footer() {
           </p>
           <div style={{ display: "flex", gap: "24px" }}>
             {[
+              { href: "/terms", label: "Terms of Service" },
+              { href: "/privacy", label: "Privacy Policy" },
               { href: "/manifesto", label: "Manifesto" },
               { href: "/contact", label: "Support" },
             ].map((l) => (

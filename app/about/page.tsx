@@ -74,16 +74,16 @@ export default function AboutPage() {
               </div>
               <h3 style={{ fontSize: "22px", fontWeight: 700, color: "var(--navy)", marginBottom: "4px" }}>Solomon A. Ayisi</h3>
               <p style={{ fontSize: "13px", color: "var(--cyan)", fontWeight: 600, marginBottom: "12px" }}>CEO & Founder</p>
-              <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>Former educator and tech entrepreneur passionate about digitising education across West Africa.</p>
+              <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>Systems architect and tech entrepreneur passionate about commercializing technology for social good</p>
             </div>
 
             <div className="card" style={{ padding: "28px", textAlign: "center" }}>
               <div className="photo-card" style={{ width: "120px", height: "120px", borderRadius: "50%", margin: "0 auto 20px" }}>
-                <Image src="/professional-african-male-deputy-head-portrait--fr.jpeg" alt="Prince Sarfo" fill style={{ objectFit: "cover" }} />
+                <Image src="" alt="Prince Sarfo" fill style={{ objectFit: "cover" }} />
               </div>
               <h3 style={{ fontSize: "22px", fontWeight: 700, color: "var(--navy)", marginBottom: "4px" }}>Prince Sarfo</h3>
               <p style={{ fontSize: "13px", color: "var(--cyan)", fontWeight: 600, marginBottom: "12px" }}>CTO & Co-Founder</p>
-              <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>Systems engineer with over a decade of experience building enterprise web and mobile applications.</p>
+              <p style={{ fontSize: "14px", color: "var(--ink-mid)", lineHeight: 1.6 }}>Software engineer with over half a decade of experience building enterprise web and mobile applications.</p>
             </div>
           </div>
         </div>
