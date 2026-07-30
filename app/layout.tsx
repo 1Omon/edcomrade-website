@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "ParentAide",
     "Schoolpedia",
     "Pioneers Software",
-    "EdMedia",
+    "EduMedia",
     "Edcomrade",
   ],
   authors: [{ name: "Edcomrade" }],
@@ -54,14 +54,18 @@ export const metadata: Metadata = {
     locale: "en_GH",
     url: "https://edcomrade.com",
     title: "Edcomrade | Education's Ally in the Digital Age",
-    description: "School ERP software, Ghana's school discovery platform, and the media publication — built for African education.",
+    description:
+      "School ERP software, Ghana's school discovery platform, and the media publication — built for African education.",
     siteName: "Edcomrade",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Edcomrade" }],
+    images: [
+      { url: "/og-image.jpg", width: 1200, height: 630, alt: "Edcomrade" },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Edcomrade | Education's Ally in the Digital Age",
-    description: "School ERP software, Ghana's school discovery platform, and the media publication — built for African education.",
+    description:
+      "School ERP software, Ghana's school discovery platform, and the media publication — built for African education.",
     images: ["/og-image.jpg"],
     creator: "@edcomradegh",
   },
@@ -82,7 +86,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} ${jetbrains.variable}`}>
+    <html
+      lang="en"
+      className={`${playfair.variable} ${inter.variable} ${jetbrains.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -96,13 +103,26 @@ export default function RootLayout({
               logo: "https://edcomrade.com/full-logo.png",
               foundingDate: "2023",
               founders: [
-                { "@type": "Person", name: "Solomon A. Ayisi", jobTitle: "CEO & Founder" },
-                { "@type": "Person", name: "Prince Sarfo", jobTitle: "CTO & Co-Founder" },
+                {
+                  "@type": "Person",
+                  name: "Solomon A. Ayisi",
+                  jobTitle: "CEO & Founder",
+                },
+                {
+                  "@type": "Person",
+                  name: "Prince Sarfo",
+                  jobTitle: "CTO & Co-Founder",
+                },
               ],
               foundingLocation: { "@type": "Place", name: "Accra, Ghana" },
-              address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Accra",
+                addressCountry: "GH",
+              },
               email: "partner@edcomrade.com",
-              description: "Edcomrade modernises African schools through ERP software, school discovery, and parent connectivity.",
+              description:
+                "Edcomrade modernises African schools through ERP software, school discovery, and parent connectivity.",
               slogan: "Education's ally in the digital age.",
               sameAs: [
                 "https://linkedin.com/company/edcomrade",
@@ -114,7 +134,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-[var(--color-paper)] text-[var(--color-ink)] font-sans antialiased" suppressHydrationWarning>
+      <body
+        className="bg-[var(--color-paper)] text-[var(--color-ink)] font-sans antialiased"
+        suppressHydrationWarning
+      >
         {children}
         <WhatsAppButton />
         <BackToTop />

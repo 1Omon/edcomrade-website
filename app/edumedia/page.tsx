@@ -2,17 +2,16 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import Link from "next/link";
-import EdmediaClientForm from "./edmedia-client";
+import EduMediaClientForm from "./edmedia-client";
 import { ArrowRight, Camera, Newspaper, Award } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "EdMedia — Publishing & Visibility for Ghanaian Schools",
+  title: "EduMedia — Publishing & Visibility for Great Schools",
   description:
     "Spotlight your school with digital publication, professional campus photography, and institutional branding.",
 };
 
-export default function EdmediaPage() {
+export default function EduMediaPage() {
   return (
     <main style={{ background: "var(--paper)" }}>
       <Navigation />
@@ -21,7 +20,7 @@ export default function EdmediaPage() {
       <section style={{ paddingTop: "140px", paddingBottom: "80px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
         <div className="container" style={{ textAlign: "center", maxWidth: "860px" }}>
           <span className="badge badge-gold" style={{ marginBottom: "20px" }}>
-            <Newspaper size={12} /> EdMedia Publishing
+            <Newspaper size={12} /> EduMedia Publishing
           </span>
           <h1 style={{ fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 700, lineHeight: 1.1, marginBottom: "20px" }}>
             Give your school the visibility it deserves.
@@ -87,7 +86,7 @@ export default function EdmediaPage() {
             <p style={{ fontSize: "14px", color: "var(--ink-mid)", marginBottom: "28px" }}>
               Fill in your details below and our media team will get in touch within 24 hours.
             </p>
-            <EdmediaClientForm />
+            <EduMediaClientForm />
           </div>
         </div>
       </section>

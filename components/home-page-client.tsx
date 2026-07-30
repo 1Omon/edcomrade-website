@@ -60,7 +60,7 @@ export default function HomePageClient() {
           <div style={{ maxWidth: "860px", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
             <div className="badge badge-white" style={{ marginBottom: "28px" }}>
-              🇬🇭 Built for Ghanaian schools
+              Free School Management Software
             </div>
 
             <h1 style={{
@@ -72,8 +72,8 @@ export default function HomePageClient() {
               letterSpacing: "-.03em",
               marginBottom: "24px",
             }}>
-              Upgrade your school.<br />
-              <span style={{ color: "var(--gold)" }}>Leave the chaos behind.</span>
+              Run your entire school.<br />
+              <span style={{ color: "var(--gold)" }}>From one simple screen.</span>
             </h1>
 
             <p style={{
@@ -83,7 +83,7 @@ export default function HomePageClient() {
               marginBottom: "40px",
               maxWidth: "680px",
             }}>
-              Replace outdated systems, expensive software, and scattered files with the free School Administration Module. Give your stakeholders a seamless digital experience they already know how to use.
+              Replace messy spreadsheets, scattered paper files, and expensive software with one beautiful platform. Collect fees, track attendance, and keep parents informed—all for free.
             </p>
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", marginBottom: "48px", justifyContent: "center" }}>
@@ -97,16 +97,11 @@ export default function HomePageClient() {
 
             {/* Social proof line */}
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", justifyContent: "center" }}>
-              {[
-                "No hidden fees",
-                "Live in under 7 days",
-                "5-year price guarantee",
-              ].map((t) => (
-                <div key={t} style={{ display: "flex", alignItems: "center", gap: "7px", color: "rgba(255,255,255,.65)", fontSize: "13px" }}>
-                  <CheckCircle size={14} color="var(--green-mid)" />
-                  {t}
-                </div>
-              ))}
+
+              <li style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "15px", color: "white", fontWeight: 600 }}>
+                <CheckCircle size={20} color="white" /> Works perfectly on any device. No long training sessions required.
+              </li>
+
             </div>
           </div>
         </div>
@@ -131,7 +126,7 @@ export default function HomePageClient() {
                 <Image src="/stressed-african-school-administrator-surrounded-b.jpg" alt="Stressed school administrator with paperwork" fill style={{ objectFit: "cover" }} />
               </div>
               <p style={{ fontSize: "15px", color: "var(--ink-mid)", lineHeight: 1.6 }}>
-                Outdated expensive software, disconnected spreadsheets, scattered paper files, and frustrated parents.
+                Lost fee receipts, endless paperwork, scattered WhatsApp messages, and exhausted teachers.
               </p>
             </div>
 
@@ -145,7 +140,7 @@ export default function HomePageClient() {
                 <Image src="/african-school-administrator-smiling-confidently-w.jpeg" alt="Confident school administrator with laptop" fill style={{ objectFit: "cover" }} />
               </div>
               <p style={{ fontSize: "15px", color: "var(--ink-mid)", lineHeight: 1.6 }}>
-                One unified free platform for administration, verified public profiles, and a natural parent app experience.
+                Digital fee tracking, instant parent updates, and reports generated in a single click.
               </p>
             </div>
           </div>
@@ -157,10 +152,10 @@ export default function HomePageClient() {
       ═══════════════════════════════════════════════ */}
       <section style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}>
         <div className="container">
-          <div style={{ textAlign: "center", maxWidth: "560px", margin: "0 auto 64px" }}>
-            <p className="eyebrow" style={{ marginBottom: "12px" }}>The full ecosystem</p>
-            <h2 style={{ fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 700, lineHeight: 1.15, color: "var(--navy)" }}>
-              Everything your school community needs.
+          <div style={{ textAlign: "center", maxWidth: "560px", margin: "0 auto 60px" }}>
+            <p className="eyebrow" style={{ marginBottom: "12px" }}>How it works</p>
+            <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", fontWeight: 700, color: "var(--navy)" }}>
+              Three powerful tools working together perfectly.
             </h2>
           </div>
 
@@ -226,15 +221,15 @@ export default function HomePageClient() {
             <div>
               <p className="eyebrow" style={{ marginBottom: "16px" }}>Real impact</p>
               <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", fontWeight: 700, lineHeight: 1.2, color: "var(--navy)", marginBottom: "24px" }}>
-                Built for the modern Ghanaian school ecosystem.
+                Software that gets out of your way.
               </h2>
               <p style={{ fontSize: "17px", color: "var(--ink-mid)", lineHeight: 1.7, marginBottom: "32px" }}>
-                Your parents browse the internet daily. Your administration software should be a natural extension of their digital lives, providing incredible value without breaking the bank.
+                Your staff should spend their time educating students, not fighting with messy spreadsheets and broken software. We made Edcomrade so simple that anyone can learn it in a day.
               </p>
               <blockquote style={{ borderLeft: "3px solid var(--cyan)", paddingLeft: "20px", fontFamily: "var(--serif)", fontSize: "18px", fontStyle: "italic", color: "var(--navy)", lineHeight: 1.5, marginBottom: "12px" }}>
                 &ldquo;I used to dread end-of-term billing. Now it takes me 20 minutes.&rdquo;
               </blockquote>
-              <p style={{ fontSize: "13px", color: "var(--ink-mid)" }}>School Bursar, Accra</p>
+              <p style={{ fontSize: "13px", color: "var(--ink-mid)" }}>School Bursar</p>
               <div style={{ marginTop: "36px" }}>
                 <Link href="/contact?subject=register-school" className="btn-primary">
                   Register your school free <ArrowRight size={15} />
@@ -259,10 +254,10 @@ export default function HomePageClient() {
             A dashboard your staff will actually use.
           </h2>
           <p style={{ fontSize: "17px", color: "rgba(255,255,255,.6)", marginBottom: "48px", maxWidth: "480px", margin: "0 auto 48px" }}>
-            Built for African internet speeds. Works on any device. No training days required.
+            Works perfectly on any device, even on slow connections. No training days required.
           </p>
           <div style={{ borderRadius: "20px", overflow: "hidden", boxShadow: "0 40px 80px rgba(0,0,0,.5)", maxWidth: "900px", margin: "0 auto", position: "relative", aspectRatio: "16/9" }}>
-            <Image src="/modern-school-management-dashboard-interface--clea.jpg" alt="Pioneers ERP Dashboard" fill style={{ objectFit: "cover" }} />
+            <Image src="/modern-school-management-dashboard-interface--clea.jpg" alt="School Management Dashboard" fill style={{ objectFit: "cover" }} />
           </div>
           <div style={{ marginTop: "40px" }}>
             <Link href="/software" className="btn-white">
@@ -278,10 +273,10 @@ export default function HomePageClient() {
       <section style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}>
         <div className="container" style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(34px, 5vw, 56px)", fontWeight: 700, color: "var(--navy)", lineHeight: 1.1, marginBottom: "20px" }}>
-            Upgrade your school&apos;s capabilities today.
+            Ready to run a better school?
           </h2>
           <p style={{ fontSize: "18px", color: "var(--ink-mid)", lineHeight: 1.65, marginBottom: "36px" }}>
-            Join the schools already running on Edcomrade. The core school administration module is free, forever.
+            Join the schools already running on Edcomrade. Our core school management software is free, forever.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
             <Link href="/contact?subject=register-school" className="btn-primary" style={{ fontSize: "16px", padding: "16px 32px" }}>
