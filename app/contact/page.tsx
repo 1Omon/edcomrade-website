@@ -4,7 +4,7 @@ import ContactPageClient from "./contact-client";
 export const metadata: Metadata = {
   title: "Contact Us | Edcomrade Partnerships & Support",
   description:
-    "Get in touch with the Edcomrade team. Submit a general query, partner with EdMedia, request a Custom App demo, or get support for Pioneers' ERP.",
+    "Get in touch with the Edcomrade team. Submit a general query, partner with EdMedia, request a Custom App demo, or get support for the School Administration Module.",
   openGraph: {
     title: "Contact Edcomrade - We are here for you",
     description:

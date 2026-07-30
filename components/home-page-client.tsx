@@ -72,8 +72,8 @@ export default function HomePageClient() {
               letterSpacing: "-.03em",
               marginBottom: "24px",
             }}>
-              Run your school.<br />
-              <span style={{ color: "var(--gold)" }}>Not your paperwork.</span>
+              Upgrade your school.<br />
+              <span style={{ color: "var(--gold)" }}>Leave the chaos behind.</span>
             </h1>
 
             <p style={{
@@ -83,7 +83,7 @@ export default function HomePageClient() {
               marginBottom: "40px",
               maxWidth: "520px",
             }}>
-              Pioneers&apos; ERP gives your school a free digital backbone — fee billing, student records, attendance, and parent communication. Set up in days, not months.
+              Replace outdated systems, expensive software, and scattered files with the free School Administration Module. Give your stakeholders a seamless digital experience they already know how to use.
             </p>
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", marginBottom: "48px", justifyContent: "center" }}>
@@ -98,7 +98,7 @@ export default function HomePageClient() {
             {/* Social proof line */}
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", justifyContent: "center" }}>
               {[
-                "No credit card required",
+                "No down-payment required",
                 "Live in under 7 days",
                 "5-year price guarantee",
               ].map((t) => (
@@ -131,7 +131,7 @@ export default function HomePageClient() {
                 <Image src="/stressed-african-school-administrator-surrounded-b.jpg" alt="Stressed school administrator with paperwork" fill style={{ objectFit: "cover" }} />
               </div>
               <p style={{ fontSize: "15px", color: "var(--ink-mid)", lineHeight: 1.6 }}>
-                Lost receipts. WhatsApp announcements. Parents calling the gate. End-of-term chaos.
+                Outdated expensive software, disconnected spreadsheets, scattered paper files, and frustrated parents.
               </p>
             </div>
 
@@ -140,12 +140,12 @@ export default function HomePageClient() {
 
             {/* Right: after */}
             <div className="card" style={{ padding: "36px", borderLeft: "4px solid var(--green-mid)" }}>
-              <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--green-mid)", marginBottom: "12px" }}>After Pioneers&apos; ERP</p>
+              <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--green-mid)", marginBottom: "12px" }}>With Edcomrade</p>
               <div style={{ position: "relative", borderRadius: "12px", overflow: "hidden", marginBottom: "20px", aspectRatio: "4/3" }}>
                 <Image src="/african-school-administrator-smiling-confidently-w.jpeg" alt="Confident school administrator with laptop" fill style={{ objectFit: "cover" }} />
               </div>
               <p style={{ fontSize: "15px", color: "var(--ink-mid)", lineHeight: 1.6 }}>
-                Digital fee receipts. Instant parent notifications. Reports generated in one click.
+                One unified free platform for administration, verified public profiles, and a natural parent app experience.
               </p>
             </div>
           </div>
@@ -170,9 +170,9 @@ export default function HomePageClient() {
                 img: "/modern-school-management-dashboard-on-computer-scr.jpg",
                 badge: "For Administrators",
                 badgeClass: "badge-blue",
-                title: "Pioneers' ERP",
-                tagline: "Free school management software",
-                body: "Fee billing, admissions, student records, timetables, staff payroll — one dashboard, zero spreadsheets.",
+                title: "School Administration",
+                tagline: "Free school management module",
+                body: "Fee billing, admissions, student records, timetables, staff payroll — one powerful dashboard replacing overpriced software.",
                 cta: "Start for free",
                 href: "/software",
               },
@@ -226,10 +226,10 @@ export default function HomePageClient() {
             <div>
               <p className="eyebrow" style={{ marginBottom: "16px" }}>Real impact</p>
               <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", fontWeight: 700, lineHeight: 1.2, color: "var(--navy)", marginBottom: "24px" }}>
-                Schools using Pioneers&apos; ERP spend 70% less time on admin.
+                Built for the modern Ghanaian school ecosystem.
               </h2>
               <p style={{ fontSize: "17px", color: "var(--ink-mid)", lineHeight: 1.7, marginBottom: "32px" }}>
-                That&apos;s time back for teaching. For parents. For growing your enrolment. Not for chasing fee balances on WhatsApp.
+                Your parents browse the internet daily. Your administration software should be a natural extension of their digital lives, providing incredible value without breaking the bank.
               </p>
               <blockquote style={{ borderLeft: "3px solid var(--cyan)", paddingLeft: "20px", fontFamily: "var(--serif)", fontSize: "18px", fontStyle: "italic", color: "var(--navy)", lineHeight: 1.5, marginBottom: "12px" }}>
                 &ldquo;I used to dread end-of-term billing. Now it takes me 20 minutes.&rdquo;
@@ -278,10 +278,10 @@ export default function HomePageClient() {
       <section style={{ padding: "var(--section) 0", background: "var(--paper-tint)" }}>
         <div className="container" style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(34px, 5vw, 56px)", fontWeight: 700, color: "var(--navy)", lineHeight: 1.1, marginBottom: "20px" }}>
-            Your school deserves better than a notebook.
+            Upgrade your school&apos;s capabilities today.
           </h2>
           <p style={{ fontSize: "18px", color: "var(--ink-mid)", lineHeight: 1.65, marginBottom: "36px" }}>
-            Join the schools already running on Pioneers&apos; ERP. The core software is free, forever. No catch.
+            Join the schools already running on Edcomrade. The core school administration module is free, forever.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
             <Link href="/contact?subject=register-school" className="btn-primary" style={{ fontSize: "16px", padding: "16px 32px" }}>

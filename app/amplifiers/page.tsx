@@ -7,7 +7,7 @@ import { ArrowRight, CheckCircle, TrendingUp } from "lucide-react";
 export const metadata: Metadata = {
   title: "Amplifiers Programme — Partner With Edcomrade",
   description:
-    "Earn recurring commission bringing Pioneers' ERP to schools in your community for up to three years.",
+    "Earn recurring commission bringing Edcomrade's School Administration Module to schools in your community for up to three years.",
 };
 
 const tiers = [

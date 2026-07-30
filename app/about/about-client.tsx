@@ -162,7 +162,7 @@ export default function AboutPageClient() {
               <ul className="space-y-3 text-sm text-gray-700">
                 <li className="flex items-start gap-2.5">
                   <Target className="w-4 h-4 text-[#2E8BC0] flex-shrink-0 mt-0.5" />
-                  <span>100+ schools on Pioneers&apos; Software</span>
+                  <span>100+ schools on the School Administration Module</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Target className="w-4 h-4 text-[#2E8BC0] flex-shrink-0 mt-0.5" />

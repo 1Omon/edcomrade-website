@@ -15,13 +15,13 @@ export default function SoftwareClient() {
       <section style={{ paddingTop: "140px", paddingBottom: "80px", background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)", color: "#fff" }}>
         <div className="container" style={{ textAlign: "center", maxWidth: "760px" }}>
           <span className="badge badge-green" style={{ marginBottom: "20px" }}>
-            Pioneers&apos; ERP — Core Version 100% Free
+            School Administration Module — 100% Free
           </span>
           <h1 style={{ fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 700, lineHeight: 1.1, marginBottom: "20px" }}>
-            Simple software to run your school effortlessly.
+            Upgrade your school's operating system.
           </h1>
           <p style={{ fontSize: "18px", color: "rgba(255,255,255,0.75)", lineHeight: 1.6, marginBottom: "36px" }}>
-            Say goodbye to lost paper records and chaotic billing. Pioneers&apos; ERP gives Ghanaian school heads full control over admissions, fees, and student data in one clean place.
+            Replace outdated systems and expensive software with Edcomrade's free School Administration Module. Get full control over admissions, fees, and student data, completely integrated with Schoolpedia and ParentAide.
           </p>
           <div style={{ display: "flex", justifyContent: "center", gap: "14px", flexWrap: "wrap" }}>
             <Link href="/contact?subject=register-school" className="btn-white">
@@ -94,9 +94,9 @@ export default function SoftwareClient() {
             
             {/* Free Plan */}
             <div className="card" style={{ padding: "40px", borderTop: "4px solid var(--green-mid)" }}>
-              <span className="badge badge-green" style={{ marginBottom: "16px" }}>PIONEERS FREE</span>
-              <h3 style={{ fontSize: "28px", fontWeight: 700, color: "var(--navy)", marginBottom: "8px" }}>Core ERP</h3>
-              <p style={{ fontSize: "14px", color: "var(--ink-mid)", marginBottom: "24px" }}>Perfect for primary and junior high schools digitising operations.</p>
+              <span className="badge badge-green" style={{ marginBottom: "16px" }}>FREE TIER</span>
+              <h3 style={{ fontSize: "28px", fontWeight: 700, color: "var(--navy)", marginBottom: "8px" }}>School Admin Module</h3>
+              <p style={{ fontSize: "14px", color: "var(--ink-mid)", marginBottom: "24px" }}>Perfect for primary and junior high schools modernising their operations.</p>
               <div style={{ fontSize: "42px", fontWeight: 700, color: "var(--navy)", marginBottom: "24px", fontFamily: "var(--serif)" }}>
                 GHS 0 <span style={{ fontSize: "14px", color: "var(--ink-mid)", fontFamily: "var(--sans)", fontWeight: 400 }}>/ forever</span>
               </div>

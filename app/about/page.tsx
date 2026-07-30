@@ -41,7 +41,7 @@ export default function AboutPage() {
                 Empowering school heads with zero-cost software.
               </h2>
               <p style={{ fontSize: "16px", color: "var(--ink-mid)", lineHeight: 1.7, marginBottom: "20px" }}>
-                High software costs should never prevent a school from going digital. That&apos;s why we made the core edition of Pioneers&apos; ERP permanently free for every Ghanaian school.
+                High software costs should never prevent a school from going digital. That&apos;s why we made the core School Administration Module permanently free for every Ghanaian school.
               </p>
               <p style={{ fontSize: "16px", color: "var(--ink-mid)", lineHeight: 1.7, marginBottom: "28px" }}>
                 Today, we support school administrators, teachers, and parents with software, mobile app connections, and verified online directory listings.

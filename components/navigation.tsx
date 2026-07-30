@@ -72,7 +72,7 @@ export function Navigation() {
                   boxShadow: "0 20px 60px rgba(26,60,94,.14)",
                 }}>
                   {[
-                    { href: "/software", label: "Pioneers' ERP", sub: "Free school management software" },
+                    { href: "/software", label: "School Administration", sub: "Free school management module" },
                     { href: "/schoolpedia", label: "Schoolpedia", sub: "Ghana's school discovery directory" },
                     { href: "/parentaide", label: "ParentAide", sub: "Mobile app for school parents" },
                   ].map((item) => (
@@ -135,7 +135,7 @@ export function Navigation() {
       {mobileOpen && (
         <div style={{ background: "#fff", borderTop: "1px solid var(--rule)", padding: "20px 24px 28px" }}>
           {[
-            { href: "/software", label: "Pioneers' ERP — Free" },
+            { href: "/software", label: "School Admin Module — Free" },
             { href: "/schoolpedia", label: "Schoolpedia Directory" },
             { href: "/parentaide", label: "ParentAide Mobile" },
             { href: "/edmedia", label: "EdMedia Publishing" },

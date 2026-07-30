@@ -20,7 +20,7 @@ export function Footer() {
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "16px" }}>
               <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--green-mid)", display: "inline-block" }}></span>
-              <span style={{ fontSize: "12px", color: "rgba(255,255,255,.5)", fontFamily: "var(--mono)" }}>Core ERP 100% Free</span>
+              <span style={{ fontSize: "12px", color: "rgba(255,255,255,.5)", fontFamily: "var(--mono)" }}>School Admin Module 100% Free</span>
             </div>
           </div>
 
@@ -29,7 +29,7 @@ export function Footer() {
             <div>
               <p style={{ fontSize: "11px", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: "16px" }}>Software</p>
               {[
-                { href: "/software", label: "Pioneers' ERP — Free" },
+                { href: "/software", label: "School Admin Module — Free" },
                 { href: "/software#custom", label: "Custom School App" },
                 { href: "/schoolpedia", label: "Schoolpedia" },
                 { href: "/parentaide", label: "ParentAide" },
