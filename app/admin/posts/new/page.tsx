@@ -57,21 +57,24 @@ export default function NewPostPage() {
 
     return (
         <form onSubmit={handleSubmit} className="max-w-4xl space-y-8 animate-in fade-in duration-500 pb-20">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-border/50 pb-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-[var(--rule)] pb-6">
                 <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="icon" asChild>
-                        <Link href="/admin/posts"><ArrowLeft className="w-5 h-5" /></Link>
+                    <Button variant="outline" size="icon" asChild className="border-[var(--rule)]">
+                        <Link href="/admin/posts"><ArrowLeft className="w-4 h-4 text-[var(--navy)]" /></Link>
                     </Button>
-                    <h1 className="text-3xl font-bold tracking-tight">Write Something New</h1>
+                    <div>
+                        <span className="badge badge-gold mb-1">Content Creation</span>
+                        <h1 className="text-3xl font-bold tracking-tight text-[var(--navy)]">Write New Story</h1>
+                    </div>
                 </div>
                 <div className="flex gap-3">
-                    <Button type="button" variant="outline" onClick={(e) => {
+                    <Button type="button" variant="outline" className="border-[var(--rule)]" onClick={() => {
                         setFormData(prev => ({ ...prev, isPublished: false }));
                         handleSubmit({ preventDefault: () => {} } as React.FormEvent);
                     }}>
                         Save as Draft
                     </Button>
-                    <Button type="submit" onClick={() => setFormData({ ...formData, isPublished: true })} disabled={isSaving} className="gap-2">
+                    <Button type="submit" onClick={() => setFormData({ ...formData, isPublished: true })} disabled={isSaving} className="btn-primary text-xs gap-2">
                         <Save className="w-4 h-4" /> {isSaving ? "Saving..." : "Publish Post"}
                     </Button>
                 </div>
@@ -79,33 +82,33 @@ export default function NewPostPage() {
 
             <div className="grid md:grid-cols-3 gap-8">
                 <div className="md:col-span-2 space-y-6">
-                    <div>
-                        <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 block">Title</label>
+                    <div className="card p-6 bg-white">
+                        <label className="text-xs font-bold text-[var(--navy)] uppercase tracking-wider mb-2 block">Article Title</label>
                         <input
                             type="text"
                             value={formData.title}
                             onChange={handleTitleChange}
-                            placeholder="Enter a captivating title..."
-                            className="w-full text-2xl font-bold bg-transparent border-b border-border/50 pb-2 outline-none focus:border-primary transition-colors placeholder:text-muted"
+                            placeholder="Enter a captivating headline..."
+                            className="w-full text-2xl font-bold text-[var(--navy)] bg-transparent border-b border-[var(--rule)] pb-3 outline-none focus:border-[var(--cyan)] transition-colors placeholder:text-[var(--ink-mid)]"
                             required
                         />
                     </div>
-                    <div>
-                        <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 block">Content</label>
+                    <div className="card p-6 bg-white">
+                        <label className="text-xs font-bold text-[var(--navy)] uppercase tracking-wider mb-2 block">Body Content</label>
                         <RichTextEditor content={formData.content} onChange={(val) => setFormData({ ...formData, content: val })} />
                     </div>
                 </div>
 
                 <div className="space-y-6">
-                    <div className="bg-muted/20 p-6 rounded-2xl border border-border/50 space-y-4">
-                        <h3 className="font-bold border-b border-border/50 pb-2 mb-4">Details</h3>
+                    <div className="card p-6 bg-white space-y-4">
+                        <h3 className="font-bold text-[var(--navy)] border-b border-[var(--rule)] pb-3">Publication Details</h3>
                         
                         <div>
-                            <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 block">Type</label>
+                            <label className="text-xs font-bold text-[var(--navy)] uppercase tracking-wider mb-2 block">Category Type</label>
                             <select
                                 value={formData.type}
                                 onChange={e => setFormData({ ...formData, type: e.target.value })}
-                                className="w-full bg-background border border-border/50 rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/20"
+                                className="w-full bg-[var(--paper-tint)] border border-[var(--rule)] rounded-xl p-2.5 text-sm outline-none text-[var(--navy)] font-medium"
                             >
                                 <option value="blog">Blog Post</option>
                                 <option value="case-study">Case Study</option>
@@ -114,23 +117,23 @@ export default function NewPostPage() {
                         </div>
 
                         <div>
-                            <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 block">URL Slug</label>
+                            <label className="text-xs font-bold text-[var(--navy)] uppercase tracking-wider mb-2 block">URL Slug</label>
                             <input
                                 type="text"
                                 value={formData.slug}
                                 onChange={e => setFormData({ ...formData, slug: e.target.value })}
-                                className="w-full bg-background border border-border/50 rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/20"
+                                className="w-full bg-[var(--paper-tint)] border border-[var(--rule)] rounded-xl p-2.5 text-sm outline-none text-[var(--navy)] font-medium"
                                 required
                             />
                         </div>
 
                         <div>
-                            <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2 block">Author Name</label>
+                            <label className="text-xs font-bold text-[var(--navy)] uppercase tracking-wider mb-2 block">Author Name</label>
                             <input
                                 type="text"
                                 value={formData.author}
                                 onChange={e => setFormData({ ...formData, author: e.target.value })}
-                                className="w-full bg-background border border-border/50 rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/20"
+                                className="w-full bg-[var(--paper-tint)] border border-[var(--rule)] rounded-xl p-2.5 text-sm outline-none text-[var(--navy)] font-medium"
                             />
                         </div>
                     </div>

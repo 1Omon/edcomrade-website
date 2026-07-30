@@ -1,6 +1,6 @@
 import React from "react";
 import { headers } from "next/headers";
-import { cn } from "@/lib/utils";
+import { Mail, Phone, Building, Calendar, MessageSquare, ArrowUpRight } from "lucide-react";
 
 async function getContacts() {
   const h = await headers();
@@ -18,81 +18,76 @@ export default async function AdminContactsPage() {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground">Contact Messages</h1>
-        <p className="text-muted-foreground font-light text-lg">All messages sent to us from the website.</p>
+      <div className="pb-6 border-b border-[var(--rule)]">
+        <span className="badge badge-blue mb-2">Communications Log</span>
+        <h1 className="text-3xl font-bold tracking-tight text-[var(--navy)]">Contact Messages</h1>
+        <p className="text-[var(--ink-mid)] font-normal text-base mt-1">Inquiries submitted via the website contact form.</p>
       </div>
 
       <div className="grid gap-6">
         {contacts.map((c) => (
           <div
             key={c._id}
-            className="group bg-background border border-border/50 rounded-2xl p-6 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 relative overflow-hidden"
+            className="card p-6 bg-white transition-all duration-300 relative overflow-hidden space-y-6"
           >
-            <div className="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-
-            <div className="space-y-6">
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-3 flex-wrap">
-                    <h3 className="text-xl font-bold tracking-tight">{c.name}</h3>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#E8F5EE] text-[#1B5E20] uppercase tracking-wider">
-                      {c.role}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div className="space-y-1">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <h3 className="text-xl font-bold tracking-tight text-[var(--navy)]">{c.name}</h3>
+                  <span className="badge badge-green text-xs">
+                    {c.role || "Inquirer"}
+                  </span>
+                  {c.subject && (
+                    <span className="badge badge-blue text-xs">
+                      Subj: {c.subject}
                     </span>
-                    {c.subject && (
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700">
-                        Subj: {c.subject}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex flex-wrap gap-4 text-sm text-muted-foreground font-light pt-1">
-                    <span className="flex items-center gap-1.5 font-medium text-foreground">
-                      📧 {c.email}
+                  )}
+                </div>
+                <div className="flex flex-wrap gap-4 text-sm text-[var(--ink-mid)] pt-1">
+                  <span className="flex items-center gap-1.5 font-medium text-[var(--navy)]">
+                    <Mail size={14} color="var(--cyan)" /> {c.email}
+                  </span>
+                  {c.phone && (
+                    <span className="flex items-center gap-1.5 font-medium text-[var(--navy)]">
+                      <Phone size={14} color="var(--gold)" /> {c.phone}
                     </span>
-                    {c.phone && (
-                      <span className="flex items-center gap-1.5 text-foreground font-medium">
-                        📞 {c.phone}
-                      </span>
-                    )}
-                    {c.schoolName && (
-                      <span className="flex items-center gap-1.5">
-                        🏫 {c.schoolName}
-                      </span>
-                    )}
-                  </div>
+                  )}
+                  {c.schoolName && (
+                    <span className="flex items-center gap-1.5">
+                      <Building size={14} /> {c.schoolName}
+                    </span>
+                  )}
                 </div>
-                <span className="text-[11px] uppercase tracking-widest text-muted-foreground font-bold whitespace-nowrap">
-                  {new Date(c.createdAt).toLocaleDateString()} at {new Date(c.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-                </span>
               </div>
+              <span className="text-[11px] uppercase tracking-widest text-[var(--ink-mid)] font-semibold flex items-center gap-1">
+                <Calendar size={12} /> {new Date(c.createdAt).toLocaleDateString()}
+              </span>
+            </div>
 
-              {c.message && (
-                <div className="bg-muted/30 rounded-xl p-6 border border-border/30">
-                  <p className="text-foreground leading-relaxed font-light italic">
-                    &ldquo;{c.message}&rdquo;
-                  </p>
-                </div>
-              )}
-
-              <div className="flex justify-end gap-3 pt-2">
-                <a
-                  href={`mailto:${c.email}?subject=RE: ${encodeURIComponent(c.subject || "Edcomrade Enquiry")}`}
-                  className="px-5 py-2 rounded-lg bg-primary text-white text-xs font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/10 flex items-center justify-center"
-                >
-                  Reply via Email
-                </a>
-                <button className="px-5 py-2 rounded-lg bg-muted border border-border/50 text-xs font-bold hover:bg-muted/80 transition-colors">
-                  Archive Message
-                </button>
+            {c.message && (
+              <div className="bg-[var(--paper-tint)] rounded-xl p-5 border border-[var(--rule)]">
+                <p className="text-[var(--ink)] leading-relaxed font-normal italic">
+                  &ldquo;{c.message}&rdquo;
+                </p>
               </div>
+            )}
+
+            <div className="flex justify-end gap-3 pt-2">
+              <a
+                href={`mailto:${c.email}?subject=RE: ${encodeURIComponent(c.subject || "Edcomrade Inquiry")}`}
+                className="btn-primary text-xs py-2 px-4"
+              >
+                Reply via Email <ArrowUpRight size={14} />
+              </a>
             </div>
           </div>
         ))}
 
         {contacts.length === 0 && (
-          <div className="py-20 text-center space-y-4">
-            <div className="text-6xl text-muted-foreground/20 italic font-bold">No Messages</div>
-            <p className="text-muted-foreground font-light">The contact queue is currently empty.</p>
+          <div className="py-20 text-center space-y-4 card bg-white">
+            <MessageSquare size={36} className="mx-auto text-[var(--ink-mid)]" />
+            <div className="text-2xl text-[var(--navy)] font-serif font-bold">No Messages</div>
+            <p className="text-[var(--ink-mid)]">The contact queue is currently empty.</p>
           </div>
         )}
       </div>

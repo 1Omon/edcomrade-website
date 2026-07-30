@@ -38,7 +38,7 @@ export default function ParentaidePage() {
           className="container"
           style={{ textAlign: "center", maxWidth: "860px" }}
         >
-          <span className="badge badge-green" style={{ marginBottom: "20px" }}>
+          <span className="badge badge-gold" style={{ marginBottom: "20px" }}>
             <Smartphone size={12} /> ParentAide Mobile App
           </span>
           <h1

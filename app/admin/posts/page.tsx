@@ -38,59 +38,51 @@ export default function AdminPostsPage() {
         }
     };
 
-    const getTypeColor = (type: string) => {
-        switch (type) {
-            case 'blog': return 'bg-blue-500/10 text-blue-500 border-blue-500/20';
-            case 'case-study': return 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20';
-            case 'success-story': return 'bg-amber-500/10 text-amber-500 border-amber-500/20';
-            default: return 'bg-zinc-500/10 text-zinc-500 border-zinc-500/20';
-        }
-    };
-
     return (
         <div className="space-y-8 animate-in fade-in duration-500">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 pb-6 border-b border-[var(--rule)]">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight text-foreground">Blog & Stories</h1>
-                    <p className="text-muted-foreground font-light text-lg">Create and edit the stories on your website.</p>
+                    <span className="badge badge-gold mb-2">Content Management</span>
+                    <h1 className="text-3xl font-bold tracking-tight text-[var(--navy)]">Blog &amp; Stories</h1>
+                    <p className="text-[var(--ink-mid)] font-normal text-base mt-1">Create and publish platform updates, case studies, and news.</p>
                 </div>
-                <Button asChild className="gap-2">
+                <Button asChild className="btn-primary text-xs">
                     <Link href="/admin/posts/new">
-                        <Plus className="w-4 h-4" /> Write Something New
+                        <Plus className="w-4 h-4 mr-1" /> Write New Post
                     </Link>
                 </Button>
             </div>
 
             {isLoading ? (
-                <div className="text-muted-foreground animate-pulse p-4">Loading posts...</div>
+                <div className="text-[var(--ink-mid)] animate-pulse p-4">Loading content library...</div>
             ) : (
                 <div className="grid gap-6">
                     {posts.map((post) => (
-                        <div key={post._id} className="bg-background border border-border/50 rounded-2xl p-6 shadow-sm hover:border-primary/20 transition-colors flex flex-col md:flex-row justify-between gap-6 md:items-center">
+                        <div key={post._id} className="card p-6 bg-white flex flex-col md:flex-row justify-between gap-6 md:items-center">
                             <div className="space-y-2">
                                 <div className="flex flex-wrap items-center gap-3">
-                                    <h3 className="text-xl font-bold tracking-tight">{post.title}</h3>
-                                    <span className={`text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded-md border ${getTypeColor(post.type)}`}>
-                                        {post.type.replace('-', ' ')}
+                                    <h3 className="text-xl font-bold tracking-tight text-[var(--navy)]">{post.title}</h3>
+                                    <span className="badge badge-blue text-xs uppercase">
+                                        {post.type?.replace('-', ' ')}
                                     </span>
                                 </div>
-                                <div className="flex gap-4 text-sm text-muted-foreground">
+                                <div className="flex gap-4 text-sm text-[var(--ink-mid)]">
                                     <span>By {post.author}</span>
                                     <span>•</span>
                                     <span>{new Date(post.createdAt).toLocaleDateString()}</span>
                                     <span>•</span>
                                     <span className="flex items-center gap-1">
                                         {post.isPublished ? (
-                                            <><Globe className="w-3 h-3 text-green-500" /> <span className="text-green-600 font-medium">Published</span></>
+                                            <><Globe className="w-3.5 h-3.5 text-[var(--green-mid)]" /> <span className="text-[var(--green-mid)] font-semibold">Published</span></>
                                         ) : (
-                                            <><FileText className="w-3 h-3" /> Draft</>
+                                            <><FileText className="w-3.5 h-3.5" /> Draft</>
                                         )}
                                     </span>
                                 </div>
                             </div>
                             <div className="flex gap-2 shrink-0">
-                                <Button variant="outline" size="sm" asChild>
-                                    <Link href={`/admin/posts/${post._id}/edit`}><Edit2 className="w-4 h-4 mr-2" /> Edit</Link>
+                                <Button variant="outline" size="sm" asChild className="border-[var(--rule)]">
+                                    <Link href={`/admin/posts/${post._id}/edit`}><Edit2 className="w-4 h-4 mr-1" /> Edit</Link>
                                 </Button>
                                 <Button variant="destructive" size="sm" onClick={() => handleDelete(post._id)}>
                                     <Trash2 className="w-4 h-4" />
@@ -99,13 +91,11 @@ export default function AdminPostsPage() {
                         </div>
                     ))}
                     {posts.length === 0 && (
-                        <div className="text-center py-20 bg-muted/20 rounded-2xl border border-dashed border-border">
-                            <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4 text-muted-foreground">
-                                <FileText className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-2">No posts yet</h3>
-                            <p className="text-muted-foreground mb-6">Create your first blog post or case study.</p>
-                            <Button asChild>
+                        <div className="text-center py-20 card bg-white">
+                            <FileText className="w-10 h-10 text-[var(--ink-mid)] mx-auto mb-3" />
+                            <h3 className="text-2xl font-bold font-serif text-[var(--navy)] mb-2">No Stories Published</h3>
+                            <p className="text-[var(--ink-mid)] mb-6">Create your first blog post, announcement, or case study.</p>
+                            <Button asChild className="btn-primary text-xs">
                                 <Link href="/admin/posts/new">Write Post</Link>
                             </Button>
                         </div>

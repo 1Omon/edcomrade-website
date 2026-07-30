@@ -79,7 +79,7 @@ export default function AboutPage() {
 
             <div className="card" style={{ padding: "28px", textAlign: "center" }}>
               <div className="photo-card" style={{ width: "120px", height: "120px", borderRadius: "50%", margin: "0 auto 20px" }}>
-                <Image src="" alt="Prince Sarfo" fill style={{ objectFit: "cover" }} />
+                <Image src="/professional-african-male-headmaster-portrait.jpg" alt="Prince Sarfo" fill style={{ objectFit: "cover" }} />
               </div>
               <h3 style={{ fontSize: "22px", fontWeight: 700, color: "var(--navy)", marginBottom: "4px" }}>Prince Sarfo</h3>
               <p style={{ fontSize: "13px", color: "var(--cyan)", fontWeight: 600, marginBottom: "12px" }}>CTO & Co-Founder</p>
